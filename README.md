@@ -1,5 +1,5 @@
 ## About me
-Currently, I am pursuing my PhD in the Department of Statistics at The Chinese University of Hong Kong (CUHK). Prior to this, I earned my Bachelor's degree in Mathematics and Applied Mathematics from the Department of Mathematics at Shandong University. Alongside my mathematical journey, I've cultivated a profound passion for coding. My research is primarily anchored in the intersection of biological applications and statistical machine learning.
+I'm currently diving deep into my PhD studies at The Chinese University of Hong Kong (CUHK)'s Department of Statistics. Before this adventure, I earned my Bachelor’s in Mathematics and Applied Mathematics over at Shandong University. Alongside my academic pursuits, I've developed a keen interest in coding. 
 
 ## Research interests
 + Probabilistic machine learning
