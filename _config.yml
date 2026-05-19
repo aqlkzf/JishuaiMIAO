@@ -2,3 +2,5 @@ title: MIAO Jishuai
 logo:  /assets/img/photo.jpg
 description: A math student, a data novice.
 theme: jekyll-theme-minimal
+header_pages:
+  - blog.md
