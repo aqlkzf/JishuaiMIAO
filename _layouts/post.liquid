@@ -17,9 +17,11 @@ layout: default
   <header class="post-header">
     <div class="post-header-top">
       <h1 class="post-title">{{ page.title }}</h1>
-      <button id="copy-for-ai" title="Copy post content for AI" aria-label="Copy for AI">
-        <i class="fa-solid fa-robot"></i>
-      </button>
+      <div class="copy-for-ai-wrap">
+        <button id="copy-for-ai" aria-label="Copy for AI">
+          <i class="fa-solid fa-robot"></i>
+        </button>
+      </div>
     </div>
     <p class="post-meta">
       Created on {{ page.date | date: '%B %d, %Y' }}
@@ -110,9 +112,31 @@ layout: default
   .post-header-top .post-title {
     flex: 1;
   }
-  #copy-for-ai {
+  .copy-for-ai-wrap {
     flex-shrink: 0;
     margin-top: 0.4rem;
+    position: relative;
+    display: inline-block;
+  }
+  .copy-for-ai-wrap::after {
+    content: "Copy for AI";
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    padding: 3px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .copy-for-ai-wrap:hover::after { opacity: 1; }
+  #copy-for-ai {
+    display: block;
     background: none;
     border: 1px solid currentColor;
     border-radius: 6px;
