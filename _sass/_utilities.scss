@@ -27,6 +27,7 @@ pre {
   background-color: var(--global-code-bg-color);
   border-radius: 6px;
   padding: 6px 12px;
+  font-family: "JetBrains Mono", "Fira Code", "Menlo", monospace;
 
   // Responsive behavior for code blocks
   overflow-x: auto;
@@ -41,6 +42,7 @@ pre {
     margin-bottom: 0;
     padding: 0;
     white-space: inherit;
+    font-family: inherit;
   }
 }
 
@@ -49,10 +51,17 @@ code {
   background-color: var(--global-code-bg-color);
   border-radius: 3px;
   padding: 3px 3px;
+  font-family: "JetBrains Mono", "Fira Code", "Menlo", monospace;
 
   // Inline code should wrap
   white-space: normal;
   word-wrap: break-word;
+}
+
+// Override rouge pygments pink error token background
+.highlight .err {
+  background-color: transparent !important;
+  color: #cc3333;
 }
 
 // Progress bars
