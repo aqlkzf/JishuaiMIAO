@@ -22,7 +22,7 @@ This is a GitHub Pages personal academic website built with Jekyll using the [al
 
 The site is deployed via GitHub Actions. On push to `main`, the workflow builds the Jekyll site and deploys to the `gh-pages` branch. GitHub Pages serves from `gh-pages`.
 
-URL: https://aqlkzf.github.io/
+URL: https://aqlkzf.github.io/JishuaiMIAO/
 
 ## Local Development
 

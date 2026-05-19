@@ -1,5 +1,5 @@
-# aqlkzf.github.io
+# JishuaiMIAO
 
 Personal academic website of MIAO Jishuai, built with [al-folio](https://github.com/alshedivat/al-folio).
 
-Deployed at: https://aqlkzf.github.io/
+Deployed at: https://aqlkzf.github.io/JishuaiMIAO/
