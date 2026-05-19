@@ -1,0 +1,15 @@
+_site
+.bundle
+.DS_Store
+.idea
+.jekyll-cache
+.jekyll-metadata
+.ruby-version
+.sass-cache
+.tweet-cache
+.venv
+assets/libs/
+Gemfile.lock
+node_modules/
+vendor
+plans/

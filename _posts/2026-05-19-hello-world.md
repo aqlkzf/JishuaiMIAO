@@ -1,7 +1,11 @@
 ---
-layout: default
+layout: post
 title: "Hello World"
 date: 2026-05-19
+description: "First post — tools and workflows for machine learning and bioinformatics"
+tags: meta
+categories:
+related_posts: false
 ---
 
 This is my first blog post. I plan to write about tools and workflows for machine learning and bioinformatics.
