@@ -153,17 +153,21 @@ layout: default
 
 <script>
   document.getElementById('copy-for-ai').addEventListener('click', function () {
+    var btn = document.getElementById('copy-for-ai');
     var title = {{ page.title | jsonify }};
-    var text = document.getElementById('markdown-content').innerText.trim();
-    var payload = '# ' + title + '\n\n' + text;
-    navigator.clipboard.writeText(payload).then(function () {
-      var btn = document.getElementById('copy-for-ai');
-      btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-      btn.classList.add('copied');
-      setTimeout(function () {
-        btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
-        btn.classList.remove('copied');
-      }, 1800);
-    });
+    var slug = {{ page.path | remove_first: '_posts/' | remove: '.md' | jsonify }};
+    fetch({{ '/assets/ai-posts/' | relative_url | jsonify }} + slug + '.md.txt')
+      .then(function (r) { return r.text(); })
+      .then(function (md) {
+        return navigator.clipboard.writeText('# ' + title + '\n\n' + md.trim());
+      })
+      .then(function () {
+        btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
+          btn.classList.remove('copied');
+        }, 1800);
+      });
   });
 </script>
