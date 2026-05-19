@@ -1,28 +1,28 @@
 ---
 layout: post
-title: "Run Claude Code / Codex on Remote Server via SSH Proxy"
+title: "Run Claude Code / Codex on a Remote Server via SSH Proxy"
 date: 2026-05-19
-description: "Use SSH RemoteForward to share your local proxy with an HPC cluster so Claude Code and Codex can reach the internet."
+description: "Use SSH RemoteForward to tunnel your local proxy to an HPC cluster, so Claude Code and Codex can reach the internet without direct outbound access."
 tags: tools hpc ssh
 categories:
 related_posts: false
 ---
 
-> Use SSH RemoteForward to share your local proxy with the remote server, so Claude Code and Codex can access the internet through VS Code Remote SSH.
+HPC clusters typically block outbound internet traffic. The trick is to tunnel your local proxy (e.g. Clash) to the remote server over SSH using `RemoteForward`, so tools like Claude Code and Codex can phone home without any special firewall exceptions.
 
 ## Prerequisites
 
 | Item | Details |
 |------|---------|
-| **Local proxy** | A proxy running on your local machine (e.g. Clash), note down the port (default: `7890`) |
-| **VS Code + Remote SSH** | Already connected to the remote server |
-| **Claude Code / Codex installed** | Installed on the remote server (see [Install Guide]({% post_url 2026-05-19-install-claude-codex %})) |
+| **Local proxy** | Running on your local machine (e.g. Clash); note the port (default: `7890`) |
+| **VS Code + Remote SSH** | Connected to the remote server — see the [VS Code Remote SSH Guide](https://doc.sta.cuhk.edu.hk/vs-code-remote-ssh-guide) if not yet set up |
+| **Claude Code / Codex** | Installed on the remote server — see [Install Claude Code & Codex on ITSC Cluster]({% post_url 2026-05-19-install-claude-codex %}) |
 
-## 1. Add RemoteForward to SSH Config
+## 1. Add RemoteForward to Your SSH Config
 
-Open your local SSH config file (`~/.ssh/config`). In VS Code you can open it via **Remote Explorer → gear icon**.
+Open `~/.ssh/config` on your **local** machine. In VS Code you can reach it via **Remote Explorer → gear icon**.
 
-Add `RemoteForward 7890 127.0.0.1:7890` to every `Host` block you want proxy on:
+Add `RemoteForward 7890 127.0.0.1:7890` to every `Host` block where you want the proxy:
 
 ```
 Host chpc-login
@@ -51,15 +51,13 @@ Host chpc-cn??? chpc-cn???.rc.cuhk.edu.hk
     RemoteForward 7890 127.0.0.1:7890   # ← add this line
 ```
 
-> **Note:** The port `7890` should match your local proxy port. Check in Clash → Settings → Mixed Port.
+> **Note:** `7890` must match your local proxy's mixed port. Verify in Clash → Settings → Mixed Port.
 
-With `ProxyJump`, you can connect directly to a compute node (e.g. `chpc-gpu010`, `chpc-cn101`) from VS Code and the proxy works end-to-end.
+`RemoteForward` makes port `7890` on the remote machine forward traffic back to `127.0.0.1:7890` on your laptop. Combined with `ProxyJump`, this works transparently even when you connect directly to a compute node (`chpc-gpu010`, `chpc-cn101`, etc.).
 
-## 2. Set Proxy Environment Variables
+## 2. Export Proxy Variables on the Remote Server
 
-Add the following to your remote server's shell config:
-
-**Bash / Zsh** (`~/.bashrc` or `~/.zshrc`):
+Add these lines to your remote shell config (`~/.bashrc`, `~/.zshrc`, or `~/.config/fish/config.fish`):
 
 ```bash
 export HTTP_PROXY="http://127.0.0.1:7890"
@@ -67,22 +65,22 @@ export HTTPS_PROXY="http://127.0.0.1:7890"
 export ALL_PROXY="socks5://127.0.0.1:7890"
 ```
 
-Reload the config or open a new terminal for the changes to take effect.
+Reload the config (`source ~/.bashrc`) or open a fresh terminal.
 
 ## 3. Verify
 
-After reconnecting via VS Code Remote SSH:
+Reconnect to the server via VS Code Remote SSH, then run:
 
 ```bash
 curl -x http://127.0.0.1:7890 https://api.anthropic.com
 ```
 
-If you get a response (not a timeout), the proxy is working. Claude Code and Codex should now function normally on the remote server.
+A response (even an HTTP error body) means the proxy tunnel is alive. Claude Code and Codex will now be able to reach the internet.
 
 ## FAQ
 
 | Question | Answer |
 |----------|--------|
-| **Connection refused on port 7890** | Make sure your local proxy (Clash) is running and the port matches. Verify the `RemoteForward` line is under the correct `Host` block. |
-| **Proxy set but CLI tools don't use it** | Reload your shell config (`source ~/.bashrc`) or open a new terminal. |
-| **Need a different port** | Replace all `7890` with your actual proxy port in both SSH config and shell config. |
+| **Connection refused on port 7890** | Check that your local proxy is running and the port matches. Also confirm `RemoteForward` is under the correct `Host` block. |
+| **Proxy variables set but tools still fail** | Reload your shell config or open a new terminal — the variables only take effect in new shells. |
+| **Using a different port** | Replace every `7890` with your actual proxy port in both the SSH config and the shell config. |
