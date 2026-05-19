@@ -7,14 +7,14 @@ ninja.data = [{
     title: "about",
     section: "Navigation",
     handler: () => {
-      window.location.href = "/";
+      window.location.href = "/JishuaiMIAO/";
     },
   },{id: "nav-blog",
           title: "blog",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/blog/";
+            window.location.href = "/JishuaiMIAO/blog/";
           },
         },{id: "post-hello-world",
         
@@ -24,7 +24,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/hello-world/";
+            window.location.href = "/JishuaiMIAO/blog/2026/hello-world/";
           
         },
       },{
@@ -46,7 +46,7 @@ ninja.data = [{
         title: 'RSS Feed',
         section: 'Socials',
         handler: () => {
-          window.open("/feed.xml", "_blank");
+          window.open("/JishuaiMIAO/feed.xml", "_blank");
         },
       },{
       id: 'light-theme',
