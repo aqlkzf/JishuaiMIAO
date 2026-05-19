@@ -20,11 +20,11 @@ HPC clusters can't reach `openai.com` or `claude.ai`, and without `sudo` we can'
 
 ## 1. Add RemoteForward to Your SSH Config
 
-Open `~/.ssh/config` on your **local** machine. In VS Code you can reach it via **Remote Explorer → gear icon**.
+Open `~/.ssh/config` on your **local** machine.
 
-Add `RemoteForward 7890 127.0.0.1:7890` to every `Host` block where you want the proxy:
+Add `RemoteForward 7890 127.0.0.1:7890` to every `Host` block you connect to:
 
-```
+```sshconfig
 Host chpc-login
     HostName chpc-login.itsc.cuhk.edu.hk
     User YOUR_COMPUTING_ID
@@ -53,7 +53,7 @@ Host chpc-cn??? chpc-cn???.rc.cuhk.edu.hk
 
 > **Note:** `7890` must match your local proxy's mixed port. In Clash, check **Settings → Mixed Port**.
 
-`RemoteForward` makes port `7890` on the remote machine forward traffic back to `127.0.0.1:7890` on your laptop. Combined with `ProxyJump`, this works transparently even when you connect directly to a compute node (`chpc-gpu010`, `chpc-cn101`, etc.) — the forward is re-established along the jump chain, so the proxy is reachable on every hop.
+`RemoteForward` makes port `7890` on the remote machine forward traffic back to `127.0.0.1:7890` on your laptop. Combined with `ProxyJump`, the forward propagates through the jump chain, so compute nodes get the proxy too.
 
 ## 2. Export Proxy Variables on the Remote Server
 
@@ -73,6 +73,8 @@ Reconnect to the server via VS Code Remote SSH, then run:
 
 ```bash
 curl -x http://127.0.0.1:7890 https://api.anthropic.com
+# or, for Codex:
+curl -x http://127.0.0.1:7890 https://api.openai.com
 ```
 
 Any response — even an HTTP error body — means the tunnel is alive. Claude Code and Codex can now reach the internet.
@@ -82,5 +84,6 @@ Any response — even an HTTP error body — means the tunnel is alive. Claude C
 | Question | Answer |
 |----------|--------|
 | **Connection refused on port 7890** | Check that your local proxy is running and the port matches. Also confirm `RemoteForward` is under the correct `Host` block. |
+| **`bind: Address already in use` warning** | Another SSH session already forwarded `7890` to this host. Disconnect the stale session (or pick a different port) and reconnect. |
 | **Proxy variables set but tools still fail** | Reload your shell config or open a new terminal — the variables only take effect in new shells. |
 | **Using a different port** | Replace every `7890` with your actual proxy port in both the SSH config and the shell config. |
