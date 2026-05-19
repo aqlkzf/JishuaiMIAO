@@ -27,11 +27,11 @@ ninja.data = [{
             window.location.href = "/JishuaiMIAO/blog/2026/tmux-debug/";
           
         },
-      },{id: "post-run-claude-code-codex-on-remote-server-via-ssh-proxy",
+      },{id: "post-run-claude-code-codex-on-a-remote-server-via-ssh-proxy",
         
-          title: "Run Claude Code / Codex on Remote Server via SSH Proxy",
+          title: "Run Claude Code / Codex on a Remote Server via SSH Proxy",
         
-        description: "Use SSH RemoteForward to share your local proxy with an HPC cluster so Claude Code and Codex can reach the internet.",
+        description: "Use SSH RemoteForward to tunnel your local proxy to an HPC cluster, so Claude Code and Codex can reach the internet without direct outbound access.",
         section: "Posts",
         handler: () => {
           
