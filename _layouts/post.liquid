@@ -149,6 +149,7 @@ layout: default
   }
   #copy-for-ai:hover { opacity: 0.85; }
   #copy-for-ai.copied { opacity: 1; color: #2ca05a; border-color: #2ca05a; }
+  #copy-for-ai.copy-error { opacity: 1; color: #b00020; border-color: #b00020; }
 </style>
 
 <script>
@@ -157,7 +158,12 @@ layout: default
     var title = {{ page.title | jsonify }};
     var slug = {{ page.path | remove_first: '_posts/' | remove: '.md' | jsonify }};
     fetch({{ '/assets/ai-posts/' | relative_url | jsonify }} + slug + '.md.txt')
-      .then(function (r) { return r.text(); })
+      .then(function (r) {
+        if (!r.ok) {
+          throw new Error('Unable to load AI copy source');
+        }
+        return r.text();
+      })
       .then(function (md) {
         return navigator.clipboard.writeText('# ' + title + '\n\n' + md.trim());
       })
@@ -167,6 +173,14 @@ layout: default
         setTimeout(function () {
           btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
           btn.classList.remove('copied');
+        }, 1800);
+      })
+      .catch(function () {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+        btn.classList.add('copy-error');
+        setTimeout(function () {
+          btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
+          btn.classList.remove('copy-error');
         }, 1800);
       });
   });

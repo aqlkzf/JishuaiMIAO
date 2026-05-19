@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD Student, <a href='https://www.sta.cuhk.edu.hk/'>Department of Statistics, CUHK</a>
+subtitle: PhD Student, <a href='https://www.sta.cuhk.edu.hk/'>Department of Statistics and Data Science, CUHK</a>
 
 profile:
   align: right
@@ -26,7 +26,7 @@ latest_posts:
   limit: 3
 ---
 
-I am currently pursuing my PhD in the Department of Statistics at The Chinese University of Hong Kong (CUHK). Before starting this journey, I earned my Bachelor's degree in Mathematics and Applied Mathematics from Shandong University. Alongside my academic work, I have developed a strong passion for coding, which enhances my skills in statistics and mathematics.
+I am currently pursuing my PhD in the Department of Statistics and Data Science at The Chinese University of Hong Kong (CUHK). Before starting this journey, I earned my Bachelor's degree in Mathematics and Applied Mathematics from Shandong University. Alongside my academic work, I have developed a strong passion for coding, which enhances my skills in statistics and mathematics.
 
 ## Research interests
 
