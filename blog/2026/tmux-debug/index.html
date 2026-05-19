@@ -7,18 +7,22 @@
 claude <span class="s2">"check log.txt and help me fix the errors"</span>
 </code></pre></div></div> </div> </article> </div> <style>.post-header-top{display:flex;align-items:flex-start;gap:.6rem}.post-header-top .post-title{flex:1}.copy-for-ai-wrap{flex-shrink:0;margin-top:.4rem;position:relative;display:inline-block}.copy-for-ai-wrap::after{content:"Copy for AI";position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.75);color:#fff;font-size:.72rem;white-space:nowrap;padding:3px 8px;border-radius:4px;pointer-events:none;opacity:0;transition:opacity .15s}.copy-for-ai-wrap:hover::after{opacity:1}#copy-for-ai{display:block;background:0;border:1px solid currentColor;border-radius:6px;padding:.3rem .5rem;cursor:pointer;opacity:.45;font-size:.9rem;line-height:1;transition:opacity .15s}#copy-for-ai:hover{opacity:.85}#copy-for-ai.copied{opacity:1;color:#2ca05a;border-color:#2ca05a}</style> <script>
   document.getElementById('copy-for-ai').addEventListener('click', function () {
+    var btn = document.getElementById('copy-for-ai');
     var title = "Capture tmux Output for Debugging";
-    var text = document.getElementById('markdown-content').innerText.trim();
-    var payload = '# ' + title + '\n\n' + text;
-    navigator.clipboard.writeText(payload).then(function () {
-      var btn = document.getElementById('copy-for-ai');
-      btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-      btn.classList.add('copied');
-      setTimeout(function () {
-        btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
-        btn.classList.remove('copied');
-      }, 1800);
-    });
+    var slug = "2026-05-19-tmux-debug";
+    fetch("/JishuaiMIAO/assets/ai-posts/" + slug + '.md.txt')
+      .then(function (r) { return r.text(); })
+      .then(function (md) {
+        return navigator.clipboard.writeText('# ' + title + '\n\n' + md.trim());
+      })
+      .then(function () {
+        btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
+          btn.classList.remove('copied');
+        }, 1800);
+      });
   });
 </script> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Jishuai MIAO. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/JishuaiMIAO/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/JishuaiMIAO/assets/js/masonry.js?v=a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/JishuaiMIAO/assets/js/zoom.js?v=85ddb88934d28b74e78031fd54cf8308"></script> <script src="/JishuaiMIAO/assets/js/no_defer.js?v=2781658a0a2b13ed609542042a859126"></script> <script defer src="/JishuaiMIAO/assets/js/common.js?v=c15de51d4bb57887caa2c21988d97279"></script> <script defer src="/JishuaiMIAO/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/JishuaiMIAO/assets/js/jupyter_new_tab.js?v=d9f17b6adc2311cbabd747f4538bb15f"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/JishuaiMIAO/assets/js/mathjax-setup.js?v=a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/JishuaiMIAO/assets/js/progress-bar.js?v=2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/JishuaiMIAO/assets/js/vanilla-back-to-top.min.js?v=f40d453793ff4f64e238e420181a1d17"></script> <script>
     addBackToTop();

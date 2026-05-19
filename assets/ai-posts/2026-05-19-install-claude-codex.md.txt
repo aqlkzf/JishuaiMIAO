@@ -1,0 +1,38 @@
+<blockquote>
+  <p>Since we don’t have sudo access, we need to install npm via conda in a dedicated environment.
+Also, we need to set up global access to the npm binaries to avoid conda env PATH conflicts.</p>
+</blockquote>
+
+<h2 id="install-npm-via-conda">Install npm via conda</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create <span class="nt">-n</span> basic_tools <span class="nv">python</span><span class="o">=</span>3.11
+conda activate basic_tools
+conda <span class="nb">install </span>npm
+</code></pre></div></div>
+
+<h2 id="set-up-global-access">Set up global access</h2>
+
+<p>Create a dedicated tool directory and symlink only the needed binaries, avoiding conda env PATH conflicts:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/toolsmiao
+
+<span class="c"># symlink node and npm</span>
+<span class="nb">ln</span> <span class="nt">-s</span> <span class="si">$(</span>conda <span class="nb">env </span>list | <span class="nb">grep </span>basic_tools | <span class="nb">awk</span> <span class="s1">'{print $NF}'</span><span class="si">)</span>/bin/node ~/toolsmiao/node
+<span class="nb">ln</span> <span class="nt">-s</span> <span class="si">$(</span>conda <span class="nb">env </span>list | <span class="nb">grep </span>basic_tools | <span class="nb">awk</span> <span class="s1">'{print $NF}'</span><span class="si">)</span>/bin/npm ~/toolsmiao/npm
+</code></pre></div></div>
+
+<p>Add to your shell config (<code class="language-plaintext highlighter-rouge">~/.bashrc</code>):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/toolsmiao:<span class="nv">$HOME</span>/toolsmiao/bin:<span class="nv">$PATH</span>
+</code></pre></div></div>
+
+<h2 id="install-claude-code-and-codex">Install Claude Code and Codex</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># set global install prefix to ~/toolsmiao</span>
+npm config <span class="nb">set </span>prefix ~/toolsmiao
+
+npm <span class="nb">install</span> <span class="nt">-g</span> @anthropic-ai/claude-code
+npm <span class="nb">install</span> <span class="nt">-g</span> @openai/codex
+</code></pre></div></div>
+
+<p>This way <code class="language-plaintext highlighter-rouge">claude</code> and <code class="language-plaintext highlighter-rouge">codex</code> binaries land directly in <code class="language-plaintext highlighter-rouge">~/toolsmiao/bin/</code> — no conda activation needed after the initial setup.</p>
