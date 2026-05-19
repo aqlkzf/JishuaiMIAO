@@ -15,7 +15,12 @@ layout: default
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-header-top">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <button id="copy-for-ai" title="Copy post content for AI" aria-label="Copy for AI">
+        <i class="fa-solid fa-robot"></i>
+      </button>
+    </div>
     <p class="post-meta">
       Created on {{ page.date | date: '%B %d, %Y' }}
       {% if page.author %}by {{ page.author }}{% endif %}
@@ -95,3 +100,46 @@ layout: default
     {% include giscus.liquid %}
   {% endif %}
 </div>
+
+<style>
+  .post-header-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .post-header-top .post-title {
+    flex: 1;
+  }
+  #copy-for-ai {
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    opacity: 0.45;
+    font-size: 0.9rem;
+    line-height: 1;
+    transition: opacity 0.15s;
+  }
+  #copy-for-ai:hover { opacity: 0.85; }
+  #copy-for-ai.copied { opacity: 1; color: #2ca05a; border-color: #2ca05a; }
+</style>
+
+<script>
+  document.getElementById('copy-for-ai').addEventListener('click', function () {
+    var title = {{ page.title | jsonify }};
+    var text = document.getElementById('markdown-content').innerText.trim();
+    var payload = '# ' + title + '\n\n' + text;
+    navigator.clipboard.writeText(payload).then(function () {
+      var btn = document.getElementById('copy-for-ai');
+      btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+      btn.classList.add('copied');
+      setTimeout(function () {
+        btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
+        btn.classList.remove('copied');
+      }, 1800);
+    });
+  });
+</script>
