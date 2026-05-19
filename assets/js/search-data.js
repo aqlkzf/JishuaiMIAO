@@ -16,7 +16,40 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/JishuaiMIAO/blog/";
           },
-        },{id: "post-hello-world",
+        },{id: "post-capture-tmux-output-for-debugging",
+        
+          title: "Capture tmux Output for Debugging",
+        
+        description: "Save tmux scrollback to a file so you can review logs or feed them to an AI tool for debugging.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/JishuaiMIAO/blog/2026/tmux-debug/";
+          
+        },
+      },{id: "post-run-claude-code-codex-on-remote-server-via-ssh-proxy",
+        
+          title: "Run Claude Code / Codex on Remote Server via SSH Proxy",
+        
+        description: "Use SSH RemoteForward to share your local proxy with an HPC cluster so Claude Code and Codex can reach the internet.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/JishuaiMIAO/blog/2026/run-claude-codex/";
+          
+        },
+      },{id: "post-install-claude-code-and-codex-on-itsc-cluster-no-sudo",
+        
+          title: "Install Claude Code and Codex on ITSC Cluster (No sudo)",
+        
+        description: "How to install npm via conda and set up Claude Code and Codex on a shared HPC cluster without root access.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/JishuaiMIAO/blog/2026/install-claude-codex/";
+          
+        },
+      },{id: "post-hello-world",
         
           title: "Hello World",
         
