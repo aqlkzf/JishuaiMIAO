@@ -1,0 +1,41 @@
+---
+layout: post
+title: "Capture tmux Output for Debugging"
+date: 2026-05-19
+description: "Save tmux scrollback to a file so you can review logs or feed them to an AI tool for debugging."
+tags: tools tmux
+categories:
+related_posts: false
+---
+
+> Easily save tmux scrollback to a file so you can review logs or share them with AI for debugging.
+
+## The Problem
+
+When running programs inside tmux, viewing and copying output is cumbersome — you have to enter scroll mode, navigate manually, and copy-paste is unreliable for large outputs.
+
+## Solution: Capture Pane to File
+
+In your tmux session, press `Ctrl+B` then `:` to open the command prompt, and run:
+
+```
+capture-pane -S -2000 ; save-buffer log.txt
+```
+
+| Flag | Meaning |
+|------|---------|
+| `-S -2000` | Capture from 2000 lines above the current screen |
+| `save-buffer log.txt` | Save the captured content to `log.txt` in the current directory |
+
+Adjust `-2000` to capture more or fewer lines (e.g. `-S -5000` for 5000 lines, or `-S -` for the entire scrollback history).
+
+## Use Case
+
+This is particularly useful when you need to debug errors but aren't sure how to fix them — save the output to a file, then feed it to an AI tool for analysis:
+
+```bash
+# Inside tmux: Ctrl+B : capture-pane -S -2000 ; save-buffer log.txt
+
+# Then ask Claude Code to help debug
+claude "check log.txt and help me fix the errors"
+```

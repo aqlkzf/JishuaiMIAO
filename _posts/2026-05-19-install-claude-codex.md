@@ -1,0 +1,50 @@
+---
+layout: post
+title: "Install Claude Code and Codex on ITSC Cluster (No sudo)"
+date: 2026-05-19
+description: "How to install npm via conda and set up Claude Code and Codex on a shared HPC cluster without root access."
+tags: tools hpc
+categories:
+related_posts: false
+---
+
+> Since we don't have sudo access, we need to install npm via conda in a dedicated environment.
+> Also, we need to set up global access to the npm binaries to avoid conda env PATH conflicts.
+
+## Install npm via conda
+
+```bash
+conda create -n basic_tools python=3.11
+conda activate basic_tools
+conda install npm
+```
+
+## Set up global access
+
+Create a dedicated tool directory and symlink only the needed binaries, avoiding conda env PATH conflicts:
+
+```bash
+mkdir -p ~/toolsmiao
+
+# symlink node and npm
+ln -s $(conda env list | grep basic_tools | awk '{print $NF}')/bin/node ~/toolsmiao/node
+ln -s $(conda env list | grep basic_tools | awk '{print $NF}')/bin/npm ~/toolsmiao/npm
+```
+
+Add to your shell config (`~/.bashrc`):
+
+```bash
+export PATH=$HOME/toolsmiao:$HOME/toolsmiao/bin:$PATH
+```
+
+## Install Claude Code and Codex
+
+```bash
+# set global install prefix to ~/toolsmiao
+npm config set prefix ~/toolsmiao
+
+npm install -g @anthropic-ai/claude-code
+npm install -g @openai/codex
+```
+
+This way `claude` and `codex` binaries land directly in `~/toolsmiao/bin/` — no conda activation needed after the initial setup.
