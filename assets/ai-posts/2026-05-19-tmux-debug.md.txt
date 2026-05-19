@@ -1,45 +1,31 @@
-<blockquote>
-  <p>Easily save tmux scrollback to a file so you can review logs or share them with AI for debugging.</p>
-</blockquote>
+> Easily save tmux scrollback to a file so you can review logs or share them with AI for debugging.
 
-<h2 id="the-problem">The Problem</h2>
+## The Problem
 
-<p>When running programs inside tmux, viewing and copying output is cumbersome — you have to enter scroll mode, navigate manually, and copy-paste is unreliable for large outputs.</p>
+When running programs inside tmux, viewing and copying output is cumbersome — you have to enter scroll mode, navigate manually, and copy-paste is unreliable for large outputs.
 
-<h2 id="solution-capture-pane-to-file">Solution: Capture Pane to File</h2>
+## Solution: Capture Pane to File
 
-<p>In your tmux session, press <code class="language-plaintext highlighter-rouge">Ctrl+B</code> then <code class="language-plaintext highlighter-rouge">:</code> to open the command prompt, and run:</p>
+In your tmux session, press `Ctrl+B` then `:` to open the command prompt, and run:
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>capture-pane -S -2000 ; save-buffer log.txt
-</code></pre></div></div>
+```
+capture-pane -S -2000 ; save-buffer log.txt
+```
 
-<table>
-  <thead>
-    <tr>
-      <th>Flag</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">-S -2000</code></td>
-      <td>Capture from 2000 lines above the current screen</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">save-buffer log.txt</code></td>
-      <td>Save the captured content to <code class="language-plaintext highlighter-rouge">log.txt</code> in the current directory</td>
-    </tr>
-  </tbody>
-</table>
+| Flag | Meaning |
+|------|---------|
+| `-S -2000` | Capture from 2000 lines above the current screen |
+| `save-buffer log.txt` | Save the captured content to `log.txt` in the current directory |
 
-<p>Adjust <code class="language-plaintext highlighter-rouge">-2000</code> to capture more or fewer lines (e.g. <code class="language-plaintext highlighter-rouge">-S -5000</code> for 5000 lines, or <code class="language-plaintext highlighter-rouge">-S -</code> for the entire scrollback history).</p>
+Adjust `-2000` to capture more or fewer lines (e.g. `-S -5000` for 5000 lines, or `-S -` for the entire scrollback history).
 
-<h2 id="use-case">Use Case</h2>
+## Use Case
 
-<p>This is particularly useful when you need to debug errors but aren’t sure how to fix them — save the output to a file, then feed it to an AI tool for analysis:</p>
+This is particularly useful when you need to debug errors but aren't sure how to fix them — save the output to a file, then feed it to an AI tool for analysis:
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Inside tmux: Ctrl+B : capture-pane -S -2000 ; save-buffer log.txt</span>
+```bash
+# Inside tmux: Ctrl+B : capture-pane -S -2000 ; save-buffer log.txt
 
-<span class="c"># Then ask Claude Code to help debug</span>
-claude <span class="s2">"check log.txt and help me fix the errors"</span>
-</code></pre></div></div>
+# Then ask Claude Code to help debug
+claude "check log.txt and help me fix the errors"
+```

@@ -1,3 +1,3 @@
-<p>This is my first blog post. I plan to write about tools and workflows for machine learning and bioinformatics.</p>
+This is my first blog post. I plan to write about tools and workflows for machine learning and bioinformatics.
 
-<p>The idea came from watching <a href="https://youtu.be/I0DrcsDf3Os?si=ySp-hc6WUuopRZre">Jiayi Weng’s invitation talk</a> — a candid walkthrough of his journey through open-source projects (Tianshou), research infrastructure, and post-training at OpenAI. It reminded me that writing things down, even informally, is a worthwhile habit.</p>
+The idea came from watching [Jiayi Weng's invitation talk](https://youtu.be/I0DrcsDf3Os?si=ySp-hc6WUuopRZre) — a candid walkthrough of his journey through open-source projects (Tianshou), research infrastructure, and post-training at OpenAI. It reminded me that writing things down, even informally, is a worthwhile habit.

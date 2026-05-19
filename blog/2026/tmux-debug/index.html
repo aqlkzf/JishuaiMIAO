@@ -5,13 +5,18 @@
 
 <span class="c"># Then ask Claude Code to help debug</span>
 claude <span class="s2">"check log.txt and help me fix the errors"</span>
-</code></pre></div></div> </div> </article> </div> <style>.post-header-top{display:flex;align-items:flex-start;gap:.6rem}.post-header-top .post-title{flex:1}.copy-for-ai-wrap{flex-shrink:0;margin-top:.4rem;position:relative;display:inline-block}.copy-for-ai-wrap::after{content:"Copy for AI";position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.75);color:#fff;font-size:.72rem;white-space:nowrap;padding:3px 8px;border-radius:4px;pointer-events:none;opacity:0;transition:opacity .15s}.copy-for-ai-wrap:hover::after{opacity:1}#copy-for-ai{display:block;background:0;border:1px solid currentColor;border-radius:6px;padding:.3rem .5rem;cursor:pointer;opacity:.45;font-size:.9rem;line-height:1;transition:opacity .15s}#copy-for-ai:hover{opacity:.85}#copy-for-ai.copied{opacity:1;color:#2ca05a;border-color:#2ca05a}</style> <script>
+</code></pre></div></div> </div> </article> </div> <style>.post-header-top{display:flex;align-items:flex-start;gap:.6rem}.post-header-top .post-title{flex:1}.copy-for-ai-wrap{flex-shrink:0;margin-top:.4rem;position:relative;display:inline-block}.copy-for-ai-wrap::after{content:"Copy for AI";position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.75);color:#fff;font-size:.72rem;white-space:nowrap;padding:3px 8px;border-radius:4px;pointer-events:none;opacity:0;transition:opacity .15s}.copy-for-ai-wrap:hover::after{opacity:1}#copy-for-ai{display:block;background:0;border:1px solid currentColor;border-radius:6px;padding:.3rem .5rem;cursor:pointer;opacity:.45;font-size:.9rem;line-height:1;transition:opacity .15s}#copy-for-ai:hover{opacity:.85}#copy-for-ai.copied{opacity:1;color:#2ca05a;border-color:#2ca05a}#copy-for-ai.copy-error{opacity:1;color:#b00020;border-color:#b00020}</style> <script>
   document.getElementById('copy-for-ai').addEventListener('click', function () {
     var btn = document.getElementById('copy-for-ai');
     var title = "Capture tmux Output for Debugging";
     var slug = "2026-05-19-tmux-debug";
     fetch("/JishuaiMIAO/assets/ai-posts/" + slug + '.md.txt')
-      .then(function (r) { return r.text(); })
+      .then(function (r) {
+        if (!r.ok) {
+          throw new Error('Unable to load AI copy source');
+        }
+        return r.text();
+      })
       .then(function (md) {
         return navigator.clipboard.writeText('# ' + title + '\n\n' + md.trim());
       })
@@ -21,6 +26,14 @@ claude <span class="s2">"check log.txt and help me fix the errors"</span>
         setTimeout(function () {
           btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
           btn.classList.remove('copied');
+        }, 1800);
+      })
+      .catch(function () {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+        btn.classList.add('copy-error');
+        setTimeout(function () {
+          btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
+          btn.classList.remove('copy-error');
         }, 1800);
       });
   });

@@ -28,13 +28,18 @@ Host chpc-cn??? chpc-cn???.rc.cuhk.edu.hk
 <span class="nb">export </span><span class="nv">HTTPS_PROXY</span><span class="o">=</span><span class="s2">"http://127.0.0.1:7890"</span>
 <span class="nb">export </span><span class="nv">ALL_PROXY</span><span class="o">=</span><span class="s2">"socks5://127.0.0.1:7890"</span>
 </code></pre></div></div> <p>Reload the config (<code class="language-plaintext highlighter-rouge">source ~/.bashrc</code>) or open a fresh terminal.</p> <h2 id="3-verify">3. Verify</h2> <p>Reconnect to the server via VS Code Remote SSH, then run:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-x</span> http://127.0.0.1:7890 https://api.anthropic.com
-</code></pre></div></div> <p>A response (even an HTTP error body) means the proxy tunnel is alive. Claude Code and Codex will now be able to reach the internet.</p> <h2 id="faq">FAQ</h2> <table> <thead> <tr> <th>Question</th> <th>Answer</th> </tr> </thead> <tbody> <tr> <td><strong>Connection refused on port 7890</strong></td> <td>Check that your local proxy is running and the port matches. Also confirm <code class="language-plaintext highlighter-rouge">RemoteForward</code> is under the correct <code class="language-plaintext highlighter-rouge">Host</code> block.</td> </tr> <tr> <td><strong>Proxy variables set but tools still fail</strong></td> <td>Reload your shell config or open a new terminal — the variables only take effect in new shells.</td> </tr> <tr> <td><strong>Using a different port</strong></td> <td>Replace every <code class="language-plaintext highlighter-rouge">7890</code> with your actual proxy port in both the SSH config and the shell config.</td> </tr> </tbody> </table> </div> </article> </div> <style>.post-header-top{display:flex;align-items:flex-start;gap:.6rem}.post-header-top .post-title{flex:1}.copy-for-ai-wrap{flex-shrink:0;margin-top:.4rem;position:relative;display:inline-block}.copy-for-ai-wrap::after{content:"Copy for AI";position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.75);color:#fff;font-size:.72rem;white-space:nowrap;padding:3px 8px;border-radius:4px;pointer-events:none;opacity:0;transition:opacity .15s}.copy-for-ai-wrap:hover::after{opacity:1}#copy-for-ai{display:block;background:0;border:1px solid currentColor;border-radius:6px;padding:.3rem .5rem;cursor:pointer;opacity:.45;font-size:.9rem;line-height:1;transition:opacity .15s}#copy-for-ai:hover{opacity:.85}#copy-for-ai.copied{opacity:1;color:#2ca05a;border-color:#2ca05a}</style> <script>
+</code></pre></div></div> <p>A response (even an HTTP error body) means the proxy tunnel is alive. Claude Code and Codex will now be able to reach the internet.</p> <h2 id="faq">FAQ</h2> <table> <thead> <tr> <th>Question</th> <th>Answer</th> </tr> </thead> <tbody> <tr> <td><strong>Connection refused on port 7890</strong></td> <td>Check that your local proxy is running and the port matches. Also confirm <code class="language-plaintext highlighter-rouge">RemoteForward</code> is under the correct <code class="language-plaintext highlighter-rouge">Host</code> block.</td> </tr> <tr> <td><strong>Proxy variables set but tools still fail</strong></td> <td>Reload your shell config or open a new terminal — the variables only take effect in new shells.</td> </tr> <tr> <td><strong>Using a different port</strong></td> <td>Replace every <code class="language-plaintext highlighter-rouge">7890</code> with your actual proxy port in both the SSH config and the shell config.</td> </tr> </tbody> </table> </div> </article> </div> <style>.post-header-top{display:flex;align-items:flex-start;gap:.6rem}.post-header-top .post-title{flex:1}.copy-for-ai-wrap{flex-shrink:0;margin-top:.4rem;position:relative;display:inline-block}.copy-for-ai-wrap::after{content:"Copy for AI";position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.75);color:#fff;font-size:.72rem;white-space:nowrap;padding:3px 8px;border-radius:4px;pointer-events:none;opacity:0;transition:opacity .15s}.copy-for-ai-wrap:hover::after{opacity:1}#copy-for-ai{display:block;background:0;border:1px solid currentColor;border-radius:6px;padding:.3rem .5rem;cursor:pointer;opacity:.45;font-size:.9rem;line-height:1;transition:opacity .15s}#copy-for-ai:hover{opacity:.85}#copy-for-ai.copied{opacity:1;color:#2ca05a;border-color:#2ca05a}#copy-for-ai.copy-error{opacity:1;color:#b00020;border-color:#b00020}</style> <script>
   document.getElementById('copy-for-ai').addEventListener('click', function () {
     var btn = document.getElementById('copy-for-ai');
     var title = "Run Claude Code / Codex on a Remote Server via SSH Proxy";
     var slug = "2026-05-19-run-claude-codex";
     fetch("/JishuaiMIAO/assets/ai-posts/" + slug + '.md.txt')
-      .then(function (r) { return r.text(); })
+      .then(function (r) {
+        if (!r.ok) {
+          throw new Error('Unable to load AI copy source');
+        }
+        return r.text();
+      })
       .then(function (md) {
         return navigator.clipboard.writeText('# ' + title + '\n\n' + md.trim());
       })
@@ -44,6 +49,14 @@ Host chpc-cn??? chpc-cn???.rc.cuhk.edu.hk
         setTimeout(function () {
           btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
           btn.classList.remove('copied');
+        }, 1800);
+      })
+      .catch(function () {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+        btn.classList.add('copy-error');
+        setTimeout(function () {
+          btn.innerHTML = '<i class="fa-solid fa-robot"></i>';
+          btn.classList.remove('copy-error');
         }, 1800);
       });
   });
