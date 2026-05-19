@@ -8,7 +8,8 @@
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.95;
+  backdrop-filter: blur(8px);
+  font-family: "Inter Tight", "Helvetica Neue", sans-serif;
 }
 
 .navbar .dropdown-menu,

@@ -27,14 +27,13 @@ URL: https://aqlkzf.github.io/JishuaiMIAO/
 ## Local Development
 
 ```bash
-bundle install
-bundle exec jekyll serve
+bundle install                                        # first time only
+bundle exec jekyll serve --livereload --port 4001      # port 4000 is used by Docker
 ```
 
-Or with Docker:
-```bash
-docker compose up
-```
+Preview at: http://localhost:4001/JishuaiMIAO/
+
+Note: `vendor/bundle` is the local gem install path (set via `bundle config set --local path vendor/bundle`). Port 4000 is occupied by Docker, so use 4001.
 
 ## Adding Content
 

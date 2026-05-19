@@ -13,3 +13,8 @@ Gemfile.lock
 node_modules/
 vendor
 plans/
+.agents/
+.claude/
+CLAUDE.md
+AGENTS.md
+skills-lock.json

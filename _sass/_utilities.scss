@@ -127,7 +127,7 @@ html.transition,
 html.transition *,
 html.transition *:before,
 html.transition *:after {
-  transition: all 750ms !important;
+  transition: color 750ms, background-color 750ms, border-color 750ms, box-shadow 750ms !important;
   transition-delay: 0 !important;
 }
 
@@ -136,6 +136,25 @@ html.transition *:after {
 .code-display-wrapper {
   position: relative;
 
+  &[data-lang]::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0.25rem;
+    left: 0.6rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--global-text-color-light);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &[data-lang] pre {
+    padding-top: 1.6rem;
+  }
+
   .copy {
     background: var(--global-card-bg-color);
     border-color: var(--global-bg-color);
@@ -143,14 +162,15 @@ html.transition *:after {
     border-style: none;
     color: var(--global-text-color);
     font-size: medium;
-    opacity: 0;
+    opacity: 0.3;
     position: absolute;
     right: 0.2rem;
     top: 0.2rem;
+    transition: opacity 0.15s ease;
   }
 
   &:active .copy,
-  &:focus .copy,
+  .copy:focus-visible,
   &:hover .copy {
     color: var(--global-hover-color);
     opacity: 1;

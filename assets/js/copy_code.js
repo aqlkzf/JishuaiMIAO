@@ -47,6 +47,17 @@ codeBlocks.forEach(function (codeBlock) {
     var wrapper = document.createElement("div");
     wrapper.className = "code-display-wrapper";
 
+    // extract language from code element's class
+    var codeEl = codeBlock.querySelector("code");
+    if (codeEl) {
+      var langClass = Array.from(codeEl.classList).find(function (c) {
+        return c.startsWith("language-");
+      });
+      if (langClass) {
+        wrapper.setAttribute("data-lang", langClass.replace("language-", ""));
+      }
+    }
+
     // add copy button and code block to wrapper div
     const parent = codeBlock.parentElement;
     parent.insertBefore(wrapper, codeBlock);

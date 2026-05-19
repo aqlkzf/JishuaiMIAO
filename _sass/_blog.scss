@@ -10,7 +10,18 @@
 
   h1 {
     color: var(--global-theme-color);
+    font-family: "Inter Tight", "Helvetica Neue", sans-serif;
     font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    opacity: 0.7;
   }
 }
 
@@ -34,6 +45,11 @@
 }
 
 .post-title {
+  font-family: "Inter Tight", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
@@ -49,6 +65,14 @@
     list-style: none;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid transparent;
+    transition: border-left-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      border-left-color: var(--global-theme-color);
+      transform: translateX(0.25rem);
+    }
 
     .post-meta {
       color: var(--global-text-color-light);
@@ -85,7 +109,7 @@
       padding: 0.75rem 1.15rem;
 
       &:hover {
-        color: #000;
+        color: var(--global-text-color);
       }
     }
 
