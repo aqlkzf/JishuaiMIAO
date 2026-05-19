@@ -1,4 +1,4 @@
-HPC clusters typically block outbound internet traffic. The trick is to tunnel your local proxy (e.g. Clash) to the remote server over SSH using `RemoteForward`, so tools like Claude Code and Codex can phone home without any special firewall exceptions.
+HPC clusters can't reach `openai.com` or `claude.ai`, and without `sudo` we can't install a VPN on the cluster. The workaround: tunnel your **local** proxy (e.g. Clash) to the remote server over SSH with `RemoteForward`, so Claude Code and Codex can phone home with no firewall changes on either side.
 
 ## Prerequisites
 
@@ -41,13 +41,13 @@ Host chpc-cn??? chpc-cn???.rc.cuhk.edu.hk
     RemoteForward 7890 127.0.0.1:7890   # ← add this line
 ```
 
-> **Note:** `7890` must match your local proxy's mixed port. Verify in Clash → Settings → Mixed Port.
+> **Note:** `7890` must match your local proxy's mixed port. In Clash, check **Settings → Mixed Port**.
 
-`RemoteForward` makes port `7890` on the remote machine forward traffic back to `127.0.0.1:7890` on your laptop. Combined with `ProxyJump`, this works transparently even when you connect directly to a compute node (`chpc-gpu010`, `chpc-cn101`, etc.).
+`RemoteForward` makes port `7890` on the remote machine forward traffic back to `127.0.0.1:7890` on your laptop. Combined with `ProxyJump`, this works transparently even when you connect directly to a compute node (`chpc-gpu010`, `chpc-cn101`, etc.) — the forward is re-established along the jump chain, so the proxy is reachable on every hop.
 
 ## 2. Export Proxy Variables on the Remote Server
 
-Add these lines to your remote shell config (`~/.bashrc`, `~/.zshrc`, or `~/.config/fish/config.fish`):
+For **bash** or **zsh**, append to `~/.bashrc` / `~/.zshrc`:
 
 ```bash
 export HTTP_PROXY="http://127.0.0.1:7890"
@@ -55,7 +55,7 @@ export HTTPS_PROXY="http://127.0.0.1:7890"
 export ALL_PROXY="socks5://127.0.0.1:7890"
 ```
 
-Reload the config (`source ~/.bashrc`) or open a fresh terminal.
+Reload the config (`source ~/.bashrc`, etc.) or open a fresh terminal.
 
 ## 3. Verify
 
@@ -65,7 +65,7 @@ Reconnect to the server via VS Code Remote SSH, then run:
 curl -x http://127.0.0.1:7890 https://api.anthropic.com
 ```
 
-A response (even an HTTP error body) means the proxy tunnel is alive. Claude Code and Codex will now be able to reach the internet.
+Any response — even an HTTP error body — means the tunnel is alive. Claude Code and Codex can now reach the internet.
 
 ## FAQ
 
