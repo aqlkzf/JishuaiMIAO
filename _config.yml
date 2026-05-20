@@ -59,7 +59,7 @@ og_image:
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
 
-google_analytics:
+google_analytics: G-RLZBX3E5YZ
 cronitor_analytics:
 pirsch_analytics:
 openpanel_analytics:
@@ -322,7 +322,7 @@ lazy_loading_images: true
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics: false
+enable_google_analytics: true
 enable_cronitor_analytics: false
 enable_pirsch_analytics: false
 enable_openpanel_analytics: false
