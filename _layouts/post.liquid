@@ -29,21 +29,21 @@ layout: default
       {% assign last_date = page.last_modified_at | default: page.last_updated %}
       {% if last_date %}, last updated on {{ last_date | date: '%B %d, %Y' }}{% endif %}
       {% if page.meta %}• {{ page.meta }}{% endif %}
-      &nbsp;•&nbsp; <i class="fa-solid fa-eye fa-sm"></i> <span id="busuanzi_value_page_pv">0</span> views
+      &nbsp;•&nbsp; <i class="fa-solid fa-eye fa-sm" aria-hidden="true"></i> <span id="busuanzi_value_page_pv" style="font-variant-numeric: tabular-nums;">0</span> views
     </p>
     <p class="post-tags">
       {% if url_beginning == '/blog/' %}
-        <a href="{{ year | prepend: '/blog/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+        <a href="{{ year | prepend: '/blog/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm" aria-hidden="true"></i> {{ year }} </a>
       {% else %}
-        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
+        <i class="fa-solid fa-calendar fa-sm" aria-hidden="true"></i> {{ year }}
       {% endif %}
       {% if tags != '' %}
         &nbsp; &middot; &nbsp;
         {% for tag in page.tags %}
           {% if url_beginning == '/blog/' %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm" aria-hidden="true"></i> {{ tag }}</a>
           {% else %}
-            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
+            <i class="fa-solid fa-hashtag fa-sm" aria-hidden="true"></i> {{ tag }}
           {% endif %}
           {% unless forloop.last %}
             &nbsp;
@@ -55,9 +55,9 @@ layout: default
         &nbsp; &middot; &nbsp;
         {% for category in page.categories %}
           {% if url_beginning == '/blog/' %}
-            <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category -}}</a>
+            <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm" aria-hidden="true"></i> {{ category -}}</a>
           {% else %}
-            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
+            <i class="fa-solid fa-tag fa-sm" aria-hidden="true"></i> {{ category }}
           {% endif %}
           {% unless forloop.last %}
             &nbsp;
@@ -149,6 +149,7 @@ layout: default
     transition: opacity 0.15s;
   }
   #copy-for-ai:hover { opacity: 0.85; }
+  #copy-for-ai:focus-visible { opacity: 0.85; outline: 2px solid currentColor; outline-offset: 2px; }
   #copy-for-ai.copied { opacity: 1; color: #2ca05a; border-color: #2ca05a; }
   #copy-for-ai.copy-error { opacity: 1; color: #b00020; border-color: #b00020; }
 </style>
