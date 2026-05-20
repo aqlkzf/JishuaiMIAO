@@ -166,6 +166,7 @@ plugins:
   - jekyll-feed
   - jekyll-get-json
   - jekyll-imagemagick
+  - jekyll-last-modified-at
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-paginate-v2

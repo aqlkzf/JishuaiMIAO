@@ -146,6 +146,14 @@ pagination:
         {% if post.external_source %}
         &nbsp; &middot; &nbsp; {{ post.external_source }}
         {% endif %}
+        {% assign created_ymd = post.date | date: '%Y-%m-%d' %}
+        {% assign modified_ymd = post.last_modified_at | date: '%Y-%m-%d' %}
+        {% if post.last_modified_at and modified_ymd != created_ymd %}
+        <span class="post-updated" title="Last modified {{ post.last_modified_at | date: '%B %d, %Y' }}">
+          <i class="fa-solid fa-clock-rotate-left fa-xs" aria-hidden="true"></i>
+          updated {{ post.last_modified_at | date: '%b %-d, %Y' }}
+        </span>
+        {% endif %}
       </p>
       <p class="post-tags">
         <a href="{{ year | prepend: '/blog/' | relative_url }}">
