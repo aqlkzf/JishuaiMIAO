@@ -29,6 +29,7 @@ layout: default
       {% assign last_date = page.last_modified_at | default: page.last_updated %}
       {% if last_date %}, last updated on {{ last_date | date: '%B %d, %Y' }}{% endif %}
       {% if page.meta %}• {{ page.meta }}{% endif %}
+      &nbsp;•&nbsp; <i class="fa-solid fa-eye fa-sm"></i> <span id="busuanzi_value_page_pv">0</span> views
     </p>
     <p class="post-tags">
       {% if url_beginning == '/blog/' %}

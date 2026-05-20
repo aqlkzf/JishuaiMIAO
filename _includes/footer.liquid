@@ -9,6 +9,12 @@
   {% if site.last_updated %}
     Last updated: {{ 'now' | date: '%B %d, %Y' }}.
   {% endif %}
+  <br>
+  <span id="busuanzi_container_site_pv" style="font-size: 0.85rem;">
+    Total Views: <span id="busuanzi_value_site_pv"></span> &nbsp;|&nbsp;
+    Visitors: <span id="busuanzi_value_site_uv"></span>
+  </span>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 {% endcapture %}
 
 {% if site.footer_fixed %}
