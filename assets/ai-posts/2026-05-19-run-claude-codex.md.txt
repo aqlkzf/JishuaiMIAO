@@ -69,6 +69,28 @@ curl -x http://127.0.0.1:7890 https://api.openai.com
 
 Any response — even an HTTP error body — means the tunnel is alive. Claude Code and Codex can now reach the internet.
 
+## Alternative: Codex-Specific `.env` (If Shell Variables Fail)
+
+If Codex still can't reach the API after setting shell variables (e.g. when launched from an IDE plugin or non-interactive context), create `~/.codex/.env`:
+
+```bash
+tee ~/.codex/.env <<'EOF'
+http_proxy="http://127.0.0.1:7890"
+https_proxy="http://127.0.0.1:7890"
+all_proxy="socks5://127.0.0.1:7890"
+EOF
+chmod 600 ~/.codex/.env
+```
+
+This file is loaded automatically when Codex starts — independent of your shell environment.
+
+**Format rules:**
+- One variable per line, values in double quotes
+- Do **not** use `export`
+- Do **not** omit the quotes
+
+This approach is process-level rather than session-level, so it won't pollute other tools (`curl`, `apt`, etc.) in the same shell.
+
 ## FAQ
 
 | Question | Answer |
