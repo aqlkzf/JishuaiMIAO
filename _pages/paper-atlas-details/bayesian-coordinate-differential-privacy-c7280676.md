@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Bayesian Coordinate Differential Privacy（BCDP）方法详解
 
@@ -77,7 +77,7 @@ $$
 合成 Bernoulli 实验表明：当相关性 `q` 较小时，BCDP 均值估计的中位 MSE 明显低于 `min δ`-LDP；`q→1` 时二者汇合。官方代码能对应这一均值实验，但没有 OLS、测试或环境锁文件。方法还依赖设计者知道可靠的 `q` 上界；如何私有估计 `q`、如何应对错误设定、如何安全组合多个 BCDP 发布，论文均未解决。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Enhancing Feature-Specific Data Protection via Bayesian Coordinate Differential Privacy
 

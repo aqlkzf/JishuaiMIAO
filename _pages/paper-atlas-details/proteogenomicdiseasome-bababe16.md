@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 蛋白质组–疾病组图谱：从 pQTL 到疾病机制与生物标志物的证据三角化
 
@@ -105,7 +105,7 @@ Figure 6–7 把 pQTL 关联的蛋白集合与疾病 biomarker signatures 做富
 最稳妥的总结是：本研究不是用单一 MR 宣布“蛋白导致疾病”，而是系统展示哪些结论在 *cis* 遗传、*trans* 调控、共定位和实测 biomarker 之间收敛，哪些则明确冲突。它的价值正来自把冲突保留下来；主要复现边界则是公开脚本为示例性归档、私有中间数据缺失，以及 METAL 与精细定位阈值存在纸码差异。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Multi-Cohort Proteogenomic Diseasome
 

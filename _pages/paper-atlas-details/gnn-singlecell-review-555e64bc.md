@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 单细胞组学中的图神经网络：如何读这张方法地图
 
@@ -141,7 +141,7 @@ scATAC 标签转移可从 scRNA 参考建混合图（scGCN、HyGAnno），也可
 这是一篇叙述性综述，不是系统评价或统一 benchmark。主文未给出检索式、纳排流程、偏倚评估或 107 个方法的统一复现。当前工作区只有 PMC 主文、表格和 4 张主图；论文引用的 Supplementary Text S1–S15 与补充表正文在本地文件中 Not found。因而这里可以可靠总结作者的分类与讨论，但不能把“successful applications”改写为 107 个经独立验证的成功案例，也不提供任何代码证据。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## GNNs for Single-Cell Omics：综述摘要
 

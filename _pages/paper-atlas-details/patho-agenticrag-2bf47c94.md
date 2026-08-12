@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Patho-AgenticRAG 方法解读：让病理 VLM 学会决定何时查书、查什么、怎样用图文证据
 
@@ -133,7 +133,7 @@ router 产生的多个 rag queries 在 demo 中并发执行。VRAG 最多运行 
 Patho-AgenticRAG 的贡献不是把更多文本塞给病理 VLM，而是学习一条条件化工具路径：必要时把问题拆成候选诊断查询，在器官分区的图文教材页中先召回再用尖峰相似度重排，多轮汇总证据后交给 Patho-R1；核心推理 demo 与 fusion 代码可查，但强化学习训练和大规模知识库仍是明确的复现缺口。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## summary.md — Patho-AgenticRAG
 

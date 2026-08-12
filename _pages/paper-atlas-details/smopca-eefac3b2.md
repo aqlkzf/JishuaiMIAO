@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SMOPCA 方法解读：把空间邻近性写进多组学共同表示
 
@@ -105,7 +105,7 @@ $$Z_l^T\sim\mathrm{MVN}(0,\Sigma),\qquad \Sigma_{ij}=k_\gamma(s_i,s_j).$$
 - 代码快照：GitHub `cmhimself/SMOPCA`，提交 `9d59651d78149520661c57bab8a14d42446e6654`
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SMOPCA Summary
 

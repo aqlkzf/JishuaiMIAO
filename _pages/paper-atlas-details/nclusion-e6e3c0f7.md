@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## NCLUSION 中文方法解读
 
@@ -129,7 +129,7 @@ $$
 NCLUSION 的核心价值是把聚类解释性变成模型内部对象：细胞归属与稀疏基因效应在同一近似后验中更新。它减少了先降维、再选 $K$、再做 marker 检验的流程割裂，并在论文基准中展现出良好扩展性。正确使用时仍要保留四个边界：有限截断并非真正无限计算、结果依赖预处理与超参数、PIP/ESS 是模型证据而非因果证据，以及当前快照的后处理实现与论文公式需要数值级复核。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## NCLUSION: Scalable Nonparametric Clustering with Unified Marker Gene Selection for Single-Cell RNA-seq Data
 

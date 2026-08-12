@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 计算重建空间转录组阵列：从分子扩散到二维坐标
 
@@ -353,7 +353,7 @@ Slide-seq 在约 100 µm 的局部尺度上接近 10-µm 珠子尺寸，超过 1
 公开代码确实包含核心重建算法，参数也与 3-mm 实验相符；但默认条形码处理与论文描述不完全一致，路径配置不便移植，完整评估与下游分析没有统一封装。因此，它是一套有充分概念和实验支撑、核心代码可核查，但仍需要研究者进行工程整理和独立验证的方法。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Scalable Spatial Transcriptomics through Computational Array Reconstruction
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SOTMGF：把空间多组学拆成多个图，再用伪标签循环融合
 
@@ -123,7 +123,7 @@ SOTMGF 面向空间转录组、空间蛋白组以及推断得到的空间表观�
 仓库 `.repo_source` 记录提交 `a1fea6d7cfb51e1f27873ffd7dedf0ccbc20b31e`，提供模型文件、多个数据集脚本、基线和若干预计算数据。它足以核对论文机制并复跑部分作者环境，但不足以从原始公开数据一键生成全部七张图。对新数据应用时，必须先补齐细胞组成与分子关联视图、修复第四视图变量错误、消除硬编码 CUDA/路径，并明确域数量与各阶段超参数。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SOTMGF: Self-Supervised Multi-View Graph Fusion for Spatial Multi-Omics
 

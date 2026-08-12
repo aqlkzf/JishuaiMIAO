@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SpaIM：把 scRNA-seq 的“基因内容”翻译成 ST 平台的空间表达“风格”
 
@@ -163,7 +163,7 @@ $$
 SpaIM 的最小核心不是“MLP 替代图模型”，而是一个跨基因学习的翻译器：共同基因教会模型如何把 $K$ 维细胞类型 content 转成固定目标切片的 $N_{ST}$ 维空间表达；ST autoencoder 提供目标风格约束，generator 在共享 decoder 中完成迁移。这个视角同时解释了其优势——无需逐细胞对齐、能利用跨基因规律——以及边界——输出与目标切片维度绑定、依赖参考细胞类型质量、未测基因仍是推断而非观测。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SpaIM: Single-Cell Spatial Transcriptomics Imputation via Style Transfer
 

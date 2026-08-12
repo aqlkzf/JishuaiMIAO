@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## pertpy 方法解读：把单细胞扰动分析组织成可组合的 Python 工作流
 
@@ -242,7 +242,7 @@ pertpy 的强项是广度、互操作性与工程验证：它把多种扰动类�
 本文档根据本地 Nature Methods 论文 Markdown、主图 Fig. 1–4、Extended Data 图、补充材料，以及 `scverse/pertpy` commit `f47072b9a5721c8a2e8be2b3a980ef8cd5ec88b4` 的直接源码重新编写。重点代码包括 `preprocessing/_guide_rna*.py`、`tools/_mixscape.py`、`tools/_perturbation_space/`、`tools/_distances/`、`tools/_coda/`、`tools/_milo.py`、`tools/_dialogue.py`、`tools/_augur.py`、`tools/_cinemaot.py`、`tools/_differential_gene_expression/` 和 `metadata/`。本次合同修复没有下载并重跑全部大型数据、外部数据库、notebooks 或跨语言 benchmark，因此“论文报告的数值一致性”在这里属于论文证据，不声明为本地重新复现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Pertpy: An End-to-End Framework for Perturbation Analysis
 

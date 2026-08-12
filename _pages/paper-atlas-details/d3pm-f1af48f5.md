@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## D3PM 方法中文解读：离散状态空间中的结构化去噪扩散模型
 
@@ -183,7 +183,7 @@ LM1B 使用 8192 大小的 sentencepiece 词表和长度 128 的 packed sequence
 本 PaperCode 工作区是 **paper-only**：没有找到公开 D3PM 方法代码仓库，`code source=none`；`github_links.json` 中只有 JAX 和 Flax 的参考文献链接，不是论文实现仓库；也没有 supplementary markdown。因此，本文档只能基于论文和本地图片解释方法，不能验证代码实现与论文是否一致。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Summary: Structured Denoising Diffusion Models in Discrete State-Spaces (D3PM)
 

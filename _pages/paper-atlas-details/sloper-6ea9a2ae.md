@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SLOPER 方法解读：不先平滑表达量，而是直接学习“往哪里升高”
 
@@ -173,7 +173,7 @@ $$
 把每个基因的观测想成组织上的稀疏雨点。SLOPER 不先画一张平滑的雨量地图，而是直接学习每个位置“雨点密度往哪边增加”。边界距离让模型知道组织到哪里结束，importance weight 负责区分技术曝光量与生物强度。学到的箭头场再推动一群带噪声的粒子，最终把粒子落点数回 spot，形成更集中的增强表达。论文进一步用箭头之间的方向关系找基因模块、用箭头的共同几何方向恢复 isodepth；但这两条下游路线在当前核心代码快照中没有完整封装。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SLOPER: Score-based Learning Of Poisson-modeled Expression Rates
 

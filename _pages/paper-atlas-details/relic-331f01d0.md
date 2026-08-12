@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## ReLiC：把 CRISPR 扰动直接连接到 RNA 表型
 
@@ -111,7 +111,7 @@ ReLiC 的优势是灵活、规模大、RNA 表型直接，而且一个 sgRNA 对
 局限同样明确：它需要预先构建 landing-pad 细胞；单个 reporter 只能代表特定 RNA 上下文；敲除效应可能同时影响生长与多种通路；文库不是全基因组；完整复现需要 Apptainer、大量 SRA 数据、约 50 GB 空间和较强算力。代码中也没有找到一个统一函数，在所有实验中完整封装“FDR < 0.05 且三条 sgRNA 一致”的判定，因此最终命中规则需要结合论文和各分析脚本理解。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ReLiC
 

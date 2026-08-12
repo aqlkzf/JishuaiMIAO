@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TFvelo 方法解读：用转录因子驱动替代剪接相位差
 
@@ -152,7 +152,7 @@ $$
 至少应改变候选 TF 数据库、TF 数量上限、邻居数、权重边界、时间网格和多起点设置，检查速度方向是否稳定；分别报告全基因与筛选基因结果；用已知采样时间、谱系标记或 perturbation 数据做外部验证。若目标基因呈多峰动态、存在汇合/循环谱系，或 TF 蛋白活性与其 RNA 表达严重脱耦，线性 $WX$ 加单周期正弦假设尤其需要谨慎。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TFvelo: Gene Regulation Inspired RNA Velocity Estimation
 

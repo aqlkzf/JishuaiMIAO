@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## DeepSpatial：怎样把稀疏二维切片生成连续三维空间组学体积
 
@@ -163,7 +163,7 @@ is_fwd = torch.rand(total_cells, device=dev) > t_vals
 最后应把 DeepSpatial 理解为一个受配准、UOT 配对、线性密度先验和神经 ODE 共同约束的条件生成器。它提供了从 2D 切片构造连续 3D 假设组织的实用途径；生成细胞是模型推断，不是新增实验观测。复现时必须显式记录论文版本、代码提交、坐标预处理、细胞标签、`thickness`、UOT 参数、ODE 参数以及上述三处论文—代码差异。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## DeepSpatial Summary
 

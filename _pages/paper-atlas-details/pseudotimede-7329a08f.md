@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## PseudotimeDE 方法中文解释
 
@@ -137,7 +137,7 @@ $$p_{j}^{\text{param}} = 1 - \hat{F}_{j}(s_{j}), $$
 - **wrapper 参数转发有代码 caveat。** `runPseudotimeDE()` 暴露了 `k`, `knots`, `fix.weight`, `aicdiff`, `seed`, `quant`, `usebam` 等参数，但内部调用 `pseudotimeDE()` 时没有把这些参数转发进去（`PseudotimeDE/R/runPseudotimeDE.R:40-56`, `PseudotimeDE/R/runPseudotimeDE.R:74-81`, `PseudotimeDE/R/runPseudotimeDE.R:98-105`）。单基因 `pseudotimeDE()` 本身支持这些参数（`PseudotimeDE/R/PseudotimeDE.R:47-60`）。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## PseudotimeDE Summary
 

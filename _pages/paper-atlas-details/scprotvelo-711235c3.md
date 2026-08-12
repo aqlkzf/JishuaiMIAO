@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## scProtVelo：从单细胞 mRNA–蛋白动力学推断蛋白速度
 
@@ -124,7 +124,7 @@ $$
 scProtVelo 的关键不是把 RNA velocity 的标签换成“蛋白”，而是用共同潜在空间连接非同细胞的 RNA 与蛋白测量，以 mRNA 驱动蛋白的解析动力学和四状态概率混合解释翻译延迟，再把 $\kappa r-\delta p$ 投影为局部细胞转移方向；它提供了蛋白层面的动态视角，但结论强度受跨模态配对、轨迹分段、尺度变换和恒速率假设共同限制。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## scProtVelo: Single-cell Protein Velocity for Mapping Blood Cell Differentiation
 

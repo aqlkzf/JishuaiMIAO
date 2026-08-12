@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 高 MOI 多重扰动筛选方法中文解释
 
@@ -89,7 +89,7 @@ $$\hat{\beta}_{mg} \sim \alpha_g + \gamma_m + 0$$
 这篇论文不是建议“MOI 越高越好”。更准确的理解是：在细胞数受限时，可以用中等高 MOI 把多个 sgRNA 放进同一细胞，提高有效扰动覆盖度；但 MOI 太高会带来 off-target、toxicity、组合效应、gRNA collision 和解释困难（`paper.md:1238-1296`）。因此实际使用时需要先做 pilot test，确认细胞可感染、可 super-infect，并且没有明显毒性。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Multiplexed perturbation enables scalable pooled screens — Summary
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SMART 方法中文解读：空间邻域与远距离分子相似性的联合约束
 
@@ -166,7 +166,7 @@ GraphSAGE 图传播可以随稀疏边近似线性扩展，但单切片 `Mutual_N
 若要验证论文数值，最低限度应：固定 `SMART-reproduce` 的具体 commit 与数据版本；确认作者实际训练版本是否使用 `nn.ModuleList`；记录环境和随机种子；逐图运行对应 notebook；保存损失曲线、可训练参数清单、聚类设置、硬件与计时边界。修复参数注册后得到的是“合理实现”，但在作者确认前不能自动视为论文原始实现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SMART: Spatial Multi-Omic Aggregation using Graph Neural Networks and Metric Learning
 

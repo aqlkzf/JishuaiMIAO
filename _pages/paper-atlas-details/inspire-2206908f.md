@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## INSPIRE 方法中文解读
 
@@ -125,7 +125,7 @@ Fig. 1 说明 GNN、clamped adversarial integration 与 NMF 输出。Fig. 2 用�
 INSPIRE 的关键不是单独发明 GNN、对抗学习或 NMF，而是让三者互相约束：空间图保护局部组织结构，截断判别器只对齐可共享部分，NMF 解码把整合表示还原成可解释空间因子与基因程序。它适合多切片、多平台和大规模 ST，但结果仍依赖基因交集、空间图、因子数、切片顺序和选择的 GAT/LGCN 路径；完整生物结论需要核心模型之外的下游验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## INSPIRE: Summary
 

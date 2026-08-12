@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TTGDA 方法详解
 
@@ -99,7 +99,7 @@ TTSGDA 是随机版本：用 mini-batch 的无偏随机（次）梯度替换精�
 理论依赖 $\mathbf{y}$ 方向的凹性以及有界凸集 $\mathcal{Y}$，不覆盖一般非凸—非凹博弈，也没有证明复杂度最优。步长依赖多个未知问题常数和目标精度。论文未提供可确认的作者官方代码；已检查论文、JMLR/arXiv 页面、作者论文页及 GitHub 精确标题/arXiv ID 搜索，因此实验脚本、随机种子、预处理和最终调参配置均记为 `Not found`。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Paper Summary
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## APOLLO：把多模态细胞状态拆成共享信息与模态特异信息
 
@@ -148,7 +148,7 @@ APOLLO 规定潜空间和两阶段训练原则，但 encoder/decoder 可按模�
 APOLLO 通过为每个成对样本直接优化一个共享 latent 和各模态特异 latent，再固定这些表示训练新样本 encoder，把“多模态共同细胞状态”“单一模态额外信息”和“从一种模态可预测的另一种模态信息”显式分开；这种分解为解释和缺失模态预测提供了结构，但其生物含义仍受配对数据、潜空间维数、网络/损失选择与非线性可辨识性边界约束。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## APOLLO — Executive Summary
 

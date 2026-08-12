@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 用共形保证进行功能蛋白挖掘
 
@@ -104,7 +104,7 @@ FDR 随阈值不一定单调，因此论文使用离散的 Learn-then-Test：对
 官方代码固定在 `paper-biorxiv` 标签、提交 `53fd47375fa4682da0cfd505f0778c961cf56828`。核心 FDR/FNR、Venn-Abers、层级损失和实验 notebook 都能定位，论文—代码匹配度为 **medium**。但 UniProt、CLEAN、SCOPe、DALI、AFDB 和预训练模型属于大型外部依赖；仓库还包含绝对集群路径、不完整 CLI、未固定依赖及一个 `TabError`。因此可以审查算法并部分复跑，但不能从仓库一键完整重现全部图表。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Functional protein mining with conformal guarantees
 

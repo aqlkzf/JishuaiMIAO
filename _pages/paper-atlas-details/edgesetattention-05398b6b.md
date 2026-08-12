@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Edge-Set Attention（ESA）中文方法解读
 
@@ -139,7 +139,7 @@ PMA 与普通 mean/sum readout 的差别是：每个种子可学会寻找一种�
 先看论文图 4，再读本文第 2–5 节；然后对照 `esa/models.py:286-325` 看 token 构造，`esa/masked_layers.py:49-70` 看边邻接，`esa/masked_layers.py:301-338` 看 M/S 分流，最后看 `esa/mha.py:48-109` 与 `esa/masked_layers.py:645-678` 串起注意力、PMA 和输出。这样可以把“论文概念—公式—真实张量流”一次对应起来。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ESA: summary.md — Paper Summary
 

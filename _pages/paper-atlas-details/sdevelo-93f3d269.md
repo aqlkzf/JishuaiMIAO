@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SDEvelo：用多基因随机转录动力学估计 RNA velocity 与共享潜时间
 
@@ -202,7 +202,7 @@ SDEvelo 将 velocity 与 latent time 投影到空间位置，用于划分肿瘤/
 SDEvelo 的核心贡献，是把“每个基因各自拟合一条确定性曲线”改成“在共同时间轴上匹配所有基因的随机联合分布”。它最适合回答细胞群是否呈现一致的转录进程、成熟状态是否缺乏净方向，以及共享潜时间能否组织下游程序；它并没有消除快照数据的不可辨识性，也不能替代真实时间、克隆谱系或扰动实验。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SDEvelo — Multivariate Stochastic RNA Velocity
 

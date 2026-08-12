@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 用 E-value 扩展共形预测：方法详解
 
@@ -166,7 +166,7 @@ CIFAR-10H 实验保留 857 张歧义图像，比较 $m=1$ 与 $m=20$，重复 20
 官方仓库固定在 commit `a8b7c35d2e252d2f6501f461978c34f7cf200da3`。三条实验流水线都能在对应 notebook 中找到，核心公式与数据划分匹配度高；但它是实验 notebook 集合，不是可安装的方法库。FEMNIST 与 CIFAR-10H 需要 notebook/人工准备，依赖版本未锁定，没有测试和一键运行入口。本次分析检查了代码、预训练权重、保存结果和图像，但没有重新执行训练及 100/200 次完整实验。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## E-Values Expand the Scope of Conformal Prediction
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SLAT：把“分子相似”与“空间邻域相似”一起用于切片对齐
 
@@ -141,7 +141,7 @@ $$
 本地代码快照可追踪核心模型、训练和匹配函数，包版本标为 0.3.0；论文明确报告 benchmark 使用 0.2.0。工作区没有保存独立仓库提交哈希，也未下载论文数据并重跑训练，因此目前可确认“机制与实现路径”，不能确认数值结果逐项复现。论文正文、4 张主图、原始 PDF 与 3 份补充 PDF 已本地化，可继续做实验级复现，但需额外获取数据、固定环境与记录随机种子。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SLAT: Spatial Linked Alignment Tool - Paper Summary
 

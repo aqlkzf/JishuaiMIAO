@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## FlashSinkhorn：把 Sinkhorn 写成流式注意力
 
@@ -91,7 +91,7 @@ $$\nabla_X\mathrm{OT}_\varepsilon=2\operatorname{diag}(a)\big(X-T_\varepsilon(X)
 图 1--2 直接画出了行块驻留、键块流入及在线累积；图 3--8 展示论文报告的速度/内存、OTDD 和鞍点逃逸趋势，均已在本地逐图阅读。源码快照与论文核心平方欧氏路径的匹配度为高，但没有运行 CUDA/A100 基准，因而不能把论文数值当作本工作区的复现结果。`SamplesLoss` 明确要求 CUDA tensor（`samples_loss.py:533-544`）。补充 Markdown 在此次 arXiv HTML 获取中为 **Not found**。此外，融合推导只覆盖可写成“逐点项 + 点积”的代价；原始非平方欧氏距离和任意神经网络代价不在论文的声明范围内（`paper.md:160-163`）。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## FlashSinkhorn
 

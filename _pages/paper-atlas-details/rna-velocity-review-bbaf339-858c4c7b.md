@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## RNA velocity 综述方法解读
 
@@ -213,7 +213,7 @@ RNA velocity 被用于小鼠胚胎、人类前脑、斑马鱼神经系统、人�
 这篇综述把 RNA velocity 理解为“从 unspliced/spliced RNA 计数推断细胞转录动态向量场”的问题，并用三类范式组织现有方法：稳态方法简单可解释但假设强，轨迹方法更灵活但优化复杂，状态外推方法能捕捉局部异质动力学但依赖邻域选择。研究者应把 velocity 结果当作模型假设驱动的动态证据，并结合数据质量、模型假设、可视化检查和生物学验证来解释。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Summary
 

@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## CellTRIP 中文方法解读：把单细胞快照训练成可交互的虚拟环境
 
@@ -143,7 +143,7 @@ CellTRIP 用 PPO 更新 actor-critic，并以 GAE 计算优势。大规模环境
 CellTRIP 的核心不是把快照直接拟合成一条伪时间曲线，而是训练一个“可保留观测信息的细胞群动力环境”。残差自注意力负责让每个细胞根据群体上下文行动，pinning MLP 把潜在位置锚定回可测模态，PPO 学习如何让群体稳定到有信息的布局。空间插补、时间补点和扰动预测都建立在同一个可运行环境之上；也正因为如此，其模拟轨迹应被视为可检验的模型假设，而非已被直接观测的生物事实。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CellTRIP: Inferring Virtual Cell Environments Using Multi-Agent Reinforcement Learning
 

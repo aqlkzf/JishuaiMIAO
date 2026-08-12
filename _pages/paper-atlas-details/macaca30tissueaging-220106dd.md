@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 30 种组织的雌性恒河猴衰老多组学图谱：方法解析
 
@@ -117,7 +117,7 @@ $\alpha$ 是翻译效率，$\gamma$ 是蛋白降解率。TED 只能观察两者�
 公开仓库中的 R Markdown 与 R 函数能够对应论文的核心回归、轨迹聚类和 TED 分析，代码—论文一致性为中等。问题是仓库依赖未随代码打包的 `./data` 处理对象，也没有锁定软件环境、自动化工作流或测试，因此不能直接一键复现。研究本身还受样本量小、仅包含雌性、年龄组不均衡、横断面设计和 bulk 组织细胞组成变化等限制。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## A multi-omics molecular landscape of 30 tissues in aging female rhesus macaques
 

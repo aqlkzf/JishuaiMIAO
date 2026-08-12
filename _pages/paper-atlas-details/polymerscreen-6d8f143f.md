@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## PolymerScreen 方法详解
 
@@ -84,7 +84,7 @@ $$
 Zenodo 中的两个 Python 脚本验证了 LFQ 重复平均、按蛋白最大值归一化和细胞器基因匹配等核心步骤。但代码是交互式脚本，依赖 Excel、人工校订和硬编码路径，没有测试、环境文件或完整命令行流程；公开 Streamlit 前端源码也未在 Zenodo 文件列表中找到，论文链接的 GitHub 仓库无法匿名克隆。此外，当前数据库主要来自 HEK 细胞，换细胞类型、膜脂组成、pH 或新聚合物后需要重新测量。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## PolymerScreen summary
 

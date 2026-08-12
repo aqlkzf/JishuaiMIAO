@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## MISO 方法详解：把微量蛋白纯化直接接到冷冻电镜制样
 
@@ -239,7 +239,7 @@ MISO 的关键不是“柱子更小”这一件事，而是保持微升级峰从
 MISO 通过“微型层析 + 在线荧光定位 + 毛细管直连网格 + 自动 blot/plunge”，把约 1 μl 的蛋白洗脱峰直接变成多张冷冻电镜网格，并在多个约 1–2 μg 输入的示例中得到 2.2–3.5 Å 结构；论文充分证明了平台的可行性，但完整复现仍依赖定制硬件和当前仓库中不可读或缺失的 LabVIEW 主控逻辑。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## MISO: Microfluidic Protein Isolation for Cryo-EM
 

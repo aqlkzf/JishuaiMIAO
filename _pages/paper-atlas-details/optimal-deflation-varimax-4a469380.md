@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 最优 Deflation Varimax 方法解读：先用 PCA 找子空间，再逐方向找可解释因子
 
@@ -264,7 +264,7 @@ PCA-dVarimax 与经典 varimax 在部分模拟条件下接近，且明显优于�
 这篇论文最重要的思想是把“PCA 找子空间”和“高阶统计选择坐标轴”明确分开：PCA 保留主要二阶结构，deflation varimax 利用独立 leptokurtic 因子的四阶结构确定可解释方向。它提供的是特定模型条件下可证明的旋转与载荷恢复，而不是无需检查假设的通用解释器。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Optimal Vintage Factor Analysis with Deflation Varimax
 

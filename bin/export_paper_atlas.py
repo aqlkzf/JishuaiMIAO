@@ -370,6 +370,22 @@ def esc(value: Any) -> str:
     return html.escape(str(value), quote=True)
 
 
+def esc_method(value: Any) -> str:
+    """Escape a method name and allow wrapping after underscores and hyphens.
+
+    Method names are code identifiers such as
+    ``Adaptive_Coverage_Policies_Conformal_Prediction``. Without an explicit
+    break opportunity the browser either overflows the card or breaks mid-word.
+    ``<wbr>`` is used rather than a zero-width space because it contributes
+    nothing to ``textContent``, which the client-side search indexes.
+
+    Chromium computes the accessible name across the ``<wbr>`` boundaries as
+    "Adaptive_ Coverage_ ...", so callers pair this with an ``aria-label``
+    carrying the unbroken name.
+    """
+    return re.sub(r"([_-])", r"\1<wbr>", esc(value))
+
+
 def validate_public_output(content: str) -> None:
     for token in FORBIDDEN_OUTPUT:
         if token.casefold() in content.casefold():
@@ -412,16 +428,16 @@ sitemap: false
 {doi_line}  </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 {paper.detail_zh}
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 {paper.detail_en}
 
@@ -458,25 +474,36 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
     used_categories = [item for item in categories if item.id in used_ids]
     years = sorted({paper.year for paper in papers if paper.year}, reverse=True)
     code_count = sum(paper.has_code for paper in papers)
-    category_options = "\n".join(
-        f'          <option value="{esc(item.id)}">{"— " if "/" in item.path else ""}{esc(item.title)}</option>'
-        for item in used_categories
-    )
     year_options = "\n".join(f'          <option value="{year}">{year}</option>' for year in years)
-    top_topics = []
+    # The taxonomy is the navigation, so topics are toggles rather than a <select>
+    # duplicating the same filter. Sub-topics stay hidden until their parent is
+    # active, which keeps the default row scannable.
+    parents: list[tuple[Category, int]] = []
+    children: list[tuple[Category, int]] = []
     for category in categories:
-        if "/" in category.path:
-            continue
         count = sum(
             paper.category_id == category.id or paper.category_id.startswith(category.id + "/") for paper in papers
         )
-        if count:
-            top_topics.append((category, count))
-    top_topics.sort(key=lambda item: (-item[1], item[0].order))
+        if not count:
+            continue
+        (children if "/" in category.path else parents).append((category, count))
+    parents.sort(key=lambda item: (-item[1], item[0].order))
+    children.sort(key=lambda item: (item[0].id.split("/")[0], -item[1], item[0].order))
+
+    def topic_button(category: Category, count: int, child: bool) -> str:
+        # Dashes in taxonomy titles are normalized for display only.
+        label = esc(category.title).replace("—", "-").replace("–", "-")
+        parent_attr = f' data-atlas-parent="{esc(category.id.split("/")[0])}" hidden' if child else ""
+        prefix = "↳ " if child else ""
+        return (
+            f'      <button type="button" data-atlas-topic="{esc(category.id)}"'
+            f'{parent_attr} aria-pressed="false">'
+            f"<span>{prefix}{label}</span><strong>{count}</strong></button>"
+        )
+
     topic_buttons = "\n".join(
-        f'      <button type="button" data-atlas-topic="{esc(category.id)}" aria-pressed="false">'
-        f"<span>{esc(category.title)}</span><strong>{count}</strong></button>"
-        for category, count in top_topics[:8]
+        [topic_button(category, count, False) for category, count in parents]
+        + [topic_button(category, count, True) for category, count in children]
     )
     cards: list[str] = []
     for paper in papers:
@@ -494,8 +521,12 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
             )
         else:
             paper_link = '<span class="atlas-doi atlas-doi--muted">DOI unavailable</span>'
+        # Every card carries the same visible link text, so the accessible name
+        # names the paper: a screen reader listing links would otherwise hear
+        # "完整解读" once per paper with nothing to tell them apart.
         detail_link = (
-            f'<a class="atlas-details-link" href="{{{{ \'/paper-atlas/{paper.detail_slug}/\' | relative_url }}}}">'
+            f'<a class="atlas-details-link" href="{{{{ \'/paper-atlas/{paper.detail_slug}/\' | relative_url }}}}"'
+            f' aria-label="完整解读：{esc(paper.method)}">'
             '完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>'
         )
         cards.append(
@@ -503,7 +534,7 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
         <div class="atlas-card__chips">
           <span class="atlas-chip">{esc(paper.category_title)}</span>{code_badge}
         </div>
-        <h2>{esc(paper.method)}</h2>
+        <h2 aria-label="{esc(paper.method)}">{esc_method(paper.method)}</h2>
         <p class="atlas-card__title">{esc(paper.title)}</p>
         <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
           <p class="atlas-card__summary-label">中文方法解读</p>
@@ -519,6 +550,7 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
         </footer>
       </article>'''
         )
+    plural = "" if len(papers) == 1 else "s"
     page = f'''---
 layout: default
 permalink: /paper-atlas/
@@ -533,41 +565,31 @@ sitemap: false
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-atlas" id="paper-atlas" data-page-size="36">
   <header class="atlas-hero">
-    <div class="atlas-hero__copy">
-      <p class="atlas-kicker">Literature notes · computational biology</p>
-      <h1>Paper Atlas</h1>
-      <p class="atlas-lead">A searchable map of computational biology methods and papers, with concise Chinese notes for quick recall.</p>
+    <div class="atlas-hero__top">
+      <div>
+        <p class="atlas-kicker">Literature notes · computational biology</p>
+        <h1>Paper Atlas</h1>
+      </div>
+      <div class="atlas-stats">
+        <span class="atlas-stat"><strong>{len(papers)}</strong><span>papers</span></span>
+        <span class="atlas-stat"><strong>{len(used_categories)}</strong><span>topics</span></span>
+        <button class="atlas-stat" type="button" id="atlas-code-shortcut"><strong>{code_count}</strong><span>with code</span></button>
+      </div>
     </div>
-    <div class="atlas-stats" aria-label="Atlas statistics">
-      <div><strong>{len(papers)}</strong><span>papers</span></div>
-      <div><strong>{len(used_categories)}</strong><span>topics</span></div>
-      <div><strong>{code_count}</strong><span>with code</span></div>
-    </div>
+    <p class="atlas-lead">Every paper I have read closely, with a short note on what the method actually does. Search by method, title, journal or note text.</p>
   </header>
 
-  <section class="atlas-topics" aria-labelledby="atlas-topics-title">
-    <div class="atlas-topics__heading">
-      <p id="atlas-topics-title">Explore topics</p>
-      <span>Jump into the largest collections</span>
-    </div>
-    <div class="atlas-topic-list">
-      <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>{len(papers)}</strong></button>
+  <div class="atlas-topic-list" id="atlas-topics" role="group" aria-label="Filter by topic">
+    <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>{len(papers)}</strong></button>
 {topic_buttons}
-    </div>
-  </section>
+  </div>
 
   <form class="atlas-controls" id="atlas-controls" role="search">
     <label class="atlas-search">
       <span class="sr-only">Search papers</span>
       <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-      <input id="atlas-query" type="search" placeholder="Search method, title, journal or summary…" autocomplete="off">
-    </label>
-    <label>
-      <span class="sr-only">Filter by topic</span>
-      <select id="atlas-category">
-        <option value="">All topics</option>
-{category_options}
-      </select>
+      <input id="atlas-query" type="search" placeholder="Search method, title, journal or note…" autocomplete="off">
+      <kbd aria-hidden="true">/</kbd>
     </label>
     <label>
       <span class="sr-only">Filter by year</span>
@@ -584,35 +606,34 @@ sitemap: false
         <option value="no">No public code found</option>
       </select>
     </label>
+    <label>
+      <span class="sr-only">Note language</span>
+      <select id="atlas-view">
+        <option value="zh">中文解读</option>
+        <option value="en">English summary</option>
+      </select>
+    </label>
+    <label>
+      <span class="sr-only">Sort order</span>
+      <select id="atlas-sort">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="name">Method A–Z</option>
+      </select>
+    </label>
     <button id="atlas-reset" type="reset">Reset</button>
   </form>
 
   <div class="atlas-results-bar">
-    <p id="atlas-count" aria-live="polite">Showing {min(36, len(papers))} of {len(papers)} papers</p>
-    <div class="atlas-results-actions">
-      <label class="atlas-view">
-        <span>Notes</span>
-        <select id="atlas-view">
-          <option value="zh">中文解读</option>
-          <option value="en">English summary</option>
-        </select>
-      </label>
-      <label class="atlas-sort">
-        <span>Sort</span>
-        <select id="atlas-sort">
-          <option value="newest">Newest first</option>
-          <option value="oldest">Oldest first</option>
-          <option value="name">Method A–Z</option>
-        </select>
-      </label>
-    </div>
+    <p id="atlas-count" aria-live="polite">Showing <strong>{min(36, len(papers))}</strong> of <strong>{len(papers)}</strong> paper{plural}</p>
+    <p id="atlas-active-filters"></p>
   </div>
 
   <div class="atlas-grid" id="atlas-grid">
 {os.linesep.join(cards)}
+    <p class="atlas-empty" id="atlas-empty" hidden><strong>No papers match these filters.</strong>Clear the search box or reset the filters to see the full index.</p>
   </div>
 
-  <p class="atlas-empty" id="atlas-empty" hidden>No papers match these filters.</p>
   <div class="atlas-more-wrap">
     <button class="atlas-more" id="atlas-more" type="button">Show more</button>
   </div>

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## ESMFold：语言模型怎样从单条蛋白序列生成三维结构
 
@@ -144,7 +144,7 @@ pLDDT 偏向局部结构可靠性，pTM 更关注整体域排列。高置信度�
 ESMFold 用大规模蛋白语言模型把跨序列进化规律压缩进单序列表示，再通过序列/pair 交替更新、三角几何约束、结构模块和 recycling 生成原子坐标。它的突破是去掉每个目标的 MSA 搜索并获得高吞吐，而不是消除进化先验、计算成本或结构预测的不确定性。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ESMFold: Evolutionary-Scale Prediction of Atomic-Level Protein Structure with a Language Model
 

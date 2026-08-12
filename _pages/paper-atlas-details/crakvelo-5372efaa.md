@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## CRAK-Velo 方法中文解读
 
@@ -552,7 +552,7 @@ CRAK-Velo 的核心模型代码更紧凑，主要 fitting path 能在 `main.py`�
 因此，不应该把 CRAK-Velo 理解成“简化版 MultiVelo 三 ODE”。更准确的理解是：CRAK-Velo 接受 MultiVelo 的核心生物动机，即 chromatin accessibility 能改进 RNA velocity，但它选择了另一条工程路径：不显式拟合 chromatin opening/closing ODE，而是在 UniTVelo/RBF RNA 曲线外加一个由 nearby regions 加权得到的 transcription-rate/derivative 约束。这样牺牲了 MultiVelo 的 M1/M2 和 priming/decoupling 状态解释，但换来了更直接的 region-gene weight 解释和更轻量的 chromatin integration 形式。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CRAK-Velo Summary
 

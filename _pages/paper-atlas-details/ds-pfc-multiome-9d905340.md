@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## DS 早期出生后前额叶皮层多组学图谱解读
 
@@ -63,7 +63,7 @@ astrocytes 中 AP-1/FOS-JUN 程序驱动反应性状态，Ts21 reactive astrocyt
 `RNA_preprocessing.zip` 实现 SoupX、Scrublet、QC、批次校正和注释；`RNA_downstream.zip` 包含 NEBULA、hdWGCNA、scCODA；`ATAC_preprocessing.zip` 含 Signac；`Motif_analysis.zip` 含 JASPAR motif enrichment/footprinting。核心预处理为 Exact/Partial，但 Palantir、完整 cell interaction、所有图表及验证统计并未形成完整可运行包。复现需要受控人脑数据、解压后重建路径和环境，并保留 `Not found` 项，不能把脚本归档等同于端到端复现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## DS_PFC_multiome: Summary
 

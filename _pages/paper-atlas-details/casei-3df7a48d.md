@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Casei：用双线性边分类解码条件特异的空间细胞互作
 
@@ -147,7 +147,7 @@ $$
 Casei 最适合回答“哪些空间邻接边的联合表达模式与条件相关”，其优势来自边级监督和可直接检查的双线性权重。置信度依赖样本规模、类别平衡和训练设置，应优先看条件内排名及阈值敏感性；论文也用 3%–7% 保留比例验证部分邻域富集结果的稳定性。细胞分割错误可能把相邻细胞的转录本错误分配，从而人为放大跨细胞协调表达。最后，空间共现可以来自共同微环境或组织结构约束，不能自动解释为直接信号传递。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Casei Summary
 

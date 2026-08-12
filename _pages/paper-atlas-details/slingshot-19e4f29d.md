@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Slingshot 方法解读：先找谱系骨架，再沿平滑分支排伪时间
 
@@ -142,7 +142,7 @@ CodeGraph 对这批 R 源码没有返回可用符号路径，本次映射因此�
 Slingshot 适合“低维流形大体可信、聚类能表达全局状态、变化沿平滑树状轨迹发生”的问题。实际分析应至少检查：不同降维和簇数下 MST 是否稳定；起始簇是否有实验或标记基因依据；终末监督是否改变关键连接；分叉前不同曲线的伪时间是否一致；以及数据是否存在环、汇合、跳变或彼此独立的多个过程。若这些假设不成立，一条漂亮的曲线仍可能只是几何插值，而不是可信的发育历史。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Slingshot: Summary
 

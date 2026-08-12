@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## CellWhisperer：用自然语言探索单细胞转录组
 
@@ -69,7 +69,7 @@ Fig. 1 展示从描述生成、共同嵌入到检索/聊天的全链条；Fig. 4
 本地仓库直接包含双编码器、对称对比损失和检索服务；`utils/inference.py:20-161` 可以把文本向量与 RNA 向量做缩放点积并可选归一化。聊天的 Snakemake 工作流也保留了“先 projector、后微调”的顺序，但它调用的 `modules/LLaVA/llava/train/train_mem.py` 在本快照中**未找到**，因此不能从本地代码确认 LLaVA 内部 token 拼接和 loss mask。补充材料 Markdown 同样不可用，提示词等细节应保留为未验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CellWhisperer
 

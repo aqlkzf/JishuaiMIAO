@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## MGW 中文方法解读：用可学习的黎曼几何对齐空间多组学
 
@@ -163,7 +163,7 @@ ccRCC 实验对齐 Visium 与 AFADESI-MSI，并把对齐结果送入与 SpatialM
 先看图 1理解输入—学习几何—输出耦合，再看图 2和算法 1串起四个步骤。随后读附录 C.3–C.6核对架构、测地线、GW 和 CCA。代码层按 `mgw/mgw.py` → `mgw/models.py` → `mgw/geometry.py` → `mgw/gw.py` → `mgw/util.py` 的顺序阅读。最后用图 3–6区分同模态时序、不同技术转录组以及真正的转录组—代谢组任务，避免把所有基准混成同一种验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## MGW: Manifold Gromov-Wasserstein
 

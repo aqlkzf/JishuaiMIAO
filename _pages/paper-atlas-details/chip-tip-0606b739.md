@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Chip-Tip 方法详解：把单细胞样本损失压到最低的深度蛋白质组工作流
 
@@ -291,7 +291,7 @@ hi12 细胞在 LN-521 上培养，用 TrypLE Express 解离，在含 10 µM Y-27
 Chip-Tip 的方法学价值不只是“换了一个更灵敏的质谱”。它展示了单细胞技术里一个普遍原则：当输入逼近检测极限时，样本处理接口本身就是算法的一部分。反应体积、蒸发控制、材料表面、转移次数、色谱速度、DIA 窗口和搜索上下文必须作为一个系统联合优化；同时，越依赖跨运行匹配提高深度，就越需要 blank、跨软件一致性和 entrapment 这样的独立误差检查。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Chip-Tip
 

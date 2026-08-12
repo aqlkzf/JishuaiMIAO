@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Chromatin Velocity / scGET-seq 方法中文解读
 
@@ -132,7 +132,7 @@ TF 动态程序和生物学解释
 论文 Code availability 指向 `https://github.com/leomorelli/scGET` 和 `https://github.com/dawe/scatACC`，并说明 postprocessing snippets 在 Supplementary Data 2 中（`paper.md:493-496`）。本工作区已克隆两个 repo。代码对 **scGET 预处理** 支持较好，但在克隆 repo 中没有找到完整的 Chromatin Velocity/scvelo 后处理脚本。因此，本论文的复现性可概括为：预处理可复现性中等偏高；最终 Figure 6 的 velocity 动态模型和图形复现需要额外 supplementary snippets 与数据。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Chromatin Velocity reveals epigenetic dynamics by single-cell profiling of heterochromatin and euchromatin
 

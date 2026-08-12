@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## RT&T-AMP-MERFISH：全转录组、异构体分辨的空间成像
 
@@ -79,7 +79,7 @@ $H_{norm}=0$ 表示一个异构体几乎独占，$H_{norm}=1$ 表示使用均匀
 论文描述了 Dark Sectioning + Cellpose-SAM 3D 分割、SimpleElastix CCF 配准、Hotspot、Scanpy、ALLCools、LR 和异构体下游分析（`paper.md:249-309`）。本工作区提供的 MERlin 快照只验证了通用 codebook/像素解码路径；论文专用图像、codebook、参数 JSON、CCF/Cellpose-SAM 与下游脚本均为 **MISSING** 或 **Not found**。因此它适合学习通用 MERFISH 解码，而不能在此处端到端复现论文。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## RT&T-AMP-MERFISH
 

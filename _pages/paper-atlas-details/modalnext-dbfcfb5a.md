@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Modal-NexT：用统一“细胞—特征图”处理四类异质数据整合
 
@@ -130,7 +130,7 @@ Figure 6 展示 104 个癌症 scRNA 数据集的 multi-source integration：整�
 一句话总结：Modal-NexT 真正统一的是“怎样把异质矩阵变成实体关系图”；OT-NMF 给节点一个结构化起点，PBG 用边重建更新 embedding，不同场景只改变 cell/feature 实体如何合并和增加哪些边。论文的 GAT 与 DEC 方程比当前公开快照更完整，理解方法时可以读，复现时必须以 PBG 和教程实际路径为准。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Modal-NexT: Towards Unified Heterogeneous Cellular Data Integration
 

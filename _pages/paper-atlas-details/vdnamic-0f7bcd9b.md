@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 体积 DNA 显微镜：从分子邻接网络到完整胚胎三维转录组图像
 
@@ -320,7 +320,7 @@ UMI 的 UEI count 中位数为 5–6；结合约 1 μm 的短扩散尺度，论�
 体积 DNA 显微镜先用短程 RCA 边和长程 IVT 边把组织内部的空间关系写成一张千万节点 DNA 邻接图，再用 hierarchical GSE 从局部子图解出候选坐标、插值到全图、构造测地谱基底，最后在该基底中优化 UEI 似然，从而得到带有基因序列标签的三维分子图像。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Spatial transcriptomic imaging of an intact organism using volumetric DNA microscopy
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Proseg 方法解读：把细胞模拟转化为概率分割
 
@@ -174,7 +174,7 @@ Proseg 在四数据集中通常有最低可疑共表达，同时比图像分割�
 Proseg 的核心洞见是：细胞边界不只由像素决定，也应由边界内 RNA 是否能被合理的生成模型解释来决定。CPM 提供形态与采样骨架，Gamma–Poisson 模型提供表达证据，连通与周长约束防止“为了纯度作弊”。它比简单核扩张更灵活，但仍是带假设的概率推断，而不是直接观察到的细胞膜。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Proseg: Transcript-Driven Probabilistic Segmentation for Spatial Transcriptomics
 

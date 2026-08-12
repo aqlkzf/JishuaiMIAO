@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Deep-STARmap 与 Deep-RIBOmap：厚组织三维单细胞转录组与转译组方法详解
 
@@ -211,7 +211,7 @@ workflow/Snakefile
 Deep-STARmap 与 Deep-RIBOmap 的真正创新，是用“通用低成本锚定 + RCA 扩增团二次水凝胶加固 + 六轮 SEDAL 解码”把靶向式三维原位转录/转译测量扩展到厚组织和数十万细胞；论文与源码足以支持平台原理和核心图像处理链，但完整复现仍需要研究专用配置、原始图像与下游分析脚本。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Scalable spatial single-cell transcriptomics and translatomics in 3D thick tissue blocks
 

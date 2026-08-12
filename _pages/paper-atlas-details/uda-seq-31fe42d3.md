@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## UDA-seq 方法详解
 
@@ -199,7 +199,7 @@ SCIPAC 将连续年龄、供体伪 bulk 表达和单细胞表达联合建模。�
 UDA-seq 的创新点是把液滴系统从“单细胞隔离器”改造成“第一轮组合索引器”。它牺牲第一轮条形码的唯一性，再用第二轮孔索引恢复单细胞分辨率。这样做把通量提升与成熟多模态化学体系连接起来，特别适合大队列、微量临床样本和 pooled perturbation screening；但成功落地仍依赖细胞完整性、第二轮 FASTQ 拆分、样本 multiplexing、受控数据访问和大量未打包的计算中间文件。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## UDA-seq Summary
 

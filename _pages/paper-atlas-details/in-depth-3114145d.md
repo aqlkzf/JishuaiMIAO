@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## IN-DEPTH 中文方法解读：从同片蛋白—RNA测量到空间协同分析
 
@@ -117,7 +117,7 @@ $$
 先看论文图 1 理解实验顺序，再看图 2 理解蛋白信息如何指导 RNA 分析；随后结合补充材料“SGCC Methods”和图 3掌握图频域逻辑。图 4–5 展示多细胞尺度的 DLBCL 应用，图 6–7展示单细胞验证与候选信号轴。代码层先读 `tutorial/sgcc_tutorial.md`，再读 tonsil/DLBCL 的 SIFT 配准脚本和 `src/06_figure_6_scSGCC/` 下的单细胞脚本，即可把论文方法、图和实际调用路径连起来。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## IN-DEPTH: Same-Slide Spatial Multi-Omics Integration
 

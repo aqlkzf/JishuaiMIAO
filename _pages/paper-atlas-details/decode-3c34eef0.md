@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## DECODE 中文方法解读
 
@@ -139,7 +139,7 @@ Contrastive 部分把同一采样位置的 clean 与 purified feature 作为正�
 DECODE 的核心不是“一套网络天然理解所有 omics”，而是把不同模态都压成共同的 feature vector 学习问题：伪组织提供监督，目标组织提供无监督域信息，人工杂质提供鲁棒性训练。它在论文数据上展示了很广的适用范围，但实际使用者必须重新准备同维特征、针对目标队列做 Stage 2 适配、判断是否启用 denoiser，并注意论文公式与代码损失/层结构的差异。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## DECODE: Deep Learning-based Common Deconvolution Framework for Various Omics Data
 

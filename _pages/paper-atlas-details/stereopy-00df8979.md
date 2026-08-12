@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Stereopy：从多样本容器到比较、时间与三维生态位分析
 
@@ -152,7 +152,7 @@ Fig. 5 在 59 张胚胎心脏切片上研究 VCM 等细胞的三维 niche；通�
 用 CCD 前先验证 cell type 注释与窗口尺度；用 TGPI 时明确时间顺序、统计检验和空间权重；用 NicheReg3D 时先量化切片配准误差，并把 L–R/GRN 路径当作候选机制。Stereopy 的强项是把这些分析放进同一多样本工作流，而不是替代每一步的实验设计与独立验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Stereopy: Comprehensive Multi-Sample Spatial Transcriptomics Framework
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## gwSPADE：给基因“重新分配发言权”的无参考空间解卷积
 
@@ -134,7 +134,7 @@ gwSPADE 的优点是输入简单、无需单细胞表达参考，并能输出可
 本解读依据 `paper source/gkaf966/gkaf966.md`、本地 `paper.pdf` 与全部七幅主图的直接视觉复核，以及官方一致快照 `gwSPADE/R/`、`gwSPADE/src/`、`gwSPADE/Analysis/`。论文主张、图中观察、代码事实与作者的生物学推断均按各自证据层级表述。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## gwSPADE: Gene Frequency-Weighted Reference-Free Deconvolution in Spatial Transcriptomics
 

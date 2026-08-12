@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 唐氏综合征发育期新皮层单核多组学图谱解读
 
@@ -85,7 +85,7 @@ deep-layer EN 的 DEGs 和 12/14 个差异 CT/IT eRegulons 富集 ASD、NDD、de
 复现边界很明确：NeMO 数据为 controlled access；论文没有公开分析仓库、精确脚本、custom cisTarget database、IHC masks 或完整代谢原始数据。工具版本和统计模型描述较清楚，足以理解设计，但不足以逐图复现。该论文说明 Ts21 与加速神经发生相关，并提出 BACH1 等候选机制；它不证明单一 HSA21 gene 足以解释全部表型。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## DS-snMultiome-Neocortex — Summary
 

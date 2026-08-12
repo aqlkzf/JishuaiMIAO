@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Fast-Higashi 中文方法解读
 
@@ -176,7 +176,7 @@ Fast-Higashi 的速度主要来自矩阵分解的交替更新，而非“更小�
 先读本文第 2–5 节建立张量因子与 partial RWR 的关系，再看论文 `paper.md` 的 Figure 1 叙述和 STAR Methods；随后对照 `partial_rwr.py:83-138`、`parafac2_intergrative.py:283-299,304-539,544-738`、`project2orthogonal.py:6-29`。最后阅读 `figure_analysis.md`，把模型输出与图 2–4 的生物学证据连接起来。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Fast-Higashi: Ultrafast and Interpretable Single-Cell 3D Genome Analysis
 

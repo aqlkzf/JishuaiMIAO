@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Patho-DBiT 方法解读：在 FFPE 病理切片中同时读取空间表达、RNA 加工与变异
 
@@ -158,7 +158,7 @@ iStar 将 H&E image tiles 经 vision transformer 提取 histology features，再
 本文依据本地 Cell 论文 Markdown、主图与补图图像、README、workspace-local CodeGraph 和直接脚本核读重新编写。论文 DOI 为 `10.1016/j.cell.2024.09.001`，代码来源为 `https://github.com/Zhiliang-Bai/Patho-DBiT`。本次未重跑 GSE274641、WGS、rMATS、Strelka、scVelo 或 iStar，也不把论文报告的临床发现表述为本地复现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Patho-DBiT Paper Summary
 

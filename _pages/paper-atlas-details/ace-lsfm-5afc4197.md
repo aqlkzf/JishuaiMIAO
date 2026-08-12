@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## ACE：在太体素光片显微数据中绘制全脑局部神经元集群
 
@@ -100,7 +100,7 @@ $e(h)$ 表示高度 $h$ 下支撑体素 $v$ 的空间范围。论文设置 $E=2$
 代码与论文核心链条的匹配度为**中等**：分割、MC dropout、不确定性、配准/体素化、TFCE 和原生空间验证均有直接实现；但本地快照是当前 MIRACL `master`，不是论文冻结版本。训练权重、GPU/容器、Allen 图谱资源和太体素样例数据需外部获取。当前代码中的相关性/集群连接分析接口会提示不可用并跳过，因此论文该部分不能由此快照完整复现。总体复现评分为 **3/5**。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ACE for brain-wide LSFM neuronal-ensemble mapping
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## iCLAP：把低丰度蛋白的放大检测接入高通量空间蛋白组
 
@@ -92,7 +92,7 @@ iCLAP 的核心不是新的成像仪或机器学习模型，而是一条可循�
 iCLAP 的实质贡献是把 TSA 的高灵敏度与 CODEX、CyCIF、IMC 的高 plex 能力串在同一 FFPE 切片上。论文对湿实验步骤给出了较细的可操作参数，并用五张主图展示漂白、灵敏度、6/12/31/43 plex 组合与胰腺应用。最大的复现边界在计算端：公开 notebook 主要从预计算值开始，核心 MATLAB 图像分析和原始整片数据不可直接获得。因此最稳妥的评价是“实验协议描述充分、平台兼容性得到示范，完整计算复现仍不成立”。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## iCLAP Summary
 

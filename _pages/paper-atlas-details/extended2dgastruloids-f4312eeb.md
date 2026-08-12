@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 延长培养的二维 gastruloid：如何观察人类中胚层发育
 
@@ -92,7 +92,7 @@ TBXT-neon 时间序列表明，许多最终到达 colony 中心的细胞最初�
 代码与论文的概念匹配度为中等：图像分析、SCVI/Scanpy 和轨迹后处理均有实现；但原始图像仅可申请获取，部分计数矩阵和中间 AnnData/MAT 文件不在仓库，定制 CellPose 权重及完整 TrackMate 导出步骤缺失，也没有完整锁定的软件环境。因此它更像“研究分析快照 + 模板集合”，而不是一键复现实验包。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Extended Culture of 2D Gastruloids
 

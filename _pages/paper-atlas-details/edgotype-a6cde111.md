@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Edgotyping：疾病错义突变不是只会“弄坏整颗蛋白”，也可能只切断特定分子连接
 
@@ -146,7 +146,7 @@ PPI profile 不变的 transcription factor mutation 可能破坏 DNA binding。�
 Edgotyping 的核心是把“mutation 是否破坏蛋白”拆成“是否引起 folding-quality-control signal、丢失哪些 protein partners、丢失哪些 DNA targets”。它证明 interaction-specific disease mechanisms 很常见，但每个 QW/E/QN 标签都受当时 interaction map 和 assay context 限制，必须作为可测网络上的 profile，而非等位基因全部功能的最终判决。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Summary — Edgotyping: Widespread Macromolecular Interaction Perturbations in Human Genetic Disorders
 

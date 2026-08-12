@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 非线性约束下的加速一阶优化：方法详解
 
@@ -109,7 +109,7 @@ full-constraint 版本在 $y_k=x_k+\beta u_k$ 处同时计算目标梯度和约�
 正式 Springer 论文给出了完整公式、证明和伪代码，Appendix A–D 已包含在正文中；没有发现单独补充文件。对论文正文、Springer 页面、arXiv、两位作者主页、GitHub 和精确题名网页检索后，官方实现仍为 **Not found**。因此可以据伪代码重新实现，但不能声称已有官方代码可直接复现实验；随机种子和若干实验细节也需要自行补齐。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Accelerated First-Order Optimization under Nonlinear Constraints
 

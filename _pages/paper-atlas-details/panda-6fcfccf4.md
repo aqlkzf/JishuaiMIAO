@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## PANDA：同时解码空间 spot 的细胞类型比例与类型特异表达
 
@@ -212,7 +212,7 @@ Phase 2 在保留基因上交替：乘法更新 $\omega$，对无约束 $\gamma$
 PANDA 的真正贡献是把“一个类型只有一个固定 signature”的线性反卷积扩展成“每个类型有一个由 archetype 构成的状态空间”，并让每个 spot 在该空间中自适应选择位置。这样比例估计和类型内表达互相约束，得到比单一 composition 更丰富的空间生物学视图；代价是更强的 reference 依赖、更多计算和对估计表达边界更严格的解释要求。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## PANDA - Comprehensive Paper Analysis
 

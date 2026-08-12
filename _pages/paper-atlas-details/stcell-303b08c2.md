@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## STCell：同一个预测性海马网络为何会形成位置细胞或时间细胞
 
@@ -191,7 +191,7 @@ $$
 STCell 最简洁的理解是：位置细胞和时间细胞都可以被看成“对缺失经验进行预测”的内部基函数。外部输入如果持续把状态锚定到地点，网络形成 place-like attractor；输入如果只在相隔事件处提供锚点，recurrent dynamics 必须在中间自行推进，形成 time-like sequence。论文的价值在于给出这一统一的充分性模型，而其生物真实性仍需要与真实 CA3 神经活动和连接数据进一步检验。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## STCell: A Unified Hippocampal Model for Place and Time Cells
 

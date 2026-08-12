@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## scDiffusion-X：从配对 RNA–ATAC 到生成、翻译与调控解释
 
@@ -148,7 +148,7 @@ $$
 先看论文图 1 建立 AE→潜扩散→DCA 的结构，再看图 3 的 replacement translation，最后看图 4 理解 attention 与梯度如何组合。代码侧依次读 `encoder_model.py`、`multimodal_unet.py`、`multimodal_gaussian_diffusion.py`、`multimodal_translation.py`；若要核对论文结果，再进入三个评估 notebook，并把 notebook 结果与可复用库接口区分开。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## scDiffusion-X: Latent Diffusion Model with Dual-Cross-Attention for Multi-Omics Generation and GRN Inference
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## InfMasking 方法中文解读
 
@@ -127,7 +127,7 @@ Fig. 1 给出单模态、完整融合和 masked 三类对比关系。Fig. 2 在�
 InfMasking 的核心不是“遮住输入再重建”，而是把多种残缺融合表示当作同一完整多模态语义的随机观测，用对比学习的均值与协方差信息强化组合依赖。它确实针对协同任务提供了额外训练信号，但“无限”是数学极限，“synergy”是方法动机而非直接可观测量；当前性能还依赖有限采样、Gaussian 假设、退火和共享融合网络的具体实现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## InfMasking: Unleashing Synergistic Information by Contrastive Multimodal Interactions
 

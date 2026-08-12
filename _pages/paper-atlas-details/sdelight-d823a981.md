@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SDELight 中文方法解读：先解卷积，再对抗整合，最后用 Gromov–Wasserstein 对齐切片
 
@@ -203,7 +203,7 @@ MHypo 包含五张 MERFISH 切片、每张约 5,500 cells 和 155 genes。Figure
 SDELight 的概念贡献是把三个成熟思路串成有生物先验的多切片流程：跨模态图注意力估计细胞组成，域对抗 GCN 学习批次不敏感的空间域，fused Gromov–Wasserstein 用生物与几何结构共同对齐切片。现有稿件和图支持其设计动机与若干 benchmark 表现，但由于源码和关键训练细节缺失，它仍是“论文描述的候选方法”，而不是当前工作区可复现验证的软件实现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SDELight: Multi-Modal Integration of Spatial Transcriptomics - Review Summary
 

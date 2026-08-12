@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SpaceTracer：从空间转录组中的体细胞 SNV 到组织原位谱系推断
 
@@ -179,7 +179,7 @@ PhyloSOLID 和部分下游树分析不属于 SpaceTracer 核心五步 SNV caller
 SpaceTracer 的主要贡献，是把空间信息用在 RNA somatic SNV 的去噪和判别上，再把自然突变转成原位 clone labels。它使人类组织中无需预先工程化标记的谱系分析成为可能，但结论强度始终受限于 RNA 变异检测、spot 混合、缺失数据和系统树假设；空间图本身不能替代真正的时间追踪。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SpaceTracer — Paper Analysis Summary
 

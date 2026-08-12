@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 超越基因中心差异表达：多模态表达分析的中文阅读指南
 
@@ -138,7 +138,7 @@ DREAM 等社区挑战显示不同算法的错误具有互补性，集成网络�
 本地证据包括 PMC 全文和四张主图；文章没有独立补充材料。表 1和表 2以内嵌 HTML 表格存在于全文，而不是 Markdown 管道表，因此简单的 `grep '^|'` 为零不代表表格缺失。软件版本、维护状态和最新文档可能随时间变化，真正采用工具前应另行核对官方文档和当前仓库。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Multimodal Bioinformatic Analyses of Genome-Scale Expression Beyond Gene-Centric Differential Expression
 

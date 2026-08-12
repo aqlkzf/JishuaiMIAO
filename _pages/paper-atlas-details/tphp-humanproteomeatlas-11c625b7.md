@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TPHP 人体蛋白质组图谱：从 DIA 质谱到肿瘤靶点优先级
 
@@ -335,7 +335,7 @@ GitHub 快照 `guomics-lab/TPHP`，commit `1a53d859d1b3064804cbd2b321ffcea830286
 TPHP 的真正创新是**统一平台下的广泛人体蛋白质组资源和可比较的多状态设计**。它把解剖位置、发育/病理状态、配对癌症差异和治疗线索连成一条证据链。最强证据是广覆盖 DIA 图谱、严格错误控制、配对混合模型以及多层外部验证；最明显短板是公开代码只覆盖肿瘤差异模型，而且该脚本与论文预处理/配对/收敛规范仍有若干 Partial 或 Not found 项。研究者可以把它用作高价值候选生成与比较资源，但任何药物或靶点结论仍需要独立机制实验和前瞻性临床验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TPHP Human Proteome Atlas
 

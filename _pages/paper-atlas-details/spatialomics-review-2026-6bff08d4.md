@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 空间组学综述：如何从技术选择走到可验证的临床结论
 
@@ -93,7 +93,7 @@ sitemap: false
 这篇综述最可靠的用途是建立技术地图、计算流程和证据层级，并据此设计实验。它汇总了大量代表性方法和疾病实例，但平台参数会更新，文章中的临床示例强度也不一致。图 1–5 是领域综合图：它们支持分类、工作流和研究路线的理解，却不能替代被引用原始研究中的样本量、统计检验、干预和结局证据。使用本文做方法选择时，应回到相应原始论文和最新版平台文档核对参数；使用它提出临床结论时，应明确哪些是观察关联、哪些有机制验证、哪些仍是未来方向。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Summary: Spatial Omics at the Forefront — Liu et al., Cancer Cell 2026
 

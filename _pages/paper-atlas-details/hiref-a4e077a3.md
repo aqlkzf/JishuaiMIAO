@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## HiRef 方法中文解读
 
@@ -123,7 +123,7 @@ HiRef 是通用 OT 求解器，不直接建模基因调控、细胞命运或批�
 HiRef 的创新是把低秩 OT 从最终近似耦合变成层次分区工具，利用共同聚类性质逐层得到单点双射。可扩展性来自局部子问题、代价因子化和稀疏匹配输出。理论依赖严格条件与最优硬分区，而默认代码采用非凸 FRLC 与 soft top-k 平衡化；所以应表述为“核心层次算法与论文高度对应并有大规模实现”，而不是“任意数据与默认参数下都保证恢复精确 OT”。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## HiRef — Hierarchical Refinement for Scalable Optimal Transport
 

@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## DeepDETAILS：从 bulk 调控组学信号中恢复细胞类型特异轨迹
 
@@ -79,7 +79,7 @@ $$s(k,r)=\frac{\mathrm{RPM}(k,r)}{\sum_{i=1}^{K}\mathrm{RPM}(i,r)+\epsilon}.$$
 本快照可核证核心模型、训练、命令行和预检，但 `protocols.py:16` 导入的 `deepdetails.helper.attr` 文件不存在，因此普通 `protocols` 导入和 attribution 实现是 **MISSING**，不应声称端到端可复现。补充材料只有 PDF/XLSX；可逐行引用的 supplementary Markdown 为 **Not found**。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## DeepDETAILS: bulk-to-cell-type regulatory deconvolution
 

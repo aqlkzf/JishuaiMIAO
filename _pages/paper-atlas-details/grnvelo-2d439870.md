@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## GRNvelo 方法中文讲解
 
@@ -403,7 +403,7 @@ MP-PINN 的意义是：单个细胞的速度不能随便学，必须和群体密
 GRNvelo 的核心贡献是把单细胞 GRN ODE 和群体 PDE 接到一起，并用两个 PINN 阶段来学习：TC-PINN 负责 GRN velocity 和 latent time，MP-PINN 负责 density/growth/trajectory 约束下的速度修正。当前可见代码较好覆盖了这条核心主线，但对论文中最吸引人的 perturbation、高维 GRN 恢复和完整 benchmark 复现，证据不足，需要额外脚本或补充材料才能完全核验。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## GRNvelo Summary
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## moscot 方法详解：用最优传输连接时间、空间与多组学快照
 
@@ -214,7 +214,7 @@ $$
 使用者可把 moscot 理解为四步：选择合适的 W/GW/FGW 几何；在 `prepare()` 中声明时间、空间、共享表示和边缘；在 `solve()` 中控制正则化、不平衡度与 rank；最后用 `push()`、`pull()`、转移矩阵、标签映射或特征相关把耦合转成生物问题。最重要的解释纪律是：耦合是依赖模型假设的概率关系，候选驱动基因是相关证据，只有独立实验才能把其中一部分推进到因果结论。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## MOSCOT: Multi-Omics Single-Cell Optimal Transport
 

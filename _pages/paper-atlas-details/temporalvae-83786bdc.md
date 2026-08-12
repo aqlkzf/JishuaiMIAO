@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TemporalVAE 方法解读：用发育图谱训练一个“细胞生物时间”回归器
 
@@ -156,7 +156,7 @@ CodeGraph 已定位核心 VAE 类、runtime model registry 和训练/perturbatio
 应按 embryo/donor/dataset 分组留出而非随机细胞拆分；分别报告 cell types、stages 和 batches 的误差；检查 query 中缺失基因及 reference 不存在的 cell states；用多个随机种子和模型 posterior uncertainty 评估稳定性；比较 `clf_weight`、KL weight、HVG set 与 time scaling；对 perturbation 检查是否离开训练分布，并把候选基因称为“模型时间敏感”而非“控制发育时间”。若训练时间与平台或物种完全共线，任何高相关预测都需要额外的外部验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TemporalVAE Summary
 

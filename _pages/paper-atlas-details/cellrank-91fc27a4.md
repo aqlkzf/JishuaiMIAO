@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## CellRank 方法解释：把局部 RNA 速度累积成全局命运概率
 
@@ -232,7 +232,7 @@ E15.5 子集有 2,531 个细胞。CellRank 恢复 Ngn3-low EP 初始状态和 al
 先看图 1/扩展数据图 1理解“局部方向→全局概率”，再看扩展数据图 2和图 2b–e理解 GPCCA 与吸收；接着用扩展数据图 3检查不确定性边界；最后读图 3、4、6，分别看稀有命运、外部谱系追踪验证和非经典去分化应用。代码按 `_transition_matrix.py` → `_velocity_kernel.py` → `_gpcca.py` → `_absorption_probabilities.py` → `_linear_solver.py` 阅读最顺。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CellRank: Directed Single-Cell Fate Mapping
 

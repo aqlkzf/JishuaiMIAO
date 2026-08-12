@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## VirTues 方法中文讲解
 
@@ -82,7 +82,7 @@ Fig. 2 的图像和相关系数显示，模型能在独立、整 marker 和整 n
 仓库（commit `0e2c068c838d6132b1dd6e319b92bf14aa039f63`）包含模型、数据集、训练脚本、配置和三个 demo notebook，并链接预训练权重。直接代码证据支持可变通道输入、marker prior 相加、masked MSE 和冻结 U-Net 分割。仍需外部 spora 数据、预计算 ESM-2 embedding 和 checkpoint；论文中细胞/niche/组织聚合的实现未在本代码快照中找到，低层 attention 与部分 decoder 细节也只有 Partial 证据。不要把这些缺口从图示或 README 推断为已实现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## VirTues summary
 

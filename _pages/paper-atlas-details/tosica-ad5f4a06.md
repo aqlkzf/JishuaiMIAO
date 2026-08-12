@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TOSICA：把细胞类型注释和可解释性放进同一个 Transformer
 
@@ -77,7 +77,7 @@ $$\mathbf A=\operatorname{softmax}\left(\frac{\mathbf Q\mathbf K^\mathsf T}{\sqr
 代码与论文的主模型、损失、SGD/余弦调度和 query 阈值高度对应；但发布快照的 `splitDataSet()` 在类别平衡后随机做 70:30 训练/验证划分，而论文的评估叙述强调按研究或生物状态分割。公开快照有 tutorial 和 Fig. 4 notebook，却没有打包的全量 benchmark 数据、下载步骤和所有作图脚本；本工作区也没有单独获取补充材料。因此，完整复现论文数字和补图仍需要外部数据与额外流程。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TOSICA
 

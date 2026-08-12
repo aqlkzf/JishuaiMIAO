@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## scAMVIB：用多视图信息瓶颈做单细胞多组学聚类
 
@@ -151,7 +151,7 @@ Python 脚本输出标准化矩阵、SNF similarity、可选 FS 矩阵和增强 
 在真正无标签数据上关闭 chi-square FS，独立选择 cluster 数，按内部 objective/stability 而非 ARI 选 restart；同时报告 $\beta$ 与未公开公式中的 $\theta$。检查各 view 最终权重，避免增强 view 因与原 views 派生相关而重复计权。将 cluster 当作候选 cell states，并用 marker、独立标签和批次稳定性验证，而不是把高 benchmark 分数视为无偏的细胞类型发现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## scAMVIB — Adaptive Multi-View Information Bottleneck for Multi-Omics Data Clustering
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TRIO-AI 方法解读：论文提出了什么，现有证据又能支持到哪里
 
@@ -159,7 +159,7 @@ TRIO-AI 的主要价值是把三个互补视角组织成一个候选筛选框架
 目前最稳妥的表述是：“论文提出 TRIO-AI，并在肝损伤时间序列数据上报告了 MPs_3 候选过渡状态。”不能据当前稿件进一步断言它优于五种方法、降低 FDR、精确重建真实谱系，或已经通过空间和功能实验验证 MPs_3。下一步真正需要的是公开代码与环境、完整基准与消融、时间轴和图号校正，以及独立 lineage/perturbation 验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TRIO-AI: Summary
 

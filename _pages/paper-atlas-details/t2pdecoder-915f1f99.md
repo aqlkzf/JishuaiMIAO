@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## T2Pdecoder：把转录组转换为可做蛋白质组解释的预测谱
 
@@ -90,7 +90,7 @@ $$L_{VAE}=L_{rec}+w_{KL}L_{KL}+w_{t2}\mathrm{MSE}(z_{mean},f_P(y)).$$
 已检索仓库根目录及 `src/*.py`。**未找到** requirements 或环境文件、训练/评测数据、预训练 checkpoint、测试以及一个从原始 RNA 直达预测蛋白的统一命令。补充材料在本工作区只有 PDF，没有可核验的补充 Markdown。因此，这个快照足以核查关键实现路径，但不足以在不补齐外部资产的情况下独立复跑全文实验。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## T2Pdecoder: protein-centric analysis from transcriptomes
 

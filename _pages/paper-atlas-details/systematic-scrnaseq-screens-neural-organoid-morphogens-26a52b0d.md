@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 系统性单细胞筛选如何解析神经类器官对形态发生因子的响应
 
@@ -180,7 +180,7 @@ MiSTR 中的细胞身份沿 A–E 位置逐渐变化；多孔板类器官覆盖�
 最重要的学习结论是：形态发生因子不是一个可脱离背景解释的“旋钮”。一个条件的结果由 **何时加入、加入多少、与谁组合、用哪条细胞系、采用何种诱导培养基、信号如何穿过组织** 共同决定。论文的价值正是把这些变量放入同一单细胞比较框架，并明确展示哪些规律稳定、哪些规律只在特定实验背景中成立。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Systematic scRNA-seq screens profile neural organoid response to morphogens
 

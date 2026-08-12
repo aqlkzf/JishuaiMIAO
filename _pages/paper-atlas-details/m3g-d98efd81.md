@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## M3G：用多边际匹配差距同时对齐多个视图
 
@@ -198,7 +198,7 @@ Figure 3 显示 $\varepsilon=0.2$ 后不同 $k$ 的准确率大致稳定。Table
 M3G 的概念贡献很清晰：把多视图一致性从“许多局部相似度”提升为“真实联合配对相对全局最优联合配对的差距”。它的梯度也有漂亮的结构，并避免穿过 Sinkhorn 迭代反传。代价同样明确：$n^k$ 张量使 batch size 与视图数互相制约；实验证明小 $k$ 下可运行，却没有解决大规模多模态场景的指数扩展问题。缺少官方实现进一步限制了复现与数值细节核验。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## M3G (Multi-Marginal Matching Gap) — Paper Summary
 

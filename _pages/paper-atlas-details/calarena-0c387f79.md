@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## CalArena 方法解读：如何公平比较后处理概率校准方法
 
@@ -118,7 +118,7 @@ CalArena 给的是跨数据集的平均证据，而不是“任何任务都选�
 官方代码快照与论文的基准执行和统计分析高度匹配。但当前工作区缺少 7 个约 1.71 GB 的 HDF5 数据文件，因此没有执行端到端重跑；校准器和指标的内部实现位于官方外部依赖 `probmetrics`，本次未获取，不能声称已逐行验证；代码中也未找到独立自动化测试套件。论文自身还承认固定超参数、视觉数据覆盖较窄以及部分方法缺失等限制。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CalArena: A Large-Scale Post-Hoc Calibration Benchmark
 

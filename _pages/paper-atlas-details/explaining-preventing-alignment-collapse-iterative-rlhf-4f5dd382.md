@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 迭代 RLHF 为什么会“对齐崩塌”，FPO 如何修复
 
@@ -116,7 +116,7 @@ relaxed：RM 分 - γ×过度自信×梯度内积
 理论依赖 RM 跟随者损失强凸，这不适用于一般过参数化神经网络的全局结构。LLM 实验只是小规模 proof of concept：使用冻结 Llama 模拟人类偏好，并用另一个 LLM 做裁判。官方仓库包含模拟 notebook、训练/生成/评估代码、三个 LoRA 权重和结果文件，代码—论文匹配度高；但没有依赖锁定文件或自动测试。完整重跑还需要 gated Llama 权限、GPU 和 Together API，因此本次分析没有重新训练或调用付费裁判。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Explaining and Preventing Alignment Collapse in Iterative RLHF
 

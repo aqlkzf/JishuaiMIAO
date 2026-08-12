@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Glimmer：用能量正则化学习空间邻接图
 
@@ -144,7 +144,7 @@ Xenium 分支先把转录本聚合为细小 bin，令每个 bin 具有基因计�
 仓库固定在提交 `1e074dcbd5c0f2937ccc34d9570ceaff9fe6ed52`，包含 Python 包、区域基准脚本、亚细胞脚本和对应主图 notebooks，足以追踪绝大多数方法步骤。数据均声明来自公开来源，但脚本依赖预先下载的数据与特定目录结构，notebook 也保存了大量结果状态；完整复现仍需要按补充表获取数据、重建环境并核对各数据集参数。最稳妥的使用方式是显式传入 `k`、`log_barrier_w`、`neighbor_weight` 和设备参数，不依赖函数默认值。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Glimmer: Energy-Regularized Graph Learning for Multiscale Spatial Representation
 

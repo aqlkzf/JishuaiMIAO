@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## scMAGCA 方法中文解读
 
@@ -221,7 +221,7 @@ $$
 scMAGCA 是一个代码基本可对应论文核心结构的多组学 integration/clustering 方法。最可靠的代码级理解是：它在选中特征上构建 PCA-smoothed cosine KNN cell graph，用四层 GCN 得到 32 维 latent embedding，通过 linear reconstruction、ZINB likelihood 和 Gaussian-prior discriminator 做预训练，再用 KMeans + Student-t target distribution + KL loss 精炼 cluster。论文展示了广泛 RNA+ADT、RNA+ATAC、batch、tri-modal 和疾病应用证据；但完整 paper-scale benchmark 复现不是一个单脚本流程，疾病机制和 biomarker 结论也应作为 embedding 后的下游解释与实验支持来读。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## scMAGCA: Interpretable Modality-Aware Mapping of Gene Regulation in Single-Cell Multiomics
 

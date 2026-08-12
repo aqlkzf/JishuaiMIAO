@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## CellMentor 方法解读：用有标签参考集学习可迁移的细胞类型空间
 
@@ -197,7 +197,7 @@ Figure 4 包括 pancreas、PBMC、melanoma；CellMentor 平均 ARI 0.710，与 r
 CellMentor 的优势是把 reference annotation 直接写入 factorization objective，并用固定、非负、可解释的 gene basis 把 query 映射进同一空间。它特别适合稳定 cell-type identity 的 reference transfer，而不适合把未知状态发现、trajectory preservation 或 reference-free integration 当作主要目标。使用时应同时检查 reconstruction、label quality、query novelty、batch/technology mismatch，并与 unsupervised embedding 和 marker expression 交叉验证，避免把监督产生的清晰分群误当成独立生物证据。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CellMentor: Summary
 

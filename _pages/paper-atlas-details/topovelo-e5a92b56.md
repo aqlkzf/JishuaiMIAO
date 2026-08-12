@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TopoVelo 方法解读：让空间邻域参与 RNA velocity 推断
 
@@ -160,7 +160,7 @@ CodeGraph 已定位 VAE training、ODE solution、velocity 与 graph utilities�
 至少比较 KNN、epsilon-ball 与 Delaunay 图，扫描 radius/neighbor count；报告不同随机种子与 GAT/GCN 的稳定性；区分 cell-resolved 与 spot-resolved 数据；用 capture time、已知 transitions 或 live imaging 外部验证；分别呈现 RNA velocity 和 physical-space cell velocity；对 attention 做 degree/graph-null controls。若空间相邻主要来自切片几何而非真实交互，或组织含跨层远程信号，邻域图消息不应被直接命名为细胞间因果影响。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TopoVelo: Topological Velocity Inference from Spatial Transcriptomic Data
 

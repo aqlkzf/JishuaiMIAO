@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 人类早期胚胎单细胞转录组参考图谱与投射工具：方法详解
 
@@ -326,7 +326,7 @@ Milo 聚合增强信号，也可能把极少见细胞并入更大的相似邻域
 这项工作把多个稀缺的人类早期胚胎单细胞数据集整理成稳定参考，并通过“邻域聚合 + 重复 MNN + 固定参考投射 + 20D SVM + 多重拒识”把新数据映射到该参考，从而以全转录组证据审查胚胎模型的谱系身份和发育阶段，同时明确保留对参考缺失、稀有群体和混淆谱系的不确定性。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## A Comprehensive Human Embryo Reference Tool Using scRNA-seq
 

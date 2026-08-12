@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SPanC-Lnc 方法中文解释
 
@@ -77,7 +77,7 @@ Xenium 验证部分用 Seurat v5、SCTransform、PCA、Harmony/label transfer �
 SPanC-Lnc 最强的价值是把候选 lncRNA 放到细胞类型、空间区域、癌种和验证平台中。Fig. 1 支持 atlas 构建，Fig. 2 支持 tumor-region 和跨平台验证，Fig. 3 支持空间共表达/功能假设，Fig. 4-5 展示 melanoma 和 medulloblastoma case studies，Fig. 6 展示 Xenium 和 survival examples。需要注意的是，共表达、RBP prediction、eQTL/GWAS overlap 和 survival association 都是候选功能证据，不等于因果机制证明。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SPanC-Lnc Summary
 

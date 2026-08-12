@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 市场平台如何通过库存承诺诱导竞争性定价
 
@@ -118,7 +118,7 @@ $$R(p_i)=Q(p_i)\left(1-\frac{q_j}{Q(p_j)}\right).$$
 这是 `paper-only` 分析。论文和官方 LaTeX source 没有提供实现；作者主页及以新旧题名和 arXiv ID 进行的 GitHub 检索也未找到官方仓库。source 中只有 TikZ 与已经生成好的数值图，没有求解均衡或生成 $200\times200$ 网格的脚本。因此解析推导可以核查，但数值图无法从公开代码重新生成。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Marketplace Operators Can Induce Competitive Pricing
 

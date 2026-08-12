@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TRACER 方法解读：用转录一致性修正空间转录组的细胞边界
 
@@ -183,7 +183,7 @@ $$
 简而言之，TRACER 把细胞分割后的修正问题转化为“局部空间中哪些基因集合彼此支持”。NPMI 提供数据内生的生物一致性，空间图限制几何可能性，$\Delta C$ 决定是否拼接。它最有价值的地方是保守地保留、拆分和重组转录本，而不是强迫每条 RNA 进入一个互斥二维细胞；它最大的解释边界也正来自这里：一致的候选三维片段仍需要独立形态或实验依据验证。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TRACER: Reconstructing Biologically Coherent Cellular Profiles from Imaging-Based Spatial Transcriptomics
 

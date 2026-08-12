@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SHARE-seq：同一细胞中连接染色质可及性、RNA 与潜在命运
 
@@ -197,7 +197,7 @@ RNA velocity 利用同一细胞 unspliced/spliced imbalance，通常对应较短
 本文基于本地主论文 PDF/OCR Markdown、提取的主图/补充图、伴随研究短评及现有分析文档整理。论文 DOI 为 `10.1016/j.cell.2020.09.056`，数据入口为 GEO `GSE140203`。本工作区没有 SHARE-seq 作者分析代码仓库；本次未下载原始数据、重跑 wet-lab demultiplexing 或复算 chromatin-potential arrows。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SHARE-seq: Chromatin Potential Identified by Shared Single-Cell Profiling of RNA and Chromatin
 

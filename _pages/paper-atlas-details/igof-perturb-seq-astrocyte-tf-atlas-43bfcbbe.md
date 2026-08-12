@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 在活体星形胶质细胞中给转录因子逐一“加油门”：iGOF-Perturb-seq 方法解读
 
@@ -194,7 +194,7 @@ $$
 iGOF-Perturb-seq 的核心是：**用带条形码的 AAV 在活体星形胶质细胞中逐一过表达 TF，以单核转录组读出每次扰动，再把单 TF 的 DEG 汇聚为共同基因程序和疾病方向，最后用功能实验与 5XFAD 模型检验最重要的预测。** 它最大的贡献既是 955 个 TF 的功能图谱，也是把“高通量状态预测”推进到“动物体内因果验证”的完整链条。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Mapping Transcription Factor Functions in Astrocytes Using In Vivo Gain-of-Function Perturb-seq
 

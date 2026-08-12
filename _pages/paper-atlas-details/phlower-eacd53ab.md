@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## PHLOWER 方法解读：把细胞分化事件投影到 Hodge 调和空间
 
@@ -173,7 +173,7 @@ Extended Data Fig. 3 显示资源成本很高：桌面 benchmark 总体约 0.5�
 PHLOWER 把人为闭合的 SC holes 转成 edge harmonic coordinates，再用随机路径和累计分离重建复杂树。它的优势是直接建模分化事件与路径，而不是只嵌入细胞节点。它的主要风险是 root、图构造、hole creation、harmonic dimension、随机采样、DBSCAN/outlier filtering 与 branch threshold 会级联影响最终树。实际使用时应对这些选择做稳定性分析，并用实验时间、已知 markers、独立模态和 perturbation 分层验证，而不是把零特征值数量直接当作真实分支数。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## PHLOWER: Hodge Laplacian Trajectory Inference for Complex Multi-Branching Differentiation Trees
 

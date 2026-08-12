@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## Quartet：用共同参考物把多组学“绝对量”变成可比较的相对量
 
@@ -114,7 +114,7 @@ SNR 越高，说明既能区分 D5/D6/F7/M8，又不会把技术重复拉得很�
 代码是 Zenodo 的源文件快照，缺少 `data/`、生成的 `res/` 和补充材料 Markdown，因此不能在当前工作区端到端复现图中的数字。还有一个已核实的差异：论文对 SNF 写的是 $K=\mathrm{round}(n^2)$、alpha=0.5、$T=10$（`paper.md:618-622`）；快照 `DoSNF()` 却使用 `K=floor(sqrt(n))+1`、`sigma=0.5`、`t=200`（`utils/integrate_func.r:138-152`）。因此 SNF 是**部分匹配**，不能把快照参数当作论文图的已证实配置。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Quartet: ratio-based multi-omics profiling
 

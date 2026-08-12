@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## CLIM-TIME 方法中文解释
 
@@ -82,7 +82,7 @@ CLIM-TIME 捕获了 3,286 个 LCM 转移灶，其中大多数是单克隆，并�
 这篇文章的公开代码可以帮助理解两步去卷积和预测模型训练，但不是完整端到端复现包。公开仓库缺少 MAGeCK sgRNA 筛选分析、GENIE3 因果推断、CellChat 互作分析、原始数据预处理和绘图脚本。论文的数据可用性部分说明，scRNA-seq、bulk RNA-seq、CRISPR 文库和 Mageck 结果在 OMIX/GEO/ENA，GitHub 主要提供 RNA-seq 去卷积和预测模型训练代码（`paper.md:135-137`）。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CLIM-TIME Summary
 

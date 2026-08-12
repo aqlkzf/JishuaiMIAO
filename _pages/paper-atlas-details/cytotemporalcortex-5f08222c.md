@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## HuMous 中文方法解读：把物种、年龄和细胞类型放到同一张表达地形图上
 
@@ -157,7 +157,7 @@ $$
 HuMous 不是单细胞轨迹模拟器，也不追踪同一个细胞的命运。它把不同细胞的横截面数据按已知年龄和分化顺序压到一个可比较坐标系，再对局部邻域做平滑，形成“基因表达地形”。景观相似性适合发现候选的保守或重排程序，但会受到数据整合、标签整理、平滑尺度、阈值和培养体系差异影响。论文最强的地方，是把这种发现框架与 JUNB/IRF1 的双向功能实验连接起来，而不是把图像相关性本身当成机制证明。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## CytoTemporalCortex (HuMous) — Summary
 

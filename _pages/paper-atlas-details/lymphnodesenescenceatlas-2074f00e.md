@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 人淋巴结细胞衰老空间图谱：方法与证据解读
 
@@ -143,7 +143,7 @@ DBiT-seq 将两轮正交微流控 barcode 组合成 50×50 空间网格；表达
 这项工作的真正贡献是把“细胞衰老是否增加”推进到“衰老样状态在淋巴结的哪个结构中积累、由哪些 B 细胞承担、伴随哪些跨层分子变化”。SenSpots 和向生发中心的迁移为老年体液免疫减弱提供了空间解释框架。与此同时，研究是 bioRxiv 预印本，部分深度模态为单供体，41–59 岁的 LN 单细胞参照不足，跨切片配准和固定百分位阈值也会引入不确定性；论文自己也要求用选择性诱导/清除 B、T 细胞衰老的功能实验验证因果关系。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Human Lymph Node Cellular Senescence Atlas
 

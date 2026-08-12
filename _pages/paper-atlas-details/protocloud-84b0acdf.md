@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## ProtoCloud 方法解读：用“像哪个代表细胞、由哪些基因支持”解释单细胞注释
 
@@ -139,7 +139,7 @@ ProtoCloud 的 gene explanation 不是把 differential expression 直接贴到�
 ProtoCloud 通过多个 cell-type prototypes 把 VAE latent space组织成可比较的“代表细胞云”，用 similarity 完成注释和不确定性判断，再用 PRP 把 prototype decision 追溯到 HRGs；它把准确率、cell-level confidence 与 gene-level explanation放进同一训练框架，但 prototype/HRG 仍是模型内部证据，生物重标与跨数据概率解释必须结合独立 marker、表达和实验背景审查。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ProtoCloud — Summary
 

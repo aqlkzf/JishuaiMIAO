@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## GETvNA：把荧光寿命变成 DNA 的动态“高度尺”
 
@@ -81,7 +81,7 @@ $$\theta =\arccos \left(\frac{z-{z}_&#123;&#123;{\mathrm{bulge}}}}}{L-{z}_&#123;
 有效范围主要约为 7–30 nm；过近时荧光几乎完全淬灭，过远时 GET 灵敏度下降。DNA 长度、染料连接臂、石墨烯缺陷/双层区域、光子数和信噪比都会影响精度。跨分子汇总的高度分布宽度为 8.5–10.5 Å，明显差于单条轨迹内的 Å 级精度，因此“单分子动态精度”和“跨样本绝对准确度”必须区分。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## GETvNA summary
 

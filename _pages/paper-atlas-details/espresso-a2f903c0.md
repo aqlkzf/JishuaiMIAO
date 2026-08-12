@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## ESPRESSO 方法详解
 
@@ -235,7 +235,7 @@ ESPRESSO 的空间位置天然来自显微图像和 CellPose mask 的中心坐�
 ESPRESSO 的创新不是某个单独的神经网络，而是把“可长期成像的细胞器环境传感器”组织成一条组学式计算链：每个细胞被表示为完整的功能分布和空间相关函数，再映射成可追踪的 phenotype。它在描述细胞状态变化方面很有力量，但 phenotype 的具体边界仍受人工特征阈值、聚类选择和实验参数影响。公开代码足以理解并静态验证核心 imaging-to-phenotype 方法，也原则上支持运行两细胞系 demo；要完整复现全文，还需要申请全量成像数据并补齐训练、空间、时间和 scRNA 上游代码。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ESPRESSO: Summary
 

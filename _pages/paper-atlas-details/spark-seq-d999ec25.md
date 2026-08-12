@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SPARK-seq：把“适配体结合了谁”变成单细胞可测的扰动信号
 
@@ -222,7 +222,7 @@ $$
 仍需谨慎外推的部分包括：新细胞类型和新靶标上的 gRNA 效率、top 10,000 与 MCL 参数的可迁移性、$-\log_2FC$ 到 $k_{off}$ 的跨实验标定，以及深度学习模型在 PTK7 之外的泛化。SPARK-seq 的真正创新不是“测序直接给出靶标”，而是把遗传扰动变成可扩展的靶标依赖性对照，再用正交实验把统计候选变成可信的分子配对。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SPARK-seq: A high-throughput platform for aptamer discovery and kinetic profiling
 

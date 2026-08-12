@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SpatialEx / SpatialEx+：用组织学作为连续切片的共同锚点
 
@@ -142,7 +142,7 @@ PCC 衡量每个分子的预测与实测细胞间变化是否线性一致；SSIM
 SpatialEx+ 最适合把相邻切片的互补测量扩展成“可检验的完整候选矩阵”。实测块应始终保留 provenance，预测块应标明模型、训练切片、面板和不确定性。对关键 marker、罕见细胞群、病灶边界或跨模态机制结论，应回到原始图像和实测数据，并尽可能用独立实验验证，不能把形态推断值当作真正共测值。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SpatialEx / SpatialEx+: High-Parameter Spatial Multi-Omics through Histology-Anchored Integration
 

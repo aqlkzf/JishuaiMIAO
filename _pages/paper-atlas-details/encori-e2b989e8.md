@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## ENCORI 方法中文解释
 
@@ -130,7 +130,7 @@ TDMDScore 是本仓库中最强的 paper-code 对应点。论文定义它用于�
 本次代码-论文对应关系的结论是：ENCORI GitHub snapshot 对 TDMDScore 和下游 interaction table construction 支持较强；对 RBP motif discovery、RBP cluster annotation、RNA-RNA post-processing 支持为 Partial 到强 Partial；但 rbsSeeker、rriScan 两个核心上游 engine 不在这个 snapshot 里，网页接口代码也没有包含。若要完全审查 rbsSeeker 和 rriScan 的实现，需要单独检查论文 Code availability 中给出的两个独立仓库（`paper.md:277-280`）。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ENCORI Summary
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 方法说明：跨 11 种肿瘤转变的表观遗传调控
 
@@ -73,7 +73,7 @@ bulk ATAC-seq 把多种细胞混在一起，难以区分肿瘤细胞和免疫/�
 公开代码直接显示 multiome 的 SCTransform/PCA、TF-IDF/SVD、WNN（`Fig2/make_mutliome_objects/...R:18-45`）、500-kb `LinkPeaks`（`Fig2/ACR-to-gene_links/Compute_links_to_genes_v7.0.R:52-103`）、肿瘤-CNC logistic 回归 DACR（`Fig1/Cancer_DACRs/Tumor_normal_DACRs.CohortObj.R:55-128`）和十次 SCENIC 结果的 ≥8 次过滤（`Fig3/Post_SCENIC/Filter_regulons.R:15-58`）。但原始数据、注释 RDS、loom、`/diskmnt` 路径和完整轨迹/临床脚本不在快照中；因此端到端复现目前只能标为 Partial/MISSING（doc_code.md）。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Epigenetic regulation during cancer transitions across 11 tumour types
 

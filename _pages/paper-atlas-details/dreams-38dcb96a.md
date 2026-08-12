@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## DreaMS 方法解读：从数千万未注释串联质谱学习分子表示
 
@@ -173,7 +173,7 @@ binary head 以 focal loss 处理 class imbalance。作者用两个 thresholds �
 DreaMS 的贡献是把连续高精度 peak sets 编码成能利用 neutral-loss relations 的 Transformer tokens，并用 masked mass 与 retention order 从大量未注释 spectra 中学习通用表示。它显著减少了每个任务对大型 annotated library 的依赖，但没有消除 instrument/domain shift、谱图歧义和 chemical-space coverage 问题。实际注释应把 DreaMS similarity/heads 作为候选优先级，与 precursor formula、isotope/adduct、fragmentation tree、retention standard 和实验复核联合使用。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## DreaMS Summary
 

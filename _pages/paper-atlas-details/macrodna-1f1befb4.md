@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## MaCroDNA 方法中文解读
 
@@ -121,7 +121,7 @@ Barrett's esophagus 的 phylosignal、CNA 注释、过滤和聚合不是核心 `
 MaCroDNA 的优势来自一个简单、透明且全局竞争的匹配目标：CNA 与 expression 越相关，越可能被配对；一轮内的一对一约束避免所有 RNA 细胞坍缩到同一个 DNA 细胞，多轮复用则处理数量不平衡。它是相关性驱动的关联算法，不是联合生成模型、clone inference 或因果模型；可靠性取决于共同基因、预处理、CNA 信号、DNA clone 标签和 Gurobi 求解环境。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## MaCroDNA: Accurate Integration of Single-Cell DNA and RNA for Intratumor Heterogeneity Analysis
 

@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## SpatialCOC 中文方法解读：先用坐标重建连续组学，再做跨组学相关性校正
 
@@ -299,7 +299,7 @@ SCM 默认构造 n×n dense kernel，空间和计算至少二次增长。虽然�
 首先锁定 commit 5f326e5c...、Zenodo record 与文件哈希；从原始 h5ad 重新运行 SCM，保存 detached reconstruction，并确保 COC 真正消费新结果；统一 device；为每个 run 使用独立 checkpoint；记录 bandwidth、epoch、PCA/LSI 维数、CCA k、聚类 resolution 与 seed。再分别验证：SCM reconstruction/边界，COC correlation/reconstruction，最终 clustering/PAGA。不能只因为 notebook 能打开或预存 artifact 能画图，就宣称从原始数据端到端复现。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## SpatialCOC Summary
 

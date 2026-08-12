@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## TotalX 方法说明
 
@@ -55,7 +55,7 @@ FASTQ → Cutadapt 去接头/去前 6 bp → 长 RNA 与短 RNA 两套参考
 TotalX 在 PBMC 中揭示非编码 RNA 的细胞类型特异性及共表达模块，在 DENV2 感染细胞中捕获非 poly(A) 病毒转录本，在发育脑中解析非编码 RNA 的区域、细胞类型和时间动态，包括 MIR137 及其靶基因反相关（`paper.md:62-183`）。仓库含 Cutadapt、参考构建脚本和 Figure2–5 分析 notebook；但完整 Cell Ranger 双通路、STAR 参数补丁、BAM 过滤和计数替换脚本未找到，补充材料 markdown 也缺失，应明确标记为 `Not found` 而不是推断。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## TotalX summary
 

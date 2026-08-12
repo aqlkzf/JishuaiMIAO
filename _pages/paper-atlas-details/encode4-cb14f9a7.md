@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## ENCODE 4 方法详解：从多组学实验到可查询的基因调控百科全书
 
@@ -393,7 +393,7 @@ ENCODE 4 没有一个统一 benchmark，因为各模块任务不同。代表性�
 ENCODE 4 的创新不在一个“万能模型”，而在把开放染色质、染色质状态、TF/RNA、功能扰动、序列模型、变异效应、长读长转录本、RNA turnover、3D contact 和跨物种证据连接成可访问的调控百科全书。它非常适合回答“某个元件在什么背景下有什么证据、可能联系哪个基因、是否跨物种保守”这类问题；但若要逐实验或逐模型复现，必须继续进入 ENCODE Portal accession 和配套论文，因为旗舰文本本身没有提供完整目标函数、优化与实现细节。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## ENCODE 4 — Summary
 

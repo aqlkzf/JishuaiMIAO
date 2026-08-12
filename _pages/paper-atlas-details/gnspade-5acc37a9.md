@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## gnSPADE 中文方法解读
 
@@ -159,7 +159,7 @@ topic 是无标签的。模拟数据用真实表达谱与 topic profile 的 Pear
 gnSPADE 的方法思想清楚：用基因网络打破 LDA 的 gene-independence 假设，让功能相关基因帮助定义更连贯的潜在细胞类型。论文模拟和真实组织图支持这一方向，但实际代码的默认网络配置和邻居 topic 缓存直接影响核心创新是否真正生效。研究使用时应显式构造网络、检查 $K$ 与 topic 注释，并优先验证或修复 Gibbs 过程中 `Z_vector` 的更新。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## gnSPADE: A Reference-Free Deconvolution Method Incorporating Gene Network Structures in Spatial Transcriptomics
 

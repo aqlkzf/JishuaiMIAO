@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## scDiffusion 方法中文解释
 
@@ -80,7 +80,7 @@ $$x_{init}=\sqrt{\alpha_t}x_0+\sqrt{1-\alpha_t}\epsilon$$
 代码库提供了核心实现，但不是开箱即复现实验图表：README 要求下载论文数据、准备外部 SCimilarity 权重、修改本地路径、训练 autoencoder/diffusion/classifier，再用脚本采样 latent embedding，并通过 notebooks 解码和画图（`scDiffusion/README.md:27-78`）。因此，本 workspace 对代码匹配的判断是 **medium fidelity**：核心算法在代码中存在，但论文 checkpoint、完整图表流水线和部分评估流程需要外部资源与手工配置。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## scDiffusion Summary
 

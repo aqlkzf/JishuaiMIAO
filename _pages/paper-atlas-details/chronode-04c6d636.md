@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## chronODE 方法解释：用两个动力学参数读懂多组学时间序列
 
@@ -200,7 +200,7 @@ CodeGraph 成功定位了 `ODE_fitting.py` 与 piecewise 的核心 ODE 函数；
 先读图 1、补充图 2和补充 Note 的 Proposition 1/5/7/8，抓住参数意义；再沿 `min_max.norm.R` → `ODE_fitting.py` → `kinetic.classification.R` → `chronode.nf` 跟完可运行主线；随后用补充图 3–5理解 GMM、piecewise 与动力学分类；最后再读图 4–5和 biRNN 脚本，并把预测性关联与调控因果分开。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## chronODE: Modeling Multi-Omic Time Series with ODEs and Machine Learning
 

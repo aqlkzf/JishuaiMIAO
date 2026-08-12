@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## sCellST 方法中文解读
 
@@ -80,7 +80,7 @@ $$
 sCellST 依赖细胞分割质量、染色/扫描域差异、FFPE Visium 训练数据规模和图像分辨率；这些都会影响泛化（`paper.md:211-217`）。代码层面，核心模型仓库已经包含主要 MIL 和预测器实现，但论文还声明 figure 分析代码在单独的 `sCellST_reproducibility` 仓库中，本工作区没有克隆该仓库（`paper.md:410-417`）。因此本地代码与核心方法高度匹配，但完整复现实验图还需要外部数据、embedding/checkpoints 和复现实验仓库。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## sCellST Summary
 

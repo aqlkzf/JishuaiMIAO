@@ -24,11 +24,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## 人类海马衰老的表观基因组与三维基因组重编程
 
@@ -64,7 +64,7 @@ ABC 增强子-基因连接 + compartment/TAD/CTCF 分析
 公开仓库包含甲基化聚类、跨模态整合、DMR、年龄相关、ABC 和 3D 接触分析脚本/Notebook，与论文分析方向基本一致。不过代码使用作者本地绝对路径，缺少统一入口、环境锁定、测试和示例数据，因此更像“分析记录”而不是开箱即用的软件。数据已在 GEO、4DN 和 WashU 浏览器公开；完整复现仍需下载大规模原始/中间数据并人工恢复执行顺序。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## Human hippocampus aging multiomic atlas
 

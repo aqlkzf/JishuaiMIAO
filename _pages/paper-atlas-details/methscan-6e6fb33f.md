@@ -23,11 +23,11 @@ sitemap: false
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
-    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
   </div>
 
-<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## MethSCAn 方法详解：从稀疏单细胞甲基化读段到 VMR、细胞表征与 DMR
 
@@ -373,7 +373,7 @@ MethSCAn 最关键的思想是把“区域甲基化”拆成两个问题：
 MethSCAn 的贡献是一套适合稀疏 scBS 的特征工程和区域统计框架：局部背景校正减少读段位置偏差，收缩降低低覆盖噪声，VMR 提高特征信息密度，置换 DMR 扫描增强组间差异的可解释性。论文图像和多个数据集 benchmark 支持它在测试场景中改善细胞邻域恢复并降低部分计算成本；但源码快照缺失迭代 PCA 和原始 benchmark 流程，因此“核心算法可验证”与“整篇论文可一键精确复现”必须分开评价。
 
 </article>
-<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
 ## MethSCAn: concise paper summary
 
