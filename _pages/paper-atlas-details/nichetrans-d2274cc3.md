@@ -1,0 +1,455 @@
+---
+layout: default
+permalink: /paper-atlas/nichetrans-d2274cc3/
+title: "NicheTrans"
+nav: false
+description: "空间多组学希望在同一张组织切片、同一个细胞或 spot 上同时测量 RNA、蛋白、代谢物、染色质可及性等分子层。它的生物学价值很高，但实验往往昂贵、流程复杂、对样本处理要求严格，也难以像空间转录组那样广泛获取。 因此，一个自然问题是：能否先在少量配对空间多组学切片上学习“源组学 → 目标组学”的映射，再把模型应用到更容易获得的空间单组学数据上？例如： 用空间基因表达预测空间蛋白； 用空间基因表达预测空间代谢物；"
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>Integration &amp; Multi-modal</span>
+      <span>Nature Methods · 2026</span>
+    </div>
+    <h1>NicheTrans</h1>
+    <p>NicheTrans: spatial-aware cross-omics translation</p>
+  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+## NicheTrans 方法详解：把“细胞所在的空间邻域”纳入跨组学翻译
+
+### 1. 这篇论文要解决什么问题？
+
+空间多组学希望在同一张组织切片、同一个细胞或 spot 上同时测量 RNA、蛋白、代谢物、染色质可及性等分子层。它的生物学价值很高，但实验往往昂贵、流程复杂、对样本处理要求严格，也难以像空间转录组那样广泛获取。
+
+因此，一个自然问题是：能否先在少量配对空间多组学切片上学习“源组学 → 目标组学”的映射，再把模型应用到更容易获得的空间单组学数据上？例如：
+
+- 用空间基因表达预测空间蛋白；
+- 用空间基因表达预测空间代谢物；
+- 在空间 ATAC 与空间 RNA 之间双向翻译。
+
+单细胞领域已经有 cTP-net（*Nature Communications*, 2020）、totalVI（*Nature Methods*, 2021）、BABEL（*PNAS*, 2021）、Polarbear（*Journal of Computational Biology*, 2022）、sciPENN（*Nature Machine Intelligence*, 2022）和 JAMIE（*Nature Machine Intelligence*, 2023）等方法。但这些方法通常把每个细胞作为独立样本，不显式使用组织中的空间邻居，也不利用 H&E 形态信息。
+
+这会产生一个关键缺陷：两个细胞可能具有相同的已测基因表达，却位于完全不同的微环境中；血管、免疫细胞、病灶或组织结构的差异可能使它们具有不同的蛋白或代谢状态。只看中心细胞的源组学，模型就无法区分这种情况。
+
+NicheTrans 的核心回答是：**不要只翻译一个细胞，而要用“中心细胞 + 空间邻居”共同构成一个 niche，再预测中心细胞的目标组学。**
+
+### 2. 输入、输出与训练条件
+
+给定一张包含 $N$ 个细胞或 spot 的空间切片：
+
+- 源组学矩阵 $X\in\mathbb{R}^{N\times p}$；
+- 每个细胞或 spot 的空间坐标；
+- 训练时可用的目标组学矩阵 $Y\in\mathbb{R}^{N\times q}$；
+- 可选的细胞类型 one-hot 标签；
+- 可选的中心位置 H&E 图像 patch。
+
+模型输出每个中心位置的目标组学预测
+
+$$
+\hat{Y}\in\mathbb{R}^{N\times q}.
+$$
+
+训练阶段必须有已经对齐的空间多组学数据，用其中一层作为输入、另一层作为监督标签。测试阶段不再需要目标组学，只需源组学、坐标和可选辅助模态。
+
+这里有一个必须保留的边界：模型输出是**翻译值/预测值**，不是新的实验测量。后续空间域、细胞邻近关系或分子关联分析必须区分 measured 与 translated。
+
+### 3. 整体计算流程
+
+```text
+配对空间多组学训练切片
+  │
+  ├─ 对齐细胞/spot，选择并标准化源组学与目标组学特征
+  ├─ 对每个中心位置构建 niche
+  │    中心 + T/2 个一阶邻居 + T/2 个二阶邻居
+  │
+  ├─ 对 niche 内每个源组学向量做两层特征编码
+  ├─ 加上空间顺序 token
+  ├─ 可选：加上细胞类型 token
+  ├─ 非线性投影
+  ├─ 多头自注意力 + 残差
+  ├─ GEGLU 前馈网络 + 残差
+  ├─ 只取中心 token，作为整个 niche 的表示
+  ├─ 可选：拼接中心位置的 H&E/ResNet-18 表示
+  ├─ 每个目标特征使用一个解码头
+  └─ 连续目标用 MSE；二元目标用 sigmoid + BCE
+
+训练后的模型
+  + 只有源组学的空间切片
+  └─ 输出每个位置的目标组学翻译值
+```
+
+### 4. 第一步：把组织切片拆成 niches
+
+论文把第 $n$ 个 niche 写为
+
+$$
+&#123;&#123;Niche}}^{n}=\left[&#123;&#123;\mathbf{x}}}_{\mathrm{center}}^{n},&#123;&#123;\mathbf{x}}}_{1}^{n},&#123;&#123;\mathbf{x}}}_{2}^{n},\ldots ,&#123;&#123;\mathbf{x}}}_{T}^{n}\right].
+$$
+
+第一个元素是中心细胞，其余 $T$ 个元素按空间距离排列。最近的 $T/2$ 个被视为一阶邻居，其余 $T/2$ 个是二阶邻居。补充材料建议：
+
+- spot-level 数据使用 $T=8$；
+- cell-level 数据使用 $T=12$。
+
+论文的消融结果显示，SMA spot 数据在 8 个邻居时表现最好；STARmap PLUS 细胞级数据更适合 12 个邻居。注意力头数采用 4，Transformer 层数采用 1，主要是因为这些设置在不同数据集上较稳定。
+
+SMA 源码给出了具体实现：
+
+- `datasets/data_manager_SMA.py:67-123`：B1、C1 两张切片训练，A1 测试；RNA 先选高变基因、总量归一化、log1p；代谢物选高变特征并 log1p。
+- `datasets/data_manager_SMA.py:149-224`：用两个半径图构造一阶和二阶邻域；每一阶最多保留 4 个位置；缺失邻居用零向量补齐。
+
+因此，论文中的“最近邻排序”在 SMA 代码里具体化为“两个空间半径 + 固定槽位 + zero padding”。
+
+### 5. 第二步：把每个细胞编码到统一特征空间
+
+niche 内每个源组学向量独立经过一个两层特征编码器。编码后的表示为
+
+$$
+&#123;&#123;{F}}}_{1}^{n}=\left[&#123;&#123;\mathbf{f}}}_{1,\mathrm{center}}^{n},&#123;&#123;\mathbf{f}}}_{1,1}^{n},\ldots,&#123;&#123;\mathbf{f}}}_{1,T}^{n}\right]\in\mathbb{R}^{(T+1)\times d}.
+$$
+
+每层由 Linear、BatchNorm1d 和 LeakyReLU 组成。发布代码的基础模型使用
+
+```text
+p 个源特征 → 512 → 256
+```
+
+所以隐藏维度 $d=256$。直接源码位于 `model/nicheTrans.py:10-57`。
+
+这个编码器先学习单个细胞内部的源组学组合，再由后续 Transformer 学习 niche 内不同细胞之间的依赖。
+
+### 6. 第三步：加入空间与细胞类型语义 token
+
+#### 6.1 空间 token
+
+NicheTrans 不直接把绝对坐标输入 Transformer，而是学习三类共享 token：
+
+- central token；
+- first-order token；
+- second-order token。
+
+对第 $n$ 个 niche，空间嵌入写为
+
+$$
+&#123;&#123;S}}^{n}=\left[&#123;&#123;\mathbf{s}}}_{\mathrm{center}}^{n},&#123;&#123;\mathbf{s}}}_{1}^{n},\ldots,&#123;&#123;\mathbf{s}}}_{T}^{n}\right]\in\mathbb{R}^{(T+1)\times d}.
+$$
+
+它表达的是相对角色：“这是中心”“这是近邻”“这是较远邻”，而不是精确的二维坐标值。`model/nicheTrans.py:83-104` 中的 `token_center`、`token_neigh_1` 和 `token_neigh_2` 对应这三个 token。
+
+#### 6.2 细胞类型 token
+
+如果数据有细胞类型标注，模型还学习每种细胞类型的 token：
+
+$$
+&#123;&#123;C}}^{n}=\left[&#123;&#123;\mathbf{c}}}_{\mathrm{center}}^{n},&#123;&#123;\mathbf{c}}}_{1}^{n},\ldots,&#123;&#123;\mathbf{c}}}_{T}^{n}\right].
+$$
+
+STARmap PLUS 版本固定了 13 个 cell-type token。代码用 one-hot 类型信息对这 13 个参数做加权求和，再加到每个位置的组学特征上（`model/nicheTrans_ct.py:87-115`）。
+
+最终语义表示是
+
+$$
+&#123;&#123;F}}_{2}^{n}=&#123;&#123;F}}_{1}^{n}+&#123;&#123;S}}^{n}+&#123;&#123;C}}^{n},
+$$
+
+没有细胞类型时省略 $&#123;&#123;C}}^n$。
+
+这里有一个论文—代码差异：论文写 token 初始化标准差为 0.2；代码先 `torch.randn`，随后调用标准差 0.02 的截断正态初始化（`model/nicheTrans.py:83-91`）。因此实际发布实现更接近 0.02。
+
+### 7. 第四步：Transformer 在 niche 内交换信息
+
+语义表示先经过 Linear + LayerNorm + LeakyReLU，得到 $&#123;&#123;F}}_3^n$，再进入 pre-layer normalization 的多头自注意力。
+
+对第 $i$ 个注意力头：
+
+$$
+&#123;&#123;{Q}}}_{i}^{n}={\mathrm{LN}}\left(&#123;&#123;{F}}}_{3}^{n}\right)&#123;&#123;{W}}}_{i}^{\mathrm{Q}}+&#123;&#123;\mathbf{b}}}_{i}^{\mathrm{Q}},
+$$
+
+$$
+&#123;&#123;{K}}}_{i}^{n}={\mathrm{LN}}\left(&#123;&#123;{F}}}_{3}^{n}\right)&#123;&#123;{W}}}_{i}^{\mathrm{K}}+&#123;&#123;\mathbf{b}}}_{i}^{\mathrm{K}},
+$$
+
+$$
+&#123;&#123;{V}}}_{i}^{n}={\mathrm{LN}}\left(&#123;&#123;{F}}}_{3}^{n}\right)&#123;&#123;{W}}}_{i}^{\mathrm{V}}+&#123;&#123;\mathbf{b}}}_{i}^{\mathrm{V}}.
+$$
+
+注意力计算为
+
+$$
+&#123;&#123;{H}}}_{i}^{n}={\mathrm{softmax}}\left(\frac&#123;&#123;&#123;&#123;Q}}}_{i}^{n}{\left(&#123;&#123;{K}}}_{i}^{n}\right)}^{\mathrm{T}}}{\sqrt&#123;&#123;d}_{k}}}\right)&#123;&#123;{V}}}_{i}^{n}=&#123;&#123;{M}}}_{i}^{n}&#123;&#123;{V}}}_{i}^{n}.
+$$
+
+$M_i^n$ 是 $(T+1)\times(T+1)$ 的注意力矩阵，它允许中心细胞和所有邻居相互传递信息。多个头拼接后做线性投影：
+
+$$
+&#123;&#123;{F}}}_{4}^{n}={\mathrm{Concat}}\left(&#123;&#123;{H}}}_{1}^{n},\ldots ,&#123;&#123;{H}}}_{m}^{n}\right)&#123;&#123;{W}}}^{\mathrm{Out}}+&#123;&#123;\mathbf{b}}}^{\mathrm{Out}},
+$$
+
+再加残差得到 $&#123;&#123;F}}_5^n$。
+
+发布实现使用 4 个头，每个头 64 维，合计 256 维。`model/attention.py:50-77` 直接实现 Q/K/V、$1/\sqrt{d_k}$ 缩放、softmax、加权求和和输出投影；`model/nicheTrans.py:108` 加残差。
+
+应当谨慎理解注意力：它说明模型内部的信息路由，并不自动等于真实的细胞通讯或因果作用。
+
+### 8. 第五步：GEGLU 前馈网络继续重标定特征
+
+注意力后使用带 GEGLU 的前馈网络：
+
+$$
+&#123;&#123;{F}}}_{6}^{n}={\mathrm{GEGLU}}\left({\mathrm{LN}}\left(&#123;&#123;{F}}}_{5}^{n}\right)&#123;&#123;{W}}}_{1}^{\mathrm{FFN}}+&#123;&#123;{b}}}_{1}^{\mathrm{FFN}}\right)&#123;&#123;{W}}}_{2}^{\mathrm{FFN}}+&#123;&#123;{b}}}_{2}^{\mathrm{FFN}}+&#123;&#123;{F}}}_{5}^{n}.
+$$
+
+GEGLU 把扩张后的向量分成两半，一半经过 GELU 作为 gate，另一半与 gate 逐元素相乘，然后投影回原维度。源码位于 `model/attention.py:30-47`，残差位于 `model/nicheTrans.py:109`。
+
+这是最明确的架构差异：
+
+- 论文公式写的是门控后隐藏宽度 $4d$；
+- 发布代码使用 `FeedForward(dim=256, mult=2)`，门控后隐藏宽度是 $2d$。
+
+所以复现“论文公式”与复现“官方代码”会得到不同的 FFN 宽度。实际运行应优先记录采用了哪一种。
+
+### 9. 第六步：只用中心 token 做预测
+
+虽然 Transformer 更新了 niche 内全部位置，解码时只取中心位置：
+
+$$
+&#123;&#123;F}}_{6,\mathrm{center}}^{n}.
+$$
+
+源码中的 `f_omic[:, 0, :]` 就是这个选择（`model/nicheTrans.py:108-117`）。
+
+这一步很重要：邻居的作用是为中心细胞提供上下文，输出仍然对应中心细胞，而不是整个 niche 的平均值。
+
+### 10. 可选的 H&E 图像分支：NicheTrans*
+
+如果有中心位置的 H&E patch，NicheTrans* 使用 ResNet-18 提取形态特征：
+
+```text
+H&E patch
+  → ResNet-18 convolutional trunk
+  → global average pooling
+  → 512 维
+  → Linear + BatchNorm + LeakyReLU
+  → 128 维
+```
+
+这 128 维图像表示与 256 维中心 niche 表示拼接，再进入解码器。`model/nicheTrans_img.py:20-29,74-105` 与论文描述一致。
+
+代码还透露两个细节：
+
+- 使用 `pretrained=True` 的 ResNet-18；
+- ResNet 参数没有冻结，可与主模型共同优化。
+
+论文明确说明“不冻结”，但没有明确写预训练初始化。
+
+### 11. 解码器与输出形状
+
+基础代码为每个目标特征建立一个独立解码头：
+
+```text
+256 维中心表示
+  → Linear(256, 128)
+  → BatchNorm1d
+  → LeakyReLU
+  → Linear(128, 1)
+```
+
+如果有图像分支，输入宽度变成 $256+128=384$。所有标量输出拼接成 `[batch, target_length]`（`model/nicheTrans.py:62-72,113-119`）。
+
+独立输出头允许每个蛋白、代谢物或 ATAC peak 学习自己的最后一层映射，但共享前面的 niche 表示。
+
+### 12. 损失函数与训练
+
+#### 12.1 连续目标
+
+代谢物、连续蛋白表达和 ATAC→RNA 使用均方误差：
+
+$$
+{L}_&#123;&#123;\rm m.s.e.}}=\frac{1}{B}\sum_{i=1}^{B}{(&#123;&#123;\mathbf{y}}}_{i}-\hat&#123;&#123;\mathbf{y}}}_{i})}^{2}}.
+$$
+
+SMA notebook 使用 `nn.MSELoss()`，训练循环执行 forward、loss、backward 和 optimizer step（`utils/utils_training_SMA.py:8-39`）。
+
+#### 12.2 二元目标
+
+STARmap PLUS 蛋白检测和 RNA→ATAC 使用 sigmoid 与 BCE：
+
+$$
+{L}_{\mathrm{bce}}=-\frac{1}{B}\sum_{i=1}^{B}\left(&#123;&#123;y}}_{i}\bullet\log\hat&#123;&#123;y}}_{i}+\left(1-&#123;&#123;y}}_{i}\right)\bullet\log\left(1-\hat&#123;&#123;y}}_{i}\right)\right).
+$$
+
+`utils/utils_training_STARmap_PLUS.py:12-44` 在模型输出后显式调用 sigmoid，notebook 提供 `nn.BCELoss()`。
+
+#### 12.3 优化超参数
+
+论文主 Methods 给出：Adam、学习率 $3\times10^{-4}$、weight decay $5\times10^{-4}$、40 epochs，每 20 epochs 将学习率乘 0.1；spot batch size 32，cell batch size 128。
+
+SMA 的 `args/args_SMA.py:22-39` 与这些值一致。但不同数据集并不完全相同：STARmap PLUS 的默认设置是 20 epochs、学习率 $10^{-4}$（`args/args_STARmap_PLUS.py:16-33`）。因此主 Methods 的参数不能被当成所有实验的统一配置。
+
+#### 12.4 论文没有完整写出的训练技巧
+
+直接源码还显示：
+
+- 一部分训练 batch 会随机把完整邻居向量置零，相当于结构化 neighbor masking；
+- H&E 训练使用水平/垂直翻转、旋转、颜色扰动和随机裁剪。
+
+这些行为位于 `utils/utils_training_SMA.py:19-23` 与 `utils/utils_dataloader.py:7-27`，会影响复现，但主 Methods 没有说明。
+
+### 13. 如何评估？
+
+连续目标按每个目标特征、跨所有位置计算 PCC 和 SPCC；代码还计算 RMSE（`utils/evaluation.py:38-65`）。二元目标使用 AUROC、sensitivity、specificity 和 $F_1$。STARmap PLUS utility 在阈值 0.5 下计算 AUROC、sensitivity 与 specificity，但该 utility 没有直接实现论文图中的 $F_1$ 和综合排名分数。
+
+论文在五类任务上验证：
+
+1. PD 小鼠脑：转录组→代谢组；
+2. AD 小鼠脑：转录组→Aβ/p-tau 蛋白；
+3. 人乳腺癌：转录组→CD20/HER2；
+4. 人淋巴结：转录组→蛋白；
+5. 胚胎小鼠脑：ATAC↔RNA。
+
+关键结果包括：
+
+- SMA 中 NicheTrans/NicheTrans* 的平均 PCC–SPCC 位于比较图右上方，空间代谢模式更接近 ground truth；
+- NicheTrans* 翻译数据用于 SpatialGlue 后达到 ARI 0.73、NMI 0.75；
+- STARmap PLUS 中，NicheTrans/NicheTrans* 的 Aβ AUROC 为 0.938/0.931，p-tau AUROC 为 0.824/0.841；
+- 论文报告 NicheTrans* 相对最佳单细胞方法的 Aβ/p-tau $F_1$ 提升为 26.1%/20.6%；
+- 乳腺癌和淋巴结扩展实验显示模型能够保留局部蛋白空间结构，但不同组织和 panel 的效应大小并不完全相同。
+
+### 14. 模型解释：IG 与注意力分别在回答什么？
+
+论文对输入 $\mathbf x$ 和零基线 $\mathbf x'$ 使用 integrated gradients：
+
+$$
+{\mathrm{IG}}_{i}\left({\bf{x}}\right)=(&#123;&#123;\bf{x}}}_{i}-&#123;&#123;\bf{x}}}_{i}^{\prime})\times \int_{\alpha=0}^{1}\frac{\partial F(&#123;&#123;\bf{x}}}^{\prime}+\alpha({\bf{x}}-&#123;&#123;\bf{x}}}^{\prime}))}{\partial &#123;&#123;\bf{x}}}_{i}}d\alpha.
+$$
+
+代码在 notebooks 中通过 Captum `IntegratedGradients` 实现，并使用只输出单个目标的 attribution 模型变体。
+
+- IG 主要回答：某个输入基因或细胞类型对某个预测目标的模型梯度贡献有多大？
+- 注意力主要回答：在 niche 内，模型把多少信息权重分配给不同位置？
+
+论文据此找到：
+
+- PD 代谢物相关的 *Tac1*、*Penk*、*Pcp4*、*Gpr88* 等基因程序；
+- Aβ 预测相关的 *C1qa*、*Cst7*、*Cst3* 等免疫/小胶质细胞基因；
+- 乳腺癌中 CD20 对应的 *MS4A1*、HER2 对应的 *ERBB2*。
+
+这些结果与已知生物学一致，增强了模型解释的可信度，但仍是“模型学到的关联”。不能仅凭 IG 边或注意力权重断言真实分子因果调控或细胞间物质传递。
+
+### 15. 论文—代码一致性总结
+
+总体一致性为 **medium**。
+
+#### Exact / 高一致部分
+
+- 中心细胞 + 邻居的 niche 输入；
+- 两层 omics encoder；
+- central/first-order/second-order token；
+- 可选的 cell-type token；
+- 四头 scaled dot-product attention；
+- GEGLU 与残差；
+- 选择中心 token；
+- ResNet-18 图像融合；
+- 每目标解码头；
+- MSE、sigmoid+BCE、PCC/SPCC/AUROC 训练评估路径。
+
+#### Partial / 明确差异
+
+- 论文 FFN 为 4×，代码为 2×；
+- 论文 token 初始化 s.d. 0.2，代码截断正态 s.d. 0.02；
+- 数学描述中的 $T$ 可配置，但多个模型变体把 4+4、6+6 邻居写死；
+- STARmap PLUS cell-type 字典固定 13 类；
+- 主 Methods 的训练参数不是所有任务的统一参数；
+- neighbor masking 和图像增强只在代码中可见。
+
+#### Notebook / Not found
+
+- 训练、画图和 IG 主要由 `Tutorial_*.ipynb` 编排；
+- `codes_figures.txt` 给出 notebook 与论文图的对应关系；
+- **Not found**：从原始数据到所有图的一条命令式流水线；
+- **Not found**：仓库内置的处理后数据、训练权重和完整环境锁文件。
+
+### 16. 如何正确理解 NicheTrans 的贡献？
+
+最值得学习的设计不是“Transformer”三个字，而是输入单位的改变：
+
+```text
+传统单细胞翻译：中心细胞的源组学 → 中心细胞的目标组学
+
+NicheTrans：
+中心细胞源组学
++ 邻居源组学
++ 相对空间角色
++ 可选细胞类型
++ 可选中心 H&E
+→ 中心细胞的目标组学
+```
+
+它把组织微环境作为监督翻译的一部分，并证明更好的翻译可以改善空间域识别和群体层面的邻近结构分析。与此同时，精确复现仍依赖外部数据、notebook 顺序和若干任务特定实现；模型解释应当作为假设生成与关联证据，而不是因果结论。
+
+</article>
+<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+## NicheTrans: Spatial-aware Cross-omics Translation
+
+### Problem
+
+Spatial multiomics can measure multiple molecular layers in the same tissue, but the assays are technically demanding, less accessible than single-omics platforms and subject to trade-offs in resolution, sensitivity and throughput. Computational single-cell translators—including cTP-net (*Nature Communications*, 2020), totalVI (*Nature Methods*, 2021), BABEL (*PNAS*, 2021), Polarbear (*Journal of Computational Biology*, 2022), sciPENN (*Nature Machine Intelligence*, 2022) and JAMIE (*Nature Machine Intelligence*, 2023)—do not explicitly model tissue neighborhoods or optional histology. Consequently, cells with the same measured source profile receive the same prediction even when their spatial contexts differ.
+
+### Proposed Method
+
+NicheTrans is a supervised Transformer framework trained on paired spatial multiomics slices. It turns every focal cell or spot into a niche containing the focal observation and its nearest first- and second-order neighbors. A two-layer encoder maps source omics into 256-dimensional features; learned spatial tokens and optional cell-type tokens are added; a four-head self-attention/GEGLU block models within-niche dependencies; and the central token is decoded into the target omics. NicheTrans* can additionally concatenate a trainable ResNet-18 representation of the focal H&E patch.
+
+Continuous targets use mean squared error; binary targets use sigmoid plus binary cross entropy. After training, only the source spatial omics and optional auxiliary inputs are required. Integrated gradients and attention analyses are used to inspect model-associated genes, cell types and niche interactions.
+
+### Evaluation and Findings
+
+The paper evaluates five settings: PD mouse brain transcriptomics→metabolomics (SMA), AD mouse brain transcriptomics→proteins (STARmap PLUS), breast cancer transcriptomics→proteins, human lymph node transcriptomics→proteins and embryonic mouse brain ATAC↔RNA (MISAR-seq). Baselines include totalVI, Polarbear, BABEL, JAMIE, cTP-net and sciPENN, using PCC/SPCC for regression and AUROC, sensitivity, specificity and $F_1$ for classification.
+
+- On held-out SMA tissue, NicheTrans and NicheTrans* reproduce metabolite spatial patterns more closely and occupy the leading region of the average PCC–SPCC comparison. For the three displayed metabolites, Supplementary Table 1 reports NicheTrans/NicheTrans* PCC–SPCC pairs of 0.402/0.528 and 0.409/0.568; 0.446/0.554 and 0.494/0.621; and 0.580/0.524 and 0.585/0.514.
+- NicheTrans*-generated multiomics supports better spatial-domain recovery: ARI 0.73 and NMI 0.75 versus 0.53/0.69 for the non-image NicheTrans and lower scores for translated data from the single-cell baselines.
+- On STARmap PLUS, NicheTrans/NicheTrans* reach Aβ AUROC 0.938/0.931 and p-tau AUROC 0.824/0.841. The paper reports NicheTrans* improvements over the best single-cell comparator of 26.1% and 20.6% in $F_1$ for Aβ and p-tau, respectively.
+- Translated Aβ landmarks recover group-level glial proximity patterns, while IG highlights immune/microglial genes such as *C1qa*, *Cst7* and *Cst3*. In breast cancer, attribution ranks *MS4A1* for CD20 and *ERBB2* for HER2 near the top.
+- Extended-data results support translation in breast cancer and lymph node tissues and show anatomical concordance when a STARmap PLUS-trained model is applied to Slide-seq-v2, although the comparison uses protein staining from an adjacent rather than cell-matched slice.
+
+### What the Paper Adds
+
+The central contribution is not simply another source-to-target neural network. NicheTrans makes the local microenvironment an explicit input unit, provides additive semantic channels for spatial order and cell type, optionally integrates histology, and demonstrates that translated values can support downstream domain and neighborhood analyses. This connects prediction quality to spatial biological use rather than reporting only feature-wise reconstruction metrics.
+
+### Reproducibility
+
+**Reproducibility rating: 3/5.** The official PyTorch repository is available at commit `7b9fcc1966c0fd25869d3f0f83bf53e779cb69c6`. It includes model variants, dataset managers, train/test utilities, argument files and figure-mapped notebooks. The core niche encoder, attention block, image and cell-type branches, MSE/BCE paths and evaluation functions are directly verifiable. Overall paper-code fidelity is **medium**.
+
+Important boundaries remain:
+
+- processed datasets and trained checkpoints are external and are not included in the snapshot;
+- experiment execution is notebook-based and requires editing absolute dataset paths; no unified CLI or locked environment reproduces all figures;
+- the paper specifies a 4× FFN expansion, but released models instantiate a 2× expansion;
+- the paper states token initialization s.d. 0.2, while code applies truncated normal with s.d. 0.02;
+- niche sizes, neighbor order counts and the 13-class STARmap PLUS token dictionary are variant-specific constants;
+- code adds neighbor masking and H&E augmentations that are not described in the main Methods;
+- IG and attention provide model-dependent associations, not causal molecular mechanisms.
+
+### Bottom Line
+
+NicheTrans provides convincing evidence that spatial neighborhood information—and, when available, cell type or morphology—improves cross-omics translation and makes the translated layer more useful for downstream spatial analysis. The method is conceptually clear and the core implementation is available, but exact paper-level reproduction still depends on external data, notebook orchestration and resolving several paper-code specification differences.
+
+</article>
+</section>
+
+<script defer src="{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}"></script>

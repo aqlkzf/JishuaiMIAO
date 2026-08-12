@@ -1,0 +1,243 @@
+---
+layout: default
+permalink: /paper-atlas/monod-56973e8d/
+title: "Monod"
+nav: false
+description: "Monod 的核心是把 nascent/mature 计数的整个联合分布视为生物转录过程与技术捕获过程共同生成的观测，通过显式模型比较将“均值不同”扩展为“哪种随机转录机制可能不同”；结果应被视为经拟合优度、边界和不确定性审查后的机制假设。"
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>Dynamics, Fate &amp; Trajectory</span>
+      <span>Nature Methods · 2025</span>
+    </div>
+    <h1>Monod</h1>
+    <p>Monod: model-based discovery and integration through fitting stochastic transcriptional dynamics to single-cell sequencing data</p>
+    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02832-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+## Monod：用随机转录模型解释单细胞 nascent/mature 计数
+
+### 1. 先划清方法边界
+
+Monod 不是 RNA velocity 或细胞轨迹推断方法。它不为每个细胞估计发育时间，也不输出一个指向“未来状态”的速度向量。它把一个细胞群中每个基因的 nascent/unspliced 与 mature/spliced RNA 联合计数分布，拟合到一个离散随机转录模型。输出是群体层面的生物物理参数、技术采样参数、拟合优度和不确定性。
+
+它的主要目标是：不急着将单细胞计数中的变异当成需要消除的“噪声”，而是问，这种变异能否由转录爆发、剪接/加工、降解以及建库捕获偏差共同生成。
+
+### 2. 数据对象：两种 RNA 的联合直方图
+
+对基因 $g$ 和某一细胞群，每个细胞提供一对整数计数
+
+$$
+(X_{N},X_{M})=(\text{nascent count},\text{mature count}).
+$$
+
+Monod 将所有细胞的计数对汇总成二维经验分布，而不只使用均值和方差。`extract_data.py` 负责从 AnnData/loom layer 读取两种模态、过滤基因、计算矩并建立经验直方图；这些直方图是后续 KLD 拟合的直接数据对象。
+
+这种联合表示很关键：nascent 生成后经加工成为 mature，两者不是互相独立的两个特征。
+
+### 3. 生物组件：不同转录机制假设
+
+基本反应链是
+
+$$
+\varnothing \xrightarrow{k} X_N,qquad
+X_N\xrightarrow{\beta}X_M,qquad
+X_M\xrightarrow{\gamma}\varnothing.
+$$
+
+$k$ 是产生 nascent RNA 的速率，$\beta$ 是加工/剪接速率，$\gamma$ 是 mature RNA 降解或流出速率。论文和代码支持多个生物模型：
+
+- **Constitutive**：转录事件以常数速率发生，计数近似 Poisson；
+- **Bursty**：一次转录活化产生几何分布的爆发大小 $b$；
+- **Extrinsic**：用细胞间转录率异质性解释过度离散；
+- 还包含 CIR 近爆发极限、确定性延迟降解/剪接等模型。
+
+`monod/src/monod/cme_toolbox.py:15-205` 根据模型名称配置参数与概率生成函数（PGF）。不同模型是可比较的机制假设，不是一个已知正确的唯一方程。
+
+### 4. 稳态标定：为什么参数是相对速率
+
+Monod 假设输入细胞群近似稳态。在稳态联合分布中，所有时间速率同比例缩放往往不可识别，因此方法固定 $k=1$，实际拟合 $\beta/k$、$\gamma/k$ 等相对量。
+
+这个标定意味着：如果两个条件中 $\beta/k$ 和 $\gamma/k$ 同时变化，可以在附加生物假设下解释为 burst frequency $k$ 调制，但仅凭稳态分布不能唯一证明真实的绝对 $k$、$\beta$、$\gamma$ 各自如何变化。
+
+### 5. 技术组件：把捕获过程写进生成模型
+
+观测到的 U/S 计数不等于真实分子数。Monod 可选 `None`、Bernoulli 或 Poisson 技术采样模型。论文重点使用长度偏置的 Poisson 捕获：nascent 的捕获强度依赖基因长度 $L_g$，mature 参数不做同样假设。
+
+技术参数只弱可识别，因此 Monod 不为每个基因独立拟合完整技术参数，而是在同一细胞群/数据集内共享基础采样参数，再将 `gene_log_lengths` 加到 nascent Poisson regressor 上（`inference.py:920-950`）。“共享”不等于每个基因有完全相同的有效 nascent 捕获率。
+
+### 6. PGF 如何变成可拟合的概率表
+
+对离散计数模型，概率生成函数将整个联合分布编码为
+
+$$
+G(z_N,z_M)=\mathbb E[z_N^{X_N}z_M^{X_M}].
+$$
+
+Monod 先根据生物反应求 $G$，再把技术采样 PGF 与它复合，得到观测分布的 PGF $H$。`CMEModel.eval_model_pss()` 在复数网格上计算 PGF，再用逆 FFT 还原计数概率表（`cme_toolbox.py:402-535`）。
+
+拟合目标是经验直方图 $P_{emp}$ 到模型概率 $P_\theta$ 的 Kullback–Leibler 散度：
+
+$$
+D_{KL}(P_{emp}\|P_\theta)=\sum_xP_{emp}(x)\log\frac{P_{emp}(x)}{P_\theta(x)}.
+$$
+
+实现在 `cme_toolbox.py:336-400`。FFT 网格、直方图支持和数值截断都是实际拟合的一部分，不只是理论细节。
+
+### 7. 两层搜索：技术网格外层，逐基因生物优化内层
+
+对每个技术参数网格点：
+
+1. 用解析矩为每个基因构造生物参数初值；
+2. 在用户给定边界内，用 Nelder–Mead 最小化该基因 KLD（`inference.py:974-1070`）；
+3. 汇总所有基因的目标值；
+4. 在全部技术网格中选总 KLD 最小的点（`inference.py:1425-1465`）。
+
+这个策略用跨基因的大样本支撑共享技术参数，但也使结果依赖用户指定的参数边界、网格密度、基因筛选和初值。实例脚本中这些配置是图级别、数据集特异的，并非唯一全局默认。
+
+### 8. 拟合后不能只看一组最优参数
+
+Monod 用多个表面识别不可信基因：
+
+- Hellinger 距离衡量经验分布与拟合分布的差异；
+- $\chi^2$ 检验查看偏差是否超出随机波动；
+- 参数靠近人工上下界常提示不可识别或模型错配。
+
+`SearchResults.chisquare_testing()` 及相关路径保存拒绝索引与拟合指标（`inference.py:1672-1905`）。参数不确定性通过 KLD 曲面的 Hessian/Fisher 信息近似反演（`inference.py:1912-2025`）。但 `perform_inference()` 默认 `exclude_sigma=True`，即默认不计算这一费时步骤；不能把默认输出当成已经包含参数置信度。
+
+### 9. 从参数差异到机制假设
+
+普通差异表达主要比较均值。Monod 可以比较条件间的 burst size、相对剪接/降解率和噪声成分，因而找到“均值相近但分布形状不同”的基因。
+
+对同一基因，还可以拟合多个生物模型并用
+
+$$\mathrm{AIC}=2q-2\log\hat L$$
+
+权衡拟合与模型复杂度（`inference.py:530-584`）。AIC 偏好某模型表示在候选集内它有较好相对支持，不是对真实分子机制的唯一证明。如果所有候选模型都错配，AIC 仍会排出第一名。
+
+### 10. “整合”在 Monod 中是参数空间整合
+
+Monod 不是将 scRNA-seq 与 snRNA-seq 的细胞投影到一个共同 UMAP。它先在各自技术模型下拟合参数，再对经不确定性检查后相容的参数做逆方差加权：
+
+$$
+\hat\theta_{int}=
+\frac{\hat\theta_1/\sigma_1^2+\hat\theta_2/\sigma_2^2}
+{1/\sigma_1^2+1/\sigma_2^2}.
+$$
+
+当两种技术的参数不相容，或缺少可用不确定性时，应拒绝这种整合。这是可解释的“同一机制参数的证据合并”，而非细胞级 batch correction。
+
+### 11. 六张主图的逻辑
+
+- **图 1**：从生物+技术生成模型出发，展示均值不变时的爆发噪声调制、神经细胞类型差异和生殖细胞剪接速率变化。
+- **图 2**：将参数调制应用于胰腺癌治疗耐受与恢复；这些是与处理一致的机制候选，不是随机转录参数已直接测量。
+- **图 3**：在放射反应时间序列中比较参数变化，强调时序采样条件下的转录调节。
+- **图 4**：用 AIC 在 constitutive、bursty 等候选模型间做相对比较，并分析模型错配。
+- **图 5**：比较 scRNA-seq/snRNA-seq 等技术下的参数一致性与逆方差整合。
+- **图 6**：用噪声分解评估归一化、log、PCA 和 UMAP 对技术变异与生物变异的影响。结论不是“一切变换都错”，而是变换可能同时去除技术变异和扭曲可解释的生物分布。
+
+### 12. 代码证据与复现边界
+
+本工作区含两个代码快照：
+
+- `monod/`（commit `de99107...`）是核心 package，实现 PGF、FFT、KLD、网格搜索、QC、AIC 和不确定性；
+- `monod_examples/`（commit `6781106...`）是论文各图的数据集配置、拟合脚本和 notebook。
+
+主图复现不是单一命令：多个脚本使用相对数据路径、数据集特异边界/网格，并需要 Zenodo 上的数据和预计算拟合。个别批处理脚本还使用宽泛 `except: continue`，可能跳过失败数据集，因此长批复现应核对输出数量和日志。
+
+### 13. 一句话总结
+
+Monod 的核心是把 nascent/mature 计数的整个联合分布视为生物转录过程与技术捕获过程共同生成的观测，通过显式模型比较将“均值不同”扩展为“哪种随机转录机制可能不同”；结果应被视为经拟合优度、边界和不确定性审查后的机制假设。
+
+</article>
+<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+## Monod
+
+### Citation
+
+Gorin, G., Chari, T., Carilli, M., Vastola, J. J. & Pachter, L. **Monod: model-based discovery and integration through fitting stochastic transcriptional dynamics to single-cell sequencing data.** *Nature Methods* (2025). DOI: `10.1038/s41592-025-02832-x`.
+
+### Motivation
+
+Most single-cell RNA-seq workflows treat noise as a nuisance to normalize, transform, and compress away. Monod argues that low-copy stochastic variation is often the biological signal of interest. If reads are quantified into nascent/unspliced and mature/spliced RNA counts, their joint distribution contains information about transcriptional bursting, RNA processing, degradation/export, technical capture, and cell-state heterogeneity.
+
+The method is designed for analyses where mean mature expression is insufficient: genes can preserve the same average expression while changing burst size, burst frequency, splicing, or RNA stability. Monod converts these distributional differences into fitted biophysical parameters with uncertainty and goodness-of-fit diagnostics.
+
+### Method Overview
+
+Monod fits stochastic transcription models to paired nascent and mature count matrices for a defined cell population. A model has two parts:
+
+1. A biological PGF describing latent RNA production, processing, and degradation.
+2. A technical PGF describing how sequencing/capture distorts latent counts.
+
+For a selected model, Monod builds empirical joint histograms per gene, scans a shared technical-parameter grid, initializes biological parameters from analytic moments, evaluates model probabilities through PGF composition and inverse FFT, and minimizes Kullback-Leibler divergence between observed and fitted distributions. It then selects the technical grid point with minimum total KLD, rejects poor fits with Hellinger distance, chi-square testing, and boundary checks, and optionally estimates uncertainty with Hessian/Fisher information calculations.
+
+The primary output is not a cell embedding. It is a table of per-gene kinetic parameters, fit diagnostics, uncertainty estimates, and derived comparison statistics.
+
+### Main Contributions
+
+| Contribution | Why It Matters |
+|---|---|
+| Mechanistic use of nascent/mature count variation | Uses information often ignored or flattened by standard pipelines. |
+| Distributional fitting at single-gene scale | Compares full count distributions rather than only means. |
+| Model comparison across transcription hypotheses | Supports bursty, constitutive, extrinsic, CIR-like, and delay models. |
+| Parameter-level differential analysis | Finds changes in burst size, frequency-like behavior, splicing, or degradation with limited mature mean change. |
+| Modality integration in parameter space | Combines scRNA-seq and snRNA-seq estimates only when consistent and uncertainty-supported. |
+| Transformation diagnostics | Quantifies how normalization, log transforms, PCA, and UMAP can distort biological variation. |
+
+### Evaluation Summary
+
+The paper demonstrates Monod across nine datasets spanning cell culture, cancer, radiation treatment, development, blood, and brain. The most important vignettes are:
+
+- IdU perturbation in mESCs: Monod detects genome-wide noise enhancement through burst-size/frequency patterns with limited mature mean changes.
+- Allen mouse neurons: glutamatergic and GABAergic cell types differ in kinetic parameters even when average expression is similar.
+- Germ-cell development: fitted splicing-rate trends recover known examples and nominate new candidates.
+- PDAC residual tumors: treatment-associated malignant cells show parameter-level regulatory signatures.
+- Radiation-treated intestinal T cells: parameter DE identifies many genes beyond mature-expression DE.
+- Model comparison in mouse brain cells: bursty and richer models often outperform constitutive assumptions, while some genes remain ambiguous across models.
+- scRNA-seq/snRNA-seq integration: compatible modality estimates can be combined by uncertainty weighting; incompatible comparisons are rejected rather than forced.
+- Transformation analysis: common preprocessing steps can remove or distort model-attributed biological variation.
+
+### Code Availability And Fidelity
+
+The public analysis is split across two repositories:
+
+- `monod/`: the core Python package implementing extraction, PGF models, KLD optimization, grid search, rejection, AIC, and uncertainty.
+- `monod_examples/`: manuscript notebooks, figure scripts, documentation, and pointers to Zenodo data/fits.
+
+Code-paper fidelity is **medium-high**. The central inference algorithm is directly implemented in the package. Full manuscript reproduction is heavier because figure workflows depend on notebooks, multiple datasets, and external Zenodo data/search results.
+
+### Strengths
+
+Monod is unusually interpretable for single-cell analysis because fitted parameters map to mechanistic hypotheses. Its rejection tests and model-comparison tools make misspecification visible rather than hidden behind a latent embedding. The modality-integration rule is also conservative: it refuses to integrate estimates when consistency or uncertainty support is missing.
+
+### Limitations
+
+The method relies on approximate steady state and cannot uniquely identify burst frequency from a single steady-state dataset. Parameter interpretations can be sensitive to model family, technical assumptions, gene filtering, and fit quality. The manuscript analyses are computationally and operationally complex to reproduce end to end because they require external data, precomputed fits, and figure-specific notebooks.
+
+### Reproducibility Rating
+
+**4 / 5.**
+
+The core algorithm is public, source-readable, and mapped closely to the Methods. The examples repository identifies scripts and notebooks for every main figure. The main penalty is that complete reproduction requires external Zenodo data/fits and substantial notebook-level orchestration rather than a single locked pipeline.
+
+</article>
+</section>
+
+<script defer src="{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}"></script>

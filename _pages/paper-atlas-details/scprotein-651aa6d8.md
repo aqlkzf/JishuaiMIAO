@@ -1,0 +1,318 @@
+---
+layout: default
+permalink: /paper-atlas/scprotein-651aa6d8/
+title: "scPROTEIN"
+nav: false
+description: "质谱单细胞蛋白组的基本测量单位常是肽段，而分析希望得到蛋白和细胞层面的结论。一个蛋白由多个肽段构成，不同肽段的离子化、共分离、碎裂和样本制备损失不同，因此同一蛋白的肽段测量质量也不同。若直接求和或取中位数，低质量肽段会与可靠肽段具有相同权重。 与此同时，单细胞蛋白组具有严重缺失、批次效应和高噪声。先 KNN 插补、再 ComBat 校正的串联流程会让一步产生的伪结构影响下一步。"
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>Representation Models</span>
+      <span>Nature Methods · 2024</span>
+    </div>
+    <h1>scPROTEIN</h1>
+    <p>scPROTEIN: a versatile deep graph contrastive learning framework for single-cell proteomics embedding</p>
+    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02214-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+## scPROTEIN 中文方法解读：从肽段不确定性到单细胞蛋白组图表示
+
+### 1. 为什么单细胞蛋白组不能直接照搬 scRNA-seq 流程
+
+质谱单细胞蛋白组的基本测量单位常是**肽段**，而分析希望得到蛋白和细胞层面的结论。一个蛋白由多个肽段构成，不同肽段的离子化、共分离、碎裂和样本制备损失不同，因此同一蛋白的肽段测量质量也不同。若直接求和或取中位数，低质量肽段会与可靠肽段具有相同权重。
+
+与此同时，单细胞蛋白组具有严重缺失、批次效应和高噪声。先 KNN 插补、再 ComBat 校正的串联流程会让一步产生的伪结构影响下一步。scPROTEIN 因此把问题拆成两个学习阶段：
+
+1. 从肽序列与观测强度估计每个“肽段—细胞”测量的不确定性，并据此聚合蛋白丰度；
+2. 把细胞构成图，用图对比学习、prototype 属性去噪和可选拓扑去噪学习细胞表示。
+
+论文所谓 stage 3 不是第三个训练网络，而是用 stage 2 的已训练 GCN 生成 embedding，再做聚类、标签转移、临床或空间分析。当前仓库没有 `train_stage3.py`；推理入口实际是 `model.py:243-251` 的 `test()` 和 `embedding_generation()`，下游脚本/Notebook 分散在 `visualization.py`、`data_integration/` 和 `downstream_application/`。
+
+### 2. Stage 1：异方差回归估计肽段不确定性
+
+#### 2.1 输入与多任务输出
+
+每条肽序列按 20 种氨基酸 one-hot 编码，经三个一维卷积块提取序列特征。网络同时为所有细胞输出成对参数：预测均值 $\mu_{pn}$ 与对数尺度 $\log\sigma_{pn}$，其中 $p$ 是肽段，$n$ 是细胞。把每个细胞看作一个回归任务，使模型可以学习同一肽段在不同细胞/批次中的不同噪声。
+
+直接代码 `scPROTEIN/peptide_uncertainty_estimation/multi_task_heteroscedastic_regression_model.py:9-50` 实现三层 Conv1d—BatchNorm—ReLU—MaxPool 和 $2N$ 维输出。偶数列是 $\mu$，奇数列经指数变换得到 $\sigma$。
+
+#### 2.2 异方差损失
+
+对观测强度 $y_{pn}$，高斯负对数似然可写成：
+
+$$
+\mathcal L_{unc}=\sum_{p,n}
+\left(2\log\sigma_{pn}+\frac{(y_{pn}-\mu_{pn})^2}{\sigma_{pn}^2}\right).
+$$
+
+第一项阻止模型无限增大不确定性；第二项让大残差可以由更大的 $\sigma$ 解释。源码 `multi_task_heteroscedastic_regression_loss.py:5-12` 用 `log_sigma` 参数化并实现等价形式。这里的 $\sigma$ 是模型对测量噪声的估计，不是重复实验直接计算出的标准差，也不是对所有认识论不确定性的完整分解。
+
+#### 2.3 不确定性加权的蛋白聚合
+
+对蛋白 $f$ 的肽段集合 $P_f$，论文用不确定性倒数作为权重：
+
+$$
+X_{fn}=\sum_{p\in P_f}\frac{y_{pn}}{\sigma_{pn}}.
+$$
+
+`scPROTEIN/utils.py:36-43` 逐蛋白取相关肽段，计算 `1 / peptide_uncertainty × features` 后求和。它让预测为高噪声的肽段贡献较小。注意这不是归一化加权平均：权重没有除以总权重，因此蛋白拥有多少可测肽段仍会影响尺度。
+
+补充图 5–8 用人工加入的已知噪声检验 uncertainty recovery，并比较受噪声扰动后的聚类稳定性；这些实验支持模型能追踪相对噪声模式，但不意味着输出 $\sigma$ 已经过绝对概率校准。
+
+### 3. Stage 2 输入：由蛋白谱构建细胞图
+
+每个细胞是节点，蛋白丰度向量是节点属性。论文先计算细胞间 Pearson 相关：
+
+$$
+S_{ij}=\operatorname{PCC}(x_i,x_j),\qquad
+A_{ij}=\mathbf 1[S_{ij}>\delta].
+$$
+
+`scPROTEIN/utils.py:56-72` 用 pandas `corr()` 计算细胞间 PCC，并以阈值二值化；`train_stage2.py:37-50` 默认 $\delta=0.15$。若整合两个 acquisition，图使用共享蛋白构建，使不同批次中相似细胞可通过同一个图空间对齐。
+
+消息传递能把邻居的蛋白模式聚合到当前节点，因此可缓解缺失；但它不是显式恢复每个缺失蛋白的生成模型。若初始相关图连接错误，GCN 也会传播错误信号，这正是后续增强和去噪的动机。
+
+### 4. 两个增强视图与节点级对比学习
+
+训练为同一张细胞图生成两个随机视图：随机删边并随机屏蔽特征。共享参数的 GCN 编码器得到 $z_i^{(1)}$ 与 $z_i^{(2)}$，投影头将其映射到对比空间。
+
+对节点 $i$，正样本是两个视图中的同一细胞，其他细胞是负样本。源码对应的半损失是：
+
+$$
+\ell_i^{1\to2}=-\log
+\frac{\exp(\operatorname{sim}(h_i^1,h_i^2)/\tau)}
+{\sum_j\exp(\operatorname{sim}(h_i^1,h_j^1)/\tau)+
+\sum_j\exp(\operatorname{sim}(h_i^1,h_j^2)/\tau)-
+\exp(\operatorname{sim}(h_i^1,h_i^1)/\tau)}.
+$$
+
+两个方向取平均。`scPROTEIN/model.py:51-122` 实现 projection、L2 归一化余弦相似度和 symmetric loss；`model.py:147-160` 每轮产生两个 edge/feature dropout 视图。默认温度 0.4，edge dropout 分别为 0.2/0.4，feature dropout 为 0.4/0.2。
+
+一个重要论文—代码差异是 feature mask 方向：论文公式描述每个细胞的 mask，而 `model.py:16-23` 实际生成形状 $1\times F$ 的特征维 mask，并广播到所有节点。因此某次增强会把同一蛋白维度在所有细胞上一起置零。这仍是有效增强，但语义不是“每个细胞独立丢特征”。
+
+### 5. Prototype 属性去噪
+
+仅靠实例对比会把所有其他细胞当作负样本，可能推开同一亚群细胞。scPROTEIN 每个 epoch 对当前 embedding 做 K-means，得到 prototype 中心 $c_k$ 和伪标签，再让每个细胞更接近所属中心：
+
+$$
+\mathcal L_{proto}=-\frac1N\sum_i
+\log\frac{\exp(s(z_i,c_{y_i}))}
+{\sum_k\exp(s(z_i,c_k))}.
+$$
+
+`model.py:165-177` 计算 K-means 与中心，`prototype_loss.py:25-38` 计算 prototype loss。这里有三个代码边界：
+
+- 代码先 L2 归一化 embedding 和中心，因此使用 cosine similarity；
+- 论文 Eq. 13 写有温度 $\tau$，当前 prototype loss 未除以温度；
+- `proto_norm` 虽然每轮计算并传入，但函数体没有使用，是未完成/无效参数。
+
+最终 loss 在 `model.py:236-238` 为：
+
+$$
+\mathcal L=\mathcal L_{node}+\alpha\mathcal L_{proto},
+$$
+
+默认 $\alpha=0.05$。
+
+### 6. 可选拓扑去噪
+
+论文描述属性与拓扑交替去噪：由当前 embedding 预测可信连接，添加高相似的缺失边并删除低相似的已有边。当前实现 `model.py:181-233` 每轮依据 embedding 相似矩阵挑选极值边。
+
+这里也有两个关键边界：
+
+1. 论文叙述拓扑相似度为 PCC，代码直接计算 `embedding_cpu.dot(embedding_cpu.T)`，没有先归一化，因此是内积且受向量范数影响；
+2. `train_stage2.py:27` 默认 `topology_denoising=False`，所以默认命令不会启用这一模块。
+
+因此，不应把论文框架图中的 topology denoising 自动视为所有公开结果或默认 checkpoint 必然使用的步骤；必须查看具体实验配置。
+
+### 7. Stage 3 与四类应用
+
+#### 聚类与细胞周期
+
+生成 embedding 后，论文用 K-means/Leiden 和 ARI、NMI、ASW、PS 等指标评价。图 2 在 SCoPE2_Specht 上比较 RAW、KNN-ComBat、MAGIC、Harmony、AutoClass、Scanorama 和 Liger。补充图 9 将 T-SCP embedding 按细胞周期着色，展示周期结构。
+
+#### 数据整合与标签转移
+
+图 3 比较 N2+nanoPOTS 以及 SCoPE2/plexDIA 等跨 acquisition 整合。shared proteins 建图后，目标不是只追求 batch mixing，而是同时保留 cell type。论文用 ASW_cell、1-NMI_batch 和 KNN label transfer 检验这两方面；良好混批但丢失细胞类型仍是失败。
+
+#### 临床蛋白组
+
+图 4 使用 ECCITE-seq 的健康供者与 CTCL 患者。embedding 聚类后再做 cluster composition、差异蛋白和 GO 富集。它表明表示可用于发现候选临床群体，但只有一个健康供者和一个患者，不能把 donor 差异直接推广为总体疾病机制。
+
+#### 空间蛋白组
+
+图 5 用空间邻近而不是蛋白 PCC 建图，再学习 spatially informative embedding，并定义 spatial heterogeneity degree（shd）：每个细胞的邻居中与其 cluster label 相同的比例。当前实现位于 `downstream_application/spatial_proteomic_application/spatial_proteomic_data_analysis.ipynb`，不是旧 handoff 所说的 `DEMO/Spatial_scPROTEIN.ipynb`。
+
+### 8. 如何读主图与扩展/补充证据
+
+- **图 1**是三阶段方法图：不确定性聚合、图对比学习、下游应用。
+- **图 2**把 uncertainty heatmap、stage 1 聚合消融和最终聚类放在一起，支持“肽段级建模有额外价值”。
+- **图 3**强调 batch mixing 与 biology preservation 必须同时评价。
+- **图 4**是临床探索案例，不是大队列验证。
+- **图 5**展示空间图的扩展能力和 shd，不证明 shd 是普适肿瘤预后指标。
+- **扩展图 1–2**检查 embedding 维数 $d$ 和 prototype 数 $K$；**扩展图 3–6**补充学习轨迹和整合；**扩展图 7–8**补充临床/空间结果。
+- **补充图 1–10**覆盖聚合比较、stage ablation、合成噪声恢复、细胞周期和增强 baseline；补充表给数据集与参数。
+
+### 9. 论文—代码证据边界
+
+| 组件 | 状态 | 直接证据 |
+|---|---|---|
+| 三层肽序列 CNN 与 $2N$ 输出 | Exact | `scPROTEIN/peptide_uncertainty_estimation/multi_task_heteroscedastic_regression_model.py:9-50` |
+| 异方差损失 | Exact up to log-scale parameterization | `.../multi_task_heteroscedastic_regression_loss.py:5-12` |
+| uncertainty-weighted protein aggregation | Exact | `scPROTEIN/utils.py:36-43` |
+| PCC graph + threshold | Exact | `scPROTEIN/utils.py:56-72` |
+| GCN、两视图与 node contrastive loss | Exact | `scPROTEIN/model.py:27-122,147-160` |
+| feature mask 语义 | Partial | 代码按 feature 广播；论文按 cell 描述 |
+| prototype loss | Partial | 代码为无温度 cosine，且 `proto_norm` 未使用 |
+| topology denoising | Partial/optional | 代码用内积且默认关闭，`model.py:181-233` |
+| 下游临床与空间入口 | Partial notebook/script coverage | 当前仓库有相应 Notebook/工具，但不是统一 stage-3 CLI |
+| 固定源码版本 | Exact provenance | `.repo_source` 记录 commit `571cb88c2ee6e859f6df008ae24044010f7d34cd` |
+
+### 10. 最重要的限制
+
+1. 不确定性由序列—强度监督学习得到，不是质谱物理过程的完整概率模型。
+2. 图构建和 GCN 依赖初始相似度阈值，错误邻接可能传播噪声。
+3. 实例对比中的其他细胞未必都是真负样本；prototype 只是启发式缓解。
+4. 代码与论文在 feature mask、prototype temperature、topology similarity 上不完全一致。
+5. topology denoising 默认关闭，复现必须记录开关。
+6. 临床示例的 donor 数量很小，空间 shd 也是探索性指标。
+
+一句话概括：scPROTEIN 的价值在于把“肽段测量质量”和“细胞图结构”放进同一条表示学习链路；它不是单纯的插补器或 batch-correction 工具，而是以 uncertainty-weighted protein matrix 为起点的图对比学习框架。
+
+</article>
+<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+## scPROTEIN Summary
+
+**Paper**: scPROTEIN: a versatile deep graph contrastive learning framework for single-cell proteomics embedding
+**Authors**: Wei Li, Fan Yang, Fang Wang, Yu Rong, Linjing Liu, Bingzhe Wu, Han Zhang, Jianhua Yao (Tencent AI Lab + Nankai University)
+**Journal**: Nature Methods (2024)
+**DOI**: 10.1038/s41592-024-02214-9
+**Code**: https://github.com/TencentAILabHealthcare/scPROTEIN
+
+---
+
+### Motivation & Novelty
+
+#### Biological Problem
+Single-cell proteomics via mass spectrometry now quantifies 1,000–3,000 intracellular proteins per cell, revealing post-translational regulation that RNA cannot capture. However, four tangled problems hinder analysis:
+
+1. **Peptide quantification uncertainty**: MS bottom-up proteomics measures peptide fragments, not proteins directly. Each peptide has unique ionization efficiency and fragmentation behavior, producing heteroscedastic noise — noise that varies systematically per peptide, not randomly.
+2. **Data missingness**: Stochastic peptide detection and sample preparation losses create sparse protein matrices (often 50–80% missing values at single-cell scale).
+3. **Batch effects**: Different MS platforms (SCoPE2, pSCoPE, plexDIA, nanoPOTS, N2), labeling strategies (TMT, label-free), and sample preparation approaches introduce systematic biases unique to proteomics — not addressed by scRNA-seq batch correction tools.
+4. **Hierarchical structure**: The protein-peptide hierarchy is ignored by scRNA-seq-derived tools.
+
+#### Limitations of Existing Approaches
+- **KNN imputation + ComBat** (Vanderaa & Gatto, Expert Rev. Proteomics 2021): standard SCoPE2 pipeline. KNN introduces artifacts under batch effects; ComBat assumes identical cell type composition across batches — often false.
+- **MAGIC** (van Dijk et al., Cell 2018): diffusion-based imputation for transcriptomics; ignores proteomics hierarchy and batch effects.
+- **Harmony** (Korsunsky et al., Nature Methods 2019): batch correction via linear PCA alignment; requires batch labels; ignores protein-peptide structure.
+- **Scanorama** (Hie et al., Nature Biotechnology 2019): panoramic stitch integration; loses biological diversity in difficult cases.
+- **Liger** (Welch et al., Cell 2019): matrix factorization for multi-omic integration; poor at preserving cell type diversity under proteomic batch effects.
+- **AutoClass** (Li et al., Nature Communications 2022): deep neural network for scRNA-seq data cleaning; lacks proteomics-specific handling.
+
+#### Unique Contributions
+1. **First AI-based peptide uncertainty estimation**: Uses amino acid sequence to predict per-peptide measurement uncertainty — a heteroscedastic signal directly informing protein aggregation.
+2. **Unified framework**: Addresses all four problems simultaneously through a 3-stage pipeline rather than treating them as independent steps.
+3. **Contrastive learning for proteomics**: Adapts graph contrastive learning (motivated by GRACE, ICML Workshop 2020) with alternating topology-attribute denoising modules specifically for the noise profile of single-cell proteomics.
+4. **Implicit batch correction without labels**: The contrastive loss naturally aligns semantically similar cells across batches by maximizing agreement between augmented views.
+5. **Spatial extension**: Constructs spatially-informed cell graphs from tissue coordinates, enabling spatial heterogeneity quantification via the shd metric.
+
+---
+
+### Method Overview
+
+scPROTEIN is a 3-stage pipeline:
+
+**Stage 1 — Peptide Uncertainty Estimation**: A multitask heteroscedastic regression CNN takes one-hot encoded peptide amino acid sequences and simultaneously predicts, for each cell, the expected peptide abundance μ and log-uncertainty log_σ. The heteroscedastic loss (Eq. 1) balances prediction accuracy against uncertainty calibration. Protein abundance is then computed as an uncertainty-weighted sum of peptide signals (Eq. 2) — noisy peptides contribute less.
+
+**Stage 2 — Graph Contrastive Learning**: A cell-cell graph is built via Pearson correlation thresholding (default h=0.15). Two augmented views are generated via edge dropout (Bernoulli) and feature masking. A weight-sharing 2-layer GCN encoder embeds both views; a node-level infoNCE contrastive loss (Eq. 10-11) maximizes agreement between same-cell embeddings across views. An alternating denoising module adds prototype-based contrastive learning (Eq. 12-13) to refine embeddings toward cluster centers, and optional topology denoising updates graph edges based on embedding similarity (Eq. 14). Total loss: $L = L_{\text{node}} + 0.05 \times L_{\text{proto}}$.
+
+**Stage 3 — Downstream Inference**: The trained GCN generates final cell embeddings Z ∈ R^{N×d}. Embeddings undergo PCA (50 components) and t-SNE for visualization, followed by K-means clustering or Leiden algorithm for cell type identification.
+
+See `doc_method.md` for mathematical details and `doc_code.md` for code mapping.
+
+---
+
+### Evaluation
+
+#### Datasets (10 total)
+| Dataset | Technology | Cells | Proteins | Task |
+|---------|-----------|-------|---------|------|
+| SCoPE2_Specht | SCoPE2 | 1,490 | 3,042 | Clustering, uncertainty |
+| nanoPOTS | nanoPOTS | 61 | 1,225 | Data integration |
+| N2 | Nested nanowell | 108 | 1,068 | Data integration, label transfer |
+| SCoPE2_Leduc | SCoPE2 | 163 | 1,647 | Data integration |
+| plexDIA | plexDIA | 164 | 1,242 | Data integration |
+| pSCoPE_Huffman | pSCoPE | 163 | 1,647 | Data integration |
+| pSCoPE_Leduc | pSCoPE | 1,543 | 2,844 | Data integration |
+| T-SCP | True single-cell | 225 | 1,810 | Cell cycle |
+| ECCITE-seq | Antibody-based | 13,000 | 49 | Clinical (CTCL) |
+| BaselTMA | Imaging mass cytometry | varies | 38 | Spatial |
+
+#### Metrics
+**Clustering quality**: ARI (Adjusted Rand Index), ASW (Average Silhouette Width), NMI (Normalized Mutual Information), PS (Purity Score)
+**Batch correction**: 1-ARI_batch, 1-ASW_batch, 1-NMI_batch, 1-PS_batch (higher = better mixing)
+**Label transfer**: Accuracy + macro-F1
+**Spatial**: shd (spatial heterogeneity degree)
+
+#### Key Results
+- **Clustering** (SCoPE2_Specht): scPROTEIN achieves best ARI, ASW, NMI, PS. Scanorama and Liger completely lose biological structure (ARI=0.002–0.003). scPROTEIN + stage 1 aggregation outperforms all 5 alternative peptide aggregation methods (max, robust regression, maxLFQ, median, sum).
+- **Data integration** (N2 + nanoPOTS, same cell types): scPROTEIN achieves best ASW_cell; MAGIC ranks 2nd for cell separation. For batch metric, Harmony achieves best 1-NMI_batch; scPROTEIN ranks 2nd while better preserving cell diversity.
+- **Label transfer** (N2 ↔ nanoPOTS): scPROTEIN achieves accuracy 1.00 (nanoPOTS→N2) and 0.984 (N2→nanoPOTS). MAGIC drops to 0.885 in the reverse direction.
+- **Clinical CTCL analysis**: scPROTEIN achieves highest 1-NMI_batch and 1-ARI_batch for donor integration; discovers upregulated PD-1 in CTCL cells, consistent with known biology.
+- **Spatial** (BaselTMA): shd values clearly separate tumor slices (0.880–0.908) from normal slices (0.501–0.577), p=0.0015 Mann-Whitney. Raw protein data shows overlapping shd distributions, confirming the value of spatial graph embeddings.
+
+#### Ablation Studies
+- Stage 1 provides meaningful improvement over all 5 alternative peptide aggregation methods; stage 2 provides larger improvement still. Together, they give the full scPROTEIN performance.
+- scPROTEIN is robust to the number of prototypes K (tested across multiple datasets, Extended Data Fig. 2).
+- scPROTEIN is robust to embedding dimension d (Extended Data Fig. 1).
+- Simulation experiments confirm that stage 1 correctly recovers spiked noise levels across 3 perturbation scenarios (cells, peptides, both).
+
+---
+
+### Reproducibility
+
+**Rating: 3/5**
+
+**Justifications**:
+- ✓ Code and pretrained models provided at GitHub + Zenodo (DOI: 10.5281/zenodo.10547614)
+- ✓ All 10 datasets are publicly available with download links in the Methods section
+- ✓ 5 integration benchmark notebooks provided with data (h5ad files)
+- ✓ Hyperparameter defaults clearly specified in argparse
+- ~ Documentation is present but sparse; tutorials in Jupyter notebooks
+- ~ No Docker image provided (documentation mentions Docker); environment setup requires manual PyTorch+PyG install
+- ✗ No requirements.txt; only scattered version references in the reporting summary (`torch==1.10.0`, `torch_geometric==2.0.4`)
+- ✗ FC1 input dimension hardcoded to 3100 — changes to conv kernel config will break Stage 1 silently
+- ✗ Topology denoising is off by default, creating a gap between paper claims and actual experiment conditions
+- ✗ No script that runs the full end-to-end pipeline; requires manual staging through multiple scripts/notebooks
+
+**Practical notes for reproduction**:
+- Install PyTorch 1.10.0 with matching `torch_geometric==2.0.4` (later PyG versions have API changes)
+- Stage 1 requires ~40 min on CPU; Stage 2 runs fast (~10 min) for small datasets
+- For datasets without peptide-level data (ECCITE-seq, BaselTMA), skip Stage 1 entirely — `train_stage2.py --stage1 False`
+- For spatial proteomics, use the spatial notebook under `downstream_application/spatial_proteomic_application/`
+- SCoPE2_Specht data requires separate download from slavovlab.net; integration datasets are included as .h5ad files
+
+**Strengths**: Clearly organized codebase with separate stage-specific modules; diverse downstream application notebooks; pretrained models reduce runtime for reproduction experiments.
+
+**Weaknesses**: Hardcoded architectural constants (FC1 input=3100); topology denoising gap between paper description and default code settings; no end-to-end pipeline script; the searched paper/code scope does not establish that every main benchmark enabled topology denoising; `proto_norm` is computed at every training epoch but never applied to the prototype loss (dead code).
+
+</article>
+</section>
+
+<script defer src="{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}"></script>

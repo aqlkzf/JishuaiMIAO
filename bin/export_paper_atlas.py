@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""Export a public, summary-only PaperCode page for the personal website.
-
-The exporter deliberately writes one rendered Jekyll page. It never copies
-analysis Markdown, code snapshots, workspace paths, or a machine-readable
-JSON catalog into the website repository.
-"""
+"""Export a public PaperCode atlas and sanitized reading pages."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import os
@@ -56,18 +52,41 @@ FENCE_RE = re.compile(r"^\s*(```|~~~)")
 WHITESPACE_RE = re.compile(r"\s+")
 CHINESE_RE = re.compile(r"[\u3400-\u9fff]")
 SUMMARY_HEADING_RE = re.compile(r"一句话|先说结论|一句话理解|抓住核心|核心结论")
+ENGLISH_SUMMARY_HEADING_RE = re.compile(
+    r"quick take|overview|bottom line|summary|motivation|problem",
+    flags=re.IGNORECASE,
+)
 SOURCE_CITATION_RE = re.compile(
     r"[（(][^（）()]{0,180}(?:\.md|\.py|\.R|\.ipynb|PAPER_MD|CODE_DIR)[^（）()]{0,180}[）)]",
+    flags=re.IGNORECASE,
+)
+FRONT_MATTER_RE = re.compile(r"\A\ufeff?---\s*\n.*?\n---\s*(?:\n|\Z)", flags=re.DOTALL)
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", flags=re.DOTALL)
+DANGEROUS_HTML_RE = re.compile(
+    r"<(script|iframe|object|embed)\b[^>]*>.*?</\1\s*>|<(?:script|iframe|object|embed)\b[^>]*/?>",
+    flags=re.IGNORECASE | re.DOTALL,
+)
+MARKDOWN_LINK_RE = re.compile(r"(!?)\[([^\]]*)\]\(([^)\n]+)\)")
+PRIVATE_PATH_RE = re.compile(
+    r"(?<![:\w])/(?:workspace|home/(?:shuai|lin)|mnt|datahdd)(?:/[^\s`'\"<>{}\]\)]*)?",
     flags=re.IGNORECASE,
 )
 FORBIDDEN_OUTPUT = (
     "/workspace/",
     "/home/shuai/",
+    "/home/lin/",
+    "/mnt/",
+    "file://",
     "analysis_meta.json",
     "method_explained_zh.md",
     "output_paper_md",
     "CODE_DIR",
 )
+
+EXCLUDED_CATEGORY_PREFIXES = {
+    "foundationmodel",
+    "regulation_causal_networks",
+}
 
 
 @dataclass(frozen=True)
@@ -82,7 +101,11 @@ class Category:
 class Paper:
     method: str
     title: str
-    summary: str
+    summary_zh: str
+    summary_en: str
+    detail_zh: str
+    detail_en: str
+    detail_slug: str
     category_id: str
     category_title: str
     year: str
@@ -175,11 +198,11 @@ def markdown_to_text(markdown: str) -> str:
     return WHITESPACE_RE.sub(" ", SOURCE_CITATION_RE.sub("", text)).strip()
 
 
-def summary_section(markdown: str) -> str:
+def section_text(markdown: str, heading_pattern: re.Pattern[str]) -> str:
     lines = markdown.splitlines()
     for index, line in enumerate(lines):
         match = HEADING_RE.match(line)
-        if not match or len(match.group(1)) > 2 or not SUMMARY_HEADING_RE.search(match.group(2)):
+        if not match or len(match.group(1)) > 2 or not heading_pattern.search(match.group(2)):
             continue
         level = len(match.group(1))
         body: list[str] = []
@@ -194,6 +217,14 @@ def summary_section(markdown: str) -> str:
     return markdown_to_text(markdown)
 
 
+def summary_section(markdown: str) -> str:
+    return section_text(markdown, SUMMARY_HEADING_RE)
+
+
+def english_summary_section(markdown: str) -> str:
+    return section_text(markdown, ENGLISH_SUMMARY_HEADING_RE)
+
+
 def clip(text: str, limit: int = 220) -> str:
     text = WHITESPACE_RE.sub(" ", text).strip()
     if len(text) <= limit:
@@ -203,6 +234,55 @@ def clip(text: str, limit: int = 220) -> str:
     if boundary >= int(limit * 0.58):
         return prefix[: boundary + 1]
     return prefix[:limit].rstrip("，、；,:： ") + "…"
+
+
+def public_markdown(markdown: str) -> str:
+    """Keep readable Markdown while removing local-only references and embeds."""
+    text = FRONT_MATTER_RE.sub("", markdown, count=1)
+    text = text.replace("\x08", r"\b").replace("\x0c", r"\f")
+    text = HTML_COMMENT_RE.sub("", text)
+    text = DANGEROUS_HTML_RE.sub("", text)
+    text = re.sub(r"<img\b[^>]*>", "", text, flags=re.IGNORECASE)
+
+    def clean_link(match: re.Match[str]) -> str:
+        is_image, label, raw_target = match.groups()
+        if is_image:
+            return f"*{label}*" if label else ""
+        target = raw_target.strip().split(maxsplit=1)[0].strip("<>")
+        if re.match(r"^(?:https?://|mailto:|#)", target, flags=re.IGNORECASE):
+            return match.group(0)
+        return label
+
+    text = MARKDOWN_LINK_RE.sub(clean_link, text)
+    text = PRIVATE_PATH_RE.sub("[local path omitted]", text)
+    replacements = {
+        "analysis_meta.json": "local metadata",
+        "method_explained_zh.md": "Chinese method notes",
+        "output_paper_md": "paper source",
+        "PAPER_MD": "paper source",
+        "CODE_DIR": "code source",
+    }
+    for private, public in replacements.items():
+        text = re.sub(re.escape(private), public, text, flags=re.IGNORECASE)
+    text = text.replace("{{", "&#123;&#123;").replace("{%", "&#123;%")
+
+    lines: list[str] = []
+    in_fence = False
+    for line in text.splitlines():
+        if FENCE_RE.match(line):
+            in_fence = not in_fence
+        if not in_fence:
+            heading = HEADING_RE.match(line)
+            if heading and len(heading.group(1)) < 6:
+                line = "#" + line
+        lines.append(line.rstrip())
+    return "\n".join(lines).strip()
+
+
+def detail_slug(method: str, relative_workspace: str) -> str:
+    base = re.sub(r"[^a-z0-9]+", "-", method.casefold()).strip("-") or "paper"
+    digest = hashlib.sha256(relative_workspace.encode("utf-8")).hexdigest()[:8]
+    return f"{base[:64].rstrip('-')}-{digest}"
 
 
 def normalize_doi(value: Any) -> str:
@@ -218,7 +298,13 @@ def normalize_title(value: str) -> str:
 
 def collect_papers(root: Path, categories: list[Category]) -> tuple[list[Paper], dict[str, int]]:
     papers: dict[str, Paper] = {}
-    skipped = {"not_ready": 0, "private_category": 0, "missing_summary": 0, "duplicate": 0}
+    skipped = {
+        "not_ready": 0,
+        "private_category": 0,
+        "excluded_category": 0,
+        "missing_summary": 0,
+        "duplicate": 0,
+    }
     for workspace in iter_workspaces(root):
         meta = read_json(workspace / "analysis_meta.json")
         if meta.get("ready_to_publish") is not True:
@@ -229,22 +315,41 @@ def collect_papers(root: Path, categories: list[Category]) -> tuple[list[Paper],
         if category is None:
             skipped["private_category"] += 1
             continue
+        if any(
+            category.id == prefix or category.id.startswith(f"{prefix}/")
+            for prefix in EXCLUDED_CATEGORY_PREFIXES
+        ):
+            skipped["excluded_category"] += 1
+            continue
         readme = meta.get("readme") if isinstance(meta.get("readme"), dict) else {}
         method = first_text(meta.get("paper_short_name"), readme.get("method"), workspace.name)
         title = first_text(meta.get("paper_title"), readme.get("title"), method)
-        source = workspace / "method_explained_zh.md"
-        source_text = source.read_text(encoding="utf-8", errors="replace") if source.is_file() else ""
-        summary = clip(summary_section(source_text) if source_text else first_text(readme.get("summary")))
-        if not summary:
+        source_zh = workspace / "method_explained_zh.md"
+        source_en = workspace / "summary.md"
+        source_zh_text = source_zh.read_text(encoding="utf-8", errors="replace") if source_zh.is_file() else ""
+        source_en_text = source_en.read_text(encoding="utf-8", errors="replace") if source_en.is_file() else ""
+        summary_zh = clip(summary_section(source_zh_text), 220) if source_zh_text else ""
+        summary_en = (
+            clip(english_summary_section(source_en_text), 240)
+            if source_en_text
+            else clip(first_text(readme.get("summary")), 240)
+        )
+        if not summary_zh and not summary_en:
             skipped["missing_summary"] += 1
             continue
         doi = normalize_doi(meta.get("doi"))
         year_raw = first_text(meta.get("year"), readme.get("year"))
         year_match = re.search(r"(?:19|20)\d{2}", year_raw)
+        detail_zh = public_markdown(source_zh_text) or summary_zh or summary_en
+        detail_en = public_markdown(source_en_text) or summary_en or summary_zh
         paper = Paper(
             method=method,
             title=title,
-            summary=summary,
+            summary_zh=summary_zh or summary_en,
+            summary_en=summary_en or summary_zh,
+            detail_zh=detail_zh,
+            detail_en=detail_en,
+            detail_slug=detail_slug(method, relative),
             category_id=category.id,
             category_title=category.title,
             year=year_match.group(0) if year_match else "",
@@ -265,15 +370,114 @@ def esc(value: Any) -> str:
     return html.escape(str(value), quote=True)
 
 
+def validate_public_output(content: str) -> None:
+    for token in FORBIDDEN_OUTPUT:
+        if token.casefold() in content.casefold():
+            raise ValueError(f"refusing to publish forbidden source marker: {token}")
+
+
+def render_detail_page(paper: Paper) -> str:
+    metadata = " · ".join(part for part in (paper.journal, paper.year) if part)
+    metadata_chip = f"\n      <span>{esc(metadata)}</span>" if metadata else ""
+    doi_link = ""
+    if paper.doi:
+        doi_url = "https://doi.org/" + quote(paper.doi, safe="/():;._-")
+        doi_link = (
+            f'<a class="paper-detail__doi" href="{esc(doi_url)}" target="_blank" '
+            'rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" '
+            'aria-hidden="true"></i></a>'
+        )
+    doi_line = f"    {doi_link}\n" if doi_link else ""
+    page = f'''---
+layout: default
+permalink: /paper-atlas/{paper.detail_slug}/
+title: {json.dumps(paper.method, ensure_ascii=False)}
+nav: false
+description: {json.dumps(paper.summary_zh, ensure_ascii=False)}
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{{{ '/paper-atlas/' | relative_url }}}}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>{esc(paper.category_title)}</span>{metadata_chip}
+    </div>
+    <h1>{esc(paper.method)}</h1>
+    <p>{esc(paper.title)}</p>
+{doi_line}  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+{paper.detail_zh}
+
+</article>
+<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+{paper.detail_en}
+
+</article>
+</section>
+
+<script defer src="{{{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}}}"></script>
+'''
+    validate_public_output(page)
+    return page
+
+
+def write_detail_pages(papers: list[Paper], details_dir: Path) -> int:
+    details_dir.mkdir(parents=True, exist_ok=True)
+    expected = {f"{paper.detail_slug}.md" for paper in papers}
+    for stale in details_dir.glob("*.md"):
+        if stale.name in expected:
+            continue
+        try:
+            prefix = stale.read_text(encoding="utf-8", errors="replace")[:240]
+        except OSError:
+            continue
+        if "Generated locally by bin/export_paper_atlas.py" in prefix:
+            stale.unlink()
+    for paper in papers:
+        (details_dir / f"{paper.detail_slug}.md").write_text(
+            render_detail_page(paper), encoding="utf-8"
+        )
+    return len(expected)
+
+
 def render_page(papers: list[Paper], categories: list[Category]) -> str:
     used_ids = {paper.category_id for paper in papers}
     used_categories = [item for item in categories if item.id in used_ids]
     years = sorted({paper.year for paper in papers if paper.year}, reverse=True)
     code_count = sum(paper.has_code for paper in papers)
     category_options = "\n".join(
-        f'          <option value="{esc(item.id)}">{esc(item.title)}</option>' for item in used_categories
+        f'          <option value="{esc(item.id)}">{"— " if "/" in item.path else ""}{esc(item.title)}</option>'
+        for item in used_categories
     )
     year_options = "\n".join(f'          <option value="{year}">{year}</option>' for year in years)
+    top_topics = []
+    for category in categories:
+        if "/" in category.path:
+            continue
+        count = sum(
+            paper.category_id == category.id or paper.category_id.startswith(category.id + "/") for paper in papers
+        )
+        if count:
+            top_topics.append((category, count))
+    top_topics.sort(key=lambda item: (-item[1], item[0].order))
+    topic_buttons = "\n".join(
+        f'      <button type="button" data-atlas-topic="{esc(category.id)}" aria-pressed="false">'
+        f"<span>{esc(category.title)}</span><strong>{count}</strong></button>"
+        for category, count in top_topics[:8]
+    )
     cards: list[str] = []
     for paper in papers:
         code_badge = (
@@ -290,6 +494,10 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
             )
         else:
             paper_link = '<span class="atlas-doi atlas-doi--muted">DOI unavailable</span>'
+        detail_link = (
+            f'<a class="atlas-details-link" href="{{{{ \'/paper-atlas/{paper.detail_slug}/\' | relative_url }}}}">'
+            '完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>'
+        )
         cards.append(
             f'''      <article class="atlas-card" data-category="{esc(paper.category_id)}" data-year="{esc(paper.year)}" data-code="{"yes" if paper.has_code else "no"}">
         <div class="atlas-card__chips">
@@ -297,10 +505,17 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
         </div>
         <h2>{esc(paper.method)}</h2>
         <p class="atlas-card__title">{esc(paper.title)}</p>
-        <p class="atlas-card__summary" lang="zh-CN">{esc(paper.summary)}</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary-label">中文方法解读</p>
+          <p class="atlas-card__summary">{esc(paper.summary_zh)}</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary-label">English Summary</p>
+          <p class="atlas-card__summary">{esc(paper.summary_en)}</p>
+        </div>
         <footer>
           <span>{esc(metadata)}</span>
-          {paper_link}
+          <span class="atlas-card__links">{paper_link}{detail_link}</span>
         </footer>
       </article>'''
         )
@@ -315,12 +530,14 @@ robots: noindex, nofollow
 sitemap: false
 ---
 
-<!-- Generated locally. This page contains public summaries only; no source workspace data is embedded. -->
+<!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-atlas" id="paper-atlas" data-page-size="36">
   <header class="atlas-hero">
-    <p class="atlas-kicker">Literature notes · computational biology</p>
-    <h1>Paper Atlas</h1>
-    <p class="atlas-lead">A compact, searchable map of methods and papers I have read. 每篇仅展示中文短摘要；完整笔记、分析文件、代码快照和数据不在本网站中。</p>
+    <div class="atlas-hero__copy">
+      <p class="atlas-kicker">Literature notes · computational biology</p>
+      <h1>Paper Atlas</h1>
+      <p class="atlas-lead">A searchable map of computational biology methods and papers, with concise Chinese notes for quick recall.</p>
+    </div>
     <div class="atlas-stats" aria-label="Atlas statistics">
       <div><strong>{len(papers)}</strong><span>papers</span></div>
       <div><strong>{len(used_categories)}</strong><span>topics</span></div>
@@ -328,10 +545,16 @@ sitemap: false
     </div>
   </header>
 
-  <aside class="atlas-privacy" aria-label="Public data boundary">
-    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-    <div><strong>Public summary layer only.</strong> This page has no bulk-download endpoint and does not contain the underlying PaperCode workspaces. Public HTML can still be read or scraped, so no static site can promise copy prevention.</div>
-  </aside>
+  <section class="atlas-topics" aria-labelledby="atlas-topics-title">
+    <div class="atlas-topics__heading">
+      <p id="atlas-topics-title">Explore topics</p>
+      <span>Jump into the largest collections</span>
+    </div>
+    <div class="atlas-topic-list">
+      <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>{len(papers)}</strong></button>
+{topic_buttons}
+    </div>
+  </section>
 
   <form class="atlas-controls" id="atlas-controls" role="search">
     <label class="atlas-search">
@@ -366,7 +589,23 @@ sitemap: false
 
   <div class="atlas-results-bar">
     <p id="atlas-count" aria-live="polite">Showing {min(36, len(papers))} of {len(papers)} papers</p>
-    <p>Newest first</p>
+    <div class="atlas-results-actions">
+      <label class="atlas-view">
+        <span>Notes</span>
+        <select id="atlas-view">
+          <option value="zh">中文解读</option>
+          <option value="en">English summary</option>
+        </select>
+      </label>
+      <label class="atlas-sort">
+        <span>Sort</span>
+        <select id="atlas-sort">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="name">Method A–Z</option>
+        </select>
+      </label>
+    </div>
   </div>
 
   <div class="atlas-grid" id="atlas-grid">
@@ -381,9 +620,7 @@ sitemap: false
 
 <script defer src="{{{{ '/assets/js/paper-atlas.js' | relative_url | bust_file_cache }}}}"></script>
 '''
-    for token in FORBIDDEN_OUTPUT:
-        if token.casefold() in page.casefold():
-            raise ValueError(f"refusing to publish forbidden source marker: {token}")
+    validate_public_output(page)
     return page
 
 
@@ -402,7 +639,20 @@ def main() -> int:
         parser.error("no publishable summaries found")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(render_page(papers, categories), encoding="utf-8")
-    print(json.dumps({"published": len(papers), "output": str(output), "skipped": skipped}, ensure_ascii=False))
+    details_dir = output.parent / "paper-atlas-details"
+    detail_count = write_detail_pages(papers, details_dir)
+    print(
+        json.dumps(
+            {
+                "published": len(papers),
+                "details": detail_count,
+                "output": str(output),
+                "details_dir": str(details_dir),
+                "skipped": skipped,
+            },
+            ensure_ascii=False,
+        )
+    )
     return 0
 
 

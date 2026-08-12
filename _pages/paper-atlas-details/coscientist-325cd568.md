@@ -1,0 +1,195 @@
+---
+layout: default
+permalink: /paper-atlas/coscientist-325cd568/
+title: "CoScientist"
+nav: false
+description: "Co-Scientist 是一个建立在 Gemini 2.0 上的复合多代理系统。科学家给出自然语言研究目标、已有证据、实验条件和约束，系统大量生成候选假说，反复审查、比较、演化，再把排序后的研究建议交回科学家选择和验证。它的产物是待检验的假说与实验计划，不是已经成立的科学结论。 论文的主要方法贡献不是新的基础模型或训练损失，而是把推理时计算组织成一个持续运行的“生成—批判—竞赛—改写”系统。"
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>Machine Learning Algorithm</span>
+      <span>Nature · 2026</span>
+    </div>
+    <h1>CoScientist</h1>
+    <p>Accelerating scientific discovery with Co-Scientist</p>
+    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10644-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+## Co-Scientist：从研究问题到可实验假说的多代理循环
+
+### 它解决的不是“替科学家做完研究”
+
+Co-Scientist 是一个建立在 Gemini 2.0 上的复合多代理系统。科学家给出自然语言研究目标、已有证据、实验条件和约束，系统大量生成候选假说，反复审查、比较、演化，再把排序后的研究建议交回科学家选择和验证。它的产物是**待检验的假说与实验计划**，不是已经成立的科学结论。
+
+论文的主要方法贡献不是新的基础模型或训练损失，而是把推理时计算组织成一个持续运行的“生成—批判—竞赛—改写”系统。更多计算可用于探索更多候选、进行更多比较和反馈循环，而不只是让单次回答变长。
+
+### 输入、状态与输出
+
+输入可以是简短问题，也可以是含文献 PDF、偏好和实验约束的长文档。Supervisor 先把它解析成 research plan configuration，默认要求包括：与目标一致、合理、具有新颖性、可检验且安全。科学家还可规定实验平台、成本、候选范围或输出格式。
+
+系统的长期状态由 persistent context memory 保存，包括候选假说、审查意见、两两比较、相似关系和高层反馈。论文公开了这个层次的概念与补充伪代码，但没有公开精确存储模式、调度器、检索实现和停止条件。
+
+输出通常包括一组带理由和证据的候选假说、相对排序、审查意见、实验建议，以及 Meta-review 汇总的研究全景。真正进入实验的候选仍由领域专家筛选。
+
+### 六类专门代理怎样接力
+
+#### 1. Generation：展开假说空间
+
+Generation agent 从研究目标出发，结合文献检索、不同关注点、条件假设链和模拟科学辩论产生候选。其作用是主动寻找不同解释路径，而不是仅摘要已有论文。生成数量和多样性很重要，因为后续排名只能在已探索到的候选中选择。
+
+失败边界也很直接：搜索结果可能不完整，所谓“新颖”可能只是没有检索到已发表工作，论证流畅也可能掩盖错误前提。
+
+#### 2. Reflection：在进入高排名前找问题
+
+Reflection agent 从正确性、相关性、新颖性、可检验性、安全性、假设和实验可行性等角度批评候选。论文消融表明，允许 Reflection 使用外部搜索有助于识别看似新颖但已有先例或不可信的假说。
+
+这仍然不是独立事实核验器。它与生成器共享同一类基础模型和信息环境，可能产生相关错误；搜索能提高 grounding，却不能证明机制正确。
+
+#### 3. Ranking：用两两辩论形成锦标赛
+
+Ranking agent 比较两个候选。高价值比较可采用科学辩论式提示，让不同立场陈述证据与反驳，再作裁决；大量普通比较则可使用较轻量流程。胜负结果更新候选的 Elo 风格分数，并影响后续资源分配。
+
+若候选 $i$ 与 $j$ 比较，Elo 的一般思想是先按当前分数得到预期胜率，再根据实际胜负更新：
+
+$$
+E_i = \frac{1}{1 + 10^{(R_j-R_i)/400}}, \qquad
+R_i' = R_i + K(S_i-E_i).
+$$
+
+这只是理解 Elo 的标准形式；论文未公开足以复现生产系统的全部更新细节和调度参数，不能把上式声称为私有实现逐行代码。Elo 代表同一评审体系中的相对偏好，不等于假说为真的概率。
+
+#### 4. Proximity：避免把相同想法当成许多独立发现
+
+Proximity agent 判断候选之间的相关性并形成相似关系图，使系统能识别重复思路、相邻分支和可组合的概念。它帮助维持探索覆盖面，也给 Evolution 提供组合线索。相似性本身由模型判断，因此可能把表述相似误当成机制相同，或漏掉隐含联系。
+
+#### 5. Evolution：保留原候选，同时产生改进版本
+
+Evolution agent 根据排名、审查和邻近关系，采用提高可行性、补证据、简化、重组候选或探索反常规方向等策略生成新版本。新候选重新进入 Reflection 和 tournament；旧候选不被覆盖，因此失败改写不会直接销毁当前强候选。
+
+这构成论文所谓 self-improving loop，但“自我改进”应限定为系统内部评价及部分外部评价随迭代改善。若评审信号偏好某种写作风格，Evolution 也可能优化说服力而非科学真实性。
+
+#### 6. Meta-review：把局部批评变成全局反馈
+
+Meta-review agent 汇总反复出现的优点、缺陷和争议，把高层反馈送回后续提示，并在运行结束时形成研究概览。它类似不更新模型参数的工作记忆：后续调用可利用先前教训。风险是错误共识被压缩后反复传播，或者多样性因同一套评价标准而收缩。
+
+### 异步调度为什么是方法的一部分
+
+Supervisor 维护连续的任务队列，把资源动态分给各专门代理。系统不必严格完成一轮后才开始下一轮：候选可在生成、审查、比较和演化之间异步流动。这样可以扩展 test-time compute，并将更多计算集中在有潜力或仍有争议的候选上。
+
+论文图 2 将每个研究目标的生成过程分成十个时间桶，在 203 个目标上统计每桶最高 Elo 与 top-10 平均 Elo；两者随时间上升。该图直接支持的是“内部锦标赛分数随计算增长”，不是生物真实性的直接测量。15 个专家策划目标上的模型比较仍使用 Co-Scientist 的 Elo 评价体系，也存在同源评审偏差。
+
+### 外部评价把证据推进了几步
+
+论文还在 11 个目标上做盲法专家评价。Co-Scientist 的平均偏好名次为 2.36，新颖性和影响评分分别为 3.64 与 3.09（满分 5）。这比内部 Elo 更接近使用价值，但样本小、评分主观，论文也明确如此说明。
+
+更强的一层是生物实验。AML 药物再利用任务先把搜索限制在约 2,300 种获批药物和 34 类癌症，再由肿瘤学专家从排名候选中筛选实验对象。四种 AML 细胞系与一个非 AML 对照用于初步剂量反应；部分单药和组合显示活性或协同，另一些候选无效或随细胞系、剂量变化。负结果和混合结果说明系统是在提高候选优先级，而不是可靠地预言每个实验结果。
+
+肝纤维化靶点和抗菌药耐药机制构成另外两类案例，但部分证据依赖配套研究。cf-PICI 案例尤其接近“在未知已完成结果时复现一个未发表机制”，很有启发性，却不是在大量预注册未知问题上的成功率估计。
+
+所有湿实验都经过专家选择。AML 细胞实验是初步生物 reality check，并不建立动物有效性、临床疗效、毒性或可转化剂量。把“细胞系中有 IC50/协同”写成“治疗有效”会越过证据边界。
+
+### 安全与人类监督不是附加项
+
+研究目标、生成和反思都包含安全标准，科学家可持续反馈与改变方向。论文警告，无审查使用可能放大偏见、使研究方向同质化，并制造低质量科学产物。尤其在药物、病原体或双重用途问题上，系统输出必须经过专业审查、伦理和机构流程；Elo 排名不能取代这些门槛。
+
+### 版本与复现边界
+
+本文研究使用 Gemini 2.0 系列作为各代理基础模型，系统和分析脚本使用 Python 3.11.7；论文还列出 pandas 2.1.4、NumPy 1.26.4、seaborn 0.12.2、matplotlib 3.8.0，湿实验分析使用 GraphPad Prism 10.6.0，组合数据还使用 2025 年 11 月访问的 Julius AI。
+
+但本地工作区是 **paper-only**：没有 Co-Scientist 源码、提交号或可执行环境。论文 Code availability 明确指出，完整代码因专有基础设施、大规模计算需求和安全因素不公开；补充材料提供代理伪代码和提示词。这些资料足以重建概念原型，不能复现生产系统的精确异步调度、context memory、工具调用、Elo 参数、提示装配、预算/停止规则或论文数值。
+
+数据开放也不完整。GPQA、DepMap 和 Open Targets 等部分基准来源可公开获得，但三项现实验证数据不在同一开放可执行包内；当前工作区亦没有原始 benchmark 输出或 AML 分析脚本。因此复现结论应是：**方法逻辑透明度中等，精确计算复现性低，实验案例只能从论文与补充审计，不能在本地端到端重跑。**
+
+### 最合适的定位
+
+Co-Scientist 应被看作“科学家在环的假说搜索与优先级系统”。它最可信的用途是拓宽候选空间、暴露反例、组织证据并帮助选择下一批实验。论文提供了多层早期证据，表明这种循环可产生有用候选；它没有证明内部 Elo 等于真理，也没有证明系统能独立、稳定或普遍地完成科学发现。
+
+</article>
+<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+## CoScientist Summary
+
+### Motivation And Novelty
+
+Co-Scientist tackles a problem that sits before ordinary model fitting: how to help scientists generate, critique, rank, and refine novel hypotheses for complex biomedical questions. The paper argues that scientific discovery requires both deep domain expertise and broad cross-field synthesis, while the modern literature is too large for any individual to exhaustively search.
+
+The method is a Gemini-based multi-agent AI system for structured scientific thinking. A scientist writes a research goal in natural language; the system parses it into criteria, generates candidate hypotheses, reviews them, ranks them through an Elo-style tournament, evolves stronger candidates, and returns ranked proposals for scientist selection.
+
+Its novelty is not a new neural network layer or omics-specific objective. The contribution is a compound-agent workflow that scales test-time compute for scientific hypothesis generation:
+
+- Generation agent for literature-grounded and debate-style hypothesis creation.
+- Reflection agent for correctness, novelty, safety, and assumption review.
+- Ranking agent for Elo-style pairwise tournament evaluation.
+- Proximity agent for organizing related ideas.
+- Evolution agent for generating improved candidates without overwriting existing ones.
+- Meta-review agent for summarizing recurring critique patterns and feeding them back into later prompts.
+- Scientist-in-the-loop interface for goal refinement, human review, and final candidate selection.
+
+### Why Prior Methods Fall Short
+
+The paper positions Co-Scientist against several adjacent systems:
+
+| Method | Journal / Venue | Year | Limitation Highlighted By This Paper |
+|---|---|---|---|
+| Coscientist by Boiko et al. | Nature | 2023 | Narrower chemistry-lab autonomy focus; less emphasis on broad scientist-in-loop hypothesis evolution |
+| Virtual Lab | bioRxiv | 2024 | Demonstrated on nanobody design, but broader generality was not established |
+| The AI Scientist | arXiv | 2024 | More automation-oriented and less experimentally validated in the paper's framing |
+| PaperQA2 | arXiv | 2024 | Strong literature synthesis, but not designed for iterative novel hypothesis generation and validation |
+| HypoGeniC | NLP4Science workshop | 2024 | Retrospective hypothesis refinement; true novelty and prospective validation remain open |
+| data-to-paper | NEJM AI | 2025 | Automates research-paper generation from data; less focused on original hypothesis discovery |
+| TxGNN-style graph drug repurposing | Nature Medicine | 2024 | Depends on knowledge-graph coverage and lacks the same end-to-end wet-lab validation in this paper's comparison |
+
+### Method Overview
+
+Co-Scientist starts with a natural-language research goal. The Supervisor agent converts it into a research plan configuration that encodes criteria such as novelty, feasibility, plausibility, testability, and safety. The system then runs a persistent asynchronous task loop.
+
+The Generation agent proposes hypotheses using literature search, focus areas, conditional assumption chains, and simulated scientific debate. The Reflection agent reviews each hypothesis for novelty, correctness, assumptions, explanatory power, and safety. The Ranking agent places hypotheses into an Elo-style tournament, where stronger hypotheses receive deeper debate-style comparisons and lower-ranked hypotheses can receive cheaper single-turn comparisons. The Proximity agent builds a similarity graph to organize related ideas. The Evolution agent creates improved or recombined hypotheses from top candidates. The Meta-review agent summarizes recurring critique patterns and feeds those lessons back into future prompts.
+
+The output is a ranked set of hypotheses and a research overview for scientist inspection. In the paper's biomedical validations, experts selected candidates for in vitro AML assays, liver fibrosis organoid experiments, and comparison with an antimicrobial-resistance mechanism discovered independently.
+
+### Evaluation
+
+The paper uses several layers of evidence:
+
+- Internal Elo trends over 203 research goals show increasing best-hypothesis and top-10 Elo with more test-time compute.
+- A 15-goal expert-curated biomedical benchmark compares Co-Scientist with Gemini variants, OpenAI o1/o3-mini-high, DeepSeek R1, and human expert best guesses.
+- Expert evaluation over 11 goals rates Co-Scientist favorably for novelty, impact, and preference rank.
+- Ablations show that external search improves Reflection novelty review, scientific debate reduces ranking bias, Evolution improves top-result quality, Proximity organizes related ideas, and Meta-review improves correctness-review signals.
+- AML wet-lab validation tests Co-Scientist-nominated single agents and drug combinations in cell lines.
+- Additional real-world validation includes liver fibrosis target discovery and antimicrobial-resistance mechanism recapitulation, though those are partly supported by companion studies.
+
+The strongest biological evidence is the AML experimental validation, especially dose-response curves for selected candidates and synergy testing for combinations. The main caution is that these are preliminary in vitro experiments. They support biological plausibility, not clinical translation.
+
+### Reproducibility
+
+**Rating: 2 / 5.**
+
+The paper provides unusually useful conceptual transparency through pseudocode and full prompt examples in the supplement. It also reports model versions, analysis libraries, and experimental assay descriptions.
+
+However, the full Co-Scientist source code is not public. The exact task scheduler, memory schema, search/retrieval implementation, Elo update formula, prompt assembly, stopping criteria, raw benchmark outputs, and analysis scripts are unavailable. The Code Availability section explicitly states that full source release is blocked by proprietary infrastructure, computational-resource requirements, and safety concerns.
+
+This means an independent reader can build an approximate open version of the idea, but cannot reproduce the exact system or benchmark numbers from the paper. Experimental data and scripts for AML IC50/synergy analysis are also not deposited in an executable package in this workspace.
+
+### Bottom Line
+
+Co-Scientist is best understood as an AI-assisted hypothesis-prioritization framework. Its contribution is the structured loop that repeatedly generates, reviews, ranks, evolves, and summarizes scientific hypotheses under scientist oversight. The paper provides credible early evidence that this loop can produce useful biomedical hypotheses, but exact computational reproducibility is limited by unavailable source code and raw analysis artifacts.
+
+</article>
+</section>
+
+<script defer src="{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}"></script>

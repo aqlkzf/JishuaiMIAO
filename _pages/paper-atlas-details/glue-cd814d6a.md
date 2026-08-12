@@ -1,0 +1,171 @@
+---
+layout: default
+permalink: /paper-atlas/glue-cd814d6a/
+title: "GLUE"
+nav: false
+description: "GLUE 同时学习两类坐标：细胞坐标 \\mathbf u 回答“这个细胞处于什么状态”，特征坐标 \\mathbf v 回答“这个基因/峰/甲基化特征指向什么生物方向”；引导图先把特征坐标定向，再用 \\mathbf Vk^\\top\\mathbf u 重建各模态，于是不同模态的细胞坐标获得可比的语义。"
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>Integration &amp; Multi-modal</span>
+      <span>Nature Biotechnology · 2022</span>
+    </div>
+    <h1>GLUE</h1>
+    <p>Multi-omics single-cell data integration and regulatory inference with graph-linked embedding</p>
+  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+## GLUE 方法详解
+
+### 它要解决什么问题？
+
+单细胞多组学常见的现实是：RNA、ATAC、DNA 甲基化并不是在同一批细胞中测得的。不同模态既没有细胞一一配对，特征也不同——RNA 是基因，ATAC 是峰，甲基化又是另一套位点。若先把峰粗暴转换成基因，会丢掉远端调控信息；若只追求两个低维空间“混得像”，又可能把本来不同的细胞群强行对齐。
+
+GLUE（graph-linked unified embedding）的核心想法是：不直接要求各模态共享输入特征，而是用一个“引导图”把不同模态的特征联系起来。图的节点是基因、ATAC 峰、甲基化特征等，边带有权重和正负号。这样，每个模态可以保留自己的概率模型，同时在同一个有生物意义的坐标方向上学习。
+
+### 一句话直觉
+
+GLUE 同时学习两类坐标：细胞坐标 $\mathbf u$ 回答“这个细胞处于什么状态”，特征坐标 $\mathbf v$ 回答“这个基因/峰/甲基化特征指向什么生物方向”；引导图先把特征坐标定向，再用 $\mathbf V_k^\top\mathbf u$ 重建各模态，于是不同模态的细胞坐标获得可比的语义。
+
+### 模型组成
+
+#### 1. 每个模态一个变分自编码器
+
+第 $k$ 个模态有自己的编码器
+
+$$q(\mathbf u\mid\mathbf x_k;\phi_k),$$
+
+把观测 $\mathbf x_k$ 编码成共享维度 $m$ 的细胞隐变量。RNA/ATAC 计数可用负二项分布，连续或甲基化数据可以选择其他分布。编码器输入可以先用 PCA/LSI 降维，但解码器仍在原始特征空间拟合。
+
+#### 2. 引导图的变分自编码器
+
+引导图 $\mathcal G=(\mathcal V,\mathcal E)$ 的边有可信度 $w_{ij}$ 和符号 $s_{ij}$。图编码器用 GCN 得到特征后验；图解码器采用
+
+$$\sigma(s_{ij}\mathbf v_i^\top\mathbf v_j).$$
+
+正边推动两个特征方向相似，负边推动方向相反。例如基因与附近开放峰通常连正边，基因与抑制性甲基化特征可连负边。
+
+#### 3. 用特征坐标解码细胞数据
+
+对于计数模态，均值包含
+
+$$
+\boldsymbol\mu=\operatorname{Softmax}(\boldsymbol\alpha\odot\mathbf V_k^\top\mathbf u+\boldsymbol\beta)\sum_jx_{kj}.
+$$
+
+最关键的是 $\mathbf V_k^\top\mathbf u$：特征嵌入像 PCA 的载荷矩阵，为细胞空间规定方向。不同模态的 $\mathbf V_k$ 又被同一张引导图约束，所以各模态的细胞空间被间接连起来。
+
+#### 4. 对抗式模态对齐
+
+判别器 $D$ 尝试从细胞嵌入判断模态；编码器反过来欺骗判别器。代码中的生成器损失是
+
+$$
+\mathcal L_{gen}=\mathcal L_{VAE}-\lambda_{align}\mathcal L_D.
+$$
+
+训练时先更新判别器，再更新图/数据编码器和解码器。这比直接最小化两个坐标矩阵的距离更灵活，但若两个模态的细胞类型比例差异很大，也可能过校正。
+
+### 真正重要的隐藏步骤：两阶段加权训练
+
+GLUE 不是从第一步就猛烈对齐，而是：
+
+```text
+各模态预处理 + 引导图
+        ↓
+第一阶段：等权重、带噪声的粗对齐
+        ↓
+分别聚类各模态的粗嵌入
+        ↓
+根据跨模态相似簇估计每个细胞的平衡权重
+        ↓
+载入预训练参数，第二阶段加权微调
+        ↓
+细胞嵌入 + 特征嵌入 + 可选调控网络
+```
+
+论文用余弦相似度大于 0.5 的跨模态簇来估计权重，并将相似度取四次方增强对比，再除以簇大小。这样，大细胞群不会仅因样本多就主导判别器。仓库中的 RegInf、TripleOmics 和 Atlas 流程都明确执行了“预训练—估权—微调”。
+
+### 从输入到输出
+
+1. 选择高变特征；RNA 做 PCA、ATAC 做 LSI。
+2. 依据基因组重叠、距离衰减、pcHi-C、eQTL 等构建有符号加权图。
+3. 配置各模态的观测分布、批次、编码器输入和训练特征。
+4. 联合优化数据 ELBO、图 ELBO 和对抗损失。
+5. 输出细胞嵌入，用于邻居图、UMAP、标签转移和批次校正。
+6. 输出特征嵌入；在候选边骨架上计算归一化点积，打乱特征嵌入构造零分布，得到经验 $P$ 值和 BH-FDR。
+
+### 如何判断有没有“对齐过头”？
+
+GLUE 的 integration consistency 不是看模态是否混合，而是检查：在对齐空间形成的 metacell 中，引导图相连特征的相关性，是否与边的符号和权重一致。Extended Data Fig. 6 显示，同组织组合保持明显正分数，而不同组织组合接近 0。因此它是“几何混合是否仍有生物一致性”的诊断，不是又一个纯混合指标。
+
+### 论文证据
+
+- 五个基准数据集上，GLUE 的综合分数最高。
+- 在三个有真实细胞配对的数据集上，FOSCTTM 相对次优方法分别降低 3.6 倍、1.7 倍和 1.5 倍。
+- 峰—基因 pcHi-C 预测中，GLUE AUROC 为 0.631，Cicero、Spearman 和 LASSO 约为 0.55。
+- 三组学示例中，RNA、ATAC、甲基化在共同细胞结构上对齐，并能联合解释基因表达。
+- Atlas 代码与论文一致：RNA/ATAC 分别聚成 100,000/40,000 个 metacell，预训练隐藏层宽度增至 512，再在全细胞上加权微调。
+
+### 代码对应
+
+- 模型与损失：`GLUE/scglue/models/scglue.py:292-401,708-1055`
+- 图/数据编码解码器：`GLUE/scglue/models/sc.py:21-125,233-330`
+- 数据配置：`GLUE/scglue/models/__init__.py:25-125`
+- 一致性诊断：`GLUE/scglue/models/dx.py:24-113`
+- 调控推断：`GLUE/scglue/genomics.py:776-850`
+- 三组学：`GLUE/experiments/TripleOmics/`
+- 百万细胞 Atlas：`GLUE/experiments/Atlas/`
+
+### 局限与复现边界
+
+- 引导图可以有噪声，但不能完全没有信息；鲁棒性实验不等于任意先验都安全。
+- 调控分数是总体数据上的关联，不能单独证明因果，也可能混合组织/时间特异网络。
+- 少于约 1,000 个细胞时，神经网络可能训练不足。
+- 仓库代码与论文核心机制高度吻合，但完整复现仍需下载外部大型数据并运行昂贵工作流。
+- 本工作区 `MISSING` Supplementary Data 1/2 XLSX；主文、补充 PDF/Markdown 和全部主/扩展图像均已保留。
+
+</article>
+<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+## GLUE summary
+
+### Problem and contribution
+
+Most single-cell multi-omics datasets measure different molecular layers in different cells, so integration must align unpaired samples whose feature spaces are also different. Feature-conversion methods discard modality-specific information, while purely geometric alignment can over-correct or lack a biologically interpretable bridge between genes, peaks and methylation features.
+
+GLUE (graph-linked unified embedding) solves this with modality-specific variational autoencoders linked by a signed, weighted biological guidance graph. A graph VAE learns feature embeddings; each modality decoder reconstructs its data from the inner product of cell and feature embeddings; an adversarial discriminator aligns cell embeddings. This yields a shared cell space and an oriented feature space that can be reused for regulatory inference.
+
+### Workflow
+
+Inputs are preprocessed modality matrices plus a guidance graph connecting cross-layer features. GLUE first obtains a noisy coarse alignment, estimates cell weights that compensate for composition imbalance, then fine-tunes adversarially with those weights. Outputs include integrated cell embeddings, feature embeddings, an integration-consistency diagnostic, and optional regulatory scores with empirical p-values and FDR.
+
+### Evaluation
+
+The paper benchmarks GLUE on three paired RNA–ATAC datasets (SNARE-seq, SHARE-seq, 10X Multiome) and two unpaired datasets (Nephron, MOp) against UnionCom, Pamona, MMD-MA, online iNMF, LIGER, Harmony, bindSC and Seurat v3 variants. Metrics separate biology conservation from omics mixing and include FOSCTTM for paired-cell recovery. GLUE has the best overall score across the five datasets and reduces FOSCTTM versus the next method by 3.6-fold, 1.7-fold and 1.5-fold on the three paired datasets. Visual inspection of Fig. 2 and Extended Data Figs. 1-5 confirms favorable accuracy, robustness to prior corruption, broad hyperparameter plateaus and degradation below about 1,000 cells.
+
+Case studies demonstrate three-way RNA–ATAC–methylation alignment, peak–gene inference, and a multi-omics atlas with millions of cells. For pcHi-C prediction, Fig. 4 reports GLUE AUROC 0.631 versus about 0.55 for Cicero, Spearman correlation and LASSO. The integration-consistency score separates same-tissue combinations from incompatible cross-tissue alignments in Extended Data Fig. 6.
+
+### Reproducibility and limitations
+
+Code-paper fidelity is **high** at repository commit `5a30146c6148a52210f547c9e9c330ecfbdf1090`: core equations, alternating loss updates, two-stage weighting, batch covariates, four-seed regulatory inference, triple-omics scripts, and the atlas metacell recipe are directly present. The atlas code matches 100,000 RNA and 40,000 ATAC metacells and hidden width 512. External datasets and checkpoints are not bundled, so a full rerun remains compute- and data-intensive.
+
+The guidance graph must retain useful biological signal; robustness tests do not imply immunity to arbitrary priors. Regulatory networks are population-aggregate associations, not causal proof, and can mix tissue-specific circuits. Small datasets risk undertraining. Supplementary Data 1 and 2 XLSX files are `MISSING` from this workspace, although the supplementary PDF/Markdown and all main figures are present.
+
+</article>
+</section>
+
+<script defer src="{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}"></script>

@@ -1,0 +1,142 @@
+---
+layout: default
+permalink: /paper-atlas/sm-pore-cupine-71e66851/
+title: "sm-PORE-cupine"
+nav: false
+description: "同一条 RNA 序列并不只有一个固定二级结构，而可能在多个构象之间形成“结构集合”。传统群体测量会把所有分子的信号平均，难以看出少数但可能有功能的构象。DREEM、DANCE-MaP、DRACO、Da Vinci 等单分子方法通常先化学探测，再逆转录成 cDNA；作者此前的 PORE-cupine 虽使用纳米孔直接 RNA 测序，但主要给出群体平均结构。"
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>Technology Platforms</span>
+      <span>Nature Methods · 2026</span>
+    </div>
+    <h1>sm-PORE-cupine</h1>
+    <p>Direct RNA sequencing and signal alignment reveal RNA structure ensembles in a eukaryotic cell</p>
+    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03069-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" aria-selected="false" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+## sm-PORE-cupine 方法详解
+
+### 它要解决什么问题？
+
+同一条 RNA 序列并不只有一个固定二级结构，而可能在多个构象之间形成“结构集合”。传统群体测量会把所有分子的信号平均，难以看出少数但可能有功能的构象。DREEM、DANCE-MaP、DRACO、Da Vinci 等单分子方法通常先化学探测，再逆转录成 cDNA；作者此前的 PORE-cupine 虽使用纳米孔直接 RNA 测序，但主要给出群体平均结构。sm-PORE-cupine 的目标是：在保留转录本/异构体信息的同时，为每条原生 RNA 分子定位结构修饰，并把分子分成不同结构群。
+
+### 核心创新
+
+方法采用一个“先增强信号，再修复副作用”的设计：提高 NAI-N3 修饰密度，使每条 RNA 含有足够多的结构信息；高修饰会破坏 basecalling 和 minimap2 比对，因此再直接比较纳米孔电流信号，用 subsequence DTW/cuDTW 把失败读段救回来。之后，PORE-cupine 的 one-class SVM 从修饰组与未修饰对照中识别异常电流事件，BMM 再根据每条分子的修饰模式推断结构群。
+
+### 计算流程
+
+```text
+NAI-N3 修饰 RNA + DMSO 对照
+  -> nanopore direct RNA sequencing
+  -> minimap2 首轮比对
+       ├─ 高置信读段：保留
+       └─ 低质量/未比对读段：进入信号救援
+  -> FAST5 原始电流分段、事件压缩、定位 poly(A)
+  -> 从参考转录本和 k-mer pore model 生成期望电流
+  -> subsequence DTW / GPU cuDTW 对齐
+  -> 合并 minimap2 与 DTW 事件
+  -> one-class SVM / PORE-cupine 调用单分子修饰
+  -> 去除修饰过少或极端的读段
+  -> Bernoulli mixture model 聚类
+  -> 各结构群反应性、二级结构与局部 homogeneity
+```
+
+#### 1. 为什么要提高修饰率？
+
+模拟表明，修饰率、读长、测序深度越高，越容易区分结构群；假阳性率越高，聚类越差。论文测试条件下，修饰率约高于 1.5%、读长高于 750 nt、每转录本约 1,000 条读段时更容易分开模拟群体。但高浓度 NAI-N3 会降低测序和 base mapping 成功率，这正是 DTW 救援存在的原因。
+
+#### 2. 如何直接对齐电流？
+
+代码先把参考序列的每个 k-mer 转成期望平均电流，形成参考曲线。原始 FAST5 电流通过 change-point detection 压缩为事件，并用 poly(A) 区域确定有效 RNA 信号边界。DTW 允许查询和参考在局部时间轴上拉伸：
+
+$$
+D(i,j)=d(q_i,r_j)+\min\{D(i-1,j),D(i,j-1),D(i-1,j-1)\}.
+$$
+
+因此，即使修饰导致局部电流偏移或 basecall 失败，整体电流轨迹仍可定位到候选转录本。14 条 benchmark RNA 中，总可比对率由 56.4% 提高到 72.6%；低质量读段由 17.1% 提高到 45.4%。
+
+#### 3. 如何从修饰模式得到结构群？
+
+每条分子可表示为跨位点的二元修饰向量。BMM 假定不同结构群具有不同的逐位点修饰概率：
+
+$$
+p(\mathbf{x}_n)=\sum_k\pi_k\prod_j\theta_{kj}^{x_{nj}}(1-\theta_{kj})^{1-x_{nj}}.
+$$
+
+$\pi_k$ 是第 $k$ 个结构群比例，$\theta_{kj}$ 是该群在位点 $j$ 被修饰的概率。模型根据后验概率把分子分群，再从群内反应性推断候选二级结构。论文比较 BMM、Spectral、DREEM 和 k-means，BMM 在测试中兼顾准确率和速度。
+
+#### 4. homogeneity 分数如何解释？
+
+对两个结构群，论文使用
+
+$$
+\mathrm{Homogeneity}=p_1^2+p_2^2+2p_1p_2s,
+$$
+
+其中 $p_1,p_2$ 是群比例，$s$ 是两种结构的相似度。一个群占绝对优势，或两个群结构很相似时，分数较高；两个比例接近且结构明显不同时，分数较低。
+
+### 主要验证
+
+- 已知 ligand-bound/unbound riboswitch：ADD 例子中两个主要类别的正确富集约为 71–74%，说明真实结构群可被分开。
+- SARS-CoV-2：3′ 端低 homogeneity 与 RNA interaction hub 重合，不同 sgRNA 的共享区域出现不同结构群比例。
+- *Candida albicans*：体外折叠 RNA 比体内更均一，3′ UTR 通常比 CDS 更均一；结构集合与翻译效率、温度变化和 RNA 降解相关。
+- 选择性 reporter assay 支持部分结构变化会影响翻译，但全转录组关联大多仍是相关性证据。
+
+### 代码可复现性与注意事项
+
+GitHub 代码较完整地覆盖 FAST5 预处理、参考电流、minimap2/DTW 路由、cuDTW 和 PORE-cupine 调用；BMM 与生物学分析更多存在于 figure notebooks，没有被统一包装为单一生产流程。因此 paper-code fidelity 评为中等。实际运行需要原始纳米孔数据、多个外部工具，转录组规模下还需要 GPU/CUDA。仓库也没有提供足以做轻量端到端测试的小型 FAST5 示例。
+
+使用时最重要的判断是：sm-PORE-cupine 不只是“DTW 比对工具”，而是一套化学信号强度、读段救援、修饰调用和结构聚类相互制约的实验—计算系统。修饰越多，结构分群信息越强，但测序和映射越困难；DTW 的价值就是把这部分高信息读段重新纳入分析。
+
+</article>
+<article class="paper-detail__panel" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+## sm-PORE-cupine Summary
+
+### What problem does it solve?
+
+Bulk RNA-structure profiling averages molecules that may occupy different folds. Earlier single-molecule approaches such as DREEM, DANCE-MaP, DRACO and Da Vinci infer ensembles through chemical probing followed by cDNA sequencing, while the authors’ earlier PORE-cupine method measured aggregate isoform-linked structure by nanopore direct RNA sequencing. sm-PORE-cupine aims to recover structure modifications on individual native RNA molecules and separate their conformational populations at transcriptome scale.
+
+### Main idea
+
+The method deliberately raises SHAPE modification density with NAI-N3, accepts that heavily modified reads basecall and map poorly, and rescues those reads by aligning nanopore current directly to expected transcript current using subsequence DTW/cuDTW. Modified-versus-control current events are converted into per-molecule modification profiles with PORE-cupine’s one-class-SVM approach. After filtering uninformative or extreme reads, a Bernoulli mixture model clusters molecules into structure ensembles. A weighted score combines cluster proportions and structural similarity to quantify local homogeneity.
+
+### Evidence and results
+
+- Simulation identified modification rate and false-positive rate as dominant determinants of cluster recovery; read length and depth also matter.
+- Across 14 benchmark RNAs, minimap2 plus DTW increased total mappability from 56.4% to 72.6%. For low-quality reads, it increased mapping from 17.1% to 45.4%.
+- BMM outperformed or matched spectral clustering, DREEM and k-means in the tested simulations and separated ligand-free/bound riboswitch populations with about 71–74% dominant-class assignment in the ADD benchmark.
+- SARS-CoV-2 analysis linked a heterogeneous 3′ genomic region to dense RNA-interaction hubs and identified different ensemble proportions among subgenomic RNAs.
+- In *Candida albicans*, in-vitro RNA and 3′ UTR regions were generally more homogeneous; ensemble properties were associated with translation efficiency, temperature response and mRNA decay. Selected reporter assays supported functional effects for particular structural elements.
+
+### Code and reproducibility
+
+The public GitHub snapshot contains a Python CLI, Snakemake workflow, raw-signal preprocessing, expected-current construction, minimap2/DTW rescue, cuDTW source and PORE-cupine invocation, plus figure notebooks. The signal-processing and modification-calling path matches the paper well. Fidelity is **medium** because BMM clustering and homogeneity analysis are primarily notebook/downstream analyses rather than a single packaged end-to-end stage, no compact example raw dataset was bundled for a smoke test, and the environment is computationally demanding (FAST5, nanopore tooling and CUDA for scale). A likely variable-name bug also affects the standalone `build_signal_ref` CLI path; the Snakefile route is clearer.
+
+Data are deposited under the paper’s stated repositories, and analysis code is also linked through Code Ocean. The local acquisition contains the full Nature HTML-derived paper, 15 figures and GitHub commit `9ef726695ee84aed3627c517e8eb1097bae73df2`; supplementary Markdown was not acquired.
+
+### Limitations
+
+The method needs substantial read depth and modification density, excludes low-information/extreme reads, and depends on a reference transcriptome and pore-current model. Ensemble number/interpretation can be sensitive to clustering choices. Biological associations across the transcriptome are mostly correlational, with causal validation restricted to selected reporters. DTW rescue improves coverage but slightly reduces aggregate-structure accuracy relative to PORE-cupine in some comparisons.
+
+</article>
+</section>
+
+<script defer src="{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}"></script>
