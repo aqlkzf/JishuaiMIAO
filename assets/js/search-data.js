@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/JishuaiMIAO/blog/";
           },
+        },{id: "nav-paper-atlas",
+          title: "paper atlas",
+          description: "A searchable public index of concise computational biology paper summaries.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/JishuaiMIAO/paper-atlas/";
+          },
         },{id: "post-capture-tmux-output-for-debugging",
         
           title: "Capture tmux Output for Debugging",
