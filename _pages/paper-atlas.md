@@ -24,7 +24,7 @@ sitemap: false
         <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>604</strong><span>with code</span></button>
       </div>
     </div>
-    <p class="atlas-lead">Every paper I have read closely, with a short note on what the method actually does. Search by method, title, journal or note text.</p>
+    <p class="atlas-lead">Every paper I have read, with a short note on what the method actually does. Search by method, title, journal or note text.</p>
   </header>
 
   <div class="atlas-topic-list" id="atlas-topics" role="group" aria-label="Filter by topic">
