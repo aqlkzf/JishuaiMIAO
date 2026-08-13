@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/aa-crc-8b9beeb8/
 title: "AA-CRC"
 nav: false
+wide: true
 description: "普通 conformal risk control（CRC）可以控制总体平均风险，但所有样本共用一个阈值。这样容易出现一种低效现象：简单样本的集合过大、假阳性过多，而困难样本又可能不够稳健。已有条件 conformal 方法通常要求研究者预先给出人群或条件函数；图像难度等连续因素很难靠人工分组表达。"
 robots: noindex, nofollow
 sitemap: false

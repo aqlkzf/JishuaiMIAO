@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multivelovae-f1a335ea/
 title: "MultiVeloVAE"
 nav: false
+wide: true
 description: "RNA velocity 用未剪接 RNA u 与已剪接 RNA s 的时间滞后估计表达变化方向。传统方法常逐基因设定开/关阶段，难以同时处理多分支、多样本、RNA+ATAC 以及组间动力学检验。MultiVeloVAE 将这些问题放入一个带机械 ODE decoder 的条件变分自编码器中。 输入可以是 RNA 的平滑未剪接/已剪接矩阵，也可以再加入每个基因附近的染色质可及性 c。多个样本通过 batch 标签共同训练；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatial-dmt-83a8b863/
 title: "spatial-DMT"
 nav: false
+wide: true
 description: "Spatial-DMT 的核心不是把两张独立切片事后配准，而是在同一张固定组织切片、同一个二维条形码像素中同时给基因组 DNA 和 cDNA 加上空间坐标；随后再把二者物理分开，分别建立 EM-seq 甲基化文库和 RNA 文库。这样，每个像素最终对应两张矩阵：基因表达矩阵和 DNA 甲基化矩阵，可通过加权最近邻（WNN）联合分析。 论文为 Lee 等发表于 Nature（2025），DOI 10."
 robots: noindex, nofollow
 sitemap: false

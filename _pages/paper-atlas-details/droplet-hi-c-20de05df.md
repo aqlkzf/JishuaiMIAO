@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/droplet-hi-c-20de05df/
 title: "Droplet-Hi-C"
 nav: false
+wide: true
 description: "Droplet Hi-C 把传统的原位 Hi-C 近邻连接化学，接到成熟的 10x Genomics 液滴微流控平台上，从而一次测量数万细胞的染色质三维接触；在此基础上，论文又构建了面向正常组织的细胞类型/染色质结构分析，以及面向肿瘤的 CNV、SV、ecDNA 和同细胞 RNA 联合分析。"
 robots: noindex, nofollow
 sitemap: false

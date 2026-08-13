@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pups-c0ceeef2/
 title: "PUPS"
 nav: false
+wide: true
 description: "PUPS 把蛋白亚细胞定位从“给蛋白打一个细胞器标签”改写成“给定某条蛋白序列和某个具体细胞的地标染色图，生成该蛋白在这个细胞中的荧光图像”。蛋白序列回答“要预测的是谁”，细胞图像回答“它要被放进怎样的细胞环境”，因此模型可以同时处理未见蛋白、未见细胞系和同一细胞系内的单细胞差异。 论文发表于 Nature Methods（2025），DOI：10.1038/s41592-025-02696-1。"
 robots: noindex, nofollow
 sitemap: false

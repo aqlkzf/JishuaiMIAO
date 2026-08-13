@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/flowsig-e0b896c9/
 title: "FlowSig"
 nav: false
+wide: true
 description: "单细胞 RNA 测序和空间转录组通常产生两类互补结果： 细胞通讯分析给出可能发生的配体–受体作用； 基因表达模块（GEM）描述细胞内部协同变化的转录程序。 传统分析往往把二者分开。我们可能知道“哪些细胞在发信号”，也可能知道“哪些基因模块在变化”，但仍不知道：某个被接收的信号，是否通过一个细胞内转录程序，进一步驱动了另一个信号的输出？ FlowSig 把这个问题写成一个图结构学习问题。"
 robots: noindex, nofollow
 sitemap: false

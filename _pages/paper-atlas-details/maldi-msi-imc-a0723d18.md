@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/maldi-msi-imc-a0723d18/
 title: "MALDI-MSI-IMC"
 nav: false
+wide: true
 description: "研究者希望同时知道两个问题： 组织中某个位置有哪些代谢物、丰度多高？ 这些代谢信号来自哪类细胞，例如癌细胞、巨噬细胞或 T 细胞？ MALDI 质谱成像（MALDI-MSI）可以直接测量组织中的代谢物，但像素通常比单个细胞大，而且本身不能给细胞做丰富的免疫分型。成像质谱流式（IMC）可以在 1 µm 像素上检测多种金属标记抗体并分割细胞，却不直接测量完整代谢谱。"
 robots: noindex, nofollow
 sitemap: false

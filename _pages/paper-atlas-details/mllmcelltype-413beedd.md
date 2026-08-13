@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mllmcelltype-413beedd/
 title: "mLLMCelltype"
 nav: false
+wide: true
 description: "mLLMCelltype 接收已经聚类的单细胞数据所产生的 marker gene 列表、物种和组织背景，让多个大语言模型分别注释各 cluster；对意见一致的 cluster 直接输出，对有争议者进行最多三轮、按 Toulmin 论证结构组织的讨论，再用共识比例和 Shannon entropy 报告模型间一致程度。 它不是从原始表达矩阵学习分类器，也不负责归一化、降维、聚类和差异表达。"
 robots: noindex, nofollow
 sitemap: false

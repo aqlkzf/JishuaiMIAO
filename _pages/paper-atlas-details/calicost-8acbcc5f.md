@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/calicost-8acbcc5f/
 title: "CalicoST"
 nav: false
+wide: true
 description: "CalicoST 把空间转录组中的两类信号——表达量反映的总拷贝数变化（RDR）和杂合 SNP 反映的等位基因失衡（BAF）——放进同一个“基因组 HMM + 空间 HMRF”模型中，从而同时推断等位基因特异性 CNA、空间肿瘤克隆、肿瘤比例以及肿瘤系统地理史。"
 robots: noindex, nofollow
 sitemap: false

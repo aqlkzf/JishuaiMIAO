@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scitd-a4fd1c54/
 title: "scITD"
 nav: false
+wide: true
 description: "scITD 把多供体单细胞数据压缩为一组可解释的多细胞因子：每个因子同时告诉研究者“哪些人沿这个过程不同”以及“哪些基因在每种细胞中共同构成这个过程”，再用临床关联、通路、独立队列和遗传证据逐层解释这些无监督轴。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/periscope-89fcdc9b/
 title: "PERISCOPE"
 nav: false
+wide: true
 description: "PERISCOPE 的核心是：在同一个细胞里，一边用 Cell Painting 拍到丰富的细胞形态，一边用原位测序读出这个细胞携带的 CRISPR guide；随后把同一基因的许多细胞聚合成“形态指纹”，用于筛选命中基因、比较通路关系并提出新的功能假设。"
 robots: noindex, nofollow
 sitemap: false

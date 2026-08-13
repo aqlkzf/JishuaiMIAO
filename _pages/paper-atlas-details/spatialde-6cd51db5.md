@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialde-6cd51db5/
 title: "SpatialDE"
 nav: false
+wide: true
 description: "SpatialDE 解决的是：给定每个 spot/细胞的空间坐标和每个基因的表达，哪些基因的表达相似性会随空间距离而变化？它不要求先把组织切成离散区域，也不只寻找总体方差大的基因，而是为每个基因比较“含空间协方差的高斯过程模型”和“只有独立噪声的常数模型”。论文发表于 2018 年 Nature Methods（DOI 10.1038/nmeth.4636）。"
 robots: noindex, nofollow
 sitemap: false

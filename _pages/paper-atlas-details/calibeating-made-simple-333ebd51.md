@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/calibeating-made-simple-333ebd51/
 title: "Calibeating_Made_Simple"
 nav: false
+wide: true
 description: "这是一篇在线学习与概率预测校准理论论文，不是生物信息学论文。 设外部预测器每轮给出一个 K 类概率向量 qt\\in\\DeltaK。学习器看到它以后输出自己的概率 pt，随后真实类别 yt 才揭晓。一个好的后处理器不应只追求“校准”，因为在线随机策略即使不了解数据生成机制，也可能做到渐近校准。论文关心的是：能否在改善可靠性的同时，不损失外部预测器真正包含的信息？"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/otvelo-de7021f6/
 title: "OTVelo"
 nav: false
+wide: true
 description: "OTVelo 解决的是动态基因调控网络（dynamic gene regulatory network, dynamic GRN）推断问题。输入是多个时间点采集的单细胞 RNA-seq 表达矩阵，输出是基因之间的有向、带符号、可随时间变化的调控关系。 难点在于：单细胞测序是破坏性测量，同一个细胞不能在多个时间点重复观测。因此，虽然我们有不同时间点的细胞群体，却没有真实的单细胞轨迹。"
 robots: noindex, nofollow
 sitemap: false

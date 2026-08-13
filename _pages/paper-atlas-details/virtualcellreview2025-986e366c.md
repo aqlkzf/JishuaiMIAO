@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/virtualcellreview2025-986e366c/
 title: "VirtualCellReview2025"
 nav: false
+wide: true
 description: "这是一篇综述，不提出一个统一的“Virtual Cell 算法”，也没有配套代码仓库。它把虚拟细胞视为一个跨层级研究框架：将多模态组学、生成模型、图模型和机理约束组合起来，模拟细胞在药物、基因编辑或疾病条件下的状态变化，再用计算评估、CRISPR、类器官和器官芯片逐级验证。 因此，阅读重点不应是寻找一套可照抄的网络结构，而应问三个问题：不同方法分别模拟什么；什么证据足以证明预测可靠；模型怎样从细胞层面走到药物研发和监管语境。"
 robots: noindex, nofollow
 sitemap: false

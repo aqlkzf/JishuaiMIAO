@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nicheflow-58c892d3/
 title: "NicheFlow"
 nav: false
+wide: true
 description: "时序空间转录组通常在不同发育阶段切取不同组织，测量是破坏性的，因此 t0 与 t1 没有同一个细胞可直接追踪。许多方法把每个细胞单独作为运输单位，只预测“这个细胞的后代可能在哪里”。NicheFlow 的核心改变是把一个中心细胞周围的局部邻域视为整体 microenvironment（niche），同时生成其中所有细胞的表达状态和空间坐标。 论文是 NeurIPS 2025 / arXiv:2511.00977v2 的方法论文。"
 robots: noindex, nofollow
 sitemap: false

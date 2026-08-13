@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mioflow2-fcd4dedd/
 title: "MIOFlow2"
 nav: false
+wide: true
 description: "时间序列单细胞实验在每个时间点破坏性取样，无法连续观察同一个细胞。MIOFlow 2.0 接收多个时间点的细胞群体，学习一个连续动力系统，使早期细胞经积分后在观测时点匹配真实群体。它试图同时处理低维流形、随机分叉、增殖/死亡和空间微环境。 输出轨迹是模型在群体分布约束下生成的可能路径，不是实验追踪到的一一谱系。分布匹配得好也不自动证明某条单细胞路径真实存在。 普通欧氏空间可能让轨迹穿过细胞不存在的空区。"
 robots: noindex, nofollow
 sitemap: false

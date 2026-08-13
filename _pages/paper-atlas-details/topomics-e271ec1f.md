@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/topomics-e271ec1f/
 title: "TopOmics"
 nav: false
+wide: true
 description: "TopOmics 解决的是单细胞和空间多组学中的一个常见矛盾：研究者需要能处理大规模、多模态、空间信息的数据模型，但又希望潜变量可解释。论文指出，主题模型本来很适合解释复杂数据，因为每个 latent direction 可以解释为一个“topic”；但已有单细胞/空间组学主题模型往往绑定在特定数据类型、特定噪声模型或特定估计算法上，互操作性和通用性不足。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/learn-then-test-risk-control-feb2efd7/
 title: "Learn_Then_Test_Risk_Control"
 nav: false
+wide: true
 description: "一个已经训练好的模型通常还需要设置阈值：分类器何时拒答、预测集合放多少标签、分割掩膜从什么概率开始保留。直接在验证集上选表现最好的阈值，只能说明样本内效果好，不能保证部署后的总体错误率一定低于用户指定的上限。 Learn Then Test（LTT）在不重新训练基础模型的情况下，用一份独立同分布的校准数据，为这些后处理参数提供显式的有限样本风险保证。"
 robots: noindex, nofollow
 sitemap: false

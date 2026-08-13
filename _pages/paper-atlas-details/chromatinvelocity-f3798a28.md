@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/chromatinvelocity-f3798a28/
 title: "ChromatinVelocity"
 nav: false
+wide: true
 description: "传统单细胞 ATAC-seq 主要读取开放染色质，但对紧缩的异染色质覆盖不足。论文指出，异染色质可占基因组很大比例，并且和细胞身份、基因组稳定性、癌症耐药等过程有关。因此，作者想解决两个问题： 如何在单细胞水平同时读取开放染色质和紧缩染色质？ 如何像 RNA velocity 那样，从染色质状态推断细胞沿发育或重编程路径的“未来方向”？ 论文提出两个连在一起的方法： scGET-seq：把普通 Tn5 与工程化的 TnH 联合使用。"
 robots: noindex, nofollow
 sitemap: false

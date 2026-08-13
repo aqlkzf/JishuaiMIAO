@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scpn-cee56a1f/
 title: "scPN"
 nav: false
+wide: true
 description: "scPN 把细胞看成一个 gene interaction network 在未知时间点的静态快照，用分段线性 ODE 同时推断 pseudotime、velocity-like dynamics 和 gene-gene interaction matrix。它的核心不是先排时间再算速度，也不是先算速度再排时间，而是在“给定矩阵排细胞”和“给定细胞顺序拟合矩阵”之间交替更新。"
 robots: noindex, nofollow
 sitemap: false

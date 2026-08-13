@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/proseg-1b2ab5b2/
 title: "Proseg"
 nav: false
+wide: true
 description: "成像型空间转录组给出每条 RNA 的基因名和三维坐标。分析前必须把 RNA 归入细胞，但仅依赖核/膜图像的边界常会把相邻细胞的 RNA 混在一起，或留下大量未分配 RNA。由于高转录细胞向低转录细胞“溢出”几个分子就可能改变后者的细胞类型与差异表达，错误不是简单随机噪声，而会把空间邻近和基因表达系统性混淆。"
 robots: noindex, nofollow
 sitemap: false

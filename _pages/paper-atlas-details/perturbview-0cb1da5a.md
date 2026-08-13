@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/perturbview-0cb1da5a/
 title: "PerturbView"
 nav: false
+wide: true
 description: "光学混池筛选（optical pooled screening, OPS）的目标，是在同一个细胞里建立两种信息的对应关系： 显微成像得到的表型，例如蛋白定位、细胞形态、RNA FISH 信号； 这个细胞携带的 CRISPR 扰动，即 sgRNA 条形码。 传统 OPS 的代表工作是 Feldman 等发表于 Cell（2019）的 “Optical pooled screens in human cells”，其标准化协议发表于 Nat…"
 robots: noindex, nofollow
 sitemap: false

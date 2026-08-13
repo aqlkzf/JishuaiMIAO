@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/neurovelo-e652881a/
 title: "NeuroVelo"
 nav: false
+wide: true
 description: "NeuroVelo 把 spliced 与 unspliced RNA 用同一个线性编码器压到低维空间，同时学习每个细胞的伪时间和一个潜空间神经 ODE。训练既要求能重构观测表达、ODE 轨迹能穿过编码后的细胞，也要求 ODE 导数接近 splicing kinetics 给出的 velocity。训练后，ODE 导数可解码为基因空间 velocity；"
 robots: noindex, nofollow
 sitemap: false

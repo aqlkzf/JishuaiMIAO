@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/jointggmspatialtemporal-27ea9596/
 title: "JointGGMSpatialTemporal"
 nav: false
+wide: true
 description: "JointGGMSpatialTemporal 的核心思想是：把 GGM 边是否存在表示成贝叶斯潜变量 γ，并用空间/时间 MRF 先验让相关图中的同一条边共享信息，从而在多组、空间或时间结构数据中获得更稳定的网络估计。"
 robots: noindex, nofollow
 sitemap: false

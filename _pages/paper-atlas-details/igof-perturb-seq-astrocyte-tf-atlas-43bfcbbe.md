@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/igof-perturb-seq-astrocyte-tf-atlas-43bfcbbe/
 title: "iGOF-Perturb-seq astrocyte TF atlas"
 nav: false
+wide: true
 description: "iGOF-Perturb-seq 的核心是：用带条形码的 AAV 在活体星形胶质细胞中逐一过表达 TF，以单核转录组读出每次扰动，再把单 TF 的 DEG 汇聚为共同基因程序和疾病方向，最后用功能实验与 5XFAD 模型检验最重要的预测。 它最大的贡献既是 955 个 TF 的功能图谱，也是把“高通量状态预测”推进到“动物体内因果验证”的完整链条。"
 robots: noindex, nofollow
 sitemap: false

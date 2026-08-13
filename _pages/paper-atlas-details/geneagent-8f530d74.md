@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/geneagent-8f530d74/
 title: "GeneAgent"
 nav: false
+wide: true
 description: "基因集分析的目标，是给一组看起来共同发挥作用的基因找到一个合适的生物学功能解释。传统的 GSEA 等富集分析依赖 GO、MSigDB 等人工整理数据库，优点是证据清楚，缺点是常常只能返回已有的数据库术语；如果一个基因集只和已知功能弱相关，传统方法就不容易给出新的、可解释的功能命名。普通 LLM 可以根据背景知识生成更自然的功能名称和分析文字，但也可能编造看似合理、实际没有证据支持的内容，即 hallucination。"
 robots: noindex, nofollow
 sitemap: false

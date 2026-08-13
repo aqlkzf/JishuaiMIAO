@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/carta-25c4570b/
 title: "CARTA"
 nav: false
+wide: true
 description: "CARTA 的输入不是表达矩阵或 RNA velocity，而是一组末端细胞带有类型标签的 lineage trees。实验只观测到终点细胞，真正经历过的中间祖细胞往往未采样。CARTA 要反推出一个 cell differentiation map：节点是“能产生哪些终末类型”的 potency set，边表示潜能逐步丢失的分化关系。"
 robots: noindex, nofollow
 sitemap: false

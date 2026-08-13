@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/maternalfetalinterface-72b4d90d/
 title: "MaternalFetalInterface"
 nav: false
+wide: true
 description: "这项研究用同一细胞核的 RNA 与染色质可及性建立孕 5–39 周的母胎界面时间图谱，再用亚微米级 Stereo-seq 把第二孕期约 110 万个细胞放回组织空间。作者据此重建滋养层分化、螺旋动脉内皮重塑和蜕膜基质细胞状态，并发展 iScore 预测 EVT 侵袭深度，最后把妊娠并发症 GWAS 信号通过 SCAVENGE 投射到具体母源或胎源细胞。"
 robots: noindex, nofollow
 sitemap: false

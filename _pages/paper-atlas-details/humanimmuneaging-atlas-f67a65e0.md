@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/humanimmuneaging-atlas-f67a65e0/
 title: "HumanImmuneAging_Atlas"
 nav: false
+wide: true
 description: "这项研究用 CITE-seq 同时测量同一免疫细胞的 RNA 和 127 种表面蛋白，在 24 位器官捐献者、14 个组织部位中建立 128 万细胞的图谱。分析先用多模态标志物精细区分免疫亚群，再用配对供体的跨组织设计把“组织效应”与“年龄效应”分开，最后通过 pseudobulk 混合模型、基因程序分解和 MrVI 反事实预测，定位只在特定组织和细胞状态中出现的衰老变化。"
 robots: noindex, nofollow
 sitemap: false

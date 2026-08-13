@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/in-depth-3114145d/
 title: "IN-DEPTH"
 nav: false
+wide: true
 description: "IN-DEPTH（IN-situ DEtailed Phenotyping To High-resolution transcriptomics）不是一种新的测序仪，而是一套“先在同一张 FFPE 切片上做高通量空间蛋白成像，再在原切片上做空间转录组”的实验与分析框架。它首先用蛋白标记确定细胞身份和组织结构，再把这些空间信息传递给 GeoMx、Visium HD、CosMx 或 Xenium 等转录组平台；"
 robots: noindex, nofollow
 sitemap: false

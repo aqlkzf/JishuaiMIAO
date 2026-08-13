@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/humantonsil3dgenomeatlas-f73c6be9/
 title: "HumanTonsil3DGenomeAtlas"
 nav: false
+wide: true
 description: "体细胞高频突变（somatic hypermutation, SHM）通过 AID 在免疫球蛋白基因中引入点突变，是抗体亲和力成熟的基础。但 AID 也可能误伤其他基因，造成致癌突变和染色体易位。已有研究知道 SHM 与转录、增强子、拓扑关联结构域（TAD）和染色质接触有关，却仍有两个关键缺口： 在真实的人类生发中心组织中，从核内径向位置、染色体区室、TAD 到局部环等多个尺度，三维基因组结构如何共同影响 SHM 易感性？"
 robots: noindex, nofollow
 sitemap: false

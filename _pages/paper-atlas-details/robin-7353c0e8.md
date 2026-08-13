@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/robin-7353c0e8/
 title: "Robin"
 nav: false
+wide: true
 description: "Robin 不是一个单一预测模型，而是一个把文献检索、LLM 假设生成、BTL 排名、湿实验反馈和 Finch notebook 数据分析连接起来的闭环发现系统；它在 dAMD 案例中产生了有体外证据支持的候选药物优先级，但临床有效性、体内验证和完整公共复现仍然是未完成问题。"
 robots: noindex, nofollow
 sitemap: false

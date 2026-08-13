@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/starfysh-7e2b2a92/
 title: "Starfysh"
 nav: false
+wide: true
 description: "Starfysh 面向 spot-level 空间转录组：它从原始计数、细胞类型 marker 列表以及可选的配对 H&E 图像中，推断每个 spot 的细胞状态比例、总细胞密度和状态特异表达。它不要求单细胞参考表达矩阵，因此论文称其为 reference-free；但它仍依赖 marker 知识，不能理解为完全无先验的细胞类型发现。"
 robots: noindex, nofollow
 sitemap: false

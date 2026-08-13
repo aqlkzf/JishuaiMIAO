@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/conditional-coverage-diagnostics-conformal-prediction-5adf2987/
 title: "Conditional_Coverage_Diagnostics_Conformal_Prediction"
 nav: false
+wide: true
 description: "共形预测（conformal prediction, CP）可以构造预测集合 C\\alpha(X)，并在交换性假设下保证总体覆盖率约为 1-\\alpha。但“总体平均正确”不意味着每类样本都可靠：某些区域可能系统性欠覆盖，另一些区域则过度保守。 理想目标是 但在没有额外分布假设时，精确的条件覆盖通常不可能保证。"
 robots: noindex, nofollow
 sitemap: false

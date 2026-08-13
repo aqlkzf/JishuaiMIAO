@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ptsdsndlpfc-3a5ca6ed/
 title: "PTSDsnDLPFC"
 nav: false
+wide: true
 description: "这篇工作研究创伤后应激障碍（PTSD）背外侧前额叶皮层（DLPFC）中，哪些细胞类型、表达程序、染色质调控关系和细胞间信号发生了变化，以及这些变化能否与 PTSD 遗传风险位点连接起来。它不是单一的“差异表达研究”，而是把四类测量放在同一框架中：单核 RNA 测序描述转录状态，单核 ATAC 测序描述染色质可及性，单核 multiome 在同一细胞核中连接 RNA 与 ATAC，Xenium 空间转录组验证候选信号在组织中的位置。"
 robots: noindex, nofollow
 sitemap: false

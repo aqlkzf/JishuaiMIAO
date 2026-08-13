@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dynnet-731ab723/
 title: "DynNet"
 nav: false
+wide: true
 description: "时间序列 scRNA-seq 在每个时点测到的是不同细胞，不能直接观察同一细胞的连续轨迹。DynNet 选择一小组驱动基因，把每个细胞表示为基因表达状态，并拟合一个随机微分方程（SDE），使模拟群体在终点稳定状态、比例和基因边缘分布上接近观测数据。 因此，DynNet 输出的是在所选基因、GRN 先验和损失假设下学到的随机动力系统。模拟轨迹、吸引子、势景和首次通过时间是模型推断，不是谱系追踪的直接观测；"
 robots: noindex, nofollow
 sitemap: false

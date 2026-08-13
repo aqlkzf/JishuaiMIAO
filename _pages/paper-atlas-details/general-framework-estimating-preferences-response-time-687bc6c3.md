@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/general-framework-estimating-preferences-response-time-687bc6c3/
 title: "General_Framework_Estimating_Preferences_Response_Time"
 nav: false
+wide: true
 description: "这是一篇关于经济决策、统计学习和机器学习理论的论文，不是生物信息学论文。 传统经济学常把“偏好”直接等同于观察到的选择：面对 \\bm{x} 和 \\bm{y}，选择哪一个就表示偏好哪一个。但同一个选择可能来自不同的证据强度和犹豫程度。论文利用每次选择花费的时间，希望从 恢复共同的偏好参数 \\bm w^。其中 zi\\in\\{-1,1\\} 表示选择，ti\\geq0 表示反应时间。"
 robots: noindex, nofollow
 sitemap: false

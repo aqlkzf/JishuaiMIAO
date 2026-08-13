@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nimbus-11e54d21/
 title: "Nimbus"
 nav: false
+wide: true
 description: "Nimbus 不直接猜“这个细胞是什么类型”，而是对每个抗体通道分别回答：“这个细胞是否真的表达该标记？”它利用原始图像中的亚细胞形态和邻域背景，把容易受串色、边界和亮度影响的 integrated expression，转换成更适合聚类的细胞 × 标记阳性分数矩阵。"
 robots: noindex, nofollow
 sitemap: false

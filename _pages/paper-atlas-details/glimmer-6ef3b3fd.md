@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/glimmer-6ef3b3fd/
 title: "Glimmer"
 nav: false
+wide: true
 description: "Glimmer 不直接训练一个深度网络去“生成”空间表示，而是在物理空间的 k 近邻骨架上，为每个点的每条邻边学习权重，再用这些权重平滑原始分子特征。它试图在两种失败之间找到可调的中间态：只看表达会产生空间上破碎的“椒盐”聚类，只看距离又会把相邻但功能不同的细胞过度混合。 论文把这一框架用于两个尺度：组织尺度的空间区域识别，以及把 Xenium 转录本先聚合为小空间 bin、再做细胞尺度聚类的“无预先分割”分析。"
 robots: noindex, nofollow
 sitemap: false

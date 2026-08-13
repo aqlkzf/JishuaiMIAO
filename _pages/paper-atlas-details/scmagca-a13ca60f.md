@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmagca-a13ca60f/
 title: "scMAGCA"
 nav: false
+wide: true
 description: "scMAGCA 输入配对或多模态单细胞矩阵，先做 feature selection 和 normalization，拼接成 \\mathbf{X}^{con}，再构建 cell-cell KNN 图 \\mathbf{A}；GCN encoder 学出 latent embedding \\mathbf{Z}；"
 robots: noindex, nofollow
 sitemap: false

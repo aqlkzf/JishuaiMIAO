@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spotsweeper-d70eacfd/
 title: "SpotSweeper"
 nav: false
+wide: true
 description: "空间转录组不仅测量表达量，还保留每个 spot 或细胞在组织中的位置。传统 QC 往往直接沿用单细胞 RNA 测序流程，例如固定阈值、全样本 MAD 阈值，以及 miQC（PLOS Computational Biology, 2021）。这些方法隐含地把整张组织切片当成同质样本：总 UMI 少、检测基因少或线粒体比例高，就更可能被判为低质量。 但在真实组织中，这些差异可能正是生物学。"
 robots: noindex, nofollow
 sitemap: false

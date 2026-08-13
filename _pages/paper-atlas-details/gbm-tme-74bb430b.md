@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gbm-tme-74bb430b/
 title: "GBM_TME"
 nav: false
+wide: true
 description: "这项研究把单细胞 RNA、空间转录组、单细胞 ATAC、原位杂交和 Patch-seq 叠加在同一套细胞类型参考上，不只问“胶质母细胞瘤（GBM）里有哪些细胞”，而是问“哪些细胞稳定地住在一起、如何相互作用”。跨 32 张空间切片，作者归纳出 4 个可重复的恶性 cellular communities（CCs），进一步区分两种 MES-like 肿瘤细胞生态位，并用电生理证明形成神经胶质瘤突触的肿瘤细胞主要是 OPC-like 状态。"
 robots: noindex, nofollow
 sitemap: false

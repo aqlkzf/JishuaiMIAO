@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/magic-afe98eb1/
 title: "MAGIC"
 nav: false
+wide: true
 description: "单细胞 RNA 测序通常只捕获每个细胞真实转录本的一小部分。低表达基因即使真实存在，也常被观测为零，进而破坏基因–基因关系。MAGIC（Markov affinity-based graph imputation of cells）的基本假设是：细胞状态受调控网络约束，位于一个低维流形上；相似状态的细胞应共享表达信息。 因此 MAGIC 不为每个零单独拟合一个概率模型。"
 robots: noindex, nofollow
 sitemap: false

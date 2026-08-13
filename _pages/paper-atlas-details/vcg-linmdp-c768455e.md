@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/vcg-linmdp-c768455e/
 title: "VCG-LinMDP"
 nav: false
+wide: true
 description: "这篇论文研究一个动态机制设计问题：卖方在一个未知的有限时域 MDP 中，连续多轮为多个策略性买方分配资源。每一步只有卖方选择动作；卖方与买方各自获得随机收益，买方可以不诚实地报告收益。算法不仅要学到总社会福利最大的策略，还要为每个买方计算动态 VCG 价格，使机制在长期上近似满足效率、个体理性和诚实性。 它不是生物信息学论文，而是强化学习、算法经济学与机制设计的交叉理论工作。"
 robots: noindex, nofollow
 sitemap: false

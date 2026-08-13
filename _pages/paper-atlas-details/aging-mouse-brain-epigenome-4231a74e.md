@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/aging-mouse-brain-epigenome-4231a74e/
 title: "Aging Mouse Brain Epigenome"
 nav: false
+wide: true
 description: "脑衰老会伴随 DNA 甲基化漂移、转座元件解除抑制、染色质三维结构变化和炎症反应，但以往研究通常只测一种组学、少数脑区或混合细胞。这样难以区分：变化是某一类细胞真正发生的，还是细胞组成改变造成的；同一种细胞在不同脑区是否以同样方式衰老；局部甲基化和三维接触变化能否解释年龄相关基因表达。 本研究建立跨年龄、脑区和模态的单核图谱，把 2、9、18 月龄小鼠作为连续时间点。"
 robots: noindex, nofollow
 sitemap: false

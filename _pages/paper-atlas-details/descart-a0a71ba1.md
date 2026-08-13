@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/descart-a0a71ba1/
 title: "Descart"
 nav: false
+wide: true
 description: "Descart 面向 spatial ATAC-seq：它把物理相邻关系与染色质可及性相似关系融合成 spot/cell 图，再衡量每个 peak 的可及性向量是否沿图边保持一致。图上自相关高的 peak 被排在前面，作为 spatially variable（SV）peaks；同一图还被用于数据平滑、peak modules 和 gene–peak association。 它不是逐 peak 拟合空间概率分布，也不直接输出显著性检验。"
 robots: noindex, nofollow
 sitemap: false

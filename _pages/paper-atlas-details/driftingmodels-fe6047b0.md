@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/driftingmodels-fe6047b0/
 title: "DriftingModels"
 nav: false
+wide: true
 description: "Drifting Models 不在推断时把噪声逐步搬运成图像，而是在训练过程中不断更新同一个生成器，使其输出分布沿一个“真实样本吸引、生成样本排斥”的向量场移动。训练结束后，生成仍然只是一次前向计算。"
 robots: noindex, nofollow
 sitemap: false

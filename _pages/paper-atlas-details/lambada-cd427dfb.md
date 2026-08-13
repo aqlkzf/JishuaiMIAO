@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lambada-cd427dfb/
 title: "LAMBADA"
 nav: false
+wide: true
 description: "作者建立了 P3–P21 的发育脑三维图谱 LAMBADA，把透明脑光片成像、血管图、MRI、空间转录组和三维原位杂交统一到年龄匹配的坐标系中。结果显示，小鼠出生后脑血管不是匀速变密，而经历三个阶段：P3–P7 随脑体积等比例扩张，P7–P21 出现区域特异的快速增密与重塑，P21 后进入稳定和精修；驱动环境也从早期经典缺氧/血管生成信号转向神经元成熟与活动相关程序。 本地代码是通用 ClearMap 3.1 快照。"
 robots: noindex, nofollow
 sitemap: false

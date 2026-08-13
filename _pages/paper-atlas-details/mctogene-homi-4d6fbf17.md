@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mctogene-homi-4d6fbf17/
 title: "MCToGene (HOMI)"
 nav: false
+wide: true
 description: "MCToGene 的输入是 H&E 全切片图像中每个空间转录组 spot 对应的图像 patch 和二维坐标，输出是每个 spot 的多基因表达。它不只看单个 patch，也不只计算中心 spot 与邻居的成对关系，而是先做 pairwise attention，再显式构造三元关系的 many-body attention，并把两条路径层级融合；最终用条件流匹配从稀疏噪声逐步生成表达。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/statistical-collusion-collectives-learning-platforms-a8dc20df/
 title: "Statistical_Collusion_Collectives_Learning_Platforms"
 nav: false
+wide: true
 description: "论文研究的不是生物信息学，而是机器学习平台中的集体行动与数据投毒。平台用 N 个用户提交的数据训练分类器，其中 n 个用户形成集体。他们想统一修改自己的特征或标签，让平台在特定输入上给出期望的预测，但行动本身可能有风险，因此需要在行动前回答：凭集体自己汇总的数据，能否计算一个可信的成功率下界？ 集体只知道自身样本和总样本量 N。"
 robots: noindex, nofollow
 sitemap: false

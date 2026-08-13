@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/infmasking-066099b0/
 title: "InfMasking"
 nav: false
+wide: true
 description: "InfMasking 是一种面向多模态“协同信息”的对比学习方法：它不只要求图像、文本、音频等单模态表示彼此一致，而是反复遮住融合 token 的大部分内容，让完整融合表示与许多不同残缺视图保持可辨认的对应关系。有限数量的 masked views 用来估计均值与协方差，再通过 Gaussian 矩母函数得到可训练的近似损失。"
 robots: noindex, nofollow
 sitemap: false

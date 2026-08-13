@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sg-nex-024c619d/
 title: "SG-NEx"
 nav: false
+wide: true
 description: "一个基因往往对应多个高度相似的转录本。短读长 RNA-seq 能稳定估计基因总表达量，却经常无法判断一条短片段究竟来自哪个异构体，尤其难以同时连接多个剪接位点。已有长读长数据集又常受样本少、重复不足、协议单一或测序深度有限的影响，因此很难公平比较技术差异。 SG-NEx 的目标不是提出一个新的预测模型，而是建立一个可复用、带匹配样本和对照的技术基准，回答：不同 RNA-seq 协议怎样影响读长、覆盖、基因表达、转录本定量和主要异构体判断？"
 robots: noindex, nofollow
 sitemap: false

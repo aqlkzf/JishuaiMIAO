@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/interpretablemlcomputationalbiology-review-3f78b56c/
 title: "InterpretableMLComputationalBiology_review"
 nav: false
+wide: true
 description: "IML 的可信度不来自方法名称，而来自完整证据链：解释器是否忠实、结果是否稳定、数值是否经过合适的生物后处理、全体结果是否透明，以及候选机制是否经外部或实验验证。"
 robots: noindex, nofollow
 sitemap: false

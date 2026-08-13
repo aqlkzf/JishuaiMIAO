@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/snf-d9119f5f/
 title: "SNF"
 nav: false
+wide: true
 description: "SNF 先为每一种数据类型建立一个样本相似网络，然后让这些网络通过局部邻域反复交换信息，最后得到一个融合网络；这个融合网络既保留多个数据类型共同支持的相似性，也能保留某个数据类型独有但可信的互补信息。"
 robots: noindex, nofollow
 sitemap: false

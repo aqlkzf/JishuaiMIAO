@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ols-1c535dad/
 title: "OLS"
 nav: false
+wide: true
 description: "传统单分子追踪常在“视野与通量”和“背景抑制、定位精度、时间分辨率”之间取舍。OLS（oblique line scan，倾斜线扫描）把单物镜倾斜光片、线扫描和相机滚动快门同步起来，在约 250 × 190 µm² 的大视野内实现最高 1,250 Hz 采集，从而同时观察许多细胞及快速扩散蛋白。 检测在 11 × 11 像素窗口中进行；细胞 SMT 与溶液 isSMT 的阈值分别为 14 和 16。轨迹连接限制为细胞中 1."
 robots: noindex, nofollow
 sitemap: false

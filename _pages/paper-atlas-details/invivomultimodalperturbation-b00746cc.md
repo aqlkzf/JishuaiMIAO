@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/invivomultimodalperturbation-b00746cc/
 title: "InVivoMultimodalPerturbation"
 nav: false
+wide: true
 description: "Perturb-Multimodal（Perturb-Multi）要解决的是一个功能基因组学中的核心问题：在真实组织环境里，一个基因扰动到底如何改变细胞的转录状态、蛋白/RNA 强度、亚细胞形态和空间位置关系？ 传统 Perturb-seq 可以用单细胞测序大规模读出扰动后的转录组变化，但通常需要把组织解离成细胞悬液，因此会丢失空间结构、细胞形态和蛋白定位信息。"
 robots: noindex, nofollow
 sitemap: false

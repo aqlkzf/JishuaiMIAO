@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dreams-38dcb96a/
 title: "DreaMS"
 nav: false
+wide: true
 description: "LC–MS/MS 每分钟产生大量 tandem mass spectra，但通常不到 10% 能可靠匹配分子结构。传统学习方法主要依赖 MoNA、NIST20 等 annotated libraries，覆盖的分子空间远小于公共仓库中积累的 unannotated spectra。"
 robots: noindex, nofollow
 sitemap: false

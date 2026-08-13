@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sphenic-ec6fb59e/
 title: "SPHENIC"
 nav: false
+wide: true
 description: "空间转录组的空间域识别需要同时满足两件事：同一区域的 spots 在表达上相似，并且在组织切片上连续。普通表达聚类可能切断相邻组织；GCN 能利用邻接图，却主要依赖局部边，少量错误边也可能传播噪声。SPHENIC 的设想是用扩展持久同调提取跨尺度拓扑，再用空间约束显式修正最终嵌入。 这里分析的是测量 spot，而不是逐细胞真值。"
 robots: noindex, nofollow
 sitemap: false

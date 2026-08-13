@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gnn-singlecell-review-555e64bc/
 title: "GNN_singlecell_review"
 nav: false
+wide: true
 description: "这篇综述收集了 107 篇 GNN 单细胞应用，覆盖六类变体、五类组学和 77 个常用公开数据集。最重要的主线不是背诵 100 多个方法名，而是回答三个问题： 什么被当作节点？细胞、基因、peak、空间 spot、蛋白还是多种对象？ 什么关系被画成边？相似性、空间邻接、共表达、PPI、GRN、配体–受体还是跨组学先验？ 消息传播后的表示用来做什么？插补、聚类、注释、网络推断、整合或预测？"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/como-a9e058d1/
 title: "CoMo"
 nav: false
+wide: true
 description: "CoMo 接收同一批空间位置上配对的两种组学（例如 RNA+蛋白或 RNA+ATAC），分别从“物理邻近图”和“分子特征相似图”提取表示，再用跨模态注意力与 WNN 融合。第二阶段同时约束两种组学的簇语义一致，并让空间邻居在投影空间更接近，最终输出用于聚类、伪时序和差异分析的融合嵌入。 本解读依据本地论文 outputpapermd/PMC13092272/paper."
 robots: noindex, nofollow
 sitemap: false

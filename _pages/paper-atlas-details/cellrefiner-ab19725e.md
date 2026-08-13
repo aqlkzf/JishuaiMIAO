@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellrefiner-ab19725e/
 title: "CellRefiner"
 nav: false
+wide: true
 description: "CellRefiner 不从 Visium spot 中真正测出每个细胞的位置。它把配对的 scRNA-seq 细胞先分配到 spot，再把这些细胞当作粒子，在组织边界、细胞间距和表达相似性等约束下移动；随后可把每个细胞展开成多个亚细胞元素，得到用于接触图和配体–受体分析的预测几何。输出是模型重建，不是成像分割或实验测量。"
 robots: noindex, nofollow
 sitemap: false

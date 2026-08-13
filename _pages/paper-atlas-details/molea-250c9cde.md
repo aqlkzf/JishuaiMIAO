@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/molea-250c9cde/
 title: "MOLEA"
 nav: false
+wide: true
 description: "离子化脂质决定了脂质纳米颗粒（LNP）的包封、内体逃逸和组织分布。传统筛选通常只最大化目标细胞转染，但许多 LNP 天然偏向肝脏；一个在软骨细胞中很强、在肝细胞中同样很强的候选，并不是真正的软骨选择性载体。 MOLEA（multiobjective LNP engineering with AI）把问题拆成两个预测量：候选脂质 p 在软骨细胞中的 mRNA transfection potency Cp，以及在肝细胞中的 potency…"
 robots: noindex, nofollow
 sitemap: false

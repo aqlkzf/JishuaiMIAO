@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scvelo-f8858c2f/
 title: "scVelo"
 nav: false
+wide: true
 description: "scVelo 的关键贡献不是把速度箭头画得更平滑，而是放弃“数据必须已经看到稳态”的强假设，直接为每个基因拟合转录、剪接和降解动力学，同时估计每个细胞处于诱导还是抑制阶段以及它在该基因轨迹上的潜在时间。得到基因空间的速度后，方法再用速度与邻近细胞表达差的方向一致性构造转移图，并据此投影到 UMAP、识别起点/终点和整合 gene-shared latent time。"
 robots: noindex, nofollow
 sitemap: false

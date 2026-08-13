@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mousebrainmethylome3d-df687353/
 title: "MouseBrainMethylome3D"
 nav: false
+wide: true
 description: "这项工作用 snmC-seq3 测 301,626 个单核甲基化组，用 snm3C-seq 同时测 176,003 个核的 DNA 甲基化与三维染色质接触，覆盖成年小鼠全脑 117 个解剖区域。作者先用 mCH/mCG 建立 4,673 个细胞—空间群组，再与 RNA、ATAC 和 MERFISH 图谱对齐；随后在细胞类型 pseudo-bulk 层面比较 compartment、TAD、远程接触、调控网络和转录异构体。"
 robots: noindex, nofollow
 sitemap: false

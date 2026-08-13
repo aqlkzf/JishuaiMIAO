@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/vitessce-ebc00d83/
 title: "Vitessce"
 nav: false
+wide: true
 description: "单细胞与空间组学实验常常同时产生多种对象和数据：细胞或细胞核、空间 spot、分子坐标、基因表达、蛋白丰度、染色质可及性、显微图像、分割掩膜、聚类和细胞类型注释。真正做探索时，研究者需要不断在“物理空间、表达空间、降维空间和基因组位置”之间切换。 论文指出，当时的工具大多只覆盖其中一部分： Cellxgene（bioRxiv，2021）、Cirrocumulus/Cumulus（Nature Methods，2020）和 Pagoda2…"
 robots: noindex, nofollow
 sitemap: false

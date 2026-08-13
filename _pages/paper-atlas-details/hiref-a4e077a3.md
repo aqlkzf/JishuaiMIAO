@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hiref-a4e077a3/
 title: "HiRef"
 nav: false
+wide: true
 description: "HiRef（Hierarchical Refinement）用一连串小规模低秩最优传输问题，逐层把两个等大小点集切成互相对应的块，直到每个块只剩一对点，从而得到一对一的 Monge 映射。它避免保存完整的 n\\times n 代价或耦合矩阵，在适用的代价分解与秩计划下实现线性空间和近 O(n\\log n) 时间。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ds-pfc-multiome-9d905340/
 title: "DS_PFC_multiome"
 nav: false
+wide: true
 description: "本研究询问：21 号染色体三体如何在 0–3 岁这一突触形成和髓鞘发育窗口改变人前额叶皮层。作者联合单核 RNA 与 ATAC，比较 Ctrl 和 Ts21，并用免疫染色验证关键胶质/免疫信号。它与妊娠中期 neocortex companion paper互补，关注出生后持续或新出现的异常。 QC 对 Ts21 使用适应性 UMI 阈值，避免额外 Chr21 剂量抬高 counts 后错误过滤。"
 robots: noindex, nofollow
 sitemap: false

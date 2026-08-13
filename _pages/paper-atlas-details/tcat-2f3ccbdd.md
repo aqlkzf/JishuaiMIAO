@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tcat-2f3ccbdd/
 title: "TCAT"
 nav: false
+wide: true
 description: "TCAT 的实质是把大规模、多数据集共同出现的 T 细胞程序固化成一个参考基底，再用简单、可审计的非负固定参考拟合，把新细胞表示为多个谱系、功能和技术程序的相对混合；它牺牲了发现未知程序的能力，换取跨研究的一致性、稳定性和可解释性。"
 robots: noindex, nofollow
 sitemap: false

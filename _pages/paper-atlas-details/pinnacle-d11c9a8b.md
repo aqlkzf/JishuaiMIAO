@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pinnacle-d11c9a8b/
 title: "PINNACLE"
 nav: false
+wide: true
 description: "PINNACLE 通过“细胞类型特异 PPI + 细胞/组织元图 + 双向注意力桥”，把同一个蛋白质变成随细胞类型变化的表示；它最有价值的输出不是一个全局蛋白质排名，而是“蛋白质–细胞类型”联合假设。"
 robots: noindex, nofollow
 sitemap: false

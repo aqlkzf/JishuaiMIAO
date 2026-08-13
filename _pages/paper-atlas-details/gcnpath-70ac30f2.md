@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gcnpath-70ac30f2/
 title: "GCNPath"
 nav: false
+wide: true
 description: "GCNPath 预测细胞系对药物的自然对数 IC50。它针对两个泛化难点：基因表达平台与批次变化会使模型跨数据集失效；新药物和新细胞系同时出现的 strict-blind 场景比随机拆分困难。方法不直接把上万个基因送入全连接网络，而是先用 GSVA 把表达压成 292 个 BIOCARTA 通路活性，再把通路之间的生物网络邻近和样本相关性编码成图。"
 robots: noindex, nofollow
 sitemap: false

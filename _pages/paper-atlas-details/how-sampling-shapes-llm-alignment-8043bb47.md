@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/how-sampling-shapes-llm-alignment-8043bb47/
 title: "How_Sampling_Shapes_LLM_Alignment"
 nav: false
+wide: true
 description: "这是一篇理论机器学习与 LLM 对齐论文，不是生物信息学文章。它关心一个常被当成工程细节的问题：做偏好学习时，我们究竟让人比较哪些候选回答？ 通常的直觉是，只要数据足够多，采样策略至多影响方差和训练速度，不该改变最终答案。本文指出：这个直觉只有在非常理想化的 Bradley--Terry（BT）偏好模型下才可能成立。真实偏好如果包含上下文依赖、循环偏好或无法用单一标量奖励表达的矛盾，采样分布本身会参与定义“最优策略”。"
 robots: noindex, nofollow
 sitemap: false

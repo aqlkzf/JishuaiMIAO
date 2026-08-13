@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/oasis-1b1049f0/
 title: "OASIS"
 nav: false
+wide: true
 description: "OASIS 的核心问题是：免疫细胞中的遗传效应、体细胞突变效应、微生物组影响和疾病风险评分，很多并不是固定地作用在“某一种细胞类型”上，而是会随连续的细胞状态改变。传统 bulk mQTL 或离散细胞类型分析容易把这种状态依赖性平均掉。论文因此构建了一个面向日本人群的多组学单细胞免疫图谱，把 PBMC 单细胞转录组、scVDJ、宿主遗传、血浆蛋白组、肠道宏基因组和体细胞事件投射到同一套免疫细胞状态框架中。"
 robots: noindex, nofollow
 sitemap: false

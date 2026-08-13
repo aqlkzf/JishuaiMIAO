@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmultibench-1476a178/
 title: "scMultiBench"
 nav: false
+wide: true
 description: "scMultiBench 的价值是把方法选择改写为一个有条件的问题：输入结构决定可用方法，任务决定该看哪些指标，数据和指标共同决定相对排名；任何脱离这些条件的“全局最佳方法”都超出了论文证据。"
 robots: noindex, nofollow
 sitemap: false

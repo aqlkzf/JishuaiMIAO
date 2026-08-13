@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scgraphformer-017e5cd5/
 title: "scGraphformer"
 nav: false
+wide: true
 description: "单细胞 RNA 测序的细胞类型注释常先用 kNN 把细胞连成一张固定图，再做图神经网络传播。但 kNN 只保留局部邻居：远距离却生物学相关的细胞可能被遗漏，错误邻居也会成为先验。scGraphformer 的目标是从表达数据中学习所有细胞之间的关联，同时仍允许把 kNN 图作为可选的辅助信息，而不是强制依赖它。 输入是细胞×基因矩阵。论文先做质控、归一化和高变基因选择，得到 \\hat X；每个细胞是一行特征，标签用于监督训练。"
 robots: noindex, nofollow
 sitemap: false

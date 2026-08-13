@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sptedu-seq-debd1ac4/
 title: "SPTEdU-seq"
 nav: false
+wide: true
 description: "SPTEdU-seq 把两个原本分开的实验合并起来：用 random-primer/加尾化学捕获空间 total transcriptome；用 EdU 标记 DNA 复制，再把 clicked tag probe 作为可测序的 UTI 信号捕获到同一块 10 μm spatial array。"
 robots: noindex, nofollow
 sitemap: false

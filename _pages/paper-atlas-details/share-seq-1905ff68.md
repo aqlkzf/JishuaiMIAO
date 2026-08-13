@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/share-seq-1905ff68/
 title: "SHARE-seq"
 nav: false
+wide: true
 description: "SHARE-seq 是一种 split–pool combinatorial barcoding 技术：在同一固定细胞/细胞核内分别标记开放染色质和 mRNA，再给两类分子连接相同的三轮细胞条形码，最终分开建 ATAC 与 RNA 文库。论文利用真实的一对一配对测量寻找 peak–gene 关联、定义 DORC，并把当前 DORC 可及性与其他细胞的 RNA 状态匹配，得到“chromatin potential”向量。"
 robots: noindex, nofollow
 sitemap: false

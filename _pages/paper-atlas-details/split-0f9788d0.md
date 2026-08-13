@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/split-0f9788d0/
 title: "SPLIT"
 nav: false
+wide: true
 description: "Xenium 给每个转录本一个空间坐标，再由分割边界把转录本归到“细胞”。一个分割对象中出现两种细胞类型的表达信号，至少有两种完全不同的解释： biological doublet：确实有两个完整细胞被当成一个对象； signal-level mixture：对象主体仍是一个细胞，但邻近细胞、z 轴重叠细胞或错误边界的转录本被分配进来。"
 robots: noindex, nofollow
 sitemap: false

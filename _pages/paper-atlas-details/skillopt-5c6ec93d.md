@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/skillopt-5c6ec93d/
 title: "SkillOpt"
 nav: false
+wide: true
 description: "SkillOpt 把 agent skill 文档当成可训练的外部状态，用“轨迹证据 + 结构化 edits + 文本学习率 + 验证集 gate + rejected buffer + slow/meta update”来优化它，从而在不改模型权重的情况下生成一个小型、可读、可迁移的 bestskill.md。"
 robots: noindex, nofollow
 sitemap: false

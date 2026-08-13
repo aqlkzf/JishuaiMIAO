@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/preimplantationembryomodels-d10b766e/
 title: "PreimplantationEmbryoModels"
 nav: false
+wide: true
 description: "植入前胚胎发育经历合子、卵裂、桑椹胚、内细胞团（ICM）、上胚层（EPI）、原始内胚层（PrE）和滋养外胚层（TE）等连续状态。单细胞 RNA 测序已经积累了许多数据集，但这些数据很难直接合并：样本数量小、测序技术和深度不同、批次效应明显、细胞标签不统一，而且人胚材料稀缺并严重偏向 TE。 传统分析通常先聚类，再由专家根据少数经典 marker 手工命名。"
 robots: noindex, nofollow
 sitemap: false

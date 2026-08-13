@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/driftingislands-e779399d/
 title: "DriftingIslands"
 nav: false
+wide: true
 description: "这篇工作故意训练了一个只追求细胞类型分类的模型 Islander：它能在主流单细胞嵌入指标上拿到最高分，却把连续的生物状态切成彼此孤立、位置随随机运行漂移的“细胞岛”。作者据此说明现有指标不完整，并提出 scGraph，用跨批次稳定的细胞类型几何关系来补充评价。 > 重要定位：Islander 不是推荐用于生物发现的整合算法，而是一个用于“压力测试指标”的反例或 null algorithm。"
 robots: noindex, nofollow
 sitemap: false

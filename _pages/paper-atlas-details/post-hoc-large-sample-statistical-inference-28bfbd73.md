@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/post-hoc-large-sample-statistical-inference-28bfbd73/
 title: "Post_Hoc_Large_Sample_Statistical_Inference"
 nav: false
+wide: true
 description: "传统统计推断要求在看数据之前选定显著性水平 \\alpha。例如，研究者先算一个 95% 置信区间，发现结果“不显著”，再用同一批数据改算 90% 区间，通常已经失去原先的错误率保证。这就是论文所说的 “roving alphas” 问题。 现有 e-value 理论允许事后选择 \\alpha，但此前主要是有限样本方法。有限样本有效性很强，却往往依赖已知有界性、强矩条件或付出较大的保守性。"
 robots: noindex, nofollow
 sitemap: false

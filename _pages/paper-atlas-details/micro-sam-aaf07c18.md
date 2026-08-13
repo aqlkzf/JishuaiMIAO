@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/micro-sam-aaf07c18/
 title: "micro-sam"
 nav: false
+wide: true
 description: "显微图像分割的困难不只是“把细胞圈出来”，而是成像模态、目标形态和数据维度差异很大：光学显微镜（LM）与电子显微镜（EM）不同，二维图像、三维体数据和时间序列也需要不同操作。CellPose、StarDist 等专用方法在接近训练分布的数据上很强，但遇到新条件时性能会下降；重新训练又需要大量人工标注。原始 SAM 虽然能用点或框交互分割，但它主要在自然图像上训练，对显微镜中的密集、相邻或细小目标并不稳定。"
 robots: noindex, nofollow
 sitemap: false

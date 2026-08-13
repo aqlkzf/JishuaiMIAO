@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/totalvi-87065ea2/
 title: "totalVI"
 nav: false
+wide: true
 description: "totalVI 的本质是：用一个联合 VAE 学习 RNA+蛋白共同的细胞状态，同时把蛋白观测拆成“背景概率 + 背景均值 + 前景均值”。这样它不仅能做 embedding，还能把蛋白背景校正、缺失蛋白预测、差异表达和 RNA-蛋白相关性都写成同一个概率模型上的后验查询。"
 robots: noindex, nofollow
 sitemap: false

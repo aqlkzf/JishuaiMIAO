@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gtn-ed6d015a/
 title: "GTN"
 nav: false
+wide: true
 description: "GTN 的“Transformer”不是今天常说的 self-attention Transformer。它学习的是图结构变换：对异构图的多种边类型做可微的软选择，再通过邻接矩阵相乘把若干关系组合成 meta-path 图，最后在这些自动生成的图上做 GCN 节点分类。核心贡献是把“专家手工选 meta-path → 再训练 GNN”的两阶段流程改成端到端学习。"
 robots: noindex, nofollow
 sitemap: false

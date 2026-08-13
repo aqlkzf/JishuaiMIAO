@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mechanotranscriptomics-6d8c202e/
 title: "MechanoTranscriptomics"
 nav: false
+wide: true
 description: "这篇论文把空间转录组和图像力学连接起来：先从膜染色得到细胞轮廓，用 VMSI 从弯曲的细胞连接推断相对压力、连接张力和细胞应力，再把这些力学量与同一细胞的基因表达、细胞类型和空间位置联合建模。 论文发表于 Nature Methods（2025），DOI 为 10.1038/s41592-025-02618-1。"
 robots: noindex, nofollow
 sitemap: false

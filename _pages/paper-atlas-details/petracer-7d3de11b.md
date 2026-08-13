@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/petracer-7d3de11b/
 title: "PEtracer"
 nav: false
+wide: true
 description: "PEtracer 不是根据转录组相似性猜谱系，而是让细胞在分裂过程中持续积累可遗传的 prime-editing 标记，再在实验终点同时读取这些标记、细胞转录状态和组织空间位置。标记提供“共同祖先”的证据，MERFISH 或 scRNA-seq 提供“现在是什么状态”的证据，二者联合后才能研究一个状态究竟更像长期遗传结果，还是局部环境诱导的短暂反应。"
 robots: noindex, nofollow
 sitemap: false

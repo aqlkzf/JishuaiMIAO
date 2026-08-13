@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/proteinimputationbenchmark-5c907346/
 title: "ProteinImputationBenchmark"
 nav: false
+wide: true
 description: "这篇 Genome Biology 2026 论文研究一个实际问题：在单细胞 RNA-seq 数据中，能不能只凭 RNA 表达来推断细胞表面蛋白表达？传统做法常把某个蛋白对应基因的 mRNA 当作蛋白表达的近似值，但论文首先证明这个近似经常不可靠。以 Hao 等人的 PBMC CITE-seq 数据为例，207 个可对齐的蛋白-mRNA 对中，很多只有弱相关或负相关；"
 robots: noindex, nofollow
 sitemap: false

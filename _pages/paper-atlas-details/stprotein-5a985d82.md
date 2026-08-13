@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stprotein-5a985d82/
 title: "STProtein"
 nav: false
+wide: true
 description: "STProtein 关注空间多组学里的一个不平衡问题：空间转录组数据相对丰富，而空间蛋白组数据更少、更贵。因此，论文希望用已有的空间 RNA 表达和空间信息来预测未知的空间蛋白表达，并进一步做空间区域聚类和生物学解释。 论文把 STProtein 分成三部分：构建特征图、图注意力自编码器模块、上游和下游任务。论文记号中，X 是 RNA 表达，X' 是重构 RNA，Z 是模型学到的 embedding；"
 robots: noindex, nofollow
 sitemap: false

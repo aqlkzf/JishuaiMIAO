@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/csplotch-64fc36b3/
 title: "cSplotch"
 nav: false
+wide: true
 description: "结肠同时沿三条轴变化：近端到远端的解剖轴、隐窝底到顶端的组织轴，以及出生到衰老的时间轴。空间转录组保留位置，但每个 spot 混合多个细胞；单核 RNA 测序能分辨细胞类型，却丢失组织位置。本文建立覆盖约 1,500 个小鼠结肠空间切片和约 40 万个单核转录组的图谱，并提出 cSplotch，把 H&E 形态、snRNA-seq 参考、spot 细胞组成和多层实验条件联合起来，估计“某个基因在某种细胞、某个组织区室和某个年龄/区域条件…"
 robots: noindex, nofollow
 sitemap: false

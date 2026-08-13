@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scamvib-9bb16e6b/
 title: "scAMVIB"
 nav: false
+wide: true
 description: "同一细胞的 RNA、ATAC 或 ADT 既含共同的 cell-type 信号，也含模态特异信息与技术噪声。简单拼接会让高维模态支配距离，等权融合又假设每个模态同样可靠。scAMVIB 把每个组学视为一个 view，用 information bottleneck 将细胞压缩成离散 cluster T，同时尽量保存各 view 对 cluster 有用的信息；view 权重在迭代中自适应更新。 算法不是深度生成模型。"
 robots: noindex, nofollow
 sitemap: false

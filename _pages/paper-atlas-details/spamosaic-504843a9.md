@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spamosaic-504843a9/
 title: "SpaMosaic"
 nav: false
+wide: true
 description: "SpaMosaic 处理的不是每个切片都同时测到所有组学的理想数据，而是更常见的马赛克式观测：有的切片有 RNA+ATAC，有的只有 RNA，有的有 RNA+蛋白，另一些又来自不同发育阶段或实验技术。目标是把这些切片放进同一个低维空间，同时保留空间邻域、消除切片批次差异，并给缺失模态提供可解释的邻居插补。"
 robots: noindex, nofollow
 sitemap: false

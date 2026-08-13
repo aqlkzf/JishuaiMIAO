@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/morphlink-d51e8229/
 title: "MorphLink"
 nav: false
+wide: true
 description: "MorphLink 的目标不是把 H&E 图像和空间组学数据压进同一个黑箱嵌入，而是先从图像中提取可命名、可度量的结构特征，再用 Curve-based Pattern Similarity Index（CPSI）判断某个形态特征与某个基因、蛋白或其他分子测量是否具有相似的局部空间变化。最终结果是“什么组织结构发生了怎样的形态变化，并与哪种分子动态同位出现”。"
 robots: noindex, nofollow
 sitemap: false

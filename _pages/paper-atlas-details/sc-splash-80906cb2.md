@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sc-splash-80906cb2/
 title: "sc-SPLASH"
 nav: false
+wide: true
 description: "sc-SPLASH 不先问“这个 read 比对到哪个基因”，而是先问： > 在同一个固定序列上下文之后，不同细胞是否偏好出现不同的后续序列？ 如果答案是肯定的，这种差异可能来自可变剪接、体细胞突变、等位基因、旁系同源基因、V(D)J 重排、转座/重复序列，甚至参考基因组中根本不存在的基因。sc-SPLASH 先用统计量找到异常序列模式，再用比对、组装、Pfam、BLAST 或实验验证解释其生物学含义。"
 robots: noindex, nofollow
 sitemap: false

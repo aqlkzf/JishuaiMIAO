@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stcompare-318709d5/
 title: "STcompare"
 nav: false
+wide: true
 description: "STcompare 用于比较两张结构对应的组织切片。它先要求两张切片在同一像素网格上对齐，然后为每个基因提供两个互补量：空间相关检验判断图案方向是否保持或反转；空间 fold-change 相似度判断对应位置的表达量是否仍在给定倍数范围内。 论文是 2025 年 bioRxiv 预印本，尚未经同行评审。以下解读以本地 51 页论文 PDF/OCR、主图与补充内容、以及 commit 6b27d1d... 的 R 源码为边界。"
 robots: noindex, nofollow
 sitemap: false

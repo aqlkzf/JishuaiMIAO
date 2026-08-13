@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spclue-d987999b/
 title: "spCLUE"
 nav: false
+wide: true
 description: "空间相邻 spot 往往属于同一区域，但表达相似的 spot 也可能跨越物理距离。spCLUE 分别构建空间 KNN 图与表达相关性 KNN 图，用共享 GCN 编码两视图，再以实例级和簇级对比损失对齐。输出是 spot 嵌入；论文最终空间域来自外部 mclust 和可选邻域多数投票，不是网络伪簇头直接给出的标签。 输入是 spot×gene 计数及 adata.obsm[\"spatial\"]。"
 robots: noindex, nofollow
 sitemap: false

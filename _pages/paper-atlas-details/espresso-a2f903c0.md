@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/espresso-a2f903c0/
 title: "ESPRESSO"
 nav: false
+wide: true
 description: "ESPRESSO 不是把 RNA、蛋白或代谢物直接测出来，而是把活细胞内四类细胞器的形态、空间关系和功能敏感荧光强度编码成每个细胞的 3,328 维“细胞器表型”，再在连续成像中追踪这些表型如何随空间、时间和处理条件变化。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spalp-fc1e2290/
 title: "SpaLP"
 nav: false
+wide: true
 description: "SpaLP 把空间组学中的图卷积压缩成一个非常简单的自编码器：先用二维坐标为每个细胞保存固定数量的邻居编号，再一次性 gather 邻居分子特征，按特征通道计算注意力并求和，最后重构原始表达。它避免保存 N\\times N 邻接矩阵，也不堆叠多层消息传递，因此能在单 GPU 上处理百万至千万级细胞。"
 robots: noindex, nofollow
 sitemap: false

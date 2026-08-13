@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/rl-multi-phase-second-price-auction-design-48674129/
 title: "RL_Multi_Phase_Second_Price_Auction_Design"
 nav: false
+wide: true
 description: "这是机制设计、在线学习和强化学习交叉领域的论文，不是生物信息学文章。卖方反复进行带个性化保留价的二价拍卖；每一阶段除了定保留价，还要决定先卖哪类商品。前面的商品选择会改变后续状态和买家的估值，因此问题是一个未知 MDP，而不是各轮相互独立的 contextual bandit。 困难还在于买家具有策略性。买家可能当前少赚一点，通过故意高报或低报来影响卖方以后学习到的保留价和商品顺序。卖方看到的是竞价和成交结果，而不是买家的真实价值。"
 robots: noindex, nofollow
 sitemap: false

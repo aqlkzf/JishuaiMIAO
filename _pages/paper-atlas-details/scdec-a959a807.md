@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scdec-a959a807/
 title: "scDEC"
 nav: false
+wide: true
 description: "scATAC-seq 的峰计数矩阵既高维又稀疏。常见流程先降维，再在所得坐标上运行 K-means 或 Louvain；这样“什么表示适合重构数据”和“什么表示适合区分细胞群”由两个互不反馈的步骤决定。scDEC 把连续表示和离散簇标签一起放入生成模型，使编码器在训练表示的同时直接输出聚类概率。 这里尤其不能被名字误导：本论文的 scDEC 不是经典 DEC 中基于 Student-t 分布和 KL 目标分布迭代的算法。"
 robots: noindex, nofollow
 sitemap: false

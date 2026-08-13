@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatial-ev-seq-54e0315d/
 title: "Spatial-EV-seq"
 nav: false
+wide: true
 description: "传统组织 EV 分析通常先把组织消化、离心并分离囊泡。这样虽然能测 EV，却丢掉“它原来位于组织哪里、附近是什么细胞、可能影响谁”的信息。Spatial-EV-seq 的目标是同时得到 EV 的空间坐标、单个可分辨 EV 的表面蛋白组合，以及邻近区域的细胞类型和转录状态。 它把三个技术环节连成一条链： 第一步保留大致空间位置；第二步把约百纳米的 EV 放大成可成像的 RCA “DNA 纳米花”；"
 robots: noindex, nofollow
 sitemap: false

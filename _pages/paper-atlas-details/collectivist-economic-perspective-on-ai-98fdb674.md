@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/collectivist-economic-perspective-on-ai-98fdb674/
 title: "Collectivist Economic Perspective on AI"
 nav: false
+wide: true
 description: "Author: Michael I. Jordan Version analyzed: arXiv:2507.06268v3 (15 December 2025) Persistent identifier: 10.48550/arXiv.2507.06268 Publication status: listed by the author's publication page as Communications of the ACM, to appear; the anal…"
 robots: noindex, nofollow
 sitemap: false

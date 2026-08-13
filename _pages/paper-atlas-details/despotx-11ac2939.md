@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/despotx-11ac2939/
 title: "DeSpotX"
 nav: false
+wide: true
 description: "DeSpotX 的本质是：用 anchor genes 解决 ST 去污染中的不可辨识性，用跨簇空间邻居估计局部污染，用 diffusion prior 防止低表达真实信号被过度删除；公开代码很好地实现了核心模型和 CLI，但不包含完整论文 benchmark 与下游生物分析复现流程。"
 robots: noindex, nofollow
 sitemap: false

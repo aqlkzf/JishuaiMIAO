@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spanorm-7b050e82/
 title: "SpaNorm"
 nav: false
+wide: true
 description: "SpaNorm 可以理解为“空间负二项 GLM 归一化”：对每个基因同时拟合空间 biology 和空间 library-size 效应，然后在生成 PAC/logPAC 时只保留 biology-only 均值，从而尽量去掉区域性 library-size bias，同时保留空间 domain 和 SVG 信号。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scdiffusion-664249cc/
 title: "scDiffusion"
 nav: false
+wide: true
 description: "scDiffusion 不是直接在高维基因表达向量上做扩散，而是先把细胞表达压缩成 128 维潜在表示，再在潜在空间训练扩散模型；生成时用分类器梯度把采样过程“推向”指定细胞类型、器官/细胞类型组合或两个发育状态之间的中间状态。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/openproblemssinglecell-3c49cf3d/
 title: "OpenProblemsSingleCell"
 nav: false
+wide: true
 description: "《Defining and benchmarking open problems in single-cell analysis》是 Nature Biotechnology 的 Correspondence / perspective，而不是提出一个新的预测算法。它总结单细胞分析中仍未解决的任务，并提出 Open Problems 平台作为持续更新的 benchmark 基础设施。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/daf-seq-9cd755be/
 title: "DAF-seq"
 nav: false
+wide: true
 description: "DAF-seq 的关键想法是：先用双链 DNA 胞嘧啶脱氨酶 SsDddA 给“暴露在外”的胞嘧啶做化学标记，再通过 PCR/WGA 把这些标记永久转换成可测序的 C→T 或 G→A 变化。这样，同一条长 DNA 分子既保留遗传序列，也携带蛋白质占据、核小体保护和染色质开放状态的信息；在单细胞版本 scDAF-seq 中，这些随机标记还可以帮助把扩增产生的重叠读段重新拼回父系/母系、正链/负链四种原始模板。"
 robots: noindex, nofollow
 sitemap: false

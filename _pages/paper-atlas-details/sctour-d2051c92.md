@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sctour-d2051c92/
 title: "scTour"
 nav: false
+wide: true
 description: "单细胞 RNA-seq、snRNA-seq、scATAC-seq 等数据通常只给出细胞在某一时刻的静态测量，但发育和分化研究关心的是“细胞沿什么顺序变化、往哪个方向走、未观测到的状态会是什么样”。论文认为已有方法有几个限制：很多 pseudotime 方法需要用户指定起始细胞；RNA velocity 依赖 spliced/unspliced mRNA 或代谢标记信息；批次效应会影响轨迹和速度可视化；"
 robots: noindex, nofollow
 sitemap: false

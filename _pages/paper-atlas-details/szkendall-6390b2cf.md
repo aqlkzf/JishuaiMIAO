@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/szkendall-6390b2cf/
 title: "szKendall"
 nav: false
+wide: true
 description: "单细胞 Hi-C 接触矩阵极稀疏。零既可能是真正不存在接触的结构性零（SZ），也可能只是测序不足造成的 dropout。szKendall 不自己识别 SZ 或直接聚类，而是在已经给出 SZ/插补结果后计算细胞两两不相似度，供 PAM、层次聚类、UMAP/t-SNE 使用。 包把输入中所有零都视为 SZ。若 dropout 尚未插补，它也会被当成生物结构信号，因此结果直接依赖上游 HiCImpute/scHiCSRS 或其他 SZ 判别。"
 robots: noindex, nofollow
 sitemap: false

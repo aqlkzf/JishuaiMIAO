@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/saprot-21516ea4/
 title: "SaProt"
 nav: false
+wide: true
 description: "SaProt 的关键不是另造一种三维神经网络，而是先用 Foldseek 把每个残基周围的局部几何环境离散成一个 3Di 字母，再把“氨基酸字母”和“结构字母”合成一个 token。这样，普通双向 Transformer 读一条一维序列时，就能同时看到序列身份和结构环境。2025 年正式论文又在这个模型之上加入 ColabSaprot 和 SaprotHub，让非机器学习用户通过轻量 adapter 训练、分享、续训和聚合任务模型。"
 robots: noindex, nofollow
 sitemap: false

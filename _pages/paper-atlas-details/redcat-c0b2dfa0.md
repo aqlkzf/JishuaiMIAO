@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/redcat-c0b2dfa0/
 title: "REDCAT"
 nav: false
+wide: true
 description: "REDCAT 是一个同一张组织切片上的全光学多模态成像流程，用 TPEF/SRS/SHG 直接测量红氧、脂质、蛋白、胶原和光谱化学状态，再用 CODEX 给细胞身份做高通量蛋白标注。它的核心不是新的深度学习模型，而是把光学代谢信号、细胞分割、配准、聚类和细胞类型注释串成单细胞/亚细胞尺度的组织代谢图谱。"
 robots: noindex, nofollow
 sitemap: false

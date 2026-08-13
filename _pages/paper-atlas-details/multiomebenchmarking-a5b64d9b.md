@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multiomebenchmarking-a5b64d9b/
 title: "MultiomeBenchmarking"
 nav: false
+wide: true
 description: "单细胞多组学实验可以在同一个细胞中同时测量 RNA、蛋白丰度或染色质可及性，但成本高、数据稀疏、批次差异明显。因此研究者常用两类计算方法： 缺失模态预测：只有 RNA 时，预测蛋白丰度或 ATAC 峰可及性。 多组学整合：把不同模态、不同批次或模态不完整的数据映射到统一的低维空间。 问题在于，已有算法通常只在各自论文或少量竞赛数据上验证，数据集、预处理、指标和任务定义不一致，难以判断“哪种方法适合我的数据”。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cytosignal-bfcda605/
 title: "CytoSignal"
 nav: false
+wide: true
 description: "CytoSignal 解决的是空间转录组里的细胞间通讯定位问题：给定每个空间位置的表达量和坐标，方法希望判断某个配体-受体相互作用在哪些具体位置活跃，而不是只在“某类细胞到某类细胞”这种粗粒度层面做推断。论文强调既有方法的两个主要不足：很多单细胞通讯方法没有使用空间邻近信息；很多空间通讯方法依赖预定义细胞群，或者没有为每个 LR pair 在每个空间位置单独给出预测；同时，接触依赖型信号和可扩散配体信号不应使用同一种邻域模型。"
 robots: noindex, nofollow
 sitemap: false

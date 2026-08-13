@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/online-decision-focused-learning-a651f216/
 title: "Online_Decision_Focused_Learning"
 nav: false
+wide: true
 description: "经典的“先预测、再优化”流程先让模型尽量准确地预测成本，再把预测值交给一个优化器做决策。但预测误差小，不等于决策一定好：只要预测落在错误的决策边界一侧，即使数值非常接近真实成本，也可能选错物品；反过来，一个数值偏差较大、但仍位于正确边界一侧的预测，可以产生正确决策。 决策聚焦学习（decision-focused learning, DFL）因此不直接最小化预测误差，而是让模型最小化最终决策产生的真实成本。此前相关理论主要针对固定的 i."
 robots: noindex, nofollow
 sitemap: false

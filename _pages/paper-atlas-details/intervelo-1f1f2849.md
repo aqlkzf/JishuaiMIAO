@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/intervelo-1f1f2849/
 title: "InterVelo"
 nav: false
+wide: true
 description: "InterVelo 用一条潜在 neural-ODE 轨迹给全部基因提供共享的细胞时间，再用可变转录率的剪接动力学和 Euler 重建将 velocity 信息反馈给排序；它的强项是时间—速度共学习，而主要边界是单轨迹/batch ODE 近似、事后方向选择和若干纸—码损失差异。"
 robots: noindex, nofollow
 sitemap: false

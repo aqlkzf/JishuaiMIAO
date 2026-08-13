@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/regvelo-62d9538e/
 title: "regvelo"
 nav: false
+wide: true
 description: "RegVelo 用可学习 GRN 将各基因的转录率耦合进高维剪接 ODE，使速度、局部有效网络和网络扰动来自同一个生成模型；它显著增强了假设生成能力，但模型权重、数值求解、先验网络和 CellRank 下游共同限定了因果与复现解释。"
 robots: noindex, nofollow
 sitemap: false

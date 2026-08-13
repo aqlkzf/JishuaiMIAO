@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/giottosuite-46919789/
 title: "GiottoSuite"
 nav: false
+wide: true
 description: "Giotto Suite 解决的是空间组学数据“尺度、模态和格式不统一”的工程问题。它把转录本点、细胞/细胞核/spot/网格多边形、组织图像、表达矩阵、空间图和多组学结果组织到同一个 R 生态框架中，让研究者可以在不同空间单位和特征模态之间聚合、比较、整合和导出数据。"
 robots: noindex, nofollow
 sitemap: false

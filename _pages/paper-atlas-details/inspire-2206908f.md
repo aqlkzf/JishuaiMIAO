@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/inspire-2206908f/
 title: "INSPIRE"
 nav: false
+wide: true
 description: "INSPIRE 同时解决空间转录组多切片的三个问题：用图神经网络保留每张切片的空间邻域，用带截断的对抗学习去除切片或平台差异，再用共享的非负空间因子和基因载荷解释组织结构。输出既有适合聚类和轨迹分析的共享表示 Z，也有每个细胞的空间因子比例 \\beta 与可解释基因程序 \\mu。"
 robots: noindex, nofollow
 sitemap: false

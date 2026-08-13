@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gravity-3a7a55fd/
 title: "GRAVITY"
 nav: false
+wide: true
 description: "GRAVITY 是一个把 RNA velocity、基因动力学参数和动态基因调控网络放在同一个神经模型里学习的方法。它输入 unspliced/spliced RNA、二维细胞嵌入和先验 TF-target 网络，输出细胞速度、基因速度、\\alpha,\\beta,\\gamma 动力学参数，以及基于 attention 的调控因子和调控模块解释。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/decode-3c34eef0/
 title: "DECODE"
 nav: false
+wide: true
 description: "DECODE 用带已知细胞比例的“伪组织”训练一个深度网络，把组织级转录组、蛋白组或代谢组向量映射成细胞类型/状态比例。它先用目标组织参与的对抗训练缩小 reference 与 target 的域差异，再用人工杂质细胞和注意力掩码学习相对去噪；推断时根据目标中是否可能含有 reference 未覆盖的细胞类型，选择绕过或经过 denoiser 的路径。"
 robots: noindex, nofollow
 sitemap: false

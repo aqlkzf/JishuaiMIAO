@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/flashsinkhorn-319130c8/
 title: "FlashSinkhorn"
 nav: false
+wide: true
 description: "给定带权点云 X\\in\\mathbb{R}^{n\\times d},a\\in\\Delta^n 与 Y\\in\\mathbb{R}^{m\\times d},b\\in\\Delta^m，熵正则最优传输（EOT）寻找耦合 P，使运输代价和熵正则的 KL 项之和最小。平方欧氏代价为 C{ij}=\\lVert xi-yj\\rVert2^2。传统 GPU 实现往往显式保存 n\\times m 的代价、分数或耦合矩阵；"
 robots: noindex, nofollow
 sitemap: false

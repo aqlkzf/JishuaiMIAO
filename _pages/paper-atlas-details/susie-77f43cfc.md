@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/susie-77f43cfc/
 title: "SuSiE"
 nav: false
+wide: true
 description: "SuSiE 的核心是：用若干个“只能选择一个变量、但保留全部选择不确定性”的贝叶斯单效应模型相加，再通过 IBSS 反复对其他效应残差化。这个结构让高度相关变量可以作为一个可信集合被诚实报告；代价是需要给出 L、依赖模型与 LD 质量，并仍可能落入局部最优。"
 robots: noindex, nofollow
 sitemap: false

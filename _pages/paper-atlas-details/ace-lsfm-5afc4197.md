@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ace-lsfm-5afc4197/
 title: "ACE_LSFM"
 nav: false
+wide: true
 description: "透明化脑组织的光片荧光显微镜（LSFM）能产生细胞分辨率、太体素规模的三维图像。困难不只是“找到细胞”：模型还要适应不同实验室、染色方式、分辨率和脑区；统计分析则要发现跨越传统脑区边界的局部或层状变化。 传统 ClearMap、MIRACL 等流程常按图谱 ROI 汇总细胞数，容易把 ROI 内部的局部效应平均掉。逐体素检验又面对海量多重比较。"
 robots: noindex, nofollow
 sitemap: false

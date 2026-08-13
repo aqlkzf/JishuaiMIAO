@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/flowmatching-review-8765f5af/
 title: "FlowMatching_Review"
 nav: false
+wide: true
 description: "这不是一篇提出单一新算法的论文，而是一张“理论—数据类型—生物任务”的地图。作者先解释 flow matching（FM）为何能把生成问题写成分布间的连续运输，再把现有工作分到小分子、蛋白质、核酸、复合物与动力学、单细胞、多细胞和生物成像等层次，最后提出把这些层次连接成 AI virtual cell 的研究愿景。 因此阅读时要区分三种证据：基础理论公式说明 FM 怎样训练；表格和时间线整理已有方法；"
 robots: noindex, nofollow
 sitemap: false

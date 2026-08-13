@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/velotrace-c2d5d711/
 title: "VeloTrace"
 nav: false
+wide: true
 description: "轨迹推断通常从细胞在表达空间中的邻近关系出发，得到全局路径和伪时间；RNA velocity 则从每个基因的 unspliced/spliced 计数拟合瞬时转录动力学。前者擅长全局形状但缺少局部方向，后者有局部方向却容易受低表达、dropout 和动力学拟合误差影响。两条管线独立运行后再把 velocity 投影到轨迹上，可能掩盖原始速度与轨迹相互冲突的问题。"
 robots: noindex, nofollow
 sitemap: false

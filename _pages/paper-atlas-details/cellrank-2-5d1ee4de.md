@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellrank-2-5d1ee4de/
 title: "CellRank 2"
 nav: false
+wide: true
 description: "CellRank 2 不是一种新的降维算法，也不直接从表达矩阵中“发现一棵谱系树”。它解决的是更具体的问题：给定单细胞数据以及一种或多种能够指示变化方向的证据，如何把这些证据统一写成细胞之间的转移概率，再用同一套马尔可夫链分析得到初始状态、终末状态、命运概率和与谱系相关的候选基因。 论文的核心设计是把任务拆成两层： kernel（核）层把 RNA velocity、伪时间、发育潜能、实验时间或预先计算的耦合等证据转换成转移矩阵；"
 robots: noindex, nofollow
 sitemap: false

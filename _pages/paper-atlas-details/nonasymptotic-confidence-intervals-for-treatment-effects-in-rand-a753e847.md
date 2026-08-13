@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nonasymptotic-confidence-intervals-for-treatment-effects-in-rand-a753e847/
 title: "Nonasymptotic Confidence Intervals for Treatment Effects in Randomized Experiments"
 nav: false
+wide: true
 description: "论文研究二元随机实验中的平均处理效应（ATE）置信区间。它要求的是严格的有限样本覆盖： 而不是只在 n\\to\\infty 时近似成立。 难点来自稀有处理。当处理概率 \\pi 很小时，真正提供处理组信息的有效样本量大约是 n\\pi。经典 CLT 区间的宽度通常是 1/\\sqrt{n\\pi}，但已有的单位级 Hoeffding 推导会得到 1/\\sqrt{n\\pi^2}，额外损失一个 1/\\sqrt\\pi。"
 robots: noindex, nofollow
 sitemap: false

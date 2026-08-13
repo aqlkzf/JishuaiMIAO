@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/burstyschrodingertrajectories-6c1f76d5/
 title: "BurstySchrodingerTrajectories"
 nav: false
+wide: true
 description: "这篇论文没有发明新的 Sinkhorn 算法。它改变的是 Sinkhorn 之前的“参考过程”：传统方法默认细胞在表达空间中近似扩散，本文则从一个含转录爆发和基因调控网络（GRN）的随机动力学模型出发，估计细胞从初态走到各个终态的概率，再寻找既接近该机制参考、又严格匹配两个观测时点边缘分布的耦合。"
 robots: noindex, nofollow
 sitemap: false

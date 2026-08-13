@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/krakencoder-8ee2bcbc/
 title: "Krakencoder"
 nav: false
+wide: true
 description: "同一个人的脑连接组会因为模态（结构 SC、功能 FC）、脑区模板、纤维追踪算法、去噪方式和相关性估计方法而形成许多不同“口味”。传统方法通常只学习一个方向，例如 SC→FC，或只处理固定模板，难以在研究间转换，也无法把多种观测融合成统一表征。 Krakencoder 的核心假设是：这些连接组是同一潜在脑网络的不同视角。因此，每种口味拥有独立编码器和解码器，但共享一个 128 维潜在空间。"
 robots: noindex, nofollow
 sitemap: false

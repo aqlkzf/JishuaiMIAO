@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/glue-cd814d6a/
 title: "GLUE"
 nav: false
+wide: true
 description: "GLUE 同时学习两类坐标：细胞坐标 \\mathbf u 回答“这个细胞处于什么状态”，特征坐标 \\mathbf v 回答“这个基因/峰/甲基化特征指向什么生物方向”；引导图先把特征坐标定向，再用 \\mathbf Vk^\\top\\mathbf u 重建各模态，于是不同模态的细胞坐标获得可比的语义。"
 robots: noindex, nofollow
 sitemap: false

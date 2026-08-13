@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stimage-0766b875/
 title: "STimage"
 nav: false
+wide: true
 description: "空间转录组能够在组织坐标上测量 RNA，但成本高、样本数量有限；常规 H&E 切片便宜且广泛存在，却只能直接观察形态。STimage 用配对的 H&E 图像与空间转录组计数训练模型，学习“一个空间 spot 周围的形态”与“该 spot 的基因表达”之间的统计关联。训练后，只需 H&E 图像即可预测每个位置的基因表达、表达区间或细胞类型。"
 robots: noindex, nofollow
 sitemap: false

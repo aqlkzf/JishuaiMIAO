@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/test-then-punish-statistical-approach-repeated-games-607e7a5c/
 title: "Test_Then_Punish_Statistical_Approach_Repeated_Games"
 nav: false
+wide: true
 description: "论文研究无限重复博弈中的一个现实困难：玩家约定采用某个合作混合策略，但其他人只能看到每轮实际抽到的纯动作，看不到背后的概率分布。因此，一次“异常动作”可能只是随机波动，不能像完全监控下的 grim-trigger 那样立刻判定有人背叛。 作者的核心想法是把“是否偏离合作策略”写成统计检验，再把拒绝原假设与永久惩罚连接起来。这是重复博弈、序贯检验和算法博弈论交叉的理论方法论文，不是生物信息学论文，也没有实验数据集。 共有 N 个玩家。"
 robots: noindex, nofollow
 sitemap: false

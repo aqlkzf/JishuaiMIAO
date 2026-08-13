@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scprotvelo-711235c3/
 title: "scProtVelo"
 nav: false
+wide: true
 description: "scProtVelo 的关键不是把 RNA velocity 的标签换成“蛋白”，而是用共同潜在空间连接非同细胞的 RNA 与蛋白测量，以 mRNA 驱动蛋白的解析动力学和四状态概率混合解释翻译延迟，再把 \\kappa r-\\delta p 投影为局部细胞转移方向；它提供了蛋白层面的动态视角，但结论强度受跨模态配对、轨迹分段、尺度变换和恒速率假设共同限制。"
 robots: noindex, nofollow
 sitemap: false

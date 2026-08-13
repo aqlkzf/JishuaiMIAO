@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/organoidmultiplexing-6dffd64a/
 title: "OrganoidMultiplexing"
 nav: false
+wide: true
 description: "如果希望比较几十乃至上百个供体的皮层脑类器官，最直接的做法是为每个供体分别建系、培养、取样和测序。但这种方案同时放大了培养批次、人工操作和测序成本，而且不同细胞系的增殖速度并不相同：有的供体会逐渐占据混合物，有的则可能在后期几乎消失。 这篇论文的核心思想是：把多个遗传背景放进同一个实验流程，再利用天然遗传变异把每个单细胞“认领”回供体。这样，供体身份不再依赖物理分孔，而由测序读段中的 SNP 提供内部条形码。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tphp-humanproteomeatlas-11c625b7/
 title: "TPHP_HumanProteomeAtlas"
 nav: false
+wide: true
 description: "> 先用 DDA 建立项目特异性光谱库，再用带诱捕序列的 DIA-NN 严格控制错误发现，得到统一蛋白丰度矩阵；随后分别做发育/病理轨迹、组织特异性、配对肿瘤混合模型和外部药物/依赖性数据整合，最后输出组织功能图谱、癌症差异蛋白和候选治疗靶点。"
 robots: noindex, nofollow
 sitemap: false

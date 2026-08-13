@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spotdiff-34755e12/
 title: "SpotDiff"
 nav: false
+wide: true
 description: "SpotDiff 用条件扩散模型补全空间转录组（ST）表达。它先准备三类条件：被遮蔽的 ST 数值、由基因名和表达值构造的文本表示、同组织 scRNA-seq 经对齐与聚合后的表示；再让 DiT 风格网络预测扩散噪声并恢复表达矩阵。 本工作区是 paper-only：有论文 PDF、OCR 和论文图，但没有作者代码快照，也没有独立补充材料。所以下文解释的是论文写出的计算合同，不能确认实际张量、网络层级与超参数。"
 robots: noindex, nofollow
 sitemap: false

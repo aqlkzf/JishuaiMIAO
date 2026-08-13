@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/velocyto-8638cb10/
 title: "Velocyto"
 nav: false
+wide: true
 description: "普通单细胞 RNA 测序给出的通常是某一时刻的静态表达量。对于发育、分化、再生这类动态过程，仅靠静态表达矩阵很难判断一个细胞下一步会往哪个状态走。La Manno 等人在 Nature 2018 提出 RNA velocity：利用同一份 scRNA-seq 数据中未剪接 mRNA（unspliced/nascent）和已剪接 mRNA（spliced/mature）的相对关系，估计每个细胞表达状态的时间导数，也就是“速度” 。"
 robots: noindex, nofollow
 sitemap: false

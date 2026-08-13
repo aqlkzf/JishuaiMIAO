@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialqm-56150467/
 title: "SpatialQM"
 nav: false
+wide: true
 description: "SpatialQM 不是一个给样本打“合格/不合格”标签的模型，而是一套面向 Xenium、CosMx、MERSCOPE 等成像型空间转录组平台的多维质量度量体系：它把表达矩阵、转录本坐标、细胞分割、阴性探针和空间坐标转换为一组可解释指标，再结合组织、平台、探针面板和参考数据进行横向比较。"
 robots: noindex, nofollow
 sitemap: false

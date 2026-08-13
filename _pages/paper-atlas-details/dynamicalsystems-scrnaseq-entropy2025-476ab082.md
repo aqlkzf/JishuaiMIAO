@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dynamicalsystems-scrnaseq-entropy2025-476ab082/
 title: "DynamicalSystems_scRNAseq_Entropy2025"
 nav: false
+wide: true
 description: "这篇 2025 年发表于 Entropy 的文章是一篇综述。它不提出一个名为“DynamicalSystemsscRNAseq”的可运行模型，也没有配套代码。它的贡献是建立一张方法地图：先按数据是否有真实时间、是否有空间坐标分类，再按动力学是离散还是连续、是否随机、是否允许细胞增殖和死亡分类。 因此，下文的公式是统一语言和方法族的代表形式。"
 robots: noindex, nofollow
 sitemap: false

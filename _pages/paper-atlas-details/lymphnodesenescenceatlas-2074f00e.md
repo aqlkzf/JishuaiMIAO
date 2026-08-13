@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lymphnodesenescenceatlas-2074f00e/
 title: "LymphNodeSenescenceAtlas"
 nav: false
+wide: true
 description: "免疫衰老常从外周血研究，但淋巴结是 B 细胞进行生发中心反应、亲和力成熟和抗体产生的核心组织。只看血液或解离后的单细胞数据，会丢失“衰老细胞位于组织何处、与哪类细胞邻近、是否形成局部生态位”这些信息。本研究因此不是提出单一算法，而是构建一个跨年龄、跨模态的人淋巴结细胞衰老 atlas，重点回答三件事：哪些细胞进入衰老样状态；它们如何随年龄改变空间位置；这些位置变化对应怎样的转录、蛋白、染色质和代谢重编程。"
 robots: noindex, nofollow
 sitemap: false

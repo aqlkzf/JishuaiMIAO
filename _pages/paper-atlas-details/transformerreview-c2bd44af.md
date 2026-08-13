@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/transformerreview-c2bd44af/
 title: "TransformerReview"
 nav: false
+wide: true
 description: "这篇 Nature Methods 文章是一篇综述与观点文章，不提出一个可复现的统一算法。它整理的核心问题是：Transformer 在语言中依赖自然序列，而单细胞表达矩阵本质上没有类似词序的天然顺序；因此，决定模型成败的第一步往往不是注意力层本身，而是如何把稀疏、连续、带批次效应的组学测量转换成 token。 全文可沿四条轴阅读： 输入表示：一个 token 代表基因、细胞、通路还是其他分子特征？表达量如何进入 token？"
 robots: noindex, nofollow
 sitemap: false

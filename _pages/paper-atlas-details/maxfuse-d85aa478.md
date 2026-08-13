@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/maxfuse-d85aa478/
 title: "MaxFuse"
 nav: false
+wide: true
 description: "MaxFuse 解决的是跨模态单细胞/空间组学整合问题。这里的难点不是简单批次校正，而是两个数据集测到的特征本来就不同。例如，一个数据集是 CODEX 空间蛋白，只有几十个抗体标记；另一个数据集是 scRNA-seq，有全转录组。两者之间能直接对应的特征很少，而且蛋白和 RNA 的相关性也不一定强。论文把这种情况称为弱链接特征场景（weakly linked features）。"
 robots: noindex, nofollow
 sitemap: false

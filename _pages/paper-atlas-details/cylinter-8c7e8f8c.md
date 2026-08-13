@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cylinter-8c7e8f8c/
 title: "CyLinter"
 nav: false
+wide: true
 description: "高通量多重组织成像（如 CyCIF、CODEX、mIHC）可以在单张组织切片中测量几十种蛋白，并把图像转换成“单细胞空间特征表”：每一行是一枚细胞，包含空间坐标、分割面积和各通道信号强度。 问题在于，这张表并不只包含生物学。组织折叠、灰尘和纤维、抗体聚集、气泡、失焦、照明不均、拼接或配准错误、循环成像中的组织脱落，以及过分割/欠分割，都会改变细胞的数值特征。它们可能在 UMAP 中形成看似清晰的簇，也可能把不同细胞类型混到同一簇里。"
 robots: noindex, nofollow
 sitemap: false

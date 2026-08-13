@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmultisim-f6974adb/
 title: "scMultiSim"
 nav: false
+wide: true
 description: "scMultiSim 不是从参考数据中拟合一个黑箱生成器，而是让用户先给出细胞分化树，并可选提供基因调控网络（GRN）和细胞间相互作用（CCI），再把细胞身份、调控、染色质可及性和空间邻域逐层写入转录动力学参数，最终同时输出 RNA、ATAC、RNA velocity、空间位置及其真值。它的主要用途不是复刻某一个真实样本，而是构造“因素已知且强度可调”的数据来检验分析方法。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/rna-velocity-review-bbaf339-858c4c7b/
 title: "RNA_velocity_review_bbaf339"
 nav: false
+wide: true
 description: "这篇综述把 RNA velocity 理解为“从 unspliced/spliced RNA 计数推断细胞转录动态向量场”的问题，并用三类范式组织现有方法：稳态方法简单可解释但假设强，轨迹方法更灵活但优化复杂，状态外推方法能捕捉局部异质动力学但依赖邻域选择。研究者应把 velocity 结果当作模型假设驱动的动态证据，并结合数据质量、模型假设、可视化检查和生物学验证来解释。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellmentor-417b5aa9/
 title: "CellMentor"
 nav: false
+wide: true
 description: "CellMentor 是一个 supervised non-negative matrix factorization（NMF）方法。它不是让降维表示保留“总体最大方差”，而是利用参考数据的 cell-type labels，直接要求同类细胞在 latent space 中更紧、易混淆的不同类型更远。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multicell-7a481b7a/
 title: "MultiCell"
 nav: false
+wide: true
 description: "MultiCell 把发育中的果蝇胚胎表面表示成图：细胞是节点、相邻细胞是边，细胞形状放在节点特征中，连接处的几何放在边特征中。Graph Transformer 通过多层邻域信息聚合，为每个细胞生成隐藏表示；随后按任务把隐藏表示汇总到整个胚胎、单个细胞或一对相邻细胞，分别预测发育时间、距未来事件的时间或细胞连接是否会消失。 它预测的是基于当前及前一帧几何的统计结果，并不是从力学方程模拟胚胎，也没有直接输入基因表达或细胞命运标签。"
 robots: noindex, nofollow
 sitemap: false

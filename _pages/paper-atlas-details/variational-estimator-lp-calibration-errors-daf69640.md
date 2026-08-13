@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/variational-estimator-lp-calibration-errors-daf69640/
 title: "Variational_Estimator_Lp_Calibration_Errors"
 nav: false
+wide: true
 description: "该方法把难以直接估计的 Lp 概率校准距离，改写成“原始预测与交叉拟合重校准预测之间的、随样本预测而变化的 proper-loss 风险差”，从而避免分箱，并在期望意义下控制过度估计。"
 robots: noindex, nofollow
 sitemap: false

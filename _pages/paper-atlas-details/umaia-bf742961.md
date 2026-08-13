@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/umaia-bf742961/
 title: "uMAIA"
 nav: false
+wide: true
 description: "uMAIA（unified Mass Imaging Analyzer）解决的是一个“多次质谱成像采集如何真正放到同一坐标系里比较”的问题：它先从每张 MALDI-MSI 原始谱中自适应地找峰并生成离子图像，再用网络流把不同切片中属于同一分子的峰连接成统一特征，最后用分层概率模型校正跨采集的强度畸变，从而支持 3D/4D 代谢图谱分析。"
 robots: noindex, nofollow
 sitemap: false

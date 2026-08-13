@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cosmos-1006fbb5/
 title: "COSMOS"
 nav: false
+wide: true
 description: "COSMOS 面向同一批 spot/细胞上同时测得的两种空间组学。它在共享空间邻接图上为两个模态各建一个 GCN encoder，用 Deep Graph Infomax（DGI）让局部节点表示保留全局组织信息；训练中途从两个模态表示计算每个细胞自己的 WNN 权重，将两路表示加权合成。论文还加入空间距离—嵌入距离正则，使空间相近的细胞倾向在联合表示中接近。"
 robots: noindex, nofollow
 sitemap: false

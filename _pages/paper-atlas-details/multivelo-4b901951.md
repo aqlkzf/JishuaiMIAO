@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multivelo-4b901951/
 title: "MultiVelo"
 nav: false
+wide: true
 description: "MultiVelo 对每个基因分别拟合一条三维轨迹 (c,u,s)：c 是聚合到基因的染色质可及性，u 是未剪接 RNA，s 是已剪接 RNA。它先估计染色质与转录何时开关、各反应速率多快，再把每个细胞投影到该轨迹上的最近位置；ODE 在该位置的导数就是该细胞—基因的多组学 velocity。 这种时间与速度来自横截面细胞群的模型推断，不是同一细胞的纵向实测，也不是对所有基因共同拟合一个统一生物钟。"
 robots: noindex, nofollow
 sitemap: false

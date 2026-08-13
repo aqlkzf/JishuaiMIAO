@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/celllens-8d7b8d11/
 title: "CellLENS"
 nav: false
+wide: true
 description: "CellLENS 的核心不是直接把表达、坐标和像素拼接，而是先从表达建立粗粒度初始细胞群，再把每个细胞周围的群体组成当作自监督目标。LENS-CNN 学习“局部组织图像能否预测邻域组成”，LENS-GNN-duo 则让表达分支在表达相似图上传播、图像分支在空间近邻图上传播，两个分支合并后预测“初始身份 one-hot + 邻域组成”。训练多轮后拼接中间表示并做 SVD，得到用于无监督细胞群划分的稳定 embedding。"
 robots: noindex, nofollow
 sitemap: false

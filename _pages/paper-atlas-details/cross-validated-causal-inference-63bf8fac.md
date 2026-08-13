@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cross-validated-causal-inference-63bf8fac/
 title: "Cross-Validated Causal Inference"
 nav: false
+wide: true
 description: "目标是估计实验人群中的平均处理效应（ATE）： 实验数据有随机化或条件无混杂与 overlap，因此可以识别这个目标；但实验昂贵，样本量通常较小。观察数据便宜、量大，却可能有未测混杂、模型设错、协变量分布漂移，甚至与实验人群有不同的处理效应。论文要回答的是：能否在不把观察数据误当成可信因果证据的前提下，用它降低估计方差？"
 robots: noindex, nofollow
 sitemap: false

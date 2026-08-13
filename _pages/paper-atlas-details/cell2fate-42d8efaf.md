@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cell2fate-42d8efaf/
 title: "cell2fate"
 nav: false
+wide: true
 description: "标准 RNA velocity 对每个基因使用转录、剪接、降解方程，但常把转录率简化成一次开启、一次关闭。真实发育过程中，同一基因可能被多个程序在不同阶段反复增强或抑制。cell2fate 的核心思想是：把复杂的时间依赖转录率拆成多个可解析的“模块”，每个模块有自己的开启/关闭时间窗、基因载荷和接近目标转录率的速度。各模块的表达和 velocity 相加，既得到完整动力学，也得到一个带生化意义的低维分解。"
 robots: noindex, nofollow
 sitemap: false

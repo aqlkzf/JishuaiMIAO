@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dechic-seq-b7a036a3/
 title: "DeChIC-seq"
 nav: false
+wide: true
 description: "在单细胞层面定位组蛋白修饰和转录因子（TF）结合很困难。ChIP-seq、CUT&RUN 与 CUT&Tag 等技术依赖富集或片段化；TF 信号本身稀疏，低输入时尤为不利。DamID 类方法又受 GATC 位点分布限制，而直接读取甲基化的长读长方法通常需要较多 DNA。 DeChIC-seq 使用抗体识别目标组蛋白修饰或蛋白，再通过 protein A 把 pA-DddA 招募到该处。DddA 在邻近 DNA 上把 C 脱氨为 U；"
 robots: noindex, nofollow
 sitemap: false

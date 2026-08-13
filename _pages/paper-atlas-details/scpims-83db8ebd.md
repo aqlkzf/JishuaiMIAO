@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scpims-83db8ebd/
 title: "scPiMS"
 nav: false
+wide: true
 description: "scPiMS（single-cell proteoform imaging mass spectrometry）把稀疏铺在玻片上的单细胞逐个扫过 nano-DESI 液桥，直接提取并测量完整蛋白质形态（proteoform），再把稀疏的“细胞 × proteoform”信号聚合到生物通路层面，用无监督聚类区分大类海马细胞群。"
 robots: noindex, nofollow
 sitemap: false

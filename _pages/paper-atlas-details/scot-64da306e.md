@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scot-64da306e/
 title: "SCOT"
 nav: false
+wide: true
 description: "当 RNA、染色质可及性或 DNA 甲基化分别测在不同细胞上时，两张数据矩阵既没有逐细胞对应，也可能没有可直接比较的特征。SCOT（Single-Cell alignment using Optimal Transport）不尝试比较“某个基因”和“某个 ATAC peak”的数值，而是假设同一细胞群在不同模态中保留相似的细胞—细胞几何结构：若两个 RNA 细胞在本模态流形上相近，它们对应的 ATAC 细胞也应在 ATAC 流形上相近。"
 robots: noindex, nofollow
 sitemap: false

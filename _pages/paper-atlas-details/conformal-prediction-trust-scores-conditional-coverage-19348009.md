@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/conformal-prediction-trust-scores-conditional-coverage-19348009/
 title: "Conformal_Prediction_Trust_Scores_Conditional_Coverage"
 nav: false
+wide: true
 description: "标准 split conformal prediction 能保证 但这是对所有测试样本平均后的边际覆盖率。例如，90% 的简单样本全部覆盖、10% 的困难样本全部漏掉，整体仍然可以达到 90%。真正理想的是对每个 X=x 都覆盖，但有限样本下不可能同时获得非平凡、分布无关的精确 X-条件覆盖。"
 robots: noindex, nofollow
 sitemap: false

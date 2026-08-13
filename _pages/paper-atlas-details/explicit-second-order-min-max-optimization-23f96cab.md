@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/explicit-second-order-min-max-optimization-23f96cab/
 title: "Explicit_Second_Order_Min_Max_Optimization"
 nav: false
+wide: true
 description: "论文研究无约束的凸–凹鞍点问题： 它假设全局鞍点存在，并且 f 的 Hessian 以常数 \\rho Lipschitz 连续。这个问题属于连续优化、变分不等式和机器学习算法理论，并不是生物信息学论文。典型应用包括对抗学习、博弈、多智能体系统和 AUC 优化。"
 robots: noindex, nofollow
 sitemap: false

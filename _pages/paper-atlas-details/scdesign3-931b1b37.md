@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scdesign3-931b1b37/
 title: "scDesign3"
 nav: false
+wide: true
 description: "scDesign3 是一个参考数据驱动的单细胞/空间组学模拟器：它把真实数据表示为特征矩阵 Y、细胞状态协变量 X 和可选实验设计协变量 Z，先为每个特征拟合条件边缘分布，再用 copula 建模特征间依赖，最后在给定或新生成的协变量上采样合成数据。论文主张这个统一概率模型可用于真实感模拟、拟合优度评估，以及构造带有已知条件变化的正/负控制数据；本地 R 包实现了这条核心模拟流水线。"
 robots: noindex, nofollow
 sitemap: false

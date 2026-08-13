@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/deep-starmap-and-deep-ribomap-3d620247/
 title: "Deep-STARmap and Deep-RIBOmap"
 nav: false
+wide: true
 description: "Deep-STARmap 与 Deep-RIBOmap 的真正创新，是用“通用低成本锚定 + RCA 扩增团二次水凝胶加固 + 六轮 SEDAL 解码”把靶向式三维原位转录/转译测量扩展到厚组织和数十万细胞；论文与源码足以支持平台原理和核心图像处理链，但完整复现仍需要研究专用配置、原始图像与下游分析脚本。"
 robots: noindex, nofollow
 sitemap: false

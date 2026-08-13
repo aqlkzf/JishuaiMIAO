@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/high-moi-screens-95da830e/
 title: "High_MOI_screens"
 nav: false
+wide: true
 description: "这篇 Nature Methods 论文研究的是：在 pooled CRISPRi 筛选中，不再坚持“每个细胞只进一个 sgRNA”的低 MOI 设计，而是用中等偏高 MOI 让一个细胞携带多个 sgRNA，从而用更少细胞完成筛选。论文声称 MOI 2.5–10 在许多条件下可以保持筛选性能，并能显著减少细胞数需求；其中 MOI 2.5–5 是更稳妥的压缩区间。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scconcept-eee3727c/
 title: "scConcept"
 nav: false
+wide: true
 description: "scConcept 先用神经主题模型从单细胞表达矩阵中提取若干加权基因程序，再让 GPT-5 对这些程序做过滤、合并和命名，形成“名称—描述—代表基因—来源主题”四元组；最后用概念基因在每个细胞中的标准化表达计算概念分数。它的核心价值不是再造一种低维坐标，而是在基因列表和细胞状态之间建立可读、可计算的中间层。"
 robots: noindex, nofollow
 sitemap: false

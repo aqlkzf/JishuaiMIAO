@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/relic-331f01d0/
 title: "ReLiC"
 nav: false
+wide: true
 description: "细胞中有两千多个 RNA 相关蛋白参与剪接、翻译、定位和降解。传统交联实验能告诉我们“哪个蛋白接触哪条 RNA”，却不一定说明这种接触让 RNA 过程增强还是减弱。常规 CRISPR 筛选多依赖细胞生长或荧光等间接表型；Perturb-seq 一类单细胞方法虽然覆盖面广，但成本高、规模受限，而且更容易观测高表达 RNA。 ReLiC（RNA-linked CRISPR）把每个 CRISPR 扰动与可测序的 RNA 条形码绑定。"
 robots: noindex, nofollow
 sitemap: false

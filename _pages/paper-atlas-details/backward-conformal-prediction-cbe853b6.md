@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/backward-conformal-prediction-cbe853b6/
 title: "Backward_Conformal_Prediction"
 nav: false
+wide: true
 description: "普通 conformal prediction 是“先定覆盖率，再看集合有多大”；Backward Conformal Prediction（BCP）把顺序反过来：先规定预测集合最多能有几个标签，再让算法自适应选择误覆盖水平，并估计这样做实际对应的边际可靠性。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/seacells-5f335007/
 title: "SEACells"
 nav: false
+wide: true
 description: "单细胞 RNA 和 ATAC 数据很稀疏。逐细胞分析保留了分辨率，却容易被掉零和采样噪声支配；传统聚类通过聚合增强信号，却会把一个连续分化轨迹或同一大类中的细微状态压成少数平均值。SEACells 选择中间尺度：把非常相似的几十个细胞聚成一个 metacell，使聚合计数更稳定，同时让 metacell 数远多于传统簇数。 这里的 metacell 不是新的生物细胞，也不是简单地把 UMAP 切成网格。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/heartfailuremultiomics-ad8d05b8/
 title: "HeartFailureMultiomics"
 nav: false
+wide: true
 description: "这项工作的价值不在于给出一个最终的单基因答案，而在于建立了一套从“细胞状态—调控元件—三维结构—转录因子网络—遗传变异”逐层收缩候选机制的框架。它非常适合生成可实验验证的心衰调控假设，但增强子、轨迹、GRN 和变异靶基因仍需要功能实验完成最后的因果闭环。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellhermes-29418647/
 title: "CellHermes"
 nav: false
+wide: true
 description: "单细胞转录组是“每个细胞一行数值”的表格，PPI 是“基因—基因边”的图；常见方法往往为其中一种数据专门设计模型。论文认为，这会使不同模态、不同下游任务难以共用表示。CellHermes 的做法不是从头训练新的组学 Transformer，而是把它们写成自然语言的“指令 → 答案”，再用 LoRA 微调已有的 LLaMA-3.1-8B-Instruct（论文 30、34、40–46、189–203 行）。"
 robots: noindex, nofollow
 sitemap: false

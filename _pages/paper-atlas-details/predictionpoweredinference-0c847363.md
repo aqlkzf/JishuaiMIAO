@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/predictionpoweredinference-0c847363/
 title: "PredictionPoweredInference"
 nav: false
+wide: true
 description: "本文档基于本地 paper.md、两张本地图像和 ppipy 源码逐行核对写成。需要先说明一个重要限制：Science HTML 转换把论文方法区和 Table 1 中的大部分数学公式转换成了 No alternative text available，本地 acquisition manifest 也显示没有抽取到表格正文 。因此，下面解释的是论文可读文本、图示和代码中能验证的方法结构；"
 robots: noindex, nofollow
 sitemap: false

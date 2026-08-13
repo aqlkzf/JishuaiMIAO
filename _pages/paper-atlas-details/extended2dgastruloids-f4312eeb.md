@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/extended2dgastruloids-f4312eeb/
 title: "Extended2DGastruloids"
 nav: false
+wide: true
 description: "经典 BMP4 微图案二维 gastruloid 的优点是简单、重复性高，适合活细胞成像和定量扰动；缺点是以往通常只观察到约 42–48 小时，之后组织结构容易失序。因此，我们很难在同一可控体系中研究原条样区域之后的中胚层迁移、分化和空间组织。 本文把培养延长到 10 天，并把实验平台与三类计算分析结合：三维单细胞图像定量、活细胞轨迹分析、单细胞转录组及胚胎参考映射。"
 robots: noindex, nofollow
 sitemap: false

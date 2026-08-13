@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/m3g-d98efd81/
 title: "M3G"
 nav: false
+wide: true
 description: "M3G（Multi-Marginal Matching Gap）不再把 k\\geq3 个视图拆成许多两两对比，而是问：已知的正确 k 元组配对，与在当前表示空间里通过多边际最优传输找到的最佳重新配对，二者的代价还差多少？ 差距越大，说明编码器把某些错误组合做得比真实组合更紧；最小化这个差距，就迫使同一对象的全部视图作为一个整体变得一致。"
 robots: noindex, nofollow
 sitemap: false

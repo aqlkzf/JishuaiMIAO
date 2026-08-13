@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/copro-dae56e1b/
 title: "CoPro"
 nav: false
+wide: true
 description: "空间转录组里常见的变化并不总是离散“区域”，而可能是几个重叠的连续梯度：例如结肠隐窝从底到顶的分化、局部炎症斑块、肝小叶分区，以及不同细胞类型沿同一组织轴发生的协同变化。CoPro 的目标是为每个细胞类型找到一个可解释的表达方向，使空间上相邻的不同类型细胞沿这些方向具有最大的协同变化。 它输出的是每种细胞类型的基因权重和逐细胞 co-progression score。这个 score 是空间协调轴，不等同于时间、谱系或因果方向；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/chatspatial-f232614c/
 title: "ChatSpatial"
 nav: false
+wide: true
 description: "ChatSpatial 不是新的聚类、解卷积或细胞通信算法，而是一个 software orchestration layer。它把 60 多种已有空间转录组方法封装到 20 个高层 MCP 工具中，让大语言模型负责理解用户意图和选择参数，而真实计算仍由 Scanpy、Squidpy、CellChat、RCTD、inferCNV 等确定性程序执行。"
 robots: noindex, nofollow
 sitemap: false

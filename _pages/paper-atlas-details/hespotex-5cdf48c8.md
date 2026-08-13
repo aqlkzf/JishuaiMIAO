@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hespotex-5cdf48c8/
 title: "HESpotEx"
 nav: false
+wide: true
 description: "HESpotEx 是一个两阶段监督学习框架：第一阶段只看真实空间转录组（ST）表达与 spot 坐标，用 GATE/STAGATE 学习“分子—空间”嵌入；第二阶段把每个 spot 对应的 H&E patch 编码成图像嵌入，要求它与第一阶段的 ST 嵌入相关，同时通过空间图解码器预测 spot 级基因表达。 它的输出是根据形态估计的表达，不是新的 RNA 测量。"
 robots: noindex, nofollow
 sitemap: false

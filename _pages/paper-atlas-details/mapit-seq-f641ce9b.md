@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mapit-seq-f641ce9b/
 title: "MAPIT-seq"
 nav: false
+wide: true
 description: "MAPIT-seq 是一种把内源 RBP-RNA 近邻关系转化为 RNA 编辑信号的实验与计算联合平台。它用抗体把携带 rAPOBEC1 和 hADAR2dd 的 pAG-deaminase 招募到目标 RBP 附近，在原位产生 C-to-U 和 A-to-G 编辑；随后同一份测序数据既能读出转录组表达，也能读出 RBP 附近的编辑信号。"
 robots: noindex, nofollow
 sitemap: false

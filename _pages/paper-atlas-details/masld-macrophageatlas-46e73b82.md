@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/masld-macrophageatlas-46e73b82/
 title: "MASLD_MacrophageAtlas"
 nav: false
+wide: true
 description: "这项研究先用单核 RNA 测序比较 lean、obese、MASL 和 MASH 肝脏中的巨噬细胞组成，再用四种空间技术确认新发现的 GPNMB 高表达代谢型巨噬细胞（MetMac）位于何处、表达哪些蛋白，随后用肝组织切片和细胞实验检验 hepatocyte-derived IL32 是否能改变其吞噬与炎症状态，最后把 MetMac 标志物带到 206 例 bulk RNA、247 例血清蛋白组和 53,030 人 PheWAS 中评估…"
 robots: noindex, nofollow
 sitemap: false

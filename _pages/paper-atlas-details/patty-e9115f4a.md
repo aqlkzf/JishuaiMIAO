@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/patty-e9115f4a/
 title: "PATTY"
 nav: false
+wide: true
 description: "PATTY 要解决的是 CUT&Tag 数据里的 open-chromatin bias：Tn5 更容易在开放染色质区域插入，因此一些本来不该有目标组蛋白修饰的开放区域也会出现 CUT&Tag 信号。PATTY 用同一样本或同类型细胞的 ATAC-seq 作为开放染色质参照，把 CUT&Tag 信号和 ATAC 信号一起输入预训练的、组蛋白标记特异的 logistic regression 模型，输出每个 200 bp genomic…"
 robots: noindex, nofollow
 sitemap: false

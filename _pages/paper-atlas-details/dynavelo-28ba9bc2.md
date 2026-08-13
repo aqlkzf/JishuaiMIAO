@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dynavelo-28ba9bc2/
 title: "DynaVelo"
 nav: false
+wide: true
 description: "DynaVelo 可以理解为一个面向 single-cell multiome 数据的动态模型：它把同一个细胞里的 RNA 表达和 TF motif accessibility 放进同一个 latent neural ODE 里，学习一个连续的细胞状态变化方向场，然后从这个方向场里导出 RNA velocity、motif velocity、latent time、动态调控网络和扰动预测。"
 robots: noindex, nofollow
 sitemap: false

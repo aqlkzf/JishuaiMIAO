@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scnanoseq-cut-tag-3824b0fb/
 title: "scNanoSeq-CUT-Tag"
 nav: false
+wide: true
 description: "单细胞染色质修饰测序已经能够回答“某个细胞中哪些区域带有 H3K4me3、H3K27ac、H3K27me3 等标记”，但绝大多数方法使用短读长测序。短读长带来两个结构性限制： 在 LINE、LTR、着丝粒附近或其他低可比对区域中，短片段难以确定来自哪一个重复拷贝。 一个短片段通常只能看到一个局部位点，无法直接证明同一条原始 DNA 分子同时跨过两个相邻的修饰峰。"
 robots: noindex, nofollow
 sitemap: false

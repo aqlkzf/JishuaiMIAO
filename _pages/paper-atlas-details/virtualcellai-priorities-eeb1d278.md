@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/virtualcellai-priorities-eeb1d278/
 title: "VirtualCellAI_Priorities"
 nav: false
+wide: true
 description: "这篇 Cell Perspective 不是一个已经发布的软件方法或可运行模型，而是一篇关于 AI virtual cell，AIVC 的路线图论文。作者把 AIVC 定义为一种多尺度、多模态、基于大型神经网络的细胞模型，用来表示和模拟分子、细胞和组织在不同状态下的行为。因此，下文讲的是论文提出的概念架构和优先事项，不是代码实现说明。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/on-three-layer-data-markets-f0b06104/
 title: "On_Three_Layer_Data_Markets"
 nav: false
+wide: true
 description: "这是一篇数据市场、信息经济学和博弈论论文。它研究三层市场：用户拥有数据并需要平台服务；多个平台获得用户信号，选择是否进入市场、以多大噪声向外出售；第三方数据买家支付价格购买信号。核心问题是：竞争是否真的保护用户，以及禁止数据共享、统一隐私门槛和差异化监管中哪一种更有利于用户。 用户特征为 \\bm\\theta\\sim\\mathcal N(0,Id)。"
 robots: noindex, nofollow
 sitemap: false

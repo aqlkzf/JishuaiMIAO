@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellvoyager-48482658/
 title: "CellVoyager"
 nav: false
+wide: true
 description: "CellVoyager 不是新的细胞表示模型或统计检验，而是一套“研究问题生成—代码执行—结果解释—动态重规划”的智能体工作流。它读取已处理的 .h5ad、研究背景和作者已经做过的分析，提出一个不重复的探索假设，在持续存在的 Jupyter kernel 中逐步运行代码，并依据输出决定下一步；一个分析完成后，它把摘要加入历史，避免后续假设重复。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/coscientist-325cd568/
 title: "CoScientist"
 nav: false
+wide: true
 description: "Co-Scientist 是一个建立在 Gemini 2.0 上的复合多代理系统。科学家给出自然语言研究目标、已有证据、实验条件和约束，系统大量生成候选假说，反复审查、比较、演化，再把排序后的研究建议交回科学家选择和验证。它的产物是待检验的假说与实验计划，不是已经成立的科学结论。 论文的主要方法贡献不是新的基础模型或训练损失，而是把推理时计算组织成一个持续运行的“生成—批判—竞赛—改写”系统。"
 robots: noindex, nofollow
 sitemap: false

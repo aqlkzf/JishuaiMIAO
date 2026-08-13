@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sigra-6b9aa7d9/
 title: "SiGra"
 nav: false
+wide: true
 description: "若一个细胞自身的表达很稀疏，周围细胞的表达、它的位置关系、以及该处的细胞形态/染色信号可以提供互补证据。SiGra 不是简单地把邻居平均，而是让图 Transformer 学习“哪个邻居、哪一种模态更有用”。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/popari-6557e5f3/
 title: "POPARI"
 nav: false
+wide: true
 description: "多样本空间转录组常需要比较疾病与对照、不同年龄或不同患者。许多整合方法重点消除批次或对齐坐标，但 POPARI 的问题不同：是否能找到一组可解释的共享基因程序，并量化这些程序在每个样本中如何相邻、共现或分隔。 输入是多个样本的表达矩阵、二维坐标和样本分组；空间实体可以是成像平台的细胞，也可以是测序平台的 spots。"
 robots: noindex, nofollow
 sitemap: false

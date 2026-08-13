@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/clades-d16a7353/
 title: "CLADES"
 nav: false
+wide: true
 description: "CLADES 用带时间点和克隆条形码的单细胞数据估计“每个 meta-clone 中，各细胞群以多快速度增殖、死亡或转向其他群体”，再把这些连续时间速率交给 Gillespie 随机模拟，生成单细胞分裂树与终末命运概率。"
 robots: noindex, nofollow
 sitemap: false

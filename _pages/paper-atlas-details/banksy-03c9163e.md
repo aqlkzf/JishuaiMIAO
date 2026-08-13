@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/banksy-03c9163e/
 title: "BANKSY"
 nav: false
+wide: true
 description: "BANKSY 不把空间坐标直接塞进聚类，而是先为每个细胞或 spot 计算其局部邻域的表达均值和表达梯度，再把这些邻域特征与该点自身的表达拼接。这样，两个自身转录组相近、但处在不同组织微环境中的细胞，可以在新特征空间中被分开。 本文证据来自本地论文正文 outputnollmmathtables/paper/paper.md、主图 1–6，以及本工作区 R 包的 R/computation.R、R/reduction."
 robots: noindex, nofollow
 sitemap: false

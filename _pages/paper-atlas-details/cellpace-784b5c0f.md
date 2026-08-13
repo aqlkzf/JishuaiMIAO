@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellpace-784b5c0f/
 title: "CellPace"
 nav: false
+wide: true
 description: "CellPace 把不同发育阶段的单细胞群体先编码到 scVI/MultiVI 潜空间，再把若干阶段组成有顺序的短序列，用 causal Transformer 同时学习每个位置的扩散去噪。它不追踪同一个真实细胞，而是生成与各时间点群体分布一致的“虚拟细胞序列”，用于已观测阶段模拟、缺失阶段插值和训练范围外短期预测。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/supermap-7c5ad30c/
 title: "SuperMap"
 nav: false
+wide: true
 description: "SuperMap 要解决的是“对角整合”中最困难的情形：RNA、ATAC、蛋白或 DNA 甲基化分别测自不同细胞，既没有细胞一一对应，也没有相同特征空间。它不先猜哪两个细胞配对，而是把问题写成无链接回归：如果两个样本来自足够相似的生物系统，那么未观测的 ATAC 细胞 RNA 分布应与实际 RNA 样本分布相近；借助这种分布相等、变量间协方差和基因组先验，可以学习一个从 ATAC 特征到 RNA 特征的线性映射。"
 robots: noindex, nofollow
 sitemap: false

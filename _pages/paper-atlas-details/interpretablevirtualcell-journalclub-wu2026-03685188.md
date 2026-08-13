@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/interpretablevirtualcell-journalclub-wu2026-03685188/
 title: "InterpretableVirtualCell_JournalClub_Wu2026"
 nav: false
+wide: true
 description: "这是一页 Nature Reviews Genetics Journal Club 评论，不是新方法论文，也不是系统综述。作者 Angela Ruohao Wu 重读 Karr 等人在 2012 年构建的 Mycoplasma genitalium whole-cell model，用它追问当代 AI virtual cell 是否在获得规模和预测能力时丢失了机制解释能力。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/deleakage-b27e2305/
 title: "DeLeakage"
 nav: false
+wide: true
 description: "空间转录组把转录本分配给分割出的细胞，但分到细胞 i 的信号并不一定都由 i 产生：相邻细胞的转录本可能扩散或在分割/分配时落入 i。这会让本应互斥的细胞类型 marker 同时出现，夸大不同细胞类型之间的相似性，并制造空间自相关假象。论文在 MERFISH、Xenium 与 Pixel-seq 中展示了这类现象。 已有的去卷积式去噪将一个细胞的观测表达看成多个细胞类型表达谱的混合（Fig. 3B）。"
 robots: noindex, nofollow
 sitemap: false

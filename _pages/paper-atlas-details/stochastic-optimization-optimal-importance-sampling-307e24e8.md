@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stochastic-optimization-optimal-importance-sampling-307e24e8/
 title: "Stochastic_Optimization_Optimal_Importance_Sampling"
 nav: false
+wide: true
 description: "普通随机梯度从原分布 \\mathbb P 采样。若目标主要由罕见事件决定，有信息的样本极少，梯度方差会非常大。重要性采样可以改从 \\mathbb P\\mu 采样并乘似然比 \\ell(x,\\mu)，但最合适的 \\mu 又依赖未知最优决策 \\theta^\\star 及其活跃约束。因此出现循环：不知道 \\theta^\\star 就无法校准采样器；采样器不好又难以学到 \\theta^\\star。"
 robots: noindex, nofollow
 sitemap: false

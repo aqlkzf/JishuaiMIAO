@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/systematic-scrnaseq-screens-neural-organoid-morphogens-26a52b0d/
 title: "Systematic_scRNAseq_screens_neural_organoid_morphogens"
 nav: false
+wide: true
 description: "本文解析论文 Systematic scRNA-seq screens profile neural organoid response to morphogens（Nature Methods, 2026；DOI：10.1038/s41592-025-02927-5）。"
 robots: noindex, nofollow
 sitemap: false

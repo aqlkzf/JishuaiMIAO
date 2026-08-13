@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pertpy-c365b3cb/
 title: "pertpy"
 nav: false
+wide: true
 description: "pertpy 不是提出一个单一的新统计模型，而是把单细胞扰动实验中原本分散的步骤——数据获取、元数据补充、gRNA 指派、扰动质量控制、扰动空间构建、距离计算、差异丰度、组成分析、多细胞程序、因果效应和差异表达——统一到 AnnData/MuData 与 scverse 生态中的框架。"
 robots: noindex, nofollow
 sitemap: false

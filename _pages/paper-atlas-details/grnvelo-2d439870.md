@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/grnvelo-2d439870/
 title: "GRNvelo"
 nav: false
+wide: true
 description: "GRNvelo 把细胞状态变化建模成两层系统： 论文中的完整概念流程是： 代码中可验证的主流程更窄一些： 也就是说，本地代码直接验证了 density -> TC-PINN -> MP-PINN 这个核心训练流程；AE 训练、扰动、评价指标和高维 GRN 恢复没有在主脚本中串起来。"
 robots: noindex, nofollow
 sitemap: false

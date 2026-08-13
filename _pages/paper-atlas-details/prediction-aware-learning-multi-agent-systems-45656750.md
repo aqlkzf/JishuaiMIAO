@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/prediction-aware-learning-multi-agent-systems-45656750/
 title: "Prediction_Aware_Learning_Multi_Agent_Systems"
 nav: false
+wide: true
 description: "这是一篇在线学习与博弈论论文，并非生物信息学文章。它研究多个理性主体在一个随环境状态变化的博弈中反复行动：例如交通网络中，天气或道路状况改变每条路线的成本，而参与者在行动前只能预测当前状态。 已有时变博弈方法常用“相邻时刻收益函数变化了多少”来控制 regret。这个指标有一个明显缺陷：即使变化很大，只要变化规律容易预测，主体本来应该能应对；但传统界仍可能是线性的。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tabtransformer-afa0e217/
 title: "TabTransformer"
 nav: false
+wide: true
 description: "TabTransformer 的核心不是简单地“把 Transformer 用在表格上”，而是只让类别列作为 token 进入自注意力层，使某个类别值的表示依赖同一行其他列的取值；连续列绕过 Transformer，最终与类别上下文嵌入一起交给 MLP。论文同时提出 MLM 和 RTD 两种无监督预训练任务，用未标注表格先训练列嵌入与 Transformer，再用少量标注数据微调。"
 robots: noindex, nofollow
 sitemap: false

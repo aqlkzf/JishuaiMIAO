@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmeformer-bf8728a0/
 title: "scMeFormer"
 nav: false
+wide: true
 description: "对一个待预测的 CpG 位点，scMeFormer 同时读取其上下约 2 kb DNA 序列，以及前后邻近 CpG 在多个细胞簇中的甲基化模式；两条 CNN–Transformer 分支分别提取序列和群体甲基化上下文，融合后一次输出该 CpG 在所有细胞中的甲基化预测。只有真实测到的“CpG—细胞”标签参与训练损失，未测位置不会被错误当成未甲基化。"
 robots: noindex, nofollow
 sitemap: false

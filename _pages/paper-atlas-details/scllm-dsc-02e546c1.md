@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scllm-dsc-02e546c1/
 title: "scLLM-DSC"
 nav: false
+wide: true
 description: "scLLM-DSC 解决的是单细胞 RNA 测序数据的无监督细胞聚类问题。输入是表达矩阵 \\mathbf{X}\\in\\mathbb{R}^{N\\times D}，其中 N 是细胞数、D 是基因数；输出是每个细胞的聚类标签 \\mathbf{C}=\\{c1,c2,\\dots,cN\\}。"
 robots: noindex, nofollow
 sitemap: false

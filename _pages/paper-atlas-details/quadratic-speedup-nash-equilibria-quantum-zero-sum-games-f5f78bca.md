@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/quadratic-speedup-nash-equilibria-quantum-zero-sum-games-f5f78bca/
 title: "Quadratic_Speedup_Nash_Equilibria_Quantum_Zero_Sum_Games"
 nav: false
+wide: true
 description: "双方分别选择未纠缠的密度矩阵 \\alpha 与 \\beta，联合状态为 \\alpha\\otimes\\beta；Alice 最大化 \\operatorname{Tr}[U^\\dagger(\\alpha\\otimes\\beta)]，Bob 最小化它。目标是在有限维 spectraplex 上找到平均迭代意义下的 \\epsilon-纳什均衡。"
 robots: noindex, nofollow
 sitemap: false

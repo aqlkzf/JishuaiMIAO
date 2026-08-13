@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cytotemporalcortex-5f08222c/
 title: "CytoTemporalCortex"
 nav: false
+wide: true
 description: "人和小鼠的大脑皮层发育具有相同的基本谱系：放射状胶质细胞（RG）产生中间祖细胞（IP），再产生神经元（N）。但两者的发育速度、祖细胞扩增和神经元成熟时间不同。若直接按胚胎天数或孕周对齐，比较的常常不是相同发育状态。 HuMous 因此不把“物种差异”简化为某个时间点的差异表达，而是为每个基因构造一张二维表达景观：横轴表示从早到晚的发育年龄，纵轴表示从 RG 经 IP 到神经元的分化状态。"
 robots: noindex, nofollow
 sitemap: false

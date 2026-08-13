@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/genetrajectory-d99b1f92/
 title: "GeneTrajectory"
 nav: false
+wide: true
 description: "GeneTrajectory 要解决的问题不是“给每个细胞分配一个统一的伪时间”，而是：当同一批细胞同时经历分化、细胞周期等多个过程时，能否把参与不同过程的基因程序拆开，并分别给这些基因排序。 这一区别很重要。若分化轴和细胞周期轴彼此独立，细胞实际位于一个至少二维的状态空间中；强行压成一条细胞伪时间会把两个过程混在一起。GeneTrajectory 转而比较每个基因在整个细胞流形上的空间分布。"
 robots: noindex, nofollow
 sitemap: false

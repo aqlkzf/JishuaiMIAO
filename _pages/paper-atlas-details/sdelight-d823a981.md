@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sdelight-d823a981/
 title: "SDELight"
 nav: false
+wide: true
 description: "SDELight 面向多张空间转录组切片，串联三个阶段： Deconvolution：结合 H&E、scRNA-seq 参考和 spot-level ST，估计每个 spot 的细胞类型组成； Integration：把细胞组成加入表达特征，用 GCN 与域对抗训练减弱切片批次效应，并得到跨切片可聚类的生物 embedding；"
 robots: noindex, nofollow
 sitemap: false

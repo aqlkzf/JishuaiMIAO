@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/rt-t-amp-merfish-256c6204/
 title: "RT_T_AMP_MERFISH"
 nav: false
+wide: true
 description: "传统高分辨率 FISH 成像通常要给每条 RNA 配许多探针，因此很难识别短 RNA 或只相差很短片段的异构体；测序法覆盖广，但空间分辨率与单分子定位较弱。本文将原位扩增 RT&T-AMP 与 MERFISH 结合，在完整小鼠脑切片中输出“每个分子在何处、属于哪个基因/异构体”的空间坐标和身份。 RT&T-AMP 先把原始 RNA 原位变成许多仍留在原位置的 RNA 拷贝：poly-T 引物从 poly-A 尾开始逆转录；"
 robots: noindex, nofollow
 sitemap: false

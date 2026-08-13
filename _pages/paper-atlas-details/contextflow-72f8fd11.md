@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/contextflow-72f8fd11/
 title: "ContextFlow"
 nav: false
+wide: true
 description: "ContextFlow 从多个时间点的空间转录组快照学习连续速度场。它的关键不是把空间坐标直接作为速度网络输入，而是在相邻时间点的 minibatch optimal transport（OT）配对中加入两类上下文：局部组织表达环境和 ligand–receptor（LR）通讯模式。由这些先验偏置出的跨时点细胞对，再监督 conditional flow matching。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatial-mux-seq-3a22fb22/
 title: "spatial-Mux-seq"
 nav: false
+wide: true
 description: "spatial-Mux-seq 把普通 Tn5、携带不同连接序列的 nanobody–Tn5、带 poly(A) DNA 标签的蛋白抗体和带生物素的 poly(dT) 逆转录引物放到同一张组织切片上，再用两轮正交微流控条形码给所有分子写入共同空间坐标。反交联后，gDNA 与 cDNA/抗体标签被物理分开，各自建库；计算端再按像素整合 ATAC、两种组蛋白修饰、RNA 和蛋白。"
 robots: noindex, nofollow
 sitemap: false

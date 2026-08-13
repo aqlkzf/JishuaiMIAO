@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/smintegration-a51a3625/
 title: "SMIntegration"
 nav: false
+wide: true
 description: "SMIntegration 先让空间转录组和质谱成像在同一几何网格与预处理尺度上可比较，再以空间模式、拼接聚类、ROI 差异、相关网络和通路注释连接两种模态；它的价值在于可追踪的零代码分析链，主要风险则来自配准/插值、简单特征拼接、mass feature 身份不确定、空间伪重复以及隐藏的特征与像素抽样。"
 robots: noindex, nofollow
 sitemap: false

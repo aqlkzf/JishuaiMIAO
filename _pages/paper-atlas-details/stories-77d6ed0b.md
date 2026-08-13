@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stories-77d6ed0b/
 title: "STORIES"
 nav: false
+wide: true
 description: "STORIES 接收多个时间点的空间转录组切片，在基因表达空间里学习一个标量势能函数 J\\theta(x)。细胞沿势能下降方向 -\\nabla J\\theta(x) 演化；模型用 Fused Gromov–Wasserstein（FGW）距离比较预测群体与下一时点实测群体，使预测既接近下一时点的基因表达，又尽量保存组织内部的相对空间结构。"
 robots: noindex, nofollow
 sitemap: false

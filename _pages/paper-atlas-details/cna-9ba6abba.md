@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cna-9ba6abba/
 title: "CNA"
 nav: false
+wide: true
 description: "CNA（co-varying neighborhood analysis）面向多样本单细胞数据。它关心的问题不是单个细胞如何聚类，而是“哪些细胞状态在不同样本之间丰度变化，并且这种变化是否和样本级表型相关”。样本级表型可以是疾病状态、临床指标、基因型、年龄、性别、季节、祖源或实验条件。论文指出，常见做法先把细胞聚成离散簇，再检验每个簇的丰度是否和表型相关；这种做法依赖预先给定的聚类结构和分辨率，可能把连续或跨簇的生物信号切碎或抹平。"
 robots: noindex, nofollow
 sitemap: false

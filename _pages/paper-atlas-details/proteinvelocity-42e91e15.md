@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/proteinvelocity-42e91e15/
 title: "ProteinVelocity"
 nav: false
+wide: true
 description: "RNA velocity 能用单细胞 RNA-seq 中的未剪接 RNA（unspliced RNA, u）和已剪接 RNA（spliced RNA, s）推断细胞状态的未来方向。但在多组学实验中，同一个细胞还可以测到蛋白/ADT 丰度。Gorin、Svensson 和 Pachter 的核心问题是：当前蛋白水平是否能反推出细胞在更早时刻的转录状态，从而把单时间点数据扩展成“过去—现在—未来”的动态解释。"
 robots: noindex, nofollow
 sitemap: false

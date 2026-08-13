@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scipenn-ed4e7447/
 title: "sciPENN"
 nav: false
+wide: true
 description: "sciPENN 的方法核心是：用一个带 RNN hidden embedding、蛋白均值/分位数 head 和可选 label head 的神经网络，从 CITE-seq 中学习 RNA 到蛋白的映射；再通过 measured-protein mask 实现 censored loss，使多个蛋白面板不完全重叠的 CITE-seq 数据集可以联合训练，并进一步完成缺失蛋白补全、scRNA-seq 蛋白预测、不确定性估计和标签转移。"
 robots: noindex, nofollow
 sitemap: false

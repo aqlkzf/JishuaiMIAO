@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/valid-selection-among-conformal-sets-e8aa8e0f/
 title: "Valid_Selection_Among_Conformal_Sets"
 nav: false
+wide: true
 description: "假设我们针对同一个样本 X 有 K 个 conformal predictor。每个方法单独使用时，都能保证 直觉上，我们会想查看这 K 个预测集合，然后选最小的那个。但这样做把集合大小重新用于“模型选择”，被选中的集合不再是事先固定的方法，原有 coverage 通常会失效。"
 robots: noindex, nofollow
 sitemap: false

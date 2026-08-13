@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/celltrip-9f75c317/
 title: "CellTRIP"
 nav: false
+wide: true
 description: "单细胞测序通常给出的是“快照”：每个细胞只在某个时间或空间位置被观测一次。轨迹推断可以把细胞排成一条发展路径，但往往不显式描述细胞如何相互作用，也难以回答“敲低某个基因后，整群细胞会怎样移动或改变表达”。CellTRIP 的目标更像构造一个可运行的模拟器：把每个细胞视作一个智能体，让它们在低维环境空间里移动；只要这个空间仍能保留原始表达、空间坐标或时间阶段的信息，就给予正奖励。 因此，CellTRIP 的输出不是一条唯一的真实生物轨迹。"
 robots: noindex, nofollow
 sitemap: false

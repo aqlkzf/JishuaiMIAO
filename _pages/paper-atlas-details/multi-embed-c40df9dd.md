@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multi-embed-c40df9dd/
 title: "Multi-Embed"
 nav: false
+wide: true
 description: "同一块肿瘤组织有两种互补描述：H&E 图像告诉我们细胞形态和组织结构，RNA、甲基化、蛋白或突变谱告诉我们分子状态。Multi-Embed 的目标不是只完成一次“图像预测 RNA”，而是先从配对图像—分子数据中学习一个共享嵌入空间，再把这个空间复用于跨模态预测、空间聚类、预后建模、TLS 识别和轨迹分析。 最关键的设计是区分两种配对尺度： bulk/slide 级：一张切片包含很多 tile，却只配一个患者级分子谱；"
 robots: noindex, nofollow
 sitemap: false

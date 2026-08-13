@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multimil-0daa84ce/
 title: "multimil"
 nav: false
+wide: true
 description: "论文中的 MultiMIL 是“多模态 cVAE + 多实例学习（MIL）”的组合：先用模态特异编码器和 Product-of-Experts（PoE）把每个细胞的 RNA/ADT/ATAC 整合为联合表示，再把同一患者的细胞当作一个 bag，用门控注意力加权成患者表示，最后预测疾病分类、连续表型或有序阶段。高注意力细胞被用作疾病相关细胞状态的候选。 本工作区的代码版本是 0.3.1，但它只包含独立 MIL 预测模块：输入 ."
 robots: noindex, nofollow
 sitemap: false

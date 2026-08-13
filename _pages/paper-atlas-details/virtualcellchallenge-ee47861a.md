@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/virtualcellchallenge-ee47861a/
 title: "VirtualCellChallenge"
 nav: false
+wide: true
 description: "《Virtual Cell Challenge: Toward a Turing test for the virtual cell》不是一个新虚拟细胞模型的论文，也不是已经完成并公布排行榜的 benchmark-results paper。它是一篇前瞻性 challenge/position article：作者解释为什么需要社区竞赛，并给出 2025 年首届挑战的任务、数据生成方案、数据切分和三类评价指标。"
 robots: noindex, nofollow
 sitemap: false

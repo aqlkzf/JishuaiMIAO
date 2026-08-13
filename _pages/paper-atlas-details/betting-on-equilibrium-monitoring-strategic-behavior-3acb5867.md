@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/betting-on-equilibrium-monitoring-strategic-behavior-3acb5867/
 title: "Betting_On_Equilibrium_Monitoring_Strategic_Behavior"
 nav: false
+wide: true
 description: "假设一个多智能体系统一直在运行：交易机器人持续博弈，自动驾驶车辆持续协调，或者多个学习智能体持续更新策略。我们希望在行为刚刚偏离约定规则时就报警，而不是先规定“收集 10,000 轮数据”，结束后再做一次离线检验。 难点在于：如果不断查看普通固定样本检验的结果，并在“看起来显著”时停止，就会积累假阳性。本文用 e-value / e-process（证据值/证据过程）解决这个问题。"
 robots: noindex, nofollow
 sitemap: false

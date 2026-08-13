@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gleam-006a47f7/
 title: "GLEAM"
 nav: false
+wide: true
 description: "GLEAM 把单细胞缺失模态预测改写成异质图上的链接预测：细胞和基因、峰、染色质互作或电生理指标都是节点，已测量值是带权的 cell–feature 边；模型先借助跨模态相似细胞传播信息，再预测未观测 cell–feature 边是否存在以及边权是多少。它还用分裂保形预测给出零/非零预测集合和非零数值区间，使预测能进入带不确定性的下游分析。"
 robots: noindex, nofollow
 sitemap: false

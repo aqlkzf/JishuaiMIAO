@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatial-brain-development-0121cc65/
 title: "Spatial-brain-development"
 nav: false
+wide: true
 description: "这项工作开发了两种 DBiT 空间三组学技术，在同一张组织切片、同一个空间像素内联合测量表观层、转录层和蛋白层；再用时空回归把“随年龄变化”“随解剖位置变化”和“时间与位置共同变化”分开。由此发现，脑发育中染色质开放常早于或晚于 RNA，胼胝体髓鞘化具有双向空间顺序，而局灶脱髓鞘还能沿白质束诱发远端小胶质细胞反应。 论文同时包含技术平台、发育图谱和炎症机制三条主线。"
 robots: noindex, nofollow
 sitemap: false

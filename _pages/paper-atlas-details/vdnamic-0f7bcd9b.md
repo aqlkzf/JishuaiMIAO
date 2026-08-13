@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/vdnamic-0f7bcd9b/
 title: "vdnamic"
 nav: false
+wide: true
 description: "体积 DNA 显微镜先用短程 RCA 边和长程 IVT 边把组织内部的空间关系写成一张千万节点 DNA 邻接图，再用 hierarchical GSE 从局部子图解出候选坐标、插值到全图、构造测地谱基底，最后在该基底中优化 UEI 似然，从而得到带有基因序列标签的三维分子图像。"
 robots: noindex, nofollow
 sitemap: false

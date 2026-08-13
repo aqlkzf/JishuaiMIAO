@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/perturb-dbit-2a00375a/
 title: "Perturb-DBiT"
 nav: false
+wide: true
 description: "Perturb-DBiT 解决的是“在真实组织空间里做 pooled CRISPR screen”的读出问题。传统 Perturb-seq / CROP-seq 这类单细胞 CRISPR 读出可以把 sgRNA 和转录组联系起来，但通常需要组织解离，因此丢失肿瘤结构、克隆位置、免疫细胞邻域等空间信息。"
 robots: noindex, nofollow
 sitemap: false

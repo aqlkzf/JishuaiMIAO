@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stflow-71aea22e/
 title: "STFlow"
 nav: false
+wide: true
 description: "STFlow 将“由 H&E 图像预测空间转录组”从逐 spot 回归改写成整张切片表达矩阵的生成问题：先从符合计数稀疏性的先验采样一份表达猜测，再让一个局部空间 Transformer 反复根据图像、坐标和邻居当前表达修正它。这样某个 spot 的预测可以显式依赖邻近 spot 的表达状态，而不是把整张切片的联合分布拆成互不相关的单点预测。"
 robots: noindex, nofollow
 sitemap: false

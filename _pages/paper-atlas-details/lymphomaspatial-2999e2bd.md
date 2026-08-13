@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lymphomaspatial-2999e2bd/
 title: "LymphomaSpatial"
 nav: false
+wide: true
 description: "这篇 Nature Genetics 2025 论文研究弥漫性大 B 细胞淋巴瘤（DLBCL）的肿瘤免疫微环境如何在组织空间中组织起来，以及这种空间组织如何影响 T 细胞、肿瘤 B 细胞和细胞间通讯。论文分析了 78 个大 B 细胞淋巴瘤样本和 5 个正常对照，结合 CosMx 单细胞空间转录组、CODEX 空间蛋白组、全外显子测序和 bulk RNA-seq [paper.md:1-12], [paper.md:33-44]。"
 robots: noindex, nofollow
 sitemap: false

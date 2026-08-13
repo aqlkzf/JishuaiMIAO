@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/esmfold-870d466d/
 title: "ESMFold"
 nav: false
+wide: true
 description: "ESMFold 用大规模蛋白语言模型把跨序列进化规律压缩进单序列表示，再通过序列/pair 交替更新、三角几何约束、结构模块和 recycling 生成原子坐标。它的突破是去掉每个目标的 MSA 搜索并获得高吞吐，而不是消除进化先验、计算成本或结构预测的不确定性。"
 robots: noindex, nofollow
 sitemap: false

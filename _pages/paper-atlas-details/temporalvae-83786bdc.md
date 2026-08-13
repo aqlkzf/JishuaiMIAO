@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/temporalvae-83786bdc/
 title: "TemporalVAE"
 nav: false
+wide: true
 description: "TemporalVAE 的任务是监督式时间映射：参考图谱中的细胞已有胚胎日、Carnegie stage 或其他采样时间标签，模型学习“转录组 → 图谱时间”的关系，再给新胚胎、新平台或新物种的 query cells 预测与参考时钟对齐的时间。 这与 DPT、Monocle 或 RNA velocity 的无监督排序不同。TemporalVAE 的方向与时间尺度来自训练标签；"
 robots: noindex, nofollow
 sitemap: false

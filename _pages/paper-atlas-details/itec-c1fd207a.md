@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/itec-c1fd207a/
 title: "ITEC"
 nav: false
+wide: true
 description: "ITEC 解决的是胚胎 3D+t 活体成像中的长期全胚胎细胞谱系重建问题。输入是一系列按时间排列的三维核标记显微图像，输出是细胞实例、跨帧连接、分裂关系和可用于命运图谱分析的 lineage graph。核心思想是把 tracking 结果反过来作为 segmentation 的纠错证据：如果图中出现跳帧连接、断裂 track 或一对多/多对一模式，就回到局部图像中补检漏掉的细胞或修正过分割/欠分割。"
 robots: noindex, nofollow
 sitemap: false

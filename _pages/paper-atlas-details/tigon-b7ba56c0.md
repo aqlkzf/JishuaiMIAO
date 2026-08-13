@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tigon-b7ba56c0/
 title: "TIGON"
 nav: false
+wide: true
 description: "TIGON 接收多个真实采样时刻的单细胞转录组快照，把每个时刻的细胞看成状态空间中的一团“有质量的密度”，再学习两个随状态和时间变化的函数：细胞状态的速度场 \\mathbf v(x,t)，以及允许群体质量增加或减少的净增长率 g(x,t)。它用 Wasserstein–Fisher–Rao（WFR）动态非平衡最优传输把离散快照连接起来，因此不必像平衡最优传输那样强迫总细胞质量守恒。 论文：Sha et al."
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/modalnext-dbfcfb5a/
 title: "modalnext"
 nav: false
+wide: true
 description: "Modal-NexT 的出发点是：RNA 基因、ATAC 峰、蛋白、细胞和空间邻居虽然类型不同，但都可以表示为图中的实体与关系。只要把观测矩阵转换成“某个细胞以某种强度连接某个特征”的关系边，就能用同一套图嵌入框架处理配对多组学、未配对多组学、空间多组学和同模态多来源数据。 本解读以本地原始 PDF/OCR Markdown、Figure 1–6，以及官方 GitHub 仓库代码为证据。"
 robots: noindex, nofollow
 sitemap: false

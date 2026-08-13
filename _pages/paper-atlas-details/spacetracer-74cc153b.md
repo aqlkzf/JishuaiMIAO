@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spacetracer-74cc153b/
 title: "SpaceTracer"
 nav: false
+wide: true
 description: "SpaceTracer 的目标是利用自然积累的体细胞单核苷酸变异（SNV）作为克隆条形码，在不进行遗传工程标记的情况下重建组织谱系。它的输入是空间转录组比对 BAM、spot 坐标/聚类、参考基因组和群体变异资源；输出首先是高置信 somatic SNV 及其 spot-level genotype。"
 robots: noindex, nofollow
 sitemap: false

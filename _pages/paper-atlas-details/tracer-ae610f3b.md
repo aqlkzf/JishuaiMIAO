@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tracer-ae610f3b/
 title: "TRACER"
 nav: false
+wide: true
 description: "Xenium、MERFISH 等成像型空间转录组直接给出每条 RNA 的基因名和三维坐标。常规流程先从核染色或膜染色得到二维细胞边界，再把落在边界内的转录本归给该细胞。但组织切片有厚度：一个核可能在当前焦平面内，邻近细胞的核却在平面外；两者的胞质和 RNA 在三维空间仍可能重叠。二维边界于是会把不同细胞的 RNA 混到一起，也会留下没有任何检测核可归属的 RNA。"
 robots: noindex, nofollow
 sitemap: false

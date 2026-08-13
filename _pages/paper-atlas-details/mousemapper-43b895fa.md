@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mousemapper-43b895fa/
 title: "MouseMapper"
 nav: false
+wide: true
 description: "MouseMapper 面对的是几十万张切片、数十万亿体素的全身光片显微镜数据。它的目标不是在一块裁剪图里找到一个目标，而是沿整只小鼠保持三维连续性，同时回答三个问题：神经在哪里、免疫细胞簇在哪里、这些结构属于哪个器官或组织。 因此 MouseMapper 不是一个单独网络，而是由 Nerve-Module、Immune-Module 和 Tissue-Module 组成的流水线，再由量化与图分析把三类输出合并。"
 robots: noindex, nofollow
 sitemap: false

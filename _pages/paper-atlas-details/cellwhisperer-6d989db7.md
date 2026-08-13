@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellwhisperer-6d989db7/
 title: "CellWhisperer"
 nav: false
+wide: true
 description: "单细胞数据常需要聚类、标注、差异分析等多步操作；研究者还必须把生物学问题翻译成具体工具的输入。CellWhisperer 把“转录组”和“文字描述”放进同一空间：既可以输入“具有免疫功能的结构细胞”来找细胞，也可以在选中细胞后直接提问。论文将其定位为交互式探索工具，而不是取代实验验证的自动注释裁判。 第一部分是 CLIP 风格的双编码器。"
 robots: noindex, nofollow
 sitemap: false

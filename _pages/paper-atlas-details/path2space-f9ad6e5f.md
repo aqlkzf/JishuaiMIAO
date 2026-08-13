@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/path2space-f9ad6e5f/
 title: "Path2Space"
 nav: false
+wide: true
 description: "Path2Space 把乳腺癌 H&E 切片划成与 Visium spot 相当的局部区域，用预训练病理模型 CTransPath 提取每个区域的图像特征，再用一个简单 MLP 一次预测 14,068 个基因的空间表达。作者随后把这些“伪空间转录组”用于细胞比例估计、空间域聚类、预后分型和治疗反应预测。"
 robots: noindex, nofollow
 sitemap: false

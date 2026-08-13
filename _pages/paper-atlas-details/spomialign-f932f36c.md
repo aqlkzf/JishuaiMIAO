@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spomialign-f932f36c/
 title: "SPOmiAlign"
 nav: false
+wide: true
 description: "相邻组织切片上的转录组、蛋白组、代谢组或组织学图像通常没有共享分子特征，而且会有旋转、尺度变化、局部撕裂和不同采样分辨率。SPOmiAlign 的关键选择不是在基因空间里强行寻找共同维度，而是把问题改写成图像配准： 将空间组学渲染为空间结构图（spatial structural image, SSI），或直接使用配对 H&E/荧光图像； 用预训练 RoMa 稠密匹配模型寻找像素对应及置信度； 用高置信匹配估计全局与非刚性变换；"
 robots: noindex, nofollow
 sitemap: false

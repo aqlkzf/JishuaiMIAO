@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/oamp-963afc07/
 title: "OAMP"
 nav: false
+wide: true
 description: "OrchAMP / OAMP 解决的是单细胞多模态 atlas 构建和跨模态查询问题：参考数据中同一批细胞有 ATAC、RNA、protein 等多个模态，但新查询细胞可能只测到一个模态。方法把高维 RNA/ATAC 建模为低秩信号加噪声，把低维 protein 建模为对低维潜变量的带噪线性观测，并用 orchestrated approximate message passing 在多个模态之间同步去噪。"
 robots: noindex, nofollow
 sitemap: false

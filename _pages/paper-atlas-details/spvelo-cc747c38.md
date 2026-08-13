@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spvelo-cc747c38/
 title: "spVelo"
 nav: false
+wide: true
 description: "spVelo 解决的是多批次空间转录组中的 RNA velocity 推断问题：输入 spliced/unspliced 表达、空间坐标和批次信息，输出细胞/spot-by-gene 的 velocity、潜在时间、状态概率和下游生物学解释。核心思想是在 VAE 式 RNA 动力学模型中加入空间 kNN 和跨批次 MNN/OT 图，再用 GAT 和 MMD 让 velocity 场同时利用组织邻域和跨样本对应关系。"
 robots: noindex, nofollow
 sitemap: false

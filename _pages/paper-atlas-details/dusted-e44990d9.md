@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dusted-e44990d9/
 title: "DUSTED"
 nav: false
+wide: true
 description: "DUSTED 先在整张切片上学习每个基因的通道门控，再沿空间邻接图用 GAT 融合 spot 信息，以 NB/ZINB raw-count likelihood 训练均值、离散度和额外零三个输出头，并把经 library-size 校准的预测均值作为去噪表达；算法设计清楚，但当前公开 commit 仍需修复运行 blocker 和补齐外部依赖才能严格复现。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatial-architecture-dev-disease-ac6c0a89/
 title: "spatial-architecture-dev-disease"
 nav: false
+wide: true
 description: "这篇文章不是介绍一种新仪器、算法或数据集，而是提出一套阅读空间组学研究的生物学框架：组织中的分子和细胞不仅“有哪些”，还以梯度、区域、邻域、克隆边界和跨器官模式组织起来。疾病可能改变这些空间关系，而空间位置也可能反过来塑造细胞状态和疾病进程。 作者把不同器官、疾病和技术得到的结果归入四个通用层级： 异常分子梯度与空间模式； 发育或疾病相关细胞状态的空间追踪； 作为疾病枢纽的多细胞生态位； 疾病的器官内和器官间空间异质性。"
 robots: noindex, nofollow
 sitemap: false

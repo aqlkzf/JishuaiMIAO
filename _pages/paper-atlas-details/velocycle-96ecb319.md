@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/velocycle-96ecb319/
 title: "VeloCycle"
 nav: false
+wide: true
 description: "这篇 Nature Methods 论文提出 VeloCycle，用单细胞 RNA-seq 中未剪接和已剪接 RNA 的计数，在细胞周期这一 1D 周期流形上估计细胞周期速度。传统 Seurat/scanpy 细胞周期打分通常给出 G1、S、G2/M 这类离散标签，不能直接回答“这个条件下细胞周期是不是更快、在哪个阶段变慢、差异是否可信”。"
 robots: noindex, nofollow
 sitemap: false

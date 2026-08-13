@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/genes2genes-61a0514a/
 title: "Genes2Genes"
 nav: false
+wide: true
 description: "Genes2Genes 把每个基因在两条单细胞轨迹上的动态看成两条带不确定性的序列：先用局部高斯分布表达不确定性，再用 MML 决定哪些时间点值得匹配，最后用五状态动态规划把“一致、快慢不同和真正失配”编码成可解释的字符串。"
 robots: noindex, nofollow
 sitemap: false

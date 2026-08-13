@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/edgesetattention-05398b6b/
 title: "EdgeSetAttention"
 nav: false
+wide: true
 description: "ESA 不把“节点”当作 Transformer token，而把每条边写成一个 token；相邻边（共享端点）先通过带图结构掩码的注意力交换信息，再用无掩码自注意力补充全局联系，最后由一组可学习查询向量把可变长边集合汇总成图级表示。论文的核心不是发明新的注意力公式，而是把图结构变成注意力掩码，并把局部结构先验与全局注意力纵向组合。"
 robots: noindex, nofollow
 sitemap: false

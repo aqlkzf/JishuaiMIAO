@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/calarena-0c387f79/
 title: "CalArena"
 nav: false
+wide: true
 description: "分类器不仅给类别，还给概率；但“预测 0.9”并不保证类似样本中真的有约 90% 属于该类。后处理校准是在不重训分类器的情况下，用独立校准集学习一个映射，把原始概率变成更可靠的概率。 难点不在于缺少方法，而在于方法太多、比较不公平：既有研究的数据规模小，ECE 等指标对分箱方式敏感，公开实现也不统一。同一个方法可能在不同论文中得到相反结论。CalArena 因而是一篇机器学习基准论文，目标是建立统一的“赛场”，不是提出某个生信算法。"
 robots: noindex, nofollow
 sitemap: false

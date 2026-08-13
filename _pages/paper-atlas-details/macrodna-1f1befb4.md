@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/macrodna-1f1befb4/
 title: "MaCroDNA"
 nav: false
+wide: true
 description: "MaCroDNA 用共同基因上的 copy-number 与 expression Pearson 相关性作为边权，把 scRNA-seq 细胞和 scDNA-seq 细胞构成二部图，再求最大权匹配。若 RNA 细胞更多，就反复释放 DNA 节点、逐轮匹配尚未分配的 RNA 细胞；最终可把每个 RNA 细胞映射到一个 DNA 细胞及其预先定义的肿瘤克隆。"
 robots: noindex, nofollow
 sitemap: false

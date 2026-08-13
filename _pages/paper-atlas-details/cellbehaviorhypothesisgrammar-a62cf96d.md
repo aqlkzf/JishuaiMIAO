@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellbehaviorhypothesisgrammar-a62cf96d/
 title: "CellBehaviorHypothesisGrammar"
 nav: false
+wide: true
 description: "Cell Behavior Hypothesis Grammar 把细胞行为假设从隐藏在 C++ 里的条件逻辑，提升为可读的 CSV 规则；这些规则通过 Hill 响应函数和 PhysiCell phenotype 更新机制变成可执行的多细胞 agent-based model，从而让生物假设更容易编写、审查、复用和扩展。"
 robots: noindex, nofollow
 sitemap: false

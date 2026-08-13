@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/iclap-d526cbee/
 title: "iCLAP"
 nav: false
+wide: true
 description: "FFPE 是临床病理最常见的保存形式，但固定会遮蔽表位，许多转录因子、免疫调节因子和衰老相关蛋白本来又很少。CODEX、CyCIF、IMC 等方法可以在同一切片上检测几十个蛋白，却主要依靠直接偶联抗体，灵敏度对低丰度抗原往往不够。TSA 利用 HRP 催化荧光酪胺在抗原附近沉积，可以放大信号，但沉积后的强荧光不容易被常规循环成像的温和漂白步骤去除，因此传统 TSA 面板通常难以继续扩展。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/perturb-fish-6bcf7ae0/
 title: "Perturb-FISH"
 nav: false
+wide: true
 description: "这篇 Cell 2025 论文提出 Perturb-FISH：一种把 pooled CRISPR 扰动、原位 guide RNA 读取、MERFISH 空间转录组和可选功能成像放到同一单细胞体系里的技术平台（PAPERMD:1-5, PAPERMD:13-17）。 传统 Perturb-seq 这类单细胞 CRISPR 筛选可以把“哪个基因被扰动”和“细胞表达谱如何变化”连接起来，但细胞需要被解离，因此失去空间邻近关系。"
 robots: noindex, nofollow
 sitemap: false

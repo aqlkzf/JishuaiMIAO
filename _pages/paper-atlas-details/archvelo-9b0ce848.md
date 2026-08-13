@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/archvelo-9b0ce848/
 title: "ArchVelo"
 nav: false
+wide: true
 description: "ArchVelo = ATAC archetypal analysis + MultiVelo-style chromatin/RNA kinetics + archetype-wise velocity decomposition。 它先把 scATAC peak-summit 矩阵分解成少数 archetypes，然后对每个基因，把与该基因相关的 peaks 汇总成每个 archetype 的 gene weight，再用这些 ar…"
 robots: noindex, nofollow
 sitemap: false

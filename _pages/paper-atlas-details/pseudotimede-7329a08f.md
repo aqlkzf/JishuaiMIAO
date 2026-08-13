@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pseudotimede-7329a08f/
 title: "PseudotimeDE"
 nav: false
+wide: true
 description: "PseudotimeDE 解决的是单细胞 RNA-seq 里一个很常见但容易被低估的问题：已经推断出细胞伪时间之后，怎样判断某个基因是否沿伪时间发生差异表达。论文的核心判断是，伪时间不是一个没有误差的真实协变量，而是从同一批表达数据里估计出来的随机量；如果后续 DE 检验把每个细胞的伪时间当成固定值，就可能得到不校准的 p 值，从而影响 FDR 控制或损失检出能力。"
 robots: noindex, nofollow
 sitemap: false

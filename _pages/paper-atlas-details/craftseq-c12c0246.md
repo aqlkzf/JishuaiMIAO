@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/craftseq-c12c0246/
 title: "CRAFTseq"
 nav: false
+wide: true
 description: "CRISPR base editing 后，同一培养孔里通常只有一部分细胞获得目标编辑，其余细胞可能未编辑、杂合编辑、双等位编辑或带旁观者/indel。若以“加入了 guide”代替真实 genotype，会把这些细胞混在一起；同时 edited cells 分泌的 cytokine 和共同培养应激会影响未编辑邻居，使 condition-level comparison 把共享环境效应错当成 variant effect。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mousecortex-multimodal-atlas-192d5834/
 title: "MouseCortex-Multimodal-Atlas"
 nav: false
+wide: true
 description: "E14.5 小鼠皮层正处于神经发生中期：神经干细胞（NSC）产生中间祖细胞（IPC），再分化为不同成熟程度的投射神经元（PN）。论文关心的核心不是“哪些基因随分化变化”，而是调控事件的先后和因果关系：远端增强子何时开放、它连接哪个基因、转录因子结合后是否同时改变 DNA 甲基化与三维接触，以及这些候选元件在活体中能否真正驱动表达。 为此，研究组合了五类证据：scRNA-seq 描述表达轨迹；"
 robots: noindex, nofollow
 sitemap: false

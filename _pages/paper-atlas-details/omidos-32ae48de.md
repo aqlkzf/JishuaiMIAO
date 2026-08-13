@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/omidos-32ae48de/
 title: "OmiDos"
 nav: false
+wide: true
 description: "单细胞 RNA 测序回答“哪些基因正在表达”，单细胞 ATAC 测序回答“哪些染色质区域处于开放状态”。二者有关联，却不会完全同步：染色质先开放、转录随后发生，转录因子活性又可能处在另一时间尺度；而单细胞实验只拍下一张瞬时快照。因此，同一个细胞状态中天然混合了两类信息： 私有信号（private）：只在 RNA 或 ATAC 中明显的模态特征； 共享信号（shared）：跨模态一致、反映共同调控程序的特征。"
 robots: noindex, nofollow
 sitemap: false

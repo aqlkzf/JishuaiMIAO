@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/getvna-cdf40e52/
 title: "GETvNA"
 nav: false
+wide: true
 description: "研究 DNA 弯曲、修复酶结合和蛋白沿 DNA 移动，需要同时具备高空间分辨率和亚秒级时间分辨率。smFRET 很适合动态测距，但通常只给出两个染料之间的一条距离；常规超分辨定位能给出空间坐标，却往往要求结构在较长采集时间内保持静止。GETvNA 的目标，是在普通单分子荧光/FLIM 平台上直接读取核酸复合物的轴向结构变化。"
 robots: noindex, nofollow
 sitemap: false

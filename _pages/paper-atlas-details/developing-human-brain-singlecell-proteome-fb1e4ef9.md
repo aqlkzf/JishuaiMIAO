@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/developing-human-brain-singlecell-proteome-fb1e4ef9/
 title: "Developing_Human_Brain_SingleCell_Proteome"
 nav: false
+wide: true
 description: "这项工作把每个胎儿脑细胞单独送入一次液相色谱–质谱（LC–MS）分析，在 2,310 个通过质控的细胞中建立蛋白质图谱，再与同一批组织的单细胞 RNA 测序比较。它要回答的核心问题不是“哪些基因被转录”，而是“哪些蛋白真正出现、出现在哪类细胞、又如何随神经发生而变化”。 这不是一个单一机器学习模型，而是一条由实验技术、单细胞聚类、跨组学校正、伪时间和网络模块分析组成的完整流水线。"
 robots: noindex, nofollow
 sitemap: false

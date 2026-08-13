@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lschwcp-2023-7aee1e52/
 title: "LSCHWCP_2023"
 nav: false
+wide: true
 description: "这项工作把两个通常分离的问题连接起来： 如何在转录组测序数据中发现不局限于完整核酸参考基因组的 RNA 病毒样信号； 如何保留单细胞条形码，使病毒存在信息能够与同一细胞的宿主基因表达联合分析。 论文指出，既有流程往往至少缺少一项能力：参考覆盖范围受限、不能把核酸读段与蛋白参考做翻译搜索，或不能保留单细胞分辨率。"
 robots: noindex, nofollow
 sitemap: false

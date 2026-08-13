@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hongkonggenomeproject-aa4c3bf9/
 title: "HongKongGenomeProject"
 nav: false
+wide: true
 description: "HKGP 把全基因组测序用于两个互补目标：在 2,227 名疑似遗传病 probands 中做 phenotype-guided diagnosis；在约 1.8 万名无近亲关系的华人 participants 中建立 dominant disease、recessive carrier 和 pharmacogenomic 频率参考。"
 robots: noindex, nofollow
 sitemap: false

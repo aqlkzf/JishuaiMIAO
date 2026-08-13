@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/encori-e2b989e8/
 title: "ENCORI"
 nav: false
+wide: true
 description: "这篇 Nature Methods 论文关注的是 RNA interactome，也就是 RNA 与 RNA-binding proteins (RBPs)、miRNA、其他 RNA 分子之间的大规模相互作用网络。作者指出，CLIP-seq 和 RNA-RNA interactome sequencing 已经能在全转录组层面产生大量相互作用证据，但这些实验数据背景噪声很高，因此很难准确定位 RBP 结合峰、交联诱导位点和 RNA-RN…"
 robots: noindex, nofollow
 sitemap: false

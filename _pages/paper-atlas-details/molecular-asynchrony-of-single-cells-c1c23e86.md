@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/molecular-asynchrony-of-single-cells-c1c23e86/
 title: "Molecular_asynchrony_of_single_cells"
 nav: false
+wide: true
 description: "本文提出的核心不是一个普通的多组学整合流程，而是把 RNA、染色质开放性和组蛋白修饰之间的“不同步”当作动力学信号来使用。论文认为，传统单细胞分析常把多模态特征投射到同一个静态空间，但细胞状态变化本来就包含调控层级之间的时间延迟；这种延迟可以用来估计单细胞的热力学性质和未来状态倾向 。 作者关心的是：在静态采样的单细胞数据里，怎样判断某个细胞只是处在稳定状态，还是正在经历状态转换？伪时间方法能给出轨迹顺序，但不直接解释驱动力；"
 robots: noindex, nofollow
 sitemap: false

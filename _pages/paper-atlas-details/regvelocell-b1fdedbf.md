@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/regvelocell-b1fdedbf/
 title: "RegVeloCell"
 nav: false
+wide: true
 description: "经典 RNA velocity 为每个基因拟合近似独立的转录、剪接和降解动力学；RegVelo 把转录率改成所有上游 spliced regulator 表达的非线性函数。这样 GRN 权重、RNA 动力学、基因级潜在时间和 velocity 可在同一个生成模型中联合估计，并可通过切断某 TF 的出边重新计算 vector field。"
 robots: noindex, nofollow
 sitemap: false

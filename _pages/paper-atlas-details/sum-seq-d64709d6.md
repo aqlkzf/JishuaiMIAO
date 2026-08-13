@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sum-seq-d64709d6/
 title: "SUM-seq"
 nav: false
+wide: true
 description: "SUM-seq 的本质是：先用样本索引给每个细胞核建立“第一重身份”，再大胆过载液滴并加入“第二重身份”，最后用两重身份同时恢复 RNA 与 ATAC，从而把许多样本和大量细胞压缩到一次高通量多组学实验中。"
 robots: noindex, nofollow
 sitemap: false

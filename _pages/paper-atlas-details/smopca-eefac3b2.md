@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/smopca-eefac3b2/
 title: "SMOPCA"
 nav: false
+wide: true
 description: "SMOPCA 同时接收多个模态的“特征 × 空间位点”矩阵和位点坐标，用一个共享低维矩阵解释各模态，再用空间核约束相邻位点的低维表示应当相关。模型输出连续嵌入；论文中的空间域标签是随后在该嵌入上运行 K-means 得到的，并不是 SMOPCA 类自身学习的结果。"
 robots: noindex, nofollow
 sitemap: false

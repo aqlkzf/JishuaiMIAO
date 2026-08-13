@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/minimum-volume-conformal-sets-multivariate-regression-fdc97360/
 title: "Minimum_Volume_Conformal_Sets_Multivariate_Regression"
 nav: false
+wide: true
 description: "多变量回归的输出 Y\\in\\mathbb{R}^k 不是一个数，而是一个向量。我们希望对每个输入 x 给出一个区域 C(x)：真实输出以至少 1-\\alpha 的概率落在区域里，同时区域尽可能小。只追求覆盖率很容易——给出一个巨大区域即可；真正困难的是在有限样本有效性和信息量之间取得平衡。 已有方法各有明显约束：逐维分位数区间的笛卡尔积忽略输出维度之间的相关性；经验协方差椭球假设近似椭圆结构；"
 robots: noindex, nofollow
 sitemap: false

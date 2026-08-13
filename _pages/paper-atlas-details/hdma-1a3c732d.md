@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hdma-1a3c732d/
 title: "HDMA"
 nav: false
+wide: true
 description: "HDMA（Human Development Multiomic Atlas）先用 SHARE-seq 在同一个细胞核中同时测量 RNA 与开放染色质，再为每一种细胞类型训练一个“DNA 序列 → ATAC 可及性”的 ChromBPNet 模型。研究者随后把模型当作可计算的实验系统：寻找真正影响预测的序列基序，把两个基序按不同距离和方向插回背景序列，并比较联合效应与独立效应，从而区分需要精确间距的“硬语法”和允许较宽松间距的“软语法”。"
 robots: noindex, nofollow
 sitemap: false

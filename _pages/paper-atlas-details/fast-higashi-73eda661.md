@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/fast-higashi-73eda661/
 title: "Fast-Higashi"
 nav: false
+wide: true
 description: "Fast-Higashi 把每条染色体上“基因组区间 × 基因组区间 × 单细胞”的 scHi-C 数据看成三阶张量，用一个跨染色体共享的细胞因子解释细胞差异，同时为每条染色体学习可回溯到具体接触区域的“元相互作用（meta-interaction）”；为处理极稀疏接触图，它在小批次基因组区间上先做 partial random walk with restart（partial RWR），再用无需反向传播的交替分解求解。"
 robots: noindex, nofollow
 sitemap: false

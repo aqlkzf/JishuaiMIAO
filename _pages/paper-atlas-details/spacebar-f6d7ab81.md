@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spacebar-f6d7ab81/
 title: "SpaceBar"
 nav: false
+wide: true
 description: "一个细胞为什么呈现某种表达状态，通常有两类来源： 内在/谱系来源：细胞从共同祖先继承了较稳定的遗传或表观遗传状态； 外在/空间来源：细胞因为处于肿瘤边缘、缺氧内部、血管附近等不同微环境而改变表达。 传统克隆追踪和成像型空间转录组很难同时测量这两件事。随机 DNA/RNA barcode 能提供很高的克隆多样性，但 seqFISH、MERFISH 一类方法依赖预先设计的探针面板，无法事先知道每个随机 barcode 的序列。"
 robots: noindex, nofollow
 sitemap: false

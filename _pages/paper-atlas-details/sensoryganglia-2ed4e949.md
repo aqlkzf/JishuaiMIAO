@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sensoryganglia-2ed4e949/
 title: "SensoryGanglia"
 nav: false
+wide: true
 description: "这项研究把体细胞嵌合变异当作人体内自然形成、终生保留的“谱系条形码”，比较背根神经节（DRG，感觉）与交感神经节（SG）的克隆组成。人类、两套小鼠 CRISPR 谱系记录、单核测序和鹌鹑活体成像共同支持：多数躯干神经嵴细胞在离开神经管之前已偏向 DRG 或 SG 命运；它们还会在神经管内沿头尾轴迁移，这一过程依赖 FGF 信号。"
 robots: noindex, nofollow
 sitemap: false

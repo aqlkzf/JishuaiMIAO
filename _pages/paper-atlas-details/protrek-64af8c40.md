@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/protrek-64af8c40/
 title: "ProTrek"
 nav: false
+wide: true
 description: "ProTrek 为同一个蛋白构造三种表示：氨基酸序列、由 Foldseek 压缩出的 3Di 结构序列、自然语言功能描述。训练时让同一蛋白的三种表示互相靠近、不同蛋白的表示分开。得到统一向量空间后，任意一种模态都能查询另外两种模态，也能进行同模态近邻搜索，因此形成序列、结构、文字之间的九种检索方向。"
 robots: noindex, nofollow
 sitemap: false

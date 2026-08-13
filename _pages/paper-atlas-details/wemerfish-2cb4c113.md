@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/wemerfish-2cb4c113/
 title: "weMERFISH"
 nav: false
+wide: true
 description: "weMERFISH 不是“直接测完整转录组”的成像技术。它先在完整斑马鱼胚胎中直接定位 495 个目标基因的单个 RNA 分子，再以这些实测基因为共同坐标，把同阶段单细胞 multiome 数据中的其余 RNA 和 ATAC 特征映射到空间。因而，495 个基因是直接成像证据，25,872 个基因和 294,954 个染色质区域是模型推断结果，两者不能混称为实测。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cab-olst-013acc3e/
 title: "CAB-OLST"
 nav: false
+wide: true
 description: "它的核心不是“从脑表面一直看穿到脑底”，而是： > 每次只高质量成像当前的浅表组织，成像后切掉上方 300 μm，再成像新暴露的浅表面；最后用计算方法把所有块拼回完整全脑。 这相当于把困难的“深部光学成像”改写成大量较稳定的“浅层成像 + 全局重建”问题。"
 robots: noindex, nofollow
 sitemap: false

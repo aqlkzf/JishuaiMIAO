@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spark-seq-d999ec25/
 title: "SPARK-seq"
 nav: false
+wide: true
 description: "SPARK-seq（Science, 2025）把 CRISPR 靶基因、细胞转录组和细胞表面结合的适配体同时读到同一个单细胞条形码下：如果敲除某个膜蛋白后，一组适配体在这些细胞上的结合量系统性下降，这组适配体就可能直接结合该蛋白。配套的 SPARTA 分析把序列聚成家族、比较敲除组与对照组的结合差异、筛选靶标，再用深度学习预测结合序列并生成新变体。"
 robots: noindex, nofollow
 sitemap: false

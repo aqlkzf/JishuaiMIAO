@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/patho-agenticrag-2bf47c94/
 title: "Patho-AgenticRAG"
 nav: false
+wide: true
 description: "Patho-AgenticRAG 的贡献不是把更多文本塞给病理 VLM，而是学习一条条件化工具路径：必要时把问题拆成候选诊断查询，在器官分区的图文教材页中先召回再用尖峰相似度重排，多轮汇总证据后交给 Patho-R1；核心推理 demo 与 fusion 代码可查，但强化学习训练和大规模知识库仍是明确的复现缺口。"
 robots: noindex, nofollow
 sitemap: false

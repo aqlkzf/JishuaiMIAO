@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/chair-e47b46c4/
 title: "ChAIR"
 nav: false
+wide: true
 description: "ChAIR 是一种单细胞三组学技术：在同一个细胞里同时测量 RNA 表达、开放染色质和染色质相互作用，从而把“调控元件是否开放”“它是否与启动子接触”“基因是否表达”放在同一条证据链上。 论文发表于 Nature Methods（2025），DOI 为 10.1038/s41592-025-02658-7。"
 robots: noindex, nofollow
 sitemap: false

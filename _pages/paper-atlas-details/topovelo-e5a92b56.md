@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/topovelo-e5a92b56/
 title: "TopoVelo"
 nav: false
+wide: true
 description: "传统 RNA velocity 把细胞当作相互独立的观测：每个细胞的 unspliced/spliced counts 只由自身潜在时间和动力学参数解释。但发育组织中，接触信号、形态素、ECM 和局部组织结构都与命运变化相关。TopoVelo 把空间转录组构成一张图，用图神经网络让一个细胞的潜在状态和转录率同时受到空间邻居影响。 它输出两种容易混淆的“速度”： RNA velocity：每个细胞、每个基因的 ds/dt，位于表达空间；"
 robots: noindex, nofollow
 sitemap: false

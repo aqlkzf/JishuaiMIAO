@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatial-human-kidney-map-5a8660ff/
 title: "Spatial-Human-Kidney-Map"
 nav: false
+wide: true
 description: "这项工作不只是在肾组织里“数细胞”，而是要回答三个递进问题：健康与糖尿病肾病（DKD）的组织结构如何改变；哪些局部细胞组合与肾功能下降相连；能否从这些局部结构中找到具有临床风险意义的患者亚群。作者整合 48 份 CosMx 和 16 份 Xenium FFPE 样本，并以 150 位患者的单核 RNA 测序图谱作为参考，最终形成覆盖 200 多位患者、超过 500 万个细胞的统一图谱（论文 Results “Spatial atlas…"
 robots: noindex, nofollow
 sitemap: false

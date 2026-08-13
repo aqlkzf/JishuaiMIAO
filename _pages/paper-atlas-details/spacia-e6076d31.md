@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spacia-e6076d31/
 title: "Spacia"
 nav: false
+wide: true
 description: "Spacia 把每个接收细胞看成一个“袋子（bag）”，把它周围的多个候选发送细胞看成袋子里的“实例（instance）”，再用贝叶斯多实例学习同时回答两个问题： 哪些邻近细胞真正可能影响这个接收细胞？ 这些发送细胞中的哪些基因或通路，与接收细胞的表达变化相关？ 论文发表于 Nature Methods（2024），DOI：10.1038/s41592-024-02408-1。"
 robots: noindex, nofollow
 sitemap: false

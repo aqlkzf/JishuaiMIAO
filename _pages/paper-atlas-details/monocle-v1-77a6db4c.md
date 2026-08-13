@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/monocle-v1-77a6db4c/
 title: "Monocle v1"
 nav: false
+wide: true
 description: "Monocle 1 的出发点是一个实验事实：即使细胞在同一时刻被收集，它们也可能处在完全不同的分化阶段。若只按 0、24、48、72 小时分组取平均，早开始和晚开始分化的细胞会混在一起，关键调控开关被平滑掉。Monocle 因此不把采样时刻当作细胞内部时间，而是根据表达相似性将单细胞重新排列，定义“pseudotime”。 论文的输入是已经定量的单细胞表达矩阵；该研究使用人骨骼肌成肌细胞的 FPKM。"
 robots: noindex, nofollow
 sitemap: false

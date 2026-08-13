@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/protocloud-84b0acdf/
 title: "ProtoCloud"
 nav: false
+wide: true
 description: "ProtoCloud 通过多个 cell-type prototypes 把 VAE latent space组织成可比较的“代表细胞云”，用 similarity 完成注释和不确定性判断，再用 PRP 把 prototype decision 追溯到 HRGs；"
 robots: noindex, nofollow
 sitemap: false

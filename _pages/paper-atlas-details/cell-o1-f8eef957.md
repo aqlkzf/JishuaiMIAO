@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cell-o1-f8eef957/
 title: "Cell-o1"
 nav: false
+wide: true
 description: "Cell-o1 解决的是单细胞 RNA-seq 的批次级别细胞类型注释问题。传统做法通常把每个细胞单独分类，但论文认为真实专家不会这样做；专家会把同一个 donor / sample 里的多个细胞放在一起，结合基因表达和上下文信息，统一决定谁对应哪一个细胞类型 (PAPERMD:60-68)。 因此作者先提出了一个新 benchmark: CellPuzzles。每个样本不是一个 cell，而是一组 8-15 个 cell。"
 robots: noindex, nofollow
 sitemap: false

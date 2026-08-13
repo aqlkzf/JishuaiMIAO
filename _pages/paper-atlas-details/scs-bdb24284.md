@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scs-bdb24284/
 title: "SCS"
 nav: false
+wide: true
 description: "SCS 用染色图像中容易识别的细胞核作为训练信号，让 Transformer 学会从稀疏的高分辨率空间转录组 spot 判断“这个 spot 是否属于细胞”以及“它的细胞中心在哪个方向”。随后，所有预测属于细胞的 spot 沿预测方向流动并汇聚到共同的 sink，从而形成包含细胞质的完整细胞分割。"
 robots: noindex, nofollow
 sitemap: false

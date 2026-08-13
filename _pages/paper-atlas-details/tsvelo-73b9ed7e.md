@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tsvelo-73b9ed7e/
 title: "TSvelo"
 nav: false
+wide: true
 description: "TSvelo 是一个 RNA velocity 方法，用 scRNA-seq 的 unspliced/spliced RNA 层来推断细胞未来状态，但它不只看传统的二维 u-s 相图，而是把 TF 调控、转录和剪接串成一个可解释的 Neural ODE。它的输入是 unspliced/spliced 表达矩阵和 ENCODE/ChEA TF-target 先验，输出包括 pseudotime、RNA velocity、转录率表示 alp…"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dnd-seq-bff3bb81/
 title: "DnD-seq"
 nav: false
+wide: true
 description: "D&D-seq（Docking and Deamination followed by sequencing）把一个胞嘧啶脱氨酶 DddA 通过抗体/纳米抗体定位到目标 TF 或 chromatin regulator 附近，让结合位点附近的 C 被编辑成 U，测序后表现为 C>T 或互补链上的 G>A 变异。这样，D&D edit 的局部富集就可以作为 DNA-protein interaction 的分子足迹。"
 robots: noindex, nofollow
 sitemap: false

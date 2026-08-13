@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/jdrnet-6ffcd8a3/
 title: "JDRnet"
 nav: false
+wide: true
 description: "JDRnet 不是一种新的 GRN 推断器，也不是一种新的生存模型。它是一条组合式分析流程：先用 PANDA–LIONESS 为每位患者构建转录因子到靶基因的加权网络，把整张网络压缩成基因入度和转录因子出度，再把这两类网络特征连同表达、甲基化和 miRNA 一起送入 MOFA+，最后比较加入网络前后是否出现更显著、且可解释的生存相关潜因子。"
 robots: noindex, nofollow
 sitemap: false

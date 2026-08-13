@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/graph-odes-and-beyond-5295276d/
 title: "Graph ODEs and Beyond"
 nav: false
+wide: true
 description: "这是一篇 Graph Neural Differential Equations（Graph NDEs）综述，不提出单一新模型。它把“图神经网络怎样与 ODE、PDE、SDE 结合”整理成一张选择地图：任务是什么、图如何随空间/时间构造、微分方程描述哪种动力学、GNN 在系统中扮演什么角色，以及不同组合解决哪些困难。 Graph NDE 的共同形式是让图上状态 H(t) 沿连续变量演化： t 可以是真实时间，也可以是连续化的网络深度。"
 robots: noindex, nofollow
 sitemap: false

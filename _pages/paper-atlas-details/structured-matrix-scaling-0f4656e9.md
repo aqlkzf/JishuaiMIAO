@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/structured-matrix-scaling-0f4656e9/
 title: "Structured Matrix Scaling"
 nav: false
+wide: true
 description: "分类器给出的 softmax 概率往往不等于真实事件发生概率。后校准用一小份带标签的校准集，在不重新训练原分类器的情况下修正这些概率。困难在于：校准样本通常很少，但类别数 k 可能很大。 温度缩放（TS，Guo 等，ICML 2017）只有一个参数，稳定但只能统一调节置信度； 向量缩放（VS）能为每类设置不同尺度和截距，但不能表达类别之间的相互影响；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pfm-6a8a2bf9/
 title: "PFM"
 nav: false
+wide: true
 description: "时间序列单细胞测量通常不是连续追踪同一批细胞，而是在若干时间点分别破坏性取样。输入因此是 K 个独立细胞群： 其中 \\mathbf x 是基因表达状态。每个时间点只告诉我们边缘分布 p{tk}(\\mathbf x)，并没有告诉我们哪一个早期细胞对应哪一个晚期细胞。"
 robots: noindex, nofollow
 sitemap: false

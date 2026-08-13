@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellstream-25371181/
 title: "CellStream"
 nav: false
+wide: true
 description: "CellStream 面向多个离散时间点的单细胞快照。它不先做一个固定的 PCA/UMAP 再拟合轨迹，而是同时训练低维 autoencoder、速度场和生长/死亡率，使低维空间既能重构原始数据，又能让从最早时间点出发的粒子流匹配后续快照。 方法输出的是一个 dynamics-informed latent space，以及其中的连续速度场 v(t,z)、质量增长率 g(t,z) 和积分轨迹。"
 robots: noindex, nofollow
 sitemap: false

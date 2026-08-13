@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/improved-bayes-risk-reduced-social-welfare-cd8749bd/
 title: "Improved_Bayes_Risk_Reduced_Social_Welfare"
 nav: false
+wide: true
 description: "这篇论文研究的不是生物信息学，而是算法经济学与博弈论机器学习。它指出：当多个预测服务商为了争夺用户而调整模型时，更好的数据表示虽然能降低单个模型的 Bayes 风险，却可能让所有服务商的预测变得更相似，破坏原有的“分工覆盖”，从而提高用户在均衡中的总体预测损失。"
 robots: noindex, nofollow
 sitemap: false

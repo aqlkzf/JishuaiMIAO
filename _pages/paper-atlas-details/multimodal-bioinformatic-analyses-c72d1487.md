@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multimodal-bioinformatic-analyses-c72d1487/
 title: "Multimodal bioinformatic analyses"
 nav: false
+wide: true
 description: "这不是一篇提出单一算法的论文，而是一篇方法学综述。它讨论的核心问题是：当研究对象从简单的病例—对照比较扩展到多因素、时间序列、多批次、多组学、单细胞和空间数据时，分析者应如何从“逐个基因找差异”过渡到“研究调控关系、网络结构与具体生物情境”。 全文的主线可以概括为四层：先判断实验设计；再决定是否仍适合做基因或转录本层面的差异表达；若问题涉及协同变化，则转向共表达网络；"
 robots: noindex, nofollow
 sitemap: false

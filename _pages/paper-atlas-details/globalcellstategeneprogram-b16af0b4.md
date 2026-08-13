@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/globalcellstategeneprogram-b16af0b4/
 title: "GlobalCellStateGeneProgram"
 nav: false
+wide: true
 description: "论文的核心问题是：如何把大量来源不同、物种不同、测序平台不同的单细胞转录组数据放到同一个“细胞状态空间”里，并进一步理解基因扰动如何驱动细胞状态变化。传统整合模型或单细胞大模型可以产生嵌入，但作者认为它们对扰动响应预测仍不够好，尤其难以区分“基因功能本身的保守效应”和“不同起始细胞状态下的上下文特异效应”。 因此，论文提出的框架分两层：第一层学习全局细胞状态流形；"
 robots: noindex, nofollow
 sitemap: false

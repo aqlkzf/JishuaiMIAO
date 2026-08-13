@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/npod-fae1c7e3/
 title: "nPOD"
 nav: false
+wide: true
 description: "1 型糖尿病（T1D）不是只在确诊后发生的 beta 细胞丢失。自身抗体阳性（AAB+）阶段已经出现免疫和细胞状态变化，但以往研究常只分析纯化胰岛、单一组学或长期 T1D，难以区分哪些变化发生在什么细胞、何时出现、由哪些调控元件支持以及位于何种组织邻域。 本文分析 32 位 nPOD 全胰腺供体：11 位非糖尿病（ND）、9 位 ND AAB+、7 位近期 T1D（病程 5 年）。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/covarnet-9ff62b2a/
 title: "CoVarNet"
 nav: false
+wide: true
 description: "CoVarNet 的关键贡献是把“细胞亚群丰度的共变模式”转化为可解释的多细胞网络：NMF 给出可能一起出现的节点，特异相关性给出可信的边，最终得到可用于组织空间验证、表型关联和癌症重塑分析的 cellular modules。"
 robots: noindex, nofollow
 sitemap: false

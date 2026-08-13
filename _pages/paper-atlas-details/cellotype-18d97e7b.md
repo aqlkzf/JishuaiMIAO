@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellotype-18d97e7b/
 title: "CelloType"
 nav: false
+wide: true
 description: "CelloType 的真正创新点是把多通道组织图像中的“找对象、画边界、判类别、给置信度”变成一个共享查询和共享特征的联合学习问题；实验显示这种统一建模明显优于两阶段流水线，但分类迁移能力、训练数据需求和严格的全流程复现仍然是主要限制。"
 robots: noindex, nofollow
 sitemap: false

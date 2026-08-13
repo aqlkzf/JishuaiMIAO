@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialcoc-91a22a5a/
 title: "SpatialCOC"
 nav: false
+wide: true
 description: "空间多组学的困难不只是“不同模态维数不同”。同一组织位置的 RNA、蛋白和 ATAC 既有共享生物结构，也有各自稀疏性、测量噪声和技术偏差。SpatialCOC 把任务拆成两步： Spatial Continuous Mapping（SCM）：把二维坐标当作顶层先验，分别学习每个模态从坐标到特征的连续函数；"
 robots: noindex, nofollow
 sitemap: false

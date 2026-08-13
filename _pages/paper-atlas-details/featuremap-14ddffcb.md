@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/featuremap-14ddffcb/
 title: "FeatureMAP"
 nav: false
+wide: true
 description: "FeatureMAP 不只问“哪些细胞彼此接近”，还在每个细胞邻域估计一个局部切空间，记录基因沿局部流形方向如何变化。它把这些信息拆成两个互补的二维图：GEX 保留细胞密度和聚类结构，GVA 保留基因变化模式和轨迹结构；随后用密度、曲率和介数中心性区分稳定核心态与过渡态，并用差异基因变化分析寻找可能驱动状态转换的基因。"
 robots: noindex, nofollow
 sitemap: false

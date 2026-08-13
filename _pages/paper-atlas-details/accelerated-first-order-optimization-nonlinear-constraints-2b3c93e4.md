@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/accelerated-first-order-optimization-nonlinear-constraints-2b3c93e4/
 title: "Accelerated_First_Order_Optimization_Nonlinear_Constraints"
 nav: false
+wide: true
 description: "论文考虑 投影梯度法每一步都要把新位置投影回完整可行域；Frank–Wolfe 则要在完整可行域上解线性优化。当约束数量很多、结构复杂，甚至可行域非凸时，这两个操作可能很贵或没有闭式解。本文希望只用梯度和一个局部凸子问题，同时保留动量带来的加速效果。 在当前位置 x，作者构造 它是由线性半空间组成的局部速度集合。即使原始可行域是非凸的，固定 x 后的 V\\alpha(x) 仍是凸集。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/smart-2b13389b/
 title: "SMART"
 nav: false
+wide: true
 description: "SMART 把每个空间 spot（或分割后的单细胞）视为图节点：GraphSAGE 沿空间近邻传播信息，MNN 三元组损失再把“空间上较远、分子特征却相似”的节点拉近。多个组学各自编码后拼接，并通过一个全连接层形成统一嵌入。SMART-MS 在此基础上先按切片做 Harmony 校正，再用跨切片 MNN 三元组连接对应结构。 本文的论文证据来自本工作区 outputpapermd/PMC13031631/paper."
 robots: noindex, nofollow
 sitemap: false

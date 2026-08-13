@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/statistical-fairness-accuracy-frontier-e0d7a440/
 title: "Statistical_Fairness_Accuracy_Frontier"
 nav: false
+wide: true
 description: "假设政策制定者必须给两个群体使用同一个预测模型。两个群体的数据规律不同，因此一个模型不可能同时对两者都达到各自的最优误差。制定者不仅关心总体预测是否准确，也关心误差如何分配给两个群体。 已有的公平—准确性（fairness–accuracy, FA）前沿主要研究一个理想问题：如果完整的人群分布已知，哪些群体误差组合是不可被同时改进的？这篇论文研究更现实的有限样本版本： 从两组有限数据估计目标前沿点会损失多少福利？"
 robots: noindex, nofollow
 sitemap: false

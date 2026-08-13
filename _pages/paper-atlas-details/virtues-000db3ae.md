@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/virtues-000db3ae/
 title: "VirTues"
 nav: false
+wide: true
 description: "空间蛋白组数据的难点不是只有图像分辨率：不同队列使用不同的 marker panel、成像技术和噪声范围。固定通道数的模型难以迁移到新 panel，也难把蛋白的生物学关系带入 token。VirTues 希望学习一个可复用的“虚拟组织”表示，让同一个 backbone 支持 marker 重建、细胞分割与分型、niche/组织表征、检索和临床预测。"
 robots: noindex, nofollow
 sitemap: false

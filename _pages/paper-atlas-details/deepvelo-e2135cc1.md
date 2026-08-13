@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/deepvelo-e2135cc1/
 title: "DeepVelo"
 nav: false
+wide: true
 description: "DeepVelo 解决的是单细胞转录组动态建模问题。普通 scRNA-seq 只能观察到很多细胞在某一时刻的表达快照，不能连续追踪同一个细胞随时间变化。RNA velocity 能估计短时间的瞬时变化，但论文认为它不足以描述更长时间尺度的发育轨迹；线性 ODE 或稀疏向量场方法又可能低估非线性调控关系。"
 robots: noindex, nofollow
 sitemap: false

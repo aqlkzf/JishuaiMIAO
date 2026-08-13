@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/finding-local-nash-equilibria-zero-sum-games-cb318dee/
 title: "Finding_Local_Nash_Equilibria_Zero_Sum_Games"
 nav: false
+wide: true
 description: "论文研究的是光滑、但可以非凸–非凹的双人零和连续博弈。玩家 1 调整 x 以最小化 f(x,y)，玩家 2 调整 y 以最大化同一个函数。最自然的算法是同时梯度下降–上升： 其中 z=(x,y)。 问题是，“动力系统稳定”不等于“博弈意义上正确”。一个微分 Nash 均衡需要 也就是每个玩家沿自己的变量方向都没有单边改进空间。然而，普通梯度动力学可能把一个不满足这些二阶条件的驻点变成吸引子。"
 robots: noindex, nofollow
 sitemap: false

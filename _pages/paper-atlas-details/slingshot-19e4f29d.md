@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/slingshot-19e4f29d/
 title: "Slingshot"
 nav: false
+wide: true
 description: "Slingshot 不直接在单细胞之间连一棵容易受噪声影响的树，而是先在低维空间的细胞簇之间建立最小生成树（MST），把从起始簇到叶簇的路径解释为谱系；随后为每条谱系拟合相互约束的主曲线，用细胞在曲线上的弧长作为伪时间。它把“全局分支拓扑”和“谱系内连续排序”拆成两个问题。"
 robots: noindex, nofollow
 sitemap: false

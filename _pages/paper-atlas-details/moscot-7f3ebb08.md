@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/moscot-7f3ebb08/
 title: "moscot"
 nav: false
+wide: true
 description: "moscot 解决的不是“把所有细胞排成一条确定轨迹”，而是：给定两个无法逐细胞配对的群体，寻找一个概率耦合矩阵，说明每个源细胞的概率质量应如何分配给目标细胞。时间、空间映射、空间切片对齐和时空发育都可写成这个核心问题的不同几何版本，再通过同一套 prepare → solve → push/pull API 求解和解释。"
 robots: noindex, nofollow
 sitemap: false

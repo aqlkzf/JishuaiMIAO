@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/vetra-1e4fb980/
 title: "VeTra"
 nav: false
+wide: true
 description: "VeTra 面向单细胞 RNA-seq 的轨迹推断问题。传统轨迹推断常根据细胞之间的转录组相似性来排序，但相似性本身通常不能决定轨迹方向，因此很多方法需要用户提供起点、终点、marker 基因或实验先验 。当细胞过程存在复杂分支时，如果方法预设线性、分叉或环形等固定拓扑，也可能限制新结构的发现 。 RNA velocity 的优势是给每个细胞一个局部运动方向和速度，能在不依赖先验的情况下提示细胞状态转移方向 。"
 robots: noindex, nofollow
 sitemap: false

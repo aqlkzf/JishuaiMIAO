@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/alzheimers-3dgenome-multiomics-061feb70/
 title: "Alzheimers_3DGenome_Multiomics"
 nav: false
+wide: true
 description: "阿尔茨海默病（AD）的单细胞研究已经发现大量细胞类型特异的转录和染色质可及性变化，但仍缺少一个关键环节：同一个细胞中的三维基因组折叠是否也发生变化，并且这些变化是否与转录失调相联系？ 过去几类工作各自只覆盖问题的一部分： Mathys 等在 Nature 2019、Cell 2023 和 Nature 2024 的单细胞/单核转录组图谱解析了 AD 的细胞类型和基因表达变化，但没有在同一细胞测量 Hi-C。"
 robots: noindex, nofollow
 sitemap: false

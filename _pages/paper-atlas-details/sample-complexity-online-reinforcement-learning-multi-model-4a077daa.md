@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sample-complexity-online-reinforcement-learning-multi-model-4a077daa/
 title: "Sample_Complexity_Online_Reinforcement_Learning_Multi_Model"
 nav: false
+wide: true
 description: "论文研究连续状态、连续动作、不能重置环境的在线强化学习。真实动力学未知： 学习者一边施加控制，一边从连续轨迹中识别系统。动作既影响当前代价，也决定未来状态以及能够获得多少辨识信息，因此普通的独立同分布统计分析或回合式 RL 分析不能直接使用。论文要控制的是相对于真实动力学对应策略的 policy regret，同时还要保证闭环状态不会因为早期选错模型而失控。"
 robots: noindex, nofollow
 sitemap: false

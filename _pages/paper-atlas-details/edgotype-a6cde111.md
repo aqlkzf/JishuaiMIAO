@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/edgotype-a6cde111/
 title: "edgotype"
 nav: false
+wide: true
 description: "Edgotyping 的核心是把“mutation 是否破坏蛋白”拆成“是否引起 folding-quality-control signal、丢失哪些 protein partners、丢失哪些 DNA targets”。它证明 interaction-specific disease mechanisms 很常见，但每个 QW/E/QN 标签都受当时 interaction map 和 assay context 限制，必须作为可测…"
 robots: noindex, nofollow
 sitemap: false

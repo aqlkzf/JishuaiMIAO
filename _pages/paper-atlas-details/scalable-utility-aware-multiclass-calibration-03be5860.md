@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scalable-utility-aware-multiclass-calibration-03be5860/
 title: "Scalable_Utility_Aware_Multiclass_Calibration"
 nav: false
+wide: true
 description: "多分类模型通常输出一个类别概率向量，但“校准得好不好”并没有脱离应用场景的唯一答案。医生可能更在意漏诊某种疾病的代价，推荐系统可能更在意真实类别的排序位置，另一个用户则可能只关心 top-1 或 top-K 是否正确。传统的 top-class calibration 和 class-wise calibration 先把多分类问题二值化，再用固定分箱估计误差；结果会明显受箱数和边界影响。"
 robots: noindex, nofollow
 sitemap: false

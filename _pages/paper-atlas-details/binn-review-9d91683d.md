@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/binn-review-9d91683d/
 title: "BINN_review"
 nav: false
+wide: true
 description: "这是一篇两页的短篇观点型综述，而不是系统综述或新方法论文。它用一张架构图和十条参考文献说明 biologically informed neural networks（BINNs）的基本思想、代表应用与研究缺口。文章没有新数据、实验、方程、代码或性能基准，因此应把“BINN 往往表现更好”等表述理解为作者对已有文献的选择性综合，而不是本文重新验证的结论。 普通全连接神经网络的隐藏节点没有预先指定的生物含义。"
 robots: noindex, nofollow
 sitemap: false

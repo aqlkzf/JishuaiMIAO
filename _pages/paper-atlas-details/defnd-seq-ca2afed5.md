@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/defnd-seq-ca2afed5/
 title: "DEFND-seq"
 nav: false
+wide: true
 description: "肿瘤中的“细胞状态”和“基因组状态”通常由两套实验分别测量：单细胞 RNA 测序告诉我们细胞正在表达什么，单细胞 DNA 测序告诉我们细胞携带哪些拷贝数变异（CNV）或单核苷酸变异（SNV）。如果两种数据来自不同细胞，就只能在群体层面猜测某个基因组亚克隆对应什么转录表型；理想情况是对同一个细胞同时测 RNA 和 DNA。"
 robots: noindex, nofollow
 sitemap: false

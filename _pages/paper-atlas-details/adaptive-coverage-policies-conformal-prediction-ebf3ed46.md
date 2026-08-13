@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/adaptive-coverage-policies-conformal-prediction-ebf3ed46/
 title: "Adaptive_Coverage_Policies_Conformal_Prediction"
 nav: false
+wide: true
 description: "用 soft-rank e-value 构造 conformal set；把校准集逐个 leave-one-out，合成 n 个伪 conformal 任务；训练一个小神经网络最小化“预测集合大小 + \\lambda × 失覆盖率”；再通过 bracket + bisection 选择 \\lambda，使平均集合大小接近用户目标 M。"
 robots: noindex, nofollow
 sitemap: false

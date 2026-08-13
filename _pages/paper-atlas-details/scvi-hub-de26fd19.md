@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scvi-hub-de26fd19/
 title: "scvi-hub"
 nav: false
+wide: true
 description: "scvi-hub 解决的不是“怎样再设计一个 scVI 变体”，而是一个更靠后的基础设施问题：一个实验室训练好的 scVI、scANVI、totalVI 或 DestVI 模型，怎样连同必要的数据表示、元数据和质量证据交给另一个实验室复用。 论文把模型共享拆成两侧。贡献者训练参考模型，检查模型是否复现了原数据的重要统计结构，把大数据压缩成可随模型分发的表示，再上传模型与模型卡；"
 robots: noindex, nofollow
 sitemap: false

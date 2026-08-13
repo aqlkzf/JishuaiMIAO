@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ida-bench-998236ce/
 title: "IDA-Bench"
 nav: false
+wide: true
 description: "IDA-Bench 研究的不是“LLM 能不能一次写出一段正确代码”，而是更接近真实数据分析的问题：当领域专家根据中间结果逐步提供知识、修改要求或纠正方向时，LLM Agent 能否持续记住上下文、正确执行代码、服从新指导，并最终交付合格的分析结果。 这不是生物信息学论文。它属于通用 LLM Agent 与数据分析 benchmark，任务涉及制造、商业、心理、天气、传统 NLP 等多种表格预测场景。"
 robots: noindex, nofollow
 sitemap: false

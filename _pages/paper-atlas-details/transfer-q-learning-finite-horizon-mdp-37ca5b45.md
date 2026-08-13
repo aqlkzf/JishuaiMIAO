@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/transfer-q-learning-finite-horizon-mdp-37ca5b45/
 title: "Transfer_Q_Learning_Finite_Horizon_MDP"
 nav: false
+wide: true
 description: "目标任务只有少量轨迹，但我们拥有若干相关源 MDP 的离线轨迹。论文希望利用源数据更准确地估计目标任务各阶段的最优 Q^ 函数，并覆盖两种情形：目标任务也是离线数据，以及目标任务需要在线探索。 困难在于，强化学习的回归标签不是直接观测值。阶段 t 的 Bellman 标签依赖下一阶段的 Q^。如果直接把源任务自己的伪标签与目标数据混合，源任务使用的是 Q{t+1}^{(k)}，目标任务使用的是 Q{t+1}^{(0)}；"
 robots: noindex, nofollow
 sitemap: false

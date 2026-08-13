@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lynx-72d6ee1d/
 title: "LYNX"
 nav: false
+wide: true
 description: "空间组学常有两类困难：一是组织变化往往是连续梯度，而非几个边界清楚的簇；二是两种空间模态可能分辨率、特征数和噪声都不同。比如细胞分辨率 Xenium 与较粗的 DESI 代谢像素并不能逐点一一对应。LYNX 希望从配准后的两种模态中学到共同的空间流形，再在此基础上描述梯度、分区、分子动态和局部细胞组成/相互作用摘要。 它并不直接证明“谁通过哪一个配体-受体对作用于谁”。论文和代码中的 \\omega 是空间邻居残差的学习权重；"
 robots: noindex, nofollow
 sitemap: false

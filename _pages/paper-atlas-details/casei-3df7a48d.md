@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/casei-3df7a48d/
 title: "Casei"
 nav: false
+wide: true
 description: "空间组学不仅记录“某个细胞是什么状态”，还记录“哪些细胞在组织中相邻”。疾病、衰老或外界暴露可能主要改变相邻细胞之间的组织方式，而不明显改变全局细胞状态分布。若只训练细胞级分类器，模型回答的是“哪个细胞像疾病样本”；Casei 则把问题改写成：空间邻接图中的哪一条边最能区分实验条件？ 这个改写很关键。例如论文的半合成实验只重新排列局部细胞位置或细胞类型邻接关系，同时保持整个组织的表达谱分布不变。"
 robots: noindex, nofollow
 sitemap: false

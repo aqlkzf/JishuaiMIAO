@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/trsmi-2aceaf7f/
 title: "TRSMI"
 nav: false
+wide: true
 description: "TRSMI 的目标是把同一批空间 spot 上的 RNA、ADT、ATAC 等模态压缩为一个联合表示 Z，同时保留跨模态一致性和组织空间边界。它的主线是：每个模态先构图并做浅层近恒等编码；再用软对应关系交换跨模态信息；随后分别形成局部表示与多尺度 APPNP 全局表示，以训练时间相关的门控混合两者；最终通过模态重建、原型聚类和图稳定正则联合训练。 本工作区是 paper-only。"
 robots: noindex, nofollow
 sitemap: false

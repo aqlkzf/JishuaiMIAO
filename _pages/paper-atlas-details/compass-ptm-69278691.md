@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/compass-ptm-69278691/
 title: "COMPASS-PTM"
 nav: false
+wide: true
 description: "COMPASS-PTM 把 PTM 预测拆成一个“先粗后细”的两阶段问题：第一阶段 MSPN 先在蛋白序列上预测哪些残基可能发生哪些 PTM，第二阶段 ESPS 再把这些候选 PTM 位点和可能的调控酶连接起来，形成 enzyme-resolved 的调控假设。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stihc-f3f9bf4f/
 title: "stIHC"
 nav: false
+wide: true
 description: "stIHC 的核心是：先把每个基因在组织上的表达模式变成平滑函数的系数向量，再用能处理 imbalanced clusters 的迭代层次聚类去找空间共表达模块。论文的模式证据和核心 R 源码支持这个主线；完整 benchmark、GO/anatomy 解释和真实数据 preprocessing 则依赖仓库外证据或未提供脚本。"
 robots: noindex, nofollow
 sitemap: false

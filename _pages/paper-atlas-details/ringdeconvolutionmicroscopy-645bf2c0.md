@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ringdeconvolutionmicroscopy-645bf2c0/
 title: "RingDeconvolutionMicroscopy"
 nav: false
+wide: true
 description: "普通反卷积默认整幅视野使用同一个点扩散函数（PSF）。但真实显微镜的像差通常随视野位置变化：中心处测得的 PSF 用到边缘时会失配，造成低对比度、噪声放大或错误结构。若在每个位置都标定 PSF，标定量和计算量又会迅速失控。 RDM 的关键观察是：多数显微镜和相机围绕光轴具有旋转对称性。位于相同半径、不同角度的点源，其 PSF 形状相同，只是绕中心旋转。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/blackwell-approachability-gradient-equilibrium-equivalent-64f6c1df/
 title: "Blackwell_Approachability_Gradient_Equilibrium_Equivalent"
 nav: false
+wide: true
 description: "这篇论文证明：梯度均衡（gradient equilibrium, GEQ）与 Blackwell 可达性（Blackwell approachability, BA）虽然优化目标写法不同，但作为在线学习的“算法黑盒”具有同等能力。任意一个 BA 问题都能调用 GEQ oracle 来解；任意一个 GEQ 问题也能调用 BA oracle 来解；两边都只需每轮一次 oracle 查询，并保留原 oracle 的渐近误差阶。"
 robots: noindex, nofollow
 sitemap: false

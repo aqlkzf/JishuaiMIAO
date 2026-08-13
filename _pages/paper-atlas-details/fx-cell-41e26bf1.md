@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/fx-cell-41e26bf1/
 title: "FX-Cell"
 nav: false
+wide: true
 description: "FX-Cell 的核心不是“把传统原生质体法的温度调高”，而是先用 Farmer’s solution 固定植物组织，让细胞在更强的机械扰动和更高效的细胞壁消化条件下仍保持形态；再通过 GMP-Sepharose/agarose 去除消化酶中的真菌 RNase，并用 tRNA 与 tri-GMP 继续保护 RNA，最终得到可用于 scRNA-seq 的固定单细胞悬液。"
 robots: noindex, nofollow
 sitemap: false

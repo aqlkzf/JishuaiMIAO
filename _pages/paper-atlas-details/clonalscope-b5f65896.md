@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/clonalscope-b5f65896/
 title: "Clonalscope"
 nav: false
+wide: true
 description: "Clonalscope 的目标不是把表达相似的细胞分群，而是从 scRNA-seq、scATAC-seq 或空间转录组这类“没有直接测 DNA”的数据中，尽量恢复由 DNA 拷贝数改变（CNA）定义的癌症亚克隆。 它先把高维、噪声很大的基因计数压缩为“细胞/spot × 基因组区段”的相对覆盖度矩阵，再用嵌套 Chinese Restaurant Process（CRP）同时决定：应该有多少个亚克隆、每个细胞属于哪个亚克隆，以及新亚克隆…"
 robots: noindex, nofollow
 sitemap: false

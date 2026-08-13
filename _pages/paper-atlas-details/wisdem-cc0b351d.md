@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/wisdem-cc0b351d/
 title: "WISDEM"
 nav: false
+wide: true
 description: "同时记录 EEG 与 fMRI 可以把毫秒级神经电活动和全脑血氧动力学联系起来，但传统方案需要把头部电极用电缆接到 MRI 外的 EEG 设备。电缆会拾取射频脉冲和梯度切换伪影，接触电阻变化还会造成基线漂移。已有无线方案减少了电缆，却通常仍需要电池、微控制器、射频发射器和梯度传感器，而且只能在梯度稳定的短窗口记录 EEG。"
 robots: noindex, nofollow
 sitemap: false

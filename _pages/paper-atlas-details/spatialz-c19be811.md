@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialz-c19be811/
 title: "SpatialZ"
 nav: false
+wide: true
 description: "SpatialZ 不是真的“测量”了切片之间的组织，而是把相邻真实切片看成两个端点，分别对细胞位置分布、细胞类型组成、局部生态位和基因表达做受约束的插值，生成中间虚拟切片，再把真实与虚拟切片堆叠成高密度的“伪三维”细胞图谱。"
 robots: noindex, nofollow
 sitemap: false

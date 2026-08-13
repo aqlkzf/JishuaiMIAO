@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spapros-a60d5dd3/
 title: "Spapros"
 nav: false
+wide: true
 description: "Spapros 把“保留变化”当作主候选来源，把“细胞类型必须分得开”当作约束，再把探针可设计性和实验先验放进选择过程，因此比单纯 marker 排名或单纯方差排名更适合小型靶向空间转录组面板。"
 robots: noindex, nofollow
 sitemap: false

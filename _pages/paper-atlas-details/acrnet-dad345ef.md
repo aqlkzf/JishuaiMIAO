@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/acrnet-dad345ef/
 title: "AcrNET"
 nav: false
+wide: true
 description: "AcrNET 用深度学习预测一个蛋白序列是否是 anti-CRISPR protein。它不是只看原始序列，而是把序列 one-hot、RaptorX 结构/可及性特征、POSSUM/PSSM 进化特征和 ESM-1b Transformer 特征融合起来，输出 Acr / Non-Acr 置信度。论文还声称可以进一步预测 Acr 类型，但当前公开代码只验证到二分类模型。"
 robots: noindex, nofollow
 sitemap: false

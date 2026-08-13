@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hyperst-7bee7ffe/
 title: "HyperST"
 nav: false
+wide: true
 description: "HyperST 用真实 gene expression 在训练期把 spot/niche 图像表示拉入带层级约束的双曲空间，再从两级图像表示预测 200 个基因；双曲几何是结构正则，不是生成模型，也不是生物层级的直接证据。"
 robots: noindex, nofollow
 sitemap: false

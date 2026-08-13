@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/optimal-deflation-varimax-4a469380/
 title: "optimal_deflation_varimax"
 nav: false
+wide: true
 description: "考虑因子模型 其中 X\\in\\mathbb R^{p\\times n} 是 n 个样本的 p 维观测，\\Lambda\\in\\mathbb R^{p\\times r} 是载荷矩阵，Z\\in\\mathbb R^{r\\times n} 是潜在因子，E 是噪声。 PCA 能较好地估计由 \\Lambda 张成的 r 维子空间，却不能唯一决定子空间中的坐标轴：对任意正交矩阵 Q，\\Lambda Q 张成同一子空间、解释同样的方差。"
 robots: noindex, nofollow
 sitemap: false

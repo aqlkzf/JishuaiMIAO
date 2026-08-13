@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/foldseek-8b2f7cb8/
 title: "Foldseek"
 nav: false
+wide: true
 description: "Foldseek 的核心技巧是把每个残基与空间近邻的三维关系压缩成 20 种 3Di 字母之一。一个蛋白结构由此变成“氨基酸序列 + 3Di 序列”，可以先用 MMseqs2 式 k-mer 预过滤排除绝大多数不相关结构，再只对少量候选做局部 Smith–Waterman 比对。它用少量结构信息损失，换来相对传统结构比对器四到五个数量级的速度提升。"
 robots: noindex, nofollow
 sitemap: false

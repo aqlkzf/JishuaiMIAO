@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/deepmaps-655cdcb8/
 title: "DeepMAPS"
 nav: false
+wide: true
 description: "论文：Single-cell biological network inference using a heterogeneous graph transformer（Nature Communications, 2023；DOI: 10.1038/s41467-023-36559-0）。DeepMAPS 把“整合细胞”和“推断细胞类型特异网络”放进同一条路径：先把特征和细胞组成二部异质图，再以 HGT 同时学习基因（或蛋白）和细胞表示；"
 robots: noindex, nofollow
 sitemap: false

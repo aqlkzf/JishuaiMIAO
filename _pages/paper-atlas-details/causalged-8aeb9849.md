@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/causalged-8aeb9849/
 title: "CausalGeD"
 nav: false
+wide: true
 description: "CausalGeD 的任务是：已知 scRNA-seq reference 中较完整的基因表达，预测空间转录组 spots 上未测或被遮蔽的基因。它先用双输入头 VAE 把“每个基因在所有 ST spots 上的表达向量”和“该基因在所有 single cells 上的表达向量”映射到同一潜空间，再给 ST latent 加噪；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/safety-performance-multi-objective-learning-market-entry-f2aa925e/
 title: "Safety_Performance_Multi_Objective_Learning_Market_Entry"
 nav: false
+wide: true
 description: "这不是生信论文，也不是用真实公司数据做的产业实证。它是一篇结合机器学习理论与市场竞争问题的模型论文：当大公司受到更严格的安全审查、而小公司受到的审查较弱时，大公司拥有的数据优势是否仍然构成不可逾越的进入壁垒？ 论文给出的答案是：未必。严格的安全约束会迫使在位公司牺牲一部分性能；进入者若可以更偏向性能目标，就可能用远少于在位公司的数据达到更高性能。不过，这一优势正来自更宽松的安全标准，所以“更容易进入市场”不等于“社会福利一定更高”。"
 robots: noindex, nofollow
 sitemap: false

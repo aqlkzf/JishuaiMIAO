@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/conformal-prediction-levy-prokhorov-shifts-71ef4a69/
 title: "Conformal_Prediction_Levy_Prokhorov_Shifts"
 nav: false
+wide: true
 description: "标准 split conformal prediction 依赖校准样本与测试样本的可交换性。一旦测试分布变了，用训练/校准分布得到的分位数就可能太小，预测集合因而欠覆盖。本文研究的是一个更具体的问题：如果测试分布位于训练分布周围的 Lévy–Prokhorov（LP）模糊集中，怎样构造仍具有有限样本边际覆盖保证的预测集合？ 这是一篇统计机器学习方法论文，不是生信专用方法。"
 robots: noindex, nofollow
 sitemap: false

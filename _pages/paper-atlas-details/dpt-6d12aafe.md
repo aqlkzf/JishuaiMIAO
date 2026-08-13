@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dpt-6d12aafe/
 title: "DPT"
 nav: false
+wide: true
 description: "Diffusion pseudotime (DPT) 解决的是单细胞快照数据中如何重建发育顺序和分支的问题。输入是细胞 x 基因表达矩阵，输出是以某个 root cell 为起点的 pseudotime、branch labels、未决/decision cells，以及由基因动态支持的生物学解释。"
 robots: noindex, nofollow
 sitemap: false

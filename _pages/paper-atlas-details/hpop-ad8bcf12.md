@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hpop-ad8bcf12/
 title: "hPOP"
 nav: false
+wide: true
 description: "hPOP 不是先提出一个新的预测模型，再用数据证明模型有效；它先在 322 名参与者、378 次采样中同时测量血液、尿液和粪便的多种分子层，然后用一组统计分析回答三个逐层深入的问题：哪些分子差异与年龄、性别、BMI 或族群相关；同一祖源的人生活在不同地区时，哪些差异会随环境改变；微生物、代谢物、宿主基因表达和生物年龄之间是否存在值得后续实验验证的中介链。"
 robots: noindex, nofollow
 sitemap: false

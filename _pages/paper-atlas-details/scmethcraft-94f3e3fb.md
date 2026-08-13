@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmethcraft-94f3e3fb/
 title: "scMethCraft"
 nav: false
+wide: true
 description: "scMethCraft 面向单细胞 DNA 甲基化矩阵中大量“明确缺失值（NA）”的问题：它先用每个基因组区域的 DNA 序列、k-mer 和位置预测该区域在所有细胞中的甲基化水平，再学习细胞—细胞相似度对这些预测做加权修正。由此同一模型可以输出增强后的甲基化矩阵、细胞相似度和低维嵌入，并支持批次整合、标签转移和 DMR 候选筛选。"
 robots: noindex, nofollow
 sitemap: false

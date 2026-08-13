@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spaseg-c0e96ffe/
 title: "SpaSEG"
 nav: false
+wide: true
 description: "SpaSEG 面向空间转录组数据的多任务分析。空间转录组不仅有基因表达矩阵，还有每个 spot 或细胞在组织切片上的空间坐标。论文关心的核心问题包括：如何识别连续、边界清楚、具有生物意义的空间结构域；如何把相邻切片整合成一致的三维组织结构；如何在空间结构域内发现空间变异基因；以及如何在组织空间背景下分析配体-受体相互作用和细胞共定位。 已有方法的不足主要有三类。第一，普通聚类方法如 Leiden 主要看表达相似性，空间连续性不足；"
 robots: noindex, nofollow
 sitemap: false

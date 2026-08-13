@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/janus-pro-cxr-0cef8f59/
 title: "Janus-Pro-CXR"
 nav: false
+wide: true
 description: "Janus-Pro-CXR 的输入是一张胸部 X 光片（临床试验阶段还把关键病史写入提示词），输出是包含 FINDINGS 与 IMPRESSION 的放射学报告。它不是只判断“有无肺炎”的分类器，而要同时完成病灶描述、解剖定位、诊断归纳和专业文本组织。 论文的重点也不只是提出一个模型：它把模型开发、回顾性评价和前瞻性人机协作串成一条证据链。Figure 1 展示了三层问题：先在 MIMIC-CXR 与中国 27 家医院数据上微调；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/monod-56973e8d/
 title: "Monod"
 nav: false
+wide: true
 description: "Monod 的核心是把 nascent/mature 计数的整个联合分布视为生物转录过程与技术捕获过程共同生成的观测，通过显式模型比较将“均值不同”扩展为“哪种随机转录机制可能不同”；结果应被视为经拟合优度、边界和不确定性审查后的机制假设。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/methyltree-c42605f8/
 title: "MethylTree"
 nav: false
+wide: true
 description: "MethylTree 用单细胞甲基化数据中自然积累的随机表观突变（epimutation）推断细胞之间的谱系关系。它面向无法进行遗传条形码标记的场景，尤其是人体样本、原位组织以及需要同时读取转录或染色质状态的实验。 传统路线各有明显限制。Mitchell 等（Nature, 2022）和 Fabre 等（Nature, 2022）的体细胞核基因组突变谱系研究通常依赖单细胞克隆扩增与深度全基因组测序，成本高、通量低，而且难以同时保留原始细…"
 robots: noindex, nofollow
 sitemap: false

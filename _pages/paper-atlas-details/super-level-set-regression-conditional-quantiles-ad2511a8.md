@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/super-level-set-regression-conditional-quantiles-ad2511a8/
 title: "Super_Level_Set_Regression_Conditional_Quantiles"
 nav: false
+wide: true
 description: "给定特征 X 和多维响应 Y，SLS 不先拟合完整的条件密度 p(y\\mid X)，而是直接学习一条随 X 改变的几何边界，使边界内大约包含目标比例 \\tau 的样本，同时尽可能缩小区域体积。 这是一篇统计机器学习方法论文，核心属于多元条件分位数回归、最小体积预测集合和共形预测，并非生物信息学文章。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/rosettafold2-ppi-77d32226/
 title: "RoseTTAFold2-PPI"
 nav: false
+wide: true
 description: "这项工作不是把任意两个蛋白交给 AlphaFold 再看结构是否“像一个复合物”，而是先从更深的跨物种序列数据中寻找共同进化信号，再用专门训练的快速网络 RF2-PPI 做大规模筛选，最后只对候选对运行 AlphaFold2。这样把约 1.91 亿个组合逐层缩小到可计算、可解释的高置信候选。"
 robots: noindex, nofollow
 sitemap: false

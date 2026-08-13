@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/humanorganoidsdrugdiscovery-review-48de1c25/
 title: "HumanOrganoidsDrugDiscovery_Review"
 nav: false
+wide: true
 description: "类器官的价值不是“比二维更复杂”，而是能够在一个明确的药物开发问题中，保留决定疗效、毒性或患者差异的关键人体生物学；只有当这种优势通过标准化和临床相关验证被量化后，它才从漂亮的三维模型变成可信的药物决策平台。"
 robots: noindex, nofollow
 sitemap: false

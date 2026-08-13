@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cab-olst-edea5647/
 title: "CAB-OLST"
 nav: false
+wide: true
 description: "全脑成像既要覆盖厘米尺度，又要看清细胞、细轴突和树突棘。传统高斯光片扩大视野时会变厚，点扫描层析速度和信号积分受限，而物镜工作距离又限制成像深度。CAB-OLST 的核心目标是同时提高视野、分辨率、信噪比和通量。 用扫描 Airy 光束形成长景深薄光片，景深比扫描高斯光束提高十倍以上。 将 Airy 相位旋转 45°，使探测平面上的光片变直，从而可用相机滚动快门形成 13 μm 虚拟狭缝，抑制旁瓣和离焦背景。"
 robots: noindex, nofollow
 sitemap: false

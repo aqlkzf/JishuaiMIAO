@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/concord-d9499a24/
 title: "CONCORD"
 nav: false
+wide: true
 description: "CONCORD 旨在在多数据集单细胞场景下同时解决批次效应与细胞状态分辨率问题。方法输入为标准化后的单细胞表达矩阵（AnnData），输出是每个细胞的低维表示（adata.obsm['Xconcord']）以及可选的重建/分类头输出。核心思想是把“对比学习”中最容易被忽视的采样设计放在主位：通过单数据域内minibatch与难负例重加权，让网络在保留局部结构的同时消除批次伪差。"
 robots: noindex, nofollow
 sitemap: false

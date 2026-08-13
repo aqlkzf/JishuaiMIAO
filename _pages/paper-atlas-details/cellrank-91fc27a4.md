@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellrank-91fc27a4/
 title: "CellRank"
 nav: false
+wide: true
 description: "CellRank 不把二维 UMAP 上的速度流线当作发育路线，而是在高维表达邻域中建立一个有方向的马尔可夫链：RNA velocity 决定“更可能往哪个邻居走”，表达相似性限制“只能沿细胞流形走”；随后用 GPCCA 把数千个细胞粗粒化成初始、中间和终末宏状态，再计算每个细胞最终被不同终末状态吸收的概率。 输入是单细胞表达矩阵、KNN 图和 RNA velocity（也可换成其他方向信息）；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stance-088bcd57/
 title: "STANCE"
 nav: false
+wide: true
 description: "空间转录组的一个 spot 往往混有多种细胞。某个基因在组织上呈现空间梯度，可能只是因为不同区域的细胞类型比例不同，也可能因为同一种细胞在不同位置真的改变了表达。传统 SVG 检验通常只能回答“这个基因整体上是否具有空间结构”，不能稳定地区分这两种来源。 STANCE 的目标是：给定基因表达、spot 坐标和每个 spot 的细胞类型比例，同时检验整体空间变异与每一种细胞类型内部的空间变异。"
 robots: noindex, nofollow
 sitemap: false

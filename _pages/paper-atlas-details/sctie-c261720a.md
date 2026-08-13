@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sctie-c261720a/
 title: "scTIE"
 nav: false
+wide: true
 description: "scTIE 面向同一细胞同时测得 RNA 表达和染色质可及性的时间序列 multiome 数据。它先用两个模态专属的自编码器把 RNA 与 ATAC 投影到共同低维空间，再反复用相邻时间点之间的最优传输（optimal transport, OT）更新“哪些早期细胞可能流向哪些晚期细胞”；"
 robots: noindex, nofollow
 sitemap: false

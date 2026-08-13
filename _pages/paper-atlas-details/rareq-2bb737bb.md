@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/rareq-2bb737bb/
 title: "RareQ"
 nav: false
+wide: true
 description: "稀有细胞群的困难不只是“细胞少”。标准聚类往往优先解释占比大的结构：分辨率太低时，小群被并入大群；分辨率太高时，又会产生大量没有生物学意义的小碎片。RareQ 的出发点是：一个可信的小群即使规模小，其成员在 k 近邻图中也应形成相对紧密、与外部连接较少的局部拓扑。 因此，RareQ 先在细胞近邻图上衡量局部紧密程度，再用高紧密度邻域引导标签传播，最后通过一组尺寸、连通性和距离规则合并不稳定的小群。"
 robots: noindex, nofollow
 sitemap: false

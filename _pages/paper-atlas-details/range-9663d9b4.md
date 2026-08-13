@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/range-9663d9b4/
 title: "RANGE"
 nav: false
+wide: true
 description: "RANGE（Relaying Attention Nodes for Global Encoding）不是另造一种分子图网络，而是在已有 MPNN 的每个交互层后插入“聚合—广播”回路：多个虚拟 master node 先用注意力收集全体原子的消息，再把全局摘要送回每个原子。这样任意两个原子只需经过虚拟节点就能通信，同时连接数随原子数 N 线性增长，而不是全局两两注意力的 O(N^2)。"
 robots: noindex, nofollow
 sitemap: false

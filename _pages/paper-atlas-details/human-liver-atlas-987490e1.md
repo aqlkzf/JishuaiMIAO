@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/human-liver-atlas-987490e1/
 title: "Human-liver-atlas"
 nav: false
+wide: true
 description: "这篇论文的关键贡献不只是“多测了几张肝脏切片”，而是先解决健康参照是否真的健康，再建立一条可计算的门管区—中央静脉空间坐标轴。作者从活体健康肝供者获得组织，用 Visium 测量每个空间点的转录本，再依据一组门管区和中央区标志基因把每个点放到 8 个肝小叶区带中；随后用 MERFISH、Visium HD、PhenoCycler 和单核 RNA 测序验证或扩展这个坐标系，并把它用于跨物种比较、非实质细胞分区和早期脂肪变性分析。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatopic-a950d2a3/
 title: "SpaTopic"
 nav: false
+wide: true
 description: "SpaTopic 不读取原始表达矩阵，而把每个细胞的类型当作“词”、局部空间区域当作“文档”、组织微环境当作“主题”。它通过锚点近邻和折叠 Gibbs 采样，同时推断每个细胞属于哪个空间区域、哪个主题，从而在多张图像中共享一套可解释的细胞类型组成。"
 robots: noindex, nofollow
 sitemap: false

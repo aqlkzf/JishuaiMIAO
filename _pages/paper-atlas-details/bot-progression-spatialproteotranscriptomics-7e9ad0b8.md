@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/bot-progression-spatialproteotranscriptomics-7e9ad0b8/
 title: "BOT_Progression_SpatialProteoTranscriptomics"
 nav: false
+wide: true
 description: "这篇论文用 Deep Visual Proteomics (DVP) 和 GeoMX spatial transcriptomics 研究卵巢 serous borderline tumor (SBT) 如何经过 micropapillary SBT (SBT-MP) 走向 invasive low-grade serous carcinoma (LGSC) 及其转移。"
 robots: noindex, nofollow
 sitemap: false

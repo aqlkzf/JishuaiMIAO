@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/csde-bfe0e1ea/
 title: "CSDE"
 nav: false
+wide: true
 description: "CSDE 不试图重新画出“正确”的细胞边界，而是问一个更保守的问题：自动分割、定量和注释造成的错误，会把下游差异表达（DE）推偏多少？它用少量专家复核细胞估计这种偏差，再把大规模自动数据提供的低方差与人工数据提供的可信性结合起来。 论文是 2026 年 bioRxiv 预印本，尚未经同行评审。以下解释以本地论文正文、同文件中的补充材料、图注和 CSDEcode 源码为证据边界。"
 robots: noindex, nofollow
 sitemap: false

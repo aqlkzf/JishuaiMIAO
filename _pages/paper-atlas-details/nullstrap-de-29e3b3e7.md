@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nullstrap-de-29e3b3e7/
 title: "Nullstrap-DE"
 nav: false
+wide: true
 description: "RNA-seq 差异表达分析的目标，是在成千上万个基因里找出不同生物条件之间表达量显著不同的基因。核心难点是同时兼顾两件事： FDR 控制：不能把太多非差异基因误判为差异基因。 统计功效：真正有差异的基因不能被漏掉太多。 论文指出，DESeq2 和 edgeR 这类参数方法通常功效较高，也能处理较复杂的实验设计；"
 robots: noindex, nofollow
 sitemap: false

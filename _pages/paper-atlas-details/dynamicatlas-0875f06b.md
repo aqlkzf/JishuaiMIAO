@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dynamicatlas-0875f06b/
 title: "DynamicAtlas"
 nav: false
+wide: true
 description: "传统发育图谱主要由不同时间点的固定样本组成，能描述细胞命运和基因表达，却难以直接回答组织“怎样运动并形成形状”。DynamicAtlas 把活体电影与固定样本统一到同一空间坐标和同一“形态时间”上，从而让基因表达、组织流动和器官形变可以跨胚胎比较。 关键点是：实验室时钟不是发育时钟。两个胚胎即使采集时间相同，也可能处于不同形态阶段；因此方法用可观察的形态变化来定义时间。"
 robots: noindex, nofollow
 sitemap: false

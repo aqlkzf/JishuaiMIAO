@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scisox-b39e607e/
 title: "ScIsoX"
 nav: false
+wide: true
 description: "ScIsoX 是一个用于单细胞 isoform/transcript 水平分析的描述性框架。它输入 gene count、transcript/isoform count、转录本注释和可选的细胞类型标签，输出每个基因的 7 个 isoform 复杂度指标、阈值分类、可视化和共表达结果。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/vista-a76f7755/
 title: "VISTA"
 nav: false
+wide: true
 description: "成像型或高分辨率空间转录组保留细胞位置，却常只测数百到数千个基因；scRNA-seq 没有原位坐标，却能覆盖更完整的转录组。VISTA 输入同一或相近组织的全转录组 scRNA-seq 参考 X^{N\\times G} 和空间计数 X'^{N'\\times G'}，其中 G'\\subset G，目标是在每个空间细胞上预测 G-G'，同时给出基因级和细胞级不确定性排序。"
 robots: noindex, nofollow
 sitemap: false

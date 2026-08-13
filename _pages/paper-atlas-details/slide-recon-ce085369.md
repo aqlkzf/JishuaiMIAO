@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/slide-recon-ce085369/
 title: "Slide_recon"
 nav: false
+wide: true
 description: "这篇论文把“给珠子拍照定位”改成“让珠子之间交换可测量的分子信号，再从交换模式反推出位置”：邻近珠子接收到相似的扩散条形码，因此它们在高维交互矩阵中的向量也相似；UMAP 再把这种相似性压缩到二维，得到每个条形码的相对空间坐标。 论文发表于 Nature Biotechnology（在线发表于 2025 年，卷期年份 2026），DOI 为 10.1038/s41587-025-02612-0。"
 robots: noindex, nofollow
 sitemap: false

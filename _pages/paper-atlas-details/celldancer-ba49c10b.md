@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/celldancer-ba49c10b/
 title: "cellDancer"
 nav: false
+wide: true
 description: "cellDancer 是一个“relay velocity model”：对每个基因单独训练一个 DNN，输入某个细胞的未剪接/已剪接表达量，输出该细胞的 \\alpha,\\beta,\\gamma；再用 RNA 动力学方程预测下一时刻的表达状态；最后让这个预测位移尽可能指向局部邻居中最像“未来状态”的细胞。 可以理解为："
 robots: noindex, nofollow
 sitemap: false

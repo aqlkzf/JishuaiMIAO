@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/correlated-cryo-em-msi-chemical-mapping-76e1c3d3/
 title: "Correlated_cryo_EM_MSI_chemical_mapping"
 nav: false
+wide: true
 description: "冷冻电镜（cryo-EM）能看清细胞膜、储存颗粒等超微结构，却通常不能直接判断某个密度由什么化学物质组成。成像质谱能检测元素或分子碎片的空间分布，但结构分辨率和形态信息较弱。本工作把两种模态串联在同一块玻璃化样品、同一区域上，使“结构在哪里”和“化学物质在哪里”能够相互解释。 作者建立了 cryo-EM-FIB-SIMS 流程：先记录不会被保留的高分辨结构信息，再用镓离子束逐像素溅射样品，并在每个像素采集飞行时间质谱。"
 robots: noindex, nofollow
 sitemap: false

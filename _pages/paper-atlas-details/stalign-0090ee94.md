@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stalign-0090ee94/
 title: "STalign"
 nav: false
+wide: true
 description: "STalign 把稀疏空间坐标转换成可注册的组织密度图，直接优化全局 affine 与平滑可逆的 LDDMM 变换，并用背景/artifact mixture 和可选 landmark 处理部分重叠；它的强项是跨样本、跨平台和 atlas 的结构配准，边界是依赖共享形态、非凸初始化、栅格尺度与非一一细胞解释。"
 robots: noindex, nofollow
 sitemap: false

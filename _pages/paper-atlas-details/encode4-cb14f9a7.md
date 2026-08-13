@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/encode4-cb14f9a7/
 title: "ENCODE4"
 nav: false
+wide: true
 description: "ENCODE 4 试图回答的不是一个狭窄的预测问题，而是一个资源构建问题：如何在大量人和小鼠生物学背景中，系统地标注调控元件、基因与转录本，以及它们之间的物理和功能联系？ 单一实验无法同时回答这些问题。例如： DNase-seq/ATAC-seq 能提示染色质开放位置，但不能单独证明该序列会调控某个基因； ChIP-seq 和组蛋白修饰能提供蛋白占据与染色质状态，但相同标记组合未必产生相同的表达效应；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multimodal-lineage-tracing-review-8c032431/
 title: "multimodal_lineage_tracing_review"
 nav: false
+wide: true
 description: "多模态谱系追踪的价值在于给终点组学加入可遗传的历史约束；可靠分析必须先匹配数据类型与问题，再把条形码缺失、树不确定性、祖先不可观测和模型假设一路传播到命运与基因程序结论，而不是把一棵推断树当作因果真相。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/welldr-seq-66af94c3/
 title: "wellDR-seq"
 nav: false
+wide: true
 description: "wellDR-seq 是一种基于 5,184 孔纳米芯片的单细胞 DNA+RNA 共测技术：它先在每个孔中裂解一个细胞，用 Tn5 给基因组 DNA 加标签，同时用 poly-dT 和模板转换反应把 RNA 变成带生物素的 cDNA；随后把所有孔合并，以生物素捕获分开 cDNA 和 DNA。因为 DNA 与 RNA 来自同一孔、共享可对应的二维细胞条形码，研究者可以在同一个细胞中直接连接拷贝数基因型和转录表型。"
 robots: noindex, nofollow
 sitemap: false

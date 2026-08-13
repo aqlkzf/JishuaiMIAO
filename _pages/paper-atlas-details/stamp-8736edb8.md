@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stamp-8736edb8/
 title: "STAMP"
 nav: false
+wide: true
 description: "STAMP 把每个细胞或 spot 表示成若干“主题”的混合比例，同时为每个主题学习一个稀疏的基因模块；空间邻接关系用于推断主题比例，Gamma–Poisson 生成模型用于解释计数，因而低维表示既有空间结构，也能直接通过贡献基因理解。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pamt-e7c6f999/
 title: "PAMT"
 nav: false
+wide: true
 description: "PAMT 把 bulk 表达先重组为有语义的通路 token，再让这些通路作为 query 从 WSI patch 中检索形态证据，同时用生存目标学习患者风险；它的解释性来自“通路—patch”这一可读中间关系，但解释仍是模型关联，而且公开代码的默认训练设置与论文完整方法存在若干可影响复现的差异。"
 robots: noindex, nofollow
 sitemap: false

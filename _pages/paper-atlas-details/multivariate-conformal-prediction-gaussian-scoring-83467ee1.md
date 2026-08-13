@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multivariate-conformal-prediction-gaussian-scoring-83467ee1/
 title: "Multivariate_Conformal_Prediction_Gaussian_Scoring"
 nav: false
+wide: true
 description: "普通 split conformal prediction 能保证总体平均意义上的边际覆盖率，但它使用一个全局校准阈值：对于噪声较小的输入，集合可能太大；对于噪声较大的输入，集合可能太小。多输出回归还要面对不同输出之间的相关性。本文不属于生物信息学，而是一篇统计机器学习与不确定性量化方法论文。"
 robots: noindex, nofollow
 sitemap: false

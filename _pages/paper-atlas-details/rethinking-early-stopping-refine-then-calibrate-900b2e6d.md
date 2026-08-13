@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/rethinking-early-stopping-refine-then-calibrate-900b2e6d/
 title: "Rethinking_Early_Stopping_Refine_Then_Calibrate"
 nav: false
+wide: true
 description: "这篇论文讨论的是概率分类器的早停与模型选择，属于机器学习和统计学习，不是生物信息学论文。它指出：验证集交叉熵同时混合了“模型能否区分类别”和“模型置信度是否准确”两件事，而这两件事往往不会在同一个训练轮次达到最好。既然置信度可以在训练后通过温度缩放修正，就不应让暂时性的校准误差过早终止训练。 论文提出的原则是： > 训练时选择区分能力最好的模型，训练后再校准概率。"
 robots: noindex, nofollow
 sitemap: false

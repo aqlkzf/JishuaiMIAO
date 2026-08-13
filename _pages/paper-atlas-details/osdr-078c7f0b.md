@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/osdr-078c7f0b/
 title: "OSDR"
 nav: false
+wide: true
 description: "OSDR（one-shot tissue dynamics reconstruction）利用同一张组织切片中的空间异质性，把许多细胞周围不同的邻域组成当作不同“局部初始条件”；再用 Ki67 判断哪些细胞处于分裂窗口，学习“邻域里各类细胞数量 → 某类细胞分裂概率”的统计模型。将分裂概率减去假设的移除率后，可得到细胞密度的常微分方程、相图与固定点，也可逐细胞随机模拟组织随时间的变化。"
 robots: noindex, nofollow
 sitemap: false

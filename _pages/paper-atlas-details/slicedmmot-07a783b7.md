@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/slicedmmot-07a783b7/
 title: "SlicedMMOT"
 nav: false
+wide: true
 description: "给定 P 个概率分布 \\mu1,\\ldots,\\muP，多边最优传输（multi-marginal optimal transport, MMOT）要在所有边缘分布固定的联合耦合 \\pi\\in\\Pi(\\mu1,\\ldots,\\muP) 中寻找最低代价： 论文关注的不是任意代价，而是带权二次重心代价。令 \\betap\\ge0、\\sump\\betap=1，则 这个代价衡量每个样本相对联合加权中心的离散程度。"
 robots: noindex, nofollow
 sitemap: false

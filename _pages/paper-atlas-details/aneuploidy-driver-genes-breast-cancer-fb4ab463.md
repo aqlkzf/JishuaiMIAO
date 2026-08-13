@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/aneuploidy-driver-genes-breast-cancer-fb4ab463/
 title: "Aneuploidy_Driver_Genes_Breast_Cancer"
 nav: false
+wide: true
 description: "基底样乳腺癌（BLBC）的染色体臂拷贝数改变（CNA）很常见，但一条染色体臂同时改变许多基因；仅凭复发频率不能判断究竟哪一个基因带来选择优势。本文先在 METABRIC、TCGA 和单细胞数据中找出 BLBC 特异的染色体臂改变，再在小鼠体内逐基因功能筛选。 CRISPR-KOALA 将同一类体内筛选做成双向操作： 敲除分支使用普通 20-bp sgRNA；"
 robots: noindex, nofollow
 sitemap: false

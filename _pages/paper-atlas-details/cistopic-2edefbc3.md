@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cistopic-2edefbc3/
 title: "cisTopic"
 nav: false
+wide: true
 description: "单细胞 ATAC-seq 的矩阵极稀疏：行是候选调控区域，列是细胞，一个“0”既可能代表该区域在该细胞中关闭，也可能只是测序深度不足而没有读到。传统流程往往先降维/聚类细胞再找差异区域，或者先按已知 motif/cistrome 聚合区域再聚类细胞。前者把细胞状态与调控区域发现割裂，后者依赖预定义注释，难以发现新的 enhancer 组合。"
 robots: noindex, nofollow
 sitemap: false

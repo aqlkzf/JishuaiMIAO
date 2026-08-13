@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/revisiting-mean-estimation-lp-balls-8e4cdfd6/
 title: "Revisiting_Mean_Estimation_Lp_Balls"
 nav: false
+wide: true
 description: "观测模型是 目标是在平方 \\ell2 损失下估计未知均值 \\theta^\\star。这里 p 控制参数空间的几何形状：小 p 对应稀疏或弱稀疏结构，较大的 p 限制坐标整体幅度。论文问的是：把观测点直接投影到 \\ellp 球上的最大似然估计（MLE），能否达到 minimax 最优速率？ 在高斯噪声下，MLE 等价于欧氏投影： 它看起来很自然：利用了参数空间本身的几何结构，是非线性估计器，而且不需要输入噪声强度 \\sigma。"
 robots: noindex, nofollow
 sitemap: false

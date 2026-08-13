@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/connectivity-type-13ac550a/
 title: "Connectivity_Type"
 nav: false
+wide: true
 description: "神经元通常按胞体所在脑区、形态、电生理或转录组分类，但这些属性并不直接描述它“可能连接到哪里”。电子显微镜可以识别真实突触，却还难以覆盖整个小鼠脑。本文提出一个折中方案：把已经配准到统一脑图谱的轴突和树突形态转成“潜在连接”特征，再用它区分神经元类型和亚型。 这里的连接不是实测突触。它表示单个神经元的轴突空间与群体树突区域发生重叠，因此更准确的名称是“潜在连接”。"
 robots: noindex, nofollow
 sitemap: false

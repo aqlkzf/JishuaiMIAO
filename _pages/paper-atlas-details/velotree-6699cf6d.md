@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/velotree-6699cf6d/
 title: "VeloTree"
 nav: false
+wide: true
 description: "VeloTree 的核心不是直接比较两个细胞当前的表达或速度，而是先从每个细胞沿 RNA 速度场向过去回溯一条积分曲线，再用有向 varifold 距离比较两条曲线共享了多少历史、又从哪里开始分开，最后把两两距离交给 family-joining 重建分化树。 它的输入是每个细胞的表达向量 xi 与 RNA 速度 vi；输出是以观测细胞为节点的树拓扑，以及由树深度归一化得到的伪时间。"
 robots: noindex, nofollow
 sitemap: false

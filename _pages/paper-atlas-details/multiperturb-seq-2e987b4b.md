@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multiperturb-seq-2e987b4b/
 title: "MultiPerturb-seq"
 nav: false
+wide: true
 description: "单细胞 pooled CRISPR screen 的目标，是给大量细胞施加不同遗传扰动，再观察每个扰动改变了什么。经典 Perturb-seq（Cell, 2016）主要读取 RNA；CRISPR-sciATAC 等方法主要读取染色质开放性。两类读出各有盲点：RNA 能看见细胞状态，但往往是调控变化的下游结果；ATAC 能看见潜在调控元件和表观状态，但不能保证这些变化已经转化成基因表达。"
 robots: noindex, nofollow
 sitemap: false

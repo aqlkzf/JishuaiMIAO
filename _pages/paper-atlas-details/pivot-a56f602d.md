@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pivot-a56f602d/
 title: "PIVOT"
 nav: false
+wide: true
 description: "传统植物遗传筛选通常是“一株植物对应一个基因扰动”。这种模式耗时、占空间，而且在多倍体、基因家族高度冗余、突变致死或生命周期很长的物种中尤其困难。把很多候选基因混在一起送入叶片虽然能提高通量，却会产生新的归因问题：同一个细胞若同时收到多个扰动，就无法知道表型由哪个基因造成。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/e-values-expand-scope-conformal-prediction-f4311c84/
 title: "E_Values_Expand_Scope_Conformal_Prediction"
 nav: false
+wide: true
 description: "传统共形预测通常把新样本的 nonconformity score 与校准分数做排序，从而得到 p-value 和固定错误率 \\alpha 下的预测集合。这套方法在标准的“一个交换样本、一个预先确定的覆盖率”场景中很好用，但本文关注三个超出这个模板的问题： 数据按批次持续到达，批次之间允许分布变化，而且不知道何时停止；需要所有时间点同时有效，而不只是每一批分别有效。 实际决策只能容纳最多 C 个候选标签；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/prescient-6fbfd0cd/
 title: "PRESCIENT"
 nav: false
+wide: true
 description: "PRESCIENT 把多个真实时间点的单细胞转录组“快照”看成同一随机动力系统在不同时间的群体分布：它学习一个神经网络表示的势能地形，在这个地形上反复推进带噪声的细胞状态，使模拟群体尽量接近真实观测群体；训练好后，可以从任意细胞状态出发模拟未来轨迹，也可以先修改基因表达再预测终末命运分布。"
 robots: noindex, nofollow
 sitemap: false

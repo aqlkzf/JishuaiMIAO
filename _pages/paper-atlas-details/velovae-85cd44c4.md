@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/velovae-85cd44c4/
 title: "VeloVAE"
 nav: false
+wide: true
 description: "VeloVAE 把每个细胞的 unspliced/spliced 计数看成 RNA 转录—剪接—降解 ODE 在某个未知发育时间的观测。编码器从全基因的 (u,s) 同时推断共享细胞时间 t 和连续细胞状态 c；解码器不自由生成表达，而是把 t,c 代入解析 ODE 解重建 (u,s)。因此潜变量具有明确动力学含义，也能用细胞状态调节转录率来表示分叉。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellscope-a4826332/
 title: "CellScope"
 nav: false
+wide: true
 description: "CellScope 是面向 scRNA-seq 的“特征选择 + 去噪 + 层次聚类 + 多层可视化”工作流。它先从局部高密度细胞中构造少量可靠小团体，用这些团体间的 ANOVA 挑出能区分潜在群体的基因；再把最低密度的细胞向附近高密度细胞轻度投影；最后在相似图上做平均连接层次聚类，并把多个聚类分辨率画成树。它不是轨迹推断模型，树的分叉表示聚类层级，不应直接解释为真实发育谱系或时间方向。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spateo-85a978f6/
 title: "Spateo"
 nav: false
+wide: true
 description: "Spateo 不是一个单一的轨迹算法，而是一条面向三维、跨时间空间转录组的分析工具链。它先把连续二维切片对齐成三维点云和表面，再在复杂组织内部建立连续坐标轴；随后用空间加权回归估计配体—受体及下游转录调控的局部关联；最后利用不同发育阶段之间的形变学习“morphic vector field”，计算组织迁移、扩张、旋转、弯曲等形态量，并把这些量同基因表达相关联。 论文用 E9.5 和 E11."
 robots: noindex, nofollow
 sitemap: false

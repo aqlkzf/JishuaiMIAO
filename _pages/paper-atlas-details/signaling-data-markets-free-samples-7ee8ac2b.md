@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/signaling-data-markets-free-samples-7ee8ac2b/
 title: "Signaling_Data_Markets_Free_Samples"
 nav: false
+wide: true
 description: "设想一个买家想估计未知参数 \\theta，市场上有 K 个数据卖家。每个卖家的数据都以 \\theta 为均值，但噪声方差可能是较小的 \\sigmaL^2 或较大的 \\sigmaH^2；方差越小，数据质量越高。卖家知道自己的质量和单位样本成本，买家事前却不知道。 免费试用似乎能解决信息不对称：卖家先给几个样本，买家观察其样本方差，再决定向谁购买。但卖家未必愿意这样做。好质量一旦被识别，买家只需购买更少样本就能达到同样精度；"
 robots: noindex, nofollow
 sitemap: false

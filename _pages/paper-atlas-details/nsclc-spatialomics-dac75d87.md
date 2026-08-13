@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nsclc-spatialomics-dac75d87/
 title: "NSCLC_SpatialOmics"
 nav: false
+wide: true
 description: "NSCLCSpatialOmics 研究的是：在 PD-1/PD-L1 免疫治疗前，非小细胞肺癌组织里的空间免疫微环境能否预测患者的无进展生存期。论文把 PCF/CODEX 空间蛋白组用于发现与耐药或响应相关的细胞状态，再把这些细胞状态转译成 DSP-GeoMx 空间转录组中的紧凑基因签名。最终输出不是一张空间图，而是患者级别的 resistance score 和 response score。"
 robots: noindex, nofollow
 sitemap: false

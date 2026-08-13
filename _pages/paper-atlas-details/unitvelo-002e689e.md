@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/unitvelo-002e689e/
 title: "UniTVelo"
 nav: false
+wide: true
 description: "UniTVelo 解决的是单细胞 RNA velocity 推断问题：给定每个细胞中 spliced 和 unspliced mRNA 的计数，推断细胞沿发育、分化或状态转变方向的动态轨迹。论文沿用 RNA velocity 的一阶动力学系统，将 unspliced RNA u(t)、spliced RNA s(t)、转录率 \\alpha(t)、剪接率 \\beta 和降解率 \\gamma 联系起来。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/m6a-artr-dbit-af68229d/
 title: "m6A-ARTR-DBiT"
 nav: false
+wide: true
 description: "m6A-ARTR-DBiT 是一个把“原位 m6A 检测”和“DBiT 空间条形码”连接起来的空间表观转录组技术；论文完整描述了从组织切片到 Rm6A 空间分析的流程，但公开代码主要只复现 FASTQ 到 gene-by-pixel matrix 的预处理部分。"
 robots: noindex, nofollow
 sitemap: false

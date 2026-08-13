@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/caml-b0fa4a16/
 title: "CAML"
 nav: false
+wide: true
 description: "这篇论文关注的是医疗 AI 的“可解释性鸿沟”。很多现有方法只能给出局部热图，告诉你某一张图哪里可能重要，但很难总结整个模型到底学会了什么规则；另一类全局解释方法又往往太简单，解释性提高了，准确率却掉得很厉害。作者提出 CAML，希望把“全局规则”和“单个病例解释”统一到同一个低维流形里 。 作者认为，一张医疗图像里既有真正和疾病判别相关的模式，也有很多“个体背景信息”，比如位置、形态、亮度、背景差异等。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gnspade-5acc37a9/
 title: "gnSPADE"
 nav: false
+wide: true
 description: "gnSPADE 把空间转录组的每个 spot 当成一篇“文档”、把 UMI count 展开成重复出现的“基因词元”，用 LDA topic 表示潜在细胞类型；它在 Gibbs 采样条件概率中再乘一个基因网络 MRF 项，鼓励同一 spot 内互为网络邻居的基因被分到同一 topic。输出的 spot×topic 矩阵解释为细胞类型比例，topic×gene 矩阵解释为潜在细胞类型的表达谱。"
 robots: noindex, nofollow
 sitemap: false

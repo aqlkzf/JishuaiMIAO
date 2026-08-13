@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellflow-eca5e2a3/
 title: "CellFlow"
 nav: false
+wide: true
 description: "CellFlow 学习一个由实验条件控制的连续向量场，把对照细胞分布运输成扰动后的细胞分布。它的主要任务是未见条件下的单细胞表型生成；论文也展示发育时间插值和命运工程，但不能因此把模型输出理解为由谱系追踪直接验证的真实细胞轨迹。"
 robots: noindex, nofollow
 sitemap: false

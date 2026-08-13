@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/indiseek-f1e34ccf/
 title: "IndiSeek"
 nav: false
+wide: true
 description: "IndiSeek 用对方模态的 shared 表示来清除本模态 specific 表示中的公共信息，再用本模态 shared+specific 重建防止信息被删光；它改善了独立性—完整性权衡，但没有公开代码时，优化细节和统计可识别性必须保持为复现边界。"
 robots: noindex, nofollow
 sitemap: false

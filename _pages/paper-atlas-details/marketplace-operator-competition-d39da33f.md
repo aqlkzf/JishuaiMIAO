@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/marketplace-operator-competition-d39da33f/
 title: "Marketplace Operator Competition"
 nav: false
+wide: true
 description: "电商平台既可以向第三方卖家收取佣金，也可以用自营商品进入同一市场。论文研究一个反直觉问题：平台是否可以不靠限价或行政管制，而是通过自己报出低价并准备一定库存，迫使原本具有垄断地位的第三方卖家降价？这里的平台不仅关心当期利润，还关心顾客能否买到商品，因为一次满意交易可能提高复购和平台长期价值。"
 robots: noindex, nofollow
 sitemap: false

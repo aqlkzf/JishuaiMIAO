@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spotiphy-49b5c3e1/
 title: "Spotiphy"
 nav: false
+wide: true
 description: "可以把一个 spot 想成一碗混合汤： scRNA 参考告诉我们每种“原料”通常是什么味道； spot 表达告诉我们整碗汤里有哪些分子、各有多少； H&E 图像告诉我们碗里大约有几颗“细胞”； Spotiphy 先估计每种细胞类型贡献了多少分子，再把每个基因的 spot 计数按这些贡献拆开，最后把拆出的类型标签随机放到图像中的细胞核上。 因此，输出是受约束的推断，不是对每个真实细胞重新测序。"
 robots: noindex, nofollow
 sitemap: false

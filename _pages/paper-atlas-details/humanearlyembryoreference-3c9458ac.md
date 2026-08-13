@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/humanearlyembryoreference-3c9458ac/
 title: "HumanEarlyEmbryoReference"
 nav: false
+wide: true
 description: "这项工作把多个稀缺的人类早期胚胎单细胞数据集整理成稳定参考，并通过“邻域聚合 + 重复 MNN + 固定参考投射 + 20D SVM + 多重拒识”把新数据映射到该参考，从而以全转录组证据审查胚胎模型的谱系身份和发育阶段，同时明确保留对参考缺失、稀有群体和混淆谱系的不确定性。"
 robots: noindex, nofollow
 sitemap: false

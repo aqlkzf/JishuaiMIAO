@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/palantir-39f3b482/
 title: "Palantir"
 nav: false
+wide: true
 description: "Palantir 不先把细胞硬切成几条分支，而是把单细胞状态流形变成一个大体沿伪时间向前的 Markov 链。对每个细胞，它计算随机游走最终被各终末状态吸收的概率；这些概率就是 branch/fate probabilities，其 Shannon 熵被定义为 differentiation potential（DP）。"
 robots: noindex, nofollow
 sitemap: false

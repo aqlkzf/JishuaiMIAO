@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/monocle-3-moca-71547058/
 title: "Monocle 3 / MOCA"
 nav: false
+wide: true
 description: "这篇论文首先是一张小鼠器官发生单细胞图谱：作者用 sci-RNA-seq3 测量 E9.5–E13.5 的 61 个胚胎，得到约 205 万个细胞，定义 38 个主要 cell types、655 个 subtypes，并分析 AER、肢芽间充质和骨骼肌等发育系统。其次，它用一个新版本 Monocle 3 在 152 万高质量细胞上重建 10 个主要轨迹与 56 个子轨迹。 因此，Monocle 3 不是这篇论文全部实验流程的代名词。"
 robots: noindex, nofollow
 sitemap: false

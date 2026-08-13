@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/prism-3139f0dc/
 title: "PRISM"
 nav: false
+wide: true
 description: "最关键的工程思想是：RCA 纳米球大小不同，会让所有通道一起变亮或变暗；这种变化主要沿着颜色空间中的“半径”方向。PRISM 不把绝对亮度当作身份，而是用归一化后的方向和第四通道层级来识别条形码。"
 robots: noindex, nofollow
 sitemap: false

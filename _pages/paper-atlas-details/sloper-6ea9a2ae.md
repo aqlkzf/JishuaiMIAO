@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sloper-6ea9a2ae/
 title: "SLOPER"
 nav: false
+wide: true
 description: "SLOPER（Score-based Learning Of Poisson-modeled Expression Rates）处理的不是普通的空间聚类问题。它先为每个基因学习一个二维向量场：在组织内任一点，这个向量指出该基因的相对表达强度朝哪个方向上升、上升有多快。这个向量场随后既可作为空间模式本身，也可驱动 Langevin 采样，把稀疏、扩散的观测计数重排成空间上更集中的“增强表达”。"
 robots: noindex, nofollow
 sitemap: false

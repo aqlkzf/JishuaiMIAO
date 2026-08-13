@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/auto-cell-52866b4b/
 title: "auto-cell"
 nav: false
+wide: true
 description: "传统 H&E 单细胞分类需要病理医师逐个标注细胞，成本高且对巨噬细胞、中性粒细胞等形态相近类型的一致性有限。auto-cell 的关键思想是把“人工看 H&E 定义标签”替换成“同一组织切片上的多重免疫荧光（mIF）谱系标志物定义标签”。作者先在同一张 FFPE 切片上依次获取 mIF 与 H&E 图像，把两者精确配准，再把 mIF 上的细胞类型转移给 H&E 中对应细胞，从而建立大规模训练集。"
 robots: noindex, nofollow
 sitemap: false

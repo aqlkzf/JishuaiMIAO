@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spavgmc-1dcae91a/
 title: "SpaVGMC"
 nav: false
+wide: true
 description: "SpaVGMC 解决的是空间转录组中的空间域识别问题：给定每个 spot/cell 的基因表达和空间坐标，学习一个既保留组织空间连续性、又能区分转录语义差异的低维表示，然后用于聚类、可视化、轨迹推断和差异表达分析 [outputpapermd/paper/hybridauto/paper.md:341-345]。 论文认为现有空间聚类方法有三类核心不足。第一，许多基于图的模型强调局部相似性，容易过度平滑，模糊真实的组织边界。"
 robots: noindex, nofollow
 sitemap: false

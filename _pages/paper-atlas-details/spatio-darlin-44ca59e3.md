@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatio-darlin-44ca59e3/
 title: "Spatio-DARLIN"
 nav: false
+wide: true
 description: "Spatio-DARLIN 的目标是在同一张完整组织切片中同时读出三类信息： 细胞状态：空间单细胞转录组； 空间位置：细胞在组织中的二维坐标； 克隆谱系：DARLIN 条形码记录的共同祖先关系。 论文指出，传统荧光谱系追踪保留空间结构，但条形码容量低且不能直接给出细胞状态；高多样性遗传条形码结合单细胞 RNA-seq 可以获得分子状态和谱系，但需要组织解离，破坏原位空间结构；"
 robots: noindex, nofollow
 sitemap: false

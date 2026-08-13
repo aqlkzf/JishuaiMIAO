@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scp-nano-9989a54e/
 title: "SCP-Nano"
 nav: false
+wide: true
 description: "纳米载体（LNP、脂质体、聚合物复合物、DNA origami、AAV 等）是否真正到达目标细胞、是否在低水平下进入非目标器官，是药物递送安全性和有效性的核心问题。PET、CT、MRI 和常规活体光学成像能观察全身，但通常只能达到器官尺度，在低剂量下也可能缺乏灵敏度；传统组织学能看到单细胞，却只能检查预先选择的二维切片，容易产生抽样偏差。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/reduced-rank-outcome-compression-causal-policy-optimization-a38113d1/
 title: "Reduced_Rank_Outcome_Compression_Causal_Policy_Optimization"
 nav: false
+wide: true
 description: "这是一篇因果推断、统计机器学习与政策优化论文，不是生物信息学论文。 许多政策并不只影响一个指标。例如，扶贫项目可能同时影响工资、消费、储蓄、投资和经营状况。研究者通常先给这些指标指定权重 \\rho，合成为一个政策价值，再学习“什么样的人应该接受什么处理”。困难在于：这些社会结果往往噪声很大，而且多个指标可能只是少数几个潜在概念的不同、带噪测量。 传统方法各有弱点： 直接法（DM）依赖结果回归模型，模型错了会有偏差；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/kpspatial-60962d12/
 title: "KPSpatial"
 nav: false
+wide: true
 description: "传统单细胞谱系追踪能重建“哪些癌细胞来自共同祖先”，但组织解离会丢失这些细胞原来位于肿瘤内部、边缘还是转移灶的信息。空间转录组保留位置和微环境，却通常不能直接给出深层谱系。本文把两者结合，研究肿瘤亚克隆扩张、细胞状态可塑性、缺氧/纤维化/免疫抑制微环境以及转移如何在空间和时间上共同演化。 实验使用 KP-Tracer 小鼠：Cre 同时启动 Kras^{G12D}、敲除 Trp53 并激活 Cas9 谱系记录器。"
 robots: noindex, nofollow
 sitemap: false

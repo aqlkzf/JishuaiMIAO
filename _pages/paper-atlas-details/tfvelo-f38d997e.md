@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tfvelo-f38d997e/
 title: "TFvelo"
 nav: false
+wide: true
 description: "经典 RNA velocity 用未剪接 RNA u 与已剪接 RNA s 的相位差估计 ds/dt。但 intronic reads 稀疏，有些数据根本没有 spliced/unspliced 分层，而且逐基因剪接模型没有显式利用调控上下文。TFvelo 的核心替换是：对目标基因 g，把候选转录因子表达的加权和当作转录驱动，用总 RNA 表达也能建立速度模型。"
 robots: noindex, nofollow
 sitemap: false

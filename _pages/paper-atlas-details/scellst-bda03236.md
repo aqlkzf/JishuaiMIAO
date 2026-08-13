@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scellst-bda03236/
 title: "sCellST"
 nav: false
+wide: true
 description: "sCellST 想解决的是：只有常规 H&E 病理切片时，能不能预测到接近单细胞分辨率的基因表达？H&E 图像便宜且常见，而空间转录组和 Xenium 等分子技术成本高、样本少。Visium 能给出每个 spot 的表达，但一个 spot 通常混合 10--20 个细胞，因此训练时没有真实的单细胞表达标签。 sCellST 把一个 Visium spot 看作一个 bag，把这个 spot 内的细胞图像看作多个 instances。"
 robots: noindex, nofollow
 sitemap: false

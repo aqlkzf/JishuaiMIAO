@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mmfm-9df85fcf/
 title: "MMFM"
 nav: false
+wide: true
 description: "MMFM（Multi-Marginal Flow Matching）面对的是同一类系统在多个时间点、多个实验条件下采集的群体分布快照。以单细胞药物实验为例，0、24、48、72 小时测到的是不同细胞；某些药物—时间组合还可能完全缺失。模型需要从这些未配对分布中学习连续向量场，补出缺失时间点，并借其他条件的信息改善稀疏条件。"
 robots: noindex, nofollow
 sitemap: false

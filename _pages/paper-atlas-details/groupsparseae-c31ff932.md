@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/groupsparseae-c31ff932/
 title: "GroupSparseAE"
 nav: false
+wide: true
 description: "CLIP、CLAP 已经把图像—文本或音频—文本对齐到同一稠密空间，但普通 TopK 稀疏自编码器常把两个模态拆成两套互不重叠的特征。论文的 GSAE 在配对样本的稀疏码上加入组稀疏约束，MGSAE 再让两个模态共享同一个随机候选 mask，迫使对应样本更多地激活同一批概念神经元。"
 robots: noindex, nofollow
 sitemap: false

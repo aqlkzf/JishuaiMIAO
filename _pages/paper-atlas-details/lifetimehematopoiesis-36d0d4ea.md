@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lifetimehematopoiesis-36d0d4ea/
 title: "LifetimeHematopoiesis"
 nav: false
+wide: true
 description: "这篇论文最重要的认识是：人类 HSC 在一生中并不是简单地从“多能”线性走向“髓系偏向”，而是在“偏向某一条谱系的强度”和“同时访问全部谱系程序的总程度”两个不同维度上重排；胎儿 HSC 总体程序开放、单谱系偏向较弱，老年 HSC 总体预激活较低、但单谱系偏向更强。"
 robots: noindex, nofollow
 sitemap: false

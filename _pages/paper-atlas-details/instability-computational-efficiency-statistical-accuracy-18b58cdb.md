@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/instability-computational-efficiency-statistical-accuracy-18b58cdb/
 title: "Instability_Computational_Efficiency_Statistical_Accuracy"
 nav: false
+wide: true
 description: "许多统计估计量不是一次算出来的，而是反复应用样本算子 Fn： 总体算子 F 表示无限样本时的理想更新，\\theta^\\star 是其不动点。有限样本使 Fn 偏离 F。论文关心两个问题：迭代多少次才能到达统计误差下限？一个对样本扰动“不稳定”的算法，是否仍可能比稳定算法更值得使用？ 第一轴是总体算法的收敛速度：FAST(\\kappa) 表示几何收敛，误差近似按 \\kappa^t 下降；"
 robots: noindex, nofollow
 sitemap: false

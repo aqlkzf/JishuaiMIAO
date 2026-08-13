@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dynamic-programming-epistemic-uncertainty-mdp-295156f1/
 title: "Dynamic_Programming_Epistemic_Uncertainty_MDP"
 nav: false
+wide: true
 description: "标准马尔可夫决策过程假定转移概率 P 已知，但实际决策中，转移模型往往来自有限数据或专家判断，本身并不确定。问题不仅是“下一步会随机走到哪里”，还包括“我们甚至不确定描述这种随机性的转移核是否正确”。前者是轨迹层面的偶然不确定性，后者是模型层面的认知不确定性。 论文要回答两个相互关联的问题： 能否用统一数学框架表示 robust MDP、multi-model MDP、分位数优化、CVaR 等各种“不确定转移核”模型？"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/humanhippocampusaging-d87fdbe0/
 title: "HumanHippocampusAging"
 nav: false
+wide: true
 description: "以往研究知道衰老脑组织会出现炎症增强、突触功能下降，但很难回答：这些表达变化由哪些细胞产生，又是染色质开放、DNA 甲基化、增强子连接还是三维基因组折叠改变造成的？本文对 40 名 20–100 岁、性别与年龄段平衡的神经正常供体进行单细胞核多组学分析，把四层调控信息放进同一套细胞类型框架。 作者先按细胞类型汇总每个供体的表达、开放性和甲基化特征，再计算特征与年龄的 Pearson 相关，并用 FDR < 0.1 筛选。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stcell-303b08c2/
 title: "STCell"
 nav: false
+wide: true
 description: "海马 CA3 中的位置细胞在动物到达特定地点时放电，时间细胞则在两个事件之间依次激活。传统理论常把它们分开：位置细胞来自连续吸引子网络，时间细胞来自不同时间常数的单神经元积分器。STCell 提出另一种解释：两者可以是同一 recurrent network 在不同输入相关结构下形成的两种动力学状态。 这里的“STCell”不是单细胞转录组方法，也不涉及空间组学；它是计算神经科学模型。"
 robots: noindex, nofollow
 sitemap: false

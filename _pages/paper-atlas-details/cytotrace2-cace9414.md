@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cytotrace2-cace9414/
 title: "CytoTRACE2"
 nav: false
+wide: true
 description: "CytoTRACE 2 从单细胞转录组预测“发育潜能”：一方面给出六类标签（分化、单能、寡能、多能、多潜能、全能），另一方面给出 0–1 连续分数，其中 1 更接近全能、0 更接近终末分化。它学习的是由人工整理的潜能标签所定义的绝对标尺，而不是从一批细胞中无监督重建分支、方向或真实谱系。 与 CytoTRACE 1 的数据集内相对排序不同，CytoTRACE 2 试图让不同组织、平台和物种的分数可比较。"
 robots: noindex, nofollow
 sitemap: false

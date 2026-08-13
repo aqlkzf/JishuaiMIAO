@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/fishnet-303ee55b/
 title: "FISHnet"
 nav: false
+wide: true
 description: "FISHnet 不是在单一阈值上寻找一条“最佳边界”，而是在多个物理距离尺度上反复做图社区发现，并用随机重复共识 + 相邻阈值平台稳定性筛出可信的多尺度结构域区间。"
 robots: noindex, nofollow
 sitemap: false

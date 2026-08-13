@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatiocad-9429241b/
 title: "SpatioCAD"
 nav: false
+wide: true
 description: "SpatioCAD 不把 spot 中的基因计数直接当作可横向比较的“浓度”，而是用每个位置的总信号估计细胞密度，并让基因沿浓度差而不是绝对计数差在空间图上传播。真正有组织的空间图案需要较长时间才扩散到稳态，因此 characteristic diffusion time 越长，基因越靠前。 论文是 2026 年 bioRxiv 预印本，尚未经同行评审。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tumour3dmultiomicsatlases-review-d369c01a/
 title: "Tumour3DMultiOmicsAtlases_Review"
 nav: false
+wide: true
 description: "Title: 3D multi-omics tumour atlases: from technology to biology and clinical translation DOI: 10.1038/s41568-026-00940-0 Journal/year: Nature Reviews Cancer, 2026 Local source: outputpapermd/naturehtml/paper."
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hubmap-3d-human-reference-atlas-271d7b25/
 title: "HuBMAP_3D_Human_Reference_Atlas"
 nav: false
+wide: true
 description: "人体图谱并不只是“收集很多单细胞数据”。真正困难的是：不同团队研究不同器官、采用不同实验技术、使用不同细胞命名和空间坐标，得到的数据彼此难以对齐。已有参考系往往只覆盖单个器官，例如 Waxholm Space 是发表于 Nature Methods 2023 的脑三维图谱；"
 robots: noindex, nofollow
 sitemap: false

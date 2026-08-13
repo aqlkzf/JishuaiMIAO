@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scproto-6bdd679f/
 title: "scProto"
 nav: false
+wide: true
 description: "传统 metacell 方法在原始 KNN 图上聚合相似细胞，能降低噪声，却容易把 batch effect 一起保留下来。scProto 的想法是：先用自监督学习得到 batch-corrected latent space，再在其中学习一组 prototype；每个 prototype 聚合许多相近细胞，并且能通过条件 VAE decoder 还原为基因表达，因此可解释为 metacell。"
 robots: noindex, nofollow
 sitemap: false

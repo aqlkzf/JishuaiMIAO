@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/bayesian-coordinate-differential-privacy-c7280676/
 title: "Bayesian_Coordinate_Differential_Privacy"
 nav: false
+wide: true
 description: "局部差分隐私（LDP）通常对一整条高维记录使用同一个隐私预算。如果社会保障号需要很强保护，而普通偏好特征不需要同样强的保护，把最小预算用于所有维度会造成很大效用损失；但直接逐特征加噪又会忽略特征相关性，攻击者可能从弱保护特征反推出敏感特征。 BCDP 为每个坐标定义一个隐私参数 δi：在给定数据先验 π 时，观察机制输出以后，关于第 i 个特征的两种假设，其条件输出概率之比最多变化 e^{δi}。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hotspot-c8f6f98b/
 title: "Hotspot"
 nav: false
+wide: true
 description: "Hotspot 不负责学习“什么叫细胞相似”。它接收一个已有的细胞—细胞相似性图，然后问两个问题：某个基因是否沿这张图呈现非随机的局部结构；两个基因是否在图的相同区域共同变化。第一个问题用于筛选信息基因，第二个问题用于把这些基因组织成模块。 这个分工解释了 Hotspot 为什么能跨模态使用。图可以来自转录组低维空间、组织中的物理坐标，也可以来自谱系树；被检验的量仍然可以是基因表达。"
 robots: noindex, nofollow
 sitemap: false

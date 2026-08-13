@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellrank-protocol-0098eb40/
 title: "CellRank Protocol"
 nav: false
+wide: true
 description: "CellRank 不负责从原始 counts 独立发现全部动力学，而是一个“转移矩阵后端”：先把 RNA velocity、pseudotime、CytoTRACE、实验时间/OT 或已有相似图转成细胞间转移概率，再用 GPCCA 把大规模 Markov chain 粗粒化成 macrostates，定义初始/终末状态，并计算每个细胞最终到达各终末状态的概率。"
 robots: noindex, nofollow
 sitemap: false

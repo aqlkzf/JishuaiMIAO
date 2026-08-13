@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/crakvelo-5372efaa/
 title: "CRAKVelo"
 nav: false
+wide: true
 description: "本文分析的论文是 CRAK-Velo: chromatin accessibility kinetics integration improves RNA velocity estimation，发表于 Genome Biology 2026，DOI 为 10.1186/s13059-026-04086-y。"
 robots: noindex, nofollow
 sitemap: false

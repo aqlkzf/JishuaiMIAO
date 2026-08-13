@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/humanbody3dgenomemethylation-89e9f9df/
 title: "HumanBody3DGenomeMethylation"
 nav: false
+wide: true
 description: "这项工作先在同一细胞核里配对测量甲基化和 3D 接触，再为每个模态构建适合稀疏单细胞数据的低维表示，用 WNN 联合定义人体细胞图谱，最后在基因组区室、loop/DMR 和细胞 cluster 三个尺度上比较两种表观遗传层何时一致、何时提供互补甚至矛盾的信息。"
 robots: noindex, nofollow
 sitemap: false

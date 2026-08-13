@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/schicar-5fcb526a/
 title: "scHiCAR"
 nav: false
+wide: true
 description: "基因表达不仅取决于启动子是否开放，还取决于远端增强子能否在三维空间接触启动子。过去的单细胞多组学通常只能同时测三者中的两个：RNA、开放染色质或染色质接触。把来自不同细胞的三张图计算对齐，会受到取样差异和整合模型影响。 scHiCAR 的目标是让同一个细胞核产生三种共享细胞身份的读出： RNA 文库：转录本； DNA R2：Tn5 标记的开放染色质； DNA 配对读段：开放位点与其空间邻近 DNA 的连接。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/calpred-8e6d4aab/
 title: "CalPred"
 nav: false
+wide: true
 description: "多基因评分（PGS）通常给每个人一个风险或性状点预测，但同一个 PGS 在不同年龄、性别、遗传主成分、收入或生活方式群体中的准确度可能不同。CalPred 不重新训练 SNP 权重；它在一组有真实表型的校准样本中学习两件事： PGS 与情境变量怎样改变预测均值； 均值预测留下的残差方差怎样随情境变化。 对定量性状，输出是个体化均值与预测区间；对疾病性状，输出是异方差 probit 模型下的个体疾病概率。"
 robots: noindex, nofollow
 sitemap: false

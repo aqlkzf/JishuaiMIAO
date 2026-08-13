@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sdevelo-93f3d269/
 title: "SDEvelo"
 nav: false
+wide: true
 description: "RNA velocity 利用未剪接 RNA（U）到已剪接 RNA（S）的时间滞后推断细胞状态变化。经典模型对每个基因分别拟合 这种确定性逐基因建模有两个问题。第一，不同基因各自估计时间，随后再拼成一个细胞速度，跨基因时序可能不一致。第二，成熟细胞处于近稳态时仍有转录随机波动；强行用确定性场解释这些波动，可能在本应没有净迁移的细胞群中画出整齐而虚假的流线。"
 robots: noindex, nofollow
 sitemap: false

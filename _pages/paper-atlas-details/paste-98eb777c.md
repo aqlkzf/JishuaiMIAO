@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/paste-98eb777c/
 title: "PASTE"
 nav: false
+wide: true
 description: "空间转录组（ST）的一张切片给出两类观测：每个 spot 的基因表达向量，以及该 spot 在本切片内的二维坐标。相邻切片来自同一块三维组织，但组织放到芯片上的平移、旋转、覆盖范围、spot 数量和测序深度都可能不同。因此，两张切片的原始坐标没有共同坐标系，单靠图像刚体配准或按表达最近邻匹配都不够。 PASTE 提供两个相关但不同的任务： 成对对齐：求两张切片 spot 之间的概率耦合，再把连续切片变换到共同坐标系，用于三维堆叠。"
 robots: noindex, nofollow
 sitemap: false

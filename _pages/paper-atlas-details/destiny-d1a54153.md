@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/destiny-d1a54153/
 title: "destiny"
 nav: false
+wide: true
 description: "destiny 处理的不是“给细胞分几个群”，而是如何从大量异步采样的单细胞测量中恢复连续、弯曲甚至分支的状态流形。论文发表于 2016 年，目标是给 R 用户提供一个可扩展的 diffusion map 实现，并针对单细胞数据加入三项实用能力：只计算 k 近邻以支持几十万细胞、显式处理检测下限和缺失值、把新数据投影到已有扩散图。 输入是已经预处理和归一化的细胞×特征矩阵（基因表达、蛋白标记等），或用户提供的距离矩阵。"
 robots: noindex, nofollow
 sitemap: false

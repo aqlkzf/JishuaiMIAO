@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/belayer-8097cfa0/
 title: "Belayer"
 nav: false
+wide: true
 description: "Belayer 面向具有明确层状结构的空间转录组，例如大脑皮层、皮肤和视网膜。它不把每层内的表达强行视为常数，也不要求整张组织上的表达处处平滑，而是用“分段线性”模型同时表达两类变化：层内沿相对深度连续上升或下降，跨层边界则允许发生不连续跳变。 方法的两个输出彼此依赖：一是每个 spot 的层标签/层边界，二是每个基因在每层中的截距和斜率。斜率大的基因表示层内梯度明显，边界两侧拟合值差大的基因表示离散层转换明显。"
 robots: noindex, nofollow
 sitemap: false

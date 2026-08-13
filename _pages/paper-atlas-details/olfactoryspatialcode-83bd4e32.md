@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/olfactoryspatialcode-83bd4e32/
 title: "OlfactorySpatialCode"
 nav: false
+wide: true
 description: "这篇工作把“嗅觉受体（OR）在嗅上皮的若干宽分区内随机选择”改写成一条更精细的链：细胞所在的背腹（dorsoventral, DV）位置先形成连续的转录身份，这个身份限制它可能选择哪些 OR；同一套身份又携带轴突导向信息，因此鼻腔中的受体地图能与嗅球中的肾小球地图对齐。 这里的关键不是训练一个端到端预测模型，而是把单细胞转录组、空间转录组、谱系追踪、药理扰动、遗传杂交和嗅球空间坐标串成一条因果证据链。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmultiomics-cardiovascular-review-740fdc75/
 title: "scMultiomics_Cardiovascular_Review"
 nav: false
+wide: true
 description: "这篇 2023 年 Nature Cardiovascular Research 综述不是提出一个新算法，而是回答三个连续问题：心脏和血管组织为什么需要单细胞分辨率；RNA、染色质、蛋白、空间和扰动技术各自能回答什么；怎样把这些观测连接到心血管发育、心肌病、心肌梗死和动脉粥样硬化机制。"
 robots: noindex, nofollow
 sitemap: false

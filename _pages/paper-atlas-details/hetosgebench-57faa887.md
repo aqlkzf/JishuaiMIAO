@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hetosgebench-57faa887/
 title: "HEtoSGEBench"
 nav: false
+wide: true
 description: "HEtoSGEBench 的重要信息是：H&E 图像确实包含可用于预测部分空间基因表达的信息，但复杂模型并不天然更好；论文指出包含更多组件的复杂 deep-learning 架构并未在整体上优于简单方法，并且存在过拟合到染色/非生物图像模式的风险。因此，未来方法不仅要提高 spot-level accuracy，还要证明跨数据泛化、临床效用、可复现性和可用性。"
 robots: noindex, nofollow
 sitemap: false

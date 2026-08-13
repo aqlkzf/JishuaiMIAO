@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/siibra-c1dabd01/
 title: "siibra"
 nav: false
+wide: true
 description: "人脑数据横跨 MRI、连接组、组织学、细胞密度、受体密度和基因表达等尺度。真正困难的不是“有没有数据”，而是这些数据使用不同坐标空间、脑区术语、文件格式和云存储接口，并且解剖定位的可信度也不同。传统做法常把高分辨率数据降采样成宏观图，或在分析过程中丢失“这个数值属于哪个脑区/哪版图谱”的关系。 Siibra 的目标是建立一个可计算的多层次人脑图谱：保留数据的原始细节和来源，同时让研究者能够用统一的脑区或空间位置查询它们。"
 robots: noindex, nofollow
 sitemap: false

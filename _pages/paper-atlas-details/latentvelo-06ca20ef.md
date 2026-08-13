@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/latentvelo-06ca20ef/
 title: "LatentVelo"
 nav: false
+wide: true
 description: "LatentVelo 解决的是单细胞 RNA-seq 快照数据中的 RNA velocity 和细胞轨迹推断问题。传统 RNA velocity 的目标是利用未剪接 RNA u 和已剪接 RNA s 的关系，估计细胞未来分化方向 ds/dt。经典模型写作： \\frac{dug(t)}{dt}=\\alphag(t)-\\betag ug(t) \\frac{dsg(t)}{dt}=\\betag ug(t)-\\gammag sg(t) 这里 g…"
 robots: noindex, nofollow
 sitemap: false

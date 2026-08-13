@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spac-seq-eadab746/
 title: "SPAC-seq"
 nav: false
+wide: true
 description: "SPAC-seq 把 pooled CRISPR 扰动、全转录组和组织坐标同时测出来；TARDIS 再以非靶向 sgRNA（sgNTC）为参照，从“全组织位置改变”和“局部微环境富集”两个尺度给扰动排序，并连接空间生态位、基因程序和细胞互作。 论文为 Zhang 等发表于 Cell（2026），DOI 10.1016/j.cell.2026.04.049。"
 robots: noindex, nofollow
 sitemap: false

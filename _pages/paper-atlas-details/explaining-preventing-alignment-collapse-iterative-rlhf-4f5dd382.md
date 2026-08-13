@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/explaining-preventing-alignment-collapse-iterative-rlhf-4f5dd382/
 title: "Explaining_Preventing_Alignment_Collapse_Iterative_RLHF"
 nav: false
+wide: true
 description: "这是一篇机器学习理论与 LLM 对齐方法论文，不是生物信息学论文。它研究的关键不是一次性的 reward hacking，而是迭代 RLHF 中的反馈环：策略产生新回答，这些回答又成为奖励模型（RM）的训练数据。因此策略不仅在“获得当前分数”，还会间接改变“未来怎么打分”。 常规 REINFORCE/PPO 更新把当前 RM 当成固定函数，只沿着当前代理奖励上升。作者证明，这样遗漏了策略对未来 RM 参数的影响；"
 robots: noindex, nofollow
 sitemap: false

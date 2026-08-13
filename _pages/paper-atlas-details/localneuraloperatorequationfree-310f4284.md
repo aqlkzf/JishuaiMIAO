@@ -1,0 +1,274 @@
+---
+layout: default
+permalink: /paper-atlas/localneuraloperatorequationfree-310f4284/
+title: "LocalNeuralOperatorEquationFree"
+nav: false
+wide: true
+description: "这项工作的关键不是“用神经网络把 PDE 模拟得更快”，而是把学到的短时间演化算子当作一个可反复调用的黑盒时间步进器，再把它接入 Newton-Krylov、Arnoldi 和伪弧长延拓，从数据中求稳态、稳定性和分岔；同时用 Gap-Tooth 与投影积分把计算限制在局部空间和短时间片段中。"
+robots: noindex, nofollow
+sitemap: false
+---
+
+<!-- Generated locally by bin/export_paper_atlas.py. -->
+<section class="paper-detail" id="paper-detail">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
+  </a>
+  <header class="paper-detail__hero">
+    <div class="paper-detail__chips">
+      <span>Machine Learning Algorithm</span>
+      <span>Nature Machine Intelligence · 2026</span>
+    </div>
+    <h1>LocalNeuralOperatorEquationFree</h1>
+    <p>Enabling local neural operators to perform equation-free system-level analysis</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/Centrum-IntelliPhysics/local-neural-operator-time-stepper-instead-of-just-time-stepper" target="_blank" rel="noopener noreferrer" aria-label="Open code for LocalNeuralOperatorEquationFree">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+  </header>
+
+  <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
+    <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
+    <button type="button" role="tab" id="paper-detail-tab-en" aria-selected="false" aria-controls="paper-detail-panel-en" tabindex="-1" data-detail-tab="en">English Summary</button>
+  </div>
+
+<article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
+
+## 局部神经算子如何用于无方程系统级分析
+
+### 一句话理解
+
+这项工作的关键不是“用神经网络把 PDE 模拟得更快”，而是把学到的短时间演化算子当作一个可反复调用的黑盒时间步进器，再把它接入 Newton-Krylov、Arnoldi 和伪弧长延拓，从数据中求稳态、稳定性和分岔；同时用 Gap-Tooth 与投影积分把计算限制在局部空间和短时间片段中。
+
+### 证据边界
+
+本地获得的是 Nature 订阅预览，包含摘要、主图、扩展数据图、图注和代码/数据可用性声明，但缺少完整 Results、Methods、正文公式与补充材料正文。因此本文严格区分：
+
+- **论文明确声称**：可在 `paper.md` 或论文图片中直接确认；
+- **代码确认**：可在固定提交 `b4120956...` 的源代码中直接确认；
+- **解释**：用于帮助理解论文与代码之间的关系，不冒充缺失的论文原文；
+- 下文标注为“代码推导”的公式是对实现的数学化改写，不是从缺失的 Methods 中恢复出来的公式。
+
+### 论文要解决什么问题
+
+普通神经算子学习一个函数到函数的映射，例如从当前场 $u(x,t)$ 预测短时间后的场 $u(x,t+\Delta t)$。这对前向模拟有用，但系统级问题还要求回答：
+
+1. 哪些状态是稳态？
+2. 稳态对小扰动是否稳定？
+3. 参数改变时，稳态分支在哪里转折或失稳？
+4. 能否在只模拟稀疏空间小块和短时间爆发的情况下完成这些分析？
+
+论文摘要明确提出，把局部神经算子与 Krylov 子空间迭代方法结合，并进一步与投影积分、Gap-Tooth 和 Patch Dynamics 结合；示例包括 Allen-Cahn、Liouville-Bratu-Gelfand（LBG）和 FitzHugh-Nagumo（FHN）（`paper.md:12`）。
+
+### 整体流程
+
+```text
+短时间训练对: (当前状态 u, 参数 lambda) -> 下一状态
+                         |
+                         v
+             学习局部时间步映射 Phi(u; lambda)
+                         |
+       +-----------------+-------------------+
+       |                 |                   |
+       v                 v                   v
+   前向迭代          系统级数值分析       多尺度局部计算
+                     u-Phi(u)=0          Gap-Tooth 空间小块
+                     Newton-Krylov       短爆发 + 投影积分
+                     Arnoldi/eigs        Patch Dynamics
+                     伪弧长延拓
+```
+
+最重要的接口只有一个：给定状态和参数，返回短时间后的状态。矩阵自由算法不要求显式写出 PDE 或完整 Jacobian，只需要多次查询这个接口。
+
+### 第一步：训练 RandONet 时间步进器
+
+#### 随机分支与主干特征
+
+**代码确认。** RandONet 的核心实现不是端到端反向传播所有权重。代码先随机生成主干与分支特征，再通过完全正交分解和伪逆求外层矩阵 $C$。
+
+主干特征采用
+
+$$
+T(y)=\tanh(y\alpha_t+\beta_t),
+$$
+
+RFFN 分支采用
+
+$$
+B(f)=\cos(\alpha_b f+\beta_b),
+$$
+
+最终算子是代码推导形式
+
+$$
+\widehat{\Phi}(f)(y)=T(y)CB(f).
+$$
+
+这些行为可在 `Allen-Cahn/.../train_RandONet.m:79-171` 和 `eval_RandONet_parametric.m:68-75` 直接确认。
+
+这种设计的意义是：昂贵的非线性训练被转化为随机特征构造加线性代数求解。扩展数据图 1、3、4、6 显示，随着分支神经元数或计算时间增加，MSE、MaxAE 和 $L^2$ 误差总体下降，但部分指标会平台化或非单调，因此不能理解为“模型越大必然处处更好”。
+
+#### 参数嵌入（论文称 homotopy-based）
+
+**代码确认，论文公式匹配为 Partial。** 参数化 Bratu/FHN 代码先把参数缩放到 $e\in[0,1]$，再混合两组随机投影。关闭可选归一化时，其代码推导形式为
+
+$$
+B(f,e)=\cos\left(\alpha_{b,0}f(1-e)+\alpha_{b,1}fe+\beta_b\right).
+$$
+
+这说明参数不是只在输出端拼接，而是直接调制分支随机特征。扩展数据图将其称为 homotopy-based RandONet，但本地预览没有该方法的正式论文公式，因此只能确认实现机制，不能声称与论文缺失公式逐项一致。
+
+#### FHN 的 POD 压缩
+
+**代码确认。** FHN 状态维度较高且包含两个场。实现对验证状态构造 `ff_val*ff_val'`，做特征分解，按特征值从大到小累计，保留累计比例达到 0.999 的最少模态，然后把输入投影到该子空间，再训练双输出参数化 RandONet（`FitzHugh_Nagumo_simulated_with_LBM/.../main_RandDeepOnet_FHN_LBM_2outputs.m:86-175`）。这与图 6 的 POD-RandONet 标记直接对应。
+
+### 第二步：把时间步进器变成稳态方程
+
+假设学到的短时间映射是 $\widehat{\Phi}(u;\lambda)$。代码定义残差
+
+$$
+F(u,\lambda)=u-\widehat{\Phi}(u;\lambda).
+$$
+
+若 $F(u^*,\lambda)=0$，则 $u^*$ 经过一个时间步后不变，所以它是这个离散时间映射的稳态。实现使用 `nsoli` 的 Newton-Krylov/GMRES 路径求根（`arc_length_cont_JFNKgmres.m:21-37`）。
+
+这一步避免了一个常见误区：为了找稳态，不必把神经算子自回归迭代到很长时间。直接解固定点方程通常更符合任务目标。
+
+### 第三步：矩阵自由稳定性分析
+
+显式构造 $n\times n$ Jacobian 在大系统中代价很高。代码只计算任意方向 $v$ 上的作用：
+
+$$
+D\widehat{\Phi}(u;\lambda)v
+\approx
+\frac{\widehat{\Phi}(u+\delta v;\lambda)-\widehat{\Phi}(u;\lambda)}{\delta}.
+$$
+
+Bratu 和 FHN 的 MATLAB 延拓代码设置 `delta=1e-6`，然后把这个函数句柄交给 `eigs`，计算模最大的前三个特征值（`arc_length_cont_JFNKgmres.m:21-37,64`）。图 1 也用“扰动输入、差分输出、送入 Newton-Krylov/Arnoldi”的结构展示了这一点。
+
+需要注意：这些是学到的离散时间映射的特征值。若要转换为连续时间增长率，需要明确时间步长和转换约定；本地预览没有足够证据，本文不自行补充。
+
+### 第四步：伪弧长延拓追踪分岔
+
+直接逐步改变参数，在鞍结点附近可能无法继续，因为解支对参数不再是单值函数。代码使用前两个解点构造割线方向，并加入代码推导的弧长约束
+
+$$
+N(u,\lambda)=\alpha^\top(u-u_1)+\beta(\lambda-\lambda_1)-\Delta s=0.
+$$
+
+然后联立求解
+
+$$
+\begin{bmatrix}
+F(u,\lambda)\\
+N(u,\lambda)
+\end{bmatrix}=0.
+$$
+
+每得到一个新点，代码保存状态、参数和主导特征值，再继续预测-校正（`arc_length_cont_JFNKgmres.m:39-69`）。主图 3、4、6 显示 RandONet/POD-RandONet 与参考方法的稳态、谱和分岔曲线总体接近。
+
+### 第五步：Gap-Tooth 与投影积分
+
+#### Gap-Tooth：只计算稀疏空间小块
+
+**论文明确声称。** 局部空间神经算子与 Gap-Tooth/Patch Dynamics 可以加速多尺度分析、改善 Krylov 求解条件并降低内存（`paper.md:12`）。
+
+**代码确认。** MATLAB patch evaluator 逐个 tooth 处理。每个分支输入包含左邻块均值（全局左边界为零）、当前 patch 的全部值、右邻块均值（全局右边界为零）以及 patch 中心位置；随后独立评估局部 RandONet，并对最外侧 patch 做端点修正（`EVAL_RandONet_patch.m:18-51`）。
+
+仓库中的另一套 Python Gap-Tooth 实现采用不同耦合方式：用所有 patch 端点拟合 RBF，取其导数作为 patch 边界斜率，再同步推进各微观小块，并提供 $u-\Phi(u)$ 残差（`Bratu/VectorizedGapToothTimestepper.py:120-174`）。两者都支持“只演化 teeth、跨过 gaps”的思想，但预览不足以把每个边界处理精确对应到论文每一幅图。
+
+#### 投影积分：短时间跑几步，再向前外推
+
+代码先运行 `nt` 个短步，从最后两步估计
+
+$$
+\dot u\approx\frac{u_k-u_{k-1}}{dt},
+$$
+
+再做长步外推
+
+$$
+u_{\mathrm{projected}}=u_k+DT\,\dot u.
+$$
+
+随后重复短爆发与投影，并在末尾再运行一段短步（`CPI.m:1-24`）。把 patch RandONet 作为这里的短步函数，就得到 Patch Dynamics。
+
+扩展数据图 5 很有解释力：每次投影后，尤其二阶空间导数误差会跳高；之后的短时间演化让误差快速回落。这既支持快模态向慢流形松弛的解释，也说明投影不是无误差的“免费长步”。
+
+### 为什么 DeepONet 对照很重要
+
+扩展数据图 2 显示：DeepONet 的训练/测试损失下降，轨迹与稳态肉眼看起来也很接近有限差分参考；但其特征值散布错误，分岔图不完整并出现伪分支（`paper.md:274-279`）。
+
+这揭示了该论文最值得记住的实践结论：
+
+> 对前向状态预测足够准确，不等于对 Jacobian、谱和分岔足够准确。
+
+系统级任务会放大算子局部导数的误差，因此模型选择应直接检查稳态、主导特征值与延拓结果，而不能只看 MSE 或单条轨迹。
+
+### 三个基准分别验证什么
+
+| 系统 | 论文给出的结构 | 图像验证重点 |
+|---|---|---|
+| Allen-Cahn | 多个相连的叉形分岔 | 不同初态的稳态、谱、分岔重建；DeepONet 失败对照 |
+| LBG | 鞍结临界点 | 折叠分支、主导特征值、Gap-Tooth/PI/Patch Dynamics |
+| FHN | Hopf 与鞍结分岔；两个耦合 PDE | POD-RandONet 的双场演化、谱与分岔追踪 |
+
+扩展数据使用 MSE、MaxAE、$L^2$ 中位数和 5%-95% 区间评价误差随模型容量与计算时间的变化。由于主图是低分辨率预览，本文不从图中臆测精确误差、加速比或内存数字。
+
+### 可复现性与已知缺口
+
+- 论文声明数据集和代码均公开，并给出 GitHub 与 Zenodo（`paper.md:95-104`）。仓库确实包含主线 MATLAB RandONet、Bratu/FHN 延拓、Gap-Tooth/PI、LBM 数据生成与 POD 代码。
+- **MISSING：**完整 Methods、正文公式、参数表、样本数、完整求解器设置，以及 Supplementary Discussion A-D。搜索范围为 `paper.md` 全部 367 行、保留的 Nature HTML 和 acquisition manifest；本阶段没有重新获取或打开补充 PDF。
+- 若干脚本要求当前目录中已有 `.mat` 模型/数据，并依赖 MATLAB/Chebfun；部分附加 Python Bratu 脚本含 `/Users/hannesvdc/...` 绝对路径。
+- 本分析只做静态源码核查，没有运行训练、延拓或复现图片。因此可以评价代码-论文结构匹配，但不能声称端到端复现成功。
+
+### 最终理解
+
+EF-NO 的本质是一个接口设计：把数据驱动算子包装成短时间黑盒映射，使成熟的矩阵自由数值分析方法可以继续工作。RandONet 提供高精度且快速拟合的实现；Newton-Krylov、Arnoldi 和伪弧长延拓负责系统级任务；Gap-Tooth、投影积分和 POD 负责压缩空间、时间与状态维度。论文的负面对照进一步说明，这套框架真正依赖的是对局部导数和谱结构足够准确的算子，而不是只会生成好看轨迹的代理模型。
+
+</article>
+<article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
+
+## Enabling Local Neural Operators to Perform Equation-Free System-Level Analysis
+
+**Nature Machine Intelligence (2026)** · DOI `10.1038/s42256-026-01265-1`
+
+### Problem
+
+Neural operators normally approximate forward evolution: give them a state and they predict a later state. The paper asks whether a learned operator can instead serve as the computational core for fixed-point, stability, and bifurcation analysis, including multiscale systems where full-domain, long-time simulation is expensive. The central difficulty is that system-level tasks depend on accurate derivatives and spectral structure, not merely visually plausible trajectories.
+
+### Proposed Approach
+
+The EF-NO framework learns a short-time solution map and exposes it as a black-box time-stepper. Matrix-free numerical methods repeatedly query this map and finite-difference its action along vectors, enabling Newton-Krylov fixed-point solves, Arnoldi/eigenvalue stability analysis, and pseudo-arclength continuation without an explicit governing-equation Jacobian. Spatially local operators are combined with Gap-Tooth patches; temporally local bursts are combined with projective integration; together they yield Patch Dynamics (`paper.md:12`, Figs. 1-2).
+
+The released main workflow uses RandONets: random branch/trunk features are generated once and outer coefficients are obtained through factorization/pseudoinverse solves. Parametric trainers blend random branch projections as the parameter varies. For FHN, the implementation first projects states into a POD basis that retains a cumulative eigenvalue fraction of 0.999. These details are directly verified in the repository; the exact main-text equations are unavailable in the acquired preview.
+
+### Evaluation
+
+The paper demonstrates the framework on three nonlinear PDE benchmarks:
+
+- one-dimensional Allen-Cahn with concatenated pitchfork bifurcations;
+- Liouville-Bratu-Gelfand with a saddle-node tipping point;
+- two-field FitzHugh-Nagumo with Hopf and saddle-node bifurcations (`paper.md:12`).
+
+Main figures visually compare learned and reference steady states, leading spectra, and reconstructed/tracked bifurcation branches. They show close qualitative agreement for RandONet/POD-RandONet across the three systems. The LBG multiscale figure further compares projective integration, Gap-Tooth-NO, and Patch-NO trajectories and system-level outputs. Extended figures report MSE, MaxAE, median $L^2$, and 5%-95% $L^2$ ranges versus branch-neuron count or runtime; errors generally decline with capacity/compute but can plateau or become non-monotonic.
+
+An important negative control is the multiparameter Allen-Cahn DeepONet: it attains low training/test losses and visually close trajectories/steady states, yet produces inaccurate eigenvalues and an incomplete, spurious bifurcation diagram (Extended Data Fig. 2; `paper.md:274-279`). This directly supports the paper's premise that forward prediction accuracy alone is insufficient for system-level analysis.
+
+### What Is Novel
+
+- Treating a learned local neural operator as a matrix-free time-stepper for fixed points, stability, and continuation, rather than only a rollout surrogate.
+- Combining local-in-space neural operators with Gap-Tooth and local-in-time operators with projective integration for multiscale system-level computation.
+- Demonstrating why operator choice/accuracy must be judged by derivative-sensitive downstream tasks, not only state prediction.
+
+### Reproducibility Assessment: 3/5
+
+**Strengths.** The paper states that generated datasets and code are public (`paper.md:95-104`). The GitHub snapshot at commit `b4120956...` contains MATLAB pipelines for RandONet training, Bratu/FHN steady-state and bifurcation analysis, Gap-Tooth/projective dynamics, LBM data generation, and POD preprocessing. Source-level fidelity to the main workflow is high.
+
+**Limits.** The acquired Nature source is a subscription preview: full Results/Methods, main equations, parameter tables, and Supplementary Discussion A-D are missing. Several runnable scripts expect working-directory `.mat`/model artifacts and MATLAB/Chebfun dependencies; some ancillary Python Bratu scripts contain developer-specific absolute paths. No training, continuation, or figure regeneration was executed in this analysis, so end-to-end reproducibility remains unverified.
+
+### Bottom Line
+
+The paper reframes local neural operators as numerical-analysis primitives. Its strongest evidence is not simply trajectory agreement, but recovery of equilibria, spectra, and bifurcation structure, paired with a failure case showing how a conventional accurate-looking surrogate can break those tasks. The public repository substantially matches this design, although the inaccessible Methods text and script/data-path assumptions prevent a complete paper-to-code reproduction audit.
+
+</article>
+</section>
+
+<script defer src="{{ '/assets/js/paper-atlas-detail.js' | relative_url | bust_file_cache }}"></script>

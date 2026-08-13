@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/bivi-87d6ed16/
 title: "biVI"
 nav: false
+wide: true
 description: "biVI 是一个“在观测层加入机制约束”的 VAE：它用转录—剪接—降解模型规定 nascent/mature RNA 的联合分布，再利用预训练神经近似器解决 bursty 条件概率难以解析计算的问题，从而在保持 scVI 可扩展潜表示能力的同时，把细胞间差异解释为 burst size 或相对降解等模型条件下的调控变化。"
 robots: noindex, nofollow
 sitemap: false

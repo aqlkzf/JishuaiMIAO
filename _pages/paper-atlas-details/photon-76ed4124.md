@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/photon-76ed4124/
 title: "PHOTON"
 nav: false
+wide: true
 description: "PHOTON（photoselection of transcriptome over nanoscale）先在固定样本的所有 RNA 上原位合成“被光锁住”的 cDNA，再用荧光图像找到目标细胞或亚细胞区域，以 405 nm 激光只解锁这些区域中的 cDNA。后续连接、扩增和测序只能通过已解锁的分子，因此显微镜中的空间选择被转换成一份可测序的 ROI 转录组。"
 robots: noindex, nofollow
 sitemap: false

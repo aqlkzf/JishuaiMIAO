@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/feast-8e90d2a1/
 title: "FEAST"
 nav: false
+wide: true
 description: "FEAST 的输入是带空间坐标的 H&E 全切片图像 patch，输出是原始空间转录组 spot上的 250 个基因预测值。它不生成新的实验测量，也不从图像恢复单细胞真值；它学习“组织形态与已测 ST 表达之间的对应关系”，用于在同类数据分布上推断空间表达。 方法有三个主要设计：用全局自注意力替代预先规定的稀疏图；把注意力拆成正、负两个分支以得到有符号权重；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ovrlpy-f40ae093/
 title: "ovrlpy"
 nav: false
+wide: true
 description: "ovrlpy 不先问“每个转录本属于哪个细胞”，而是先把组织切片沿局部 z 中心虚拟地分成上、下两层，再比较同一平面位置两层的局部表达组成是否一致。两层越相似，垂直信号完整性（vertical signal integrity，VSI）越高；两层差异越大，越值得怀疑存在细胞垂直重叠、组织折叠、切片边界残缺或分割错误。"
 robots: noindex, nofollow
 sitemap: false

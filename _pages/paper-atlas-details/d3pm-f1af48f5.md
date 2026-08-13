@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/d3pm-f1af48f5/
 title: "D3PM"
 nav: false
+wide: true
 description: "D3PM（Discrete Denoising Diffusion Probabilistic Models）把扩散模型从连续高斯噪声空间推广到离散类别空间：它不把文本 token 或量化图像像素先嵌入连续空间，而是直接用一系列类别转移矩阵 \\boldsymbol {Q} {t} 来逐步破坏离散数据，再训练神经网络学习反向去噪过程。"
 robots: noindex, nofollow
 sitemap: false

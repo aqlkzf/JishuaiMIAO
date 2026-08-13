@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/esig-net-37efad28/
 title: "eSIG-Net"
 nav: false
+wide: true
 description: "eSIG-Net 的方法价值在于把“突变是否改变某个具体 PPI”建模为一个显式的 WT-vs-mutant interaction difference learning 问题。它用 573 维序列特征表示 PPI，用 ESM-2 突变位点差异表示 mutation effect，再用 constrained discrepancy 和 discriminator 学习 interaction perturbation。"
 robots: noindex, nofollow
 sitemap: false

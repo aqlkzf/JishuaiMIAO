@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/clim-time-2f07d30c/
 title: "CLIM_TIME"
 nav: false
+wide: true
 description: "这篇 Cell 论文提出的问题是：肿瘤抑制基因（TSG）缺失怎样改变转移灶的肿瘤微环境（TME），进而影响 T 细胞治疗效果。传统 CRISPR 筛选可以找到免疫调节基因，但通常缺少空间微环境信息；空间组学可以看微环境，但很难一次系统筛查数百个基因扰动。论文把这个缺口概括为：缺少能够在空间复杂 TME 中高通量解析“基因扰动-免疫状态-治疗反应”的方法。"
 robots: noindex, nofollow
 sitemap: false

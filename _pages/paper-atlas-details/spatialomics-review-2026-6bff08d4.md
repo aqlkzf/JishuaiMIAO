@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialomics-review-2026-6bff08d4/
 title: "SpatialOmics_Review_2026"
 nav: false
+wide: true
 description: "这是一篇综述，不是提出单一算法的原始研究。它试图把空间组学领域拆成一条连续证据链：先选择能回答问题的测量技术，再经过分割、质控、增强和细胞注释，把局部邻域组织成生态位、空间群落与肿瘤生态系统，最后讨论这些结构怎样用于早期演化、转移、微小残留病灶、疗效预测和功能验证。全文的核心不是“哪一个平台最好”，而是不同生物问题需要不同的空间尺度、分子覆盖度、样本兼容性和验证强度。 空间转录组可粗分为成像式和测序式两类。"
 robots: noindex, nofollow
 sitemap: false

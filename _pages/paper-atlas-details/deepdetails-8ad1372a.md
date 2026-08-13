@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/deepdetails-8ad1372a/
 title: "DeepDETAILS"
 nav: false
+wide: true
 description: "组织 bulk 测序把多个细胞类型的调控信号混在一起；而 PRO-cap、PRO-seq 与多种 ChIP-seq 往往没有可直接用于监督训练的单细胞真值。DeepDETAILS 用同类组织的 scATAC-seq/snATAC-seq 作为参考，把一个 bulk 信号分解为各细胞类型的碱基分辨率轨迹。训练时并不知道每个细胞类型的真实输出，只要求所有预测分支之和拟合 bulk 观测，因此是“准监督”而非普通监督学习。"
 robots: noindex, nofollow
 sitemap: false

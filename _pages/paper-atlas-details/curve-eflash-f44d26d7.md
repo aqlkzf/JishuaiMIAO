@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/curve-eflash-f44d26d7/
 title: "CuRVE/eFLASH"
 nav: false
+wide: true
 description: "这篇工作解决的不是“抗体能不能进入组织”，而是更严格的问题：在抗体进入厘米尺度完整组织的过程中，怎样让表面细胞和深部细胞始终经历近似相同的化学处理历史。 作者提出 CuRVE（Continuous Redispersion of Volumetric Equilibrium，体积平衡连续再分散）：不要一开始就让反应全速发生，而是把反应强度从“几乎被抑制”缓慢扫到“正常”，每次只改变一点，使运输来得及把不均匀分布的分子重新铺平。"
 robots: noindex, nofollow
 sitemap: false

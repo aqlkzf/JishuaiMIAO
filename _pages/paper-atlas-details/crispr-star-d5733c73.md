@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/crispr-star-d5733c73/
 title: "CRISPR-StAR"
 nav: false
+wide: true
 description: "CRISPR-StAR 的关键不是发明更复杂的统计模型，而是改变比较对象：不再用经历不同瓶颈的起始库和终点肿瘤比较，而是在同一个已经植入的 UMI 克隆内部，用 inactive 后代作为 active 敲除后代的配对对照。"
 robots: noindex, nofollow
 sitemap: false

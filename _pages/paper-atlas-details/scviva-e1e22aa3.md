@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scviva-e1e22aa3/
 title: "scVIVA"
 nav: false
+wide: true
 description: "scVIVA 处理一个很具体的问题：空间转录组里的细胞既有自身表达状态，也处在由其他细胞组成的微环境中。如果直接把邻域特征拼到细胞表达上，模型可能连与该细胞无关的空间结构也记住；如果完全忽略空间，又会错过由生态位诱导的细胞状态。scVIVA 的折中是：从细胞自身表达编码潜变量，再要求这个潜变量同时预测细胞表达和邻域摘要。因此，邻域只有在能够由该细胞的转录组预测时，才会进入表示。"
 robots: noindex, nofollow
 sitemap: false

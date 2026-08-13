@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/crisprmap-cf890cea/
 title: "CRISPRmap"
 nav: false
+wide: true
 description: "pooled CRISPR 筛选的核心任务，是把“这个细胞受到了哪个遗传扰动”与“这个细胞呈现了什么表型”对应起来。 Perturb-seq（Cell, 2016）和 CROP-seq（Nature Methods, 2017）把 CRISPR 扰动与单细胞转录组连接起来，能看到大量 RNA 变化，但需要分离并裂解细胞，因此会丢失细胞形态、蛋白质亚细胞定位、邻近细胞关系和组织结构。"
 robots: noindex, nofollow
 sitemap: false

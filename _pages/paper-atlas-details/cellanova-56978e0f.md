@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellanova-56978e0f/
 title: "CellANOVA"
 nav: false
+wide: true
 description: "单细胞研究常常包含多个样本，而每个样本都可能受到组织处理、细胞解离、建库、测序平台、操作人员等因素影响。整合算法希望让“相同状态”的细胞跨样本对齐，但对齐越强，越可能把真实的疾病、治疗或时间效应一起抹掉。结果可能出现两类问题： 生物信号丢失：不同条件的细胞被过度混合； 数值失真：校正后的基因表达偏离原始数据，影响差异表达和通路分析。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/longcallr-0858fd10/
 title: "longcallR"
 nav: false
+wide: true
 description: "长读长 RNA 测序能让一条 read 同时跨越多个 SNP 和完整转录本结构，因此天然适合单倍型定相与等位基因特异分析。但 RNA 数据有四个突出难点：基因表达导致覆盖极不均匀；剪接位点附近容易错比对；ASE 会让等位基因比例偏离 0.5；A-to-I RNA 编辑又可能被误判为生殖系 SNP。已有的 Clair3-RNA 能较准确地进行 RNA 变异检测，但不同时完成 SNP 定相和 ASE/ASJ 分析。"
 robots: noindex, nofollow
 sitemap: false

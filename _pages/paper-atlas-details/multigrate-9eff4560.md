@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multigrate-9eff4560/
 title: "multigrate"
 nav: false
+wide: true
 description: "Multigrate 是一个面向多模态单细胞数据的条件变分自编码器（cVAE）。每种模态有独立编码器，将可用证据变成高斯后验；Product-of-Experts（PoE）按精度合并这些后验，得到同一个细胞的联合潜变量；各模态解码器再从联合潜变量重建 RNA、蛋白、染色质或代谢物。缺失模态不参与 PoE，但仍可由对应解码器预测，因此同一模型可以处理配对、mosaic、单模态 query 和缺失模态插补。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gradient-equilibrium-online-learning-theory-applications-929b044c/
 title: "Gradient_Equilibrium_Online_Learning_Theory_Applications"
 nav: false
+wide: true
 description: "传统在线学习通常问“累计损失相对最佳固定决策是否具有次线性遗憾”。这篇论文提出另一条轴线：沿实际更新轨迹观察到的梯度，长期平均后能否相互抵消？作者称之为梯度均衡（gradient equilibrium, GEQ）： GEQ 与无遗憾并不互相蕴含。它关注的是一阶平衡条件，而不是累计损失最优性，因此特别适合把“无偏”“覆盖率正确”“分组残差为零”等统计目标写成在线算法的直接保证。"
 robots: noindex, nofollow
 sitemap: false

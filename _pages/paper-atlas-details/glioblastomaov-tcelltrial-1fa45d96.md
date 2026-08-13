@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/glioblastomaov-tcelltrial-1fa45d96/
 title: "GlioblastomaOV_TCellTrial"
 nav: false
+wide: true
 description: "Meylan 等人在 Cell（2026）中研究 CAN-3110（rQNestin34.5v.2）一期临床试验的复发性胶质母细胞瘤样本。论文并不是提出一个新的机器学习模型，而是把 CODEX 空间蛋白组、Xenium 空间转录组、bulk TCRβ 测序和病理学串成一条证据链：一次瘤内注射之后，原先已经存在于肿瘤中的 T 细胞克隆被扩增；其中一部分进入活肿瘤区，保持早期激活、组织驻留和细胞毒程序；病毒残留则主要局限于坏死区。"
 robots: noindex, nofollow
 sitemap: false

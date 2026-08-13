@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/apollo-7c216c8e/
 title: "APOLLO"
 nav: false
+wide: true
 description: "APOLLO 通过为每个成对样本直接优化一个共享 latent 和各模态特异 latent，再固定这些表示训练新样本 encoder，把“多模态共同细胞状态”“单一模态额外信息”和“从一种模态可预测的另一种模态信息”显式分开；这种分解为解释和缺失模态预测提供了结构，但其生物含义仍受配对数据、潜空间维数、网络/损失选择与非线性可辨识性边界约束。"
 robots: noindex, nofollow
 sitemap: false

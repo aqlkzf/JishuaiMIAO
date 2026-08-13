@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/clone2vec-c67fa657/
 title: "clone2vec"
 nav: false
+wide: true
 description: "这篇工作关注的是带有谱系追踪信息的单细胞转录组数据。难点在于，大多数 clone 只被观测到很少几个细胞，而且 clone 大小分布很不均匀，所以如果直接用细胞类型比例、层次聚类，或者 OT / MMD 这类分布距离去比较 clone，经常会很不稳定。作者想要的是一种不依赖人工细胞类型标签、又能在稀疏采样下稳定描述 clone 行为差异的方法。"
 robots: noindex, nofollow
 sitemap: false

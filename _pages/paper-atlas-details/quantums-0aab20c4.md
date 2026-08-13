@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/quantums-0aab20c4/
 title: "QuantUMS"
 nav: false
+wide: true
 description: "QuantUMS 解决的是 DIA 蛋白质组学里的“定量值是否可信”问题：同一个 peptide precursor 会有 MS1 母离子信号和多个 MS/MS fragment 信号，但这些信号会受噪声、共洗脱、共碎裂等干扰影响。论文声称 QuantUMS 用信号强度和质量分数来估计每个定量通道的偏差和方差，再做反方差加权聚合，从而同时输出 precursor/protein quantity 和 quantity quality。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/simvi-35534bbc/
 title: "SIMVI"
 nav: false
+wide: true
 description: "空间组学数据里，一个细胞的表达模式通常同时受两类因素影响： 细胞内在状态：例如细胞类型、细胞周期、分化阶段等。 空间诱导状态：例如空间梯度、邻近细胞互作、局部微环境信号等。 难点在于，这两类因素经常纠缠在一起。比如同一种细胞类型本来就可能聚集在组织的某个区域；如果一个模型直接使用空间邻域信息学习嵌入，就可能把“细胞类型本身的空间分布”误当成“空间微环境造成的表达改变”。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/paga-0cedbe37/
 title: "PAGA"
 nav: false
+wide: true
 description: "PAGA 不直接把所有细胞强行拟合成一棵轨迹树。它先在单细胞 kNN 图上划分群体，再统计群体之间跨边是否足够多，得到一个加权的群体图 G^。这个图可以同时表示连续连接、分支、环和断开的区域；沿高置信群体路径再结合 DPT，才得到细胞级顺序和基因变化。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/svg-benchmarking-6b79028e/
 title: "SVG_Benchmarking"
 nav: false
+wide: true
 description: "空间转录组数据同时记录基因表达和空间坐标。一个核心任务是找出表达模式与空间位置显著相关的基因，即 spatially variable genes，简称 SVG。已有方法很多，但不同方法在模拟数据、真实组织、统计校准、计算规模和下游聚类任务中的表现并不一致。本文的目标不是提出一个新的 SVG 模型，而是系统比较 14 个已有 SVG 检测方法，并给出方法选择建议。"
 robots: noindex, nofollow
 sitemap: false

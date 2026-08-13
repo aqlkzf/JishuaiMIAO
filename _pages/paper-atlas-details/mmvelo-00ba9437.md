@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mmvelo-00ba9437/
 title: "mmVelo"
 nav: false
+wide: true
 description: "mmVelo 解决的问题是：单细胞 multiome 能同时测 RNA 和 ATAC，但这些测量仍然是静态快照；RNA velocity 可以给 RNA 层提供方向，却不能直接给 chromatin accessibility 一个动力学方程。mmVelo 的核心思想是先用多模态 VAE 学到共享细胞状态 zn，再用 RNA splicing kinetics 训练潜在状态转移 dn，最后把 zn+\\rho dn 通过不同 decode…"
 robots: noindex, nofollow
 sitemap: false

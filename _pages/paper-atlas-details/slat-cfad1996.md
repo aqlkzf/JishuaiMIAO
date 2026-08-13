@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/slat-cfad1996/
 title: "SLAT"
 nav: false
+wide: true
 description: "SLAT（Spatially-Linked Alignment Tool）不是先把两张切片做刚性配准，再寻找最近点；它先把每张切片表示成“细胞/spot 为节点、空间近邻为边”的图，用共享的图编码器把分子特征和多尺度空间邻域压进同一个嵌入，再用对抗训练让两张图中可比部分的嵌入分布接近，最后按嵌入余弦相似度和可选的空间候选约束输出细胞对应关系。"
 robots: noindex, nofollow
 sitemap: false

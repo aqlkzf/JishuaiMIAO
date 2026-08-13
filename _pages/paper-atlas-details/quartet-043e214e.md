@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/quartet-043e214e/
 title: "Quartet"
 nav: false
+wide: true
 description: "同一批病人样本的 DNA、RNA、蛋白和代谢物，常常不是在同一天、同一仪器、同一实验室完成测量。直接比较这些绝对定量值时，批次、平台和实验流程带来的偏移，可能比真正的生物差异还大。于是会出现两个问题： 横向整合：同一种组学的多个批次能否合并，而不是按批次聚类？ 纵向整合：不同组学合在一起后，能否找回真实的样本分组和跨组学关系？"
 robots: noindex, nofollow
 sitemap: false

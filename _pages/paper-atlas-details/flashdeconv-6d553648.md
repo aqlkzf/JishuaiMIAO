@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/flashdeconv-6d553648/
 title: "FlashDeconv"
 nav: false
+wide: true
 description: "FlashDeconv 要回答的是：每个空间测量 bin 中，各细胞类型分别占多少。它先从空间数据和单细胞参考中挑出有用基因，再把数千个基因随机压缩到默认 512 个特征，在压缩空间中求带空间平滑和稀疏约束的非负回归。关键卖点不是一种新的概率生成模型，而是用 leverage score 加权 CountSketch 与稀疏邻接图，把主要计算量做成对 bin 数 N 近似线性增长。"
 robots: noindex, nofollow
 sitemap: false

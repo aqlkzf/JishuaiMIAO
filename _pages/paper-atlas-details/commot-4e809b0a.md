@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/commot-4e809b0a/
 title: "COMMOT"
 nav: false
+wide: true
 description: "COMMOT 要解决的是空间转录组里的细胞-细胞通讯推断问题。传统基于 scRNA-seq 的通讯方法多半只看配体和受体表达，或者在细胞群层面打分；但真实通讯有两个关键约束：第一，配体和受体只能在有限空间范围内发生作用；第二，一个配体可能结合多个受体，一个受体也可能被多个配体竞争，所以不同分子和不同细胞之间的通讯不能完全独立地打分。"
 robots: noindex, nofollow
 sitemap: false

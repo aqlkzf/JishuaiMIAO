@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pseudodynamicsplus-808717ce/
 title: "PseudodynamicsPlus"
 nav: false
+wide: true
 description: "时间序列 scRNA-seq 给出不同时间点的细胞状态快照，但每次捕获的细胞数通常由实验采样深度决定，并不等于组织中的真实细胞总数。如果某个状态在后期占比增加，至少有三种解释：该状态内细胞增殖、其他状态向它分化，或随机扩散使密度进入该区域。只看归一化后的单细胞比例无法区分这些机制。 Pseudodynamics+ 的输入因此有两部分： 每个时间点的单细胞状态坐标 \\mathbf s 与时间标签 t；"
 robots: noindex, nofollow
 sitemap: false

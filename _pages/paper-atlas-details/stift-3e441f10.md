@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stift-3e441f10/
 title: "STIFT"
 nav: false
+wide: true
 description: "STIFT 不把不同发育时间点只当作需要消除的 batches。它先用 DeST-OT 在每对相邻时间切片之间估计软匹配，把高概率匹配转成跨时间图边，再与每张切片内部的空间 KNN 图合并；最后用 graph attention autoencoder 重构表达，并用跨时点“亲属”构造 triplet loss，让 embedding 同时混合批次、保留空间邻域和时间连续性。"
 robots: noindex, nofollow
 sitemap: false

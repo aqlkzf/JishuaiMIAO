@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/decalign-07c039e2/
 title: "DecAlign"
 nav: false
+wide: true
 description: "DecAlign 面向文本、语音和视觉的情感/情绪识别。它先把每种模态拆成两部分：模态特有表示 sm 与模态共同表示 cm；再对两种子空间使用不同的对齐原则——对特有表示，在原型层面用多边最优传输缓解分布差异；对共同表示，用统计矩和 MMD 逼近共享语义分布；最后把两条分支融合用于预测。 其核心判断是：“跨模态对齐”不是把所有特征强行压到同一空间。语调、面部微表情和词义有互补信息，过度对齐会抹掉差异；"
 robots: noindex, nofollow
 sitemap: false

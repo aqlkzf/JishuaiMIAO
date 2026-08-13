@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gaston-926d25d7/
 title: "GASTON"
 nav: false
+wide: true
 description: "GASTON 从空间坐标预测低维表达特征，并强制网络中间只有一个标量瓶颈 d(x,y)。这个标量叫 isodepth：它像地形图的海拔，同一等值线上的远距离位置可以共享相似表达状态。随后方法沿 isodepth 用动态规划切出空间域，再为每个基因在每个域内拟合 Poisson 分段线性函数，从而同时描述域边界处的跳变和域内部的连续梯度。 本文依据本地论文 outputpapermd/paper/auto/paper."
 robots: noindex, nofollow
 sitemap: false

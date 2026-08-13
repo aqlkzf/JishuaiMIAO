@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/marsgt-1f0af0a3/
 title: "MarsGT"
 nav: false
+wide: true
 description: "MarsGT 要解决的问题是：配对 scRNA-seq 和 scATAC-seq 中，稀有细胞往往只有很小比例，且 dropout 会让它们的 RNA 或染色质信号不稳定。若分别处理两种矩阵，细胞、基因和调控峰之间的信息难以互相补足。 它把细胞、基因、峰当作三类节点；RNA 非零值形成 cell--gene 边，ATAC 非零值形成 cell--peak 边。"
 robots: noindex, nofollow
 sitemap: false

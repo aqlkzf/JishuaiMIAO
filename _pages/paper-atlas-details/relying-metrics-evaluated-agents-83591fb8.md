@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/relying-metrics-evaluated-agents-83591fb8/
 title: "Relying_Metrics_Evaluated_Agents"
 nav: false
+wide: true
 description: "平台或监管者可能有很强的数据收集能力，却不知道“应该收集哪个变量”。真正执行任务的被评估者反而知道一个与成本相关的指标 X。论文研究的不是“看到 X 的取值后是否报告”，而是被评估者在取值实现之前，是否告诉委托人这个变量存在且可观测。 代理人付出二元努力，成本为 C；完成任务后委托人获得价值 b。如果隐藏 X，委托人只能给统一报酬 p： 如果公开 X，委托人可按 x 设置报酬 \\rho(x)，并使用条件成本分布 Fx 优化每一类的价格。"
 robots: noindex, nofollow
 sitemap: false

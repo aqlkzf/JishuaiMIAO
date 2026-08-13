@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sctel-93f2bd9b/
 title: "scTEL"
 nav: false
+wide: true
 description: "scTEL 面向 CITE-seq 和 scRNA-seq 的联合分析。CITE-seq 可以在同一个细胞内同时测 RNA 和表面蛋白，但论文指出它成本高、抗体面板有限，而且 RNA 与蛋白表达之间常常不是简单强相关关系，因此只靠 RNA 或只靠已有蛋白面板都不够 。 论文的核心目标是：用已有 CITE-seq 数据学习从 RNA 表达到蛋白表达的映射，这样在只有 scRNA-seq 或蛋白面板不完整的场景中，也能预测或补全蛋白表达 。"
 robots: noindex, nofollow
 sitemap: false

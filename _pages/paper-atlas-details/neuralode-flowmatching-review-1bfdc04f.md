@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/neuralode-flowmatching-review-1bfdc04f/
 title: "NeuralODE_FlowMatching_review"
 nav: false
+wide: true
 description: "这是一篇 2026 年发表于 Communications Biology 的叙述性综述，而不是提出新算法的原始研究。它的主线是：单细胞测序通常只能取得不同细胞在若干时刻的“群体快照”，研究者如何用连续动力系统把这些离散快照连接起来，并从 Neural ODE 进一步走向基于最优传输和 Flow Matching 的生成模型。 因此，文章提供的是概念框架、数学入口和代表性方法分类；"
 robots: noindex, nofollow
 sitemap: false

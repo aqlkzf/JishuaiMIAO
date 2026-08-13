@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spaim-b994709e/
 title: "SpaIM"
 nav: false
+wide: true
 description: "SpaIM 不直接把单细胞映射到空间位置。它把每个基因当成一个训练样本：scRNA-seq 侧用该基因在 K 个细胞类型中的平均表达作为“content”，ST 侧用同一基因在全部空间位置的表达向量作为“style/目标”。一个 ST autoencoder 从已测共同基因学习 ST 风格，另一个 ST generator 把同样的风格施加到 scRNA-seq content 上；"
 robots: noindex, nofollow
 sitemap: false

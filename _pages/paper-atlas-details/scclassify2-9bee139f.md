@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scclassify2-9bee139f/
 title: "scClassify2"
 nav: false
+wide: true
 description: "scClassify2 把每个细胞转换为“Gene2Vec 基因节点 + 细胞特异 log-ratio 边”的稀疏图，通过 node-edge 双向消息传递提取整细胞表示，再用条件 ordinal classifiers 沿预先给定的状态顺序逐级判断，并以 masked Gene2Vec 重建约束表示学习。"
 robots: noindex, nofollow
 sitemap: false

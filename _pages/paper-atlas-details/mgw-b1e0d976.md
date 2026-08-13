@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mgw-b1e0d976/
 title: "MGW"
 nav: false
+wide: true
 description: "MGW（Manifold Gromov-Wasserstein）解决的是这样一个问题：两张空间组学切片都带有二维坐标，但一个测量转录本、另一个可能测量代谢物，特征维数、单位和数值几何完全不同，不能直接计算“一个 RNA 点与一个代谢点的特征距离”。MGW 不强行把两种特征相加，而是分别学习“分子特征沿组织空间如何变化”的局部几何，再用 Gromov–Wasserstein（GW）最优传输匹配两个几何结构。"
 robots: noindex, nofollow
 sitemap: false

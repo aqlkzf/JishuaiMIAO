@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scrden-662f0c91/
 title: "scRDEN"
 nav: false
+wide: true
 description: "scRDEN 面向单细胞 RNA-seq 的细胞亚群识别、拟时序轨迹推断和动态基因网络分析。文章的基本判断是：直接使用单个基因的表达量做轨迹推断容易受 dropout、噪声、细胞异质性和复杂分支结构影响；相对而言，细胞内基因对的表达排序关系更稳定，适合用来构造更鲁棒的轨迹特征。这个动机在摘要、引言和 Fig."
 robots: noindex, nofollow
 sitemap: false

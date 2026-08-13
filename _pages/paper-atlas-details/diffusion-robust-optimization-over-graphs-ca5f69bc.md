@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/diffusion-robust-optimization-over-graphs-ca5f69bc/
 title: "Diffusion_Robust_Optimization_Over_Graphs"
 nav: false
+wide: true
 description: "这不是生物信息学论文，而是一篇关于鲁棒优化、网络优化和计算复杂性的理论论文。 普通的鲁棒图优化通常把边权扰动写成一个盒子、范数球或有限情景集合。这样做容易计算，却没有表达“扰动只能沿网络相邻位置传播”这一事实。例如交通拥堵不会瞬间从一条街跳到完全不相邻的另一条街，而会通过路口逐段扩散。 本文的核心创新是：把不确定性建模为在有向图上流动的“扰动质量”，并要求它在节点处守恒。"
 robots: noindex, nofollow
 sitemap: false

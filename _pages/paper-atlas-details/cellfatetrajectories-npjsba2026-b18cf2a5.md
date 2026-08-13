@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellfatetrajectories-npjsba2026-b18cf2a5/
 title: "CellFateTrajectories_npjSBA2026"
 nav: false
+wide: true
 description: "这不是提出单一新算法的原创方法论文，而是一篇方法综述。它把不同时间点采到的、彼此不配对的单细胞分布视为随时间演化的概率分布，并用“spatiotemporal Dynamical Generative Model（stDGM）”统一最优传输、Schrödinger bridge、流匹配、增长/死亡、空间对齐和细胞相互作用方法。 核心问题是：Day 2 与 Day 4 的细胞不是同一批细胞，如何从若干 snapshot 推断中间连续动力学。"
 robots: noindex, nofollow
 sitemap: false

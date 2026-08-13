@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nclusion-e6e3c0f7/
 title: "NCLUSION"
 nav: false
+wide: true
 description: "NCLUSION 把“细胞属于哪个簇”和“哪些基因真正推动这个簇”放在同一个贝叶斯模型里联合估计。它直接处理归一化表达矩阵，不先做 PCA；用截断的层次 Dirichlet 过程容纳未知簇数，用 spike-and-slab 先验把无关的“基因 × 簇”效应压到零，再以变分推断获得细胞归属概率和基因后验纳入概率（PIP）。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tosica-ad5f4a06/
 title: "TOSICA"
 nav: false
+wide: true
 description: "单细胞参考图谱建好后，常见任务是把已有的细胞类型标签稳定地迁移到新批次或新研究的 query 数据。传统流程往往是降维、聚类、找 marker、人工命名；不同研究会因 marker 和命名标准不同而得到不一致的注释。已有深度模型虽然可自动化，但其隐藏层通常难以回溯到具体的生物过程。TOSICA（Nature Communications, 2023）希望同时给出标签和“为什么是这个标签”的路径/调控子层解释。"
 robots: noindex, nofollow
 sitemap: false

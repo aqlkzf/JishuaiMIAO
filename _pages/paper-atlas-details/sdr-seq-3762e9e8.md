@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sdr-seq-3762e9e8/
 title: "SDR-seq"
 nav: false
+wide: true
 description: "SDR-seq（single-cell DNA–RNA sequencing）把“这一个细胞在目标位点是什么基因型”和“这一个细胞的目标基因表达多少”放进同一次液滴多重 PCR 测量。它不依赖 gRNA 身份猜测编辑结果，而是直接测内源 gDNA；同时用原位逆转录和 UMI 测量目标 RNA，因此能把 REF/HET/ALT 基因型与表达表型在细胞级连接起来。"
 robots: noindex, nofollow
 sitemap: false

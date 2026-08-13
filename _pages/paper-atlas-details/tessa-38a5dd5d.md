@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tessa-38a5dd5d/
 title: "TESSA"
 nav: false
+wide: true
 description: "空间转录组中的细胞/spot 不仅处在不同坐标，也可能处在分化、发育或肿瘤进展的不同阶段。一个基因可以随伪时间变化，却呈现斑块状或非单调的组织分布；只用空间距离的 SVG 方法未必能捕获它。反过来，只做伪时间差异分析又忽略组织位置。 TESSA 将这两种相关结构放入同一个方差分量模型：Stage 1 先找至少具有空间或轨迹效应的 unified TSVG（uTSVG），Stage 2 再分别判断它是 TVG、SVG，还是两者兼有。"
 robots: noindex, nofollow
 sitemap: false

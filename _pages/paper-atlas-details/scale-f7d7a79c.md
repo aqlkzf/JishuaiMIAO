@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scale-f7d7a79c/
 title: "SCALE"
 nav: false
+wide: true
 description: "单细胞 ATAC-seq 的每一列是一个染色质可及峰，每一行是一个细胞。与 RNA 计数相比，它有两个更尖锐的问题：维度可达数万至近十万峰，但每个细胞只观测到极少数开放位点；同时，一个位点在单细胞中接近“观测到/未观测到”的二元状态。于是，大量 0 既可能是真正关闭，也可能是测序深度不足导致的漏检。 传统 PCA 偏向连续、近高斯结构；依赖细胞间相关性的聚类在大量并列 0 时也容易失真。"
 robots: noindex, nofollow
 sitemap: false

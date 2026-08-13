@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sage-net-450837c0/
 title: "SAGE-Net"
 nav: false
+wide: true
 description: "SAGE-Net（small and good enough CNN）不是单纯追求更大的序列模型，而是提供一套可扩展的个人基因组训练框架：它从参考序列预测群体平均表型，再从个人双倍体序列相对参考序列的表示差异预测个体偏移。论文最重要的结论带有明确边界——这种训练能改善“见过的基因、没见过的个体”的表达预测，却不能把表达调控规律推广到“没见过的基因”；在 DNA 甲基化任务上，随着训练区域增多，才观察到对未见区域的改善。"
 robots: noindex, nofollow
 sitemap: false

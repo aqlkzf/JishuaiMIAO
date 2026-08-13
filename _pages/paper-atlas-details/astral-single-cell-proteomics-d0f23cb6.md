@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/astral-single-cell-proteomics-d0f23cb6/
 title: "Astral_single_cell_proteomics"
 nav: false
+wide: true
 description: "这套方法通过 50-SPD 纳流 LC、FAIMS 降噪、Orbitrap/Astral 并行 DIA、严格 FDR 验证和 MS1 单细胞矩阵分析，把单细胞蛋白覆盖与定量精度推到更高水平；公开 notebook 对后分析和图形有较强支撑，但完整复现仍依赖外部原始数据、Spectronaut 配置和实验室路径修复。"
 robots: noindex, nofollow
 sitemap: false

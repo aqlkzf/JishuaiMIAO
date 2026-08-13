@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/msnlib-3d437f82/
 title: "MSnLib"
 nav: false
+wide: true
 description: "MSnLib 不是一个新的预测模型，而是一个面向 untargeted metabolomics 的开放 MS^n^ 光谱资源和生成流程。它把化合物标准品、元数据清洗、正/负离子模式的高通量 Orbitrap MS^n^ 采集、mzmine 自动处理和开放数据发布串成一条流程，输出可用于小分子注释和机器学习训练的多级碎裂光谱库。"
 robots: noindex, nofollow
 sitemap: false

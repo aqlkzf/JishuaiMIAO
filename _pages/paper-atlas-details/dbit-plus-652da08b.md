@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dbit-plus-652da08b/
 title: "DBiT-plus"
 nav: false
+wide: true
 description: "空间转录组测得的基因很多，但一个 25–50 μm 的 DBiT 点位通常含有多个细胞；多重免疫荧光可以看到单细胞，却只能测有限的蛋白标记。若分别在相邻切片上做两种实验，即使切片来自同一组织块，细胞组成和几何结构也不会完全一致。 DBiTplus 的核心思路是：在同一张组织切片上先做空间转录组，再做多重蛋白成像，并让图像中真正看到的细胞约束 RNA 点位的拆分。 因此它把“全转录组覆盖”和“成像的单细胞空间分辨率”接到了一起。"
 robots: noindex, nofollow
 sitemap: false

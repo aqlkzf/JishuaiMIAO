@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/macaca30tissueaging-220106dd/
 title: "Macaca30TissueAging"
 nav: false
+wide: true
 description: "人体衰老并不是所有器官同步发生，但很难从同一个人获得几十种组织，因此人类全身组织衰老规律一直缺少系统证据。以往非人灵长类研究也大多局限于单个组织或单一组学。本文利用 17 只 3–27 岁的雌性恒河猴，采集 30 种实体组织，同时测量转录组、蛋白质组和代谢组，目标是回答：哪些衰老信号跨组织共享，哪些组织衰老更快，以及这种差异是否与翻译后调控有关。 输入是四个年龄阶段的横断面样本：幼年 5 只、青年 5 只、中年 3 只、老年 4 只。"
 robots: noindex, nofollow
 sitemap: false

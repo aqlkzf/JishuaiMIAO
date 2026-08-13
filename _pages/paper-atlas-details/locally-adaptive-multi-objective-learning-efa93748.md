@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/locally-adaptive-multi-objective-learning-efa93748/
 title: "Locally_Adaptive_Multi_Objective_Learning"
 nav: false
+wide: true
 description: "这篇论文不是通过增加更多“时间区间目标”来适应漂移，而是让同一组目标的权重持续保有恢复能力：minimax 负责每一步同时兼顾当前最难目标，Fixed Share 负责在分布变化后快速重新发现变坏的目标。"
 robots: noindex, nofollow
 sitemap: false

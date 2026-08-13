@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/narmbench-dbc900f1/
 title: "NaRMBench"
 nav: false
+wide: true
 description: "纳米孔 direct RNA sequencing（DRS）可以从原始电流信号中同时寻找多种 RNA 修饰，但不同软件使用的特征、训练样本、对照设计和阈值差异很大。NaRMBench 不提出一个新的 caller，而是建立统一的“赛场”，系统比较 m^6^A、Ψ、m^5^C、A-to-I、m^7^G 和 m^1^A 六类修饰的检测工具。"
 robots: noindex, nofollow
 sitemap: false

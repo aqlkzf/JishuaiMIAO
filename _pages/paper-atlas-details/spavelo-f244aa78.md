@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spavelo-f244aa78/
 title: "spaVelo"
 nav: false
+wide: true
 description: "RNA velocity 需要利用未剪接 RNA（unspliced）和已剪接 RNA（spliced）的相对关系来推断表达变化方向。传统 scVelo、VeloVI、VeloVAE 和 Dynamo 主要面向解离的单细胞数据，把 spot/cell 当成相互独立的样本；TopoVelo 和 spVelo 虽然加入空间信息，但空间图的构建与动力学拟合是解耦的。spaVelo 的目标是让空间依赖和 RNA 动力学在同一个生成模型中联合学习。"
 robots: noindex, nofollow
 sitemap: false

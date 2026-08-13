@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sorbitolintolerance-microbiome-90a8741a/
 title: "SorbitolIntolerance_Microbiome"
 nav: false
+wide: true
 description: "山梨醇本来就很难被宿主小肠吸收，但健康肠道中的微生物会在结肠内继续分解它。抗生素暴露与高脂饮食共同阻碍梭菌纲（Clostridia）恢复，使微生物山梨醇脱氢酶（SDH）能力长期下降；未被清除的山梨醇积聚并通过渗透作用引起腹泻。治疗既可以直接补充能吃掉山梨醇的菌，也可以通过“丁酸—上皮 PPAR-γ—低氧—厌氧梭菌恢复”轴重建整个代谢生态位。"
 robots: noindex, nofollow
 sitemap: false

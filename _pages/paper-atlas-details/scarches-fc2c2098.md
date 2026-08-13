@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scarches-fc2c2098/
 title: "scArches"
 nav: false
+wide: true
 description: "已有参考图谱通常由许多批次训练而成，但新实验到来时，研究者未必能重新取得全部参考原始数据，也不希望每来一个批次就从头训练。scArches 的目标是：只拿到参考模型参数和新查询数据，就把查询细胞放进参考潜空间，同时尽量不改写参考图谱已经学到的结构。 输入包括：与参考模型使用相同特征空间的查询表达矩阵、查询的 study/batch 条件标签，以及训练好的参考模型。输出是查询细胞在参考潜空间中的坐标；"
 robots: noindex, nofollow
 sitemap: false

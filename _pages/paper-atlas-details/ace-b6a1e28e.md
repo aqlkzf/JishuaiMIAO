@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ace-b6a1e28e/
 title: "ACE"
 nav: false
+wide: true
 description: "ACE 的本质是把“一个抗体只能带少量金属离子”的限制，改写为“一个抗体携带一条可循环延伸、可分支、并能共价固定数百个金属 detector 的 DNA 支架”；它最有说服力的贡献是让原本低于质谱流式检测阈值的单细胞蛋白信号变得可量化，而公开代码只提供部分图形分析的审计线索，不能代表完整复现包。"
 robots: noindex, nofollow
 sitemap: false

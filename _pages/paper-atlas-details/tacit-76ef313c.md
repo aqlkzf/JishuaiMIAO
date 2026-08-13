@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/tacit-76ef313c/
 title: "TACIT"
 nav: false
+wide: true
 description: "TACIT 先用专家签名把细胞投影成各类型 CTR，再借微簇排序和分段回归为每种类型寻找数据自适应阈值，最后用相关 marker 子空间中的 clean 邻居拆分多重阳性细胞；它无需训练集且可解释，但可靠性仍取决于预处理、签名和阈值稳定性。"
 robots: noindex, nofollow
 sitemap: false

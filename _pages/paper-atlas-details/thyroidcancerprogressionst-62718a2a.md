@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/thyroidcancerprogressionst-62718a2a/
 title: "ThyroidCancerProgressionST"
 nav: false
+wide: true
 description: "这项研究要回答的不是“甲状腺癌有哪些差异基因”，而是这些分子与细胞状态在肿瘤组织中位于哪里，以及从癌旁组织（PT）、乳头状甲状腺癌（PTC）、局部晚期乳头状甲状腺癌（LPTC）到未分化甲状腺癌（ATC）时，肿瘤细胞、成纤维细胞和免疫细胞的空间关系如何改变。 作者对 17 个组织样本做 10x Visium 空间转录组：4 个 PT、5 个 PTC、4 个 LPTC、4 个 ATC，共得到 57,997 个空间 spot。"
 robots: noindex, nofollow
 sitemap: false

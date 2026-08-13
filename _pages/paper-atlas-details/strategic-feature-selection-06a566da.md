@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/strategic-feature-selection-06a566da/
 title: "Strategic_Feature_Selection"
 nav: false
+wide: true
 description: "很多预测模型不仅“观察世界”，还会改变被预测者的行为。以 Medicare Advantage 为例，政府根据诊断编码预测患者风险并向保险公司付费；模型给某个诊断的系数越大，保险公司就越有动力通过补充或强化诊断编码来提高支付额。 战略分类（strategic classification）的经典思路是重新设计一个能够预见这种行为的预测器。但现实制度通常不允许彻底替换已有流程，决策者往往只能调整两个粗粒度杠杆： 删除一部分容易被操纵的特征；"
 robots: noindex, nofollow
 sitemap: false

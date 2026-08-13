@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/candies-76895d72/
 title: "CANDIES"
 nav: false
+wide: true
 description: "CANDIES 针对同一批空间 spots 上两个模态质量不对称的问题，采用严格的两阶段路线。第一阶段先分别用空间图自编码器压缩两个模态，再把高质量模态作为条件，用 Diffusion Transformer（DiT）在潜空间生成“修复后”的低质量模态；第二阶段对修复后的两模态同时建立空间邻接图和特征相似图，用共享参数 GCN、跨模态对比学习与注意力融合得到统一 spot representation。"
 robots: noindex, nofollow
 sitemap: false

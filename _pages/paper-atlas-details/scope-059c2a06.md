@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scope-059c2a06/
 title: "SCOPE"
 nav: false
+wide: true
 description: "这篇 Nature Biotechnology 2026 论文提出 HySIL（hybrid solid-liquid optics）和两个实现：SCOPE 与 Super-SCOPE。问题背景是大体积光片显微成像里的检测物镜矛盾：油/水浸等 immersion objectives 有高 NA、低像差，但工作距离短、价格高、折射率适配范围窄、腔体集成复杂；"
 robots: noindex, nofollow
 sitemap: false

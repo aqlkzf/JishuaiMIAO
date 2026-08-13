@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scatac-vs-bulkatac-99a220e7/
 title: "scATAC_vs_bulkATAC"
 nav: false
+wide: true
 description: "本文不是提出新的 peak caller 或新的单细胞聚类算法，而是用原创的匹配样本比较回答三个实验设计问题： 把 scATAC-seq 细胞聚合成 pseudo-bulk 后，是否能像 bulk ATAC-seq 一样恢复总体开放染色质结构？ 两种实验对弱开放元件，尤其经典 CTCF 位点和远端调控元件的灵敏度差多少？ 一个 scATAC-seq 簇至少需要多少细胞，才能形成可靠调控图谱；又需要多少细胞才能被聚类算法发现？"
 robots: noindex, nofollow
 sitemap: false

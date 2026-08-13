@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/simba-ca5fca8b/
 title: "SIMBA"
 nav: false
+wide: true
 description: "SIMBA 要解决的是单细胞分析里的一个结构性问题：很多方法只学习细胞的低维表示，然后依赖聚类结果去找 marker 或做解释。这样会带来两个后果。第一，marker 发现会受聚类分辨率和聚类算法影响；第二，scRNA-seq、scATAC-seq、多模态分析、批次校正、多组学整合往往被写成不同任务，需要不同方法和不同解释流程。 SIMBA 的核心想法是：不要只把细胞嵌入到低维空间，而是把细胞和生物学特征一起嵌入。"
 robots: noindex, nofollow
 sitemap: false

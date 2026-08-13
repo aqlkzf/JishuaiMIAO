@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nichetrans-d2274cc3/
 title: "NicheTrans"
 nav: false
+wide: true
 description: "空间多组学希望在同一张组织切片、同一个细胞或 spot 上同时测量 RNA、蛋白、代谢物、染色质可及性等分子层。它的生物学价值很高，但实验往往昂贵、流程复杂、对样本处理要求严格，也难以像空间转录组那样广泛获取。 因此，一个自然问题是：能否先在少量配对空间多组学切片上学习“源组学 → 目标组学”的映射，再把模型应用到更容易获得的空间单组学数据上？例如： 用空间基因表达预测空间蛋白； 用空间基因表达预测空间代谢物；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/functional-protein-mining-conformal-guarantees-dc2d7df8/
 title: "Functional_Protein_Mining_Conformal_Guarantees"
 nav: false
+wide: true
 description: "Protein-Vec、CLEAN、Foldseek 等模型能够给蛋白对打分，但“分数很高”不等于“功能一定相同”，更不能告诉实验人员应该保留多少候选。本文的核心不是训练一个新蛋白模型，而是在任意现有打分模型之后增加一个校准与风险控制层：用户先指定可以接受的错误，例如 10% 假发现率，再由独立校准集自动求出阈值。 输入：查询蛋白 Q、检索数据库 D、模型分数 S{ij}、带真实标签的校准查询，以及风险容忍度 \\alpha。"
 robots: noindex, nofollow
 sitemap: false

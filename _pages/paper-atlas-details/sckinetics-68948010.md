@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sckinetics-68948010/
 title: "scKINETICS"
 nav: false
+wide: true
 description: "scKINETICS 把细胞速度写成 x'=Ax，用 ATAC/motif 证据限制 A 的可学边，用 cluster-specific covariance 给 A 一个协表达先验，用 local manifold 给不可观测 velocity 加 truncated-normal bounds，再用 target-wise EM 学出 cluster-specific Ac。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/crochet-52cc337e/
 title: "CROCHET"
 nav: false
+wide: true
 description: "CROCHET（ChaRacterization Of Cellular HEterogeneity in Tissues）是一套面向单细胞分辨率空间组学的端到端流程。它把原始多轮荧光图像依次变成配准、分割和质控后的单细胞特征表，再用基于径向分布函数（RDF）的空间富集分数衡量“哪些标记或细胞类型在给定距离内共同出现”，最后生成细胞邻域、受体—配体 immunoprint 和相邻切片的 3D 图谱。"
 robots: noindex, nofollow
 sitemap: false

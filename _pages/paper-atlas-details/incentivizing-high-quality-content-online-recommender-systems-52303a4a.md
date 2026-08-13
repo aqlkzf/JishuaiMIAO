@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/incentivizing-high-quality-content-online-recommender-systems-52303a4a/
 title: "Incentivizing_High_Quality_Content_Online_Recommender_Systems"
 nav: false
+wide: true
 description: "这篇论文并不是设计一个“预测得更准”的推荐模型，而是把推荐算法当成一种市场规则：平台今天怎样分配曝光，会改变创作者今天愿意投入多少成本。普通 Hedge/EXP3 虽然能做到低 regret，却可能让均衡内容质量逐渐降到零；论文用“低质量后失去未来曝光”的惩罚机制，把创作者的长期利益重新和质量绑定起来。"
 robots: noindex, nofollow
 sitemap: false

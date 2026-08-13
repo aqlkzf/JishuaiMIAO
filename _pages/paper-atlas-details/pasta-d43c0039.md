@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pasta-d43c0039/
 title: "PASTA"
 nav: false
+wide: true
 description: "成像型空间转录组可以在单细胞分辨率保留组织坐标，但通常只测一个预选基因面板。PASTA（PAthway-oriented Spatial gene impuTAtion）借助全转录组 scRNA-seq 参考，将未测基因投影回空间。它与多数逐基因补全方法的区别是：训练时就指定一个通路，用该通路中已测基因、细胞类型和同类型空间邻域约束映射，最终直接输出每个空间细胞的通路总表达。 PASTA 的核心假设有三条。"
 robots: noindex, nofollow
 sitemap: false

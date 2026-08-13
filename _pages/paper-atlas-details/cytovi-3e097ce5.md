@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cytovi-3e097ce5/
 title: "CytoVI"
 nav: false
+wide: true
 description: "CytoVI 用带 batch/协变量条件的概率 VAE 把不同抗体技术和 panel 投到共享 latent，通过 backbone-only encoder、全 marker decoder 和 masked likelihood 学习缺失蛋白分布，并以 posterior uncertainty 支持插补与临床迁移；结果强度取决于预处理、panel overlap、参考覆盖和批次–生物混杂。"
 robots: noindex, nofollow
 sitemap: false

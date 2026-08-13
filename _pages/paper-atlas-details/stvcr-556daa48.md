@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stvcr-556daa48/
 title: "stVCR"
 nav: false
+wide: true
 description: "stVCR 把不同时间的空间转录组细胞群放入共同的空间–表达状态，用刚体对齐消除坐标框架差异，用带生长质量的神经 ODE 和多时点 OT 匹配学习连续迁移、表达与增殖场，再从这个模型生成插值、谱系和局部敏感度；它重建的是受快照与先验约束的最可能动力学之一，而不是对单细胞真实历史的直接观测。"
 robots: noindex, nofollow
 sitemap: false

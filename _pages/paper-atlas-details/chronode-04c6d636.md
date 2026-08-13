@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/chronode-04c6d636/
 title: "chronODE"
 nav: false
+wide: true
 description: "发育时间序列中的基因表达和染色质开放度常只有少数时间点。样条或高阶多项式可以把点连成曲线，但系数通常不对应明确的生物过程。chronODE 用广义 logistic 常微分方程描述“早期协同加速、后期逐渐饱和”的信号，把每个动态基因或 cCRE 压缩成两个主要量：变化速率 k 和饱和水平 b。随后它根据拐点相对实验窗口的位置，将单调信号分为 accelerator、switcher、decelerator；"
 robots: noindex, nofollow
 sitemap: false

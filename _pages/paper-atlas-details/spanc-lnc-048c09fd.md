@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spanc-lnc-048c09fd/
 title: "SPanC-Lnc"
 nav: false
+wide: true
 description: "SPanC-Lnc 是一个 pan-cancer lncRNA atlas/database。它把单细胞 RNA-seq 和空间转录组数据放在一起，用 TAR-scRNA-seq/HMM 流程先发现未注释的转录活跃区域，再把这些候选 lncRNA 放回癌种、细胞类型、空间位置和功能注释里解释。"
 robots: noindex, nofollow
 sitemap: false

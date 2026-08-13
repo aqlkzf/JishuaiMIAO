@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ctpnet-8a756dd5/
 title: "cTPnet"
 nav: false
+wide: true
 description: "很多单细胞研究只有 scRNA-seq，没有同一个细胞上的表面蛋白测量。但在免疫学、造血、肿瘤研究里，CD3、CD4、CD8、CD19、CD34、CD38 这类表面蛋白往往比对应 RNA 更直接地定义细胞类型、分化阶段和治疗靶点。论文提出的问题是：能否利用已有 CITE-seq/REAP-seq 这类“同一细胞同时测 RNA 和表面蛋白”的数据，训练一个模型，把新的 scRNA-seq-only 数据映射成表面蛋白丰度 。"
 robots: noindex, nofollow
 sitemap: false

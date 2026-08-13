@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scale-1de4796e/
 title: "SCALE"
 nav: false
+wide: true
 description: "常规空间聚类通常输出一张分区图，但真实组织常同时具有粗粒度和细粒度结构。例如脑组织在高层可以分为皮层、海马和丘脑，在低层又可继续分成皮层层次和海马亚区。SCALE（Spatial Clustering At multiple LEvels）要解决的不是“选唯一最佳聚类”，而是从许多空间图尺度与聚类分辨率中，找出一组稳定且近似嵌套的分区。 方法依赖三项假设：同一功能域附近的表达环境相似；有意义的域在某个观察尺度上具有空间连续性；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmodal-db9960fe/
 title: "scMODAL"
 nav: false
+wide: true
 description: "scMODAL 面向的是未配对单细胞多组学：两个数据集的细胞不同、特征也不同，但研究者知道少量正相关的跨模态特征链接，例如 RNA 基因表达与 ATAC gene activity，或蛋白丰度与其编码基因表达。方法不是只在这些共有特征上整合，而是让各模态编码器读取自己的完整高变特征，同时只用链接特征寻找跨模态锚点。"
 robots: noindex, nofollow
 sitemap: false

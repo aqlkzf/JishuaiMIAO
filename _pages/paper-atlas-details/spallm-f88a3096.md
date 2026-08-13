@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spallm-f88a3096/
 title: "spaLLM"
 nav: false
+wide: true
 description: "spaLLM 把空间多组学的两个数值模态与 scGPT 生成的 RNA spot embedding 放进多张图中传播，再通过三级注意力汇合为 64 维表示，最后用 mclust 等聚类器划分空间域。这里的“LLM”是冻结 scGPT 的预计算表示，不是训练或提示一个聊天模型。"
 robots: noindex, nofollow
 sitemap: false

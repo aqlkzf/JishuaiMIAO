@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/omap-53ee531e/
 title: "OMAP"
 nav: false
+wide: true
 description: "RNA 的功能不仅由“直接结合它的分子”决定，也由它所在的局部细胞环境决定，例如同一核内区室中的蛋白、RNA 和染色质。传统反义寡核苷酸捕获通常在裂解后富集目标 RNA，容易引入裂解液中的非特异结合，并且常需要较多细胞；基因编码的邻近标记方法则可能存在游离或错误定位的酶，而且不容易用于原代样本和组织。"
 robots: noindex, nofollow
 sitemap: false

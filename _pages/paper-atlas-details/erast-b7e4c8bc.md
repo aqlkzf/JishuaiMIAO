@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/erast-b7e4c8bc/
 title: "ERAST"
 nav: false
+wide: true
 description: "ERAST 并不是用一个更大的模型直接取代 BLAST。它把同源序列搜索拆成三个可分别优化的环节：先用已有生物学标签缩小或调整候选范围，再用序列语言模型向量做快速召回，最后用序列对分类器 EHSM 判断候选与查询属于同一家族、超家族、折叠，还是不同折叠。论文的核心工程主张是：昂贵的十亿级数据库向量可以保持不动，而较小的重排器可以随新数据更新。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stgp-b22b6a1f/
 title: "stGP"
 nav: false
+wide: true
 description: "空间转录组如果在多个年龄、发育阶段或损伤时间点采样，同一种细胞的表达变化往往同时包含两件事：不同样本之间随时间改变的共同趋势，以及每张组织切片内部的解剖位置或局部微环境差异。传统 PCA、NMF 可以找低维因子，却不能告诉我们一个因子主要是时间变化、空间结构，还是二者叠加；"
 robots: noindex, nofollow
 sitemap: false

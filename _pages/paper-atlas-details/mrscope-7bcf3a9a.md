@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mrscope-7bcf3a9a/
 title: "MRScope"
 nav: false
+wide: true
 description: "fMRI 能覆盖全脑，但 BOLD 是血氧和血容量变化形成的间接信号，无法指出具体是哪类、哪一个神经元在活动。钙成像能分辨遗传标记的单细胞，却通常只能看局部皮层。MRScope 把两者放进同一台 MRI、同一只清醒小鼠和同一组刺激试次中，从而把“局部单细胞活动”放回“全脑血流动力学背景”里解释。 作者构建了 MRI 兼容的单光子显微镜：用丙烯酸镜片降低磁敏感伪影，用光纤从磁体外送入激发光，把 CCD 放到距等中心 7."
 robots: noindex, nofollow
 sitemap: false

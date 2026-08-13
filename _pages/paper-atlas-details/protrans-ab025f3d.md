@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/protrans-ab025f3d/
 title: "ProTrans"
 nav: false
+wide: true
 description: "scProTrans 的本质是：用基因/蛋白/peak 的序列 embedding 提供跨数据集可迁移的生物先验，用 cell embedding 表示每个细胞状态，再用 cross-attention 学习“当前细胞中哪些输入分子信息对目标分子预测有用”。核心模型和主要 translation 模式在代码中能够找到；论文中若干下游分析和作图步骤没有在发布代码快照中找到，应在复现时单独标记为缺失或需要作者补充。"
 robots: noindex, nofollow
 sitemap: false

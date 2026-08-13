@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/patho-dbit-85050756/
 title: "Patho-DBiT"
 nav: false
+wide: true
 description: "Patho-DBiT 的关键不是单纯提高 mRNA 数量，而是先在组织内给 FFPE 产生的各种 RNA 片段统一加上 poly(A) 尾，再用 DBiT 的二维微流控条形码标记空间位置。这样，同一套测序数据不仅能生成空间基因表达矩阵，还能追踪非编码 RNA、可变剪接、A-to-I RNA 编辑、spliced/unspliced dynamics 和 RNA 层 SNV。"
 robots: noindex, nofollow
 sitemap: false

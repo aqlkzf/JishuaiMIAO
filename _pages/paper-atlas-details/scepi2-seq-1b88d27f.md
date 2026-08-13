@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scepi2-seq-1b88d27f/
 title: "scEpi2-seq"
 nav: false
+wide: true
 description: "scEpi²-seq 把“抗体定位的组蛋白修饰片段”和“同一片段上的 CpG 甲基化”装进同一个单细胞、单分子读出中，并额外利用片段起点间距推断核小体周期结构。它的关键价值不是简单叠加两种组学，而是能在同一批细胞中讨论复制时序、染色质环境与甲基化维持速度之间的关系。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/proteogenomicdiseasome-bababe16/
 title: "ProteogenomicDiseasome"
 nav: false
+wide: true
 description: "血浆蛋白既可能参与疾病因果过程，也可能只是组织损伤、免疫反应或代偿机制的结果。单看患者血液中的蛋白–疾病相关性，很难区分原因与结果；单看遗传工具变量，又可能被水平多效性、错误效应基因和测量平台偏差误导。这项研究的目标，是把大规模蛋白 pQTL、疾病 GWAS 和实测蛋白的前瞻/患病关联放进同一框架，形成“遗传调控—疾病风险—血液标志物”的证据三角。"
 robots: noindex, nofollow
 sitemap: false

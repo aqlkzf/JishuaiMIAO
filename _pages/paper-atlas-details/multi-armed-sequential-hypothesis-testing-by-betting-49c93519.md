@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/multi-armed-sequential-hypothesis-testing-by-betting-49c93519/
 title: "Multi_Armed_Sequential_Hypothesis_Testing_By_Betting"
 nav: false
+wide: true
 description: "设有 K 个数据源或“臂”。每一轮只能选择一个臂 An 并观察它的结果 Yn(An)，其余臂在这一轮的结果不可见。我们要检验的是全局原假设 即所有臂都满足各自的原假设；备择假设 则表示至少一个臂不是 null。典型例子是多个药物剂量：问题不是分别判断每个剂量，而是尽快发现“是否存在至少一个有效剂量”。"
 robots: noindex, nofollow
 sitemap: false

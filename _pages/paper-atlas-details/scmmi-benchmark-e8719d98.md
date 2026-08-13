@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scmmi-benchmark-e8719d98/
 title: "SCMMI Benchmark"
 nav: false
+wide: true
 description: "SCMMI Benchmark 不是一个新的整合模型，而是一个用于选择单细胞多模态整合方法的基准框架：它把不同数据设定拆成多个任务，统一运行或汇总方法输出，再用共享指标做任务条件下的推荐。"
 robots: noindex, nofollow
 sitemap: false

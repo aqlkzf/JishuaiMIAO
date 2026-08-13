@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spcorr-d5e041e0/
 title: "spCorr"
 nav: false
+wide: true
 description: "空间转录组中，两个基因的表达关系可能随组织位置改变：在一个区域同向、另一个区域无关甚至反向。传统 SVG 方法只看单个基因的边缘表达，难以直接回答这个问题。已有的 scHOT（Genome Biology, 2020）、SpatialCorr（Nature Methods, 2022）和 SpatialDM（Nature Communications, 2023）可估计局部相关性，但论文指出它们通常不把相关性写成坐标的显式函数，协变量调…"
 robots: noindex, nofollow
 sitemap: false

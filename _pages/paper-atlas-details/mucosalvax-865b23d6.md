@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mucosalvax-865b23d6/
 title: "MucosalVax"
 nav: false
+wide: true
 description: "MucosalVax 不是用一个抗原去识别所有病原体，而是用黏膜佐剂和抗原记忆共同训练肺组织：抗原特异 T 细胞维持并协调 AM、上皮和局部免疫结构，使再次遭遇异质威胁时更快控制病原体、减少组织损伤；公开代码精确覆盖其中的空间转录组证据链，但尚未覆盖整篇论文。"
 robots: noindex, nofollow
 sitemap: false

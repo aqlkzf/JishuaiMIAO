@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/wot-93c2ea8c/
 title: "WOT"
 nav: false
+wide: true
 description: "这篇 Cell 2019 论文提出 Waddington-OT（WOT），目标是从时间序列单细胞 RNA-seq 数据中重建细胞发育/重编程轨迹。核心困难是：scRNA-seq 会破坏细胞，所以同一个细胞及其后代不能被连续观测；实验只能在不同时间点采样一批不同的细胞。因此，研究者需要把离散的“快照”连接成连续的“电影”。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mousedevvis-f09776c2/
 title: "MouseDevVIS"
 nav: false
+wide: true
 description: "MouseDevVIS 不是只给成年细胞类型拍一张“终点照片”，而是用从胚胎 E11.5 到成年 P56 的密集单细胞时间序列，把成年视觉皮层类型逐步向早期追溯。研究先校正个体发育速度，随后在相邻年龄间转移标签、计算 k 近邻连接并构建轨迹树，再叠加多组学染色质、MERFISH 空间位置、基因表达曲线和 TF–peak–gene 网络，得到“细胞类型从胚胎到出生后持续分叉”的图谱。"
 robots: noindex, nofollow
 sitemap: false

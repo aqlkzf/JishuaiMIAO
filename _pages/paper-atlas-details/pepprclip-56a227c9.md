@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pepprclip-56a227c9/
 title: "PepPrCLIP"
 nav: false
+wide: true
 description: "PepPrCLIP 只要求输入目标蛋白的氨基酸序列。它先在 ESM-2 的肽表示附近加高斯扰动，产生大量短肽；再用一个仿照 CLIP 的双编码器，把候选肽与目标蛋白投影到同一空间，用余弦相似度排序。生成器回答“哪些序列像可行的天然短肽”，判别器回答“这些肽里哪一些更像当前目标的配对肽”。"
 robots: noindex, nofollow
 sitemap: false

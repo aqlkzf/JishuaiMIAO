@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/longcallr-5da5aa74/
 title: "longcallR"
 nav: false
+wide: true
 description: "长读长 RNA 测序能把遗传变异与完整转录本结构连在同一条 read 上，但 RNA 数据的覆盖度受表达量影响、剪接位点附近易错配、等位基因表达会使 allele fraction 偏离 0.5，A-to-I RNA editing 还可能伪装成 SNP。longcallR 把 SNP calling、单倍型定相和等位基因特异分析放进同一流程。"
 robots: noindex, nofollow
 sitemap: false

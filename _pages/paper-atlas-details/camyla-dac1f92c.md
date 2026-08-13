@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/camyla-dac1f92c/
 title: "Camyla"
 nav: false
+wide: true
 description: "Camyla 的输出可以包含新网络，但 Camyla 本身是一个自主研究系统。输入是医学图像分割数据集和配置，系统负责建立强 baseline、检索文献、生成研究提案、编写候选网络、训练与评估、根据失败诊断继续搜索、对最终方法做消融，并生成可编译论文。 它要解决的不是单次代码生成，而是长达许多轮实验时的三个管理问题：有限 GPU 预算该投到哪个提案；大量日志怎样压缩而不遗忘关键经验；一个实验失败后怎样避免围绕同一个小修小补反复打转。"
 robots: noindex, nofollow
 sitemap: false

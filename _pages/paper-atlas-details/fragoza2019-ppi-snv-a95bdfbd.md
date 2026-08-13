@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/fragoza2019-ppi-snv-a95bdfbd/
 title: "Fragoza2019_PPI_SNV"
 nav: false
+wide: true
 description: "这项工作不是训练一个变异致病性预测器，而是构建并验证一个实验 atlas：从 ExAC、HGMD 和 COSMIC 选择 2,009 个错义 SNV，逐个制备经过测序确认的突变克隆，再用酵母双杂交测试它们对 2,185 条蛋白互作的影响。最终得到 4,797 个“SNV—互作”测量，并用人细胞中的 PCA、蛋白稳定性实验、酶活实验和 CRISPR 小鼠把“互作边被破坏”逐步连接到分子和个体表型。"
 robots: noindex, nofollow
 sitemap: false

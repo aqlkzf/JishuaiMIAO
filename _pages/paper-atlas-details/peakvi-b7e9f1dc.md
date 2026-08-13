@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/peakvi-b7e9f1dc/
 title: "PeakVI"
 nav: false
+wide: true
 description: "PeakVI 把极度稀疏的单细胞 ATAC 峰矩阵看成“是否至少观察到一次开放事件”的二值结果。它用变分自编码器学习细胞的生物学状态，同时把测序深度和区域本身易被检测的程度拆成两个技术因子；因此同一个模型既能给出用于聚类和整合的低维表示，也能给出逐细胞、逐区域的去噪开放概率。"
 robots: noindex, nofollow
 sitemap: false

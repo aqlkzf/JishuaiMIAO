@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/drvi-36e4f7ab/
 title: "DRVI"
 nav: false
+wide: true
 description: "DRVI（Disentangled Representation Variational Inference）是一个无监督 conditional VAE。普通 VAE 的 latent dimensions 可以任意旋转、混合，同一个维度常同时编码 cell type、cell cycle、stress 和 batch。"
 robots: noindex, nofollow
 sitemap: false

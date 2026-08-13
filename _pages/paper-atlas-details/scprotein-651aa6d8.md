@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scprotein-651aa6d8/
 title: "scPROTEIN"
 nav: false
+wide: true
 description: "质谱单细胞蛋白组的基本测量单位常是肽段，而分析希望得到蛋白和细胞层面的结论。一个蛋白由多个肽段构成，不同肽段的离子化、共分离、碎裂和样本制备损失不同，因此同一蛋白的肽段测量质量也不同。若直接求和或取中位数，低质量肽段会与可靠肽段具有相同权重。 与此同时，单细胞蛋白组具有严重缺失、批次效应和高噪声。先 KNN 插补、再 ComBat 校正的串联流程会让一步产生的伪结构影响下一步。"
 robots: noindex, nofollow
 sitemap: false

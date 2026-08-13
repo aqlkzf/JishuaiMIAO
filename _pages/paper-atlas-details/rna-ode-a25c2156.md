@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/rna-ode-a25c2156/
 title: "RNA_ODE"
 nav: false
+wide: true
 description: "RNA-ODE 的关键贡献是把“瞬时 RNA velocity”提升为“可模拟的动态系统”：先学习 dx/dt=f(x;θ)，再用模拟出来的未来轨迹推断细胞状态转移、发育方向和调控关系。概念上它把 velocity 信息用得更彻底；但就当前获取的代码而言，公开包只覆盖了核心 ODE/lineage/部分 GRN 功能，论文中若干下游分析仍缺少可核查实现。"
 robots: noindex, nofollow
 sitemap: false

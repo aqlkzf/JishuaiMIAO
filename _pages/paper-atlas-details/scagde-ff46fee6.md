@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scagde-ff46fee6/
 title: "scAGDE"
 nav: false
+wide: true
 description: "scAGDE 不是只对稀疏的 scATAC 峰矩阵做一次降维。它先用普通变分自编码器找出能区分细胞的峰并建立细胞近邻图，再用图卷积变分自编码器同时重建“哪些细胞彼此相邻”和“每个峰是否开放”，最后用软聚类和高置信伪标签继续收紧潜空间。输出因此兼顾细胞嵌入、聚类、峰筛选和开放概率插补。"
 robots: noindex, nofollow
 sitemap: false

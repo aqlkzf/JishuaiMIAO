@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/clusterde-bafcc087/
 title: "ClusterDE"
 nav: false
+wide: true
 description: "ClusterDE 处理的是单细胞 RNA-seq 和空间转录组分析里很常见的一个问题：先用同一份表达矩阵做聚类，再用同一份表达矩阵在聚类之间做差异表达检验。这样会产生 double-dipping bias，也就是“用同一份数据先发现结构、再验证结构”。如果聚类算法把一个本来同质的细胞群或一个平滑空间区域过度切成两个簇，普通 DE 检验仍然可能给出显著 marker gene，造成假阳性和错误注释。"
 robots: noindex, nofollow
 sitemap: false

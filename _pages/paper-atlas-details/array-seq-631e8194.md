@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/array-seq-631e8194/
 title: "Array-seq"
 nav: false
+wide: true
 description: "Array-seq 的核心不是提出新的机器学习模型，而是把成熟的定制寡核苷酸微阵列“改装”为大面积空间转录组芯片：先在已知坐标打印确定性的空间条形码，再通过片上延伸–连接反应补上 UMI 和 oligo(dT) 捕获端，最后用常规测序和空间分析流程得到“位置 × 基因”的表达矩阵。"
 robots: noindex, nofollow
 sitemap: false

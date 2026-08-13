@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/epigeneticcanceratlas-0bde0fcc/
 title: "EpigeneticCancerAtlas"
 nav: false
+wide: true
 description: "突变等遗传驱动因素已有较成熟的研究，但肿瘤发生、进展和转移过程中哪些染色质调控元件和转录因子在起作用仍不清楚。本文用单核 ATAC-seq（开放染色质）和单细胞/单核 RNA-seq（表达）构建跨 11 种癌症的图谱，比较正常组织、原发肿瘤和转移瘤。研究规模为 225 个 snATAC-seq 样本（约 101.9 万个细胞核）、206 个 RNA 样本（约 115."
 robots: noindex, nofollow
 sitemap: false

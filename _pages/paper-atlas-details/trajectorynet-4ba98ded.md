@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/trajectorynet-4ba98ded/
 title: "TrajectoryNet"
 nav: false
+wide: true
 description: "TrajectoryNet 把不同时间点采到的细胞群看作一系列概率分布，用一个连续归一化流（continuous normalizing flow, CNF）学习随时间变化的速度场。最大似然负责让模型在观测时间点匹配数据分布，能量、密度、RNA velocity 和生长项则分别约束路径短、路径贴近数据流形、方向符合局部速度、群体质量允许增减。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/paired-damage-seq-95027d6b/
 title: "Paired-Damage-seq"
 nav: false
+wide: true
 description: "Paired-Damage-seq 先把细胞核里的氧化 DNA 损伤“修复式标记”为生物素信号，再用抗体引导的 pA-Tn5 把损伤附近的 DNA 切下并加上条形码；与此同时，它在同一个细胞核中做带相同条形码的逆转录。这样，研究者既能看到“这个细胞是什么类型、处于什么状态”，又能看到“这类细胞的哪些基因组区域更容易出现损伤”。"
 robots: noindex, nofollow
 sitemap: false

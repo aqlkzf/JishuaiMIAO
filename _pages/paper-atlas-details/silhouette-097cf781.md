@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/silhouette-097cf781/
 title: "Silhouette"
 nav: false
+wide: true
 description: "这篇论文的核心不是提出新的单细胞整合模型，而是指出：把 silhouette（轮廓系数）直接改造成单细胞整合评分，会系统性误判整合质量。 作者进一步提出 BRAS（batch-removal-adapted silhouette），通过让每个细胞同时“看见”所有其他批次，而不只看最近的批次，修复批次评测中的 nearest-cluster issue（最近簇盲区）。"
 robots: noindex, nofollow
 sitemap: false

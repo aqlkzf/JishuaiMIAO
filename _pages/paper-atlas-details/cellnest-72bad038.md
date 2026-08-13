@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellnest-72bad038/
 title: "CellNEST"
 nav: false
+wide: true
 description: "CellNEST 面向空间转录组中的细胞间通信（cell–cell communication, CCC）推断。输入可以是细胞级数据，也可以是 Visium spot；输出不是笼统的“某两类细胞可能通信”，而是带空间位置、方向、配体–受体身份和强度排序的单细胞/单 spot 通信边，并进一步组合成两跳中继网络（relay network）。论文发表于 Nature Methods 2025，DOI 为 10."
 robots: noindex, nofollow
 sitemap: false

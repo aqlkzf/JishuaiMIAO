@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/nis-seq-e260eb17/
 title: "NIS-Seq"
 nav: false
+wide: true
 description: "池化 CRISPR 筛选的目标，是建立“基因扰动 → 细胞表型”的对应关系。传统富集式筛选通常先按生长、FACS 等方式挑出一群细胞，再对群体中的 sgRNA 做测序；这种方案规模大，但会丢失单细胞的空间结构、亚细胞定位和快速动态过程。 光学池化筛选则先用显微镜记录每个活细胞的表型，再在原位读出该细胞携带的 sgRNA。Feldman 等人在 Cell 2019 年发表的方法通过细胞质中的条形码 mRNA 来识别扰动。"
 robots: noindex, nofollow
 sitemap: false

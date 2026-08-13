@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/universal-log-optimality-7064fcab/
 title: "Universal Log-Optimality"
 nav: false
+wide: true
 description: "论文研究的是序贯假设检验，不是生物信息学问题。数据不断到来时，我们希望随时都能检查是否拒绝复合原假设 \\mathcal P，同时保证即使反复查看结果，第一类错误率仍不超过 \\alpha。 标准做法是构造非负的 e-process Wn，当 时拒绝原假设。相应的首次拒绝时间是 Ville 不等式保证 \\sup{P\\in\\mathcal P}\\PrP(\\tau\\alpha<\\infty)\\leq\\alpha。"
 robots: noindex, nofollow
 sitemap: false

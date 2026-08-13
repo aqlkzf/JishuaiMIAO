@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/polymerscreen-6d8f143f/
 title: "PolymerScreen"
 nav: false
+wide: true
 description: "膜蛋白的构象、复合体和功能受到周围脂质环境影响。传统去污剂虽然提取效率高，却常把这层环境破坏掉。膜活性聚合物（MAP）可以直接从细胞膜中“挖出”含膜蛋白的原生纳米盘，但不同聚合物对不同蛋白和细胞器膜的效果差异很大，不能靠一种固定配方解决。 PolymerScreen 的核心贡献是把“选哪种聚合物”变成一个可量化、可查询的问题：作者测量 11 种聚合物条件下 2,065 个膜蛋白的相对提取效率，并为每个蛋白给出最优条件。"
 robots: noindex, nofollow
 sitemap: false

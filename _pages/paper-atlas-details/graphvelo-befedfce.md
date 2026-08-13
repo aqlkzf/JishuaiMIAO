@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/graphvelo-befedfce/
 title: "GraphVelo"
 nav: false
+wide: true
 description: "GraphVelo 学到的不是一个全局神经网络，而是每个细胞在局部邻居位移基上的速度系数；它用流形几何约束修正上游 RNA velocity，再在共享邻域结构的其他表示中复用这组系数。"
 robots: noindex, nofollow
 sitemap: false

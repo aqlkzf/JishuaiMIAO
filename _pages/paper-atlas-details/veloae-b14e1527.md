@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/veloae-b14e1527/
 title: "VeloAE"
 nav: false
+wide: true
 description: "VeloAE 的本质是：把 RNA velocity 从嘈杂的高维基因空间，搬到一个由图平滑编码器和注意力解码器学习出的低维空间中，再在该空间估计速度和转移方向。论文和代码都支持核心 autoencoder、AttComb、latent regression 和 velocity projection；但复现论文时必须处理好 GCN/GAT 版本差异、scVelo 委托的 transition graph，以及缺失的本地补充材料。"
 robots: noindex, nofollow
 sitemap: false

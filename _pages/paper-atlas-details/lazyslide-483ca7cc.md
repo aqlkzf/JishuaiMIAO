@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lazyslide-483ca7cc/
 title: "LazySlide"
 nav: false
+wide: true
 description: "LazySlide 的核心贡献是一套全切片图像（whole-slide image, WSI）分析软件框架。它把组织检测、切块、质量控制、特征提取、空间分析、细胞分割、图文检索和多组学关联统一到兼容 scverse 的数据与接口体系中。论文的创新重点因此不是提出一种新的神经网络损失函数，而是解决一个工程问题：不同厂商的超大病理图像、不同预训练模型和不同下游分析，怎样在同一份可追踪的数据对象上协同工作。 这一区分很重要。"
 robots: noindex, nofollow
 sitemap: false

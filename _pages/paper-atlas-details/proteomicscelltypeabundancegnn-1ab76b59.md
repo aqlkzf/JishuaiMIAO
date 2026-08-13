@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/proteomicscelltypeabundancegnn-1ab76b59/
 title: "ProteomicsCellTypeAbundanceGNN"
 nav: false
+wide: true
 description: "这篇论文研究的是蛋白组数据中的细胞类型比例反卷积。 bulk proteomics 和 spatial proteomics 测到的是多个细胞混在一起后的蛋白丰度信号，因此研究者希望从一个混合样本中估计不同细胞类型的比例。论文指出，许多已有反卷积方法主要为转录组设计，常依赖转录本计数分布或高维基因表达特性，这些假设不适合连续强度值、维度更低且噪声/批次效应更明显的蛋白组数据。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/two-timescale-gda-nonconvex-minimax-7db5dbc3/
 title: "Two_Timescale_GDA_Nonconvex_Minimax"
 nav: false
+wide: true
 description: "论文研究非凸极小极大优化： f 对外层变量 \\mathbf{x} 可以是非凸的，但对内层变量 \\mathbf{y} 要求凹或强凹，\\mathcal{Y} 是有界凸集。普通 GDA 往往给两个变量相同量级的学习率；在超出凸—凹情形后，它可能出现极限环甚至发散。 TTGDA 每轮只做一次下降和一次投影上升： 但选择 \\eta{\\mathbf{x}}^{t}\\ll\\eta{\\mathbf{y}}^{t}。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/probass-bf6f6360/
 title: "ProBASS"
 nav: false
+wide: true
 description: "ProBASS 将 ESM-2 的 mutant-minus-WT 全链平均差分与 ESM-IF1 的 WT 复合体平均结构向量拼成 1792 维特征，再用实验标签训练 CatBoost。它的核心推理代码可以核查，但高性能强依赖数据划分，结构分支不随突变变化，完整 benchmark 与 final training 配置尚未公开复现。"
 robots: noindex, nofollow
 sitemap: false

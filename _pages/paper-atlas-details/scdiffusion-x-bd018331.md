@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scdiffusion-x-bd018331/
 title: "scDiffusion-X"
 nav: false
+wide: true
 description: "scDiffusion-X 先用两个模态专属自编码器把 RNA 计数和二值 ATAC 峰压到各自 100 维潜空间，再在这两个潜变量上联合加噪和去噪；去噪网络的两条分支由三个双向交叉注意力模块（DCA）连接，使 RNA 在每个去噪阶段读取 ATAC 信息，同时 ATAC 也读取 RNA 信息。"
 robots: noindex, nofollow
 sitemap: false

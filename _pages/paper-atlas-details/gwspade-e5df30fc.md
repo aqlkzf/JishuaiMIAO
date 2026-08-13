@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gwspade-e5df30fc/
 title: "gwSPADE"
 nav: false
+wide: true
 description: "gwSPADE 把一个空间 spot 看作多种潜在细胞类型的混合，把基因看作主题模型中的“词”。它与普通 LDA 的关键区别不是增加空间邻接关系，也不是引入单细胞参考，而是先计算基因权重，再让这些权重改变 Gibbs 采样时的计数：广泛、高频但区分度低的基因影响减弱，集中于少数潜在类型的基因影响增强。"
 robots: noindex, nofollow
 sitemap: false

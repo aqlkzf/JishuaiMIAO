@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/3d-ot-e05ddc6c/
 title: "3d-OT"
 nav: false
+wide: true
 description: "3d-OT 将空间组学切片表示为二维点云：每个 spot 既有坐标，也有 RNA、染色质或蛋白特征。它先用 PointNet++ 风格的局部集合卷积学习同时保留空间几何和分子信号的表示，再用受空间候选约束的 Sinkhorn optimal transport 建立切片间软对应，由软对应重建目标坐标并形成 alignment flow。Chamfer、局部平滑和近零散度三项无监督损失共同约束该流，连续配准相邻切片即可构造三维或时空重建。"
 robots: noindex, nofollow
 sitemap: false

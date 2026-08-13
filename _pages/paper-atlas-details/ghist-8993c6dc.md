@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ghist-8993c6dc/
 title: "GHIST"
 nav: false
+wide: true
 description: "GHIST 学习一条“组织形态 → 细胞类型与邻域 → 单细胞基因表达”的映射：训练时需要空间配准的 H&E 与亚细胞空间转录组（SST），训练完成后只输入 H&E、细胞核实例分割结果，以及可选的单细胞参考表达谱，就能为每个细胞预测 280–382 个基因的表达。 论文发表于 Nature Methods（2025），DOI 为 10.1038/s41592-025-02795-z。"
 robots: noindex, nofollow
 sitemap: false

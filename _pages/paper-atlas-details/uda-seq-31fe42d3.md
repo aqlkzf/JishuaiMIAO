@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/uda-seq-31fe42d3/
 title: "UDA-seq"
 nav: false
+wide: true
 description: "UDA-seq 的关键不是发明一个新的单细胞分析模型，而是把“第二轮组合索引”放到标准液滴条形码之后：先允许一个液滴装入多个固定细胞/细胞核，再把它们完整释放到 96/384 孔板中加入孔特异条形码。最终用“液滴条形码 + 孔条形码”的组合识别单细胞，从而在尽量复用 10x 等成熟化学体系的同时显著提高通量。"
 robots: noindex, nofollow
 sitemap: false

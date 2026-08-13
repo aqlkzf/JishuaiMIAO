@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/trio-ai-620458bf/
 title: "TRIO-AI"
 nav: false
+wide: true
 description: "TRIO-AI 不是一个在本工作区中可运行、可复核的软件实现，而是论文提出的一套三视角分析框架：Temporal GNN 用时间标签约束细胞图表示，Neural ODE 在聚合后的时间中心上描绘连续路径，Time-VAE 用条件潜空间中的低密度区域筛选候选过渡细胞。作者随后把低密度、稀有性、分支邻近性和时间不对称性合成 novelty score，并把 MPs3 解释为肝缺血再灌注损伤后的候选过渡巨噬细胞状态。"
 robots: noindex, nofollow
 sitemap: false

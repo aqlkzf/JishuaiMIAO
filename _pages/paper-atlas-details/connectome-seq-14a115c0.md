@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/connectome-seq-14a115c0/
 title: "Connectome-seq"
 nav: false
+wide: true
 description: "Connectome-seq 的真正价值不是“用测序替代所有 connectomics”，而是建立了一条可扩展的桥梁：把物理单突触中的成对 RNA 条形码，与两端神经元的单核转录组重新连接起来，从而在同一实验中同时获得连接关系和分子身份。"
 robots: noindex, nofollow
 sitemap: false

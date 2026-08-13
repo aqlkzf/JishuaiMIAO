@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellwalker2-621b47dc/
 title: "CellWalker2"
 nav: false
+wide: true
 description: "CellWalker2 把层级标签、不同模态细胞和 bulk 注释放入同一异构图，以随机游走整合跨边证据，再用置换空分布校正结构偏差；它擅长输出层级化的统计关联，但结论依赖 marker、树、图构造、默认参数和置换稳定性，不能被解释为直接的谱系或因果机制。"
 robots: noindex, nofollow
 sitemap: false

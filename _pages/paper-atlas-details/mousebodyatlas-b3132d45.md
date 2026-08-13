@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mousebodyatlas-b3132d45/
 title: "MouseBodyAtlas"
 nav: false
+wide: true
 description: "这项研究把成年小鼠整身切成 10 μm 纵切片，铺到约 2×6 cm、含 974,016 个空间条码的 Array-seq 芯片上，同时获得 H&E 与全转录组。作者用 5,900 万单细胞构成的 CellKb 参考给每个 spot 注释细胞类型，再训练 LABEL 从 H&E 图像直接预测器官、组织亚区和细胞类型，最后用 LPS 内毒素血症展示 STAT1/IRF1 驱动的全身炎症响应。"
 robots: noindex, nofollow
 sitemap: false

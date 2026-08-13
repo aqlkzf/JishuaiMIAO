@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/c-compass-a2c53eb0/
 title: "C-COMPASS"
 nav: false
+wide: true
 description: "细胞器分级实验会把蛋白质在多个离心组分中的丰度记录成一条“曲线”。传统分类器通常给每个蛋白一个细胞器标签，但约一半蛋白可能多定位，而且不同条件下还会重新定位。C-COMPASS 的目标是输出一个和为 1 的细胞器贡献向量，例如“线粒体 0.7、胞质 0.3”，并比较不同条件之间的变化。相同思路还能用于与蛋白质共同分级的脂质。"
 robots: noindex, nofollow
 sitemap: false

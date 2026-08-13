@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialecotypes-3d0b8b4d/
 title: "SpatialEcotypes"
 nav: false
+wide: true
 description: "这篇工作想回答两个连续的问题： 在不同患者、癌种和空间转录组平台中，能否发现反复出现的多细胞空间组织模式？ 如果这些模式确实存在，能否不再依赖组织活检，而是从血浆 cfDNA 甲基化中估计它们？ 作者把第一个问题交给 Spatial EcoTyper，把第二个问题交给 Liquid EcoTyper。两者不是同一个模型：前者从空间表达数据中定义“空间生态型”（spatial ecotype, SE）并建立表达参考；"
 robots: noindex, nofollow
 sitemap: false

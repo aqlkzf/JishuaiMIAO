@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/simplemaskeddiffusionlanguagemodels-1f2f7727/
 title: "SimpleMaskedDiffusionLanguageModels"
 nav: false
+wide: true
 description: "MDLM 把序列中的 token 随机变成 [mask]，训练一个双向 encoder-only denoiser 从带 mask 的序列恢复原 token；通过 SUBS 参数化，训练目标可以化简为一个带时间权重的 MLM loss，并且这个 loss 是一个有原则的扩散变分下界。 这意味着：它看起来像 BERT 的随机 mask 训练，但不是普通的启发式 MLM，而是来自扩散模型 NELBO 的训练目标。"
 robots: noindex, nofollow
 sitemap: false

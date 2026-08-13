@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/perturb-tracing-0b04f521/
 title: "Perturb-tracing"
 nav: false
+wide: true
 description: "Perturb-tracing 把“这个细胞敲掉了哪个基因”和“这个细胞的染色体三维折叠变成了什么样”同时用显微成像读出来，因此能在一个 pooled CRISPR 筛选中并行寻找影响相邻 TAD、A/B 区室、整条染色体压缩程度和细胞核形态的调控因子。 论文发表于 Nature Methods（2025），DOI：10.1038/s41592-025-02652-z。"
 robots: noindex, nofollow
 sitemap: false

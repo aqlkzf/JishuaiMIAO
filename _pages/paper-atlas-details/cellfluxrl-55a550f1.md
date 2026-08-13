@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/cellfluxrl-55a550f1/
 title: "CellFluxRL"
 nav: false
+wide: true
 description: "CellFluxRL 不是从零训练新的虚拟细胞模型，而是在已训练的 CellFlux 流匹配模型上做奖励驱动的 RL 后训练：同一 control image 与药物条件生成多个候选，用七个生物/结构/形态评分挑出相对好的与差的样本，再让速度场提高高奖励样本、压低低奖励样本的生成倾向。"
 robots: noindex, nofollow
 sitemap: false

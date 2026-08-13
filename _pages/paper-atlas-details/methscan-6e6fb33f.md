@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/methscan-6e6fb33f/
 title: "MethSCAn"
 nav: false
+wide: true
 description: "MethSCAn 不直接把一个区域内读到的 0/1 甲基化状态做简单平均，而是先估计每个 CpG 位点在所有细胞中的“局部背景甲基化”，再计算单个细胞相对背景的残差；随后用滑动窗口寻找跨细胞差异最大的可变甲基化区域（VMR），构造更有信息量的细胞 × 区域矩阵，并用相似的窗口扫描和置换策略检测两组细胞之间的差异甲基化区域（DMR）。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sm-pore-cupine-71e66851/
 title: "sm-PORE-cupine"
 nav: false
+wide: true
 description: "同一条 RNA 序列并不只有一个固定二级结构，而可能在多个构象之间形成“结构集合”。传统群体测量会把所有分子的信号平均，难以看出少数但可能有功能的构象。DREEM、DANCE-MaP、DRACO、Da Vinci 等单分子方法通常先化学探测，再逆转录成 cDNA；作者此前的 PORE-cupine 虽使用纳米孔直接 RNA 测序，但主要给出群体平均结构。"
 robots: noindex, nofollow
 sitemap: false

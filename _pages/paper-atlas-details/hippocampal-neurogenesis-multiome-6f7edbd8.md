@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/hippocampal-neurogenesis-multiome-6f7edbd8/
 title: "Hippocampal Neurogenesis Multiome"
 nav: false
+wide: true
 description: "成人海马是否持续产生新神经元长期存在争议。困难不只是“能否检测到某个标记”，而是成人脑中的神经干细胞（NSC）、神经母细胞和未成熟颗粒神经元数量极少，表达谱又分别接近星形胶质细胞、少突胶质细胞或成熟颗粒神经元。死后组织质量、取材是否真正包含齿状回、不同物种标记能否外推以及计算注释方式，都可能改变结论。"
 robots: noindex, nofollow
 sitemap: false

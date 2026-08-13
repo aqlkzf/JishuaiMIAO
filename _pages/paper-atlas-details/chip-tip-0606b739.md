@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/chip-tip-0606b739/
 title: "Chip-Tip"
 nav: false
+wide: true
 description: "Chip-Tip 不是一个数学模型，而是一套端到端的单细胞蛋白质组技术：它用 cellenONE 挑选并分配单个细胞，在 proteoCHIP EVO 96 中以 300 nl 体积完成油层覆盖的一锅式裂解和酶切，再把芯片直接倒扣到 Evotip 上离心转移，最后通过 Evosep One 快速液相、Orbitrap Astral 和窄窗口 DIA（nDIA）完成无标记定量。"
 robots: noindex, nofollow
 sitemap: false

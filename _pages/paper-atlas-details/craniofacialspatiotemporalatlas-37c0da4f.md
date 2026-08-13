@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/craniofacialspatiotemporalatlas-37c0da4f/
 title: "CraniofacialSpatiotemporalAtlas"
 nav: false
+wide: true
 description: "颅神经嵴细胞（CNCC）迁移到上颌突后形成骨、牙、肌周支持组织、腭中线及其他结缔组织。关键争议是：这些细胞在进入腭原基前是否已经带有谱系偏向，还是到 E12.5 之后才被局部环境诱导分化。 本文把三种证据串在一起：五个胚胎阶段的 scRNA-seq 提供细胞类型和时间分布；三个阶段的 94 基因 seqFISH 将这些状态放回组织空间；"
 robots: noindex, nofollow
 sitemap: false

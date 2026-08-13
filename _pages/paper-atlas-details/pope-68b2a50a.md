@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/pope-68b2a50a/
 title: "PoPE"
 nav: false
+wide: true
 description: "对位置 t 的 query 和位置 s 的 key，RoPE 把每两个实数维度组成一个二维向量。写成极坐标后，注意力分量为 幅值携带内容，但内容向量自身的相位 \\phik-\\phiq 又移动了最佳相对位置。也就是说，同一个特征既决定“匹配什么”，又改变“匹配在哪里”。当任务要求独立做内容匹配与相对位移时，这种耦合可能妨碍学习。"
 robots: noindex, nofollow
 sitemap: false

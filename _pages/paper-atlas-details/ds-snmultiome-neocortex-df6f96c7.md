@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ds-snmultiome-neocortex-df6f96c7/
 title: "DS-snMultiome-Neocortex"
 nav: false
+wide: true
 description: "唐氏综合征由 21 号染色体三体（Ts21）引起，但额外基因剂量如何在胎儿期改变神经发生、投射神经元命运和调控网络并不清楚。动物或成年脑数据难以重建人类妊娠中期的起始过程，因此作者对 GW13–23 的 26 名供体（13 Ctrl、13 Ts21）做 10x snMultiome，在同一细胞核中同时测 RNA 与 ATAC，保留 113,801 个高质量 nuclei。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stopping-rules-for-sgd-via-anytime-valid-confidence-sequences-d24a385a/
 title: "Stopping Rules for SGD via Anytime-Valid Confidence Sequences"
 nav: false
+wide: true
 description: "传统 SGD 理论通常预先固定迭代次数 T，然后回答“运行到 T 时误差多大”。但实际使用者会持续查看训练轨迹，并在指标看起来足够好时停止。把只对固定时刻成立的置信界反复检查，会产生多重检验问题，原有置信水平不再成立。固定预算、肉眼判断平台期或随意设定梯度阈值，也不能控制“过早停止”的概率。"
 robots: noindex, nofollow
 sitemap: false

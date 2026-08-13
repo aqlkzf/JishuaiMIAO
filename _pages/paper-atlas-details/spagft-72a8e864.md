@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spagft-72a8e864/
 title: "SpaGFT"
 nav: false
+wide: true
 description: "SpaGFT 不先假设空间基因一定是圆形热点、条带或梯度，而是把每个 spot、细胞或像素当作图节点，把分子表达当作图上的信号。相邻节点表达相似的组织结构，在图上变化缓慢，主要落在低频；快速交替或噪声更偏向高频。于是 SVG 识别、表达增强和功能组织单元（FTU）发现都能写成同一套图傅里叶运算。 论文 Figure 1 给出三条主线：从空间坐标构图并建立 Fourier modes（FM）；"
 robots: noindex, nofollow
 sitemap: false

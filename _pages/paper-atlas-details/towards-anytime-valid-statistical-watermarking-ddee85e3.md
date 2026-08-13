@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/towards-anytime-valid-statistical-watermarking-ddee85e3/
 title: "Towards_Anytime_Valid_Statistical_Watermarking"
 nav: false
+wide: true
 description: "这不是生物信息学论文，而是一篇结合统计推断、信息论与大语言模型安全的理论方法论文。它研究的是：服务商如何在生成文本时嵌入一个不改变原始 token 分布的统计水印，并让检测者可以边读边检验，一旦证据足够就立即停止，同时仍严格控制误报率。 传统水印检测通常预先固定文本长度，再计算一个 p-value。如果检测者每读几个 token 就看一次 p-value，并在第一次显著时停止，重复查看会放大误报概率。"
 robots: noindex, nofollow
 sitemap: false

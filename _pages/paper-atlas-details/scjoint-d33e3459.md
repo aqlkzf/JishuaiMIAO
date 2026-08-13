@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scjoint-d33e3459/
 title: "scJoint"
 nav: false
+wide: true
 description: "scJoint 不是把 RNA 计数和 ATAC 峰矩阵直接拼在一起，也不是要求同一细胞有成对测量。它先把 ATAC 峰转换为按基因汇总的活性分数，使 RNA 与 ATAC 拥有同一组基因特征；随后让两种模态共用一个线性编码器，在 RNA 标签监督、低维表示约束和跨模态余弦对齐的共同作用下学习 64 维空间。第一轮训练后，用 RNA 邻居给 ATAC 传标签；第二轮再用这些伪标签和中心损失收紧同类细胞，最后重新做一次 KNN 标签迁移。"
 robots: noindex, nofollow
 sitemap: false

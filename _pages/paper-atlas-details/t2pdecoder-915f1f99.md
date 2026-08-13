@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/t2pdecoder-915f1f99/
 title: "T2Pdecoder"
 nav: false
+wide: true
 description: "RNA 测量很普遍，质谱蛋白组却昂贵且覆盖不足；更关键的是，RNA 丰度并不是蛋白丰度的可靠替身。现有 RNA→蛋白方法多针对单细胞，常只覆盖数百个蛋白，难以支撑 bulk 队列中的蛋白通路、分型和临床关联分析。T2Pdecoder 的目标不是宣称 RNA 能完全决定蛋白，而是在已有转录组的样本上预测 5,738 个蛋白的轮廓，从而获得可用于“蛋白质中心”分析的补充视角。"
 robots: noindex, nofollow
 sitemap: false

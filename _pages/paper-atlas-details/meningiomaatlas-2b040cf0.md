@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/meningiomaatlas-2b040cf0/
 title: "MeningiomaAtlas"
 nav: false
+wide: true
 description: "脑膜瘤已经有比较成熟的分子分型和染色体臂级别标志物，例如分子组 MG、1p/22q 缺失等；这些信息能解释一部分临床异质性，但仍然不能回答一个更细的问题：同一个肿瘤内部、肿瘤和硬脑膜交界处、以及肿瘤微环境中的不同细胞状态，到底如何影响脑膜瘤进展？论文明确提出，需要用单细胞和空间分辨的组学来解析这种肿瘤级别异质性 。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/dyngen-9f49d3d3/
 title: "dyngen"
 nav: false
+wide: true
 description: "dyngen 是一个用于生成动态单细胞组学数据的模拟器。论文的核心问题是：很多单细胞计算方法需要“真实答案”来评估，例如细胞在发育轨迹上的真实位置、真实 RNA velocity、每个细胞中每条调控边的真实活性；但真实实验数据通常无法提供这些 ground truth。合成数据如果能尽量模拟底层生物过程，就可以用于方法开发和定量 benchmarking。"
 robots: noindex, nofollow
 sitemap: false

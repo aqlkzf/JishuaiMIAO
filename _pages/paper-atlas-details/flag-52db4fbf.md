@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/flag-52db4fbf/
 title: "FLAG"
 nav: false
+wide: true
 description: "FLAG 的核心不是“把空间图也一起生成”，而是把空间图变成稳定条件，把生成难题集中在基因表达上，再用 GFM embedding 约束基因结构。论文证据支持它在结构保真度上的优势；代码则实现了核心 graph-conditioned DiT 与 GFM 对齐损失，但预处理、结构指标和完整复现实验仍需要外部脚本/数据。"
 robots: noindex, nofollow
 sitemap: false

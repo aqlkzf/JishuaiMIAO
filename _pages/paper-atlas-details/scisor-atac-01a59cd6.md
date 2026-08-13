@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scisor-atac-01a59cd6/
 title: "ScISOr-ATAC"
 nav: false
+wide: true
 description: "ScISOr-ATAC 以 10x Multiome 同时获得单核 RNA 与 ATAC，再从同一批带 10x barcode 的全长 cDNA 中富集数千个脑相关基因的 exon–exon junction，进行 Oxford Nanopore 长读长测序。共同的细胞条形码把三个读出连接起来：短读 RNA 定义表达，ATAC 定义开放染色质，长读 RNA 定义 exon inclusion 和 isoform。"
 robots: noindex, nofollow
 sitemap: false

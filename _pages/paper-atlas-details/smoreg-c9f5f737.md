@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/smoreg-c9f5f737/
 title: "SMOReg"
 nav: false
+wide: true
 description: "SMOReg 不只把 RNA 和蛋白拼在一起做空间聚类。它先在每个 spot 内，把基因和蛋白分别放进由生物先验定义的图，用图卷积去噪；再学习每个基因—蛋白对的亲和矩阵，让两种分子图交换信息；最后把每个 spot 的融合表示放入“分子相似邻域 + 物理空间邻域”的两层 GAT，并通过对比学习得到用于空间域聚类的表示。训练后保存的 spot 级亲和矩阵再被聚合和置换检验，用于提出域特异的基因—蛋白关系。"
 robots: noindex, nofollow
 sitemap: false

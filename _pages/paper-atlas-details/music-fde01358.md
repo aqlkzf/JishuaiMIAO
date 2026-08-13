@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/music-fde01358/
 title: "MUSIC"
 nav: false
+wide: true
 description: "论文：Single-cell multiplex chromatin and RNA interactions in ageing human brain（Nature, 2024；DOI: 10.1038/s41586-024-07239-w） 传统单细胞 RNA 测序告诉我们细胞表达什么，单细胞 Hi-C 告诉我们 DNA 哪些位置接近，但多数方法把一次接触压成两个位点，也看不到同一复合物中的 RNA。"
 robots: noindex, nofollow
 sitemap: false

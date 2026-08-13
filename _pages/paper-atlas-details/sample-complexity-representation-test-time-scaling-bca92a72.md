@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sample-complexity-representation-test-time-scaling-bca92a72/
 title: "Sample_Complexity_Representation_Test_Time_Scaling"
 nav: false
+wide: true
 description: "大模型在测试阶段可以用更多计算换取更好的答案，但“多算几次”并不是同一种方法。论文区分三种范式： 自洽性（self-consistency）：独立生成 n 次，选出现次数最多的答案； best-of-n：独立生成 n 次，由奖励模型选最高分答案； 自我纠正（self-correction）：每一轮都看到之前的回答和验证器反馈，再生成下一轮回答。 论文分别回答两个问题：前两种重复采样方法需要多少样本；"
 robots: noindex, nofollow
 sitemap: false

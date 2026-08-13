@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/generalization-hallucination-out-of-context-reasoning-transforme-3e123151/
 title: "Generalization_Hallucination_Out_of_Context_Reasoning_Transformers"
 nav: false
+wide: true
 description: "给模型注入一条新事实后，它有时能推出正确的新结论，有时却会生成看似合理但错误的关联。这篇论文把二者统一为 out-of-context reasoning（OCR，上下文外推理）：模型从若干“桥接实体”学到两个关系之间的对应，再把这个对应迁移到只见过第一个关系的新实体上。 例如，训练中出现 Alice–法国、Alice–法语，以及 Raul–法国，模型回答 Raul–法语，是有现实依据的泛化；"
 robots: noindex, nofollow
 sitemap: false

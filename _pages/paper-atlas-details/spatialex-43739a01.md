@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialex-43739a01/
 title: "SpatialEx"
 nav: false
+wide: true
 description: "高参数空间多组学常遇到一个实验限制：相邻组织切片可以来自同一组织块，却只测了不同分子面板或不同模态。例如切片 1 测 panel A，切片 2 测 panel B；若把细胞×分子矩阵排成表格，已测值只落在对角块，其余两块缺失。直接用坐标配准仍不能得到同一个细胞的完整分子谱，因为连续切片不是完全相同的细胞集合。 SpatialEx 的入口是一个更稳定的共同视图：两张切片都有 H&E 形态图像。"
 robots: noindex, nofollow
 sitemap: false

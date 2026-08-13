@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/zman-seq-90ea14c4/
 title: "Zman-seq"
 nav: false
+wide: true
 description: "普通单细胞转录组只拍到细胞状态的静态快照。伪时间或 RNA velocity 可以从表达数据推测先后关系，却无法直接回答“这个免疫细胞进入肿瘤多久了”。Zman-seq 的关键创新是把时间信息在测序前写进细胞：用连续的荧光抗 CD45 抗体脉冲标记血液中的白细胞，随后用单细胞 FACS index sorting 同时记录每个细胞的荧光印记和孔位，再把孔位与 MARS-seq 表达谱连接起来。"
 robots: noindex, nofollow
 sitemap: false

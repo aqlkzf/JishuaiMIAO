@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatiotemporalmultiomics-aging-review-62a8aa29/
 title: "SpatiotemporalMultiomics_Aging_Review"
 nav: false
+wide: true
 description: "这是一篇综述，不是一篇提出单一算法或新平台的原始研究。它真正有用的地方，是把转录组、蛋白组、代谢组和表观基因组放进同一个判断框架：一个实验中的“时间”，究竟来自不同时间点的破坏性取样，还是来自对分子进行标记并追踪其命运？ 单细胞测序可以区分细胞类型，却通常要把组织解离，因而丢掉邻域和形态。空间组学保留位置，但一张切片只是一个静态瞬间。连续活细胞成像有真正的时间轴，却难以同时观察大量不同 RNA、蛋白或代谢物。"
 robots: noindex, nofollow
 sitemap: false

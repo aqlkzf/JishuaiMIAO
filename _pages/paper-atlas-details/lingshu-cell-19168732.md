@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/lingshu-cell-19168732/
 title: "Lingshu-Cell"
 nav: false
+wide: true
 description: "这份文件是合并后的中文方法说明。两个旧目录分析的是同一篇论文；最终保留 representationmodels/Lingshu-Cell/，并按 paper-only 处理。当前没有公开代码和模型权重，所有实现细节只能来自论文。 单细胞 RNA-seq 的原始数据是一个 cell-by-gene UMI count matrix。每个细胞是一行，每个基因是一列，矩阵值是非负整数计数。"
 robots: noindex, nofollow
 sitemap: false

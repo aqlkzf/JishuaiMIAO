@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/sotmgf-aa034768/
 title: "SOTMGF"
 nav: false
+wide: true
 description: "SOTMGF 面向空间转录组、空间蛋白组以及推断得到的空间表观组数据。它认为仅用表达或物理邻接会漏掉两类信息：一个 spot 周围的细胞组成，以及分子之间的条件关联。方法因此把同一批空间观测表示成多个“视图图”，分别学习表示，再以注意力和自训练聚类融合。 输出是每个 spot/细胞的低维表示与预先指定数量的空间域。论文还在这些域上做空间伪表达（SPE）去噪、暗基因/暗蛋白发现、RNA velocity、配体–受体、转录因子和生存分析；"
 robots: noindex, nofollow
 sitemap: false

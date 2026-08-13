@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/deepspatial-5882bdcf/
 title: "DeepSpatial"
 nav: false
+wide: true
 description: "DeepSpatial 不是把相邻切片逐像素“补帧”，也不是把二维切片简单堆成 2.5D。它先用非平衡最优传输（UOT）在相邻切片之间建立软细胞对应，再训练一个 Gene Diffusion Transformer（GiT）学习细胞状态随深度连续变化的速度场，最后从上下两张真实切片出发求解 ODE，在任意中间深度生成带三维坐标、表达向量和细胞类型的虚拟细胞。 本工作区核对的是 bioRxiv 论文 10.1101/2026.04.28."
 robots: noindex, nofollow
 sitemap: false

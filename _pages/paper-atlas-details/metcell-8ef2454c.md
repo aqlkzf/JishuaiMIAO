@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/metcell-8ef2454c/
 title: "MetCell"
 nav: false
+wide: true
 description: "MetCell 的核心不是把 600 个细胞平均成一个“虚拟细胞”，而是先把多个细胞中位置一致的弱信号叠加起来，建立一张可靠的峰坐标表；随后回到每个原始细胞，只在这些已知坐标附近提取强度。这样既利用群体信息提高检出率，又保留每个细胞自己的代谢丰度。 论文把这一计算策略与离子淌度分离、选择性离子积累和靶向单细胞 MS2 结合，形成 ion mobility-resolved mass cytometry 平台。"
 robots: noindex, nofollow
 sitemap: false

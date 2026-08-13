@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/autoeval-done-right-synthetic-data-model-evaluation-f439789f/
 title: "AutoEval_Done_Right_Synthetic_Data_Model_Evaluation"
 nav: false
+wide: true
 description: "AutoEval 的关键不是让 AI 代替人类评测，而是让 AI 提供大量低成本、可相关但允许有偏的信号，再用少量人工标签估计偏差并校准不确定性；PPI++ 的 \\lambda 决定这份合成信息究竟值得相信多少。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/gaston-mix-928475bd/
 title: "GASTON-Mix"
 nav: false
+wide: true
 description: "GASTON-Mix 不再要求整张组织共享一把“深度尺”。它先用空间门控网络把每个位置分给一个区域，再让每个区域的专家网络学习自己的标量等深度 dp(x,y)；区域内每个基因只需沿这把局部深度尺做线性变化。这样，区域边界与区域内连续梯度可以在同一个模型中联合表示。"
 robots: noindex, nofollow
 sitemap: false

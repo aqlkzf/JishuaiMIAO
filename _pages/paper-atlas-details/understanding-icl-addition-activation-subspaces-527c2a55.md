@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/understanding-icl-addition-activation-subspaces-527c2a55/
 title: "Understanding_ICL_Addition_Activation_Subspaces"
 nav: false
+wide: true
 description: "给大模型看几个“输入→输出”样例后，它常常能临时学会一个规则，并把规则用于新输入。这叫上下文学习（in-context learning, ICL）。论文追问的不是“模型答对了吗”，而是更细的机制问题：规则信息从哪些 token 被读出，存在哪些注意力头里，以什么几何结构表示，又怎样汇总到最终预测位置？ 作者选择了一个可控任务族 add-k。五个示例都满足 随后模型要补全查询 xq\\rightarrow。"
 robots: noindex, nofollow
 sitemap: false

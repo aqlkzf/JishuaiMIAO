@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/odyssey-c018e9b3/
 title: "Odyssey"
 nav: false
+wide: true
 description: "Odyssey 把蛋白序列和离散结构当作共同去噪的 source，用局部矩阵共识在残基邻域传播信息，并通过离散扩散完成联合生成；其数学与计算实验描述丰富，但在没有公开代码、权重、数据清单和湿实验验证时，最强结论仍应限定为 paper-reported computational evidence。"
 robots: noindex, nofollow
 sitemap: false

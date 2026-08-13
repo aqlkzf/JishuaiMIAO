@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/response-time-alignment-heterogeneous-preferences-9ecc2e98/
 title: "Response_Time_Alignment_Heterogeneous_Preferences"
 nav: false
+wide: true
 description: "这篇论文不是用“反应更快就权重更大”这种经验规则，而是在 DDM 下推导出一个严格的反应时间权重，先从匿名选择恢复个体效用差的无偏代理，再平均或回归，从而识别人群的平均偏好。"
 robots: noindex, nofollow
 sitemap: false

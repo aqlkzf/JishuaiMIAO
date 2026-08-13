@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stream-10f32bb0/
 title: "STREAM"
 nav: false
+wide: true
 description: "STREAM 是一个用于单细胞轨迹推断、可视化和参考映射的工具。它关注的问题是：给定一次性测量到的单细胞转录组、qPCR 或染色质可及性数据，如何从中重建细胞分化过程中的分支轨迹、分叉点和伪时间，并且把这些结果以研究者容易理解的方式展示出来。 论文认为当时很多轨迹方法有三个不足。第一，主要面向 scRNA-seq，对 scATAC-seq 这类表观组数据支持不足。"
 robots: noindex, nofollow
 sitemap: false

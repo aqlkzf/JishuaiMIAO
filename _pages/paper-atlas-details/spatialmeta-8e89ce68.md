@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spatialmeta-8e89ce68/
 title: "SpatialMETA"
 nav: false
+wide: true
 description: "SpatialMETA 面向一类特殊而困难的数据：空间转录组（ST）给出离散基因计数，空间代谢组（SM）给出连续质谱强度；二者往往来自相邻而非同一张组织切片，分辨率、坐标和组织形状也不同。它的任务不是简单拼接两个矩阵，而是依次解决几何对齐、分辨率统一、跨模态整合和跨样本批次校正，最后提供空间聚类、模态贡献、代谢物注释和空间网络分析。 本解读以 PMC 正文、主图 1–4、补充 PDF papersupp1."
 robots: noindex, nofollow
 sitemap: false

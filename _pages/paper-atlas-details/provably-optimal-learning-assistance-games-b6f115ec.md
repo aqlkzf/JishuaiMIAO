@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/provably-optimal-learning-assistance-games-b6f115ec/
 title: "Provably_Optimal_Learning_Assistance_Games"
 nav: false
+wide: true
 description: "论文研究一种重复的人机协作：每轮都有一个只有人类知道的偏好 \\theta^{(t)}；人类先行动，助手看到人类动作后再行动，双方获得同一个奖励。困难不在利益冲突，而在于助手既看不到偏好，也没有预先约定的语言，同时还只能获得所选动作的 bandit 反馈。 作者用“辅助遗憾”（assistance regret）衡量实际累计奖励与事后最优固定人类—助手联合策略之间的差距。联合策略空间大小是 MH^N MA^{MH}，不能直接枚举。"
 robots: noindex, nofollow
 sitemap: false

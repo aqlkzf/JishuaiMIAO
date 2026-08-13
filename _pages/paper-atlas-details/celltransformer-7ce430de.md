@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/celltransformer-7ce430de/
 title: "CellTransformer"
 nav: false
+wide: true
 description: "CellTransformer 不直接对整张组织切片建全局图。它以每个细胞为中心截取一个固定物理尺度的局部邻域，遮住中心细胞的表达，只保留它的细胞类型；模型必须用周围细胞的类型和表达预测中心细胞的基因计数。为了完成这个自监督任务，编码器把整个邻域压缩成一个 384 维“neighborhood representation”。训练后丢掉表达预测头，把每个中心细胞对应的邻域表示拿去做跨切片、跨动物的 k-means，得到空间域。"
 robots: noindex, nofollow
 sitemap: false

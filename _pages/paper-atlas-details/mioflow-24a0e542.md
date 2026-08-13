@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/mioflow-24a0e542/
 title: "MIOFlow"
 nav: false
+wide: true
 description: "MIOFlow 不把不同时间点的细胞强行一一配对。它先学习一个尽量保留数据流形距离的低维空间，再学习一个随时间变化的向量场，使起始细胞群沿该向量场移动后，在各观测时刻与对应的细胞群分布接近。 这里的“轨迹”是模型在群体分布约束下生成的可能路径，不是同一细胞被真实追踪得到的谱系。单细胞测序会破坏细胞，因此论文输入是若干独立的时间快照 X0,\\ldots,X{T-1}。"
 robots: noindex, nofollow
 sitemap: false

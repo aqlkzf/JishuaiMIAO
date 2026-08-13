@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/panda-6fcfccf4/
 title: "PANDA"
 nav: false
+wide: true
 description: "Visium、早期 Spatial Transcriptomics 等测序型空间技术的一个 spot 往往包含多个细胞。常规反卷积把 spot 表达解释成若干固定细胞类型 signature 的线性混合，只输出每种细胞类型的比例。问题是同一类型的细胞会随肿瘤边界、皮层深度或发育阶段改变状态；用一个全局均值 signature 既可能降低比例估计，也无法回答“这个 spot 中的 B 细胞在表达什么”。"
 robots: noindex, nofollow
 sitemap: false

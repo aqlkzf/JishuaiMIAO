@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stt-cfd9302c/
 title: "STT"
 nav: false
+wide: true
 description: "STT 可以理解为“多吸引子版本的 RNA velocity + 空间约束随机游走 + Markov coarse-graining”：它用 unspliced/spliced 数据为每个 attractor 学一个局部动力学 tensor，再通过 membership、GPCCA 和空间 kernel 把局部基因表达/剪接动力学连接到全局细胞命运转移。"
 robots: noindex, nofollow
 sitemap: false

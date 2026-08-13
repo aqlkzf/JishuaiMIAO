@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/phlower-eacd53ab/
 title: "PHLOWER"
 nav: false
+wide: true
 description: "PHLOWER 的独特之处不是简单地把细胞放进另一个低维空间，而是把“细胞到细胞的潜在分化事件”视为图上的有向边，再用一阶 Hodge Laplacian 的调和特征向量给边和整条随机游走路径建立坐标。路径在该空间中聚类后，算法再利用累计坐标随 pseudotime 的分离位置组装多分支树。 它适合单根、树形且分支较多的过程。它需要用户给 root，依赖上游嵌入和人为构造的 simplicial complex，并且计算与内存开销较高。"
 robots: noindex, nofollow
 sitemap: false

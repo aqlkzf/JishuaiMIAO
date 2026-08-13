@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/stereopy-00df8979/
 title: "Stereopy"
 nav: false
+wide: true
 description: "空间转录组分析过去多以单张切片为单位：一个 AnnData、一套预处理和一组结果。但真正的生物问题常涉及多条件、多时间点或连续三维切片。Stereopy 的贡献分两层。第一层是工程框架：用 MSData 管理多个样本，用 MSDataPipeLine（论文称 MSS，multi-sample scope）决定哪些样本独立处理、哪些样本合并处理，并追踪结果依赖。"
 robots: noindex, nofollow
 sitemap: false

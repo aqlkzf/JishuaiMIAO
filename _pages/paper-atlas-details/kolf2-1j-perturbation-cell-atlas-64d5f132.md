@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/kolf2-1j-perturbation-cell-atlas-64d5f132/
 title: "KOLF2_1J_Perturbation_Cell_Atlas"
 nav: false
+wide: true
 description: "人诱导多能干细胞（hiPSC）能分化成多种细胞类型，但我们仍不知道大多数基因在“维持多能性”这件事中承担什么功能。过去的大规模 Perturb-seq 多集中在癌细胞系；hiPSC 中既缺少覆盖全表达基因组、又有足够单细胞深度的功能图谱。 作者在参考细胞系 KOLF2.1J 中，用 CRISPRi 扰动 11,692 个表达基因，获得超过 250 万个质控后的单细胞，并同步测量细胞适应度。"
 robots: noindex, nofollow
 sitemap: false

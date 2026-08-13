@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/scatlasvae-414a727c/
 title: "scAtlasVAE"
 nav: false
+wide: true
 description: "单细胞图谱越来越大，但“大”并不等于“可以直接合并”。不同研究往往来自不同实验室、测序批次、组织、疾病条件和样本处理流程，因此原始表达矩阵同时混合了两类变化： 希望保留的生物学变化，例如初始、记忆、效应、耗竭等 CD8^+ T 细胞状态； 希望消除的技术或队列变化，例如 atlas、study、sample 等多层批次效应。 跨图谱分析还有第二个困难：不同图谱的细胞亚型命名和注释粒度并不一致。"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/virtualbiotech-17a8334e/
 title: "VirtualBiotech"
 nav: false
+wide: true
 description: "本解读只基于当前工作区中的论文 OCR 文本和本地提取的图像：outputpapermd/paper/auto/paper.md 与 outputpapermd/paper/auto/images/。该工作区是 paper-only：没有代码仓库、没有 CODEDIR、没有单独的补充材料 Markdown，因此不能把任何代码实现细节说成已经验证。paper."
 robots: noindex, nofollow
 sitemap: false

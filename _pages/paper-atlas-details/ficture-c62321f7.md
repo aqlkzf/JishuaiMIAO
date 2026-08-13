@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/ficture-c62321f7/
 title: "FICTURE"
 nav: false
+wide: true
 description: "FICTURE 不先把空间转录组切成“一个个细胞”，而是让每个亚微米像素从附近多个锚点中概率性地选择信息来源，再推断该像素属于哪些转录因子，从而得到连续、像素级的组织表达地图。"
 robots: noindex, nofollow
 sitemap: false

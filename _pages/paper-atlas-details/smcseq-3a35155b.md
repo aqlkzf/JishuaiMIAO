@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/smcseq-3a35155b/
 title: "SmCseq"
 nav: false
+wide: true
 description: "SmC-seq 用正交微流控条形码把组织坐标写入 DNA，再以温和的酶学胞嘧啶转换读取每个像素的全基因组甲基化，从而揭示胚胎、滋养外胚层和母体蜕膜的空间表观遗传分工；它的实验创新清晰，但复现与解释必须正视 5mC/5hmC 合并信号、相邻切片、像素混合，以及公开代码与论文 Methods 在空间聚类和 DMR 统计上的实质差异。"
 robots: noindex, nofollow
 sitemap: false

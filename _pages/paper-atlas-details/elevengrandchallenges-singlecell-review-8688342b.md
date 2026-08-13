@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/elevengrandchallenges-singlecell-review-8688342b/
 title: "ElevenGrandChallenges_singlecell_review"
 nav: false
+wide: true
 description: "这篇 Genome Biology 2020 文章不是提出一个新的算法，也不是发布一个软件包或标准 benchmark。它是一篇单细胞数据科学的路线图/综述型文章。摘要明确说，作者梳理了 11 个未来关键挑战，对每个挑战给出研究动机、已有工作和开放问题 。 因此，这里的“方法”不是某个可运行模型，而是一套问题分类框架： 单细胞测序已经从小规模实验进入大规模数据阶段。"
 robots: noindex, nofollow
 sitemap: false

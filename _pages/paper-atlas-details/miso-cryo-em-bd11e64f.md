@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/miso-cryo-em-bd11e64f/
 title: "MISO_cryo_EM"
 nav: false
+wide: true
 description: "MISO 通过“微型层析 + 在线荧光定位 + 毛细管直连网格 + 自动 blot/plunge”，把约 1 μl 的蛋白洗脱峰直接变成多张冷冻电镜网格，并在多个约 1–2 μg 输入的示例中得到 2.2–3.5 Å 结构；论文充分证明了平台的可行性，但完整复现仍依赖定制硬件和当前仓库中不可读或缺失的 LabVIEW 主控逻辑。"
 robots: noindex, nofollow
 sitemap: false

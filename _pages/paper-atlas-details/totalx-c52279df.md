@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/totalx-c52279df/
 title: "TotalX"
 nav: false
+wide: true
 description: "常规液滴式单细胞 RNA 测序主要捕获带 poly(A) 尾的 mRNA，因此 miRNA、tRNA、snoRNA/scaRNA、部分 lncRNA 以及不带 poly(A) 尾的病毒 RNA 会被系统性漏掉。TotalX 在 10x Chromium 3′ v3.1 上加入少量酶学和计算步骤，使长、短、编码和非编码 RNA 可以在同一单细胞框架中测量。 细胞/细胞核在同一反应中进行 3′ poly(A) 化、5′ 加帽和逆转录；"
 robots: noindex, nofollow
 sitemap: false

@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/misar-seq-dac31b7b/
 title: "MISAR-seq"
 nav: false
+wide: true
 description: "MISAR-seq 把组织切片划成 50×50 µm 的二维网格，在每个网格中同时测量 ATAC 可及性和 RNA 表达。它的价值不只是把两张独立空间图叠在一起，而是让同一个位置的调控元件开放程度与转录输出可以直接配对，从而观察小鼠胚胎脑发育过程中“染色质先准备、基因后表达”的时空调控关系。 整套方法包含两部分：实验端用 Tn5、逆转录和两轮正交微流控条形码在同一切片上生成配对 ATAC/RNA 文库；"
 robots: noindex, nofollow
 sitemap: false

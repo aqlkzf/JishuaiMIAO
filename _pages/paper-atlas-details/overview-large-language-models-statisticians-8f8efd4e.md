@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/overview-large-language-models-statisticians-8f8efd4e/
 title: "Overview_Large_Language_Models_Statisticians"
 nav: false
+wide: true
 description: "This survey is a two-way map between statistics and large language models. It first gives statisticians enough LLM background to reason about architectures and training, then organizes places where statistical methodology can make LLMs more…"
 robots: noindex, nofollow
 sitemap: false

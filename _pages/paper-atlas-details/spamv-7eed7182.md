@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/spamv-7eed7182/
 title: "SpaMV"
 nav: false
+wide: true
 description: "同一个空间位置可以同时测到转录组、表观组、蛋白组或代谢组。传统整合常把所有模态压到一个统一表示里，这适合找共同组织结构，却可能把只在某个模态中清楚的生物信号当成噪声。SpaMV 的核心假设是：每个 spot 的观测由一部分跨模态共享状态和每个模态自己的私有状态共同产生。 因此，对第 i 个模态 xi，模型学习一个共享变量 zs 和一个私有变量 z{pi}。"
 robots: noindex, nofollow
 sitemap: false

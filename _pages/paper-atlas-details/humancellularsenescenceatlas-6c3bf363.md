@@ -3,6 +3,7 @@ layout: default
 permalink: /paper-atlas/humancellularsenescenceatlas-6c3bf363/
 title: "HumanCellularSenescenceAtlas"
 nav: false
+wide: true
 description: "这篇 Cell 文章不是一个提出新算法的 methods paper，而是一篇关于 NIH SenNet 人类细胞衰老图谱的 commentary/perspective。它要解决的核心问题是：我们虽然知道细胞衰老会出现永久性细胞周期停滞、SASP 等状态变化，也从模型系统中知道 p16、p21 等候选标记物，但在真实人体组织里，仍然缺少一个系统性的答案：哪些细胞会衰老？数量多少？在组织空间中分布在哪里？它们如何影响微环境？"
 robots: noindex, nofollow
 sitemap: false
