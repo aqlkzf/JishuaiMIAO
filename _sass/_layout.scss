@@ -34,6 +34,18 @@ body.sticky-bottom-footer {
   max-width: v.$max-content-width;
 }
 
+// Index pages (Paper Atlas) need the full viewport. Drop the 930px article
+// cap on the nav, main column, and footer together so they stay aligned.
+.layout-wide {
+  .navbar > .container,
+  #main-content.container-wide,
+  footer .container {
+    max-width: none;
+    padding-left: clamp(1rem, 2.5vw, 2rem);
+    padding-right: clamp(1rem, 2.5vw, 2rem);
+  }
+}
+
 // Profile
 .profile {
   img {

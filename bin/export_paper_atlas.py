@@ -660,6 +660,7 @@ layout: default
 permalink: /paper-atlas/{paper.detail_slug}/
 title: {json.dumps(paper.method, ensure_ascii=False)}
 nav: false
+wide: true
 description: {json.dumps(paper.summary_zh, ensure_ascii=False)}
 robots: noindex, nofollow
 sitemap: false
@@ -813,6 +814,7 @@ permalink: /paper-atlas/
 title: paper atlas
 nav: true
 nav_order: 2
+wide: true
 description: A searchable public index of concise computational biology paper summaries.
 robots: noindex, nofollow
 sitemap: false

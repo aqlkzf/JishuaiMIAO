@@ -37,13 +37,6 @@
     display: none !important;
   }
 
-  /* Break out of the 930px article container: an index needs columns. */
-  @media (min-width: 1100px) {
-    --atlas-width: min(1320px, calc(100vw - 4rem));
-    width: var(--atlas-width);
-    margin-inline: calc(50% - var(--atlas-width) / 2);
-  }
-
   /*****************************************************************************
    * Masthead
    ****************************************************************************/
@@ -800,6 +793,10 @@
   margin: 0 auto;
   padding: 1rem 0 4rem;
 
+  &.has-toc {
+    max-width: 76rem;
+  }
+
   html[data-theme="dark"] & {
     --detail-muted: #a3a3a8;
     --detail-accent: #35e0a0;
@@ -899,9 +896,94 @@
     color: #fff;
   }
 
-  .paper-detail__tabs button:focus-visible {
+  .paper-detail__tabs button:focus-visible,
+  .paper-detail__toc-toggle:focus-visible,
+  .paper-detail__toc a:focus-visible {
     outline: 2px solid var(--detail-accent);
     outline-offset: 2px;
+  }
+
+  .paper-detail__layout {
+    min-width: 0;
+  }
+
+  .paper-detail__toc {
+    min-width: 0;
+  }
+
+  .paper-detail__toc-label {
+    margin: 0 0 0.65rem;
+    color: var(--detail-muted);
+    font-family: var(--detail-mono);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .paper-detail__toc-toggle {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 2.4rem;
+    padding: 0.4rem 0.7rem;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-family: var(--detail-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .paper-detail__toc-toggle::after {
+    color: var(--detail-muted);
+    font-size: 0.7rem;
+    content: "▾";
+  }
+
+  .paper-detail__toc.is-open .paper-detail__toc-toggle::after {
+    content: "▴";
+  }
+
+  .paper-detail__toc-list,
+  .paper-detail__toc-list ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .paper-detail__toc-list ol {
+    margin: 0.15rem 0 0.4rem;
+    padding-left: 0.7rem;
+    border-left: 1px solid var(--detail-line);
+  }
+
+  .paper-detail__toc a {
+    display: -webkit-box;
+    overflow: hidden;
+    padding: 0.28rem 0;
+    color: var(--detail-muted);
+    font-size: 0.78rem;
+    line-height: 1.35;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .paper-detail__toc a:hover,
+  .paper-detail__toc a.is-active {
+    color: var(--detail-accent);
+  }
+
+  .paper-detail__toc a.is-active {
+    font-weight: 600;
   }
 
   .paper-detail__panel {
@@ -935,6 +1017,60 @@
     display: block;
     max-width: 100%;
     overflow-x: auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .paper-detail.has-toc .paper-detail__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 15.5rem;
+    gap: 0 1.75rem;
+    align-items: start;
+  }
+
+  .paper-detail.has-toc .paper-detail__toc {
+    position: sticky;
+    top: 5.25rem;
+    order: 2;
+    max-height: calc(100vh - 6.5rem);
+    overflow: auto;
+    padding: 0.2rem 0.15rem 1rem;
+  }
+
+  .paper-detail.has-toc .paper-detail__panel {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 1099px) {
+  .paper-detail.has-toc .paper-detail__toc {
+    position: sticky;
+    top: 57px;
+    z-index: 4;
+    margin-bottom: 0.85rem;
+    padding: 0.3rem;
+    border: 1px solid var(--detail-line);
+    border-radius: 12px;
+    background: var(--global-bg-color);
+  }
+
+  .paper-detail.has-toc .paper-detail__toc-label {
+    display: none;
+  }
+
+  .paper-detail.has-toc .paper-detail__toc-toggle {
+    display: flex;
+  }
+
+  .paper-detail.has-toc .paper-detail__toc-list {
+    display: none;
+    max-height: min(60vh, 24rem);
+    overflow: auto;
+    padding: 0.2rem 0.55rem 0.55rem;
+  }
+
+  .paper-detail.has-toc .paper-detail__toc.is-open .paper-detail__toc-list {
+    display: block;
   }
 }
 

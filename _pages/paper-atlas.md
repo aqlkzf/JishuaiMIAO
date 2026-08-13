@@ -4,6 +4,7 @@ permalink: /paper-atlas/
 title: paper atlas
 nav: true
 nav_order: 2
+wide: true
 description: A searchable public index of concise computational biology paper summaries.
 robots: noindex, nofollow
 sitemap: false

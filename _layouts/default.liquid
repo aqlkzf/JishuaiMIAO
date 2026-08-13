@@ -16,7 +16,11 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  {% assign wide_layout = page.wide %}
+  {% if page.permalink contains '/paper-atlas/' %}
+    {% assign wide_layout = true %}
+  {% endif %}
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}{% if wide_layout %} layout-wide{% endif %}">
     <!-- Skip link -->
     <a href="#main-content" class="sr-only sr-only-focusable">Skip to content</a>
 
@@ -24,7 +28,7 @@
     {% include header.liquid %}
 
     <!-- Content -->
-    <div id="main-content" class="container mt-5" role="main">
+    <div id="main-content" class="container{% if wide_layout %} container-wide{% endif %} mt-5" role="main">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
