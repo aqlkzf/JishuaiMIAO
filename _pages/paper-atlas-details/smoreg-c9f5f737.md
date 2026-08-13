@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SMOReg</h1>
     <p>Decoding Spatial Heterogeneity and Multi-Omics Regulation with Hierarchical Graph Learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1002/advs.75574" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1002/advs.75574" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SMOReg">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ByGary/SMOReg" target="_blank" rel="noopener noreferrer" aria-label="Open code for SMOReg">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -151,7 +151,7 @@ $$
 
 ### 10. 当前复现结论
 
-本工作区已取得论文正文、39 张 OCR 图像和公开源码快照，但 Wiley 补充 PDF `advs75574-sup-0001-SuppMat.pdf` 仍返回 403。代码快照证明核心亲和、硬匹配、attention、GAT 和对比骨架真实存在；同时也暴露缺配置、缺数据/先验文件、函数签名不一致和 WNN 路径被注释等阻断。故合理结论是：**机制可核对，发布快照不可直接端到端复现，数值结果未重跑**。
+代码快照证明核心亲和、硬匹配、attention、GAT 和对比骨架真实存在；同时也暴露缺配置、缺数据/先验文件、函数签名不一致和 WNN 路径被注释等阻断。故合理结论是：**机制可核对，发布快照不可直接端到端复现，数值结果未重跑**。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

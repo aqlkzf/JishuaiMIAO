@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ElevenGrandChallenges_singlecell_review</h1>
     <p>Eleven grand challenges in single-cell data science</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1186/S13059-020-1926-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1186/S13059-020-1926-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ElevenGrandChallenges_singlecell_review">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -154,16 +154,6 @@ Fig. 4 展示了肿瘤从发生、取样、治疗到转移的时空演化，包�
 - Fig. 4 支持“肿瘤演化需要时间、空间、治疗和 clone 信息整合”。
 - Fig. 5 支持“scDNA-seq lineage inference 受缺失和 amplification bias 影响”。
 - Fig. 6 支持“数据整合有多种不同问题形态”。
-
-### 本工作区的可复现性状态
-
-- `MODE=paper-only`，没有代码仓库。
-- `doc_code.md` 按流程跳过，不能推断代码实现。
-- `SUPP_MD=none`。文章只链接了一个 Additional file 1 DOCX，内容说明为 review history (`paper.md:1142-1148`)。
-- `paper.md:1-1200` 中没有发现 display equations 或 formal optimization objectives。
-- 六张本地图像已直接检查，并在 `figure_analysis.md` 中记录。
-
-这篇文章最适合被当成单细胞数据科学的问题地图：它告诉研究者哪些地方需要更好的统计假设、可扩展算法、跨模态整合和系统 benchmark，而不是提供一个可以直接运行的新模型。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

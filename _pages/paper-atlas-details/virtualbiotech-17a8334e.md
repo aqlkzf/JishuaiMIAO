@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -33,7 +33,7 @@ sitemap: false
 
 ### 证据边界
 
-本解读只基于当前工作区中的论文 OCR 文本和本地提取的图像：`paper source/paper/auto/paper.md` 与 `paper source/paper/auto/images/`。该工作区是 **paper-only**：没有代码仓库、没有 `code source`、没有单独的补充材料 Markdown，因此不能把任何代码实现细节说成已经验证。`paper.md:760-882` 是 OCR 尾部混入的非主论文 reviewer/instruction/sample 材料，本文不把它当作主论文证据。
+该工作区是 **paper-only**：没有代码仓库、没有 `code source`、没有单独的补充材料 Markdown，因此不能把任何代码实现细节说成已经验证。`paper.md:760-882` 是 OCR 尾部混入的非主论文 reviewer/instruction/sample 材料，本文不把它当作主论文证据。
 
 ### 这篇论文想解决什么问题？
 
@@ -198,19 +198,6 @@ Virtual Biotech 的推理路径是：
 - Tahoe-100M hallmark signatures 在 3,345 个 drug-cell-line combinations 和 7,920 个 oncology trials 中与 endpoint success 或 early phase progression 相关（`paper.md:114`）。
 - B7-H3 和 OSMRβ 两个案例都在一天内完成，论文报告成本分别为 46 美元和 54 美元的 Anthropic API credits（`paper.md:182`, `paper.md:223`）。
 
-### 局限和当前工作区缺口
-
-论文自己的局限包括：AI agents 会犯分析或解释错误；trial analyses 是 observational；case studies 只是 data-driven hypotheses，仍需进一步验证；模型预训练也可能带来 information leakage 风险（`paper.md:227-229`）。
-
-当前 PaperCode 工作区还存在这些明确缺口：
-
-- **代码：Not found。** 没有 repo URL、没有 `code source`，不能验证 MCP servers、agent prompts、统计脚本或绘图代码的实际实现。
-- **补充材料 Markdown：Not found。** 补充 notes 嵌入在 OCR 文本中，没有独立 `SUPP_MD`。
-- **图像来源：Partial。** 图像来自 OCR 提取；bioRxiv HTML acquisition 的图片下载失败。
-- **可复现 session artifacts：Not found。** 论文说 UI 可以下载 generated code/data/reports，但当前工作区没有这些运行产物。
-
-因此，最稳妥的读法是：Virtual Biotech 是一个多智能体药物研发组织框架和 hypothesis-generation 平台；论文提供了较完整的方法描述、公式和公开数据来源，但当前 PaperCode 工作区无法做代码级复现实证。
-
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
@@ -259,8 +246,6 @@ In the B7-H3 lung cancer case study, Virtual Biotech integrated weak germline ge
 ### Reproducibility And Limits
 
 The paper states that all datasets used are publicly available, including Open Targets, CELLxGENE, Tabula Sapiens, Visium LUAD, TCGA LUAD, GEO microarray cohorts, and TAURUS (`paper.md:235-237`). It also describes downloadable generated data, code, and reports from each Virtual Biotech session (`paper.md:60`) and provides key equations/statistical model descriptions in Extended Methods (`paper.md:493-587`).
-
-For this PaperCode workspace, reproducibility is **paper-only**:
 
 - `code source=none`, `HAS_CODE=false`; no repository or code bundle was found in acquisition sidecars or the OCR paper scan.
 - `SUPP_MD=none`; supplementary notes are embedded in OCR text rather than a separate supplement file.

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>regvelo</h1>
     <p>RegVelo: gene-regulatory-informed dynamics of single cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2024.12.11.627935" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2024.12.11.627935" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for regvelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/regvelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for regvelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -141,7 +141,7 @@ FUCCI 数据提供近似方向与时间参考，支持 RegVelo 在周期系统�
 
 ### 10. 论文—代码与版本边界
 
-当前论文是 bioRxiv v1，DOI `10.1101/2024.12.11.627935`，PDF 创建于 2024-12-11，不能标成 Nature Methods 正式发表。源码链接为 `https://github.com/theislab/regvelo`，本工作区根就是一个源码快照，含 `src/`、测试和文档；但没有 `.repo_source`、独立 `.git` 或固定 commit。`pyproject.toml` 用 setuptools-scm 动态生成版本，因此脱离 Git 元数据不能确定快照包版本。
+当前论文是 bioRxiv v1，DOI `10.1101/2024.12.11.627935`，PDF 创建于 2024-12-11，不能标成 Nature Methods 正式发表。`pyproject.toml` 用 setuptools-scm 动态生成版本，因此脱离 Git 元数据不能确定快照包版本。
 
 依赖只给范围而非锁文件，例如 Python `>=3.10`、scvi-tools `<1.2.1`、torch `<2.6.0`、torchode `>=0.1.6`。工作区也未保存全部论文数据和逐图 notebook。因此可验证的是核心实现与论文方程的对应，不是精确环境或所有图的一键复现。
 

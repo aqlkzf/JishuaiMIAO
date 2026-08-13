@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MISAR-seq</h1>
     <p>Simultaneous profiling of spatial gene expression and chromatin accessibility during mouse brain development</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-023-01884-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-023-01884-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MISAR-seq">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/gpenglab/MISAR-seq" target="_blank" rel="noopener noreferrer" aria-label="Open code for MISAR-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -256,20 +256,6 @@ o$Pval <- 2 * pt(-abs(o$TStat), ncol(seATAC) - 2)
 5. **论文与代码有关键差异。** 图卷积、深度聚类、GRN、RCTD 及最终阈值不能由当前仓库完整核验。
 
 在这些边界内，MISAR-seq 最可靠的贡献是证明同一空间网格中联合 ATAC+RNA 测量可行，并用配对信号描绘发育脑区。更复杂的调控级联是由该图谱提出的优先验证假说。
-
-### 源证据入口
-
-- 技术设计与质量：`paper source/paper/vlm/paper.md:23-41`
-- 跨时期空间聚类：`paper source/paper/vlm/paper.md:43-189`
-- 跨模态整合与调控结果：`paper source/paper/vlm/paper.md:191-313`
-- 实验和计算方法：`paper source/paper/vlm/paper.md:370-476`
-- RNA barcode：`MISAR-seq-code/Python/MISAR_Split_BC_RNA.py:15-30`
-- ATAC barcode：`MISAR-seq-code/Python/MISAR_Split_BC_ATAC.py:16-31`
-- 空间 refinement：`MISAR-seq-code/Python/utils.py:25-52`
-- ATAC/RNA 表示与拼接：`MISAR-seq-code/MISAR-seq.R:150-215`
-- Peak—gene 与双尾检验：`MISAR-seq-code/R/DER.R:172-268`
-- DER 聚合和实际筛选：`MISAR-seq-code/R/DER.R:370-443`
-- 主图：`paper source/paper/vlm/images/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

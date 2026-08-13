@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>MetCell</h1>
     <p>Deep-coverage single-cell metabolomics enabled by ion mobility-resolved mass cytometry</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/ZhuMetLab/MetCell" target="_blank" rel="noopener noreferrer" aria-label="Open code for MetCell">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -311,7 +312,6 @@ $$
 - Level 1–4 自动分配；
 - 论文公式 (4)–(6) 的综合排名；
 - 小鼠肝 Seurat integration、marker 分析与 Monocle pseudotime 脚本；
-- 自动化测试和本工作区的成功运行记录。
 
 代码–论文整体一致度因此评为 **medium**：最关键、最有方法创新性的峰提取核心有直接实现，但论文最终化学身份和生物学分析不由仓库单独完成。
 
@@ -391,7 +391,7 @@ Important gaps remain. The package's `03_metabolite_annotation_table.csv` contai
 
 **Rating: 3/5 — the core algorithm is inspectable and plausibly rerunnable, but the full paper is not reproduced by the repository alone.**
 
-Strengths include fixed provenance, a Docker image, an end-to-end example, explicit parameter objects, compiled source, packaged MS1/CCS data, raw-data accessions and Supplementary Table 6 settings. The supplement reports about 40 min and 6–20 GB RAM for a 120-min HepG2 run with seven threads.
+The supplement reports about 40 min and 6–20 GB RAM for a 120-min HepG2 run with seven threads.
 
 Constraints include external raw `.d` data and instrument dependencies, no included automated tests or recorded successful run, a package data file over 10 MB, and missing executable code for the final MS2/confidence and biological-analysis layers. Reproducing the headline annotation and atlas results therefore requires the external datasets, PRM-PASEF acquisition, spectral libraries/SIRIUS, and reimplementation of the described Seurat/Monocle workflow.
 

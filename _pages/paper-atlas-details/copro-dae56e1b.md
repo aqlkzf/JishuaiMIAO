@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CoPro</h1>
     <p>Dissecting the coordinated progression of cell states in spatial transcriptomics with CoPro</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.17.719309" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.17.719309" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CoPro">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Zhen-Miao/CoPro" target="_blank" rel="noopener noreferrer" aria-label="Open code for CoPro">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -90,7 +90,7 @@ $$
 
 ### 论文—代码匹配与复现边界
 
-本地 `CoPro/` 是 v0.6.1 R 包，含 S4 数据结构、距离/核、PCA、skrCCA、NCorr、BSC、置换、转移、vignettes 和 testthat 测试。论文还列出 Python 实现，但当前工作区没有 Python 仓库。`CoPro/.repo_source` 明确写明克隆日期为 2026-04-22、原 `.git` 已移除且精确 commit 未知；旧元数据中的固定 commit 因而不能继续使用。工作区还有一个较早的 `code/CoPro_R/` 副本，两者存在源码差异；本解读以顶层 `CoPro/` v0.6.1 为当前实现证据。
+本地 `CoPro/` 是 v0.6.1 R 包，含 S4 数据结构、距离/核、PCA、skrCCA、NCorr、BSC、置换、转移、vignettes 和 testthat 测试。旧元数据中的固定 commit 因而不能继续使用。工作区还有一个较早的 `code/CoPro_R/` 副本，两者存在源码差异；本解读以顶层 `CoPro/` v0.6.1 为当前实现证据。
 
 论文分析复现脚本和部分预处理不在 R 包中，也没有在本轮重跑大型数据。因此，公式与软件行为是直接核验，图 2–8 的生物学结果和数值是 paper-reported 证据。
 
@@ -204,7 +204,7 @@ CoPro is the only method capable of recovering two independent overlapping axes 
 - Four public datasets available for download (colon, brain, liver atlas, kidney)
 - Methods section provides detailed simulation procedures and analysis parameters
 
-**Verified boundary**: the local v0.6.1 R package has vignettes and testthat coverage, but its exact Git commit is unknown (`CoPro/.repo_source`), the Python implementation is not local, and the full paper-analysis scripts and datasets were not rerun. Numerical results below are paper-reported.
+Numerical results below are paper-reported.
 
 **Practical notes**:
 - R package installation: `devtools::install_github("Zhen-Miao/CoPro")`

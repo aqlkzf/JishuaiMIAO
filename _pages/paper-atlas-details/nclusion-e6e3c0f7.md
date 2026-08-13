@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>NCLUSION</h1>
     <p>Scalable nonparametric clustering with unified marker gene selection for single-cell RNA-seq data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.crmeth.2026.101329" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.crmeth.2026.101329" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for NCLUSION">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/microsoft/Nclusion.jl" target="_blank" rel="noopener noreferrer" aria-label="Open code for NCLUSION">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -113,7 +113,6 @@ $$
 - 当前包已经包含 adjusted PIP 和后验 effect summary，旧文档所称“Eqs. 5–9 完全不在 Julia 包”不再成立。
 - `pyproject.toml` 声明 Python 包接口，但快照中没有实际 Python 模块；可靠入口仍是 Julia API/CLI。
 - 仓库 README 指向单独的 manuscript figure-reproducibility 仓库；本地代码快照不足以一键重建全部论文结果。
-- 本地代码目录没有独立 Git 元数据或 `.repo_source` 提交锁，因此只能确认来源 URL，不能确认其精确上游 commit。
 
 ### 9. 建议的源码阅读顺序
 

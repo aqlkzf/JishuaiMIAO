@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Monocle 3 / MOCA</h1>
     <p>The single-cell transcriptional landscape of mammalian organogenesis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-019-0969-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-019-0969-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Monocle 3 / MOCA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/cole-trapnell-lab/monocle3" target="_blank" rel="noopener noreferrer" aria-label="Open code for Monocle 3 / MOCA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -192,15 +192,7 @@ MOCA 特有的跨 atlas NNLS matching 和某些组合公式不在通用 Monocle 
 
 还应做敏感性分析：不同 root 是否改变结论；去除 embryo/batch 后轨迹是否保持；subsampling 后细分支是否稳定；真实 stage 是否沿 pseudotime总体单调；已知 marker 是否按预期出现。图看起来连续不是充分验证。
 
-本工作区没有重跑 200 万细胞 atlas、Supplementary Note 分析或全部图表，因此不声称数值级复现。它完成的是论文、补充、主图与当前直接源码的证据对应，并明确记录版本漂移。
-
-### 13. 证据入口
-
-- 主文：`paper source/PMC6434952/paper.md`
-- 论文 PDF：`paper source/PMC6434952/nihms-1518381.pdf`
-- 补充：`NIHMS1518381-supplement-Supplement_note_1.pdf` 与 Reporting Summary PDF
-- 图像：`paper source/PMC6434952/images/nihms-1518381-f0001.jpg` 至 `f0018.jpg`
-- 当前源码：`code/` commit `4f4239a0afb0dd1941a0359ba6bec95eb0ccf628`
+它完成的是论文、补充、主图与当前直接源码的证据对应，并明确记录版本漂移。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

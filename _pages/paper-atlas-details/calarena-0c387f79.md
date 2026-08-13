@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CalArena</h1>
     <p>CalArena: A Large-Scale Post-Hoc Calibration Benchmark</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2605.30188" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2605.30188" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CalArena">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/probkit/CalArena" target="_blank" rel="noopener noreferrer" aria-label="Open code for CalArena">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -115,7 +115,7 @@ CalArena 给的是跨数据集的平均证据，而不是“任何任务都选�
 
 ### 8. 复现边界
 
-官方代码快照与论文的基准执行和统计分析高度匹配。但当前工作区缺少 7 个约 1.71 GB 的 HDF5 数据文件，因此没有执行端到端重跑；校准器和指标的内部实现位于官方外部依赖 `probmetrics`，本次未获取，不能声称已逐行验证；代码中也未找到独立自动化测试套件。论文自身还承认固定超参数、视觉数据覆盖较窄以及部分方法缺失等限制。
+官方代码快照与论文的基准执行和统计分析高度匹配。校准器和指标的内部实现位于官方外部依赖 `probmetrics`，本次未获取，不能声称已逐行验证；代码中也未找到独立自动化测试套件。论文自身还承认固定超参数、视觉数据覆盖较窄以及部分方法缺失等限制。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

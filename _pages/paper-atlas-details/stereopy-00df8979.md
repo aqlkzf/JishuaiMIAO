@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Stereopy</h1>
     <p>Stereopy: modeling comparative and spatiotemporal cellular heterogeneity via multi-sample spatial transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-58079-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-58079-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Stereopy">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/STOmics/Stereopy" target="_blank" rel="noopener noreferrer" aria-label="Open code for Stereopy">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -142,8 +142,6 @@ Fig. 5 在 59 张胚胎心脏切片上研究 VCM 等细胞的三维 niche；通�
 论文报告 GPU 版本的 SingleR、Leiden、Louvain 和 UMAP，并比较 CPU/GPU 时间。当前仓库是一个持续演化的大型工具箱，存在 GPU 可选依赖与相关算法入口，但并非所有论文性能脚本和硬件环境都被封装成测试。核心 CCD 共现还主要依赖 Numba/CPU 并行。因而“支持 GPU”与“所有 Stereopy 算法自动在 GPU 上加速”是两回事。
 
 ### 代码版本与复现范围
-
-本地快照的 `.repo_source` 记录 `https://github.com/STOmics/Stereopy`，提交 `2b21b0019777dc875ab624a1aed42392f227c2bb`。代码目录没有独立 `.git`，从其路径运行 `git rev-parse` 会向上解析到 PaperCode 主仓库，因此不能拿返回值当作 Stereopy commit；本次版本以采集清单为准。
 
 核心容器、CCD、TGPI、niche 和通信实现均可直接审计，仓库还包含测试与教程。但论文数据需从 MOSTA、GEO、Zenodo等外部来源取得，ST-GEARS/BatchEval、专用 Dijkstra–NicheNet 流程、全部 benchmark 汇总和部分图表脚本不在已定位核心路径中。依赖范围较宽，GPU 结果还受 CUDA、RAPIDS/torch 和硬件版本影响。因此工作区支持高可信的代码—论文映射，不等于已在本机端到端重跑五幅主图。
 

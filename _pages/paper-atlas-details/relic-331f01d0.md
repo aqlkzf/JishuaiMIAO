@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ReLiC</h1>
     <p>Decoding post-transcriptional regulatory networks by RNA-linked CRISPR screening in human cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02702-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02702-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ReLiC">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/rasilab/nugent_2024" target="_blank" rel="noopener noreferrer" aria-label="Open code for ReLiC">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -140,8 +140,6 @@ The public repository is unusually complete: it includes a top-level reproductio
 ### Limitations
 
 ReLiC requires engineered landing-pad cell lines and iterative cloning. Reporter assays provide a targeted view and do not guarantee that every endogenous transcript responds identically. The screened library covers RNA-associated proteins rather than the entire genome, knockout phenotypes can be pleiotropic, and essential-gene effects require careful separation from the RNA phenotype. Selected findings are strongly validated, but pooled hits remain discovery evidence until tested in endogenous contexts.
-
-**Reproducibility rating: 4/5.** Analysis code, data links, containers and figure provenance are public and well mapped; the deduction reflects the heavy full-run requirements and the unavoidable absence of executable wet-lab construction.
 
 </article>
 </section>

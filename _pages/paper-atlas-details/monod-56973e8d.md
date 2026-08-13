@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Monod</h1>
     <p>Monod: model-based discovery and integration through fitting stochastic transcriptional dynamics to single-cell sequencing data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02832-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02832-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Monod">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/pachterlab/monod" target="_blank" rel="noopener noreferrer" aria-label="Open code for Monod">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -152,8 +152,6 @@ $$
 - **图 6**：用噪声分解评估归一化、log、PCA 和 UMAP 对技术变异与生物变异的影响。结论不是“一切变换都错”，而是变换可能同时去除技术变异和扭曲可解释的生物分布。
 
 ### 12. 代码证据与复现边界
-
-本工作区含两个代码快照：
 
 - `monod/`（commit `de99107...`）是核心 package，实现 PGF、FFT、KLD、网格搜索、QC、AIC 和不确定性；
 - `monod_examples/`（commit `6781106...`）是论文各图的数据集配置、拟合脚本和 notebook。

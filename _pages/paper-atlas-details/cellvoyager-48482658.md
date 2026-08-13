@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellVoyager</h1>
     <p>CellVoyager: AI CompBio agent generates new insights by autonomously analyzing biological data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03029-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03029-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellVoyager">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/zou-group/CellVoyager" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellVoyager">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -189,8 +189,6 @@ judge 仍是 LLM。论文用两名博士研究者在子集上核对，报告约 
 6. 多个重复运行，因为 LLM 输出非确定；
 7. CellBench 的 judge checkpoint 与评分 prompt。
 
-当前代码目录嵌在 PaperCode checkout 中，不是独立 Git 仓库；旧合同记录的上游 commit 无法由当前本地 Git 元数据核验。
-
 ### 11. 最重要的使用边界
 
 第一，CellVoyager 产生“可执行候选分析”，不是自动同行评审。任何新发现都应核对统计单位、协变量、多重检验和外部验证。
@@ -202,16 +200,6 @@ judge 仍是 LLM。论文用两名博士研究者在子集上核对，报告约 
 第四，病例展示经过成功执行率筛选并有人类反馈；真实无人值守运行的平均质量可能更低。
 
 第五，论文结果对应特定模型版本，而当前默认模型与执行模式已经变化。比较或复现时必须报告实际模型、prompt、运行日期、执行模式和随机重复。
-
-### 源证据入口
-
-- 主论文：`paper source/paper/auto/paper.md`
-- 补充材料与完整 prompts：`output_paper_supp_md/paper_supp1/auto/paper_supp1.md`
-- 主图：`paper source/paper/auto/images/`
-- 规范代码：`CellVoyager/cellvoyager/`
-- 论文一致路径：`CellVoyager/cellvoyager/execution/legacy.py`
-- 当前 CLI：`CellVoyager/run_cellvoyager.py`
-- 论文—代码映射：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

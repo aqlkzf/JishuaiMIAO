@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Descart</h1>
     <p>Descart: a method for detecting spatial chromatin accessibility patterns with inter-cellular correlations</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1186/s13059-024-03458-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1186/s13059-024-03458-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Descart">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/likeyi19/Descart" target="_blank" rel="noopener noreferrer" aria-label="Open code for Descart">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -159,17 +159,6 @@ Notebook-only 包括：四种 imputation case、peak distance 的 99.5 percentil
 5. 图平滑可能模糊真实锐利边界或稀有状态。
 6. 坐标尺度、异常近点和不同切片单位会影响空间图，尤其当前 global-min 实现。
 7. gene–peak 和 peak-module 结果是关联假设，需要 motif、Hi-C、扰动或独立样本验证。
-
-### 直接证据入口
-
-- 论文：`paper source/PMC11686967/paper.md`
-- 主图：`paper source/PMC11686967/images/13059_2024_3458_Fig1_HTML.jpg` 至 `Fig6_HTML.jpg`
-- 补充 PDF：`paper source/PMC11686967/13059_2024_3458_MOESM1_ESM.pdf`
-- 核心实现：`Descart/code/descart.py` 与 `Descart/code/utils.py`
-- 下游流程：`Descart/code/*.ipynb`
-- 细粒度映射：`doc_code.md`；图解：`figure_analysis.md`
-
-本解释以 PMC 正文、六张主图、补充 PDF 和固定代码快照为证据边界。未在核心脚本定位到的 benchmark orchestration 与 notebook 参数不会被补写成核心 API。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

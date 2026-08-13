@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scJoint</h1>
     <p>scJoint integrates atlas-scale single-cell RNA-seq and ATAC-seq data with transfer learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-021-01161-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-021-01161-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scJoint">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/SydneyBioX/scJoint" target="_blank" rel="noopener noreferrer" aria-label="Open code for scJoint">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -144,7 +144,6 @@ $$
 ### 从图 1 到图 5 应该怎样读
 
 - **图 1** 先证明任务和规模：共享编码器接收 gene expression 与 gene activity；超过一百万细胞的基准约两小时完成。这个规模结论同时依赖线性模型、批训练和代码中的 RNA KNN 抽样，并不等于任意硬件/新版本都能复现同一时间。
-- **图 2** 在 19 个重叠小鼠细胞类型上检验“模态混合且类型分开”。scJoint 报告 84% 转移准确率，并在只保留 20% RNA 训练细胞时仍较稳定；这些是论文基准结果，不是本工作区重新运行所得。
 - **图 3** 用独立 marker 证据检查全图谱重注释：原先 unknown/endothelial 中被转成 stromal/fibroblast 的细胞具有 Col1a1、Col1a2、Dcn、Ccdc80 活性。这里的论证链是“迁移标签 → 在 ATAC 原空间聚集 → marker 活性支持”，而非仅凭联合 tSNE 宣称新细胞类型。
 - **图 4** 把输入扩展到 CITE-seq/ASAP-seq 的基因加蛋白特征，展示条件间 PBMC 整合和 142 个候选 NKT 细胞。NKT 解释来自 CD3/GNLY 及蛋白 marker 组合，不能只由 scJoint 标签本身推出。
 - **图 5** 用配对 SNARE-seq 作验证，但 scJoint 运行时不使用配对关系；它与利用配对信息的方法比较的是嵌入和类型分离表现。因此“在配对数据上评估”不等于“scJoint 是配对整合模型”。
@@ -167,10 +166,6 @@ $$
 - 论文 KNN 分数是 softmax 概率均值，代码是 hit-count 加减权重。
 - 代码有论文目标未明列的 L1 正则，系数默认为 0.1。
 - 训练数据集的 `__getitem__` 会随机另取索引，形成有放回抽样；“一个 epoch”不严格等于每个细胞恰好访问一次。
-
-#### 尚未在本工作区复现
-
-本地仓库保留旧式 PyTorch 依赖、配置文件驱动的数据路径、预计算 checkpoint、编译的 `libutility.so` 和大体积示例数据。此次分析没有重建论文全部数据预处理、旧 CUDA/PyTorch 环境，也没有重新训练百万细胞基准或重画全部主/补充图。因此可以验证算法与本地提交的实现关系，但不能把论文的运行时间、准确率和所有生物学结论表述为本地复现实验结果。
 
 ### 最简心智模型
 

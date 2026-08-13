@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>CAB-OLST</h1>
     <p>Confocal Airy beam oblique light-sheet tomography for brain-wide cell type distribution and morphology</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/coreyelowsky/OLSTv2" target="_blank" rel="noopener noreferrer" aria-label="Open code for CAB-OLST">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -73,7 +74,7 @@ $$
 
 系统光学分辨率为 0.77 × 0.49 × 2.61 μm；细胞分布全脑成像用时 10 h，单神经元投射组成像用时 58 h。共聚焦 Airy 相比普通 Airy 将神经突对比度提高 4.7 倍。
 
-复现时要注意：论文的软件分散在 OLSTv2、CAB-OLST_Analysis、SmartStitcher、mBrainAligner、Vaa3D 和补充代码中。本工作区只获取了 OLSTv2，因此 SLM 图案、滚动快门同步、平台/切片机控制、U-Net 和配准追踪实现均标记为 `Not found`，不能把该仓库视为完整端到端系统。
+复现时要注意：论文的软件分散在 OLSTv2、CAB-OLST_Analysis、SmartStitcher、mBrainAligner、Vaa3D 和补充代码中。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

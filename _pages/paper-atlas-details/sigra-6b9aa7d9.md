@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>SiGra</h1>
     <p>SiGra: single-cell spatial elucidation through an image-augmented graph transformer</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/QSong-github/SiGra" target="_blank" rel="noopener noreferrer" aria-label="Open code for SiGra">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -118,7 +119,7 @@ $$
 
 ### 作者报告的验证与应有的谨慎
 
-论文在 CosMx 肺癌、MERSCOPE 小鼠肝脏、以及 12 张 DLPFC Visium 切片上比较 Seurat、Scanpy、stLearn、SpaGCN、BayesSpace。报告的 DLPFC 中位 ARI 为 SiGra 0.57，其他方法为 0.28--0.44（`paper.md:125-136`）；CosMx 也报告更高的 ARI（`paper.md:68-85`）。这些是论文结果，当前工作区没有数据、预训练权重与一键实验清单，故没有在此复跑。
+论文在 CosMx 肺癌、MERSCOPE 小鼠肝脏、以及 12 张 DLPFC Visium 切片上比较 Seurat、Scanpy、stLearn、SpaGCN、BayesSpace。报告的 DLPFC 中位 ARI 为 SiGra 0.57，其他方法为 0.28--0.44（`paper.md:125-136`）；CosMx 也报告更高的 ARI（`paper.md:68-85`）。
 
 六张本地图像确实展示了预期的现象：图 2/5 的域图与基线比较，图 3/4/6 的原始与增强表达比较。但“图上更平滑/更集中”不等于已逐点证明表达一定真实；应结合人工标注、bulk 对照、独立实验和可能的过度平滑风险解释。当前仓库对核心算法是很好的源码证据，但对补充调参和完整可复现实验仍有明确边界。
 

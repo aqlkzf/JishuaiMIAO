@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Revisiting_Mean_Estimation_Lp_Balls</h1>
     <p>Revisiting mean estimation over ℓp balls: Is the MLE optimal?</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2506.10354" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2506.10354" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Revisiting_Mean_Estimation_Lp_Balls">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -68,14 +68,14 @@ $$
 - 较高的中等噪声区间使用 $\theta^\star=e_1$，MLE 风险可以保持常数量级；
 - 较低的中等噪声区间使用
 
-  $$
+$$
   \theta^\star=k^{-1/p}(\mathbf1_k,0_{d-k}),
   \quad
   k\asymp\left(\frac1{\sigma^q d}\right)^{(p-1)/(2-p)}\vee1,
   \quad q=\frac p{p-1},
   $$
 
-  得到风险下界 $1\wedge\sigma d^{1/q}$。
+得到风险下界 $1\wedge\sigma d^{1/q}$。
 
 因此失效主要来自偏差，而不是方差：对凸对称参数集，投影估计器的方差本身仍然具有 minimax 量级，但远离原点的稀疏球面信号会产生过大的平方偏差。
 

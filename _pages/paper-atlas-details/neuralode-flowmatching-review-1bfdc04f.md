@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>NeuralODE_FlowMatching_review</h1>
     <p>Generative models of cell dynamics: from Neural ODEs to flow matching</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s42003-026-09758-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s42003-026-09758-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for NeuralODE_FlowMatching_review">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -150,7 +150,7 @@ Schrödinger bridge 在给定起终分布之间寻找相对参考扩散最可能
 
 ### 证据与复现边界
 
-本解读基于本地 PMC 全文、五幅主图及 reporting summary。该文没有原创代码或统一 benchmark；本工作区也不进行代码匹配。补充 PDF 是 Nature Portfolio Reporting Summary，本地文本抽取为空，未作为技术证据。软件包当前维护状态、API 和安装方式均未核验。
+本解读基于本地 PMC 全文、五幅主图及 reporting summary。该文没有原创代码或统一 benchmark；补充 PDF 是 Nature Portfolio Reporting Summary，本地文本抽取为空，未作为技术证据。软件包当前维护状态、API 和安装方式均未核验。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

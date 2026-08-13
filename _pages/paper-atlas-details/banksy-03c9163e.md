@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>BANKSY</h1>
     <p>BANKSY unifies cell typing and tissue domain segmentation for scalable spatial omics data analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-024-01664-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-024-01664-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for BANKSY">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/prabhakarlab/Banksy" target="_blank" rel="noopener noreferrer" aria-label="Open code for BANKSY">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 BANKSY 不把空间坐标直接塞进聚类，而是先为每个细胞或 spot 计算其局部邻域的表达均值和表达梯度，再把这些邻域特征与该点自身的表达拼接。这样，两个自身转录组相近、但处在不同组织微环境中的细胞，可以在新特征空间中被分开。
 
-本文证据来自本地论文正文 `output_nollm_math_tables/paper/paper.md`、主图 1–6，以及本工作区 R 包的 `R/computation.R`、`R/reduction.R` 和 `R/cluster.R`。论文分析脚本位于另一个公开仓库，未包含在本地快照中，因此本文区分“论文展示的结果”和“当前 R 包可直接验证的算法实现”。
+论文分析脚本位于另一个公开仓库，未包含在本地快照中，因此本文区分“论文展示的结果”和“当前 R 包可直接验证的算法实现”。
 
 ### 问题与输入输出
 

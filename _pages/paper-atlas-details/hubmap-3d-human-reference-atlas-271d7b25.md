@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>HuBMAP_3D_Human_Reference_Atlas</h1>
     <p>Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/cns-iu/hra-construction-usage-supporting-information" target="_blank" rel="noopener noreferrer" aria-label="Open code for HuBMAP_3D_Human_Reference_Atlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -106,8 +107,6 @@ sc/snRNA-seq:  cell × gene
 
 其中第五步非常关键。LinkML 先检查字段、类型、URL 和缺失值；随后语义检查确认本体项真实存在、关系与 Uberon/CL 等可信本体一致。ASCT+B 还接受专家与 EBI 的严格审阅（`paper.md:324-326`）。富集阶段会把隐含的传递关系显式化、调用外部 API 补充元数据，并把标准化对象合并为 RDF/Turtle 图谱（`paper.md:116-126`）。
 
-换句话说，HRA 的“算法核心”不是一个损失函数，而是受模式、本体、空间和 provenance 约束的多源图数据集成。
-
 ### 4. 两个重要的图谱富集结果
 
 #### 4.1 HRApop：给解剖结构附上细胞群证据
@@ -186,7 +185,6 @@ Fig. 3b 把同一空间组织逐级抽象：
 
 ### 8. 最值得记住的三点
 
-1. **HRA 的本质是共同参照与数据契约。** 它让解剖、细胞、标志物、空间和 provenance 可以被同一套标识与关系连接。
 2. **多模态整合依靠“汇聚到共同表示”。** 不同实验不必共享原始格式，但必须映射到统一的细胞类型、标志物和空间对象。
 3. **它的优势与复现难点来自同一件事：联邦化。** HRA 能整合 30 多个团队和 50 多个算法，也意味着完整复现依赖许多数据源、容器、API、云/本地资源和独立版本仓库。
 
@@ -210,7 +208,7 @@ This *Nature Methods* (2025) Resource paper describes HRA v2.0 as a linked ecosy
 - atlas-enriched products such as HRApop and HRAlit;
 - linked-open-data releases, APIs, portals and a hybrid cloud/microservices infrastructure.
 
-The sixth release covers 4,499 unique anatomical structures, 1,195 cell types and 2,089 biomarkers, with 33 ASCT+B tables and 65 3D reference objects (`paper.md:8-10`). The key novelty is not a single model but a shared Common Coordinate Framework and provenance-aware knowledge graph that connect anatomy, molecular identities, spatial objects and datasets across consortia.
+The sixth release covers 4,499 unique anatomical structures, 1,195 cell types and 2,089 biomarkers, with 33 ASCT+B tables and 65 3D reference objects (`paper.md:8-10`).
 
 ### High-Level Workflow
 
@@ -228,7 +226,7 @@ experimental tissue → 3D registration / segmentation / cell annotation
  HRApop / HRAlit / VCCF → APIs and user interfaces
 ```
 
-Transcriptomic cell-by-gene matrices are annotated with tools such as Azimuth, CellTypist and popV and aggregated into HRA-aligned cell-type/biomarker matrices. Spatial assays use validated panels, segmentation, annotation and optional 2D/3D alignment. Tissue blocks are registered to 3D reference organs with provenance, while schema and ontology checks identify malformed or semantically inconsistent digital objects (`paper.md:146-176,228-326`).
+Transcriptomic cell-by-gene matrices are annotated with tools such as Azimuth, CellTypist and popV and aggregated into HRA-aligned cell-type/biomarker matrices. Spatial assays use validated panels, segmentation, annotation and optional 2D/3D alignment.
 
 ### Evaluation and Evidence
 

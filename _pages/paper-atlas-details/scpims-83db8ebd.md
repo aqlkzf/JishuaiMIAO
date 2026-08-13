@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>scPiMS</h1>
     <p>Proteoform profiling of endogenous single cells from rat hippocampus at scale</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/NRTDP/scPiMS" target="_blank" rel="noopener noreferrer" aria-label="Open code for scPiMS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -273,7 +274,6 @@ PAM 是 partitioning around medoids。与 k-means 使用均值中心不同，PAM
 
 1. `scAnalyzer.m` 不是通用命令行工具：坐标路径、chronogram 文件名、阈值和输出文件名都需要手工修改。
 2. 公开脚本不能直接生成 `pca_input.xlsx`；README 说明该文件来自缺失的 WPF 应用。
-3. QMD 还需要 `pfr_annotation.xlsx` 和 `cell_annotation.xlsx`，当前工作区没有这些 demo 输入。
 4. QMD 会在运行时安装未固定版本的 R/Bioconductor 包，论文虽写 GSVA 1.50.5，但仓库没有 lockfile 强制该版本。
 5. 当前 MATLAB 代码、Methods 和 Extended Data Fig. 1 给出的 peak 参数不一致，复现者必须先确定目标数据集对应的参数。
 6. 离子深度在三个推断细胞群之间不同；图中未充分展示 depth-matched 或敏感性分析，需警惕技术深度对聚类的影响。这是待检验假设，不是已经证明的偏差。
@@ -363,7 +363,6 @@ Most importantly, the repository README assigns scoring to a WPF `SingleCellApp.
 Positive evidence:
 
 - the paper provides MassIVE accessions for raw and processed data;
-- GitHub provenance is fixed at commit `de26509c729acfa85914fd26d8d3f9505a34935b`;
 - MATLAB and Quarto/R source expose important upstream and downstream stages;
 - the README describes a manual demo workflow and expected external files.
 

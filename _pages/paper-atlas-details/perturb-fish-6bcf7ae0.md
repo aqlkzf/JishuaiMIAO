@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>Perturb-FISH</h1>
     <p>Simultaneous CRISPR screening and spatial transcriptomics reveal intracellular, intercellular, and functional transcriptional circuits</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/lbinan/Perturb-FISH" target="_blank" rel="noopener noreferrer" aria-label="Open code for Perturb-FISH">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -231,8 +232,6 @@ single-cell perturbation x expression x space x function table
 3. **功能效应**：某个扰动是否把细胞推向某种 calcium activity phenotype？这种 phenotype 对应哪些表达 signature？
 
 ### 11. 代码复现边界
-
-本工作区的代码-论文一致性是 **medium**：
 
 - 强证据：THP1 图像预处理、guide decoding、segmentation/count table、FR-Perturb no-normalization runner、density split、neighbor-effect call 都有直接源码行证据。
 - 强证据：astrocyte 的 calcium registration/trace extraction、cluster enrichment、expression signature 也有源码行证据。

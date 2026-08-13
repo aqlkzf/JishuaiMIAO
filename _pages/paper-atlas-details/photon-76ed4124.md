@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>PHOTON</h1>
     <p>Subcellular level spatial transcriptomics with PHOTON</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-59801-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-59801-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PHOTON">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/HaiqiChenLab/PHOTON" target="_blank" rel="noopener noreferrer" aria-label="Open code for PHOTON">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -143,14 +143,6 @@ HeLa 实验显示，405 nm 照射后目标细胞的引物荧光下降 $86.9\%\pm
 3. 定制 N-POM RT 引物、显微镜光路、ROI 分割阈值和样本厚度都会影响空间选择质量。
 4. 当前一次实验只选择一类空间区域，并聚合所有 ROI；不能还原单个 ROI 或每条 RNA 的坐标。
 5. 本地代码足以核查富集统计骨架，但不足以声称复现全部主图或关键 m⁶A 结论。
-
-### 证据入口
-
-- 论文：`paper.md`
-- 主图：`images/41467_2025_59801_Fig1_HTML.jpg` 至 `Fig4_HTML.jpg`
-- 富集分析：`code/Enrichment_Analysis.R`
-- Nikon 自动光选工作流：`code/Phtoselection_of_Stress_Granules.ga3`
-- 代码范围：`code/README.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

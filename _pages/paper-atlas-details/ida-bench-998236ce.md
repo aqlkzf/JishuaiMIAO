@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Machine Learning Algorithm</span>
-      <span>arXiv preprint · 2025</span>
+      <span>arXiv · 2025</span>
     </div>
     <h1>IDA-Bench</h1>
     <p>IDA-Bench: Evaluating LLMs on Interactive Guided Data Analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2505.18223" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2505.18223" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for IDA-Bench">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/lhydave/IDA-Bench" target="_blank" rel="noopener noreferrer" aria-label="Open code for IDA-Bench">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -143,7 +143,7 @@ $$
 
 ### 代码与复现
 
-官方代码仓库完整实现了多轮对话、Gatekeeper、Docker sandbox、提交评分与相对 baseline 分数，paper–code fidelity 为高。数据发布在 Kaggle，但需要认证；完整重跑还需要 Docker、多个模型 API 凭证和预算。仓库没有提交自动化测试，也没有附带论文中每次实验的完整 checkpoints，因此本工作区没有声称复现论文数值结果。
+官方代码仓库完整实现了多轮对话、Gatekeeper、Docker sandbox、提交评分与相对 baseline 分数，paper–code fidelity 为高。数据发布在 Kaggle，但需要认证；完整重跑还需要 Docker、多个模型 API 凭证和预算。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

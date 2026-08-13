@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>cisTopic</h1>
     <p>cisTopic: cis-regulatory topic modeling on single-cell ATAC-seq data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-019-0367-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-019-0367-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for cisTopic">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/aertslab/cistopic" target="_blank" rel="noopener noreferrer" aria-label="Open code for cisTopic">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -164,7 +164,7 @@ $$
 
 ### 本地代码覆盖与版本边界
 
-本工作区固定于 `aertslab/cistopic` commit `8514bdd11713da86cfe712c4234645c6b4973353`。它包含 S4 对象、BAM/矩阵/甲基化输入、CGS 包装、模型选择、预测分布、region score/binarization、降维和 RcisTarget/AUCell/GREAT 接口。
+它包含 S4 对象、BAM/矩阵/甲基化输入、CGS 包装、模型选择、预测分布、region score/binarization、降维和 RcisTarget/AUCell/GREAT 接口。
 
 **直接覆盖**：二值矩阵、LDA 文档格式转换、$\alpha=50/T$、$\beta=0.1$、CGS 调用、log-likelihood 模型选择、topic/cell 与 topic/region 矩阵、预测概率、gamma 二值化及下游可视化。
 

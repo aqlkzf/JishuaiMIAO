@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>GTN</h1>
     <p>Graph Transformer Networks</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.1911.06455" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.1911.06455" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GTN">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/seongjunyun/Graph_Transformer_Networks" target="_blank" rel="noopener noreferrer" aria-label="Open code for GTN">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -137,7 +137,6 @@ $$
 - 任务是三个转导式节点分类 benchmark，不是图级任务或开放世界归纳泛化。
 - 节点特征和图模式都由既定预处理提供；“不需领域 meta-path”不等于不需数据模式知识。
 - 三个数据集规模较小，稀疏矩阵乘法生成的 meta-path 图可能迅速变稠，扩展到大图会遇到时间/显存问题。
-- 本工作区没有重新运行训练；数值来自论文，不是当前环境复现结果。
 
 ### 9. 论文与代码的关键差异
 
@@ -153,7 +152,7 @@ $$
 
 ### 11. 代码版本与复现边界
 
-`Graph_Transformer_Networks/` 嵌在 PaperCode 根 Git 工作树中，没有独立 `.git`，且没有 `.repo_source` 提供可验证提交；因此元数据保留仓库 URL但提交为 null。仓库含 `ACM.mat` 示例和预处理 notebook，但 `main.py` 默认从 `../data/<dataset>/` 读取 pickle，完整 DBLP/IMDB 预处理数据并不都在当前目录。本次只核对静态源代码与论文，不执行旧版 PyTorch Geometric 环境训练。
+因此元数据保留仓库 URL但提交为 null。仓库含 `ACM.mat` 示例和预处理 notebook，但 `main.py` 默认从 `../data/<dataset>/` 读取 pickle，完整 DBLP/IMDB 预处理数据并不都在当前目录。本次只核对静态源代码与论文，不执行旧版 PyTorch Geometric 环境训练。
 
 ### 推荐阅读路线
 

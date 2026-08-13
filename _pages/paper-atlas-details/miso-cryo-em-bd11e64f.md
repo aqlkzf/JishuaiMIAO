@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>MISO_cryo_EM</h1>
     <p>MISO: microfluidic protein isolation enables single-particle cryo-EM structure determination from a single cell colony</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/EfremovLab/MISO" target="_blank" rel="noopener noreferrer" aria-label="Open code for MISO_cryo_EM">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -231,7 +232,6 @@ MISO 的关键不是“柱子更小”这一件事，而是保持微升级峰从
 - 脆弱复合物可能不适合层析流动，温和批量纯化或梯度方法仍有优势。
 - 无 blot 制网格重复性不足，成功的高分辨率实验主要仍依赖滤纸 blot。
 - 所有演示样品都是高表达、带标签的目标。内源低丰度复合物、原代组织、类器官和活检样品只是未来设想，并未在本文验证。
-- 本工作区没有补充材料 Markdown；补充图、视频和 Supplementary Note 没有作为本分析的直接证据重新检查。
 - 完整 LabVIEW 控制逻辑、可运行示例、自动化测试和硬件仿真模式缺失，限制了软件层面的可复现性。
 
 ### 11. 一句话总结

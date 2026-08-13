@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>auto-cell</h1>
     <p>Automated cell annotation and classification on histopathology for spatial biomarker discovery</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-61349-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-61349-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for auto-cell">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/lilab-stanford/auto-cell" target="_blank" rel="noopener noreferrer" aria-label="Open code for auto-cell">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -141,7 +141,7 @@ TMA 对整个 core 分析；WSI 则从肿瘤区域随机抽取八个 $2048\times
 - 图 5：八种癌症队列中空间特征与总生存的 Kaplan–Meier 结果。
 - 图 6：免疫治疗响应 ROC、90% specificity 灵敏度、PFS 分层及多变量 forest plot。
 
-本地 15 页主论文 PDF 和六张提取主图均已检查。论文明确链接 Supplementary Information，但该补充 PDF/Markdown不在当前工作区；因此补图 S1–S16 和补表的细节只能依据主文引用，不能冒充已直接读取。
+本地 15 页主论文 PDF 和六张提取主图均已检查。因此补图 S1–S16 和补表的细节只能依据主文引用，不能冒充已直接读取。
 
 ### 8. 代码—论文对应边界
 
@@ -156,7 +156,7 @@ TMA 对整个 core 分析；WSI 则从肿瘤区域随机抽取八个 $2048\times
 | 66 空间特征 | `spatial_cell_analysis/core.py` | Exact/Verified |
 | 生存与 ICI 模型 | `prognosis_analysis.py` | Script-level，依赖缺失数据文件 |
 
-源码快照没有独立 Git 元数据；README 与论文指向 `https://github.com/lilab-stanford/auto-cell`，论文另给 Zenodo DOI `10.5281/zenodo.15660609`。因此合同记录 URL、commit=null、`local_dir`，不伪造提交号。
+源码快照没有独立 Git 元数据；README 与论文指向 `https://github.com/lilab-stanford/auto-cell`，论文另给 Zenodo DOI `10.5281/zenodo.15660609`。
 
 ### 9. 最重要的复现与解释限制
 
@@ -176,7 +176,7 @@ auto-cell 的核心价值在于把蛋白标志物的可解释定义大规模转�
 
 Motivation/Novelty (动机和创新性)
 
-  1. 核心问题：传统病理图像单细胞分析依赖人工标注，存在严重缺陷：
+1. 核心问题：传统病理图像单细胞分析依赖人工标注，存在严重缺陷：
     - 人工标注效率低且容易出错（inter-observer variability）
     - 对巨噬细胞等难识别细胞类型，病理学家间一致性仅约50%
     - 现有方法标注细胞数量有限，不足以训练可靠的深度学习模型
@@ -185,77 +185,77 @@ Motivation/Novelty (动机和创新性)
     - 创建了包含1,127,252个高质量标注细胞的大规模数据集
     - 将空间细胞互作特征与临床预后和免疫治疗响应关联
 
-  Method (方法)
+Method (方法)
 
-  1. 自动细胞标注流程：
+1. 自动细胞标注流程：
 
-  # 从代码cell_cluster.py中的Leiden聚类实现
+# 从代码cell_cluster.py中的Leiden聚类实现
   # 基于mIF蛋白标记物表达进行无监督聚类
   clustering = Leiden(resolution=0.5)
   cell_types = clustering.fit_predict(marker_expression)
 
-  2. 图像配准技术 (DeeperHistReg/):
+2. 图像配准技术 (DeeperHistReg/):
 
-  - 粗配准：使用SIFT + SuperGlue进行关键点检测和匹配
+- 粗配准：使用SIFT + SuperGlue进行关键点检测和匹配
   - 精配准：基于梯度优化的非刚性配准，确保单细胞级别精度（平均误差3.1微米）
 
-  3. 深度学习模型架构 (small_CNN.py):
+3. 深度学习模型架构 (small_CNN.py):
 
-  class Customresnet(nn.Module):
+class Customresnet(nn.Module):
       def __init__(self, num_classes=4):
           # BYOL自监督预训练的ResNet18
           self.feature = timm.create_model('resnet18', pretrained=True)
           # 域适应分支（梯度反转层）
           self.domain_classifier = nn.Sequential(...)
 
-  关键技术组合：
+关键技术组合：
   - 自监督学习(BYOL)：在1,127,563个未标注细胞上预训练
   - 域适应(Domain Adaptation)：使用梯度反转层(GRL)减少染色差异影响
 
-  数学公式：
+数学公式：
   $$L(\theta_r, \theta_c, \theta_d) = \sum L_c(M_c(M_r(x)), y) + \sum L_d(M_d(R(M_r(x))), y)$$
 
-  4. 空间特征提取 (spatial_cell_analysis/core.py):
+4. 空间特征提取 (spatial_cell_analysis/core.py):
 
-  # 计算k近邻细胞类型分布
+# 计算k近邻细胞类型分布
   def calculate_neighbourhoods_(self, k=50):
       nearest_neighbours_idx = np.argpartition(self.cell_distances, k, axis=1)
       # 计算每个细胞周围不同类型细胞的比例
 
-  提取66个空间特征，包括：
+提取66个空间特征，包括：
   - 细胞密度和组成
   - 细胞间空间邻近度（50微米内的细胞数量）
   - k近邻细胞类型分布（50个最近邻）
 
-  Evaluation (评估)
+Evaluation (评估)
 
-  1. 细胞分类性能：
+1. 细胞分类性能：
 
-  - 整体准确率：86%-89%（外部验证集）
+- 整体准确率：86%-89%（外部验证集）
   - 各类细胞AUC：平均0.964（外部验证）
   - 与人工标注对比：自动标注模型准确率89.1% vs 人工标注56.2%
 
-  2. 临床预后验证：
+2. 临床预后验证：
 
-  - 数据规模：3,605名患者，8种癌症类型，12个独立队列
+- 数据规模：3,605名患者，8种癌症类型，12个独立队列
   - 关键发现：淋巴细胞周围中性粒细胞比例与生存期显著相关（HR: 1.91-5.75，所有P<0.003）
 
-  从prognosis_analysis.py中的Cox回归实现：
+从prognosis_analysis.py中的Cox回归实现：
   # Elastic Net正则化的Cox生存分析
   CoxnetSurvivalAnalysis(l1_ratio=0.5, alpha_min_ratio=0.01)
 
-  3. 免疫治疗响应预测：
+3. 免疫治疗响应预测：
 
-  - 客观缓解预测：AUC=0.817（验证集），显著优于PD-L1 CPS（AUC=0.650）
+- 客观缓解预测：AUC=0.817（验证集），显著优于PD-L1 CPS（AUC=0.650）
   - PFS预测：HR=2.32（验证集），独立于年龄、性别、PD-L1表达等临床因素
   - 空间标志物优势：90%特异性下，灵敏度提升2倍以上
 
-  4. 消融实验：
+4. 消融实验：
 
-  - 移除自监督学习或域适应后，分类准确率显著下降
+- 移除自监督学习或域适应后，分类准确率显著下降
   - 不同细胞分割算法（StarDist vs Hover-Net）对性能影响小（86.4% vs 86.3%）
 
-  核心贡献：提出了一个可扩展的自动化框架，通过mIF引导的细胞标注和深度学习，实现了标准H&E图像的高精度单细胞分析，并发现了与临床结果相关的新型空间生物标志物。
+核心贡献：提出了一个可扩展的自动化框架，通过mIF引导的细胞标注和深度学习，实现了标准H&E图像的高精度单细胞分析，并发现了与临床结果相关的新型空间生物标志物。
 
 </article>
 </section>

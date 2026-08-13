@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>OrganoidMultiplexing</h1>
     <p>Multiplexing cortical brain organoids for the longitudinal dissection of developmental traits at single-cell resolution</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/GiuseppeTestaLab/organoidMultiplexing_release" target="_blank" rel="noopener noreferrer" aria-label="Open code for OrganoidMultiplexing">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -63,7 +64,7 @@ $$
 
 困难部分不只是找最高分，还要识别第二来源、doublet 和低质量液滴。论文用其他供体组训练模型预测第二身份，用“非最佳供体液滴”中的私有等位基因计数拟合负二项分布并取高分位阈值识别多供体阳性液滴，再用第一、第二身份的信号差及双成分高斯混合区分清晰与模糊分配。
 
-这里必须保留一个复现边界：当前获得的代码仓库只消费 SCanSNP 和共识结果，没有包含 SCanSNP 核心实现及共识生成器；README 将它们指向外部仓库。因此本工作区可以核对输入输出、评估和下游使用方式，但不能仅凭本地代码重建完整拆分引擎。
+这里必须保留一个复现边界：当前获得的代码仓库只消费 SCanSNP 和共识结果，没有包含 SCanSNP 核心实现及共识生成器；README 将它们指向外部仓库。
 
 ### 4. 从拆分结果到统一发育图谱
 
@@ -138,7 +139,7 @@ $$
 
 ### 10. 当前证据边界
 
-本工作区包含 835 行论文 Markdown、16 张已逐一检查的图像和固定到提交 `10ab194fbed98b999b754b7b0c57bf81f6b373a7` 的分析仓库。可以直接验证多数下游分析参数及计算路径，但缺少转换后的补充方法、源数据表、完整原始/中间输入，以及本地 SCanSNP/共识实现。因此最合理的结论是：方法与下游分析逻辑可追踪，代码—论文匹配度中等，但当前材料还不是一键式端到端复现包。
+可以直接验证多数下游分析参数及计算路径，但缺少转换后的补充方法、源数据表、完整原始/中间输入，以及本地 SCanSNP/共识实现。因此最合理的结论是：方法与下游分析逻辑可追踪，代码—论文匹配度中等，但当前材料还不是一键式端到端复现包。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

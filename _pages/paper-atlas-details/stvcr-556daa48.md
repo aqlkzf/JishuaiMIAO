@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>stVCR</h1>
     <p>stVCR: spatiotemporal dynamics of single cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03010-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03010-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for stVCR">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/QiangweiPeng/stVCR" target="_blank" rel="noopener noreferrer" aria-label="Open code for stVCR">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -133,7 +133,6 @@ $$
 
 ### 版本与复现边界
 
-1. 本地代码来源标为 `https://github.com/QiangweiPeng/stVCR`，但没有嵌套 Git 元数据或 `.repo_source` 提交记录，因此**没有可核验的 commit hash**。
 2. `src/stvcr.egg-info/PKG-INFO` 记录版本 `0.1`，这是本地构建元数据；工作区没有 `setup.py`、`pyproject.toml`、requirements 或锁文件，不能据此恢复精确依赖环境。
 3. 本地包含四个教程 notebook、模拟数据、主文和补充 PDF，但没有自动化测试。论文还给出 Code Ocean 复现入口；本轮未联网刷新 capsule，也未重建环境、训练模型或重画结果。
 4. 神经 ODE 从离散边缘学习的连续路径通常不唯一。刚体形变假设、AE 表示、表达/空间代价权重、生长质量、先验和采样共同决定最终路径。

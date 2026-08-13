@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -128,8 +128,6 @@ The main limitation is not a missing single algorithm. It is the absence of a sy
 The NIH SenNet consortium is presented as a human reference framework for heterogeneous senescent cell states, or **senotypes**. Through tissue mapping centers and technology development/application work, SenNet aims to generate a multimodal, multidimensional atlas across human tissues, lifespan stages, and physiological states. The paper frames the atlas as a route toward precise diagnostics and senolytic therapies that selectively target harmful senescence while preserving beneficial roles (`paper source/elsevier_xml/paper.md:9`).
 
 ### High-Level Method Overview
-
-For PaperCode purposes, the "method" is an atlas/resource-building logic:
 
 ```text
 Human tissues across aging and disease

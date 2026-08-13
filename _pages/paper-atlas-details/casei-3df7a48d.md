@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Casei</h1>
     <p>Decoding Condition-Specific Cellular Crosstalk in Spatial Omics via Bilinear Edge Classification</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.05.03.722470" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.05.03.722470" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Casei">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/nitzanlab/casei" target="_blank" rel="noopener noreferrer" aria-label="Open code for Casei">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -108,11 +108,11 @@ $$
 1. 在调整图上做细胞类型 neighborhood enrichment，比较哪些细胞类型对在特定条件下富集；
 2. 计算两个条件的差异互作矩阵
 
-   $$
+$$
    \Delta=M_{c_1}-M_{c_2},
    $$
 
-   并从 $\Delta^+=\max(\Delta,0)$ 中提取条件 $c_1$ 更强的基因对；
+并从 $\Delta^+=\max(\Delta,0)$ 中提取条件 $c_1$ 更强的基因对；
 3. 对对称矩阵 $\Delta^+$ 做特征分解，按特征向量的绝对载荷选基因，形成可做 GO/KEGG 富集的互作程序；
 4. 对指定细胞类型对，把至少连接一条高置信边的细胞标为 `Interacting`，其余标为 `Bystander`，再用 Wilcoxon 检验寻找互作相关表达变化。
 
@@ -140,7 +140,6 @@ $$
 
 - 论文 Supplementary Table 2 给出 100 epochs、学习率 $10^{-3}$、保留 top 5%；包内默认值分别是 50、`1e-4`、top 10%。复现论文需显式覆盖参数。
 - 论文 Eq. 2/14 写成 `exp[-score]`，源码把正的双线性值直接作为 logits 交给 `CrossEntropyLoss`。双线性结构相同，但符号约定并非逐字实现。
-- 当前克隆包没有半合成扰动生成器、七个基线实现和三组真实数据的完整制图脚本。README 指向外部 atherosclerosis reproducibility notebook，但它不在本工作区，因此不能据此声称完整复现。
 
 ### 6. 阅读与使用时的边界
 

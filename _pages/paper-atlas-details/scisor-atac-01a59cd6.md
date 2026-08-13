@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ScISOr-ATAC</h1>
     <p>Combined single-cell profiling of chromatin-transcriptome and splicing across brain cell types, regions and disease state</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02734-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02734-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ScISOr-ATAC">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/careenfoord/scisorATAC" target="_blank" rel="noopener noreferrer" aria-label="Open code for ScISOr-ATAC">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -62,7 +62,7 @@ ScISOr-ATAC 的关键不是发明第三种独立条形码，而是复用 10x cDN
 
 10x 全长 cDNA 先经 linear/asymmetric PCR 富集带 barcode 的分子，再按 junction probe capture，最后做 ONT long-read sequencing。靶向后 on-target capture 为 79–83%；代价是它不是全转录组无偏 isoform survey，未设计 probe 或未注释 junction 的覆盖会受限。
 
-长读经 minimap2 比对并由 `scisorseqR` 恢复 barcode、分配 gene、输出每条 read 的 exon chain。论文把同一 gene 中 UMI edit distance $\geq 4$ 的 spliced reads 视为不同 UMI。`scisorseqR` 是外部依赖，不在本工作区的 `scisorATAC` 包内。
+长读经 minimap2 比对并由 `scisorseqR` 恢复 barcode、分配 gene、输出每条 read 的 exon chain。论文把同一 gene 中 UMI edit distance $\geq 4$ 的 spliced reads 视为不同 UMI。
 
 ### 3. 如何计算 exon inclusion
 
@@ -172,13 +172,6 @@ downsampling 使“谁的变化比例更高”更可比，但也改变了被分�
 - downsampling 控制功效差异，但结论依赖指定 cell/read/peak/exon 抽样规模。
 - 核 RNA 受 internal oligo(dT) priming 和未完成转录影响，不能等同成熟 cytosolic isoform。
 - 代码覆盖主要统计分析；从 Cell Ranger ARC、scisorseqR 到 MultiVelo 的完整端到端环境未封装。
-
-### 证据入口
-
-- 论文：`paper source/paper/paper.md`
-- 主图：`paper source/paper/_page_2_Figure_2.jpeg` 至 `_page_9_Figure_2.jpeg`
-- R 包：`scisorATAC/`
-- cell-state 分析：`ScisorATAC_pipelines/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

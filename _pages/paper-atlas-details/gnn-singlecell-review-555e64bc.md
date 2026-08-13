@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>GNN_singlecell_review</h1>
     <p>Graph neural networks for single-cell omics data: a review of approaches and applications</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf109" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf109" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GNN_singlecell_review">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -138,7 +138,7 @@ scATAC 标签转移可从 scRNA 参考建混合图（scGCN、HyGAnno），也可
 
 ### 8. 证据边界
 
-这是一篇叙述性综述，不是系统评价或统一 benchmark。主文未给出检索式、纳排流程、偏倚评估或 107 个方法的统一复现。当前工作区只有 PMC 主文、表格和 4 张主图；论文引用的 Supplementary Text S1–S15 与补充表正文在本地文件中 Not found。因而这里可以可靠总结作者的分类与讨论，但不能把“successful applications”改写为 107 个经独立验证的成功案例，也不提供任何代码证据。
+这是一篇叙述性综述，不是系统评价或统一 benchmark。主文未给出检索式、纳排流程、偏倚评估或 107 个方法的统一复现。论文引用的 Supplementary Text S1–S15 与补充表正文在本地文件中 Not found。因而这里可以可靠总结作者的分类与讨论，但不能把“successful applications”改写为 107 个经独立验证的成功案例，也不提供任何代码证据。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
@@ -174,7 +174,7 @@ scATAC 标签转移可从 scRNA 参考建混合图（scGCN、HyGAnno），也可
 
 ### 阅读边界
 
-这是一篇叙述性方法综述，不是统一重跑 benchmark 的系统评测。论文列举许多方法并概述其报告表现，但没有一致的数据划分、计算预算、图构建和指标来做公平横评。附录 S1–S15 与补充表在主文中被引用，但当前 PMC Markdown 未包含其正文；因此本工作区不把补充方程、数据集细表或“优于基线”的汇总描述当成本地已核验细节。
+这是一篇叙述性方法综述，不是统一重跑 benchmark 的系统评测。论文列举许多方法并概述其报告表现，但没有一致的数据划分、计算预算、图构建和指标来做公平横评。附录 S1–S15 与补充表在主文中被引用，但当前 PMC Markdown 未包含其正文；
 
 </article>
 </section>

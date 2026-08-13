@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SCALE</h1>
     <p>SCALE method for single-cell ATAC-seq analysis via latent feature extraction</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-019-12630-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-019-12630-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SCALE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/jsxlei/SCALE" target="_blank" rel="noopener noreferrer" aria-label="Open code for SCALE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -169,16 +169,6 @@ decoder 输出的是每个峰开放的概率。它把同一 GMM 分量中多个�
 | 论文 K-means/t-SNE 默认流程 | 当前默认 Leiden/UMAP，旧方法仍部分保留 | Partial |
 
 本地 `code/` 是非独立 Git 快照，不能据父仓库提交号声称它就是官方 SCALE 仓库的精确 commit。它足以核对模型、损失、预处理和 CLI，但环境依赖较旧，完整重现实验还需要论文数据、Homer/chromVAR 等下游工具及明确的历史参数设置。
-
-### 证据入口
-
-- 主论文：`paper source/PMC6783552/paper.md`
-- 主图：`paper source/PMC6783552/images/41467_2019_12630_Fig*_HTML.jpg`
-- 补充：`paper source/PMC6783552/41467_2019_12630_MOESM1_ESM.pdf`
-- 模型：`code/scale/model.py`
-- ELBO：`code/scale/loss.py`
-- 预处理：`code/scale/dataset.py`
-- CLI / 高层入口：`code/SCALE.py`、`code/scale/__init__.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Foldseek</h1>
     <p>Fast and accurate protein structure search with Foldseek</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-023-01773-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-023-01773-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Foldseek">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/steineggerlab/foldseek" target="_blank" rel="noopener noreferrer" aria-label="Open code for Foldseek">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -145,16 +145,6 @@ LDDT 比较对齐残基局部邻域距离是否保持，不要求全局叠合；
 - E-value 和 homology probability 是模型校准值，不替代人工检查覆盖、结构域边界和生物学背景。
 - 灵敏度参数越高通常越慢；预建索引能加速重复查询，但需要显著存储/内存，建库成本也必须计入。
 - 相似结构支持共同祖先或相似物理约束的假说，并不单独证明功能相同。
-
-### 源证据入口
-
-- 论文：`paper source/van Kempen et al. - 2024 - Fast and accurate protein structure search with Foldseek/van Kempen et al. - 2024 - Fast and accurate protein structure search with Foldseek.md`
-- 主图：同目录 `_page_1_Figure_2.jpeg` 与 `_page_2_Figure_2.jpeg`
-- 搜索工作流：`src/workflow/StructureSearch.cpp`
-- 3Di 转换：`src/strucclustutils/structureto3didescriptor.cpp`
-- 联合局部比对：`src/commons/StructureSmithWaterman.cpp`
-- 3Di 训练与基准：`foldseek-analysis/training/`、`foldseek-analysis/scopbenchmark/`
-- 使用与版本功能：`README.md`、`src/version/Version.cpp`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

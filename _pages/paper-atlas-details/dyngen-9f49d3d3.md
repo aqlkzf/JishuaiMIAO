@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>dyngen</h1>
     <p>Spearheading future omics analyses using dyngen, a multi-modal simulator of single cells</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/dynverse/dyngen" target="_blank" rel="noopener noreferrer" aria-label="Open code for dyngen">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -163,13 +164,12 @@ $$\text{regeffect}_G=\frac{\text{proptrans}_G(S)-\text{proptrans}_G(S[z_T\leftar
 - RNA velocity：velocyto 和 scVelo，在 42 个数据集上用 velocity correlation 和 velocity arrow cosine 评估（`paper.md:416-430`）；
 - CSNI：SCENIC、LIONESS、SSN，在 42 个数据集上用 mean AUROC/AUPR 评估（`paper.md:392-415`）。
 
-但在本工作区分析的 `dynverse/dyngen` 包源码中，直接搜索没有找到 `ABWAP`、`DTW`、`cellAlign`、`velocyto`、`scvelo`、`SCENIC`、`LIONESS`、`SSN` 的 benchmark 脚本。论文的数据/代码可用性部分说明，manuscript analyses 在另一个仓库 `dynverse/dyngen_manuscript` 中，而 dyngen 包本身是核心模拟器（`paper.md:463-473`）。因此，本工作区可以验证核心模拟器实现，但不能用当前包源码验证论文 benchmark 图的全部复现实验脚本。
+论文的数据/代码可用性部分说明，manuscript analyses 在另一个仓库 `dynverse/dyngen_manuscript` 中，而 dyngen 包本身是核心模拟器（`paper.md:463-473`）。
 
 ### 11. 实用建议
 
 - 如果目标是生成带 ground truth 的动态单细胞数据，当前 `dyngen` 包就是核心实现。
 - 如果需要 RNA velocity 或 cellwise GRN，必须打开相应参数；默认设置不计算所有可选 ground-truth 层（`R/6_simulation.R:101-134`, `R/6_simulation.R:396-415`）。
-- 如果目标是复现论文 Fig. 2 的 benchmark boxplots 或 ABWAP/scVelo/SCENIC 比较，应额外获取 `dynverse/dyngen_manuscript` 和补充材料。本工作区没有 supplementary markdown，也没有 manuscript benchmark 脚本。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

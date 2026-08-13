@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CNA</h1>
     <p>Co-varying neighborhood analysis identifies cell populations associated with phenotypes of interest from single-cell transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-021-01066-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-021-01066-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CNA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/immunogenomics/cna" target="_blank" rel="noopener noreferrer" aria-label="Open code for CNA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -161,16 +161,6 @@ $$\gamma : = V^{k^ \ast }D^{k^ \ast }\beta ^{k^ \ast }.$$
 - RA/OA 滑膜成纤维细胞：NAM-PC1 对应 Notch activation 梯度，并能在 lining/sublining 簇内部继续分辨 RA 相关细胞（`paper source/nature_html/paper.md:91-114`）。
 - Sepsis PBMC：CNA 找到全局 sepsis 关联和跨 MS1/MS2/MS3/MS4 的单核细胞相关群体，而单独 MS1 簇检验不显著（`paper source/nature_html/paper.md:120-146`）。
 - TB 记忆 T 细胞：NAM-PC 能捕捉 innateness、性别、多模态一致结构，并发现 TB progression、年龄、季节、祖源等多个样本级属性对应的细胞群（`paper source/nature_html/paper.md:152-198`）。
-
-### 复现性和当前工作区缺口
-
-当前工作区克隆的是核心 Python 包 `cna`，采集元数据记录的 commit 是 `72f879a2bc2b21820f9de210b6c23a0b9ae97a1d`。核心算法代码与论文主流程总体匹配：NAM 构建、批次/协变量残差化、NAM-PC、全局检验、置换零分布、经验 FDR 都能在源码中找到。代码-论文整体 fidelity 评估为 medium，主要原因是局部 F006 系数和若干自动停止/QC 阈值存在实现差异。
-
-未覆盖的证据也需要明确保留：
-
-- 工作区没有 supplementary markdown；论文只提供了补充 PDF 链接（`paper source/nature_html/paper.md:589-599`）。
-- 论文说明图表代码在 `cna-display`，仿真代码在 `cna-sim`（`paper source/nature_html/paper.md:477-480`），但这两个 companion repo 没有克隆到当前工作区。
-- 因此，本工作区支持理解和审计核心方法实现，但不能单独复现全部论文图表和仿真实验。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

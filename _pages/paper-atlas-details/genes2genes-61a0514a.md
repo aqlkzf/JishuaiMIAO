@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>Genes2Genes</h1>
     <p>Gene-level alignment of single-cell trajectories</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/Teichlab/Genes2Genes" target="_blank" rel="noopener noreferrer" aria-label="Open code for Genes2Genes">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -331,7 +332,6 @@ G2G 找到共同核心反应、峰值反应以及刺激特异的早期/晚期差
 2. **`align_single_pair` 的形参具有误导性。** 方法签名包含 `state_params=...`，但内部实际传给 `DP5` 的是 `self.state_params`（`Main.py:522-538`）。因此必须设置对象属性。
 3. **输入不会自动完成论文全部预处理。** 表达归一化、`log1p`、共有基因选择和伪时间推断应在上游完成。
 4. **低表达规则会影响数值。** 不能在复现时随意删除 `0.01` 方差下限或非零计数分支。
-5. **版本必须区分。** 论文分析使用 v0.1.0；论文提到的 v0.2.0 加速结果不应直接归于本工作区检查的代码。
 6. **缺少测试。** 建议先以少量基因运行串行版本，再检查插值分布、状态字符串和路径，最后启用多进程。
 
 ### 12. 方法的边界

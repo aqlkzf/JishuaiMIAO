@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>GCNPath</h1>
     <p>GCNPath: introspecting drug response prediction with pathway-guided graph convolution networks</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s42003-026-09957-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s42003-026-09957-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GCNPath">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/MinhoLee-DGU/GCNPath2026" target="_blank" rel="noopener noreferrer" aria-label="Open code for GCNPath">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -69,7 +69,7 @@ GCNPath 预测细胞系对药物的自然对数 IC50。它针对两个泛化难�
 
 本地代码固定在提交 `9496d4c5d2502a9609e67a50b392cc60c9a951b8`；2026-07-19 官方 HEAD 已前移到 `1afd479da11fe5878e1f6da0fddffb1f6e03d13e`。仓库没有 Python package version，环境文件固定 Python 3.8、PyTorch 1.11、PyG 2.1、CUDA 11.3、R 4.2/GSVA 1.46，作者环境为 Ubuntu 20.04 + RTX 3090。工作区包含大量数据、结果和补充源表，但本次只做论文、图和静态源码核读，没有从头重跑预处理、交叉验证、外部验证或病例分析。
 
-旧流程因 Graphify 未产生 `graph.json` 报错；当前工作区 `.codegraph` 可用并已用于导航，最终映射又由直接源码确认，因此该旧 Graphify 缺口不再是分析阻断，也不能被当作论文代码缺失。
+旧流程因 Graphify 未产生 `graph.json` 报错；
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

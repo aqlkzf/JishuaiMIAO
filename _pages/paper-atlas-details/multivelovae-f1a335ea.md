@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MultiVeloVAE</h1>
     <p>Inferring differential dynamics from multi-lineage, multi-omic, and multi-sample single-cell data with MultiVeloVAE</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-66287-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-66287-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MultiVeloVAE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/welch-lab/MultiVeloVAE" target="_blank" rel="noopener noreferrer" aria-label="Open code for MultiVeloVAE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -154,7 +154,6 @@ $\delta>0$ 表示染色质目标状态领先转录活性，可解释为 priming/
 - 基因模式、速度基因和初始条件均包含重要启发式筛选。
 - chromatin scaling 使用 99.5% 分位而非严格 min-max。
 - in silico perturbation、CellOracle 和 SCENIC+ 不在核心包中。
-- 论文数据依赖 GEO/dbGaP/Figshare；本工作区没有端到端重跑全部主图。
 
 因此，MultiVeloVAE 的核心论文—代码对应度较高，但应把“模型支持某能力”“默认配置启用该能力”和“论文全部分析可由核心包独立复现”三件事分开陈述。
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>OmiDos</h1>
     <p>Orthogonal disentanglement of single-cell multi-omics reveals private and shared drivers of tissue development and pathogenesis</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/fanyi21/OmiDos" target="_blank" rel="noopener noreferrer" aria-label="Open code for OmiDos">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -187,8 +188,6 @@ Fig. 4 中 OmiDos 的 RNA/ATAC 颜色混合更充分，同时仍保持细胞类�
 Fig. 6 将 GNP、PNC、肿瘤状态、差异可及峰、bHLH/Neurod1 motif、Hi-C 和 Neurod1 区域轨迹串在一起，支持一个动态增强子网络假说。论文进一步提出 Stat2 缺失可能关联 Neurod1 远端调控区关闭；这是机制假说，不是主图已经确证的因果链。
 
 ### 十、复现性与使用建议
-
-本工作区对代码—论文一致性的评级是 **medium-low**，整体复现性约 **2/5**：
 
 - 已验证：私有/共享编码器、RNA ZINB、ATAC VAE-GMM、正交损失、普通模态分类、PREM/SHEM 输出；
 - **Not found**：显式 NCE/对抗非配对训练、CVAE/MMD 批次校正、完整 25 数据集基准流程；

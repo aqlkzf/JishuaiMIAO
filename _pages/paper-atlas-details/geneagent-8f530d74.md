@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>GeneAgent</h1>
     <p>GeneAgent: self-verification language agent for gene-set analysis using domain databases</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02748-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02748-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GeneAgent">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/idekerlab/llm_evaluation_for_gene_set_interpretation" target="_blank" rel="noopener noreferrer" aria-label="Open code for GeneAgent">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -93,7 +93,7 @@ $$\mathrm{GeneAgent}(D)=(P,A)$$
 
 ### 第一步：Generation
 
-输入基因集 `D` 会被逗号分隔后放入 generation prompt。GPT-4 根据 prompt 生成初始生物学过程名称 `P_ini` 和初始解释文本 `A_ini`（`paper.md:243-249`）。论文说明详细 prompt 在 Supplementary Document 1 中，但该补充文档没有作为 markdown 被当前工作区获取，所以不能从本地文本复原完整 prompt（`paper.md:570-573`）。
+输入基因集 `D` 会被逗号分隔后放入 generation prompt。GPT-4 根据 prompt 生成初始生物学过程名称 `P_ini` 和初始解释文本 `A_ini`（`paper.md:243-249`）。
 
 当前获取到的代码仓库可以部分对应这一环节。`query_llm_for_analysis.py` 会读取基因集表格、切分基因列表、生成 prompt、调用模型后端，并把 LLM name、analysis、score 写入输出表（`llm_evaluation_for_gene_set_interpretation/query_llm_for_analysis.py:94-175`）。`utils/prompt_factory.py` 中的 prompt 会要求模型写出关键生物过程分析、给出简短过程名称并附置信分数（`llm_evaluation_for_gene_set_interpretation/utils/prompt_factory.py:62-154`）。但是这只能证明“LLM 基因集命名/解释”代码存在，不能证明完整 GeneAgent cascade 存在。
 
@@ -163,7 +163,6 @@ self-verification 的证据也很强。论文报告 15,903 个 claim 中 99.6% �
 
 - **可以直接验证的部分**：LLM 基因集命名 prompt、OpenAI/Gemini/server 模型调用、输出解析、PubMed reference checking、SapBERT 风格语义相似度、GO 背景排名、Jaccard/coverage/enrichment 评估工具。
 - **没有直接验证的核心 GeneAgent 部分**：完整 selfVeri-Agent claim -> report -> modification -> summarization cascade、AgentAPI、masking strategy、最终 GeneAgent source workflow。
-- **缺失证据**：Supplementary Documents 1-5 没有获取成 markdown，Supplementary Code 1 和官方 `ncbi-nlp/GeneAgent` 源码不在当前工作区。
 
 换句话说，这个工作区足够理解论文方法，也能检查相关的旧评估代码；但不能从当前代码复现完整 2025 Nature Methods GeneAgent 系统。
 

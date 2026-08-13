@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scEpi2-seq</h1>
     <p>Single-cell multi-omic detection of DNA methylation and histone modifications reconstructs the dynamics of epigenomic maintenance</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02847-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02847-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scEpi2-seq">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/cgeisenberger/taps-manuscript" target="_blank" rel="noopener noreferrer" aria-label="Open code for scEpi2-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -80,7 +80,7 @@ C/T 状态：CpG 甲基化
 2. 空孔比真实细胞少几个数量级的 reads，说明背景低。
 3. 组蛋白信号与 ENCODE ChIP-seq、既有 sortChIC 比较，并计算 FRiP：
 
-   \[
+\[
    \mathrm{FRiP}=\frac{\text{落在相应 peaks 内的 reads}}{\text{全部比对 reads}}.
    \]
 
@@ -115,7 +115,7 @@ DMR 比较要求两个条件中至少覆盖 25 个 CpG 且校正后 \(P<0.001\)�
 
 ### 复现边界
 
-可读源码足以理解主要算法并重写若干步骤，但不足以从 FASTQ 一键生成全部图。主要障碍是：R 脚本含作者工作站绝对路径；若干 RDS/TSV 中间对象未发布；Figure 1 引用了仓库外的 `dist_1d.cpp`；没有完整工作流、容器或环境锁；未找到论文实际使用的 Wanderlust 调用，MethSCAn 的完整执行也不在手稿仓库中。因此本工作区把代码匹配评为“中等”：机制与主要变换可审计，逐位复现仍需重建运行环境和中间数据。
+可读源码足以理解主要算法并重写若干步骤，但不足以从 FASTQ 一键生成全部图。主要障碍是：R 脚本含作者工作站绝对路径；若干 RDS/TSV 中间对象未发布；Figure 1 引用了仓库外的 `dist_1d.cpp`；没有完整工作流、容器或环境锁；未找到论文实际使用的 Wanderlust 调用，MethSCAn 的完整执行也不在手稿仓库中。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
@@ -141,7 +141,7 @@ The study introduces scEpi²-seq, a plate-based assay combining antibody-targete
 
 ### Code and data
 
-The workspace contains the manuscript analysis repository `taps-manuscript` at commit `a2ace7a89ddb6b7396fec3e38125042fbb52ec98` and the paper-named upstream `SingleCellMultiOmics` snapshot at commit `22eaa5afa9585c0fe91ce1ac48b821e2380a09fa`. Generated data are deposited as GEO `GSE232637`; prior sortChIC data are `GSE164779`; all named ENCODE WGBS and ChIP sources, the protocol, and supplementary links are recorded in `source_provenance.json`.
+The workspace contains the manuscript analysis repository `taps-manuscript` at commit `a2ace7a89ddb6b7396fec3e38125042fbb52ec98` and the paper-named upstream `SingleCellMultiOmics` snapshot at commit `22eaa5afa9585c0fe91ce1ac48b821e2380a09fa`.
 
 ### Reproducibility assessment
 

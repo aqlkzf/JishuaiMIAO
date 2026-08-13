@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>CRISPRmap</h1>
     <p>Mapping multimodal phenotypes to perturbations in cells and tissue with CRISPRmap</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/GaublommeLab/CRISPRmap-Pipeline" target="_blank" rel="noopener noreferrer" aria-label="Open code for CRISPRmap">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -33,7 +34,7 @@ sitemap: false
 
 ### 1. 它要解决什么问题？
 
- pooled CRISPR 筛选的核心任务，是把“这个细胞受到了哪个遗传扰动”与“这个细胞呈现了什么表型”对应起来。
+pooled CRISPR 筛选的核心任务，是把“这个细胞受到了哪个遗传扰动”与“这个细胞呈现了什么表型”对应起来。
 
 Perturb-seq（*Cell*, 2016）和 CROP-seq（*Nature Methods*, 2017）把 CRISPR 扰动与单细胞转录组连接起来，能看到大量 RNA 变化，但需要分离并裂解细胞，因此会丢失细胞形态、蛋白质亚细胞定位、邻近细胞关系和组织结构。经典 optical pooled screening（OPS，*Cell*, 2019；标准化协议发表于 *Nature Protocols*, 2022）保留了图像表型，却依赖原位测序、逆转录和 gap-fill 等循环酶促步骤，在多能干细胞、神经元等难处理细胞中条形码检出率较低，也不易与大规模蛋白和 RNA 成像整合。
 

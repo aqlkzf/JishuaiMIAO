@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>NeuroVelo</h1>
     <p>Interpretable learning of temporal cellular dynamics from single-cell data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.crmeth.2026.101342" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.crmeth.2026.101342" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for NeuroVelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/idriskb/NeuroVelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for NeuroVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -130,7 +130,6 @@ Figure 5 用 lineage-barcoded lung cancer 数据，把仅从 RNA 学到的伪时
 - README 示例使用不存在的 `sample_obs` 参数名，实际参数是 `odesample_obs`；示例还漏传 `percent` 与 `nepoch`。
 - `odesample_obs=None` 会创建名为 `None` 的临时列并可运行单 sample，但显式提供列名更清楚；多 sample 时必须保证标签是从 0 到 `n_sample-1` 的整数，因为代码直接用 `g == i`。
 - 当前 `decode_gene_velocity()` 和 multi-sample `GraphMaker` 有上述后处理缺陷。
-- 源码 provenance 由 `NeuroVelo/.repo_source` 记录为提交 `0f069baf23e64b1184af70b9983060d28d9fb6a3`，包版本为 1.2.0。
 
 ### 10. 一个小例子
 
@@ -139,16 +138,6 @@ Figure 5 用 lineage-barcoded lung cancer 数据，把仅从 RNA 学到的伪时
 $$J=\begin{pmatrix}0.8&-0.2\\0.1&-0.5\end{pmatrix}.$$
 
 第一维的小扰动会增强第一维速度并轻微增强第二维速度；第二维扰动会抑制两维速度。乘上 $W_d$ 与 $W_e$ 后，这些潜维关系被展开为 gene-by-gene 权重。某条正边意味着“在当前状态和当前模型投影下，gene $j$ 增加与 gene $i$ 的预测速度增加相关”，而不是单凭该矩阵就证明 $j$ 直接结合并激活 $i$。
-
-### 证据入口
-
-- 论文正文与 captions：`paper.md`。
-- 模型示意：`NeuroVelo/figures/model_final.png`。
-- 线性编码器、decoder 与 ODE：`NeuroVelo/neurovelo/module.py`。
-- 训练前向与损失：`NeuroVelo/neurovelo/model.py`。
-- Trainer 与 notebook 参数：`NeuroVelo/neurovelo/train.py`、`NeuroVelo/notebooks/*.ipynb`。
-- velocity 与 ensemble：`NeuroVelo/neurovelo/utils.py`。
-- Jacobian 网络：`NeuroVelo/neurovelo/grn.py`。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

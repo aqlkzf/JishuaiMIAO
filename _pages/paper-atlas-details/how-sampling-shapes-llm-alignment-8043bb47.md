@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>How_Sampling_Shapes_LLM_Alignment</h1>
     <p>How Sampling Shapes LLM Alignment: From One-Shot Optima to Iterative Dynamics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2602.12180" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2602.12180" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for How_Sampling_Shapes_LLM_Alignment">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -180,7 +180,6 @@ DPO 的 logit 集中结论只描述小扰动下的加权总体方向，不等同
 - 实验从 HelpSteer 评分构造偏好矩阵，并非真实部署中逐轮重新向人类收集反馈。
 - 稳定性条件是充分条件；循环与坍缩定理各自依赖明确的偏好结构。
 - 论文说明了风险机制，但没有证明所有在线 DPO/IPO 系统都会坍缩或振荡。
-- 截至 2026-07-22，正文、arXiv 元数据、GitHub 精确题名/编号检索和公开网页检索均未找到官方代码仓库，因此当前工作区为 `paper-only`。
 
 最值得带走的观点是：在非理想偏好下，采样不是被动的数据管道，而是目标函数的一部分；在迭代对齐中，它又成为动力系统的反馈增益。稳定训练需要同时控制参考刷新、on-policy 数据比例和更新强度，而不能只盯住单轮训练损失。
 

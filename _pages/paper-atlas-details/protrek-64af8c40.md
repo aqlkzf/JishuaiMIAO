@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ProTrek</h1>
     <p>A trimodal protein language model enables advanced protein searches</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02836-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02836-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ProTrek">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/westlake-repl/ProTrek" target="_blank" rel="noopener noreferrer" aria-label="Open code for ProTrek">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -102,7 +102,7 @@ $$
 
 `scripts/generate_database.py` 将 FASTA 编码为持久化向量和 ID 表，再由 `utils/faiss_index.py` 建 FAISS 内积索引。小库可用 FlatIP，大库用 IVF；查询时 top-k 内积就是统一空间近邻。发布的 demo 进一步用 Gradio、FastAPI 和检索服务器串起前端、embedding 服务与 FAISS 服务。
 
-本地生成脚本会跳过超过 2,048 token 的序列，并带有最多一千万条的实现约束；这与论文训练时最长 512 aa 的随机裁剪以及线上五十亿规模数据库是不同边界。线上 TB 级索引/预计算向量并未存入本工作区，不能用 demo 的存在证明本机已复现线上规模。
+本地生成脚本会跳过超过 2,048 token 的序列，并带有最多一千万条的实现约束；这与论文训练时最长 512 aa 的随机裁剪以及线上五十亿规模数据库是不同边界。
 
 ### 7. 图和实验分别支持什么
 
@@ -121,13 +121,6 @@ $$
 可复现的主要是：三编码器推理、3Di 转换、自定义 FASTA 数据库生成、FAISS 检索与 demo。不可完整复现的主要是：训练语料构造/GPT-4 改写、TrEMBL50 过滤、论文训练启动配置、全部评测脚本和线上五十亿向量库。模型权重与部分 SWISS-PROT 索引在 Hugging Face 提供，仍需下载外部资产。
 
 还需保留源码事实边界：当前编码器取首 token，不是 mean pooling；结构网络使用 Hugging Face ESM 架构承载 3Di token，论文的“BERT-style”是架构描述，不等于代码调用 `BertModel`；训练损失函数存在，但完整训练流水线缺失。
-
-### 证据入口
-
-- 论文与扩展数据：`paper source/Su et al. - 2025 - A trimodal protein language model enables advanced protein searches/` 下的 Markdown 和图片。
-- 直接模型代码：`model/ProTrek/protrek_trimodal_model.py`、三个 encoder。
-- 检索实现：`scripts/generate_database.py`、`utils/faiss_index.py`、`utils/foldseek_util.py`、`demo/`。
-- 补充信息已并入转换后的长 Markdown；本工作区没有独立 `SUPP_MD` 文件。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

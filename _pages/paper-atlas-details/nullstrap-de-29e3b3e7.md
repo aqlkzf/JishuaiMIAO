@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>Nullstrap-DE</h1>
     <p>Nullstrap-DE: A General Framework for Calibrating FDR and Preserving Power in Differential Expression Methods, with Adaptivity to DESeq2 and edgeR</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/chexjiang/NullstrapDE" target="_blank" rel="noopener noreferrer" aria-label="Open code for Nullstrap-DE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -259,8 +260,6 @@ Figure S1 进一步用模拟展示 DESeq2 和 NB-GLM MLE 的 logFC/dispersion MS
 - 协变量项的代码实现比论文中的一般形式更弱。
 - 没找到论文 Simulation Settings 1-4 的专门复现实验脚本。
 - airway notebook 调用了 lowercase `nullstrap_deseq2()` / `nullstrap_edger()`，但当前包并不导出这些名字 (`NullstrapDE/analysis/asm/analysis_asm.Rmd:116-152`, `NullstrapDE/NAMESPACE:1-4`)。
-
-因此，本工作区把代码-论文一致性评为 **medium**：核心思想和主要 wrapper 存在，但理论、模拟复现、有限样本公式和部分 notebook API 仍有缺口。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

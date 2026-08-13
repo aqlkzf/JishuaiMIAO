@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MouseBrainMethylome3D</h1>
     <p>Single-cell DNA methylome and 3D multi-omic atlas of the adult mouse brain</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-023-06805-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-023-06805-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MouseBrainMethylome3D">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/lhqing/wmb2023" target="_blank" rel="noopener noreferrer" aria-label="Open code for MouseBrainMethylome3D">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -62,7 +62,7 @@ cell × genomic feature × methylation context
 
 聚类使用 100 kb bins 的 mCH 和 mCG posterior fraction。粗 bin 牺牲局部调控分辨率，却能在每个核只覆盖约 6.5% cytosines 的情况下获得较稳健的细胞间距离。DMR 和基因组解释则在细胞聚合后使用更细尺度。
 
-真正执行 MCDS、posterior smoothing、CEF/DMR 和 ConsensusClustering 的主要引擎是外部 `ALLCools==1.0.8`。`wmb2023` 保存了 notebook 和配置，但不是所有算法源代码都在当前工作区，因此部分环节是“调用可见，内部实现需外部包”。
+真正执行 MCDS、posterior smoothing、CEF/DMR 和 ConsensusClustering 的主要引擎是外部 `ALLCools==1.0.8`。
 
 ### 4. 四轮迭代共识聚类
 
@@ -212,18 +212,6 @@ $$
 6. NeuN 富集和成年雄鼠设计限制对非神经元、性别和发育阶段的外推。
 
 在这些边界内，这项工作最可靠的贡献是建立了全脑、细胞类型统一命名的甲基化—三维基因组资源，并展示了不同基因组尺度如何与细胞身份和空间组织共同变化。
-
-### 源证据入口
-
-- 图谱规模与分类：`paper source/PMC10719113/paper.md:14-68`
-- DMR、空间与 3D 结果：`paper source/PMC10719113/paper.md:70-118`
-- GRN 与 isoform：`paper source/PMC10719113/paper.md:120-162`
-- 聚类与整合方法：`paper source/PMC10719113/paper.md:178-302`
-- 3D、GRN、isoform 方法：`paper source/PMC10719113/paper.md:302-362`
-- 共识聚类参数：`wmb2023/clustering/config/07.yaml`
-- scHiCluster 补全：`scHiCluster/schicluster/impute/impute_chromosome.py:19-170`
-- 跨模态 notebooks：`wmb2023/integration/` 与 `wmb2023/merfish/`
-- 主图：`paper source/PMC10719113/images/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

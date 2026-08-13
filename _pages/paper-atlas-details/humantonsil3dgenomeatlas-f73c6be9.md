@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>HumanTonsil3DGenomeAtlas</h1>
     <p>A 3D genome atlas of human tonsil and the role of loop extrusion in B cell somatic hypermutation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1126/science.adw4243" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1126/science.adw4243" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for HumanTonsil3DGenomeAtlas">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Yyx2626/HTGTS_related" target="_blank" rel="noopener noreferrer" aria-label="Open code for HumanTonsil3DGenomeAtlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -214,7 +214,7 @@ $$
 
 并把 bedGraph 信号乘以 $s$（`:118-179`）。
 
-这是一个 **Exact 的算法/接口匹配**，但不是运行证据。当前工作区没有论文样本的具体命令、artifact 坐标、junction 计数、运行日志、输出文件或 Fig. 4I/J 映射。
+这是一个 **Exact 的算法/接口匹配**，但不是运行证据。 4I/J 映射。
 
 `normalizeTLX_specific.py` 固定随机种子 `1234567`，把每个 TLX 精确下采样到指定行数（代码 `:6-46`）。它的行为是直接可验证的，但论文只写了 per-million scaling，没有说明研究样本使用了固定行数下采样，所以这里只能标为 **Inferred**。
 
@@ -237,15 +237,6 @@ CATG 位点折叠、局部 Poisson 峰调用和区间注释脚本同样是源代
 - SHM、结构、转录和 AID 结合的不同响应时间。
 
 最可靠的结论是“RAD21/cohesin 对高效 SHM 必需”。更细的机制结论应表述为：数据支持多因素许可模型，但尚未识别唯一的充分和必要下游环节。
-
-### 当前工作区的复现边界
-
-- **Not found：** scGAD 完整数学定义，以及 Louvain、Harmony、*k*-NN、dcHiC、改进 SnapHiC 的全部超参数。
-- **Not found：** 论文专用的运行入口、样本清单、输出文件、日志和结果到图的映射。
-- **Not found：** Fig. 4I/J 的绘图脚本与输入文件。
-- **Not found：** 补充材料与代码的逐项对应，因为没有获取 supplementary Markdown。
-- **未获取：** 数据可用性声明中的 Zenodo 分析代码/数据包（`paper.md:477-480`）。
-- 当前 GitHub 快照只覆盖狭窄的 3C-HTGTS 工具层，整体 paper-code fidelity 为 **low**。
 
 ### 可检验的后续假说（不是论文既定结论）
 
@@ -307,7 +298,7 @@ Important caution: the radial-position and hot/cold TAD analyses are associative
 
 **Workspace reproducibility rating: 3/5.** The primary article gives extensive experimental and computational methods, named tools, thresholds, data accessions, and a Zenodo availability statement (`paper.md:186-450,477-480`). However, this workspace lacks supplementary Markdown, the Zenodo analysis bundle, sample manifests, runtime commands, generated outputs, and figure-to-result mappings.
 
-The acquired GitHub snapshot is a general HTGTS utility repository and has **low overall paper-code fidelity** because it covers only a narrow 3C-HTGTS subset. One match is direct: the paper explicitly links the module for artifact removal and per-million normalization, and the Perl source computes the scale factor from valid junction counts (`paper.md:429-432`; `yyx_normalize_3CHTGTS_tlx.20240131.pl:10-27,52-56,95-123,164-173`). Fixed-count TLX subsampling is only inferred as a possible supporting step. CATG collapse, peak calling, annotation, exact study invocation, sample mapping, generated tracks, and Fig. 4I/J provenance remain **Not found**.
+The acquired GitHub snapshot is a general HTGTS utility repository and has **low overall paper-code fidelity** because it covers only a narrow 3C-HTGTS subset. One match is direct: the paper explicitly links the module for artifact removal and per-million normalization, and the Perl source computes the scale factor from valid junction counts (`paper.md:429-432`; `yyx_normalize_3CHTGTS_tlx.20240131.pl:10-27,52-56,95-123,164-173`). Fixed-count TLX subsampling is only inferred as a possible supporting step. CATG collapse, peak calling, annotation, exact study invocation, sample mapping, generated tracks, and Fig.
 
 ### Key limitations
 

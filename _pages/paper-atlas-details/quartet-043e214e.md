@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -111,7 +111,7 @@ SNR 越高，说明既能区分 D5/D6/F7/M8，又不会把技术重复拉得很�
 
 ### 代码复现边界与一个明确差异
 
-代码是 Zenodo 的源文件快照，缺少 `data/`、生成的 `res/` 和补充材料 Markdown，因此不能在当前工作区端到端复现图中的数字。还有一个已核实的差异：论文对 SNF 写的是 $K=\mathrm{round}(n^2)$、alpha=0.5、$T=10$（`paper.md:618-622`）；快照 `DoSNF()` 却使用 `K=floor(sqrt(n))+1`、`sigma=0.5`、`t=200`（`utils/integrate_func.r:138-152`）。因此 SNF 是**部分匹配**，不能把快照参数当作论文图的已证实配置。
+还有一个已核实的差异：论文对 SNF 写的是 $K=\mathrm{round}(n^2)$、alpha=0.5、$T=10$（`paper.md:618-622`）；快照 `DoSNF()` 却使用 `K=floor(sqrt(n))+1`、`sigma=0.5`、`t=200`（`utils/integrate_func.r:138-152`）。因此 SNF 是**部分匹配**，不能把快照参数当作论文图的已证实配置。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

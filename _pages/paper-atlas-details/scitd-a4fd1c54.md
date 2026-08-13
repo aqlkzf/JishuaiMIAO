@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>scITD</h1>
     <p>Coordinated, multicellular patterns of transcriptional variation that stratify patient cohorts are revealed by tensor decomposition</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/kharchenkolab/scITD" target="_blank" rel="noopener noreferrer" aria-label="Open code for scITD">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -304,7 +305,7 @@ SplatPop 模拟包含 50 个供体、500 个基因、2 种细胞和已知多细�
 
 核心方法一致性为 **高**：源码直接实现了供体 pseudobulk、TMM/log 归一化、过度离散基因并集、方差缩放、ComBat、张量堆叠、rTensor Tucker/HOOI、hybrid ICA–varimax 旋转、解释方差、秩选择和 jackstraw。
 
-复现性边界为 **Partial/Not found**：成人 SLE 脚本能验证关键参数和执行顺序，但本工作区无法仅凭现有文件从零生成所有论文图。应把“算法实现可信”和“整篇论文可移植复现”分开评价。
+应把“算法实现可信”和“整篇论文可移植复现”分开评价。
 
 ### 14. 一句话总结
 

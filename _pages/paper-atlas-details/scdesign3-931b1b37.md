@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scDesign3</h1>
     <p>scDesign3 generates realistic in silico data for multimodal single-cell and spatial omics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-023-01772-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-023-01772-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scDesign3">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/SONGDONGYUAN1994/scDesign3" target="_blank" rel="noopener noreferrer" aria-label="Open code for scDesign3">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -34,7 +34,7 @@ sitemap: false
 
 ### 证据边界
 
-本文档只使用本工作区内可复核的材料：主论文 Markdown、抓取到的图像、克隆的 `scDesign3` R 包源码，以及已生成的代码/方法/图表分析文档。补充材料 Markdown 不存在，记为 `SUPP_MD=none`；本地 `.codegraph/codegraph.db` 存在但索引为空，因此代码结论来自直接读取源码，而不是 CodeGraph。论文还说明完整结果复现源码在 Zenodo，当前本地代码目录不是完整论文复现实验仓库。
+补充材料 Markdown 不存在，记为 `SUPP_MD=none`；本地 `.codegraph/codegraph.db` 存在但索引为空，因此代码结论来自直接读取源码，而不是 CodeGraph。论文还说明完整结果复现源码在 Zenodo，当前本地代码目录不是完整论文复现实验仓库。
 
 下面把“论文方法主张”“本地代码核实行为”和“缺失证据/解释性判断”分开描述。
 
@@ -115,11 +115,11 @@ SingleCellExperiment + covariates
 
 ### 图表证据如何支撑方法
 
-Fig. 1 是“模拟能力”证据：它覆盖轨迹、空间转录组、spot-level 空间混合、ATAC/CITE/multiomics 等场景。图中呈现的是论文报告的下游结果，例如 mLISI、Pearson correlation、UMAP/PCA 和 spatial pattern 相似度；当前工作区只验证了图像和图注，不重新运行这些 benchmark。
+Fig. 1 是“模拟能力”证据：它覆盖轨迹、空间转录组、spot-level 空间混合、ATAC/CITE/multiomics 等场景。图中呈现的是论文报告的下游结果，例如 mLISI、Pearson correlation、UMAP/PCA 和 spatial pattern 相似度；
 
 Fig. 2 是“解释能力”证据：它把参数趋势、相关结构、拟合优度、模型改写和条件/batch 效应放在一起，说明 scDesign3 不只是生成合成矩阵，还能通过可解释参数和 likelihood/AIC/BIC 连接到统计解释。
 
-Extended Data Figs. 1-10 补充了 scRNA 轨迹 benchmark、空间预测、spot deconvolution、ATAC、CITE 和 GOF 的更多案例。它们支持论文的广泛适用性主张，但由于 `SUPP_MD` 和 Zenodo 复现代码不在本地，这些图的数值结论在本工作区属于“论文报告”，不是本地重跑验证。
+Extended Data Figs. 1-10 补充了 scRNA 轨迹 benchmark、空间预测、spot deconvolution、ATAC、CITE 和 GOF 的更多案例。
 
 ### 代码匹配结论
 

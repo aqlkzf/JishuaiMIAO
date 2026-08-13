@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CROCHET</h1>
     <p>CROCHET: a versatile pipeline for automated analysis and visual atlas creation from single-cell spatialomic data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.03.13.711472" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.03.13.711472" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CROCHET">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -231,10 +231,7 @@ $$
 
 ### 可复现性与证据边界
 
-这是当前工作区最重要的限制：
-
 - 论文“Code Availability”只写软件和成图代码可用，没有仓库 URL、版本或 commit。
-- 当前 PaperCode 工作区没有代码目录，因此所有实现细节只能标为 `paper-described`，不能标为代码验证的 Exact。
 - 示例 SBA 图像和元数据需通过 MD Anderson Data Cloud 申请，不是直接公开下载。
 - 模型权重、完整环境、默认参数配置和一键运行入口均 `Not found`。
 - 论文写 Python/Scanpy，却在邻域方法结尾提到 “Seurat functions”；这可能是文本残留，无法用源码裁决。

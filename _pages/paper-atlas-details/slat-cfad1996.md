@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SLAT</h1>
     <p>Spatial-linked alignment tool (SLAT) for aligning heterogeneous slices</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-43105-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-43105-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SLAT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/gao-lab/SLAT" target="_blank" rel="noopener noreferrer" aria-label="Open code for SLAT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -116,7 +116,6 @@ $$
 - Fig. 2 在 Visium、MERFISH、Stereo-seq 的同质切片上同时评估细胞类型与区域是否匹配。SLAT 在三组数据中联合准确率最高或并列最强，并在扩展到 102,400 个细胞时保持较低运行时间；PASTE 在 Stereo-seq 因 80 GB GPU 内存溢出未运行。
 - Fig. 3a–c 展示 seqFISH–Stereo-seq 跨技术对齐，并用 transferred labels 细分 neural crest；Fig. 3d–f 展示 RNA–ATAC 对齐和 `Tnnt2` 表达/可及性的空间一致性。这些是具体数据案例，不等于任何技术组合都能直接对齐。
 - Fig. 4 以 E11.5–E12.5 胚胎为例，低相似区域对应新生或移动的结构，也可能对应组织缺失；说明“低匹配置信度”是候选变化区域，而不是自动的生物学结论。
-- 论文报告超过 100,000 细胞的切片约 3 分钟完成，但该时间来自作者硬件与特定 benchmark；本工作区没有重新跑全套 benchmark。
 
 ### 5. 论文—代码对应与复现边界
 
@@ -135,10 +134,6 @@ $$
 ### 6. 实际使用时最容易误解的三点
 
 第一，SLAT 输出的是对应关系，不是把两张切片变成相同坐标的通用形变场；坐标变换和匹配可组合，但概念上不同。第二，跨模态成功依赖先得到可比的节点特征，SLAT 不会从互不相交的原始 RNA 与 ATAC 矩阵中自动发明共享语义。第三，局部低相似既可能是发育变化，也可能是批次效应、组织缺失或注释差异，必须回到图像、marker 和实验设计验证。
-
-### 7. 当前工作区可复现到哪里
-
-本地代码快照可追踪核心模型、训练和匹配函数，包版本标为 0.3.0；论文明确报告 benchmark 使用 0.2.0。工作区没有保存独立仓库提交哈希，也未下载论文数据并重跑训练，因此目前可确认“机制与实现路径”，不能确认数值结果逐项复现。论文正文、4 张主图、原始 PDF 与 3 份补充 PDF 已本地化，可继续做实验级复现，但需额外获取数据、固定环境与记录随机种子。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

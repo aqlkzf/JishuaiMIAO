@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CRAFTseq</h1>
     <p>Precisely defining disease variant effects in CRISPR-edited single cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09313-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09313-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CRAFTseq">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/immunogenomics/craft-seq" target="_blank" rel="noopener noreferrer" aria-label="Open code for CRAFTseq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -125,15 +125,6 @@ CRAFTseq 不需要从 RNA 猜 genotype，这是它的主要优势；代价是 ta
 脚本常硬编码 plate/locus/path；`DNAStep1` 用 shell `ls`/awk 并为每 barcode 打开输出文件，扩展到更多 plates 时需注意文件描述符和 quoting。分析阈值按实验调整是方法合同的一部分，不应抽象成唯一 universal cutoff。
 
 最强结论是：直接单细胞 genotype 能把真实 allele effect 与共同培养、编辑失败和 cell-state heterogeneity 分开，尤其适合 subtle regulatory variants。它不是高通量全基因组 screen，而是 targeted、深度 phenotype、每 locus 需工程化的验证平台。
-
-### 源证据入口
-
-- 论文：`paper source/PMC12488502/paper.md`
-- 代码：`craft-seq/`
-- DNA 预处理：`craft-seq/preprocessing/`
-- 统计模型：`craft-seq/figures/`
-- 论文—代码映射：`doc_code.md`
-- 分图解读：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>GiottoSuite</h1>
     <p>Giotto Suite: a multiscale and technology-agnostic spatial multiomics analysis ecosystem</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02817-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02817-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GiottoSuite">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/giotto-suite/Giotto" target="_blank" rel="noopener noreferrer" aria-label="Open code for GiottoSuite">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -62,7 +62,6 @@ Giotto Suite 解决的是空间组学数据“尺度、模态和格式不统一�
 5. 对矩阵运行过滤、归一化、空间网络、PCA/UMAP、聚类和富集分析。
 6. 对相邻切片或不同模态用 landmark 估计 affine transform，进行空间配准。
 7. 对 RNA+protein 或 RNA+ATAC 等多组学数据运行 WNN，生成 integrated UMAP 和 integrated clusters。
-8. 对超大数据使用数据库/HDF5/投影式流程，但 GiottoDB 具体源码在本工作区未获得。
 9. 将结果导出到 Seurat、AnnData、SpatialExperiment、SpatialData、sf、terra、stars 等生态。
 
 ### 4. 数学目标与直觉
@@ -105,7 +104,6 @@ Figure 1 说明框架和包结构；Figure 2 证明同一数据可在 nucleus/ce
 ### 7. 局限性与未验证部分
 
 - 论文引用 Giotto Suite 4.2.1，本地克隆的 `Giotto` 是 4.2.3。
-- GiottoDB 源码不在当前工作区，因此 DB proxy 内部实现没有直接验证。
 - 主图脚本存在，但依赖外部大数据、路径设置、可选包、预构建对象和 landmarks。
 - 转换器存在，但多尺度层级结构和图像信息不一定能无损往返。
 - 输出更适合作为空间生物学假设生成和工作流工程，不应直接当作因果验证。

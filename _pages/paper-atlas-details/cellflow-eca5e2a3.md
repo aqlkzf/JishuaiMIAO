@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellFlow</h1>
     <p>CellFlow enables generative single-cell phenotype modeling with flow matching</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.04.11.648220" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.04.11.648220" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellFlow">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/cellflow" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellFlow">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -69,7 +69,6 @@ $$
 - **图 1**：总架构。上半部分定义表型筛选任务，下半部分连接条件聚合、OT 配对、flow-matching 训练与 ODE 生成。
 - **图 2**：近一千万 PBMC 的细胞因子实验。只要训练中见过该细胞因子在至少一个供体上的反应，预测明显改善；它也显示外部嵌入本身不足以恢复完全未见刺激的功能效应。
 - **图 3**：斑马鱼敲除与发育阶段。模型预测全胚细胞分布和细胞类型比例，并展示时间插值；这是条件生成能力的证据，不是谱系追踪证据。
-- **图 4**：药物、组合药物和基因扰动基准。重点是跨任务比较、剂量插值及组合效应；数值来自论文实验，当前工作区没有完整复现实验仓库。
 - **图 5**：组合 morphogen 的 iNeuron 命运工程。CellFlow 较好恢复异质细胞组成、协方差和部分新群体，同时论文也报告某些组合的浓度依赖误差。
 - **图 6**：三套脑类器官筛选联合训练，并虚拟生成约 2.3 万个协议、超过七千万个细胞。该结果是 proof-of-principle 的计算筛选，不等同于所有协议都经湿实验验证。
 
@@ -82,7 +81,6 @@ $$
 1. 预测质量依赖训练条件覆盖；图 2 明确显示完全未见细胞因子时优势有限。
 2. OT 的最短运输是假设，生成路径不应直接作因果或谱系解释。
 3. 外推到高阶组合、极端剂量或训练分布很远的协议，应以实验验证收尾。
-4. 论文基准和虚拟筛选属于 paper-reported 证据；本工作区没有下载全部数据并做端到端重跑。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MUSIC</h1>
     <p>Single-cell multiplex chromatin and RNA interactions in ageing human brain</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-024-07239-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-024-07239-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MUSIC">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -68,7 +68,7 @@ $$
 \binom{n}{2}=\frac{n(n-1)}{2}
 $$
 
-个成对接触。例如 4 个 DNA 分子产生 6 对。这个展开便于与 Micro-C 比较，却不能把 6 对当成 6 个独立实验事件；它们共享一个 complex provenance。
+个成对接触。例如 4 个 DNA 分子产生 6 对。这个展开便于与 Micro-C 比较，却不能把 6 对当成 6 个独立实验事件；
 
 ### 3. H1/E14 混样先验证什么
 
@@ -139,29 +139,6 @@ MUSIC 并没有直接标记哪一条 homolog 是 Xa 或 Xi。把 XIST-positive �
 4. 图 4：展示 XIST expression、RAL/XAL、XIST-positive versus negative contact curves 与 cell-type heterogeneity。
 
 技术验证和生物学发现是递进关系；不能只凭图 3/4 而忽略图 1/2 对 barcode 与 cluster 可靠性的支撑。
-
-### 11. 当前工作区代码为什么不能作为 MUSIC 证据
-
-目录中的 `preprocess_merge.R`、`filter_cluster.R`、`pseudotime.R`、`abcmax.R` 等来自另一套 10x RNA+ATAC postnatal brain 项目。它们处理 WNN、Monocle3、ABC-Max、GWAS、Hotspot/SCENIC，不包含：
-
-- MUSIC linker/barcode decoding；
-- UMNDBC read filtering；
-- DD/RR/RD cluster 构建；
-- multiplex contact projection；
-- $P_c(s)$ 或 LCS-erosion；
-- MUSIC eQTL contact；
-- XIST RAL/XAL。
-
-因此 code-paper match 必须标为 **Not matched**。这不是“部分复现”，而是不同论文/项目被放进同一工作区。后续若获取 MUSIC 官方代码，应另行记录来源并重新建立 code map。
-
-### 12. 证据入口与边界
-
-- Primary source: `paper_snMultiome.pdf`
-- PDF-derived text used for audit: local temporary extraction, not a durable source file
-- Main figure evidence: PDF pages 2–7
-- Local scripts: mismatched external project; do not cite for MUSIC claims
-
-最主要限制是缺少 MUSIC 官方代码和本地 raw/processed data。当前工作区能够支持论文解释与图证据审计，不能支持计算复跑。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>spaLLM</h1>
     <p>spaLLM: enhancing spatial domain analysis in multi-omics data through large language model integration</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf304" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf304" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for spaLLM">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/liiilongyi/spaLLM" target="_blank" rel="noopener noreferrer" aria-label="Open code for spaLLM">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -90,16 +90,6 @@ $$a_k=\operatorname{softmax}\big(u^\top\tanh(W h_k)\big),\qquad h=\sum_k a_kh_k.
 4. 仓库没有依赖锁文件、自动测试、打包配置或已保存模型；示例含硬编码本地路径，完整复现需要人工准备数据、R `mclust`、rpy2 与 scGPT 环境。
 
 因此最准确的代码—论文结论是：算法组件和公式映射为 Partial，当前提交的端到端可执行性为 Not runnable as-is。旧文档中“完整可复现”“训练能直接完成”等表述已撤回。
-
-### 证据入口
-
-- 论文：`spaLLM_paper/spaLLM_paper.md`
-- scGPT 脚本：`spaLLM/embedding.py`
-- 图构建：`spaLLM/spaLLM/preprocess.py`
-- 网络：`spaLLM/spaLLM/modelTriatt_Flow1.py`
-- 训练器：`spaLLM/spaLLM/spaLLM_util.py`
-- 聚类：`spaLLM/spaLLM/utils.py`
-- 四个数据示例：`spaLLM/*_example.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

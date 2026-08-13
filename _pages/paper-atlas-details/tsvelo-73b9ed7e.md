@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TSvelo</h1>
     <p>TSvelo: Comprehensive RNA velocity by modeling the cascade of gene regulation, transcription and splicing</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2024.12.24.630058" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2024.12.24.630058" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TSvelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/lijc0804/TSvelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for TSvelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -106,7 +106,7 @@ $$
 
 Fig. 1 展示整体框架。Fig. 2 的 pancreas 结果支持 3D `alpha-u-s` 相图比传统 2D `u-s` 相图更能分离细胞状态。Fig. 3 的 gastrulation erythroid 结果展示 velocity consistency、in-cluster coherence、cross-boundary direction correctness，并给出 KLF1 及其 targets 的模型权重和时间延迟。Fig. 4 用 mouse brain 数据与 MultiVelo 做可视化对比。Fig. 5 和 Fig. 6 主要说明 TSvelo 可以处理 dentate gyrus 和 LARRY 这类多谱系数据，并给出谱系特异基因动态。
 
-这些图支持 TSvelo 在多个数据集上产生生物学合理的 pseudotime、velocity stream 和 gene dynamics。但其中一些强评价依赖 supplementary figures/tables；当前工作区没有转换得到这些补充材料。
+这些图支持 TSvelo 在多个数据集上产生生物学合理的 pseudotime、velocity stream 和 gene dynamics。但其中一些强评价依赖 supplementary figures/tables；
 
 ### 7. 局限性与未验证部分
 
@@ -114,7 +114,6 @@ Fig. 1 展示整体框架。Fig. 2 的 pancreas 结果支持 3D `alpha-u-s` 相�
 - `alpha` 的代码实现有 `W_bias`，论文公式没有写出这一项。
 - 论文写成显式 block matrix $A$，代码是直接写 ODE RHS，不显式构造完整矩阵。
 - 多谱系 merge 代码有早期时间点 downweighting，论文 Eq. 17 没有说明。
-- ENCODE 数据在仓库里是 `ENCODE.zip`，README 要求先解压；当前工作区保留但 gitignore 了这个大文件。
 - TF 权重是 prior-constrained model weight，更适合生成调控假设，不应解读为实验验证的因果关系。
 
 ### 8. 快速阅读路线

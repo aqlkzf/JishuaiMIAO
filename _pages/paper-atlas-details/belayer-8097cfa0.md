@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Belayer</h1>
     <p>Belayer: Modeling discrete and continuous spatial variation in gene expression from spatially resolved transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cels.2022.09.002" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cels.2022.09.002" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Belayer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/raphael-group/belayer" target="_blank" rel="noopener noreferrer" aria-label="Open code for Belayer">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -157,16 +157,6 @@ Not found 包括完整模拟生成、所有 ARI/AUPRC benchmark 和基线运行�
 5. 层数是用户选择，改变 $L$ 会同时改变 GLM-PCA 维数、边界和 SVG 排名。
 6. SVG 排名是描述性证据，不能单独证明调控机制或细胞内表达梯度；细胞组成变化也可产生同样图形。
 7. L 模式计算昂贵且当前 CLI 不完整，复现需遵循 notebook/集群预计算流程。
-
-### 直接证据入口
-
-- 论文与 STAR Methods：`paper.md`、`paper.xml`
-- 补充链接：`paper.xml` 中 `mmc1`、`mmc2`；独立 PDF 未下载到当前工作区
-- 固定代码：`belayer/src/`
-- 工作示例：`belayer/tutorial.ipynb` 与三个示例数据目录
-- 细粒度代码映射：`doc_code.md`；主图/图注解释：`figure_analysis.md`
-
-当前工作区保存了 Elsevier 正文 XML/Markdown及完整主图图注，但没有独立本地 supplementary PDF 或主图文件；补充材料中的未核对细节继续保留为外部证据边界。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

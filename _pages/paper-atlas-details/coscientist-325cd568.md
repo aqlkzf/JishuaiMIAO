@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CoScientist</h1>
     <p>Accelerating scientific discovery with Co-Scientist</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10644-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10644-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CoScientist">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -113,7 +113,7 @@ Supervisor 维护连续的任务队列，把资源动态分给各专门代理。
 
 但本地工作区是 **paper-only**：没有 Co-Scientist 源码、提交号或可执行环境。论文 Code availability 明确指出，完整代码因专有基础设施、大规模计算需求和安全因素不公开；补充材料提供代理伪代码和提示词。这些资料足以重建概念原型，不能复现生产系统的精确异步调度、context memory、工具调用、Elo 参数、提示装配、预算/停止规则或论文数值。
 
-数据开放也不完整。GPQA、DepMap 和 Open Targets 等部分基准来源可公开获得，但三项现实验证数据不在同一开放可执行包内；当前工作区亦没有原始 benchmark 输出或 AML 分析脚本。因此复现结论应是：**方法逻辑透明度中等，精确计算复现性低，实验案例只能从论文与补充审计，不能在本地端到端重跑。**
+数据开放也不完整。GPQA、DepMap 和 Open Targets 等部分基准来源可公开获得，但三项现实验证数据不在同一开放可执行包内；因此复现结论应是：**方法逻辑透明度中等，精确计算复现性低，实验案例只能从论文与补充审计，不能在本地端到端重跑。**
 
 ### 最合适的定位
 

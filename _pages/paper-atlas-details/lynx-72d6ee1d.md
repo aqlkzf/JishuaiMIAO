@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>LYNX</h1>
     <p>LYNX: a deep generative model for linking spatial dynamics and cell interactions in multimodal spatial data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.07.09.737574" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.07.09.737574" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for LYNX">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/azizilab/Lynx" target="_blank" rel="noopener noreferrer" aria-label="Open code for LYNX">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -90,7 +90,7 @@ $\kappa$ 是按 cluster 建模的细胞基线；代码用 cluster embedding 定�
 
 ### 复现时应注意的边界
 
-本工作区含核心模型与应用脚本，但不含论文所指向的独立 figure-reproducibility 仓库和数据，故这里只完成了静态源码核对，未进行端到端训练。HTML 转换还丢失了部分公式；若要严谨重现 ELBO 或完整概率模型，应以 `article.source.xml` 或原始论文为准，而不是补猜 Markdown 中缺失的公式。
+HTML 转换还丢失了部分公式；若要严谨重现 ELBO 或完整概率模型，应以 `article.source.xml` 或原始论文为准，而不是补猜 Markdown 中缺失的公式。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Super_Level_Set_Regression_Conditional_Quantiles</h1>
     <p>Super-Level-Set Regression: Conditional Quantiles via Volume Minimization</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2605.06210" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2605.06210" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Super_Level_Set_Regression_Conditional_Quantiles">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ElSacho/super_level_sets_regression" target="_blank" rel="noopener noreferrer" aria-label="Open code for Super_Level_Set_Regression_Conditional_Quantiles">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">

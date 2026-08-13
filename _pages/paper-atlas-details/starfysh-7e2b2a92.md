@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Starfysh</h1>
     <p>Starfysh integrates spatial transcriptomic and histologic data to reveal heterogeneous tumor-immune hubs</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-024-02173-8" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-024-02173-8" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Starfysh">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/azizilab/starfysh" target="_blank" rel="noopener noreferrer" aria-label="Open code for Starfysh">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -125,16 +125,6 @@ H&E 的价值是提供组织形态、边界和局部密度信息，而不是从�
 4. density/library latent 同时包含生物与技术尺度，绝对细胞数需要额外校准。
 5. H&E PoE 融合形态信号，但不能替代分子 marker，也不能自动消除批次和染色差异。
 6. hub 与伪时间是推断后构造的群体结构；它们适合描述空间生态连续性，不等同于真实时间轨迹或因果演化路径。
-
-### 证据入口
-
-- 论文正文：`paper source/PMC11415552/paper.md`
-- 主图：`paper source/PMC11415552/images/41587_2024_2173_Fig1_HTML.jpg` 至 `Fig5_HTML.jpg`
-- 补充材料：`paper source/PMC11415552/41587_2024_2173_MOESM1_ESM.pdf` 与 `41587_2024_2173_MOESM2_ESM.pdf`
-- 固定代码版本：`starfysh/`，commit `56fb01ef734401d067eb3078280dd805b97621d1`
-- 细粒度论文—代码映射：`doc_code.md`
-
-这份解读的证据边界是当前 PMC 正文、五张主图、补充 PDF 与上述固定代码快照。未在核心包中定位到的下游步骤继续保留 Notebook/Not found 标签，不据论文叙述臆造实现。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

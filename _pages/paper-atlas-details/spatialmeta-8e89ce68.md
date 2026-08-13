@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpatialMETA</h1>
     <p>Integrating cross-sample and cross-modal data for spatial transcriptomics and metabolomics with SpatialMETA</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-63915-z" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-63915-z" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpatialMETA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/WanluLiuLab/SpatialMETA" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpatialMETA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -167,7 +167,6 @@ Figure 3a–d 将这一量画成 cluster 分布和空间图。后续面板在 cc
 
 ### 12. 复现边界与检查清单
 
-1. 固定 commit `909844e03c2ddffa331e8c45212830f8ffc85553` 和包版本 0.0.3.0；`setup.py` 还保留旧仓库 URL/作者字段，因此安装元数据不能代替 `.repo_source` provenance。
 2. 保存原始 ST/SM 坐标、预旋转、LDDMM 参数和对齐叠图；邻接切片形态不一致是首要误差源。
 3. 记录 KNN 邻居数、距离阈值与被排除 spot，确认重分配后两模态行顺序完全一致。
 4. 多样本运行显式设置 batch keys 与 `mode='multi'`；同时报告生物保留和 batch correction，不能只看样本 UMAP 混合。

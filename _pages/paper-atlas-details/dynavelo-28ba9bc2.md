@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DynaVelo</h1>
     <p>Deep dynamical models of single-cell multiomic velocities predict loss-of-function and rescue perturbations in B cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.04.24.650458" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.04.24.650458" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DynaVelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/karbalayghareh/DynaVelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for DynaVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -31,8 +31,6 @@ sitemap: false
 <article class="paper-detail__panel" id="paper-detail-panel-zh" role="tabpanel" aria-labelledby="paper-detail-tab-zh" tabindex="0" data-detail-panel="zh" lang="zh-CN" markdown="1">
 
 ## DynaVelo 方法详细解释
-
-本文依据本工作区已有的 `summary.md`、`doc_method.md` 和 `doc_code.md` 编写，目标是把 DynaVelo 的方法逻辑讲清楚：它解决什么问题，输入是什么，模型内部如何从 RNA 和 motif accessibility 学习动态，训练目标如何约束方向性，最后的 trajectory、dynamic GRN 和 perturbation/rescue 结果应该如何解释。
 
 ### 1. 一句话理解 DynaVelo
 

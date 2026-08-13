@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CraniofacialSpatiotemporalAtlas</h1>
     <p>High-resolution spatial transcriptomics and cell lineage analysis reveal spatiotemporal cell fate determination during craniofacial development</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-59206-2" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-59206-2" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CraniofacialSpatiotemporalAtlas">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ChaiLabUSC/code" target="_blank" rel="noopener noreferrer" aria-label="Open code for CraniofacialSpatiotemporalAtlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -110,13 +110,6 @@ CreER 结论仍受驱动基因表达阈值、tamoxifen 动力学和 recombinatio
 当前本地代码可直接验证 scRNA 的 QC、normalization、cell-cycle regression、CCA integration、20 维构图、resolution=0.5 clustering、marker 和 mesenchymal subset。路径仍含 `.../` 与 `~/`，没有统一环境或一键 pipeline。seqFISH 的 `Scanpy.ipynb` 和 `scvi_tool.ipynb` 在 `doc_code.md` 中有此前证据映射，但不在当前 `code/` 快照；94 基因 panel、SGNlite/TissUUmaps 处理和最终手工 cluster annotation 也不完整。
 
 因此，最强结论来自多种证据汇合：scRNA 发现状态，seqFISH 定位，RNAscope 检查 marker，CreER 检查后代。算法本身没有“证明命运”；它缩小候选群体和时间窗口。最稳妥的生物学表述是：腭部 CNCC-derived mesenchyme 在 E12.5 已呈谱系偏向异质性，而 Tfap2b/Hic1 标记群体的体内后代支持部分命运模式在 E10.5–E11.5、腭发生之前已经建立。
-
-### 源证据入口
-
-- 论文：`paper source/PMC12069723/paper.md`
-- 代码：`code/Seurat.rmd`、`code/Seurat Integration.R`
-- 论文—代码映射：`doc_code.md`
-- 分图解读：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
@@ -211,16 +204,6 @@ Inducible Cre-ER drivers (Sox9-CreER, Tfap2b-CreER, Hic1-CreER) × tdTomato repo
 - Code for main analysis steps is available (GitHub: https://github.com/ChaiLabUSC/code, Zenodo: DOI 10.5281/zenodo.15085996)
 - Key parameters documented in Methods section
 - All transgenic mouse strains specified with Jackson Laboratory catalog numbers
-
-**Weaknesses/Pitfalls**:
-- Code paths use `.../` placeholders — not directly runnable
-- seqFISH imaging was performed commercially (Spatial Genomics Inc.) — cannot be reproduced without access to SGNlite software and specialized equipment
-- Leiden resolution discrepancy: paper says 4.0 for scVI integration, code uses 0.5
-- seqFISH 94-gene panel (Supplementary Table 1) must be sourced separately
-- TissUUmaps interactive visualization requires loading H5AD files with specific spatial metadata format
-- Cell type annotations involve manual curation — specific marker thresholds not fully specified in code
-- `mouse_cell_cycle_genes.rds` is provided in the repo (helpful) but its provenance is unclear
-- FaceBase account may be required to access data
 
 **Practical reproduction path**:
 1. Download scRNA-seq data from GEO GSE293181

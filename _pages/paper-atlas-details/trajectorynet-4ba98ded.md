@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Dynamics, Fate &amp; Trajectory</span>
-      <span>ICML 2020 (PMLR 119) · 2020</span>
+      <span>PMLR · 2020</span>
     </div>
     <h1>TrajectoryNet</h1>
     <p>TrajectoryNet: A Dynamic Optimal Transport Network for Modeling Cellular Dynamics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2002.04461" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2002.04461" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TrajectoryNet">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/krishnaswamylab/TrajectoryNet" target="_blank" rel="noopener noreferrer" aria-label="Open code for TrajectoryNet">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 TrajectoryNet 把不同时间点采到的细胞群看作一系列概率分布，用一个连续归一化流（continuous normalizing flow, CNF）学习随时间变化的速度场。最大似然负责让模型在观测时间点匹配数据分布，能量、密度、RNA velocity 和生长项则分别约束路径短、路径贴近数据流形、方向符合局部速度、群体质量允许增减。
 
-本工作区同时有 ICML 2020 论文、正文内补充材料、11 张导出图和代码快照，因此核心训练路径可以做论文—代码对应；但“代码存在”不等于论文全部结果可一键复现。尤其 growth 路径缺少论文实验使用的 checkpoint，训练脚本含提前 `exit()`，固定三维输入也与论文的 5D PCA 实验不兼容。以下把方法原理、实际实现和复现边界分开说明。
+但“代码存在”不等于论文全部结果可一键复现。尤其 growth 路径缺少论文实验使用的 checkpoint，训练脚本含提前 `exit()`，固定三维输入也与论文的 5D PCA 实验不兼容。以下把方法原理、实际实现和复现边界分开说明。
 
 ### 1. 问题为什么不是普通伪时间
 
@@ -149,7 +149,7 @@ $$
 
 代码默认的 `dims=64-64-64`、`niters=10000`、`batch_size=1000`、`lr=1e-3`、`solver=dopri5` 和容差与论文一致。但 `parse.py:39` 默认 `tanh`，不是 LeakyReLU；`parse.py:69` 默认 weight decay $10^{-5}$，不是论文的 $5\times10^{-5}$。若没有论文实验命令或保存的参数，不能确认表格实际使用了论文文字配置还是代码默认配置。
 
-依赖也存在历史边界。论文附录列出 Python 时代的 torch 1.3.1、torchdiffeq 0.0.1、scvelo 0.1.24 等；当前 `requirements.txt` 则要求 torch>=1.5.0、scikit-learn>=0.23.1，同时仍固定 torchdiffeq==0.0.1。README 称代码测试于 Python 3.7/3.8。它不是现代环境锁文件，当前工作区没有重建并运行完整旧环境。
+依赖也存在历史边界。论文附录列出 Python 时代的 torch 1.3.1、torchdiffeq 0.0.1、scvelo 0.1.24 等；当前 `requirements.txt` 则要求 torch>=1.5.0、scikit-learn>=0.23.1，同时仍固定 torchdiffeq==0.0.1。README 称代码测试于 Python 3.7/3.8。
 
 ### 6. 留一时间点评估到底验证什么
 
@@ -196,7 +196,6 @@ $$
 - 论文 weight decay $5\times10^{-5}$ 与默认 $10^{-5}$；
 - growth 主损失接入存在，但训练脚本、维度和 checkpoint 不闭合；
 - 评估工具存在，但 `eval.py` 的默认控制流含提前退出和硬编码调整；
-- 代码目录的 `.repo_source` 记录 commit `810c89b...`，但快照已去除嵌套 `.git`，当前父仓库不含该对象，故只能称“快照标签”，不能在本地独立验证提交身份。
 
 #### Not found / 当前证据中缺失
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>pertpy</h1>
     <p>Pertpy: an end-to-end framework for perturbation analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02909-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02909-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for pertpy">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/scverse/pertpy" target="_blank" rel="noopener noreferrer" aria-label="Open code for pertpy">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -199,8 +199,6 @@ pertpy 的价值很大部分来自把已有 R 或独立 Python 方法整合进�
 Extended Data Fig. 1 在 5,000 到 1,000,000 细胞范围比较运行时间和内存。benchmark 由 `pertpy-reproducibility/benchmark/` 的 Snakemake 与隔离环境实现。速度提升来自 JAX/NumPyro、并行化、PyNNDescent 和稀疏计算等多种工程选择，不能简单归因于“Python 比 R 快”。不同方法的算法、依赖和硬件路径也不同。
 
 ### 9. 代码与论文的真实边界
-
-本工作区包含两个互补代码目录：
 
 - `pertpy/`：框架主仓库，commit `f47072b9a5721c8a2e8be2b3a980ef8cd5ec88b4`；
 - `pertpy-reproducibility/`：三套用例、runtime benchmark、Snakemake 和环境定义。

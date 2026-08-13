@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>INSPIRE</h1>
     <p>Interpretable, flexible and spatially aware integration of multiple spatial transcriptomics datasets from diverse sources</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-026-02579-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-026-02579-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for INSPIRE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/jiazhao97/INSPIRE" target="_blank" rel="noopener noreferrer" aria-label="Open code for INSPIRE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -114,7 +114,6 @@ Fig. 1 说明 GNN、clamped adversarial integration 与 NMF 输出。Fig. 2 用�
 
 ### 版本与复现边界
 
-- 本地 `.repo_source` 记录克隆提交 `005d447374fea2820789d82936194690a40f69f0`，但当前嵌套仓库 HEAD 为 `206cc19ca89d985245ca204fbc86772e5c2446d0`；本工作区分析以当前 HEAD 源码为准，并保留来源漂移。
 - `environment.yml` 锁定的是 Python 3.8.15、PyTorch 1.12.1 等较旧环境；在新 CUDA/Python 上重建可能需要调整。
 - 论文含大量补充图和分析流程，仓库核心包加 benchmark scripts 并不等于完整的一键复现；数据下载、R 工具和特定图表脚本仍是外部依赖。
 - GAT 的全矩阵内存和 LGCN 的近似/归一化差异决定了两种规模路径不能直接期待数值完全一致。

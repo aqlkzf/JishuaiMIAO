@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>chronODE</h1>
     <p>The chronODE framework for modelling multi-omic time series with ordinary differential equations and machine learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-61921-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-61921-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for chronODE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/gersteinlab/chronODE" target="_blank" rel="noopener noreferrer" aria-label="Open code for chronODE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -193,7 +193,6 @@ CodeGraph 成功定位了 `ODE_fitting.py` 与 piecewise 的核心 ODE 函数；
 4. 单调/峰形以外的多峰、振荡和高噪声轨迹被排除，不能强迫解释为三类动力学。
 5. 常数序列会在 min–max 分母为零时产生非有限值，主脚本没有显式常数行检查。
 6. 双向 RNN 利用了完整未来序列，适合重建/解释整段时间过程，不是只看历史预测未知未来的因果 forecasting 模型。
-7. 当前工作区可验证公式和代码路径，但本轮未重跑 ENCODE 全数据、单细胞分析、网络训练或论文统计。
 
 ### 推荐阅读顺序
 

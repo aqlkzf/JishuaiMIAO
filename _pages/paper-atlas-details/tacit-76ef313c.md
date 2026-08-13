@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TACIT</h1>
     <p>Deconvolution of cell types and states in spatial multiomics utilizing TACIT</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-58874-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-58874-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TACIT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/huynhkl953/TACIT" target="_blank" rel="noopener noreferrer" aria-label="Open code for TACIT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -123,7 +123,7 @@ $$
 
 图 2 在 PCF-CRC 和 PCF-HI 蛋白数据上评估 TACIT。PCF-CRC 包含 235,519 个细胞、56 个抗体和 17 个类型，论文报告 recall、precision、F1 为 0.74、0.79、0.75；PCF-HI 上为 0.73、0.79、0.75。图 3 比较更多近期方法和空间分辨率。图 4 展示 Xenium Sjögren's disease 数据应用。MERFISH 基准中，论文报告 TACIT 的 recall、precision、F1 为 0.85、0.87、0.87。
 
-本工作区也保存了补充材料 `41467_2025_58874_MOESM1_ESM.pdf`；其中的补充图包括基准箱线图和 bootstrap 阈值检查。上述结果支持 TACIT 在论文所选数据、预处理、签名和参考标签下具有竞争力并可扩展到百万级细胞，但不是对所有组织和 panel 的无条件保证。
+其中的补充图包括基准箱线图和 bootstrap 阈值检查。上述结果支持 TACIT 在论文所选数据、预处理、签名和参考标签下具有竞争力并可扩展到百万级细胞，但不是对所有组织和 panel 的无条件保证。
 
 ### 11. 论文与代码的对应
 

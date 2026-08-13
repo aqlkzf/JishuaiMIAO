@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>GlobalCellStateGeneProgram</h1>
     <p>Global cell-state and gene-program representations reveal conserved and context-specific perturbation responses of cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.05.16.725005" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.05.16.725005" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GlobalCellStateGeneProgram">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/xingjiepan/SCMG" target="_blank" rel="noopener noreferrer" aria-label="Open code for GlobalCellStateGeneProgram">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -105,9 +105,9 @@ SCMG 流形 + Perturb-seq
 
 ### 代码复现度
 
-本工作区获取到的是 `SCMG` Python 包，commit 为 `29f44c98c5621d575a058b549e0fdde0ba31a730`。它覆盖了核心可复用模型：SCMG encoder/decoder、对比损失、标准基因输入构造、query embedding/projection，以及通用 MoE 扰动预测器。
+它覆盖了核心可复用模型：SCMG encoder/decoder、对比损失、标准基因输入构造、query embedding/projection，以及通用 MoE 扰动预测器。
 
-但论文图表和完整分析脚本不在这个仓库中。`SCMG/README.md:46` 明确指出 manuscript figures 的脚本位于另一个仓库 `SCMG_scripts`。因此，本工作区对代码-论文匹配的判断是 **medium**：核心模型组件可以直接对应，但 gene program 聚类、manual curation、few-shot K-means/ridge、hESC 分析和图表生成需要额外仓库和外部数据才能完整复现。
+但论文图表和完整分析脚本不在这个仓库中。`SCMG/README.md:46` 明确指出 manuscript figures 的脚本位于另一个仓库 `SCMG_scripts`。
 
 ### 主要局限
 

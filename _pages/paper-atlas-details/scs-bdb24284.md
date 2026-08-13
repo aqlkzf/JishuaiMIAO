@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SCS</h1>
     <p>SCS: cell segmentation for high-resolution spatial transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-023-01939-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-023-01939-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SCS">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/chenhcs/SCS" target="_blank" rel="noopener noreferrer" aria-label="Open code for SCS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -123,7 +123,7 @@ $$
 - 图 3 展示核染色下向细胞质扩展、恢复弱染色细胞，以及 H&E 边界模糊时拆分相邻细胞；UMAP 显示 novel predictions 与常规细胞表达群混合。对 seqFISH+ 的 IoU 结果来自补充分析。
 - 图 4 用 SCS 的核/细胞质划分研究 RNA 亚细胞定位，比较核富集和细胞质富集基因，并与 RNALocate 等已有知识一致性验证。
 
-主文转换还包含 Extended Data 与 reporting summary 文本，并引用在线 Supplementary Notes/Figures。本工作区没有独立补充 PDF/Markdown，因此补充结果只能按论文文字记录，不能本地逐图复核。
+主文转换还包含 Extended Data 与 reporting summary 文本，并引用在线 Supplementary Notes/Figures。
 
 ### 10. 论文与直接代码对应
 
@@ -151,17 +151,6 @@ $$
 5. Novel predictions 的表达一致和染色弱信号是支持证据，不等同于逐细胞人工标注确认。
 6. 代码依赖 TensorFlow 2.8、旧版 AnnData/Spateo，并使用已弃用的 `np.int`；现代环境下可能需要兼容修复。
 7. patch 级重新训练成本高且边界处理有限，生产级全切片运行应审计失败 patch 和边缘细胞。
-
-### 证据入口
-
-- 论文与图注：`paper source/SCS_paper/SCS_paper.md`
-- 主图与扩展图：`paper source/SCS_paper/_page_*`
-- 主入口：`src/scs.py::segment_cells`
-- 预处理：`src/preprocessing.py`
-- Transformer：`src/transformer.py`
-- Gradient flow：`src/postprocessing.py`
-- 示例与全组织运行：`example.py`、`large_scale.py`、`seqscope.py`
-- 既有详细文档：`doc_method.md`、`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

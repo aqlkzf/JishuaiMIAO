@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Overview_Large_Language_Models_Statisticians</h1>
     <p>An Overview of Large Language Models for Statisticians</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1080/00031305.2026.2657480" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1080/00031305.2026.2657480" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Overview_Large_Language_Models_Statisticians">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -51,17 +51,6 @@ The review is not a primary-method paper and does not introduce one algorithm or
 4. **Open agenda.** It argues for resource-efficient statistically structured “small language models,” statistical wrappers around black-box LLMs, better theory of emergent behavior, and adaptive inference for human–AI feedback loops (`paper.md:821-860`).
 
 ### Major-method comparison
-
-| Family | Statistical object or guarantee | Typical access/data | Strength | Main limitation highlighted by the review |
-|---|---|---|---|---|
-| Token/semantic uncertainty | Entropy, semantic equivalence, hidden-state or repeated-sample scores | White-box logits/states or black-box repeated generations | Cheap confidence signal and useful ranking | Generation uncertainty can be confidently wrong and adversarially fragile |
-| Conformal prediction | Calibrated prediction/risk sets under a stated exchangeability regime | Calibration examples plus a nonconformity/risk score | Finite-sample, distribution-free control | Huge structured output space and non-exchangeable token/dialog sequences |
-| Watermarking | A hypothesis test on key-dependent pivot statistics | Generator access and a secret key | Explicit type-I/type-II error framing and provenance | Paraphrase, mixed human/AI text, collisions, stealing, and compute overhead |
-| Privacy/unlearning | Sanitization, differential privacy, or approximate removal of target data | Training data/model access varies | Formal privacy notions can bound disclosure | Utility/compute trade-offs; context-sensitive privacy and continual unlearning remain unresolved |
-| Mechanistic interpretability | Features, circuits, ablation, and hypothesis tests for faithfulness/completeness/minimality | Internal activations and intervention access | Connects behavior to internal computation | Results on small/toy models may not be universal or causal at production scale |
-| Fairness interventions | Outcome/probability disparity constraints; pre-, in-, and post-processing | Paired groups, sensitive sets, outputs or logits | Makes bias objectives explicit and actionable | Fairness is context-dependent and can conflict with utility; durability is uncertain |
-| RLHF/DPO/self-alignment | Preference models, reward/policy objectives, iterative synthetic feedback | Human or synthetic comparisons and model samples | Scalable post-training alignment | Reward misspecification, judge biases, distribution shift, and model collapse |
-| Prediction-powered inference | Debiased estimator combining few human labels with many model annotations | Small labeled sample, large unlabeled sample, black-box predictor | Uses cheap LLM labels while preserving inferential validity | Requires sampling assumptions and does not make model labels intrinsically correct |
 
 ### Key findings
 

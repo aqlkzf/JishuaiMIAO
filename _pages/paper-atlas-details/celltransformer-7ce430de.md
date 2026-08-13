@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellTransformer</h1>
     <p>Data-driven fine-grained region discovery in the mouse brain with transformers</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-64259-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-64259-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellTransformer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/abbasilab/celltransformer" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellTransformer">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -124,7 +124,7 @@ $$
 
 核心 library 模型、loader、ZINB loss、聚类和平滑脚本均存在，论文–核心实现匹配度为 **Partial-to-High**。但完整复现入口存在明显工程漂移：训练与 embedding 脚本引用旧包名 `brainformr`，Hydra `config_path` 写死作者本机 `/home/ajl/...`，配置 `_target_` 也仍是 `brainformr.model.CellTransformer`；`pyproject.toml` 显式只声明 `packages=["celltransformer"]`，构建 wheel 时可能漏掉 `celltransformer.model/data/training` 子包。优化配置中的 weight decay 是 `1e-9`，与论文 `0.00005` 不符；batch 32、梯度累积 16 和两张 GPU 的组合也不能直接对应论文报告的 effective batch 256。
 
-本地代码目录无嵌套 `.git` 或 `.repo_source`，无法确认采集提交；不能用 PaperCode 父仓库 HEAD 替代。测试覆盖模型基本块与数据 loader，但不覆盖论文全流程、cuML 聚类、百万级训练或主图重现。
+测试覆盖模型基本块与数据 loader，但不覆盖论文全流程、cuML 聚类、百万级训练或主图重现。
 
 ### 使用时必须记录
 
@@ -162,7 +162,7 @@ CellTransformer 通过“遮住中心细胞表达、用局部邻域预测它”�
 
 ### 复现性
 
-核心块有测试，但本工作区未下载多百万细胞数据、未训练模型、未执行 cuML 聚类，也未重建主图。代码目录没有独立 git/provenance sidecar，所分析上游 commit 未知。当前结论是“论文与核心代码可追踪，但发布快照不是开箱即用的完整复现包”。
+当前结论是“论文与核心代码可追踪，但发布快照不是开箱即用的完整复现包”。
 
 ### 来源
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>ChAIR</h1>
     <p>Tri-omic single-cell mapping of the 3D epigenome and transcriptome in whole mouse brains throughout the lifespan</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/fengchuiguo1994/ChAIR-PIPE" target="_blank" rel="noopener noreferrer" aria-label="Open code for ChAIR">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -80,7 +81,7 @@ ChAIR 的核心目标，是在同一细胞内把三者同时测出来，尤其�
 
 单个微流控通道可生成约 6,000–10,000 个细胞的数据，16 通道满载可超过 100,000 个细胞（`paper.md:30-33`）。
 
-> 本工作区没有 supplementary Markdown。论文把更细的逐步实验方案放在 Supplementary Information 中，因此本文只解释主文明确给出的步骤，不声称读过补充方案。
+论文把更细的逐步实验方案放在 Supplementary Information 中，因此本文只解释主文明确给出的步骤，不声称读过补充方案。
 
 ### 4. 原始数据如何处理？
 

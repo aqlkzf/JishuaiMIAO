@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>STREAM</h1>
     <p>Single-cell trajectories reconstruction, exploration and mapping of omics data with STREAM</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-019-09670-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-019-09670-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for STREAM">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/pinellolab/STREAM" target="_blank" rel="noopener noreferrer" aria-label="Open code for STREAM">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -174,7 +174,7 @@ $$x\prime _i = \mathop {\sum }\limits_{j \in J_i} v_j \times w_{ji}$$
 
 论文用多种数据验证 STREAM。鼠血液 scRNA-seq 中，STREAM 重建了淋巴、髓系和红系分支，并用 marker 表达支持；小鼠 GMP 扰动数据中，mapping 显示不同转录因子敲除把细胞推向不同分支；斑马鱼 qPCR 和 inDrop 数据中，STREAM 恢复了多个血液谱系，并用 FACS/荧光标记细胞映射验证；scATAC-seq 中，STREAM 用 k-mer 可及性特征恢复人骨髓造血层级，并把 k-mer 映射到 GATA1、CEBPA 等转录因子 motif，见 `paper.md:41-174`。
 
-论文还和 10 个轨迹方法比较。合成数据中评估分叉数和伪时间相关性；真实数据中用 marker 表达和分支 precision/recall/F1 评估，方法定义见 `paper.md:376-435`。本工作区可以从论文和本地图像确认这些结果的展示，但没有在 Python 包中找到完整多方法 benchmark 复现脚本。因此这些 benchmark 数值是论文/图像证据，不是本次代码审计复跑得到的结果。
+论文还和 10 个轨迹方法比较。合成数据中评估分叉数和伪时间相关性；真实数据中用 marker 表达和分支 precision/recall/F1 评估，方法定义见 `paper.md:376-435`。因此这些 benchmark 数值是论文/图像证据，不是本次代码审计复跑得到的结果。
 
 ### 13. 复现性和局限
 
@@ -182,7 +182,6 @@ $$x\prime _i = \mathop {\sum }\limits_{j \in J_i} v_j \times w_{ji}$$
 
 - Python API 默认值和论文文字不完全一致，尤其是降维默认方法和初始聚类默认方法。
 - 底层图语法操作依赖外部 `ElPiGraph.R`，不在这个 Python 仓库中。
-- 论文说所有分析可用 Bioconda 包和 Supplementary Data notebooks 复现，见 `paper.md:444-447`；但当前工作区没有 supplementary markdown。
 - 仓库有教程 notebooks，但没有在核心 Python 包中找到完整论文 benchmark 的复现脚本。
 
 论文自身也承认，STREAM 仍主要面向树状或线性轨迹；循环、断连图、更复杂拓扑、百万级细胞规模和更广泛多组学整合都需要进一步发展，见 `paper.md:183-186`。因此，STREAM 最适合解释有分支分化结构、可用 principal tree 描述的单细胞过程；如果真实生物过程包含周期、多个不连通状态或参考中不存在的新命运，结果需要谨慎解释。

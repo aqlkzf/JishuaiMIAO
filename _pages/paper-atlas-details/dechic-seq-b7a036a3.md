@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>DeChIC-seq</h1>
     <p>Genome-wide profiling of histone modifications and transcription factor binding at single-cell resolution by DeChIC-seq</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/XiyangChen12/DeChIC" target="_blank" rel="noopener noreferrer" aria-label="Open code for DeChIC-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -75,7 +76,7 @@ $$
 
 ### 可复现性边界
 
-代码快照支持“转换率、峰、矩阵、占据率”这些处理环节，但本地未找到论文所述 Signac/Seurat 聚类和注释流程，故这一部分为 **Not found**（搜索范围：`DeChIC/SCENE`）。文章链接了补充 PDF，但本工作区没有 `SUPP_MD`，因此具体实验参数和全部 target-specific 阈值仍是 **MISSING**（`paper.md:703-715`）。
+代码快照支持“转换率、峰、矩阵、占据率”这些处理环节，但本地未找到论文所述 Signac/Seurat 聚类和注释流程，故这一部分为 **Not found**（搜索范围：`DeChIC/SCENE`）。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

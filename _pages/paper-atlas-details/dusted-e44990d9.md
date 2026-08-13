@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Spatially Variable Genes</span>
-      <span>AAAI Conference on Artificial Intelligence · 2025</span>
+      <span>AAAI · 2025</span>
     </div>
     <h1>DUSTED</h1>
     <p>DUSTED: Dual-Attention Enhanced Spatial Transcriptomics Denoiser</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1609/aaai.v39i1.32110" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1609/aaai.v39i1.32110" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DUSTED">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Lifeomics/DUSTED" target="_blank" rel="noopener noreferrer" aria-label="Open code for DUSTED">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">

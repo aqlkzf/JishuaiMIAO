@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>APOLLO</h1>
     <p>Partially Shared Multi-Modal Embedding Learns Holistic Representation of Cell State</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2024.10.01.615977" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2024.10.01.615977" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for APOLLO">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/uhlerlab/APOLLO" target="_blank" rel="noopener noreferrer" aria-label="Open code for APOLLO">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -137,7 +137,6 @@ APOLLO 规定潜空间和两阶段训练原则，但 encoder/decoder 可按模�
 
 ### 版本与复现边界
 
-1. 代码 README 指向 `https://github.com/uhlerlab/APOLLO.git`，但本地 `code/` 没有 `.git` 或 `.repo_source`，因此 commit hash 与采集日期均为 `Not found`。
 2. 仓库没有 package version、setup 或 pyproject；`code/requirements.txt` 是很长的 Linux conda 显式环境清单，含 Python 3.10、CUDA 和大量间接依赖。它比无依赖记录更好，但平台绑定且文件名与 README 中的 `requirement.txt` 单复数不一致。
 3. 训练、预处理、评估和作图分散在大量 notebook，并使用数据路径、inline 超参数与中间 checkpoint；没有统一 CLI、配置合同或自动化测试。
 4. 本地 `paper.pdf` 与 `paper_v2.pdf` 内容/大小均为 29 页版本；没有转换后的 `paper source`。本轮直接用 PDF 文本与逐页图像核查，不伪造 Markdown 路径。

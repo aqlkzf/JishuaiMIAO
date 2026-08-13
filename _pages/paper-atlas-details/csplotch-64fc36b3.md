@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>cSplotch</h1>
     <p>Tissue and cellular spatiotemporal dynamics in colon aging</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02830-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02830-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for cSplotch">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/adaly/cSplotch" target="_blank" rel="noopener noreferrer" aria-label="Open code for cSplotch">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -117,14 +117,6 @@ BF 支持统计差异，不代表效应大、可重复于所有个体或具有�
 图谱显示成年结肠沿近端—远端存在稳定的细胞组成和功能差异，隐窝底到顶端呈现再生与分化梯度；衰老伴随 goblet cell 减少、progenitor/colonocyte 重塑以及上皮—免疫—基质协同程序改变。
 
 最强的方法学贡献不是某一个衰老 marker，而是能在大量组织切片上同时控制解剖区室、细胞混合、层级条件和局部空间相关。边界同样明确：结果依赖 MROI、H&E 分类、snRNA 参考和 deconvolution；beta 是混合数据下的后验估计；MCP 是相关而非因果；仓库虽覆盖核心模型和工具，却没有一个从全部原始数据到所有论文图的单命令工作流，部分 notebook 依赖硬编码路径和预计算文件。
-
-### 源证据入口
-
-- 论文：`paper source/paper/auto/paper.md`
-- 图像：`paper source/paper/auto/images/`
-- 代码：`cSplotch/`
-- 论文—代码映射：`doc_code.md`
-- 分图解读：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>General_Framework_Estimating_Preferences_Response_Time</h1>
     <p>A General Framework for Estimating Preferences Using Response Time Data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2507.20403" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2507.20403" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for General_Framework_Estimating_Preferences_Response_Time">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -203,7 +203,6 @@ $$
 
 ### 8. 复现边界
 
-- 官方代码：在全文、arXiv HTML、采集清单和 GitHub 链接 sidecar 中均 **Not found**。
 - 补充材料：在当前采集源中 **Not found**。
 - 实证预处理、优化器、初始化、停止条件和随机种子：**Not found**。
 - 边界 $b$ 的精确矩匹配步骤：**Not found**，论文只给出文字描述。
@@ -251,7 +250,7 @@ No official implementation or supplementary material was found in the full paper
 
 The title, authors, and arXiv `2507.20403v2` are verified by the manuscript. ACM Conference on Economics and Computation (EC), 2026 is listed on Michael I. Jordan's official publications page; the arXiv manuscript itself does not independently state that venue.
 
-**Reproducibility assessment: 2/5.** The theoretical method is specified clearly enough to reimplement in simple cases, and data provenance/split and headline model choices are reported. Lack of code and missing empirical fitting details prevent exact reproduction.
+Lack of code and missing empirical fitting details prevent exact reproduction.
 
 </article>
 </section>

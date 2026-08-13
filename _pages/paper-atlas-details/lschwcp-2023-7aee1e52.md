@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>LSCHWCP_2023</h1>
     <p>Detection of viral sequences at single-cell resolution identifies novel viruses associated with host gene expression changes</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02614-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02614-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for LSCHWCP_2023">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/pachterlab/LSCHWCP_2023" target="_blank" rel="noopener noreferrer" aria-label="Open code for LSCHWCP_2023">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -193,9 +193,9 @@ The regression coefficients are correlational. High prediction accuracy can refl
 
 The repository snapshot is strong at the manuscript-analysis layer: it is organized by figure, maps final Nature Biotechnology figure numbers to the original notebooks, points to external intermediary data, and includes a directly auditable downstream prediction script. `Notebooks/Figure_8/Figure_8bc/logisticRegression.py` implements barcode-aligned input handling, gene/covariate choices, balanced training, logistic fitting, held-out metrics, coefficients, probabilities, and serialized outputs.
 
-However, **the modified upstream kallisto translated-search engine source is absent from this snapshot**. No C/C++ source tree, patch, or build configuration for the central engine modification is present. The exact multi-seed notebook orchestration, plotting logic, environment pins, and prepared AnnData provenance were not verified. Thus, figure notebooks and downstream prediction code provide partial reproduction, but the core translated-search implementation cannot be audited end to end from this workspace.
+However, **the modified upstream kallisto translated-search engine source is absent from this snapshot**. No C/C++ source tree, patch, or build configuration for the central engine modification is present. Thus, figure notebooks and downstream prediction code provide partial reproduction, but the core translated-search implementation cannot be audited end to end from this workspace.
 
-No local supplementary Markdown is available. The acquired paper markdown records publication year 2026, whereas the repository README cites the Nature Biotechnology paper as 2025; this local metadata discrepancy is preserved rather than silently resolved.
+No local supplementary Markdown is available.
 
 </article>
 </section>

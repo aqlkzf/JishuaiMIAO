@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Proseg</h1>
     <p>Cell simulation as cell segmentation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02697-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02697-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Proseg">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/dcjones/proseg" target="_blank" rel="noopener noreferrer" aria-label="Open code for Proseg">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -159,8 +159,6 @@ Proseg 在四数据集中通常有最低可疑共表达，同时比图像分割�
 | transcript repositioning | `sampler/transcriptrepo.rs` | Exact |
 | polygon/SpatialData output | `sampler/polygons.rs`, `spatialdata.rs` | Exact |
 
-代码 URL 为 `https://github.com/dcjones/proseg`，但本目录是共享仓库中的非独立 VCS 快照，不能从其自身确认 commit，故合同使用 `commit=null` 和 `local_dir`。
-
 ### 12. 最重要的限制
 
 1. 模型依赖核初始化；漏核和错误核数仍限制最终细胞数。
@@ -233,37 +231,37 @@ Proseg adapts **Cellular Potts Models (CPMs)** from computational biology into a
    - Each voxel assigned to a cell ID or marked as unassigned (∅)
    - Enables fine-grained boundary adjustments
 
-   > **🧠 Think About It**: Why voxels? They provide a computational grid that's fine enough to capture cell boundaries but coarse enough to be computationally tractable.
+> **🧠 Think About It**: Why voxels? They provide a computational grid that's fine enough to capture cell boundaries but coarse enough to be computationally tractable.
 
 2. **Probabilistic Model**
    ```
    P(segmentation | transcripts) ∝ P(transcripts | segmentation) × P(segmentation)
    ```
-   - **Likelihood**: How well does segmentation explain observed transcript patterns?
+- **Likelihood**: How well does segmentation explain observed transcript patterns?
    - **Prior**: Morphological constraints on realistic cell shapes
 
-   > **📊 Bayesian Intuition**: This is just Bayes' theorem! We're finding the segmentation that best balances "explaining the data" (likelihood) with "being biologically reasonable" (prior).
+> **📊 Bayesian Intuition**: This is just Bayes' theorem! We're finding the segmentation that best balances "explaining the data" (likelihood) with "being biologically reasonable" (prior).
 
 3. **Metropolis-Hastings Sampling**
    - Proposes random voxel reassignments at cell boundaries
    - Accepts/rejects based on improvement in posterior probability
    - Maintains detailed balance for proper MCMC convergence
 
-   > **⚙️ Why MCMC?**: The space of all possible segmentations is enormous. MCMC lets us sample from this space efficiently without evaluating every possibility.
+> **⚙️ Why MCMC?**: The space of all possible segmentations is enormous. MCMC lets us sample from this space efficiently without evaluating every possibility.
 
 4. **Hierarchical Gene Expression Model**
    - Cell-specific expression levels: Gamma distribution
    - Gene counts given expression: Negative binomial
    - Handles overdispersion inherent in single-cell data
 
-   > **🔬 Biological Reality**: Single-cell expression is noisy! The hierarchical model captures both biological variation (cell-to-cell differences) and technical noise (detection efficiency).
+> **🔬 Biological Reality**: Single-cell expression is noisy! The hierarchical model captures both biological variation (cell-to-cell differences) and technical noise (detection efficiency).
 
 5. **Transcript Repositioning**
    - Models RNA leakage/diffusion from cells
    - Mixture of normal distributions centered on true cell
    - Accounts for technical artifacts in transcript detection
 
-   > **🧪 Technical Detail**: During tissue processing, some RNA molecules escape their origin cells. This component models where those "lost" transcripts might have come from.
+> **🧪 Technical Detail**: During tissue processing, some RNA molecules escape their origin cells. This component models where those "lost" transcripts might have come from.
 
 **Code Connection**: See how these components are implemented in doc_code.md.
 

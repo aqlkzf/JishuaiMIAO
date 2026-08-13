@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>edgotype</h1>
     <p>Widespread Macromolecular Interaction Perturbations in Human Genetic Disorders</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2015.04.013" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2015.04.013" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for edgotype">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -126,7 +126,7 @@ PPI profile 不变的 transcription factor mutation 可能破坏 DNA binding。�
 
 ### 10. Paper-code 与版本/复现边界
 
-本工作区是 paper-only。主证据是 `paper.md`、原始 `paper.xml`、7 张主图和 7 张补充图；没有作者 deposited source repository、analysis scripts、raw plate files、ORF clone sequences、Y2H/GPCA replicate matrix、permutation seeds 或 environment lockfile。因此下列实现只能从论文/Extended Experimental Procedures 重建，不能直接代码验证：
+主证据是 `paper.md`、原始 `paper.xml`、7 张主图和 7 张补充图；没有作者 deposited source repository、analysis scripts、raw plate files、ORF clone sequences、Y2H/GPCA replicate matrix、permutation seeds 或 environment lockfile。因此下列实现只能从论文/Extended Experimental Procedures 重建，不能直接代码验证：
 
 - LUMIER Gaussian mixture/plate spatial correction 与 differential Z-score；
 - ELISA normalization 与 threshold application；
@@ -137,7 +137,7 @@ PPI profile 不变的 transcription factor mutation 可能破坏 DNA binding。�
 - 100,000 permutations 与 downsampling；
 - Figures 1–7/S1–S7 的 plotting pipeline。
 
-论文的 supplementary tables/data 也未作为独立机器可读文件出现在当前工作区。这里可以严谨解释实验流程、图和报告数字，不能声称一键复现或重新计算结果。未来若找到 code/data release，必须记录 URL、release/commit、数据库版本（HGMD 2009、ClinVar/1000 Genomes、HI-II-14、PDB/FoldX 等）并重新做 paper-code map。
+这里可以严谨解释实验流程、图和报告数字，不能声称一键复现或重新计算结果。未来若找到 code/data release，必须记录 URL、release/commit、数据库版本（HGMD 2009、ClinVar/1000 Genomes、HI-II-14、PDB/FoldX 等）并重新做 paper-code map。
 
 工作区放在 `protein_sequence_models` 是仓库分类历史，不应把 edgotyping 误写成 protein language model 或 sequence predictor。它是高通量 experimental interaction-profiling framework，辅以统计模型和结构/网络分析。
 

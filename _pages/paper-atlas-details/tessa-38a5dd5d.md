@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TESSA</h1>
     <p>TESSA: A unified model to detect trajectory-preserved and spatially-variable genes in spatial transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.09.06.674654" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.09.06.674654" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TESSA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Cui-STT-Lab/TESSA" target="_blank" rel="noopener noreferrer" aria-label="Open code for TESSA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -192,14 +192,6 @@ Figure 6–8 分析 PDAC、LUAD、STARmap 小鼠皮层和多样本人 DLPFC。uT
 | 真实数据全部预处理/签名基因选择 | 教程和随附 PDAC 对象仅覆盖一部分 | Partial |
 
 代码还存在需要运行前审查的细节：`CreateTessaObject()`的协变量索引方向可疑（`TESSA.R:95-98`）；Stage 2 构造 $\mathbf V_0$时循环中使用整个 `model.l$tau` 向量乘每个核（`604-608`），多核约化模型下可能发生 R 的回收规则。这些不会改变论文公式，却是复现结果时必须测试的实现风险。
-
-### 13. 证据入口
-
-- 主论文、方法、补充说明和扩展图：`paper.pdf`、`paper source/paper/paper.md`
-- 图像：`paper source/paper/_page_*_Figure_*.jpeg`
-- 核心 R 实现：`TESSA_code/R/TESSA.R`
-- C++ 数值薄封装：`TESSA_code/src/funcs.cpp`
-- 详细公式和逐图解读：`doc_method.md`、`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

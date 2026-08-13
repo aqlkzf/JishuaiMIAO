@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>clone2vec</h1>
     <p>Clonal embeddings allow exploratory analysis of lineage-resolved single-cell data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.30.720820" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.30.720820" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for clone2vec">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/kharchenkolab/clone2vec" target="_blank" rel="noopener noreferrer" aria-label="Open code for clone2vec">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -131,7 +131,7 @@ clone2vec 的核心不是先把 clone 压成“某几类细胞占比”，而是
 
 ### 复现上的真实情况
 
-当前 workspace 里的 `kharchenkolab-clone2vec` 仓库很好地覆盖了算法主干：邻域图、Skip-Gram、Poisson 变体、对齐逻辑都能直接找到源码。但论文的 code availability 还提到另一个 `clone2vec_analysis` 仓库用于论文分析复现（`paper.md:196-201`），这个仓库没有在当前工作区里，所以：
+当前 workspace 里的 `kharchenkolab-clone2vec` 仓库很好地覆盖了算法主干：邻域图、Skip-Gram、Poisson 变体、对齐逻辑都能直接找到源码。
 
 - 算法实现：可以直接核对，匹配度高；
 - 论文所有图的完整复现实验脚本：当前 workspace 里没有。

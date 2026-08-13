@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpaLP</h1>
     <p>A lightweight, ultrafast and general embedding framework for large-scale spatial omics data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.02.04.703814" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.02.04.703814" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpaLP">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/dbjzs/SpaLP" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpaLP">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -186,15 +186,6 @@ decoder 输出是从局部聚合 embedding 重构的分子特征。它可能平�
 ### 15. 最容易误解的四点
 
 第一，SpaLP 不是 linear programming；LP 指 Local Pooling。第二，索引矩阵并不表示模型看见全图，每次前向仍是一跳邻域。第三，训练 epoch 增加不会像堆叠 GNN layer 那样扩展单样本感受野。第四，重构后空间图更平滑不自动等于生物学更真实，必须结合 marker、病理和独立注释验证。
-
-### 证据入口
-
-- 主文、Methods 与 Extended Data：`paper source/paper/vlm/paper.md`
-- 44 页 PDF：`paper.pdf`
-- 固定代码快照：`SpaLP/`，官方记录 commit `e9c99c40cc9519fb8a5b9cca23912718aa266c3c`
-- 论文—代码差异：`doc_code.md`
-- 详细公式：`doc_method.md`
-- 逐图证据：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

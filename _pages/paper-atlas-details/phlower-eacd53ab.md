@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>PHLOWER</h1>
     <p>PHLOWER leverages single-cell multimodal data to infer complex, multi-branching cell differentiation trajectories</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02870-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02870-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PHLOWER">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/CostaLab/phlower" target="_blank" rel="noopener noreferrer" aria-label="Open code for PHLOWER">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -164,7 +164,7 @@ Extended Data Fig. 3 显示资源成本很高：桌面 benchmark 总体约 0.5�
 
 ### 11. 代码与复现边界
 
-本地 `code/` 包含 PHLOWER 0.1.5 的直接 Python 实现、文档 notebook 和 bundled STREAM/third-party code。关键函数与论文路径可逐项对应，但本地快照没有 `.git` provenance，所以 commit SHA 无法确认；`analysis_meta` 应保持 `code_repo_commit=null`。
+本地 `code/` 包含 PHLOWER 0.1.5 的直接 Python 实现、文档 notebook 和 bundled STREAM/third-party code。`analysis_meta` 应保持 `code_repo_commit=null`。
 
 安装名是 `phlowerpy`，不是 `phlower`：README 与 `setup.py` 都给出 `pip install phlowerpy`。系统还需要 SuiteSparse/CHOLMOD、Graphviz/pygraphviz 等依赖。完整 benchmark 的 reproducibility repository、Zenodo 数据与 R/Dynverse 环境不在本地快照内；本轮没有重新执行高内存 notebook 或全 benchmark。
 

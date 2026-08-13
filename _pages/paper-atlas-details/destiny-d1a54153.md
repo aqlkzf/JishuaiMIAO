@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>destiny</h1>
     <p>destiny: diffusion maps for large-scale single-cell data in R</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bioinformatics/btv715" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bioinformatics/btv715" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for destiny">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/destiny" target="_blank" rel="noopener noreferrer" aria-label="Open code for destiny">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -171,17 +171,9 @@ $$
 
 ### 9. 复现与解释边界
 
-要复现论文结果，至少需要相同数据版本、预处理、距离、$k$、$\sigma$、选取的 DC 与随机初始化。当前 `RSpectra` 初始向量默认随机生成；需要严格复现时应设置随机种子或显式 `initvec`。主文只给出软件和案例层面的说明，本工作区未包含论文所有原始数据，也没有执行完整 benchmark。
+要复现论文结果，至少需要相同数据版本、预处理、距离、$k$、$\sigma$、选取的 DC 与随机初始化。当前 `RSpectra` 初始向量默认随机生成；需要严格复现时应设置随机种子或显式 `initvec`。
 
 最终应把 destiny 的输出理解为“数据定义的扩散几何”，而不是直接的发育时间、因果调控网络或已验证谱系。可靠分析应检查不同 $k$、$\sigma$、特征选择和批次处理下流形是否稳定，用已知时间、marker 或独立谱系实验验证方向，并对参考图之外的新状态谨慎使用投影。
-
-### 10. 本工作区的证据范围
-
-- 主文：`paper.md`，69 行，包含方法、应用、Fig. 1 和讨论。
-- 补充：`output_supp_md/btv715-destiny-supplement/vlm/btv715-destiny-supplement.md`，包含预处理、参数选择、投影、补充图表与运行时间。
-- 图像：完整 `images/fig1.jpeg` 与一张不完整裁剪图；主图已直接查看。
-- 代码：`destiny/` 当前 commit `cc5f6bd7d04c79a3cef80a92a56236e9b11c67fd`，本次仅只读核对。
-- 未完成：没有在当前环境重跑论文四个数据集和性能表；这些边界不影响方法文档完整性，但限制对数值复现的声称。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

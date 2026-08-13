@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Zman-seq</h1>
     <p>Time-resolved single-cell transcriptomics defines immune trajectories in glioblastoma</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2023.11.032" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2023.11.032" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Zman-seq">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/kenxie7/ZmanR" target="_blank" rel="noopener noreferrer" aria-label="Open code for Zman-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -131,7 +131,7 @@ $$
 - 图 5 与图 S7：比较对照和 aTREM2，说明干预不是简单改变终点丰度，而是重定向分化路径。
 - 图 S6：以实测 AUC 为参照比较 scVelo、DPT、Palantir、Monocle2、redPATH、SCORPIUS；结果同时显示推断方法对基因选择高度敏感，而不是证明 cTET 本身没有误差。
 
-补充图 S1–S7 的图注已包含在本地 `paper.md` 中；独立的补充表/原始分析脚本没有作为本工作区证据文件完整保存。
+补充图 S1–S7 的图注已包含在本地 `paper.md` 中；
 
 ### 8. 论文—代码对应与版本边界
 
@@ -145,7 +145,7 @@ $$
 | 时间相关基因与 loess | `zman_trajectory_analysis.R:379-450` | **Exact**：Spearman 检验和 loess 预测均可定位 |
 | MetaCell 构造、DoRothEA、NicheNet、DESeq2 和基准 | 外部依赖/论文分析流程 | **Not found**：不在本地 ZmanR 源码中 |
 
-本地 `DESCRIPTION` 标记 ZmanR 版本为 1.0.0，上游地址记录为 `https://github.com/kenxie7/ZmanR`。但 `ZmanR/` 内没有独立 `.git` 或 `.repo_source`，因此**上游提交哈希 Not recorded**；运行 `git -C ZmanR rev-parse HEAD` 得到的是 PaperCode 外层仓库提交，不能当作 ZmanR 来源版本。当前快照也没有端到端论文作图脚本、锁定环境、容器或自动测试，所以可核对函数机制，但不能仅靠该目录复现所有主图。
+本地 `DESCRIPTION` 标记 ZmanR 版本为 1.0.0，上游地址记录为 `https://github.com/kenxie7/ZmanR`。当前快照也没有端到端论文作图脚本、锁定环境、容器或自动测试，所以可核对函数机制，但不能仅靠该目录复现所有主图。
 
 工作区 CodeGraph 已尝试用于核心函数定位，但索引没有返回相关符号；以上实现判断均回退到直接阅读 R 源码，并以论文 STAR Methods、主图及补充图注作为最终证据。
 

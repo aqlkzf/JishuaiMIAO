@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Aging Mouse Brain Epigenome</h1>
     <p>Cell-type-specific transposon demethylation and TAD remodeling in aging mouse brain</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.02.015" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.02.015" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Aging Mouse Brain Epigenome">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/rachelzeng98/aging-mouse-brain" target="_blank" rel="noopener noreferrer" aria-label="Open code for Aging Mouse Brain Epigenome">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -136,7 +136,7 @@ EpiAgingTransformer 把每个基因分为 age-up、age-down 或 non-DEG。输入
 
 论文的强项是把局部甲基化、TE、3D genome、空间 RNA 和表达预测放到同一细胞分类框架中。主要结论不是“整个脑普遍去甲基化”，而是全局平均相对稳定之下，特定细胞和区域发生局部、连续且多模态一致的变化。边界增强、TE 活化和炎症基因上调提供可检验机制，但仍需 TE 抑制、CTCF/cohesin 操作或区域特异干预来建立因果。
 
-复现方面，原始数据和大量分析 notebooks 已公开，但目录依赖日期和机构路径、数据量可达数百 TB，且 EAT 模型位于外部仓库。因此当前工作区能高可信复核大部分分析逻辑与图表生成链，不能视为单命令完整复现包。
+复现方面，原始数据和大量分析 notebooks 已公开，但目录依赖日期和机构路径、数据量可达数百 TB，且 EAT 模型位于外部仓库。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

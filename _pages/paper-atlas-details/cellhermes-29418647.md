@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellHermes</h1>
     <p>Language may be all omics needs: Harmonizing multimodal data for omics understanding with CellHermes</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.11.07.687322" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.11.07.687322" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellHermes">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/CellHermes" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellHermes">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -97,7 +97,7 @@ $$\operatorname{Attention}(Q,K,V)=\operatorname{softmax}\!\left(\frac{QK^T}{\sqr
 
 ### 论文如何评价？
 
-论文报告基因嵌入的五个分类任务与功能相似性/富集分析（59–69 行），细胞嵌入在 Immune、Aorta、Lung、Pancreas、PBMC 上用 scIB 评估（77–86 行），并在扰动、细胞适应度、遗传互作和基因集任务上评估预测器（88–100 行）。T 细胞反应性案例使用细胞级和 TCR 级划分（111–117 行）。这些都是**论文报告的结果**，本工作区没有图像、数据和评测运行器，未独立复现。
+论文报告基因嵌入的五个分类任务与功能相似性/富集分析（59–69 行），细胞嵌入在 Immune、Aorta、Lung、Pancreas、PBMC 上用 scIB 评估（77–86 行），并在扰动、细胞适应度、遗传互作和基因集任务上评估预测器（88–100 行）。T 细胞反应性案例使用细胞级和 TCR 级划分（111–117 行）。
 
 ### 阅读时应保留的边界
 

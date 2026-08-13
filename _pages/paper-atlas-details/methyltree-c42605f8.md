@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>MethylTree</h1>
     <p>High-resolution, noninvasive single-cell lineage tracing in mice and humans based on DNA methylation epimutations</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/ShouWenWang-Lab/MethylTree" target="_blank" rel="noopener noreferrer" aria-label="Open code for MethylTree">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -110,7 +111,7 @@ $$
 
 然后合并相邻小窗，并去掉在不足 10% 细胞中被观测到的区域。中等甲基化区域通常比极端低/高甲基化区域更容易包含随机谱系差异；过大的 100-kb 窗会把信号平均掉。
 
-本地代码证据主要来自笔记本：`mouse_LK_downstream_analysis.ipynb:1072-1092` 使用 $m_0=0.1$、$m_1=0.6$、pseudobulk 最低读数 3，并设置 `merge=True`；底层辅助函数位于 `region.py:327-360`。其他数据集的完整参数依赖 Supplementary Table 1 和外部配置，当前工作区未获取补充材料，因此这些参数保持 **Not found**，不作推断。
+本地代码证据主要来自笔记本：`mouse_LK_downstream_analysis.ipynb:1072-1092` 使用 $m_0=0.1$、$m_1=0.6$、pseudobulk 最低读数 3，并设置 `merge=True`；底层辅助函数位于 `region.py:327-360`。
 
 ### 5. 稀疏条件下的细胞两两相似度
 
@@ -269,7 +270,7 @@ methylserver_call
     → optional clone inference               clone.py
 ```
 
-当前代码快照来自 `https://github.com/ShouWenWang-Lab/MethylTree`，提交 `33a693d0c41cfa56d61a6332e44163a9996ab416`。另有预处理和论文笔记本快照，具体提交记录在 `code_snapshot/acquisition_provenance.md`。核心包固定了 Python 与依赖版本，提供教程、模拟、相似度校正、建树和 bootstrap 实现，但没有发现自动化测试套件。
+当前代码快照来自 `https://github.com/ShouWenWang-Lab/MethylTree`，提交 `33a693d0c41cfa56d61a6332e44163a9996ab416`。核心包固定了 Python 与依赖版本，提供教程、模拟、相似度校正、建树和 bootstrap 实现，但没有发现自动化测试套件。
 
 综合评价为：**代码—论文一致性 medium；复现性 3/5。** 相似度主体、校正目标、细胞类型去除、UPGMA 和 bootstrap 有直接实现；快速相关、校正停止条件、缩放、嵌入和克隆路线存在明确偏差；主图笔记本依赖外部 AnnData 与预计算相似度，尚不能在本地形成单一的“原始数据到全部图表”执行链。
 

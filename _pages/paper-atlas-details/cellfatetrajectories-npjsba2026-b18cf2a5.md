@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellFateTrajectories_npjSBA2026</h1>
     <p>Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellFateTrajectories_npjSBA2026">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -89,7 +89,7 @@ SB 在参考随机过程附近寻找连接端点分布的最可能随机动力�
 
 ### CytoBridge 的证据边界
 
-文章介绍正在开发的 CytoBridge 作为统一软件接口，并给出预处理、`fit`、下游分析和轨迹生成示例。但本 PaperCode 工作区没有克隆 CytoBridge 源码，因此不能验证 API、版本或结果复现。论文也明确称该包持续更新；这里的代码片段应视为发表时的概念性使用指南，而非当前稳定 API 合同。
+文章介绍正在开发的 CytoBridge 作为统一软件接口，并给出预处理、`fit`、下游分析和轨迹生成示例。论文也明确称该包持续更新；这里的代码片段应视为发表时的概念性使用指南，而非当前稳定 API 合同。
 
 ### 关键局限
 
@@ -98,15 +98,6 @@ SB 在参考随机过程附近寻找连接端点分布的最可能随机动力�
 3. 低维嵌入有利于训练，却可能丢失基因层面的可解释信号；回投原基因空间需要误差检查。
 4. velocity、growth、score 与 interaction 可相互补偿，需 lineage tracing、增殖测量或扰动实验做外部验证。
 5. 综述涵盖大量 2025 年预印本；方法成熟度、软件维护和基准证据并不一致。
-
-### 证据入口
-
-- 全文：`paper source/paper/paper.md`
-- 本地图：`paper source/paper/*.jpeg`
-- 综述总结：`summary.md`
-- 方法谱系：`doc_method.md`
-- 阅读札记：`reading_notes.md`
-- 逐图解读：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

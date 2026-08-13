@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>OSDR</h1>
     <p>Temporal tissue dynamics from a spatial snapshot</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09876-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09876-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for OSDR">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/JonathanSomer/osdr" target="_blank" rel="noopener noreferrer" aria-label="Open code for OSDR">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -211,7 +211,7 @@ $$
 | 论文图 2–5 | `src/tdm/publications/first/` | 大部分可追踪，存在统计/CI差异 |
 | Fokker–Planck 未建模场 | `src/tdm/` searched | Not found |
 
-本地目录是 `https://github.com/JonathanSomer/osdr` 的软件/论文脚本快照，包名为 `tdm`、版本 `0.0.1`、Python ≥3.10。目录没有嵌套 Git 元数据或 `.repo_source`，因此精确上游提交 **Not found**。不能把 PaperCode 的导入提交当作作者仓提交。
+本地目录是 `https://github.com/JonathanSomer/osdr` 的软件/论文脚本快照，包名为 `tdm`、版本 `0.0.1`、Python ≥3.10。
 
 ### 主图怎么读
 

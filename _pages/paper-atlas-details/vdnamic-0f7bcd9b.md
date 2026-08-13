@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>vdnamic</h1>
     <p>Spatial transcriptomic imaging of an intact organism using volumetric DNA microscopy</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for vdnamic">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/wlab-bio/vdnamic" target="_blank" rel="noopener noreferrer" aria-label="Open code for vdnamic">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -364,7 +364,7 @@ The key computational idea is that the final objective remains the UEI likelihoo
 
 **Reproducibility rating: 4/5.** The public repository is a high-fidelity implementation of the core computational pipeline. Direct source reads verify one-base EASL-style clustering, plurality UEI assignment, iterative graph filtering, cDNA consensus and STAR/GTF annotation, the row-normalized UEI eigenspace, Eq. 2 rescaling, tangent-space geodesic smoothing, the sparse GSE kernel, hierarchical interpolation, sampled likelihood optimization, and the two-pass 0.1% + 0.1% dispersion filter. The repository includes environment specifications, documented CLI usage, example UEI/cDNA settings, simulators, and a five-minute end-to-end test harness.
 
-The main gaps are publication-level provenance rather than the core algorithm: exact per-specimen settings/run directories, raw data and reference indices, cached intermediate provenance, the complete Fig. 4 sweep, and the Stereo-seq/Fig. 6 analysis are **Not found** in the snapshot. The code therefore supports understanding and rerunning vDNAmic/GSE on prepared inputs, but it is not a frozen capsule that regenerates every paper panel from one command.
+4 sweep, and the Stereo-seq/Fig. 6 analysis are **Not found** in the snapshot. The code therefore supports understanding and rerunning vDNAmic/GSE on prepared inputs, but it is not a frozen capsule that regenerates every paper panel from one command.
 
 ### Bottom line
 

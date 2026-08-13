@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Representation Models</span>
-      <span>ICML 2024 · 2024</span>
+      <span>PMLR · 2024</span>
     </div>
     <h1>M3G</h1>
     <p>Contrasting Multiple Representations with the Multi-Marginal Matching Gap</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2405.19532" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2405.19532" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for M3G">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/mlrapp/m3g" target="_blank" rel="noopener noreferrer" aria-label="Open code for M3G">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -185,7 +185,7 @@ Figure 3 显示 $\varepsilon=0.2$ 后不同 $k$ 的准确率大致稳定。Table
 
 ### 9. 可复现性与真实代码边界
 
-论文附录给出 MM-Sinkhorn、cost tensor、数据增强和主要超参数，算法描述较完整。但本工作区没有 M3G 实现：
+论文附录给出 MM-Sinkhorn、cost tensor、数据增强和主要超参数，算法描述较完整。
 
 - 官方 `mlrapp/m3g` 当前仓库只含项目网页、README 和静态资源；网页 Code 链接仍是被注释掉的模板占位；
 - `Multiview_TS_SSL` 是论文明确复用的 Brusch et al. EEG 基线代码快照，可验证数据加载器、卷积编码器和 pairwise/COCOA 等基线，但搜索不到 M3G、multi-marginal Sinkhorn 或 matching-gap 实现；

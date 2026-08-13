@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MultiCell</h1>
     <p>MultiCell: geometric learning in multicellular development</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02983-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02983-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MultiCell">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/HaiqianYang-MechE/MultiCell" target="_blank" rel="noopener noreferrer" aria-label="Open code for MultiCell">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -112,7 +112,6 @@ $$
 3. `MC_dataprep.py` 划分独立胚胎的训练/测试集，替换 NaN、转为无向边、标准化特征、做长度/shear/变化率和标签变换。
 4. `MC_utils.get_model()` 根据任务构造 `MC_binary` 或 `MC2`。
 5. `MC_train.py` 用 AdamW、mixed precision、gradient clipping 和可选 cosine scheduler 训练。
-6. `MC_test.py` 在整个测试集上计算 AUC 或 Pearson correlation；论文数值来自跨独立胚胎验证，不是本工作区重新运行得到的结果。
 
 ### 7. 主图应如何阅读
 
@@ -135,17 +134,6 @@ Figure 4 的三项 30 分钟预测相关系数按图中顺序是 invagination 0.
 ### 9. 一个小例子
 
 假设一条细胞连接正在缩短。只看长度，模型可能认为它即将消失；但若两侧细胞整体形状和更远邻域不支持重排，Graph Transformer 可以通过消息传递降低该概率。相反，两条长度相同的连接处于不同组织域和不同邻域应力几何时，模型可以给出不同预测。这正是 MultiCell 相比“短边阈值”基线多出的信息来源。
-
-### 证据入口
-
-- 主论文：`paper source/paper/vlm/paper.md`。
-- 补充方法：`output_paper_supp_md/paper_supp1/vlm/paper_supp1.md`。
-- 主图：`paper source/paper/vlm/images/`。
-- 图模型与任务头：`MultiCell/run/scripts/MC_model.py`。
-- 训练与损失：`MultiCell/run/scripts/MC_train.py`、`MC_loss.py`、`MC_main.py`。
-- Python 数据准备：`MultiCell/run/scripts/MC_dataprep.py`、`MC_utils.py`。
-- MATLAB 几何与标签预处理：`MultiCell/preprocess/MC_Drosophila_preprocess_main.m`。
-- 代码来源记录：`MultiCell/.repo_source`，提交 `9d02e218341e555df7c5b49956f17980d0231117`。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

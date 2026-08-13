@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellRank 2</h1>
     <p>CellRank 2: unified fate mapping in multiview single-cell data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02303-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02303-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellRank 2">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/cellrank" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellRank 2">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -136,7 +136,6 @@ $$
 - **Fig. 3**：展示 CytoTRACE score 如何替代外部起点形成方向，并将命运概率用于 endoderm 相关基因排序。
 - **Fig. 4**：重点比较仅跨时间 OT 与加入时间点内转移的 RealTimeKernel；mTEC fate probability 是后续候选基因排名的条件变量。
 - **Extended Data Fig. 2**：支持可扩展性主张，但运行时间数字受数据规模、稀疏度、求解器和硬件约束。
-- **Extended Data Figs. 3–7、9–10**：分别补充 kernel 比较、CytoTRACE、RealTimeKernel、mTEC 和代谢标记案例。当前工作区没有独立 supplement Markdown；这些 Extended Data 图及报告材料嵌在 `cellrank.md` 中。
 
 随机游走和 embedding 上的流线都只是 $T$ 的可视化：它们让高维概率流更容易观察，但投影会压缩维度，单条模拟游走也不是实测细胞谱系。
 
@@ -169,7 +168,6 @@ $$
 - 论文：`paper source/cellrank/cellrank.md`，包含正文、Methods、图注、Extended Data 与 Code availability。
 - 图像：`paper source/cellrank/` 中的页面图像；OCR 图注存在少量排版噪声，面板解释以正文和图注交叉核对。
 - 当前代码：共享 CellRank 主仓库 commit `206cc19ca89d985245ca204fbc86772e5c2446d0`，工作树非干净状态；本次仅只读核对，没有修改源码。
-- 论文声明的代码：CellRank GitHub 仓库及 Zenodo DOI `10.5281/zenodo.10210196`；分析复现仓库为 `theislab/cellrank2_reproducibility`，Zenodo DOI `10.5281/zenodo.10809425`。当前工作区没有该复现仓库的本地冻结副本，因此本文档不声称重跑论文全部图表或 benchmark。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scMeFormer</h1>
     <p>Deep learning imputes DNA methylation states in single cells and enhances the detection of epigenetic alterations in schizophrenia</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.xgen.2025.100774" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.xgen.2025.100774" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scMeFormer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/LieberInstitute/scMeformer" target="_blank" rel="noopener noreferrer" aria-label="Open code for scMeFormer">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -138,15 +138,6 @@ $Q$ 小表示局部更一致，被视为更可靠。sn-m3C-seq 无下采样时�
 - AUPRC helper 存在，但验证/预测循环中的相关块被注释。
 - 预训练—微调接口存在，论文各数据集的完整调度脚本未发布。
 - 模型对训练分布、细胞聚类质量和局部平滑假设敏感；插补新增的大量 DMR 必须通过过滤与外部功能证据约束。
-
-### 证据入口
-
-- 论文：`paper.md`
-- 主图：`images/gr1_lrg.jpg` 至 `images/gr7_lrg.jpg`
-- 核心模型：`code/scMeformer/models/modeling_bert.py`
-- 预测头与损失：`code/scMeformer/models/modeling_utils.py`
-- 数据构造：`code/scMeformer/datasets.py`, `code/scMeformer/run_feature.py`
-- 训练：`code/scMeformer/training.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

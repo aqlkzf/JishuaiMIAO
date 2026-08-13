@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>PepPrCLIP</h1>
     <p>De novo design of peptide binders to conformationally diverse targets with contrastive language modeling</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1126/sciadv.adr8638" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1126/sciadv.adr8638" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PepPrCLIP">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/SuhaasBhat/PepPrCLIP" target="_blank" rel="noopener noreferrer" aria-label="Open code for PepPrCLIP">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -159,13 +159,6 @@ H_tilde = H + noise
 - 原始和处理数据另存 Zenodo `10.5281/zenodo.13917484`；代码仓库本身不是完整数据归档。
 
 因此该快照足以理解和重跑核心 notebook 逻辑，但不是无需外部模型、许可和路径适配即可一键重现全文结果的发布包。
-
-### 证据入口
-
-- 论文：`paper source/PMC11753435/paper.md`，重点为 Fig. 1–5、CLIP training、Gaussian perturbation、Materials and Methods 与 availability。
-- 补充：`output_supp_md/sciadv.adr8638_sm/auto/sciadv.adr8638_sm.md`，含 Fig. S1–S4 与算法/实验补充。
-- 代码：`PepPrCLIP_repo/PepPrCLIP.ipynb`、`PepPrCLIP Quickstart.ipynb`、两个 CSV。
-- 图像：`paper source/PMC11753435/images/`；图像解释以正文和图注为最终依据。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

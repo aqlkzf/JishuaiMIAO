@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>VISTA</h1>
     <p>VISTA uncovers missing gene expression and spatial-induced information for spatial transcriptomic data analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s42003-025-09479-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s42003-025-09479-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for VISTA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/HelloWorldLTY/VISTA" target="_blank" rel="noopener noreferrer" aria-label="Open code for VISTA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -137,13 +137,11 @@ SCC 衡量逐基因秩相关，SSIM 衡量空间图形，RMSE 衡量标准化数
 
 ### 版本与复现边界
 
-本地 `.repo_source` 与 `.repo_commit` 都记录 `https://github.com/HelloWorldLTY/VISTA` 提交 `fca168d751b7b024cd382eaca75f8e181fbbff75`。目录没有嵌套 `.git`，故该值来自采集清单而非当前现场 Git 对象验证。
-
-核心模型和 metric snippets 可审计，但 anchor、uncertainty、velocity、SIMVI 等关键环节散落在 notebook；多个 notebook 使用绝对 HPC 路径。完整的 seeds 0–9 baseline orchestration、全部数据预处理和可移植 figure generation 未找到。环境文件锁定较旧的 scvi-tools 等依赖，论文报告使用一张 A5000、最高约 150 GB RAM并限制 24 h；这不保证在任意新环境直接复现。当前工作区支持解释模型与识别实现歧义，不等于本机已重跑全部六图。
+核心模型和 metric snippets 可审计，但 anchor、uncertainty、velocity、SIMVI 等关键环节散落在 notebook；多个 notebook 使用绝对 HPC 路径。完整的 seeds 0–9 baseline orchestration、全部数据预处理和可移植 figure generation 未找到。环境文件锁定较旧的 scvi-tools 等依赖，论文报告使用一张 A5000、最高约 150 GB RAM并限制 24 h；这不保证在任意新环境直接复现。
 
 ### 实际使用建议
 
-优先选择组织、物种、条件和 cell states 匹配的 scRNA 参考；保留实测/预测 gene provenance；把 GAT 推断歧义与 notebook uncertainty 差异写入方法记录；对关键候选基因用 held-out 测量或独立技术验证。VISTA 最适合作为生成候选的参考引导模型，而不是把低 panel 空间实验无条件升级成真实全转录组。
+优先选择组织、物种、条件和 cell states 匹配的 scRNA 参考；把 GAT 推断歧义与 notebook uncertainty 差异写入方法记录；对关键候选基因用 held-out 测量或独立技术验证。VISTA 最适合作为生成候选的参考引导模型，而不是把低 panel 空间实验无条件升级成真实全转录组。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

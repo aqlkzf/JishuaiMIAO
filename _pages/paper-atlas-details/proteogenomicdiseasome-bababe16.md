@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ProteogenomicDiseasome</h1>
     <p>Multi-cohort proteogenomic analyses reveal genetic effects across the proteome and diseasome</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.03.049" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.03.049" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ProteogenomicDiseasome">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/comp-med/scallop-ukbb-ma" target="_blank" rel="noopener noreferrer" aria-label="Open code for ProteogenomicDiseasome">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -44,7 +44,7 @@ sitemap: false
 
 $$\hat\beta=\frac{\sum_k w_k\hat\beta_k}{\sum_k w_k},\qquad w_k=\frac{1}{SE_k^2}.$$
 
-论文 Methods 明确描述 fixed-effects inverse-variance meta-analysis，并对变异质量、等位基因频率、异质性和蛋白数做校正。公开脚本确实声明 marker、allele、EAF、beta、SE，并过滤 `INFO>0.8` 与 `0.001≤EAF≤0.999`；但最后调用的是 `ANALYZE RANDOM`（`01_meta_analysis/00_METAL_script.sh:1-18,52-55`）。这是本工作区最重要的纸码差异：公开文件可能是示例模板，而不是产生论文最终数字的完整命令。不能因为文件名叫 METAL 就把论文的固定效应结果视为已由该脚本逐字复现。
+论文 Methods 明确描述 fixed-effects inverse-variance meta-analysis，并对变异质量、等位基因频率、异质性和蛋白数做校正。公开脚本确实声明 marker、allele、EAF、beta、SE，并过滤 `INFO>0.8` 与 `0.001≤EAF≤0.999`；但最后调用的是 `ANALYZE RANDOM`（`01_meta_analysis/00_METAL_script.sh:1-18,52-55`）。不能因为文件名叫 METAL 就把论文的固定效应结果视为已由该脚本逐字复现。
 
 作者再用 SuSiE 对每个区域精细定位。SuSiE 把区域关联信号表示为若干个稀疏单效应之和，并为每个变异给出 posterior inclusion probability（PIP）及 credible-set 归属。代码尝试不同的信号数 $L=2\ldots10$，导出每个变异的 PIP 和每个 credible set 的 top variant（`02_finemapping/01_susie_finemapping.R:141-160,214-230`）。
 

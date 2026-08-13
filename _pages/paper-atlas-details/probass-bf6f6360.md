@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ProBASS</h1>
     <p>ProBASS---a language model with sequence and structural features for predicting the effect of mutations on binding affinity</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bioinformatics/btaf270" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bioinformatics/btaf270" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ProBASS">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/sagagugit/ProBASS" target="_blank" rel="noopener noreferrer" aria-label="Open code for ProBASS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -148,7 +148,7 @@ $\Delta\Delta G_{bind}$ 在文献中可能定义为 mutant minus WT，也可能�
 
 ### 9. 代码版本与可复现边界
 
-上游代码快照由 `.repo_source` 和 `.repo_commit` 固定到 `https://github.com/sagagugit/ProBASS` 的 `91ae179caa1a9f1876de1f3ab21e88569dff6c91`。克隆仓库的 `.git` 已被移除；因此在 `ProBASS/ProBASS` 内执行 `git rev-parse HEAD` 会向上找到 PaperCode 根仓库的提交，这不是上游 ProBASS commit。合同必须使用 manifest 记录的 `91ae179…`。
+克隆仓库的 `.git` 已被移除；合同必须使用 manifest 记录的 `91ae179…`。
 
 仓库中可直接支持：单突变 Colab 输入验证、PDB/FASTA 处理、ESM-2/ESM-IF1 embedding、1792 维融合、已训练 CatBoost 推理，以及一个本地绝对路径驱动的 80/20 training sketch。仓库未完整支持：
 

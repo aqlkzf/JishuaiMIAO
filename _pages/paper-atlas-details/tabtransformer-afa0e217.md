@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Representation Models</span>
-      <span>AAAI 2021 · 2021</span>
+      <span>AAAI · 2021</span>
     </div>
     <h1>TabTransformer</h1>
     <p>TabTransformer: Tabular Data Modeling Using Contextual Embeddings</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2012.06678" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2012.06678" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TabTransformer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/lucidrains/tab-transformer-pytorch" target="_blank" rel="noopener noreferrer" aria-label="Open code for TabTransformer">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -118,13 +118,6 @@ $$
 2. 图 2–3：上下文嵌入的语义聚类和逐层线性可分性。
 3. 图 4–5：随机噪声与人工缺失下相对 MLP 的退化曲线。
 4. 图 6–7：RTD 替换率与动态破坏/逐列预测器的补充消融。
-
-### 证据入口
-
-- 论文方法：`paper source/paper/vlm/paper.md:43-84`
-- 实验与主图：`paper source/paper/vlm/paper.md:86-160`
-- 补充消融：`paper source/paper/vlm/paper.md:287-330`
-- 本地实现：`tab-transformer-pytorch/tab_transformer_pytorch/tab_transformer_pytorch.py:24-249`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

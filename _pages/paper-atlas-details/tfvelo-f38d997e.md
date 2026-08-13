@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TFvelo</h1>
     <p>TFvelo: gene regulation inspired RNA velocity estimation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-45661-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-45661-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TFvelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/xiaoyeye/TFvelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for TFvelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -143,7 +143,7 @@ $$
 | 全局伪时间和流场 | `TFvelo_analysis_demo.py`、velocity graph 工具 | Partial：继承并修改 scVelo 框架 |
 | 全论文结果一键重现 | demo、baseline、simulation 脚本 | Partial：有入口，但本次未安装锁定环境或重跑全基准 |
 
-本地源码是 PaperCode 中的 vendored 目录，不含上游 `xiaoyeye/TFvelo` 的独立 `.git` 元数据；只能确认其在当前 PaperCode 快照中的收录提交 `affe8e8ae8196268a5cd318dbf11c21162390a11`，不能把它冒充为上游 TFvelo commit。README 锁定 Python 3.8.12、scVelo 0.2.4 等旧版本，且 ENCODE 必须先解压；当前工作区只有 `ENCODE.zip`，没有已解压的 `ENCODE/processed/`。论文补充材料在正文中有链接，但本地没有独立转换的 supplementary markdown。
+README 锁定 Python 3.8.12、scVelo 0.2.4 等旧版本，且 ENCODE 必须先解压；论文补充材料在正文中有链接，但本地没有独立转换的 supplementary markdown。
 
 本次已用 CodeGraph 定位 `recover_dynamics → DynamicsRecovery → assign_time/get_solution` 与 downstream velocity graph，再以直接源码核对公式和默认值；没有执行完整环境安装、训练、基准或论文数值复算。
 

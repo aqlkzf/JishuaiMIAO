@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Integration &amp; Multi-modal</span>
-      <span>arXiv preprint · 2025</span>
+      <span>arXiv · 2025</span>
     </div>
     <h1>HyperST</h1>
     <p>HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction</p>
-    <a class="paper-detail__doi" href="https://doi.org/arXiv:2511.22107" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/arXiv:2511.22107" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for HyperST">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/liesgame/HyperST" target="_blank" rel="noopener noreferrer" aria-label="Open code for HyperST">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -176,8 +176,6 @@ WSI + ST counts + spot coordinates
 
 ### 版本和复现边界
 
-1. 论文为 arXiv `2511.22107`（2025）。本地代码来自 `https://github.com/liesgame/HyperST`，采集提交 `93ce2379d66ebf0ce186d1ccf2fa9d570f276289`；代码目录没有独立嵌套 `.git`，提交来自采集元数据。
-2. `local metadata` 旧值误写成 paper-only/has_code=false，本轮按实际工作区修正为 paper+code，并补齐 repo URL/commit。
 3. 无独立 `SUPP_MD`；补充推导和实验设置嵌在主 OCR `paper.md`。另有 arXiv HTML 转换，但因缺引用/图像未作为 canonical source。
 4. 完整复现需要申请 HEST 数据与 gated UNI 权重，并在训练脚本填 Hugging Face token。环境文件和 kidney 入口存在，但其他数据集的可见 shell 工作流不完整。
 5. 本轮做了 paper-code-figure 静态验证，未下载全部 HEST、训练 200 epochs 或复算五次 splits；ready 状态表示分析合同完成，不是数值复现证明。

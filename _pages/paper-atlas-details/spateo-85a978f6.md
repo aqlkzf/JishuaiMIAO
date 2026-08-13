@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Spateo</h1>
     <p>Spatiotemporal modeling of molecular holograms</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2024.10.011" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2024.10.011" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Spateo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/aristoteleo/spateo-release" target="_blank" rel="noopener noreferrer" aria-label="Open code for Spateo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -162,7 +162,7 @@ Spateo-viewer 将 h5ad 的坐标、表达和注释转换为 VTK/PyVista 数据�
 
 ### 7. 复现性与代码边界
 
-论文声明使用 Spateo 1.1.0；本地 `setup.py` 是 1.1.1。当前目录嵌在 PaperCode 父仓库中，不能从本地 Git 元数据证明它对应官方仓库的某个独立 commit，因此代码来源应记录为官方 URL + local snapshot，而不伪造 commit。
+论文声明使用 Spateo 1.1.0；本地 `setup.py` 是 1.1.1。
 
 当前快照覆盖论文核心：
 
@@ -187,18 +187,6 @@ Spateo-viewer 将 h5ad 的坐标、表达和注释转换为 VTK/PyVista 数据�
 ### 9. 最安全的结论
 
 Spateo 的独特贡献不是某一个公式，而是把三维对齐、拓扑感知坐标、局部信号回归和形态向量场串成可扩展工具链，并在全胚尺度展示其价值。使用时应把每一级输出的证据类型分开：对齐是概率对应；digitization 是边界条件决定的相对坐标；CCI 是空间加权关联；morphic field 是跨阶段形变模型；基因排名是候选机制。保留这些边界，才能避免把“分子全息图”误读成直接成像的四维细胞谱系。
-
-### 源证据入口
-
-- 论文全文、STAR Methods 与补图图注：`paper source/paper/auto/paper.md`
-- 论文图像裁片：`paper source/paper/auto/images/`
-- 正式 PDF：`paper source/paper/auto/paper_origin.pdf`
-- 对齐入口：`spateo-release/spateo/alignment/morpho_alignment.py`
-- 对齐核心：`spateo-release/spateo/alignment/methods/morpho_class.py`
-- digitization：`spateo-release/spateo/digitization/grid.py`
-- CCI：`spateo-release/spateo/tools/CCI_effects_modeling/`
-- 形态场与几何：`spateo-release/spateo/tdr/morphometrics/`
-- 代码来源：`https://github.com/aristoteleo/spateo-release`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

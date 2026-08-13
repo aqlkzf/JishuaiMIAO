@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>OlfactorySpatialCode</h1>
     <p>A spatial code governs olfactory receptor choice and aligns sensory maps in the nose and brain</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.03.051" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.03.051" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for OlfactorySpatialCode">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/dattalab/Brann_olfactory_dorsoventral" target="_blank" rel="noopener noreferrer" aria-label="Open code for OlfactorySpatialCode">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -160,14 +160,6 @@ RA 梯度 → 前体 DV 身份 → 候选 OR 范围
 ### 12. 最容易误读的三点
 
 第一，DV score 是连续的转录坐标，不是显微镜直接测得的毫米距离；空间实验负责把它锚定到组织坐标。第二，OR 的平均地址不是说表达该 OR 的所有细胞都在同一点，而是一个窄但非零宽度的分布。第三，RA、异染色质和轴突导向组成的是多实验支持的机制链；当前代码仓库对各段的复现覆盖不均，不能把“论文有证据”与“代码可从原始数据重跑”混为一谈。
-
-### 证据入口
-
-- 论文：`paper.md`，重点为 Results、STAR Methods，以及 Figures 1–7。
-- 主图：`images/gr1_lrg.jpg` 至 `images/gr7_lrg.jpg`；补充图为 `images/figs*_lrg.jpg`。
-- 可复用代码：`code/dv_score/`。
-- 独立分析脚本：`code/scripts/analysis/`。
-- 逐图说明与更细公式：`figure_analysis.md`、`doc_method.md`。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

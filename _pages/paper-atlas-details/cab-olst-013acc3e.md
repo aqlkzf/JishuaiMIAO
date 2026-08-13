@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CAB-OLST</h1>
     <p>Confocal Airy beam oblique light-sheet tomography for brain-wide cell type distribution and morphology</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02888-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02888-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CAB-OLST">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/coreyelowsky/OLSTv2" target="_blank" rel="noopener noreferrer" aria-label="Open code for CAB-OLST">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -107,7 +107,7 @@ $\lambda$ 是波长，$(x,y)$ 是物镜后孔径平面的横向坐标，$f_{\mat
 
 不同波长经过 SLM 和光路后会产生色散偏移。作者为不同波长设置不同的 blazed grating（BG）参数，例如 488 nm 使用 −0.8，640 nm 使用 −1.1，通过角度补偿使两个通道重新共定位（`paper.md:94-105,196-199`）。
 
-当前系统按通道顺序采集，不是同时采集。Fig. 3 的合并图同时出现白色重叠细胞和单色细胞：白色部分说明通道能够对齐，单色部分则反映 reporter 与内源蛋白表达本身并非完全一致。论文没有给出基于微球的三维配准误差分布，因此“精确共定位”在本工作区中主要由图像示例支持。
+当前系统按通道顺序采集，不是同时采集。Fig. 3 的合并图同时出现白色重叠细胞和单色细胞：白色部分说明通道能够对齐，单色部分则反映 reporter 与内源蛋白表达本身并非完全一致。
 
 ### 6. 从样品到全脑体数据：完整采集流程
 
@@ -154,7 +154,7 @@ SLM 生成 Airy 相位 + BG 色散补偿 + 45° 旋转
 
 ### 7. 计算重建：OLSTv2 实际验证了什么？
 
-论文把重建概括为拼接、deskew 和条纹去除（`paper.md:229-235`）。当前工作区提供的 `OLSTv2` 代码只覆盖其中一部分，但这些部分有直接源码证据：
+论文把重建概括为拼接、deskew 和条纹去除（`paper.md:229-235`）。
 
 1. `StitchingXML.volume_coords_to_fused_image_coords` 先把局部体坐标转换为 stitching 坐标，再转换到指定的融合图像坐标（`OLSTv2/stitching/StitchingXML.py:1700-1732`）。
 2. `stitching_coords_to_fused_image_coords` 显式组合减去包围盒原点、各向异性校正、下采样、重切片、垂直翻转、shear、旋转和裁剪矩阵，最后把坐标四舍五入为整数（`StitchingXML.py:1738-1897`）。
@@ -221,12 +221,11 @@ Fig. 5 展示的六个神经元来自两只脑，可分为偏向 isocortex/STR/T
 - **Not found in OLSTv2**：论文所述显微镜、stage、振动切片机采集控制脚本；
 - **Not found in OLSTv2**：3D U-Net 的模型、训练、推理、Dice loss 和细胞中心后处理；
 - **Not found in OLSTv2**：完整图谱配准、脑区汇总和 Vaa3D/TeraVR 调度；
-- 论文的 Supplementary Tables 1–4 没有本地 Markdown，部分采集设置和平台比较无法在当前工作区逐项核对；
 - U-Net 未说明随机种子、数据增强、精确训练/验证体数量、centroid 匹配阈值和推理 patch 重叠；
 - OLSTv2 的 shell 子流程包含站点绝对路径和人工参数块，没有锁定环境、测试、示例数据或论文运行清单；
 - 原始数据每套约 4–60 TB，完整复现不仅是软件问题，也是硬件、存储和实验操作问题。
 
-综合来看，CAB-OLST 的技术原理和性能证据较完整，OLSTv2 也提供了可核验的重建代码；但当前工作区不能单独复现从显微镜采集到细胞计数或神经元 projectome 的完整生产流程。
+综合来看，CAB-OLST 的技术原理和性能证据较完整，OLSTv2 也提供了可核验的重建代码；
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

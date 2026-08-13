@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellMentor</h1>
     <p>CellMentor: cell-type aware dimensionality reduction for single-cell RNA-sequencing data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-67088-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-67088-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellMentor">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/petrenkokate/CellMentor" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellMentor">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -37,14 +37,6 @@ sitemap: false
 CellMentor 是一个 supervised non-negative matrix factorization（NMF）方法。它不是让降维表示保留“总体最大方差”，而是利用参考数据的 cell-type labels，直接要求同类细胞在 latent space 中更紧、易混淆的不同类型更远。训练得到 gene-by-factor basis $W$ 后，新 query cells 通过 non-negative least squares 投影到同一空间，不重新拟合 basis。
 
 这种设计适合“已有可靠 reference、希望分析新批次/新技术的同类细胞”的场景；它不是开放世界细胞类型发现器。query 中完全缺席于 reference 的类型、错误 reference labels 或极端 protocol mismatch 都可能破坏结果。
-
-### 证据入口
-
-- 论文：`paper source/PMC12796484/paper.md`，Nature Communications 2025，DOI `10.1038/s41467-025-67088-7`。
-- 本地 R 包：`CellMentor/R/`，commit `7660309498904e3743529843f8e68ea5c9d36853`。
-- 直接实现入口：`run_csfnmf.R`、`optimization_functions.R`、`SelectRank.R`、`InitializeWH.R`、`GridSearch.R`、`preprocessing.R`。
-- 论文说明 figure reproduction scripts 在另一个 `CellMentor_paper` 仓库；当前 workspace 是软件包代码，不包含全部 benchmark orchestration。
-- 论文 Markdown 给出主文、图注和 supplementary links；本地未恢复独立 supplementary markdown，figure analysis 以正文/图注证据为主。
 
 ### 输入、输出和两个阶段
 

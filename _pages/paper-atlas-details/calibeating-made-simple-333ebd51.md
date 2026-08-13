@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Machine Learning Algorithm</span>
-      <span>Proceedings of Machine Learning Research (COLT 2026) · 2026</span>
+      <span>PMLR · 2026</span>
     </div>
     <h1>Calibeating_Made_Simple</h1>
     <p>Calibeating Made Simple</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.22167" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.22167" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Calibeating_Made_Simple">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -129,7 +129,7 @@ $$
 3. **参考映射。** 将 $\mathsf A^*$ 的输出舍入成 $b_t$，构造所有列都等于 $b_t$ 的矩阵 $B_t$；它代表“完全跟随参考预测”。
 4. **非对称两专家权重。** 用 lopsided two-expert 算法产生 $w_t$，组合
 
-   $$C_t=w_tA_t+(1-w_t)B_t.$$
+$$C_t=w_tA_t+(1-w_t)B_t.$$
 
 5. **平稳分布采样。** 求 $C_t$ 的平稳分布 $\pi_t$，再从 $\pi_t$ 采样最终预测。
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SDEvelo</h1>
     <p>Multivariate stochastic modeling for transcriptional dynamics with cell-specific latent time using SDEvelo</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-55146-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-55146-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SDEvelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Liao-Xu/SDEvelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for SDEvelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -169,7 +169,7 @@ SDEvelo 将 velocity 与 latent time 投影到空间位置，用于划分肿瘤/
 
 ### 8. 补充材料提供了什么
 
-工作区保存四个补充 PDF。补图包含确定性/随机模拟、分支模拟、PBMC 负对照、空间癌症分析、重编程和红系数据的扩展比较；其他补充文件包含源数据/报告材料。由于没有转换成独立 Markdown，本轮以论文正文对补图的明确引用、图注及本地 PDF存在性作为边界，没有把未直接转录的补充数值扩写成新结论。
+补图包含确定性/随机模拟、分支模拟、PBMC 负对照、空间癌症分析、重编程和红系数据的扩展比较；其他补充文件包含源数据/报告材料。由于没有转换成独立 Markdown，本轮以论文正文对补图的明确引用、图注及本地 PDF存在性作为边界，没有把未直接转录的补充数值扩写成新结论。
 
 ### 9. 论文—代码映射
 

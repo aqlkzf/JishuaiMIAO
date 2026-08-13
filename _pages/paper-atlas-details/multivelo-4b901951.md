@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MultiVelo</h1>
     <p>Multi-omic single-cell velocity models epigenome-transcriptome interactions and improves cell fate prediction</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-022-01476-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-022-01476-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MultiVelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/welch-lab/MultiVelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for MultiVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -157,20 +157,10 @@ Figures 4–6 在 skin、HSPC 和 fetal cortex 上展示分支方向、基因动
 - 模型预判使用启发式规则，最终模型选择由外层候选拟合比较完成。
 - `compute_likelihood()` 是拟合后评分；主优化目标包含到解析轨迹的加权距离及 penalty。
 - WNN、peak linkage、RNA/ATAC smoothing 的选择直接影响输入，包内实现不等于论文所有 R/Seurat 处理的逐位复现。
-- 当前工作区是 MultiVelo 0.1.5 源码快照，位于 workspace 根目录的 `src/multivelo/`，并非 `Examples/`。
 
 ### 10. 一个小例子
 
 假设两个细胞的 $u$ 和 $s$ 都很低，RNA-only 相图会把它们挤在原点附近。若细胞 A 的 $c$ 也低，而细胞 B 的 $c$ 已升高，MultiVelo 可把 A 放在轨迹起点，把 B 放在 primed 阶段。两者当前 RNA 相似，却对下一步转录启动有不同预测。这个例子说明增加 $c$ 的价值是拆开 RNA 相图中重叠的时间状态，而不是简单地把 ATAC 当作第三个聚类特征。
-
-### 证据入口
-
-- 论文：`paper source/Li et al. - 2023 - Multi-omic single-cell velocity models epigenome–transcriptome interactions and improves cell fate p/Li et al. - 2023 - Multi-omic single-cell velocity models epigenome–transcriptome interactions and improves cell fate p.md`。
-- 主图：同目录下 `_page_*_Figure_2.jpeg`。
-- 动态模型：`src/multivelo/dynamical_chrom_func.py`。
-- 稳态/随机矩模型：`src/multivelo/steady_chrom_func.py`。
-- ATAC/WNN 辅助：`src/multivelo/auxiliary.py`、`src/multivelo/pyWNN.py`。
-- 包版本：`setup.cfg`，0.1.5。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>sCellST</h1>
     <p>sCellST predicts single-cell gene expression from H&amp;E images</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-67965-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-67965-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for sCellST">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/loicchadoutaud/sCellST" target="_blank" rel="noopener noreferrer" aria-label="Open code for sCellST">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -77,7 +77,7 @@ $$
 
 ### 局限与复现
 
-sCellST 依赖细胞分割质量、染色/扫描域差异、FFPE Visium 训练数据规模和图像分辨率；这些都会影响泛化（`paper.md:211-217`）。代码层面，核心模型仓库已经包含主要 MIL 和预测器实现，但论文还声明 figure 分析代码在单独的 `sCellST_reproducibility` 仓库中，本工作区没有克隆该仓库（`paper.md:410-417`）。因此本地代码与核心方法高度匹配，但完整复现实验图还需要外部数据、embedding/checkpoints 和复现实验仓库。
+sCellST 依赖细胞分割质量、染色/扫描域差异、FFPE Visium 训练数据规模和图像分辨率；这些都会影响泛化（`paper.md:211-217`）。因此本地代码与核心方法高度匹配，但完整复现实验图还需要外部数据、embedding/checkpoints 和复现实验仓库。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

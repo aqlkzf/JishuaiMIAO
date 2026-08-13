@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Spatial-Human-Kidney-Map</h1>
     <p>Spatial atlas of diabetic kidney disease reveals a B cell-rich subgroup</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10363-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10363-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Spatial-Human-Kidney-Map">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Woopsydaisy/Spatial-Human-Kidney-Map" target="_blank" rel="noopener noreferrer" aria-label="Open code for Spatial-Human-Kidney-Map">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -100,14 +100,6 @@ $$
 最强结论是：跨平台空间图谱一致地识别到 DKD 中扩张的损伤与免疫区室；其中存在一个嵌于 profibrotic niche 的 B 细胞富集患者亚群，其组织签名与纤维化和较差结局相关，并在独立蛋白队列中显示预测价值。
 
 仍需保留三层不确定性。第一，空间样本与临床结局主要是观察性关联，不能推出 B 细胞聚集导致肾衰。第二，插补基因和 CellPhoneDB 相互作用是模型推断，不是直接分子测量。第三，代码与论文在插补邻居数、17 个原始簇到 11 个最终 niche 的整理，以及外部临床分析可得性上存在明确边界。复现时应把“本地代码可追踪”“论文报告但代码缺失”“生物学解释”分开陈述。
-
-### 源证据入口
-
-- 论文：`paper source/paper/paper.md`
-- 主图：`paper source/paper/_page_1_Figure_1.jpeg` 至 `_page_9_Figure_1.jpeg`
-- 代码：`Spatial-Human-Kidney-Map-code/`
-- 逐项论文—代码对应与缺失边界：`doc_code.md`
-- 图证据：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

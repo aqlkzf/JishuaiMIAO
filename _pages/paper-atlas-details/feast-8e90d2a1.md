@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>FEAST</h1>
     <p>FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.25247v1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.25247v1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for FEAST">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/starforTJ/FEAST" target="_blank" rel="noopener noreferrer" aria-label="Open code for FEAST">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -175,7 +175,6 @@ WSI + 原始 ST 坐标/表达
 ### 版本与复现边界
 
 - 当前论文证据是 arXiv `2603.25247v1`，DOI 形式为 `10.48550/arXiv.2603.25247v1`，不是期刊同行评审版本。后续版本可能改变实验或实现说明。
-- 本地代码来自 `https://github.com/starforTJ/FEAST`，采集提交为 `c674f9e953d2eded911444cfb545be27c839cfc8`。代码目录没有独立嵌套 `.git`；提交值来自采集元数据。
 - 完整训练需要外部 MERGE 风格数据归档和 gated UNI2-h 权重；它们不在工作区内。本轮没有实际重训 8 folds，因此这里只验证论文—实现对应，而非重新验证数值结果。
 - 仓库提供数据准备、特征提取、训练和评价入口，但未找到论文定性热图及 attention-map 的生成脚本，不能声称图表可一键复现。
 - “从 H&E 预测基因表达”依赖训练分布内的形态—表达相关性。域偏移、染色批次、癌种差异或低表达基因都可能降低泛化；预测值不能替代实验 ST 测量。

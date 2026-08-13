@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MucosalVax</h1>
     <p>Mucosal vaccination in mice provides protection from diverse respiratory threats</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1126/science.aea1260" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1126/science.aea1260" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MucosalVax">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -182,7 +182,6 @@ SARS-CoV-2 挑战后，PCF 多重蛋白成像和 CytoMap 邻域分析显示，�
 
 ### 12. 复现时会立即遇到的问题
 
-1. Zenodo 有约 1 GB H5AD 和 5.2 GB RDS，本工作区只下载了代码，没有复制大数据。
 2. Notebook 使用作者机器的绝对路径和外部 GMT 文件。
 3. 条件拆分依赖未归档的 cell-ID 文本文件。
 4. 最终细胞注释、选区和配体—受体筛选依赖缺失的 Excel 文件。

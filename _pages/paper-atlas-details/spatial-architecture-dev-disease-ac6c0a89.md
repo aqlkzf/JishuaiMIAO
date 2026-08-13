@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>spatial-architecture-dev-disease</h1>
     <p>Spatial architecture of development and disease</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41576-025-00892-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41576-025-00892-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for spatial-architecture-dev-disease">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -213,7 +213,7 @@ $$
 - 综述范围、比较表和开放问题：`summary.md`
 - 深读批注与选型建议：`reading_notes.md`
 
-本工作区是 paper-only 综述分析，没有论文配套代码仓库。上面提到的 BANKSY、COMMOT、cell2location 等是综述讨论的外部工具示例，不应误写为本论文实现或本地源码证据。
+上面提到的 BANKSY、COMMOT、cell2location 等是综述讨论的外部工具示例，不应误写为本论文实现或本地源码证据。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

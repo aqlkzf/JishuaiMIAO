@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scProtVelo</h1>
     <p>Mapping early human blood cell differentiation using single-cell proteomics and transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1126/science.adr8785" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1126/science.adr8785" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scProtVelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/scProtVelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for scProtVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -113,9 +113,7 @@ $$
 
 ### 复现与解释边界
 
-1. 本地源码快照来自 `https://github.com/theislab/scProtVelo`，`.repo_source` 记录提交 `dafa0727ea111d0fc536240b51f388c878411cf0`；嵌套 Git 元数据已移除，所以该哈希是采集记录，当前工作区不能用 Git 再次独立验证。
 2. `setup.py` 没有声明发布版本和依赖；`scprotvelo/__init__.py` 从已安装包元数据读取版本。因此不能从当前源码文本断言包版本。根目录 `environment.yml` 才是较完整的环境快照，包含 Python 3.9.15、scanpy 1.9.1、scvelo 0.3.2 等固定依赖。
-3. 工作区保存了论文 PDF、OCR Markdown、图像以及较大的配对 `.h5ad` 数据，复现材料较充分；本轮完成的是源证据审阅和合同修复，没有重新创建环境、运行训练、重生成全部论文图或验证随机性。
 4. 模型假设每个聚焦轨迹片段内基因速率恒定、解析 ODE 足以描述 mRNA–蛋白关系。分支、细胞类型特异速率、翻译后调控和测量缺失都可能违反假设。
 5. GLUE 对齐、邻域插值、IQR 缩放、差异基因/似然基因筛选和速度图邻域都会影响最终箭头；速度是整条计算链的结果，不能只归因于 ODE。
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SMART</h1>
     <p>SMART: spatial multi-omic aggregation using graph neural networks and metric learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-70821-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-70821-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SMART">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Xubin-s-Lab/SMART-main" target="_blank" rel="noopener noreferrer" aria-label="Open code for SMART">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 SMART 把每个空间 spot（或分割后的单细胞）视为图节点：GraphSAGE 沿空间近邻传播信息，MNN 三元组损失再把“空间上较远、分子特征却相似”的节点拉近。多个组学各自编码后拼接，并通过一个全连接层形成统一嵌入。SMART-MS 在此基础上先按切片做 Harmony 校正，再用跨切片 MNN 三元组连接对应结构。
 
-本文的论文证据来自本工作区 `paper source/PMC13031631/paper.md` 及主文图 1–6；实现证据来自固定快照 `SMART-main/`（来源记录 commit `75676546a66d48a7ebfd7c5f3a2758a4c538fcfc`）。两者并不完全等价，尤其要注意本文最后的复现边界。
+实现证据来自固定快照 `SMART-main/`（来源记录 commit `75676546a66d48a7ebfd7c5f3a2758a4c538fcfc`）。两者并不完全等价，尤其要注意本文最后的复现边界。
 
 ### 1. SMART 要解决什么问题
 
@@ -153,7 +153,7 @@ self.decoders = [Conv_Decoder(...) for ...]
 
 #### 7.2 当前快照不等于论文完整复现分支
 
-论文 Code availability 指向 `Xubin-s-Lab/SMART-main`，并明确说论文结果 notebook 位于 `SMART-reproduce` 分支；本地 `.repo_source` 固定的是该地址的 commit `75676546...`。但快照 README 的安装链接又写成 `ws6tg/SMART-main`，并把复现工作再次指向 `SMART-reproduce`。本地仅保存当前源码、教程与 benchmark notebooks，不能据此断言它就是生成全部发表图的精确环境或分支。
+论文 Code availability 指向 `Xubin-s-Lab/SMART-main`，并明确说论文结果 notebook 位于 `SMART-reproduce` 分支；但快照 README 的安装链接又写成 `ws6tg/SMART-main`，并把复现工作再次指向 `SMART-reproduce`。本地仅保存当前源码、教程与 benchmark notebooks，不能据此断言它就是生成全部发表图的精确环境或分支。
 
 #### 7.3 大数据 MNN 与“线性扩展”要分开
 

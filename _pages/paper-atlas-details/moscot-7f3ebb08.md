@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>moscot</h1>
     <p>Mapping cells through time and space with moscot</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-024-08453-2" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-024-08453-2" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for moscot">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/moscot" target="_blank" rel="noopener noreferrer" aria-label="Open code for moscot">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -188,7 +188,7 @@ $$
 | $\alpha$ 参数转换 | `src/moscot/backends/ott/_utils.py:180-184` | Exact |
 | Sinkhorn、GW 与低秩选择 | `src/moscot/backends/ott/solver.py:275-485` | Exact wrapper；数值核心来自 OTT-JAX |
 
-本地代码快照是 `theislab/moscot` 软件仓内容，包含源码、测试和文档，但没有可验证的上游 Git 提交元数据；它是 2026 年导入 PaperCode 的本地目录，依赖声明已是 Python ≥3.10、JAX ≥0.6.1、OTT-JAX ≥0.5.0，明显可能晚于论文冻结版本。论文明确把分析复现代码放在 `theislab/moscot-framework_reproducibility`，benchmark 另在 `theislab/moscot_benchmarks`；这两个复现仓没有包含在本工作区。因此：核心方法/API 可以直接核对，论文全部图和精确预处理不能仅凭本地软件仓重跑。
+本地代码快照是 `theislab/moscot` 软件仓内容，包含源码、测试和文档，但没有可验证的上游 Git 提交元数据；论文明确把分析复现代码放在 `theislab/moscot-framework_reproducibility`，benchmark 另在 `theislab/moscot_benchmarks`；因此：核心方法/API 可以直接核对，论文全部图和精确预处理不能仅凭本地软件仓重跑。
 
 ### 主图阅读顺序
 
@@ -207,7 +207,6 @@ $$
 5. GW/FGW 依赖结构对应假设。若表达邻域与空间邻域本来不对应，结构项会引入错误匹配。
 6. 映射的基因、蛋白和标签是模型预测，不是新增实验测量；应以留出特征、已知标记和独立验证评估。
 7. 低秩模型提升规模，但可能丢失罕见细胞状态。论文的 metacell 分析也显示聚合会漏掉罕见原始生殖细胞。
-8. 当前工作区未保存论文分析复现仓与 benchmark 仓，也未端到端执行论文数据，因此不能声称独立复现论文数值。
 
 ### 最短实用路径
 

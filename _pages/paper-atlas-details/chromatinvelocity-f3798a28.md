@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ChromatinVelocity</h1>
     <p>Chromatin Velocity reveals epigenetic dynamics by single-cell profiling of heterochromatin and euchromatin</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-021-01031-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-021-01031-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ChromatinVelocity">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/leomorelli/scGET" target="_blank" rel="noopener noreferrer" aria-label="Open code for ChromatinVelocity">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -129,7 +129,7 @@ TF 动态程序和生物学解释
 
 ### 代码可复现性评价
 
-论文 Code availability 指向 `https://github.com/leomorelli/scGET` 和 `https://github.com/dawe/scatACC`，并说明 postprocessing snippets 在 Supplementary Data 2 中（`paper.md:493-496`）。本工作区已克隆两个 repo。代码对 **scGET 预处理** 支持较好，但在克隆 repo 中没有找到完整的 Chromatin Velocity/scvelo 后处理脚本。因此，本论文的复现性可概括为：预处理可复现性中等偏高；最终 Figure 6 的 velocity 动态模型和图形复现需要额外 supplementary snippets 与数据。
+论文 Code availability 指向 `https://github.com/leomorelli/scGET` 和 `https://github.com/dawe/scatACC`，并说明 postprocessing snippets 在 Supplementary Data 2 中（`paper.md:493-496`）。代码对 **scGET 预处理** 支持较好，但在克隆 repo 中没有找到完整的 Chromatin Velocity/scvelo 后处理脚本。因此，本论文的复现性可概括为：预处理可复现性中等偏高；最终 Figure 6 的 velocity 动态模型和图形复现需要额外 supplementary snippets 与数据。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

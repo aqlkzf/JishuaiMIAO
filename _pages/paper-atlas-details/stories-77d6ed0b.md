@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>STORIES</h1>
     <p>STORIES: learning cell fate landscapes from spatial transcriptomics using optimal transport</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02855-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02855-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for STORIES">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/cantinilab/stories" target="_blank" rel="noopener noreferrer" aria-label="Open code for STORIES">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -194,17 +194,6 @@ $$
 STORIES 的真正创新，是把 FGW 当作神经势能模型的训练损失：绝对空间坐标不必跨切片对齐，空间内部关系却能约束跨时点表达动力学。它在三套 Stereo-seq 图谱和两个案例中给出一致的预测与可解释下游结果。
 
 最重要的解释边界是：势能是统计模型，不是直接测量的生物能量；梯度是表达空间动力方向，不是经典 RNA velocity；空间影响来自训练损失，不代表模型显式学习物理迁移；命运概率还依赖 CellRank 和指定终末状态；趋势基因与 TF 富集是候选证据，不是因果驱动验证；群体 OT 匹配也不是单细胞真实谱系追踪。
-
-### 源证据入口
-
-- 论文 Markdown：`paper source/PMC12982121/paper.md`
-- 正式论文 PDF：`paper source/PMC12982121/41592_2025_Article_2855.pdf`
-- 核心模型：`stories/stories/spacetime.py`
-- FGW/Sinkhorn 损失：`stories/stories/loss.py`
-- 势能网络：`stories/stories/potentials.py`
-- 显式梯度步：`stories/stories/steps/explicit.py`
-- 下游工具：`stories/stories/tools.py`
-- 复现实验：`stories_reproducibility/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

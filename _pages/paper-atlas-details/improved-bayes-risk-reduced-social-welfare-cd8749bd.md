@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Machine Learning Algorithm</span>
-      <span>Quantitative Economics (forthcoming; conference version NeurIPS 2023) · 2026</span>
+      <span>NeurIPS · 2026</span>
     </div>
     <h1>Improved_Bayes_Risk_Reduced_Social_Welfare</h1>
     <p>Improved Bayes Risk Can Yield Reduced Social Welfare Under Competition</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2306.14670" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2306.14670" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Improved_Bayes_Risk_Reduced_Social_Welfare">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/mjagadeesan/competition-nonmonotonicity" target="_blank" rel="noopener noreferrer" aria-label="Open code for Improved_Bayes_Risk_Reduced_Social_Welfare">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">

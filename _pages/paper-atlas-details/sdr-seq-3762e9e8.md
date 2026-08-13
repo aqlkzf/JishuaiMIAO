@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SDR-seq</h1>
     <p>Functional phenotyping of genomic variants using joint multiomic single-cell DNA–RNA sequencing</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02805-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02805-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SDR-seq">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/hawkjo/SDRranger" target="_blank" rel="noopener noreferrer" aria-label="Open code for SDR-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -62,8 +62,6 @@ SDR-seq 的选择是牺牲全基因组覆盖，换取目标区域的深覆盖：
 gDNA reverse primer 使用 Nextera R2N overhang，RNA 使用 TruSeq R2 overhang。分开建库允许 gDNA read 覆盖整个目标扩增子和变异位点，而 RNA read 同时保留 transcript、cell BC、sample BC 与 UMI 信息。
 
 ### 3. SDRranger 如何从 FASTQ 恢复单细胞计数
-
-本工作区有两个代码面：`SDRranger/` 是 Python FASTQ 处理器，`SDR-seq/` 是论文各实验的参考构建、GATK 和 R 分析脚本。
 
 #### 3.1 条形码结构不是固定切片问题
 
@@ -151,13 +149,6 @@ Prime editing 的总体编辑效率有限，eQTL 难以解释；显著表达变�
 3. 编辑效率低时，即使测到实际 genotype，各 genotype group 的细胞数仍可能不足以解释细微效应。
 4. 差异表达与变异共现支持关联，因果解释仍取决于编辑设计、共现变异和独立验证。
 5. Tapestri 是专有平台；计算代码公开不等于完整实验可无障碍复现。
-
-### 证据入口
-
-- 论文：`paper source/PMC12510883/paper.md`
-- 主图：`paper source/PMC12510883/images/41592_2025_2805_Fig1_HTML.jpg` 至 `Fig4_HTML.jpg`
-- SDRranger：`SDRranger/SDRranger/`
-- 实验分析：`SDR-seq/01_POP/` 至 `SDR-seq/07_Species_Mix/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

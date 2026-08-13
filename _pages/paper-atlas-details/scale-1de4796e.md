@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SCALE</h1>
     <p>SCALE: unsupervised multiscale domain identification in spatial omics data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/nar/gkaf1456" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/nar/gkaf1456" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SCALE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/imsb-uke/scale" target="_blank" rel="noopener noreferrer" aria-label="Open code for SCALE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -118,7 +118,7 @@ $$
 
 ### 代码与论文的一致性和边界
 
-整体保真度评为 **中等偏高**。GAT 编码、邻接/表达双重解码、$r$–$\lambda$ 网格、Moran's I 选模、重复 Leiden、ARI 稳定性和嵌套熵都能在源代码中定位；本地快照由 `.repo_source` 记录为提交 `20ca893028d10745d74e3440ec0e0a69b739566f`。
+整体保真度评为 **中等偏高**。GAT 编码、邻接/表达双重解码、$r$–$\lambda$ 网格、Moran's I 选模、重复 Leiden、ARI 稳定性和嵌套熵都能在源代码中定位；
 
 需要保留的实现差异与缺陷：
 
@@ -142,7 +142,7 @@ SCALE identifies several nested spatial-domain resolutions rather than returning
 
 The paper evaluates simulated data, MERFISH and Visium-HD mouse brain, Xenium kidney, and Xenium mouse brain data. In the main multiscale comparisons, SCALE recovers coarse brain regions and finer cortical/hippocampal substructure more completely than NeST. The kidney example separates glomerular from tubulointerstitial tissue at a high level and identifies finer tubular/vascular compartments; expert H&E annotations directly support glomerular detection with 100% sensitivity and 88% specificity, not every inferred compartment. Single-scale benchmarks place SCALE first on MERFISH and approximately level with NichePCA on Xenium. Relative “percentage point” improvement language against low NeST scores should not be read as an absolute AMI increase larger than the metric's range.
 
-The public repository contains the core package, a vignette, and one prepared MERFISH example (`.repo_source` commit `20ca893028d10745d74e3440ec0e0a69b739566f`). Core fidelity is **medium-to-high**: the central graph-learning, model-selection, stability, and entropy components are present. Material differences remain: code averages rather than sums repeat ARIs; for three or more levels it minimizes the maximum adjacent-level entropy rather than the paper's stated average; and it uses natural-log entropy. Two clean-run defects also matter—an explicitly configured device leaves `device` undefined in `train()`, and the sigmoid-fit exception handler has an invalid tuple unpack. Default preprocessing is off, search remains computationally expensive, and the nesting assumption can exclude biologically meaningful structures crossing coarse-domain boundaries.
+Core fidelity is **medium-to-high**: the central graph-learning, model-selection, stability, and entropy components are present. Material differences remain: code averages rather than sums repeat ARIs; for three or more levels it minimizes the maximum adjacent-level entropy rather than the paper's stated average; and it uses natural-log entropy. Two clean-run defects also matter—an explicitly configured device leaves `device` undefined in `train()`, and the sigmoid-fit exception handler has an invalid tuple unpack. Default preprocessing is off, search remains computationally expensive, and the nesting assumption can exclude biologically meaningful structures crossing coarse-domain boundaries.
 
 </article>
 </section>

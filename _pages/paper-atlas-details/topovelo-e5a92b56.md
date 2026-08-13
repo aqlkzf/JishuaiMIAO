@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TopoVelo</h1>
     <p>Topological velocity inference from spatial transcriptomic data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02688-8" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02688-8" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TopoVelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/welch-lab/TopoVelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for TopoVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -138,7 +138,7 @@ GAT 对邻接边计算 attention coefficient，表示在当前重构目标和训
 
 ### 论文—代码对应与版本边界
 
-当前工作区没有独立上游 `.git` 元数据；代码作为 PaperCode vendored snapshot 收录于外层提交 `affe8e8ae8196268a5cd318dbf11c21162390a11`。论文报告 TopoVelo 0.0.2，而本地 `setup.py` 标记 `0.0.1a1`；不能把本地快照当成论文精确发布版本。
+论文报告 TopoVelo 0.0.2，而本地 `setup.py` 标记 `0.0.1a1`；不能把本地快照当成论文精确发布版本。
 
 | 论文机制 | 直接源码 | 对应程度 |
 |---|---|---|

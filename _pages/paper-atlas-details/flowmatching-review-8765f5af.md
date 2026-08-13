@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>FlowMatching_Review</h1>
     <p>Flow matching for generative modelling in bioinformatics and computational biology</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s42256-026-01220-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s42256-026-01220-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for FlowMatching_Review">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/atong01/conditional-flow-matching" target="_blank" rel="noopener noreferrer" aria-label="Open code for FlowMatching_Review">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -159,7 +159,7 @@ FlowDock、NeuralPLexer3、FlexDock、UniMoMo 等面向 docking、co-folding 或
 
 ### 10. 关于本地 companion code 的严格边界
 
-工作区保留了 TorchCFM 的 `conditional-flow-matching/` 快照，它能帮助理解基础 CFM、OT coupling 和若干通用变体，但不是这篇综述的配套实现，也不实现表 3中几十个生物方法。按照 review 路由，本次分析不把该仓库作为论文代码证据，`local metadata` 记录 `has_code=false`，`code source` 仅作为历史参考资产保留。旧 `doc_code.md` 是过往对通用库的旁注，不参与 review 完整性或论文复现判断。
+旧 `doc_code.md` 是过往对通用库的旁注，不参与 review 完整性或论文复现判断。
 
 ### 推荐阅读路线
 

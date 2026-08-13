@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Molecular_asynchrony_of_single_cells</h1>
     <p>The molecular asynchrony of single cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.06.02.729594" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.06.02.729594" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Molecular_asynchrony_of_single_cells">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/czhulab/asynchrony" target="_blank" rel="noopener noreferrer" aria-label="Open code for Molecular_asynchrony_of_single_cells">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -89,7 +89,7 @@ RNA PCA 作为 reference community space
 
 本文贡献可以拆成两层：SeqTag 提供同一细胞中 RNA、ATAC 和 histone mark 的共同测量；分子异步性分析把这些层级之间的局部几何错位转化为 priming、remodeling 和 entropy 三类动力学摘要。它不是一个需要训练的大模型，而是基于 kNN 投影、局部质心、位移向量、KDE 熵、双峰距离和回归/富集分析的几何统计框架。
 
-需要注意三点限制。第一，论文自己的限制部分承认单细胞表观组数据存在稀疏性和 allelic dropout，kNN centroid projection 只能缓解，不能完全解决；priming energy 依赖区域聚合信号，不是单个位点动力学 (paper.md:157)。第二，推断来自静态 population snapshot，依赖 Waddington landscape 的 ergodic continuity 假设，急性灾难性事件可能超出模型适用范围 (paper.md:157)。第三，本工作区没有可验证代码：论文称 customized code 在 `https://github.com/czhulab/asynchrony`，但 acquisition 时该仓库不可公开获取/返回 404，因此这里不能验证代码实现、默认参数、运行脚本或 paper-code fidelity (paper.md:307)。
+需要注意三点限制。第一，论文自己的限制部分承认单细胞表观组数据存在稀疏性和 allelic dropout，kNN centroid projection 只能缓解，不能完全解决；priming energy 依赖区域聚合信号，不是单个位点动力学 (paper.md:157)。第二，推断来自静态 population snapshot，依赖 Waddington landscape 的 ergodic continuity 假设，急性灾难性事件可能超出模型适用范围 (paper.md:157)。
 
 另外，`paper.md` 中公式转换有损：`paper.md:277-298` 保留了变量角色和计算步骤叙述，但完整 display equations 没有可靠恢复。因此本中文解释只保守说明可见的操作定义，不重构缺失公式。
 

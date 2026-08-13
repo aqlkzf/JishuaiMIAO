@@ -128,7 +128,8 @@
       background 140ms ease;
   }
 
-  button.atlas-stat:hover {
+  button.atlas-stat:hover,
+  button.atlas-stat.is-active {
     border-color: var(--atlas-accent);
     background: var(--atlas-subtle);
   }
@@ -201,10 +202,7 @@
 
   .atlas-controls {
     display: grid;
-    grid-template-columns:
-      minmax(12rem, 1.9fr)
-      repeat(4, minmax(7rem, 1fr))
-      auto;
+    grid-template-columns: repeat(5, minmax(6.5rem, 1fr)) auto;
     gap: 0.5rem;
     position: sticky;
     /* Flush against the 57px fixed navbar, so no scrolling card shows through
@@ -275,7 +273,8 @@
   .atlas-topic-list button:focus-visible,
   .atlas-stat:focus-visible,
   .atlas-expand:focus-visible,
-  .atlas-more:focus-visible {
+  .atlas-more:focus-visible,
+  .atlas-layout button:focus-visible {
     outline: 2px solid var(--atlas-accent);
     outline-offset: 2px;
   }
@@ -294,6 +293,7 @@
 
   .atlas-search {
     position: relative;
+    grid-column: 1 / -1;
   }
 
   .atlas-search i {
@@ -373,6 +373,37 @@
   .atlas-results-actions select:focus-visible {
     outline: 2px solid var(--atlas-accent);
     outline-offset: 2px;
+  }
+
+  .atlas-layout {
+    display: inline-flex;
+    gap: 0.2rem;
+    padding: 0.15rem;
+    border: 1px solid var(--atlas-line);
+    border-radius: 99px;
+    background: var(--atlas-card);
+  }
+
+  .atlas-layout button {
+    min-height: 1.85rem;
+    padding: 0.2rem 0.7rem;
+    border: 0;
+    border-radius: 99px;
+    background: transparent;
+    color: var(--atlas-muted);
+    font: inherit;
+    font-family: var(--atlas-mono);
+    font-size: 0.7rem;
+    cursor: pointer;
+  }
+
+  .atlas-layout button.is-active {
+    background: var(--atlas-accent);
+    color: #fff;
+  }
+
+  html[data-theme="dark"] & .atlas-layout button.is-active {
+    color: #06231a;
   }
 
   /*****************************************************************************
@@ -457,6 +488,10 @@
   }
 
   .atlas-chip--code::before {
+    display: none;
+  }
+
+  .atlas-code-mark {
     display: none;
   }
 
@@ -554,7 +589,8 @@
     justify-content: flex-end;
   }
 
-  .atlas-doi {
+  .atlas-doi,
+  .atlas-code-link {
     flex: 0 0 auto;
     white-space: nowrap;
   }
@@ -567,6 +603,75 @@
     flex: 0 0 auto;
     font-weight: 600;
     white-space: nowrap;
+  }
+
+  /*****************************************************************************
+   * Compact list
+   ****************************************************************************/
+
+  &.is-list {
+    .atlas-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .atlas-card {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      align-items: baseline;
+      padding: 0.7rem 0.9rem;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .atlas-card + .atlas-card {
+      border-top-color: transparent;
+    }
+
+    .atlas-card:hover {
+      box-shadow: none;
+    }
+
+    .atlas-card__chips {
+      order: 4;
+      margin: 0;
+    }
+
+    .atlas-chip {
+      display: none;
+    }
+
+    .atlas-code-mark {
+      display: inline;
+      color: var(--atlas-muted);
+      font-family: var(--atlas-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+    }
+
+    .atlas-card h2 {
+      flex: 0 1 16rem;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .atlas-card__title {
+      flex: 1 1 18rem;
+      -webkit-line-clamp: 1;
+    }
+
+    .atlas-card__summary-panel,
+    .atlas-expand {
+      display: none !important;
+    }
+
+    .atlas-card footer {
+      flex: 1 0 100%;
+      margin-top: 0.15rem;
+      padding-top: 0;
+      border-top: 0;
+    }
   }
 
   /*****************************************************************************
@@ -618,10 +723,6 @@
 @media (max-width: 1099px) {
   .paper-atlas .atlas-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .paper-atlas .atlas-search {
-    grid-column: 1 / -1;
   }
 }
 
@@ -747,11 +848,18 @@
     line-height: 1.6;
   }
 
-  .paper-detail__doi {
+  .paper-detail__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.15rem;
+    margin-top: 1.1rem;
+  }
+
+  .paper-detail__doi,
+  .paper-detail__code {
     display: inline-flex;
     gap: 0.4rem;
     align-items: center;
-    margin-top: 1.1rem;
     font-family: var(--detail-mono);
     font-size: 0.76rem;
     font-weight: 600;

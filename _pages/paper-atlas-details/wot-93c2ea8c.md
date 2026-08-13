@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>WOT</h1>
     <p>Optimal-Transport Analysis of Single-Cell Gene Expression Identifies Developmental Trajectories in Reprogramming</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2019.01.006" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2019.01.006" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for WOT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/broadinstitute/wot" target="_blank" rel="noopener noreferrer" aria-label="Open code for WOT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -165,8 +165,6 @@ $ϵ=0.05,\;λ_1=1,\;λ_2=50,\;growth\_iters=3$
 - paracrine ligand-receptor scoring 实现未找到；
 - FLE 生成本身没有在 live package 中验证到，代码主要支持在已有 embedding 上绘图；
 - 代码包更像通用 WOT 工具箱，而不是完整论文复现实验仓库。
-
-因此，本工作区对核心算法的复现证据较强，但对全部论文图和下游生物分析的复现证据不完整。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

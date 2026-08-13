@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scVelo</h1>
     <p>Generalizing RNA velocity to transient cell states through dynamical modeling</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-020-0591-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-020-0591-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scVelo">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/scvelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for scVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 scVelo 的关键贡献不是把速度箭头画得更平滑，而是放弃“数据必须已经看到稳态”的强假设，直接为每个基因拟合转录、剪接和降解动力学，同时估计每个细胞处于诱导还是抑制阶段以及它在该基因轨迹上的潜在时间。得到基因空间的速度后，方法再用速度与邻近细胞表达差的方向一致性构造转移图，并据此投影到 UMAP、识别起点/终点和整合 gene-shared latent time。
 
-论文为 Bergen 等发表于 *Nature Biotechnology*（2020）的 “Generalizing RNA velocity to transient cell states through dynamical modeling”，DOI `10.1038/s41587-020-0591-3`。本工作区有正文、补充材料、图像和 Python 源码。源码目录没有独立 `.git`，`pyproject.toml` 使用动态版本，release notes 最晚列到 0.2.5；因此当前源码可用于直接验证实现，但不能仅凭外层 PaperCode 提交号推断其精确上游版本或论文发布提交。
+论文为 Bergen 等发表于 *Nature Biotechnology*（2020）的 “Generalizing RNA velocity to transient cell states through dynamical modeling”，DOI `10.1038/s41587-020-0591-3`。
 
 ### 1. 原始稳态方法为什么会失败
 
@@ -193,18 +193,7 @@ velocity 表示局部短期表达变化。沿图累计得到的终点、潜在�
 | gene-shared latent time | `_em_model_core.py::latent_time()`, `_em_model_utils.py::compute_shared_time()` | Partial：当前分位选择准则与论文文字描述不完全一致 |
 | 论文全套结果复现 | 正文/补充与源码均在 | Partial：缺少可验证上游 commit、确定包版本和锁定实验环境 |
 
-外层 PaperCode 提交 `affe8e8…` 只记录该源码目录被加入当前资料库，不是 scVelo 上游提交。release notes 说明快照至少包含到 0.2.5 的历史，但动态版本配置无法单独证明源码就是某一正式发行版。因此本文档不把它标作 0.2.5，也不声称已重跑论文数字。
-
-### 证据入口
-
-- 正文：`paper source/paper/paper.md`
-- 补充：`output_paper_supp_md/paper_supp/paper_supp.md`
-- 主图：`paper source/paper/*.jpeg`
-- ODE：`code/scvelo/core/_models.py`
-- 动态恢复与 latent time：`code/scvelo/tools/_em_model_core.py`, `_em_model_utils.py`
-- 三种 velocity：`code/scvelo/tools/velocity.py`
-- 图和转移：`code/scvelo/tools/velocity_graph.py`, `transition_matrix.py`, `velocity_embedding.py`
-- 版本与依赖边界：`code/pyproject.toml`, `code/docs/source/release_notes.rst`
+release notes 说明快照至少包含到 0.2.5 的历史，但动态版本配置无法单独证明源码就是某一正式发行版。因此本文档不把它标作 0.2.5，也不声称已重跑论文数字。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

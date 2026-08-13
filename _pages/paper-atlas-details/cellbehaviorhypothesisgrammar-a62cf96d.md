@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellBehaviorHypothesisGrammar</h1>
     <p>Human interpretable grammar encodes multicellular systems biology models to democratize virtual cell laboratories</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2025.06.048" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2025.06.048" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellBehaviorHypothesisGrammar">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/physicell-models/grammar_samples" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellBehaviorHypothesisGrammar">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -112,8 +112,6 @@ Figure 7 把同一套语法用于非癌症系统：皮层层化。规则用时�
 
 ### 代码复现程度
 
-本工作区中的代码对“核心方法”的复现程度很高：
-
 - 数学响应函数有直接 C++ 实现；
 - CSV 规则解析与 XML 加载路径完整；
 - 运行时规则会真实写入细胞 phenotype；
@@ -170,8 +168,6 @@ To reproduce the method layer, use the released `grammar_samples` project and in
 3. `grammar_samples/core/PhysiCell_cell.cpp`
 4. The target `grammar_samples/user_projects/<example>/config/cell_rules*.csv`
 5. The target XML configuration under `grammar_samples/user_projects/<example>/config/`
-
-Known gaps are explicit: no local Methods S1 markdown was supplied, exact figure-panel provenance was not found, GUI implementation details live in external PhysiCell Studio/nanoHUB resources, and some raw experimental datasets behind figure panels are outside the local code snapshot.
 
 </article>
 </section>

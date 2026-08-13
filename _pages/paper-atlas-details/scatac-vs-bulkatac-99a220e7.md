@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scATAC_vs_bulkATAC</h1>
     <p>scATAC-seq generates more accurate and complete regulatory maps than bulk ATAC-seq</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41598-025-87351-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41598-025-87351-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scATAC_vs_bulkATAC">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -120,7 +120,7 @@ cisTopic 对 4,485 个 erythroblast 进行 LDA topic 建模后得到一个 3,871
 - **Fig. 4**：逐级下采样，分离“数据仍可看”与“弱元件可系统注释”，得到约 200-cell benchmark。
 - **Fig. 5**：PBMC spike-in 的 UMAP，比较 300 到 20 个细胞，得到约 40-cell cluster-detection benchmark。
 
-本地五张主图均已直接检查。正文引用 Supplementary Figs. 1–10，但当前工作区没有独立补充 PDF/图片，只在 PMC Markdown 中保留补充材料链接和正文描述。因此补充结果可按正文引用总结，不能声称已直接视觉核验每张补图。
+本地五张主图均已直接检查。正文引用 Supplementary Figs.因此补充结果可按正文引用总结，不能声称已直接视觉核验每张补图。
 
 ### 9. 可复现性边界
 
@@ -131,14 +131,6 @@ cisTopic 对 4,485 个 erythroblast 进行 LDA topic 建模后得到一个 3,871
 ### 10. 最应带走的结论
 
 这项 benchmark 的主要结论不是“单细胞技术只适合找亚群”，而是：高质量 scATAC-seq 在聚合后可以复现 bulk 的主开放染色质结构，同时以远少于 bulk 的细胞检出更多弱调控位点；单细胞层面又额外提供异质性。实践上要同时规划两个样本量目标：发现一个簇所需的细胞数，和为该簇绘制可靠 pseudo-bulk 调控图谱所需的细胞数。
-
-### 证据入口
-
-- 全文：`paper source/PMC11779887/paper.md`
-- 主图：`paper source/PMC11779887/images/41598_2025_87351_Fig*_HTML.jpg`
-- 本地文章 PDF：`paper source/PMC11779887/41598_2025_Article_87351.pdf`
-- 技术流程详解：`doc_method.md`
-- 逐图分析：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

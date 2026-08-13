@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>TCAT</h1>
     <p>Reproducible single-cell annotation of programs underlying T cell subsets, activation states and functions</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/immunogenomics/starCAT" target="_blank" rel="noopener noreferrer" aria-label="Open code for TCAT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -202,8 +203,6 @@ $$
 - **实验激活验证**：五位供体的 peptide AIM-seq 产生 AIM-positive、AIM-negative 和 mock 群体。ASA 在 COMBAT、流感疫苗和 AIM 数据中的 AUC 分别为 0.920、0.818 和 0.828。
 - **疾病与临床关联**：样本级分析在 COVID-19、类风湿关节炎、肿瘤及 ICI 队列中发现可重复关联。ICI 结果属于回顾性关联，不能当作前瞻性疗效预测器。
 
-图像层面的完整证据链见 `figure_analysis.md`：本工作区直接检查了 6 张主图、8 张 Extended Data 图和 M1 中 10 张 Supplementary Figure。
-
 ### 10. 如何实际使用和解释
 
 最适合的使用场景是：研究者希望把多个 T 细胞研究放进同一可解释坐标系，并允许每个细胞同时携带多个程序。基本步骤是准备 `adata.X` 中的非负计数，加载 `TCAT.V1` 或自定义参考，运行 `fit_transform`，再分析 `usage_norm` 与附加分数。
@@ -222,14 +221,10 @@ $$
 
 整体论文复现程度为中等，原因不是核心公式缺失，而是运行资产和分析环境不完整：
 
-- 当前工作区没有下载后的 `TCAT.V1.reference.tsv`、`TCAT.V1.scores.yaml` 和其中的分类器资产；
 - `TCAT_analysis` 中大量 notebook 依赖 `/data/srlab1/TCAT/...` 作者集群路径及未打包中间文件；
 - figure map 有两个失效 notebook 路径，Extended Data 1 和 6A 仍是未解析的问号占位；
 - 没有发现软件包测试套件或完整环境锁文件；
 - 论文使用 scikit-learn 1.1.3，README 报告 1.3.2 测试，`setup.py` 只限定 `>=1.0`；
-- 网页列出的 M5–M8 补充/源数据表未进入本工作区。
-
-因此，本工作区足以审计算法、主要参数、图表逻辑和论文论证，但若要逐数值重现全部结果，仍需外部 TCAT.V1 资产、公开原始数据以及作者集群上的中间产物。
 
 ### 12. 一句话总结
 

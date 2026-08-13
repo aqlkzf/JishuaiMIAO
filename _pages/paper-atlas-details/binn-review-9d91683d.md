@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>BINN_review</h1>
     <p>Beyond the black box with biologically informed neural networks</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41576-025-00826-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41576-025-00826-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for BINN_review">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -109,15 +109,6 @@ $$
 - 未发现补充材料；文章本身也没有补充材料引用。
 - 这是 paper-only review，没有本地或公开代码需要分析。
 - 工作区旧有 `.codegraph` 和 `CLAUDE.md` 是普通合同回填遗留，不构成代码证据；reviewerpaper 合同不使用它们。
-- P-Net、DrugCell、VEGA 等均为引用案例，不得写成已在本工作区审计或复现。
-
-### 本地证据入口
-
-- 全文：`paper source/paper/vlm/paper.md`
-- 原始 PDF：`paper.pdf`
-- 唯一主图：`paper source/paper/vlm/images/Fig1_01.jpg`
-- 综述方法分类：`doc_method.md`
-- 阅读笔记：`reading_notes.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

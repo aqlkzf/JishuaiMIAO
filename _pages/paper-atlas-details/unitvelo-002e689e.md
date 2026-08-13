@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>UniTVelo</h1>
     <p>UniTVelo: temporally unified RNA velocity reinforces single-cell trajectory inference</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/StatBiomed/UniTVelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for UniTVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -141,9 +142,9 @@ $${t}_{n}=\frac{1}{G}*\mathop{\sum }\limits_{g}^{G}{\mathbb{Q}}[{t}_{ng}],$$
 
 ### 代码可复现性
 
-论文声明代码在 GitHub/Zenodo 可用，且结果复现流程写在仓库 notebooks 中（`paper.md:365-367`）。本工作区克隆了 `https://github.com/StatBiomed/UniTVelo`，commit 为 `0a3d3020d34ffdf83d7e32368d2c0314128b23e1`。核心算法与论文匹配度较高：入口在 `unitvelo/main.py:5-65`，配置在 `unitvelo/config.py:1-139`，速度基因选择和拟合调度在 `unitvelo/velocity.py:43-133,254-285`，RBF/速度/时间匹配在 `unitvelo/optimize_utils.py:130-148,204-244`，训练和损失在 `unitvelo/model.py:182-342`。
+论文声明代码在 GitHub/Zenodo 可用，且结果复现流程写在仓库 notebooks 中（`paper.md:365-367`）。核心算法与论文匹配度较高：入口在 `unitvelo/main.py:5-65`，配置在 `unitvelo/config.py:1-139`，速度基因选择和拟合调度在 `unitvelo/velocity.py:43-133,254-285`，RBF/速度/时间匹配在 `unitvelo/optimize_utils.py:130-148,204-244`，训练和损失在 `unitvelo/model.py:182-342`。
 
-需要注意的是：外部数据需要从 paper 的 Data availability 中列出的 scVelo、GEO、Human Cell Atlas、Kharchenko Lab 或 request-only 来源获取（`paper.md:356-363`）；本工作区没有转换 supplementary markdown；论文似然公式在代码中体现为残差损失和 log-likelihood 诊断，并带有交替优化的工程实现细节。
+需要注意的是：外部数据需要从 paper 的 Data availability 中列出的 scVelo、GEO、Human Cell Atlas、Kharchenko Lab 或 request-only 来源获取（`paper.md:356-363`）；论文似然公式在代码中体现为残差损失和 log-likelihood 诊断，并带有交替优化的工程实现细节。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

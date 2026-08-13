@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>COSMOS</h1>
     <p>Cooperative integration of spatially resolved multi-omics data with COSMOS</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-55204-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-55204-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for COSMOS">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Lin-Xu-lab/COSMOS" target="_blank" rel="noopener noreferrer" aria-label="Open code for COSMOS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 COSMOS 面向同一批 spot/细胞上同时测得的两种空间组学。它在共享空间邻接图上为两个模态各建一个 GCN encoder，用 Deep Graph Infomax（DGI）让局部节点表示保留全局组织信息；训练中途从两个模态表示计算每个细胞自己的 WNN 权重，将两路表示加权合成。论文还加入空间距离—嵌入距离正则，使空间相近的细胞倾向在联合表示中接近。最终 embedding 用于空间域、UMAP 和 pseudo-spatiotemporal map（pSM），而不是直接生成或补全原始组学矩阵。
 
-论文为 Zhou 等发表于 *Nature Communications*（2025）的 “Cooperative integration of spatially resolved multi-omics data with COSMOS”，DOI `10.1038/s41467-024-55204-y`。本工作区含 PMC 正文、四个主图和官方 Python 源码；acquisition 元数据记录上游 `https://github.com/Lin-Xu-lab/COSMOS.git` 提交 `56ea355be51e64d9253e2871b8bd447fdfd0d230`，`setup.py` 标记 1.0，源码头注明 2024-10-10。源码目录没有独立 `.git`，所以该提交只能由 acquisition 合同追溯，不能用外层 PaperCode 的提交号替代。
+论文为 Zhou 等发表于 *Nature Communications*（2025）的 “Cooperative integration of spatially resolved multi-omics data with COSMOS”，DOI `10.1038/s41467-024-55204-y`。
 
 ### 1. 输入契约：必须是配对的两个模态
 
@@ -190,16 +190,6 @@ Pseudo-spatiotemporal map（pSM）不是 COSMOS 训练目标中的时间变量�
 - 论文使用的若干参数与 `train()` 默认值不同。
 - 空间正则加速索引风险是数值复现的硬边界；在修复并重跑前，只能确认非加速公式与论文一致，不能确认默认训练结果。
 - 基线比较、processed data 和 pSM root/cluster resolution 分散在外部数据和 notebooks；本次未重跑论文所有图表。
-
-### 证据入口
-
-- 正文/Methods：`paper source/PMC11696235/paper.md`
-- 四个主图：`paper source/PMC11696235/images/*Fig*_HTML.jpg`
-- 主流程、GCN、空间 loss：`COSMOS/COSMOS/cosmos.py`
-- DGI：`COSMOS/COSMOS/modulesWNN.py`
-- WNN：`COSMOS/COSMOS/pyWNN.py`
-- 教程下游：`COSMOS/Tutorials/*.ipynb`
-- 包元数据：`COSMOS/setup.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

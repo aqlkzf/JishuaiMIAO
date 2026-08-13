@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Path2Space</h1>
     <p>AI-predicted spatial transcriptomics unlocks breast cancer biomarkers from pathology</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.04.023" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.04.023" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Path2Space">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -175,7 +175,6 @@ HER2 SPAND 也不是只对 ERBB2 单基因计算。论文先用 ErbB pathway 做
 ### 12. 复现边界
 
 - 源码来自 Zenodo record 14729337 / DOI `10.5281/zenodo.14729336`，不是 Git 仓库，因此没有 Git commit，`code_repo_commit` 保持 `null`。
-- 本地 `.repo_source` 明确说明为节省空间排除了 `input_data.zip`（3.8 GB）和 `output_data.zip`（233 MB）；教程引用的样例输入输出因此不完整。
 - CTransPath checkpoint 需另行下载，部分脚本有作者机器的绝对路径。
 - 环境版本在 README/requirements 中较明确，但论文 key resources 的 PyTorch 2.4.1 与 README 的 2.4.0+cu121 略有差别。
 - 工作区没有 154 个模型、全部临床图像、predicted ST 或下游 R/Python 结果，本轮没有重新训练或重算主图。

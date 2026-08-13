@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>STalign</h1>
     <p>STalign: Alignment of spatial transcriptomics data using diffeomorphic metric mapping</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-43915-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-43915-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for STalign">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/JEFworks-Lab/STalign" target="_blank" rel="noopener noreferrer" aria-label="Open code for STalign">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -127,7 +127,7 @@ $$
 
 ### 10. 当前代码快照与复现边界
 
-本工作区代码锚定 commit `b2068edc98974efa54537eca194736e177bbe11d`。核心算法高度对应论文，但完整复现需下载/整理多个公开数据、重跑 notebook、重建基因与细胞类型统计及 atlas 评价。
+核心算法高度对应论文，但完整复现需下载/整理多个公开数据、重跑 notebook、重建基因与细胞类型统计及 atlas 评价。
 
 还需保留以下边界：
 
@@ -141,16 +141,6 @@ $$
 ### 11. 一句话把握 STalign
 
 STalign 把稀疏空间坐标转换成可注册的组织密度图，直接优化全局 affine 与平滑可逆的 LDDMM 变换，并用背景/artifact mixture 和可选 landmark 处理部分重叠；它的强项是跨样本、跨平台和 atlas 的结构配准，边界是依赖共享形态、非凸初始化、栅格尺度与非一一细胞解释。
-
-### 证据入口
-
-- 论文与图注：`paper source/PMC10709594/paper.md`
-- 三份补充材料：`supplementary/41467_2023_43915_MOESM1_ESM.pdf`、`MOESM2_ESM.pdf`、`MOESM3_ESM.pdf`
-- 图逐项解释：`figure_analysis.md`
-- 核心代码：`STalign/STalign/STalign.py`
-- Landmark 工具：`STalign/STalign/point_annotator.py`
-- 教程与预计算输出：`STalign/docs/notebooks/`、`STalign/docs/*_data/`
-- 代码—论文映射：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

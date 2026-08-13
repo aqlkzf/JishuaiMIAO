@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Glimmer</h1>
     <p>Energy-Regularized Graph Learning for Multiscale Spatial Representation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.08.22.671846" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.08.22.671846" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Glimmer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/thechenlab/Glimmer" target="_blank" rel="noopener noreferrer" aria-label="Open code for Glimmer">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -154,7 +154,7 @@ For each observation and spatial neighbor, Glimmer combines squared feature dist
 
 The paper evaluates five annotated MERFISH slices and five unlabeled Slide-seq samples against BANKSY, SCAN-IT, SPIN, SpaceFlow, and GraphST. It reports the best aggregate normalized score, leading ARI/NMI on MERFISH and CAS/MLAMI on Slide-seq while remaining comparable on NASW/CNMI. Case studies identify canonical cerebellar layers, melanoma immune states, CODEX spleen regions, and tonsil germinal-center zones. In Xenium lymph node patches, bin-level Glimmer clustering shows higher marker-gene purity and inter-cluster cosine distance than Cellpose-, Xenium-, Baysor-, and FICTURE-based alternatives. That benchmark explicitly assesses clustering purity, not cell-segmentation accuracy.
 
-The public repository includes the core package, regional/subcellular benchmark scripts, and notebooks corresponding to the main analyses (`.repo_source` records commit `8b73fdeb3ef6fbf7906a82fce34c985eb17472b6`). Core paper-code fidelity is **medium**: the loss and pipeline are present, but the implementation exports `sigmoid(raw W)` rather than the paper's spatially decayed $\widetilde W=\sigma(We^{-\gamma S})$, and its neighbor sum is not normalized by total weight. Other reproducibility limits are dataset-specific tuning, prearranged data paths, large stateful notebooks, and a “batch” option that only batches feature-distance construction rather than the full optimization. The paper PDF and all five main figures were inspected; no separate supplementary markdown or extracted image directory is present.
+Core paper-code fidelity is **medium**: the loss and pipeline are present, but the implementation exports `sigmoid(raw W)` rather than the paper's spatially decayed $\widetilde W=\sigma(We^{-\gamma S})$, and its neighbor sum is not normalized by total weight. Other reproducibility limits are dataset-specific tuning, prearranged data paths, large stateful notebooks, and a “batch” option that only batches feature-distance construction rather than the full optimization. The paper PDF and all five main figures were inspected; no separate supplementary markdown or extracted image directory is present.
 
 </article>
 </section>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scPN</h1>
     <p>Simultaneously infer cell pseudotime, velocity field, and gene interaction from multi-branch scRNA-seq data with scPN</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/nargab/lqaf144" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/nargab/lqaf144" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scPN">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ZHOUZHEN2002/scPN" target="_blank" rel="noopener noreferrer" aria-label="Open code for scPN">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -171,15 +171,6 @@ Fig. 4 的 Sox9、Olig2、Stat3、Klf4 等结果适合写成候选 regulator。�
 ## scPN
 
 ### 基本信息
-
-| 项目 | 内容 |
-|---|---|
-| 论文 | Simultaneously infer cell pseudotime, velocity field, and gene interaction from multi-branch scRNA-seq data with scPN |
-| 方法简称 | scPN, single-cell Piecewise Network |
-| 期刊 / 年份 | NAR Genomics and Bioinformatics, 2025 |
-| DOI | `10.1093/nargab/lqaf144` |
-| 本地 paper | `paper source/PMC12604672/paper.md` |
-| 本地代码 | `scPN/`, GitHub snapshot, `.repo_commit` 记录 `9375d1e02ddd507349dec2cdba892cbfe1723993` |
 
 ### 核心问题
 

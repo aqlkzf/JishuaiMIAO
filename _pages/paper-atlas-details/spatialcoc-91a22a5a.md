@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpatialCOC</h1>
     <p>SpatialCOC: an integrative framework for spatial continuous mapping and cross-omics correction in spatial multi-omics data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-71882-2" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-71882-2" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpatialCOC">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/xjtu-omics/SpatialCOC" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpatialCOC">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -39,7 +39,7 @@ sitemap: false
 1. Spatial Continuous Mapping（SCM）：把二维坐标当作顶层先验，分别学习每个模态从坐标到特征的连续函数；
 2. Cross-Omics Correction（COC）：对空间重建后的两个模态训练 DCCAE，保留各自可重构信息，同时最大化潜变量相关性，再以线性 CCA 得到成对表示。
 
-论文证据来自 paper source/paper/auto/paper.md、主图 1–4 和三份本地补充 PDF；代码证据来自 SpatialCOC/ 固定快照。其 .repo_source 记录 commit 5f326e5c05d2a195b65240be0242c04e014d3fc4。该值与旧合同写的 0300e4de 不同，应以 .repo_source 为当前本地 provenance。
+论文证据来自 paper source/paper/auto/paper.md、主图 1–4 和三份本地补充 PDF；代码证据来自 SpatialCOC/ 固定快照。
 
 ### 2. SCM：坐标如何变成组学连续函数
 
@@ -278,16 +278,11 @@ $$
 
 setup.py 仍将包名、URL和描述写为 SpaKnit，README badge 也指向 SpaKnit，教程开头使用 SpaKnit，而正式论文/仓库标题为 SpatialCOC。Peer-review PDF确认早期稿名 SpaKnit。应视为同一方法的版本演变，而不是两个独立算法。
 
-#### 6.2 代码 provenance 以本地记录为准
-
-旧合同写 commit 0300e4de，但本地 .repo_source 实际是 5f326e5c05d2a195b65240be0242c04e014d3fc4。本文档只对后者的当前文件负责。仓库没有嵌套 git 历史，无法在本地证明两个 commit 之间具体改动。
-
 #### 6.3 训练 artifact 与设备问题
 
 - INRModel 返回带计算图的 best_INR_recon，未 detach；直接放入 AnnData uns 不适合作为持久 h5ad artifact。
 - DCCAE 把模型强制移到可用 cuda:0，却把输入移到构造参数 self.device_。教程不传 device，默认 CPU；在有 CUDA 的机器上可能出现模型 GPU、输入 CPU 的 device mismatch。
 - cca_loss 内部又自行选择 cuda:0/CPU，而不是忠实使用传入 device，进一步增加混合设备风险。
-- 训练每个 epoch 都写当前目录固定 checkpoint.model；并行/多实例会互相覆盖。仓库还直接提交了 Tutorials/checkpoint.model，但没有 provenance 证明它对应哪次数据/参数。
 - 收敛判断 if epoch == epoch_num 在 Python for range(epoch_num) 结束后永远为假，因此 warning 分支不可达。
 
 #### 6.4 可扩展性

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>3d-OT</h1>
     <p>3d-OT: a deep geometry-aware framework for heterogeneous slices alignment of spatial multi-omics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03034-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03034-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for 3d-OT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/dbjzs/3d-OT" target="_blank" rel="noopener noreferrer" aria-label="Open code for 3d-OT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 3d-OT 将空间组学切片表示为二维点云：每个 spot 既有坐标，也有 RNA、染色质或蛋白特征。它先用 PointNet++ 风格的局部集合卷积学习同时保留空间几何和分子信号的表示，再用受空间候选约束的 Sinkhorn optimal transport 建立切片间软对应，由软对应重建目标坐标并形成 alignment flow。Chamfer、局部平滑和近零散度三项无监督损失共同约束该流，连续配准相邻切片即可构造三维或时空重建。
 
-论文为 Dai 等发表于 *Nature Methods*（2026）的 “3d-OT: a deep geometry-aware framework for heterogeneous slices alignment of spatial multi-omics”，DOI `10.1038/s41592-026-03034-9`。工作区保存正文、补充、图像和本地源码；获取合同记录上游 `https://github.com/dbjzs/3d-OT` 的提交 `2c70d184fdc0df1f093814cb018b5d7addb21904`，包 `setup.py` 标记版本 0.1.1。源码目录当前没有独立 `.git`，因此该提交来自 acquisition 元数据，不能由当前目录重新执行 `git rev-parse` 独立验证；外层 PaperCode 提交不是上游代码提交。
+论文为 Dai 等发表于 *Nature Methods*（2026）的 “3d-OT: a deep geometry-aware framework for heterogeneous slices alignment of spatial multi-omics”，DOI `10.1038/s41592-026-03034-9`。
 
 ### 1. 方法要同时解决三个任务
 
@@ -233,17 +233,6 @@ $$
 - 三项 loss 权重、Chamfer backward weight、smooth/divergence 邻居及网格大小；
 - Python、PyTorch、PyG、CUDA、R/rpy2/mclust 版本；
 - acquisition 记录的上游 commit，并注明当前源码目录不再含独立 Git 元数据。
-
-### 证据入口
-
-- 正文：`paper source/paper/vlm/paper.md`
-- 补充：`output_paper_supp_md/paper_supp1/auto/paper_supp1.md`（另有 supp2/supp3 PDF）
-- 主图：`paper source/paper/vlm/images/`
-- 多/单模态编码与训练：`3d-OT/lib_3d_OT/multi_modialty.py`, `single_modialty.py`
-- OT：`3d-OT/lib_3d_OT/ottools/ot.py`
-- 重建与损失：`ottools/reconstruction.py`, `losses.py`, `lattice.py`
-- 3D 串联：`3d-OT/lib_3d_OT/threeDrecon.py`
-- 包元数据：`3d-OT/setup.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

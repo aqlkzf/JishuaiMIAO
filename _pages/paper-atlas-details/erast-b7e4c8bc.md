@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ERAST</h1>
     <p>Scalable homology detection with ERAST</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-026-03051-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-026-03051-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ERAST">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/TencentAILabHealthcare/ERAST" target="_blank" rel="noopener noreferrer" aria-label="Open code for ERAST">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -117,13 +117,6 @@ $$
 - 训练对数据与已建数据库未随仓库提供；需要依据公开来源重建。论文提供的软件版本和在线服务，但这不等于本地端到端复现材料齐全。
 
 因此最稳妥的结论是：ERAST 的方法创新是将生物学先验、快速向量召回和可独立更新的进化层级重排器组合起来；论文验证了线上系统的规模与精度，而公开代码主要证明局部算法路径，并暴露了尚需修补的工程与数据缺口。
-
-### 证据入口
-
-- 论文方法与图注：`paper source/paper/vlm/paper.md`，尤其是 Fig. 1、Fig. 2、Methods/Datasets、Encoding models、Postretrieval reranking 和 Code availability。
-- 补充证据：`output_paper_supp_md/paper_supp1/vlm/paper_supp1.md`、`paper_supp2/vlm/paper_supp2.md`。
-- 直接代码：`ERAST/pipeline/{encode.py,predict.py,utils.py}` 与 `ERAST/erast_training/Protein/training/score_model_trainer.py`。
-- 图像：`paper source/paper/vlm/images/`（39 个转换图像文件）；图像解释以论文图注和正文为最终依据。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

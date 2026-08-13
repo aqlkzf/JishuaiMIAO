@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DeepMAPS</h1>
     <p>Single-cell biological network inference using a heterogeneous graph transformer</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-36559-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-36559-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DeepMAPS">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/OSU-BMBL/deepmaps" target="_blank" rel="noopener noreferrer" aria-label="Open code for DeepMAPS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -53,14 +53,14 @@ sitemap: false
 - **多个 scRNA-seq**：log-normalize、每个矩阵选前 2,000 HVG、用 Seurat CCA 对齐，得到 $I$ 个基因、$J$ 个细胞的 $X$（`paper.md:138-140`）。
 - **CITE-seq**：RNA 与表面蛋白分别 log-normalize、纵向拼接，并做 CLR：
 
-  $$\mathrm{CLR}(x_{ij})=\log\left(1+\frac{x_{ij}}{\exp\left(\frac{\sum_{i\in\mathscr Z_j}\log(1+x_{ij})}{|\mathscr Z_j|}\right)}\right).$$
+$$\mathrm{CLR}(x_{ij})=\log\left(1+\frac{x_{ij}}{\exp\left(\frac{\sum_{i\in\mathscr Z_j}\log(1+x_{ij})}{|\mathscr Z_j|}\right)}\right).$$
 
-  $\mathscr Z_j$ 是 cell $j$ 的非零特征索引集合（`paper.md:142-147`）。
+$\mathscr Z_j$ 是 cell $j$ 的非零特征索引集合（`paper.md:142-147`）。
 - **scRNA-ATAC-seq**：由 peak 到基因的调控潜能得到 $X^{A'}$，结合表达 $X^R$ 与 RNA velocity 得到 GAS：
 
-  $$x_{ij}^{G}=\begin{cases}x_{ij}^{R}+(1+\beta^+)x_{ij}^{A'},&x_{ij}^{V}>0\\x_{ij}^{R}+(1-\beta^-)x_{ij}^{A'},&x_{ij}^{V}<0\\x_{ij}^{R}+x_{ij}^{A'},&x_{ij}^{V}=0.\end{cases}$$
+$$x_{ij}^{G}=\begin{cases}x_{ij}^{R}+(1+\beta^+)x_{ij}^{A'},&x_{ij}^{V}>0\\x_{ij}^{R}+(1-\beta^-)x_{ij}^{A'},&x_{ij}^{V}<0\\x_{ij}^{R}+x_{ij}^{A'},&x_{ij}^{V}=0.\end{cases}$$
 
-  正速度提高可及性贡献，负速度降低它（`paper.md:149-175`）。本地 `calculate_GAS_v1` 读取外部 velocity CSV、按行/列 rank 构造带符号权重并计算 `GAS`（`deepmaps/scRNA_scATAC1.r:403-505`）。**Not found（已检索 Python/R/Docker 路径）**：该快照没有 RNA-velocity 计算和论文所述 LTMG 离散化；它消费的是已给定 velocity 文件。
+正速度提高可及性贡献，负速度降低它（`paper.md:149-175`）。本地 `calculate_GAS_v1` 读取外部 velocity CSV、按行/列 rank 构造带符号权重并计算 `GAS`（`deepmaps/scRNA_scATAC1.r:403-505`）。**Not found（已检索 Python/R/Docker 路径）**：该快照没有 RNA-velocity 计算和论文所述 LTMG 离散化；它消费的是已给定 velocity 文件。
 
 ### 3. 图与 autoencoder 初始表示
 
@@ -118,7 +118,7 @@ $$loss=\mathrm{KL}(\mathrm{softmax}(\hat X),\mathrm{softmax}(X)).$$
 
 $$s_{ij|q}=\sum_k b_{qk}^{A}\,r_{ik|j},$$
 
-随后以簇内表达与 RI 得 regulon activity，再将 regulon 合并为 GRN、以 eigenvector centrality 排主 TF（`paper.md:301-316`）。Docker 示例展示完整调用链：GAS → `run_HGT` → `get_gene_module` → 外部 LISA → `Calregulon`/`uni` → `RI_cell` → `calRAS`/`CalRAS2` → `masterFac`（`deepmaps/docker/test.R:135-237`）。`RI_cell` 实作 peak/gene/TF 矩阵乘积（`scRNA_scATAC1.r:980-1036`），`masterFac` 建簇特异邻接矩阵并调 `igraph::evcent`（`scRNA_scATAC1.r:1144-1188`）。外部 JASPAR/LISA 资产、LISA 运行和 peak 注释仍是运行依赖；源码存在不等于本工作区已复现。
+随后以簇内表达与 RI 得 regulon activity，再将 regulon 合并为 GRN、以 eigenvector centrality 排主 TF（`paper.md:301-316`）。Docker 示例展示完整调用链：GAS → `run_HGT` → `get_gene_module` → 外部 LISA → `Calregulon`/`uni` → `RI_cell` → `calRAS`/`CalRAS2` → `masterFac`（`deepmaps/docker/test.R:135-237`）。`RI_cell` 实作 peak/gene/TF 矩阵乘积（`scRNA_scATAC1.r:980-1036`），`masterFac` 建簇特异邻接矩阵并调 `igraph::evcent`（`scRNA_scATAC1.r:1144-1188`）。外部 JASPAR/LISA 资产、LISA 运行和 peak 注释仍是运行依赖；
 
 ### 7. 评价与边界
 

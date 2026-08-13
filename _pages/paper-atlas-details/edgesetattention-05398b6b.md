@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>EdgeSetAttention</h1>
     <p>An end-to-end attention-based approach for learning on graphs</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-60252-z" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-60252-z" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for EdgeSetAttention">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/davidbuterez/edge-set-attention" target="_blank" rel="noopener noreferrer" aria-label="Open code for EdgeSetAttention">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -131,7 +131,6 @@ PMA 与普通 mean/sum readout 的差别是：每个种子可学会寻找一种�
 
 1. 论文公式与图 4描述 pre-LN；代码同时支持 pre/post-LN，而 `esa/train.py` 的 CLI 默认是 `post`。因此不能仅凭论文公式断言默认命令运行的是 pre-LN。
 2. 代码在注意力输出中使用 `out + Mish(fc_o(out))`，PMA 后还会对种子取均值；这些实现细节没有在论文主公式中完整展开。
-3. 代码目录嵌在 PaperCode 根 Git 仓库中，不是可独立查询提交历史的嵌套仓库。`.repo_source` 给出来源 URL，但旧元数据里的提交哈希无法由当前代码目录独立验证，故本工作区不把它当作已确认版本。
 4. 补充材料以 PDF 保存，当前证据索引以主论文 Markdown、主图和直接代码为主；未把补充 PDF 全文转换成可逐行引用的 Markdown。
 
 ### 11. 最短阅读路线

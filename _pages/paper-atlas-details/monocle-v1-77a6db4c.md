@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Monocle v1</h1>
     <p>The dynamics and regulators of cell fate decisions are revealed by pseudotemporal ordering of single cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/nbt.2859" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/nbt.2859" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Monocle v1">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -163,7 +163,7 @@ $\psi$ 的单位是嵌入空间路径距离。不能把伪时间 10 解释为 10
 
 ### 9. 代码与版本证据边界
 
-该工作区没有 Monocle 1 源码快照，也没有可验证的 Monocle 1 Git commit。论文当时指向 `monocle-bio.sourceforge.net` 并提到 supplementary source code，但本地搜索范围内未获得该源代码。因此，本工作区必须保持 `paper-only`，`doc_code.md` 只能把论文 Online Methods 转成候选实现映射，所有条目均为 **Inferred / Not verified**，不能标为 Exact。
+该工作区没有 Monocle 1 源码快照，也没有可验证的 Monocle 1 Git commit。论文当时指向 `monocle-bio.sourceforge.net` 并提到 supplementary source code，但本地搜索范围内未获得该源代码。
 
 相邻 `[local path omitted]` 是 Monocle 3 源码。Monocle 3 使用不同的数据结构、降维和 principal graph 学习流程；它不能作为 Monocle 1 的直接代码证据。本次没有读取它来证明任何 Monocle 1 实现，也没有修改该邻居目录。
 
@@ -181,15 +181,7 @@ $\psi$ 的单位是嵌入空间路径距离。不能把伪时间 10 解释为 10
 6. Tobit 检测下限、平滑自由度、null/full model 与 FDR；
 7. 对细胞抽样、ordering gene 集合和离群点的敏感性分析。
 
-本工作区没有重跑原始数据或源码，因而不声称数值级复现。它完成的是论文、主图、图注和补充材料的源证据解释，并把缺失的代码证据明确保留为 `Not found`。
-
-### 11. 本工作区证据入口
-
-- 主文：`paper source/PMC4122333/paper.md`
-- 论文 PDF：`paper source/PMC4122333/nihms-570726.pdf`
-- 补充 PDF：`paper source/PMC4122333/NIHMS570726-supplement-1.pdf`
-- 主图：`paper source/PMC4122333/images/nihms-570726-f0001.jpg` 至 `f0004.jpg`
-- 代码：`MISSING / Not found`（Monocle 1 本地直接源码不存在）
+它完成的是论文、主图、图注和补充材料的源证据解释，并把缺失的代码证据明确保留为 `Not found`。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

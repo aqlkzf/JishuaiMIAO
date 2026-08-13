@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -19,6 +19,7 @@ sitemap: false
     </div>
     <h1>nPOD</h1>
     <p>Single-cell multiome and spatial profiling reveals pancreas cell type-specific gene regulatory programs driving type 1 diabetes progression</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/Gaulton-Lab/nPOD" target="_blank" rel="noopener noreferrer" aria-label="Open code for nPOD">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -107,13 +108,6 @@ CellChat 从表达推断 1,939 对 ligand–receptor，论文报告 87,650 个�
 这项工作的核心价值是把同一疾病进展框架中的 RNA、chromatin、joint multiome 和空间信息串成可检验链条：细胞状态变化 → cRE/motif → TF–gene 网络 → 遗传富集 → 组织 niche/通信 → 选定配体实验。最强结论是 beta 细胞 antigen presentation/IFN 调控以及外分泌和免疫系统在临床确诊前后已发生细胞类型特异变化。
 
 需要避免三种过度解释：横断面阶段不等于真实纵向轨迹；ABC/GRN/CellChat 是预测网络而非直接结合或信号测量；空间分析供体少且关键 moscot/envi 代码不在本地仓库。复现时应把本地脚本可验证、paper-only、external dependency 三种证据分开。
-
-### 源证据入口
-
-- 论文：`paper source/nPOD_paper/nPOD_paper.md`
-- 代码：`scripts/`、`Data_proccessing/`、`downstream_analysis/`
-- 论文—代码映射：`doc_code.md`
-- 图注证据：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

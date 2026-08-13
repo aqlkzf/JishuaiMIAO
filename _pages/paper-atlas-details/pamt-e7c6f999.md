@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>PAMT</h1>
     <p>Pathway-Aware Multimodal Transformer (PAMT): Integrating Pathological Image and Gene Expression for Interpretable Cancer Survival Analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1109/TPAMI.2025.3611531" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1109/TPAMI.2025.3611531" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PAMT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/YANRUI121/PAMT" target="_blank" rel="noopener noreferrer" aria-label="Open code for PAMT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -50,7 +50,7 @@ PAMT（Pathway-Aware Multimodal Transformer）面向癌症生存风险预测：�
 
 WSI 先被切为 patch，再用自监督 DINO ViT-small 提取 patch 特征。论文和代码工作流随后进行聚类，从 50 个簇各选 10 个代表 patch，得到约 500 个图像 token。主训练数据集接收的是这些已经准备好的特征，并不在生存训练循环中从原始 WSI 重新切片或重新训练 DINO。
 
-这意味着完整复现至少包含三个外部阶段：WSI 切片、DINO 训练/特征提取、聚类选 patch。仓库提供相应脚本，但当前工作区没有论文所用 TCGA/CPTAC 数据、预处理缓存和检查点，不能仅凭一次 `train.py` 运行复现论文表格。
+这意味着完整复现至少包含三个外部阶段：WSI 切片、DINO 训练/特征提取、聚类选 patch。
 
 ### 3. 模型的三步信息流
 
@@ -123,15 +123,6 @@ $$
 ### 7. 一句话把握 PAMT
 
 PAMT 把 bulk 表达先重组为有语义的通路 token，再让这些通路作为 query 从 WSI patch 中检索形态证据，同时用生存目标学习患者风险；它的解释性来自“通路—patch”这一可读中间关系，但解释仍是模型关联，而且公开代码的默认训练设置与论文完整方法存在若干可影响复现的差异。
-
-### 证据入口
-
-- 论文正文与图注：`paper source/paper/auto/paper.md`
-- 图像证据整理：`figure_analysis.md`
-- 生产模型：`PAMT/gene_wsi_predict/vit_model_gene_wsi_concat_label.py`
-- 损失与训练循环：`PAMT/gene_wsi_predict/utils_cox.py`
-- 训练参数与优化器：`PAMT/gene_wsi_predict/train.py`
-- 代码—论文逐项核对：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

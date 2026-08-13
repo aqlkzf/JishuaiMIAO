@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TRSMI</h1>
     <p>Toward Robust Spatial Multi-Omics Integration: Spatial Multi-Omics Integration via Alignment and Scheduled Diffusion</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1109/ICASSP55912.2026.11461685" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1109/ICASSP55912.2026.11461685" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TRSMI">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 TRSMI 的目标是把同一批空间 spot 上的 RNA、ADT、ATAC 等模态压缩为一个联合表示 $Z$，同时保留跨模态一致性和组织空间边界。它的主线是：每个模态先构图并做浅层近恒等编码；再用软对应关系交换跨模态信息；随后分别形成局部表示与多尺度 APPNP 全局表示，以训练时间相关的门控混合两者；最终通过模态重建、原型聚类和图稳定正则联合训练。
 
-本工作区是 **paper-only**。本地只有 5 页 ICASSP 论文、OCR 和图像，没有作者代码仓库或独立补充材料。因此下面区分“论文明确写出”“由公式可读出”和“实现仍 Not found”，不把合理猜测当作代码事实。
+本地只有 5 页 ICASSP 论文、OCR 和图像，没有作者代码仓库或独立补充材料。因此下面区分“论文明确写出”“由公式可读出”和“实现仍 Not found”，不把合理猜测当作代码事实。
 
 ### 1. 输入与输出
 
@@ -169,16 +169,6 @@ MB 的“标签”边界尤其重要：论文说没有 ground truth，而以 RNA
 论文报告 RTX 3090、full-batch SGD、双模态学习率 0.01、三模态 0.001、20 个随机种子（2025–2044）、top-$k=20$、三组 APPNP 参数、EMA 0.9 和重建权重。这些是论文配置，不是源码验证结果。
 
 以下仍 **Not found**：作者代码与提交版本、独立补充材料、图 $k$ 和距离、特征维度、latent/alignment 维度、optimizer 其他参数、epoch、warm-up 长度、门控参数化与日程、温度、损失权重、双路径合并、三模态对齐扩展、GMM/原型更新、完整预处理和数据拆分。任何实现只能标为“依据论文再实现”，不能声称复现了作者代码。
-
-### 证据入口
-
-- 论文 OCR：`paper source/paper/vlm/paper.md`
-- 论文图：`paper source/paper/vlm/images/`
-- 原始 PDF：`paper.pdf`
-- 公式说明：`doc_method.md`
-- paper-code 边界：`doc_code.md`
-- 作者代码：Not found
-- 独立补充材料：Not found
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

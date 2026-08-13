@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>POPARI</h1>
     <p>POPARI: Modeling multisample variation in spatial transcriptomics</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/alam-shahul/popari" target="_blank" rel="noopener noreferrer" aria-label="Open code for POPARI">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -166,7 +167,7 @@ Simulation Figure 2 reports improved recovery under structured dropout and sampl
 
 ### Reproducibility
 
-Rating: **4/5**. The package, tests, tutorials, simulation code and analysis utilities are present. Exact manuscript reproduction still depends on supplement-specific preprocessing and hyperparameters, unavailable upstream commit provenance, and best-of-five initialization selection in simulations. The workspace records v1.3.4 but not an immutable Git commit.
+Rating: **4/5**. The package, tests, tutorials, simulation code and analysis utilities are present. The workspace records v1.3.4 but not an immutable Git commit.
 
 Important defaults are `lambda_Sigma_x_inv=1e-4`, `lambda_Sigma_bar=1e-3`, `hierarchical_levels=1`, `spatial_affinity_mode="shared lookup"`, `metagene_mode="shared"`, `binning_downsample_rate=0.2`, and `random_state=0`. Old documentation claiming fixed GPU time/memory numbers was not retained because those values were not verified from the manuscript evidence.
 

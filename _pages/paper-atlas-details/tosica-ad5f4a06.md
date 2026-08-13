@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>TOSICA</h1>
     <p>Transformer for one stop interpretable cell type annotation</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/JackieHanLab/TOSICA" target="_blank" rel="noopener noreferrer" aria-label="Open code for TOSICA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -74,7 +75,7 @@ $$\mathbf A=\operatorname{softmax}\left(\frac{\mathbf Q\mathbf K^\mathsf T}{\sqr
 
 ### 可复现边界
 
-代码与论文的主模型、损失、SGD/余弦调度和 query 阈值高度对应；但发布快照的 `splitDataSet()` 在类别平衡后随机做 70:30 训练/验证划分，而论文的评估叙述强调按研究或生物状态分割。公开快照有 tutorial 和 Fig. 4 notebook，却没有打包的全量 benchmark 数据、下载步骤和所有作图脚本；本工作区也没有单独获取补充材料。因此，完整复现论文数字和补图仍需要外部数据与额外流程。
+代码与论文的主模型、损失、SGD/余弦调度和 query 阈值高度对应；但发布快照的 `splitDataSet()` 在类别平衡后随机做 70:30 训练/验证划分，而论文的评估叙述强调按研究或生物状态分割。公开快照有 tutorial 和 Fig. 4 notebook，却没有打包的全量 benchmark 数据、下载步骤和所有作图脚本；因此，完整复现论文数字和补图仍需要外部数据与额外流程。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

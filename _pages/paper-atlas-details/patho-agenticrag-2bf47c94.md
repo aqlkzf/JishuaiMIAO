@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Patho-AgenticRAG</h1>
     <p>Patho-AgenticRAG: Towards Multimodal Agentic Retrieval-Augmented Generation for Pathology VLMs via Reinforcement Learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2508.02258" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2508.02258" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Patho-AgenticRAG">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Wenchuan-Zhang/Patho-AgenticRAG" target="_blank" rel="noopener noreferrer" aria-label="Open code for Patho-AgenticRAG">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -119,14 +119,6 @@ router 产生的多个 rag queries 在 demo 中并发执行。VRAG 最多运行 
 - **图 5**：训练样本筛选与蒸馏组成，说明 400 SFT/4000 RL 的来源。
 
 本地 OCR 提取了五张主图，并在本次恢复中逐张视觉检查。Appendix A–D 在同一论文 PDF/Markdown 中，没有发现独立 supplementary 文件；因此可说“附录已读”，不能说“独立补充包已核验”。
-
-### 10. 代码 provenance 与可复现边界
-
-工作区记录的上游 URL是 `https://github.com/Wenchuan-Zhang/Patho-AgenticRAG`，旧 metadata 写短 commit `cae8a66`。但本地 `code/` 没有独立 `.git`，从其中运行 Git 会落到 PaperCode 外层仓库，并显示完全无关的 commit。故本次把代码来源标为 `local_dir`，保留旧短 hash 仅作为 acquisition 记录，不宣称当前文件已由 Git 验证对应那个 commit。
-
-可直接验证：Milvus schema/index/search、ColQwen2 query/image embedding、式 (1)重排、VRAG interaction、router demo orchestration、fusion evaluation 与 evolutionary search utilities。
-
-不可本地验证：教材数据库本体、完整训练/评估数据、router SFT/GRPO、QwenMax distillation、Patho-R1/VRAG weights 与服务、论文端到端 benchmark reproduction。
 
 ### 11. 一句话总结
 

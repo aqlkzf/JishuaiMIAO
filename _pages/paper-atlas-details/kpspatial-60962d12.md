@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>KPSpatial</h1>
     <p>Spatiotemporal lineage tracing reveals the dynamic spatial architecture of tumour growth and metastasis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2024.10.21.619529" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2024.10.21.619529" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for KPSpatial">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/mattjones315/KPSpatial-release" target="_blank" rel="noopener noreferrer" aria-label="Open code for KPSpatial">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -91,14 +91,6 @@ Fig. 4 追踪转移。多层组织切片用共享 indel 的 evolutionary couplin
 本地代码可靠覆盖 character matrix、空间插补、Cassiopeia 混合树、LBI、L2 plasticity、watershed 分割和既有 community 评分。scVI/scANVI 注释、原始 Hotspot 共识构建、LARIS 配体–受体分析、inferCNV 和 Slide-tags DBSCAN 空间条形码处理未在仓库中找到。还应保留三处参数差异：一致性 0.7 默认值对论文 0.8；插补 1 轮默认值对论文 5 轮；Greedy–NJ 默认切换 500 对论文 1,000。
 
 最稳妥的结论是：该平台揭示了快速扩张亚克隆与缺氧、纤维化、免疫抑制及低可塑性状态在空间上的共同出现，并定位了具有转移能力的原发灶亚克隆。它不能仅凭空间近邻或相关性证明微环境变化导致了亚克隆扩张，也不能把插补条形码当作直接测量。
-
-### 源证据入口
-
-- 论文：`paper source/paper/vlm/paper.md`
-- 主图：`paper source/paper/vlm/images/Fig1_01.jpg` 至 `Fig4_01.jpg`
-- 代码：`KPSpatial-release/`
-- 论文—代码映射：`doc_code.md`
-- 分图解读：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

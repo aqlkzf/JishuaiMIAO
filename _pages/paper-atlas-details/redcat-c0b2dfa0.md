@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>REDCAT</h1>
     <p>All-Optical Multimodal Mapping of Single Cell-Type-Specific Metabolic Activities via REDCAT</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2024.11.07.622511" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2024.11.07.622511" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for REDCAT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -89,7 +89,7 @@ $$
 
 ### 5. 复现与实现注意点
 
-`HAS_CODE=false`：当前工作区没有 REDCAT 公共代码仓库、notebook、原始/处理后矩阵、掩膜、控制点或作图脚本。`doc_code.md` 中所有项目级可执行实现均为 `MISSING` 或 `Not found`；Seurat、QuPath/StarDist、Mesmer、Astir、MaxFuse、ScanPy、scikit-image、ImageJ、GraphPad、OriginPro 只是在论文 Methods 中被文本支持。复现时最缺的是配准控制点和残差、HSI baseline/smoothing/normalization 设置、K-means 种子、MaxFuse notebook、PRM-SRS 参数和 figure statistics 脚本。
+`doc_code.md` 中所有项目级可执行实现均为 `MISSING` 或 `Not found`；Seurat、QuPath/StarDist、Mesmer、Astir、MaxFuse、ScanPy、scikit-image、ImageJ、GraphPad、OriginPro 只是在论文 Methods 中被文本支持。复现时最缺的是配准控制点和残差、HSI baseline/smoothing/normalization 设置、K-means 种子、MaxFuse notebook、PRM-SRS 参数和 figure statistics 脚本。
 
 ### 6. 结果如何解读
 

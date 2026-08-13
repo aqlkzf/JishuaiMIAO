@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>Krakencoder</h1>
     <p>Krakencoder: a unified brain connectome translation and fusion tool</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/kjamison/krakencoder" target="_blank" rel="noopener noreferrer" aria-label="Open code for Krakencoder">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -83,7 +84,7 @@ The model assigns every flavor its own encoder and decoder but forces all of the
 
 The main evaluation used HCP young-adult data split without families crossing train/validation/test boundaries (683/79/196 subjects). Within-modality predictions were nearly perfectly identifiable by average rank; cross-modality avgrank averaged 0.82 for SC→FC and 0.85 for FC→SC. Fusion representations better reflected familial relatedness and retained or enhanced demographic and cognition information. The model also preserved identifiability on HCP Development and Aging cohorts without retraining. Against two prior SC→FC neural approaches, identifiability improved by 42–54%, while one Krakencoder model covered all 225 paths with substantially less total training than many pair-specific baselines.
 
-Code-paper fidelity is high: the repository implements per-flavor encoders/decoders, normalized latent codes, arbitrary translation, the major contrastive/identifiability losses, fusion inference, PCA transforms, and domain adaptation. Exact reproduction is still constrained by external HCP/OSF assets and the absence of one immutable paper experiment manifest. Reproducibility rating: **4/5**—substantial source and CLI coverage, but data access and checkpoint/config provenance remain dependencies.
+Code-paper fidelity is high: the repository implements per-flavor encoders/decoders, normalized latent codes, arbitrary translation, the major contrastive/identifiability losses, fusion inference, PCA transforms, and domain adaptation. Exact reproduction is still constrained by external HCP/OSF assets and the absence of one immutable paper experiment manifest.
 
 </article>
 </section>

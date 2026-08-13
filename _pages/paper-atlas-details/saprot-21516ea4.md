@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SaProt</h1>
     <p>Democratizing protein language model training, sharing and collaboration</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02859-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02859-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SaProt">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/westlake-repl/Saprot" target="_blank" rel="noopener noreferrer" aria-label="Open code for SaProt">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -141,18 +141,6 @@ SaprotHub 存放这些任务 adapter，而非用户的私有训练数据。已�
 - 35M/650M 模型的 AA-only 模式需要专门微调；README 明确提醒其冻结 embedding 主要适用于 SA 输入。1.3B 才专门增强了 AA-only 能力。
 - 结构相似蛋白可能跨越低序列一致性切分；评价必须检查具体数据切分。正式论文采用更严格的结构切分讨论，但本地各 YAML/数据集来源并不自动保证所有用户数据遵循同一规则。
 - Hub adapter 的共享不泄露原始训练数据，不等于不存在模型反演、标签偏差、许可或数据治理风险。
-
-### 源证据入口
-
-- 正式论文：`paper source/Su et al. - 2025 - Democratizing protein language model training, sharing and collaboration/Su et al. - 2025 - Democratizing protein language model training, sharing and collaboration.md`
-- 正式主图：同目录 `_page_1_Figure_2.jpeg` 与 `_page_2_Figure_2.jpeg`
-- 结构编码：`utils/foldseek_util.py`
-- MLM 数据：`dataset/saprot/saprot_lm_dataset.py`
-- 模型/LoRA：`model/saprot/base.py`
-- 突变效应：`model/saprot/saprot_foldseek_mutation_model.py`
-- 逆折叠：`model/saprot/saprot_if_model.py`
-- 训练入口：`scripts/training.py`
-- 版本与使用说明：`README.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

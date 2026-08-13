@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>COMMOT</h1>
     <p>Screening cell-cell communication in spatial transcriptomics via collective optimal transport</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-022-01728-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-022-01728-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for COMMOT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/zcang/COMMOT" target="_blank" rel="noopener noreferrer" aria-label="Open code for COMMOT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -146,7 +146,7 @@ COMMOT is more than the COT matrix. The paper and package add downstream analyse
 
 The evaluation spans PDE simulations, human epidermis, MERFISH, STARmap, seqFISH+, Slide-seqV2, Visium breast cancer, Visium mouse brain, and subsampling robustness. The local figure images show the method schematic, simulation comparisons to PDE/pairwise OT, direction fields, cluster-level CCC heatmaps, CCC-induced clustering, signaling-dependent gene heatmaps, LR-pair impact heatmaps, and robustness plots (`figure_analysis.md`; paper anchors `paper.md:65-68`, `85-91`, `97-108`, `120-160`, `449-494`). The paper reports that COMMOT outperforms related OT variants in simulations and generally has stronger downstream-target correlation than CellChat, Giotto, and CellPhoneDB in the compared datasets (`paper.md:65-68`, `151-160`).
 
-Reproducibility is good for the package-level method and incomplete for full paper-result reproduction. The paper states that the open-source software is at GitHub and reproduction code is available separately on Zenodo (`paper.md:295-298`). This workspace acquired the GitHub package only (`COMMOT_repo/.repo_source:1-1`, `.repo_commit:1-1`, `.repo_branch:1-1`). The local package includes toy tests for COT output, direction vectors, and cluster summaries, but not the full analysis scripts. The exact implementation of the paper's F005 weighted cosine-distance metric for subsampled vector fields was not found in `COMMOT_repo/commot` or tests; only adjacent vector-field similarity utilities were found. Supplementary derivations are also unavailable as markdown because `SUPP_MD=none`.
+Reproducibility is good for the package-level method and incomplete for full paper-result reproduction. The paper states that the open-source software is at GitHub and reproduction code is available separately on Zenodo (`paper.md:295-298`). The local package includes toy tests for COT output, direction vectors, and cluster summaries, but not the full analysis scripts. The exact implementation of the paper's F005 weighted cosine-distance metric for subsampled vector fields was not found in `COMMOT_repo/commot` or tests; only adjacent vector-field similarity utilities were found. Supplementary derivations are also unavailable as markdown because `SUPP_MD=none`.
 
 Overall reproducibility rating: **3.5/5**. The core GitHub package strongly covers the algorithmic workflow and downstream utilities, with line-verifiable source for the main method. Missing Zenodo reproduction scripts, missing local supplementary derivations, and the absent exact F005 implementation prevent claiming full figure/result reproducibility from this workspace alone.
 

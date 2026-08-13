@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Machine Learning Algorithm</span>
-      <span>Proceedings of the 42nd International Conference on Machine Learning (PMLR 267) · 2025</span>
+      <span>PMLR · 2025</span>
     </div>
     <h1>Statistical_Collusion_Collectives_Learning_Platforms</h1>
     <p>Statistical Collusion by Collectives on Learning Platforms</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2502.04879" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2502.04879" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Statistical_Collusion_Collectives_Learning_Platforms">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/GauthierE/statistical-collusion" target="_blank" rel="noopener noreferrer" aria-label="Open code for Statistical_Collusion_Collectives_Learning_Platforms">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">

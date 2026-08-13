@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Machine Learning Algorithm</span>
-      <span>International Conference on Learning Representations (ICLR) · 2026</span>
+      <span>ICLR · 2026</span>
     </div>
     <h1>Online_Decision_Focused_Learning</h1>
     <p>Online Decision-Focused Learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2505.13564" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2505.13564" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Online_Decision_Focused_Learning">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -204,7 +204,6 @@ Figure 2 只是复现 Mandi et al. (2024) 的二维概念图，用于解释决�
 - 若内层线性决策本身只能做到加性误差 $\kappa$，遗憾界整体会增加 $\kappa$。
 - 实验只覆盖合成数据和选择单个物品的单纯形结构，没有验证一般多面体上的广泛应用。
 - 图中没有直接测量理论遗憾率、H2、$\xi$ 或 $P_T$。
-- 附录说明实验使用 PyTorch，但论文、arXiv 元数据以及精确标题/arXiv ID/作者组合的 GitHub 搜索均未找到官方实现。因此本工作区为 `paper-only`，无法进行代码级复现或 paper-code fidelity 验证。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

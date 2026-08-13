@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SOTMGF</h1>
     <p>Combining Spatial Multi-Omics Data to Decipher Spatial Domains and Elucidate Cell Heterogeneity Based on Self-Supervised Graph Learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1002/advs.75533" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1002/advs.75533" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SOTMGF">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Luyj6812/SOTMGF" target="_blank" rel="noopener noreferrer" aria-label="Open code for SOTMGF">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -120,7 +120,7 @@ SOTMGF 面向空间转录组、空间蛋白组以及推断得到的空间表观�
 
 ### 复现结论
 
-仓库 `.repo_source` 记录提交 `a1fea6d7cfb51e1f27873ffd7dedf0ccbc20b31e`，提供模型文件、多个数据集脚本、基线和若干预计算数据。它足以核对论文机制并复跑部分作者环境，但不足以从原始公开数据一键生成全部七张图。对新数据应用时，必须先补齐细胞组成与分子关联视图、修复第四视图变量错误、消除硬编码 CUDA/路径，并明确域数量与各阶段超参数。
+它足以核对论文机制并复跑部分作者环境，但不足以从原始公开数据一键生成全部七张图。对新数据应用时，必须先补齐细胞组成与分子关联视图、修复第四视图变量错误、消除硬编码 CUDA/路径，并明确域数量与各阶段超参数。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

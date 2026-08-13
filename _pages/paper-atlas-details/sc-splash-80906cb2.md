@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>sc-SPLASH</h1>
     <p>Reference-free discovery with barcoded single-cell sequencing</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/refresh-bio/splash" target="_blank" rel="noopener noreferrer" aria-label="Open code for sc-SPLASH">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -107,7 +108,7 @@ R1：cell barcode + UMI        R2：cDNA 序列
 5. 以“实验编号 + barcode”为 sample ID 写入 SATC 文件；
 6. 过滤长同聚物、接头/污染序列和低频 $k$-mer。
 
-代码中可直接确认 SPLASH Python 主程序会构造 `bkc --mode pair` 命令，并传入 anchor/target/gap 长度、barcode/UMI 长度、线程数、过滤阈值和 sample ID（`splash/src/splash.py:1140-1189`）。但是当前代码快照里的 `splash/libs/bkc/` 是空目录，所以 BKC 内部实现属于论文声明，**无法在本工作区直接验证**。
+代码中可直接确认 SPLASH Python 主程序会构造 `bkc --mode pair` 命令，并传入 anchor/target/gap 长度、barcode/UMI 长度、线程数、过滤阈值和 sample ID（`splash/src/splash.py:1140-1189`）。
 
 #### 阶段 2：为每个 anchor 建稀疏列联表
 
@@ -251,8 +252,6 @@ $$
 
 ### 9. 代码可复现性与已知缺口
 
-当前工作区的代码—论文一致性为**中等**：Exact 6、Partial 1、Not found 1。
-
 - 已直接验证：稀疏 target-by-cell 矩阵、无监督统计调用路径、Benjamini–Yekutieli 校正、target entropy、JSON 后处理。
 - 部分匹配：监督 GLM。
 - **MISSING / Not found：** BKC 源码在当前快照中缺失；多个依赖 submodule 目录也是空的。
@@ -333,7 +332,6 @@ A subtle verified detail is that the paper's entropy is emitted as `target_entro
 
 Strengths:
 
-- Primary paper Markdown, all 12 local figures and a provenance-pinned SPLASH snapshot are present.
 - Core sparse statistics, FDR correction, entropy and supervised R code can be inspected directly.
 - The repository includes small input manifests, download helpers, analysis examples and postprocessing examples.
 

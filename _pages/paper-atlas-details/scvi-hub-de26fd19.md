@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scvi-hub</h1>
     <p>Scvi-hub: an actionable repository for model-driven single-cell analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02799-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02799-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scvi-hub">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/YosefLab/scvi-hub-reproducibility" target="_blank" rel="noopener noreferrer" aria-label="Open code for scvi-hub">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -40,7 +40,7 @@ scvi-hub 解决的不是“怎样再设计一个 scVI 变体”，而是一个�
 
 ### 贡献者一侧：模型、证据和数据表示一起发布
 
-一个可复用条目不应只有权重文件。论文中的条目还包括模型类型、训练数据和基因集合等元数据、面向读者的模型卡，以及可选的原始或精简 AnnData。`HubModel` 负责把模型和数据作为一个对象组织并推送或拉取；`HubMetadata` 与模型卡帮助使用者知道模型来自哪里、适合什么输入。这里的实现位于外部 `scvi-tools`，不是本工作区的复现仓库。
+一个可复用条目不应只有权重文件。论文中的条目还包括模型类型、训练数据和基因集合等元数据、面向读者的模型卡，以及可选的原始或精简 AnnData。`HubModel` 负责把模型和数据作为一个对象组织并推送或拉取；`HubMetadata` 与模型卡帮助使用者知道模型来自哪里、适合什么输入。
 
 发布前的关键动作是 posterior predictive check（PPC）。对输入计数 $x$，已训练模型通过后验和生成分布产生复制数据
 
@@ -130,7 +130,7 @@ $$
 
 ### 本地代码究竟覆盖了多少
 
-本工作区固定到复现仓库 commit `bb19c43d7e0c19cc0a2d18be8632f09feb2f5367`。它以 Jupyter notebooks 为主，CodeGraph 没有得到有效的符号图，因此代码证据来自直接读取 notebook JSON 和 `ppc_plot_utils.py`。
+它以 Jupyter notebooks 为主，CodeGraph 没有得到有效的符号图，因此代码证据来自直接读取 notebook JSON 和 `ppc_plot_utils.py`。
 
 覆盖较直接的部分包括 HLCA PPC、scArches 查询映射、PyNNDescent 标签迁移、Census/CAR T 分析、Milo、DestVI 和精简基准。`fig2_hlca_only_reference.ipynb:448`、心脏 criticism notebook 的多处单元把 `n_samples=2` 传给 PPC；这是论文复现的计算选择，样本数很少，不应被解释成稳定性已经充分评估。
 

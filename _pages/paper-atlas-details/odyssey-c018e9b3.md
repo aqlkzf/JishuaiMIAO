@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Odyssey</h1>
     <p>Odyssey: reconstructing evolution through emergent consensus in the global proteome</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.10.15.682677" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.10.15.682677" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Odyssey">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -175,12 +175,6 @@ pTM 衡量全局折叠置信，cRMSD 衡量受约束活性位点几何。winner/
 - M-CSA 生成序列、折叠工具版本、pTM/cRMSD 脚本与 D2-DPO 代码。
 
 `doc_code.md` 因此把所有实现敏感项标为 `Not found/MISSING`。这不是说论文方法不存在，也不是复现失败，而是当前证据不足以从“论文声称”升级为“源码已验证”。若未来作者发布代码，应重新锁定仓库 URL、commit、checkpoint 版本和数据 manifest，再重做 code-paper map。
-
-### 10. 当前工作区能支持到哪里
-
-本地有 bioRxiv PDF、PyMuPDF 转换的完整正文与补充材料、13 张抽取图、方法文档、figure analysis 和证据账本。它足以解释 FSQ、consensus、离散扩散、D2-DPO 以及图 1–9 的逻辑，也足以保留公式和论文报告的数值。
-
-它不能执行模型推理、生成新蛋白、验证 checkpoint、复跑 102B scaling、确认数据泄漏或复现酶 alignment。`ready_to_publish=true` 只表示这份 paper-only 分析合同和不确定性标注完整，不表示 Odyssey 软件可复现或论文结论已被独立验证。
 
 ### 11. 一句话抓住 Odyssey
 

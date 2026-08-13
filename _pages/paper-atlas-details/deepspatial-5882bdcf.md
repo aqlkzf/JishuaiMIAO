@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DeepSpatial</h1>
     <p>Reconstructing True 3D Spatial Omics at Single-Cell Resolution</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2026.04.28.721395" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2026.04.28.721395" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DeepSpatial">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/yyh030806/DeepSpatial" target="_blank" rel="noopener noreferrer" aria-label="Open code for DeepSpatial">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 DeepSpatial 不是把相邻切片逐像素“补帧”，也不是把二维切片简单堆成 2.5D。它先用非平衡最优传输（UOT）在相邻切片之间建立软细胞对应，再训练一个 Gene Diffusion Transformer（GiT）学习细胞状态随深度连续变化的速度场，最后从上下两张真实切片出发求解 ODE，在任意中间深度生成带三维坐标、表达向量和细胞类型的虚拟细胞。
 
-本工作区核对的是 bioRxiv 论文 `10.1101/2026.04.28.721395` 与官方仓库 `yyh030806/DeepSpatial` 的固定源码快照 `fdb98657fca95679cc45adf3510a161de05bca08`。论文 Methods 位于 `paper.md:855-950`；核心代码位于 `deepspatial/data_utils/uot_solver.py`、`deepspatial/models/git.py`、`deepspatial/module.py` 和 `deepspatial/core.py`。
+论文 Methods 位于 `paper.md:855-950`；核心代码位于 `deepspatial/data_utils/uot_solver.py`、`deepspatial/models/git.py`、`deepspatial/module.py` 和 `deepspatial/core.py`。
 
 ### 1. 它解决的任务是什么
 
@@ -158,7 +158,7 @@ is_fwd = torch.rand(total_cells, device=dev) > t_vals
 
 最小输入合同是：相同特征空间的 AnnData 列表、`.obsm` 中的二维坐标、`.obs` 中的物理 z 与细胞类型。输出 AnnData 的 `.X` 是稀疏生成表达，`.obsm` 保存恢复到物理尺度的坐标，`.obs` 继承父细胞元数据并加入生成 z 和预测类别。
 
-公开仓库提供 Python 包、训练/推断核心和部分教程，足以审计主算法；但本工作区没有找到论文补充材料的独立 Markdown，也没有验证论文全部处理后数据、模型权重和端到端表格复现。因此当前能确认的是“固定源码实现了哪些机制”，不是“本地已经重现论文所有数值”。
+公开仓库提供 Python 包、训练/推断核心和部分教程，足以审计主算法；因此当前能确认的是“固定源码实现了哪些机制”，不是“本地已经重现论文所有数值”。
 
 最后应把 DeepSpatial 理解为一个受配准、UOT 配对、线性密度先验和神经 ODE 共同约束的条件生成器。它提供了从 2D 切片构造连续 3D 假设组织的实用途径；生成细胞是模型推断，不是新增实验观测。复现时必须显式记录论文版本、代码提交、坐标预处理、细胞标签、`thickness`、UOT 参数、ODE 参数以及上述三处论文—代码差异。
 

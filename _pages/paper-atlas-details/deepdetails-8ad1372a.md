@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>DeepDETAILS</h1>
     <p>High-resolution reconstruction of cell-type-specific transcriptional regulatory processes from bulk sequencing samples</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/haiyuan-yu-lab/DeepDETAILS" target="_blank" rel="noopener noreferrer" aria-label="Open code for DeepDETAILS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -62,7 +63,7 @@ bulk RMSLE + 分支相关性惩罚 <──────────────�
 
 $$s(k,r)=\frac{\mathrm{RPM}(k,r)}{\sum_{i=1}^{K}\mathrm{RPM}(i,r)+\epsilon}.$$
 
-这里 RPM 是中心 1 kb 的深度标准化 ATAC 信号，$\epsilon=10^{-16}$；不可及区域的分支不会贡献输出（`paper.md:231-237`）。代码把名为 `per_cluster_load` 的值作为 `cluster_weights` 使用并支持 early/late/late-ch 位置（`model/deconvolution.py:250-282`），但本工作区尚未证明所有数据路径中它都严格等于上述 RPM 比例，所以这一对应关系应保持 **Partial**。
+这里 RPM 是中心 1 kb 的深度标准化 ATAC 信号，$\epsilon=10^{-16}$；不可及区域的分支不会贡献输出（`paper.md:231-237`）。
 
 训练最小化 bulk 重建 RMSLE，并惩罚不同分支预测之间过高的相关性，以避免多个分支学成相同信号（`paper.md:240-246`）。源码先将每个分支的 shape 和 count 相乘、再对分支求和（`helper/utils.py:216-249`），随后在 `training_step` 中计算 RMSLE 和非对角相关性惩罚（`model/wrapper.py:139-172`）。若 HDF5 带有 prior，代码还会加一个 `prior_loss`；这是真实代码行为，但主文公式没有说明它与论文惩罚项相同。
 

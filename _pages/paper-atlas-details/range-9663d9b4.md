@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>RANGE</h1>
     <p>Extending the range of graph neural networks with global encodings</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-69715-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-69715-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for RANGE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ClementiGroup/range" target="_blank" rel="noopener noreferrer" aria-label="Open code for RANGE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -168,31 +168,9 @@ $$
 
 ### 10. 论文—代码对应程度
 
-| 机制 | 对应程度 | 直接证据与边界 |
-|---|---|---|
-| propagation→aggregation→broadcast | Exact | `blocks.py:785-843` |
-| 多虚拟节点及两类全连接边 | Exact | `models/base.py:150-215` |
-| 中心距离归一化与 PBC 版本 | Exact | `nn/utils.py:8-80` |
-| 加性多头 aggregation/broadcast | Exact | `blocks.py:34-137,150-279` |
-| self-loop 与动态正则权重 | Exact | `blocks.py:242-277`; `regularization.py:49-83` |
-| SchNet/PaiNN/So3krates/MACE 封装 | Exact | `nn/models/` 四个实现 |
-| 完整训练损失、优化和 MD 流程 | Partial | 论文描述存在，执行依赖外部 `mlcg` 与 Zenodo 配置 |
-| 论文全部 benchmark 数值复现 | Not rerun | 本次恢复未重新训练或运行 MD |
-| Supplementary Notes/Tables/Figures | Local source absent | 当前工作区没有独立补充文件 |
-
 ### 11. 最容易误解的四点
 
 第一，master node 是神经网络通信节点，不是新粒子，也没有独立物理坐标或电荷。第二，线性复杂度以 $K$、head 数和隐藏维固定为前提；较大常数仍会增加时间与显存。第三，RANGE 缓解局部通信瓶颈，但不会自动保证学到正确的库仑渐近形式或严格物理分解。第四，论文在多个分子任务上展示外推和稳定模拟，并不意味着离开训练分布后天然可靠；能量守恒、数据覆盖和长时间稳定性仍需针对新体系验证。
-
-### 证据入口
-
-- 主文与图注：`paper source/paper/vlm/paper.md`
-- 主文 PDF：`paper.pdf`
-- 图像裁剪：`paper source/paper/vlm/images/`
-- 本地代码快照：`range_code/`，PaperCode 快照提交 `b78b42f0d238ae7ccf03985d5fda4d42d6251481`
-- 细粒度方法：`doc_method.md`
-- 论文—代码映射：`doc_code.md`
-- 逐图分析：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

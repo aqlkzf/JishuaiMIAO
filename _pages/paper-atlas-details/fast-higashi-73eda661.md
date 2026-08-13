@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Fast-Higashi</h1>
     <p>Ultrafast and interpretable single-cell 3D genome analysis with Fast-Higashi</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cels.2022.09.004" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cels.2022.09.004" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Fast-Higashi">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ma-compbio/Fast-Higashi" target="_blank" rel="noopener noreferrer" aria-label="Open code for Fast-Higashi">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -143,7 +143,7 @@ Fast-Higashi 的速度主要来自矩阵分解的交替更新，而非“更小�
 
 图 2A–C 展示发育小鼠脑、人前额叶和小鼠海马的 UMAP；D 汇总聚类/分类指标，E 比较运行时间，F/G 聚焦更细神经元亚型。论文报告 Fast-Higashi 在三个复杂组织数据上通常为最佳或次佳，并在其基准环境中比 3DVI 快 40 倍以上、比 Higashi 快 9 倍以上。Lee 数据中它能分离 Pvalb、Sst、Vip、Ndnf 以及 L2-3/L4/L5/L6；Liu 数据中能区分 CA1/CA3 并显示稀有血管相关细胞群。
 
-这些是论文比较结果，不是本工作区重新运行所得。UMAP 上“看起来分开”也不是独立证据，论文同时使用 ARI、AMI、micro/macro-F1、modularity 和 silhouette 来支持其判断。
+UMAP 上“看起来分开”也不是独立证据，论文同时使用 ARI、AMI、micro/macro-F1、modularity 和 silhouette 来支持其判断。
 
 #### 图 3：解释性验证
 
@@ -159,7 +159,6 @@ Fast-Higashi 的速度主要来自矩阵分解的交替更新，而非“更小�
 - “rare cell type” 是基于已有或多组学注释对 embedding 小簇的生物学解释，不意味着算法自动输出细胞类型名称。
 - meta-interaction 与 marker expression 的相关支持功能关联，但不建立三维接触导致转录变化的因果关系。
 - 最终 embedding 受 rank、分辨率、最大距离、bin/cell batch、RWR 和质量过滤共同影响。
-- 论文称方法可扩展到其他单细胞组学；仓库核心代码与本工作区证据主要覆盖 scHi-C，不应把该表述写成已全面验证的多组学实现。
 
 ### 9. 论文—代码一致性与缺口
 
@@ -167,8 +166,6 @@ Fast-Higashi 的速度主要来自矩阵分解的交替更新，而非“更小�
 
 仍需保留三条边界：
 
-1. `Fast-Higashi/` 嵌在 PaperCode 根 Git 仓库中，不能从该目录独立执行 Git 历史验证；`.repo_source` 记录上游 URL 与快照提交 `71182a9b...`，这里只把它视为采集时的来源记录。
-2. 仓库包含教程 notebook 和模型实现，但论文所有 benchmark、图表生成与统计分析并非都以一键脚本形式提供；当前工作区没有复现实验数值。
 3. 本地 `paper.md` 来自 Elsevier XML，包含正文、STAR Methods 与补充图表引用，但没有独立的补充 Markdown 或论文主图原图目录；`figure_analysis.md` 以正文图注和论文叙述为依据。
 
 ### 10. 推荐阅读路径

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MouseMapper</h1>
     <p>A deep-learning framework reveals whole-body perturbations at cell level</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10535-2" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10535-2" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MouseMapper">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/erturklab/mouseMapper" target="_blank" rel="noopener noreferrer" aria-label="Open code for MouseMapper">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -143,7 +143,7 @@ HFD 小鼠 whisker nuisance score 降低，连接到眶下感觉功能。DISCO-M
 
 ### 论文与本地代码的匹配边界
 
-本地代码包含 Nerve、Immune、Tissue、graph 和滑窗推理模块，核心数据流与论文直接对应。`mouseMapper/.repo_commit` 记录 `3a200034254d90f00e759cb38efdcf53f16166ef`；但 `.repo_source` 内另写 `3d90448ee7f237baf897603fcb3ec44c5119c4ab`，而目录没有独立 `.git` 可现场裁决。合同采用专门的 `.repo_commit` 文件作为快照 commit，同时把冲突保留为 provenance gap。
+本地代码包含 Nerve、Immune、Tissue、graph 和滑窗推理模块，核心数据流与论文直接对应。
 
 仓库不是单命令复现包：训练与分析分散在 Python、notebook、Voreen/pi2 外部工具和模型权重之间；论文全套统计、蛋白组与行为分析也不都在此代码目录。模型 ZIP/视频中的小文件是 Git LFS pointer，而非实际权重或视频内容，因此不能声称工作区可离线端到端重跑论文。
 

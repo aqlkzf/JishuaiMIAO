@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>GLEAM</h1>
     <p>GLEAM links single-cell 3D genome and cellular electrophysiology with calibrated uncertainty</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/keleslab/GLEAM" target="_blank" rel="noopener noreferrer" aria-label="Open code for GLEAM">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -106,7 +107,6 @@ $$
 ### 复现和版本边界
 
 - 本地源码声明包版本 0.1.0、Python ≥3.9；README 给出 PyTorch 2.8.0/CUDA 12.8 和 PyG 2.7.0 的安装组合。
-- 本地 `GLEAM/` 没有 `.git` 或 `.repo_source`，不能核验具体上游 commit；仓库 URL来自论文和 README。
 - README 明确称工具仍在统一 Python/R 流程，示例 notebook 与 conformal 示例仍“under construction”。论文的完整评估、外部投影、Seurat/R 预处理和生物学下游分析并未全部进入 Python 包。
 - `pyproject.toml` 仅声明 NumPy、pandas、SciPy、scikit-learn，实际还需要 PyTorch、PyG、Scanpy 等 README/requirements 环境，单靠项目元数据不能完成安装。
 - 本地源为 2026-02-14 打包的未发表稿及补充材料；正文未给 DOI、期刊或正式接受信息，因此这里保留为 2026 manuscript，而不虚构出版状态。

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>scGraphformer</h1>
     <p>scGraphformer: unveiling cellular heterogeneity and interactions in scRNA-seq data using a scalable graph transformer network</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/xyfan22/scGraphformer" target="_blank" rel="noopener noreferrer" aria-label="Open code for scGraphformer">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -74,7 +75,7 @@ $$D^{-1/2}\mathcal GD^{-1/2}V$$
 
 ### 训练和结果应怎样理解？
 
-本地 `main.py` 用 Adam 和交叉熵训练，并可导出每层注意力矩阵（`main.py:89-145,167-191`）。论文在 20 个同数据集任务、跨平台 PBMCBench、鼠脑转移和百万细胞级图谱上比较多种方法；例如报告 Zeisel→Rosenberg 的平均准确率为 95.210%，COVID atlas 为 76.05%（`paper.md:105-145`）。这些数字来自论文和图，不是本工作区重新运行得到的结果。
+本地 `main.py` 用 Adam 和交叉熵训练，并可导出每层注意力矩阵（`main.py:89-145,167-191`）。论文在 20 个同数据集任务、跨平台 PBMCBench、鼠脑转移和百万细胞级图谱上比较多种方法；例如报告 Zeisel→Rosenberg 的平均准确率为 95.210%，COVID atlas 为 76.05%（`paper.md:105-145`）。
 
 最后要区分两件事：注意力热图可提出“哪些细胞可能相关”的假设，图 6 还以谱系和 marker 表达做了支持；但注意力权重本身不是因果互作证据。当前快照也没有论文使用的处理后数据、完整绘图脚本或 Figshare 存档对照，所以完整复现仍是开放边界。
 

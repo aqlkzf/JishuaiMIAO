@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scDiffusion-X</h1>
     <p>Multi-modal Diffusion Model with Dual-Cross-Attention for Multi-Omics Data Generation and Translation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-71744-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-71744-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scDiffusion-X">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/EperLuo/scDiffusion-X" target="_blank" rel="noopener noreferrer" aria-label="Open code for scDiffusion-X">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -137,7 +137,6 @@ $$
 
 ### 复现与版本边界
 
-- 本工作区代码快照固定在提交 `7d1342e4bc3b76f3449dc0ef292f9e4ce877c7f0`，包版本为 `0.0.2`；2026-07-19 查询官方仓库 HEAD 已是 `d60d928b635ab7a52ace030a641efd02137c193f`，所以这里的代码结论只对固定快照负责。
 - 主论文、三份补充 PDF、主图 1–5 和补充图 S1–S12 已在本地核读。`paper_supp3.pdf` 是审稿/作者回复材料，不应当作独立实验结果来源。
 - 发布仓库提供训练和采样脚本以及三个评估 notebook，但 README 仍留有待补说明，路径需要人工修改；数据、预训练权重和完整论文结果未在本次工作区执行。
 - `pyproject.toml` 同时约束旧版 `pytorch_lightning<1.9.0`、`scvi-tools<=1.0.0` 和较新的 `torch>=2.1.2`，环境求解存在风险。本次只做静态源代码映射，没有验证从零安装或端到端数值复现。

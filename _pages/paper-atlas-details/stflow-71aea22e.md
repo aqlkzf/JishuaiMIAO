@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Representation Models</span>
-      <span>ICML · 2025</span>
+      <span>PMLR · 2025</span>
     </div>
     <h1>STFlow</h1>
     <p>Scalable Generation of Spatial Transcriptomics from Histology Images via Whole-Slide Flow Matching</p>
-    <a class="paper-detail__doi" href="https://doi.org/2506.05361" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/2506.05361" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for STFlow">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Graph-and-Geometric-Learning/STFlow" target="_blank" rel="noopener noreferrer" aria-label="Open code for STFlow">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -205,15 +205,6 @@ $$
 ### 12. 使用时最容易误解的四点
 
 第一，STFlow 预测的是表达分布的条件样本/估计，并不替代空间转录组实验。第二，“cell-cell interaction”指模型中的邻域依赖，不是已识别的生物因果网络。第三，E(2) 保证针对坐标分支，图像 encoder 的旋转/镜像鲁棒性主要来自预训练增强。第四，ZINB 是人工网格选择的先验，不是从每张新切片自动拟合的真实计数生成机制。
-
-### 证据入口
-
-- 主文、附录、公式与表格：`paper source/paper/auto/paper.md`
-- 16 页论文 PDF（包含附录 A–C）：`paper.pdf`
-- 固定代码快照：`STFlow/`，官方记录 commit `880c2eeaa64aaf64ffcd30f3c3278bdab4ab1dbe`
-- 论文—代码细表：`doc_code.md`
-- 详细公式：`doc_method.md`
-- 逐图分析：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

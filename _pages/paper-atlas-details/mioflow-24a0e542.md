@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Dynamics, Fate &amp; Trajectory</span>
-      <span>NeurIPS 2022 · 2022</span>
+      <span>NeurIPS · 2022</span>
     </div>
     <h1>MIOFlow</h1>
     <p>Manifold Interpolating Optimal-Transport Flows for Trajectory Inference</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2206.14928" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2206.14928" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MIOFlow">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/KrishnaswamyLab/MIOFlow" target="_blank" rel="noopener noreferrer" aria-label="Open code for MIOFlow">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -91,8 +91,6 @@ Figure 4 展示 AML 处理中潜空间轨迹及 SLPI、B2M、MYB 的基因表达
 
 ### 当前代码实际做了什么
 
-本工作区代码快照为提交 `206cc19ca89d985245ca204fbc86772e5c2446d0`，与论文算法存在实质差异：
-
 #### 1. 几何目标是 PHATE 坐标距离，不是论文的 $G_\alpha$
 
 `mioflow/gaga.py:335-413` 的 `fit_gaga()` 接收外部算好的 `X_phate`，标准化后直接计算两两欧氏距离。`train_gaga()` 再用 `torch.pdist(embedding)` 拟合这些距离（`gaga.py:197-215`）。代码没有构造论文定义的多尺度矩阵幂，也没有 $K$ 或 $\alpha$ 参数。因此只能说它保留 PHATE 坐标的几何，不能把论文关于 $G_\alpha$ 的收敛结论直接转移到当前实现。
@@ -126,15 +124,6 @@ GAE 采用两阶段训练（`gaga.py:70-132`）：先冻结 decoder，仅训练 
 ### 结论
 
 论文方法的核心贡献是把流形几何、动态最优传输和神经 ODE 组合起来，用群体快照约束连续轨迹。当前代码保留了“自编码器 + OT/能量/密度损失 + ODE/SDE + 解码”这条主干，但把严格 diffusion geodesic 换成 PHATE 坐标距离，只保留局部区间训练，并改变了扩散参数化。理解或复现时应分别引用论文设计与代码行为，不能把两者混写成同一个已实现系统。
-
-### 证据入口
-
-- 论文：`paper source/paper/vlm/paper.md`，尤其 Section 3、Algorithm 1、Figures 1–5 与 Tables 1–2。
-- 图像：`paper source/paper/vlm/images/`。
-- GAE：`MIOFlow/mioflow/gaga.py`。
-- ODE/SDE 训练：`MIOFlow/mioflow/mioflow.py`。
-- 损失：`MIOFlow/mioflow/core/losses.py`。
-- ODE/SDE 模型：`MIOFlow/mioflow/core/models/ode_model.py`、`sde_model.py`。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

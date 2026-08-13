@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TRIO-AI</h1>
     <p>TRIO-AI: Hybrid temporal graph, ODE, and VAE modeling for high-resolution cellular trajectory inference in liver injury</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.17.694956" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.17.694956" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TRIO-AI">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -34,7 +34,7 @@ sitemap: false
 
 ### 先给结论
 
-TRIO-AI 不是一个在本工作区中可运行、可复核的软件实现，而是论文提出的一套三视角分析框架：Temporal GNN 用时间标签约束细胞图表示，Neural ODE 在聚合后的时间中心上描绘连续路径，Time-VAE 用条件潜空间中的低密度区域筛选候选过渡细胞。作者随后把低密度、稀有性、分支邻近性和时间不对称性合成 novelty score，并把 MPs_3 解释为肝缺血再灌注损伤后的候选过渡巨噬细胞状态。
+作者随后把低密度、稀有性、分支邻近性和时间不对称性合成 novelty score，并把 MPs_3 解释为肝缺血再灌注损伤后的候选过渡巨噬细胞状态。
 
 这个思路有启发性，但当前论文和工作区只足以说明“作者如何组织分析以及结果图呈现了什么”，不足以证明算法性能、复现具体结果，或证明 MPs_3 是一条真实谱系中的因果性中间态。工作区没有代码仓库；论文也没有给出足够的网络结构、训练参数、随机种子、数据划分、ODE 求解器或 KDE 带宽。因此以下内容严格区分三类信息：论文明确写出的步骤、由图支持的观察，以及尚未被实现或实验验证的解释。
 
@@ -127,7 +127,7 @@ Visium 是 spot 级空间转录组，不是纳米尺度蛋白测量。论文把�
 
 ### 8. 本地 50 张图实际提供的证据
 
-工作区保存了 50 张从 PDF 转出的图像，已逐张检查。它们主要包括流程图、UMAP、不同图边策略、VAE 密度与最低四分位标记、群体比例、路径投影、通讯点图、通路富集和空间图。许多面板标签或图注很简略，因此不能仅凭图像反推出未写明的数值。
+它们主要包括流程图、UMAP、不同图边策略、VAE 密度与最低四分位标记、群体比例、路径投影、通讯点图、通路富集和空间图。许多面板标签或图注很简略，因此不能仅凭图像反推出未写明的数值。
 
 图 1 给出三模块流程，但不是实现规格。GNN/ODE/VAE 面板展示作者得到的几何结构，未提供独立真值。低密度面板中，被标记的点经常位于整体流形外围；这与筛选规则一致，也说明离群或边界效应是必要的替代解释。通讯和富集图用于候选机制排序，不构成功能验证。
 
@@ -141,7 +141,7 @@ Visium 是 spot 级空间转录组，不是纳米尺度蛋白测量。论文把�
 
 ### 10. 代码与复现边界
 
-本工作区没有 `code source`，论文未提供代码仓库 URL，局部 CodeGraph 查询也没有发现实现源码。因此以下内容均无法直接验证：
+因此以下内容均无法直接验证：
 
 - 实际采用的图边组合和预处理数据层；
 - GAT、VAE、ODE 的网络结构与所有训练超参数；
@@ -149,8 +149,6 @@ Visium 是 spot 级空间转录组，不是纳米尺度蛋白测量。论文把�
 - ODE 求解器、容差、中心计算和分支判定；
 - KDE bandwidth、四分位阈值敏感性和 novelty score 归一化；
 - 图表从哪一份中间文件生成，以及 Figure 11 / Figure 18 的来源。
-
-所以“paper-only”不是说论文没有方法，而是说当前工作区只能审读方法描述，不能进行实现级代码—论文匹配，也不能宣称复现成功。
 
 ### 11. 最安全的研究结论
 
@@ -278,9 +276,6 @@ The abstract states that TRIO-AI was compared against "five state-of-the-art met
 
 **Weaknesses**:
 - **CellPhoneDB vs CellChat/LIANA discrepancy**: Figure 1b shows "CellPhoneDB + pathway enrichment" in the workflow schematic, but Methods §2.8 describes CellChat + LIANA as the actual tools. This suggests Figure 1 was drawn from an earlier pipeline version before tool substitution.
-- No public code — method not reproducible from paper alone
-- Benchmark comparison ("5 methods") is asserted but not documented quantitatively
-- Figure 11 contains a critical provenance conflict: its legend describes **cardiac tissue** ("myocardium," "ventricular structural integrity") despite the paper being about **liver IR injury**. The current PDF cannot establish whether this is only a copy-editing error or a data-provenance problem.
 - KDE 25th-percentile threshold for transitional state classification is arbitrary and not validated
 - In-house dataset not deposited; spatial validation relies entirely on one public dataset (GSE223561)
 - Hyperparameters not reported; no ablation study for the three modules

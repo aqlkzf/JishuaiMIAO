@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>STProtein</h1>
     <p>STProtein: predicting spatial protein expression from multi-omics data</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/zhaorui-bi/STProtein" target="_blank" rel="noopener noreferrer" aria-label="Open code for STProtein">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -60,7 +61,7 @@ STProtein 的核心可以理解为：
   对 Z/Y' 做 mclust/leiden/louvain 聚类，得到空间蛋白域
 ```
 
-这个流程对应论文的训练框架图和上下游任务图（`paper.md:47-52`, `paper.md:201-209`）。本工作区的 Figure 1 可见 RNA 表、空间信息、Feature Graph、Encoder、Embedding、Decoder，以及 `MSE(Y,Z)` 和 `MSE(X,X')` 两个损失分支；Figure 2 可见上游预测蛋白表和下游 mclust 聚类。
+这个流程对应论文的训练框架图和上下游任务图（`paper.md:47-52`, `paper.md:201-209`）。Figure 2 可见上游预测蛋白表和下游 mclust 聚类。
 
 ### 数据预处理
 

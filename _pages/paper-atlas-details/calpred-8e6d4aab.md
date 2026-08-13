@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CalPred</h1>
     <p>Calibrated prediction intervals for polygenic scores across diverse contexts</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-024-01792-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-024-01792-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CalPred">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/KangchengHou/calpred" target="_blank" rel="noopener noreferrer" aria-label="Open code for CalPred">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -196,10 +196,6 @@ Python 拟合通过临时文件调用外部 `Rscript`，依赖 R 包 `statmod` �
 - 论文广义描述 PGS×context，final notebook 只选择部分交互；
 - 包有 quantile 工具，但论文 final pipeline 使用 notebook/外部实现完成预处理；
 - 正式包不是端到端 PGS 训练或论文作图工具。
-
-#### 未在本工作区重新证明
-
-UK Biobank 与 All of Us 是受控数据，手稿 notebook 指向机构路径和预计算中间结果。本次没有获得原始个体数据、重训 PGS、执行 R 拟合或重画图 2–8；尤其没有找到图 8 四模型收入面板的清晰独立脚本。因此本地代码足以验证统计结构和接口，但论文的 72 traits、显著性数量、具体覆盖率及生物医学结论仍是论文报告，而不是此次本地复现结果。
 
 ### 最简心智模型
 

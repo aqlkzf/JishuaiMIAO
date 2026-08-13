@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>GLUE</h1>
     <p>Multi-omics single-cell data integration and regulatory inference with graph-linked embedding</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/gao-lab/GLUE" target="_blank" rel="noopener noreferrer" aria-label="Open code for GLUE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -136,7 +137,6 @@ GLUE 的 integration consistency 不是看模态是否混合，而是检查：�
 - 调控分数是总体数据上的关联，不能单独证明因果，也可能混合组织/时间特异网络。
 - 少于约 1,000 个细胞时，神经网络可能训练不足。
 - 仓库代码与论文核心机制高度吻合，但完整复现仍需下载外部大型数据并运行昂贵工作流。
-- 本工作区 `MISSING` Supplementary Data 1/2 XLSX；主文、补充 PDF/Markdown 和全部主/扩展图像均已保留。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

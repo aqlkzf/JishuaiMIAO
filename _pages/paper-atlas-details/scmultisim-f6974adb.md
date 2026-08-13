@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scMultiSim</h1>
     <p>scMultiSim: simulation of single-cell multi-omics and spatial data guided by gene regulatory networks and cell-cell interactions</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02651-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02651-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scMultiSim">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ZhangLabGT/scMultiSim" target="_blank" rel="noopener noreferrer" aria-label="Open code for scMultiSim">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 scMultiSim 不是从参考数据中拟合一个黑箱生成器，而是让用户先给出细胞分化树，并可选提供基因调控网络（GRN）和细胞间相互作用（CCI），再把细胞身份、调控、染色质可及性和空间邻域逐层写入转录动力学参数，最终同时输出 RNA、ATAC、RNA velocity、空间位置及其真值。它的主要用途不是复刻某一个真实样本，而是构造“因素已知且强度可调”的数据来检验分析方法。
 
-论文来源为 Li 等发表于 *Nature Methods*（2025）的 “scMultiSim: simulation of single-cell multi-omics and spatial data guided by gene regulatory networks and cell-cell interactions”，DOI `10.1038/s41592-025-02651-0`。本工作区保存论文 Markdown、论文图像和一个完整 R 包源码快照；本地 `DESCRIPTION` 标为 scMultiSim 1.1.10、R >= 4.4.0，但没有 Git 提交哈希，因此可以验证机制与当前实现，不能声称它就是论文实验使用的精确提交。
+论文来源为 Li 等发表于 *Nature Methods*（2025）的 “scMultiSim: simulation of single-cell multi-omics and spatial data guided by gene regulatory networks and cell-cell interactions”，DOI `10.1038/s41592-025-02651-0`。本地 `DESCRIPTION` 标为 scMultiSim 1.1.10、R >= 4.4.0，但没有 Git 提交哈希，因此可以验证机制与当前实现，不能声称它就是论文实验使用的精确提交。
 
 ### 1. 为什么要这样模拟
 
@@ -85,20 +85,20 @@ $$
 
 1. 快速 beta–Poisson 模式。`.betaPoisson()` 先采样
 
-   $$y\sim\mathrm{Beta}(k_{\mathrm{on}},k_{\mathrm{off}}),\qquad x\sim\mathrm{Poisson}(ys),$$
+$$y\sim\mathrm{Beta}(k_{\mathrm{on}},k_{\mathrm{off}}),\qquad x\sim\mathrm{Poisson}(ys),$$
 
-   再用 `intr.noise` 在随机样本 $x$ 与均值 $k_{\mathrm{on}}s/(k_{\mathrm{on}}+k_{\mathrm{off}})$ 之间插值。它适合不需要 velocity、关注运行速度的场景。
+再用 `intr.noise` 在随机样本 $x$ 与均值 $k_{\mathrm{on}}s/(k_{\mathrm{on}}+k_{\mathrm{off}})$ 之间插值。它适合不需要 velocity、关注运行速度的场景。
 
 2. 完整动力学模式。`gen_1branch()` 显式推进基因 on/off 状态、未剪接 RNA 和已剪接 RNA。若用 $u$ 表示未剪接、$x_s$ 表示已剪接，代码中的连续更新对应
 
-   $$\frac{du}{dt}=sI_{\mathrm{on}}-\beta u,\qquad
+$$\frac{du}{dt}=sI_{\mathrm{on}}-\beta u,\qquad
    \frac{dx_s}{dt}=\beta u-dx_s,$$
 
-   并输出真值速度
+并输出真值速度
 
-   $$v=\beta u-dx_s.$$
+$$v=\beta u-dx_s.$$
 
-   因此 velocity 真值来自同一个动力学过程，而不是事后根据降维图画出的箭头。论文 Extended Data Fig. 2b 展示其方向沿输入 Phyla5 轨迹。
+因此 velocity 真值来自同一个动力学过程，而不是事后根据降维图画出的箭头。论文 Extended Data Fig. 2b 展示其方向沿输入 Phyla5 轨迹。
 
 `intr.noise` 的含义也应谨慎解释：在 beta–Poisson 路径中它直接控制随机 burst 样本相对均值的权重；它不是后续测序 dropout 的同义词。后者属于第二阶段的技术噪声。
 
@@ -175,17 +175,6 @@ res <- sim_true_counts(list(
 - 不要用 observed counts 反向校验“无噪声机制”而不报告技术噪声配置。
 - 不要只保存输出矩阵。树、GRN、CCI、区域—基因映射、随机种子、包版本和全部 options 都是可复现真值的一部分。
 - 不要把源码快照的 1.1.10 版本等同于论文提交；缺失 commit 和实验环境是明确的复现边界。
-
-### 证据入口
-
-- 论文正文：`paper source/scMultiSim_paper/scMultiSim_paper.md`
-- 主图及扩展图：`paper source/scMultiSim_paper/*.jpeg`
-- 主调度：`R/1_main.R`
-- CIF 构造：`R/1.1_cif.R`
-- ATAC、动力学参数、RNA/velocity：`R/2_sim.R`
-- 空间与 CCI：`R/3.1_spatial.R`
-- 技术噪声与批次：`R/6_technoise.R`
-- 包版本与依赖：`DESCRIPTION`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

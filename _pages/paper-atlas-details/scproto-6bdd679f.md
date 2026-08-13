@@ -10,13 +10,13 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Representation Models</span>
-      <span>ICLR 2025 LMRL Workshop · 2025</span>
+      <span>ICLR · 2025</span>
     </div>
     <h1>scProto</h1>
     <p>Interpretable Self-Supervised Prototype Learning for Single-Cell Transcriptomics</p>
@@ -128,7 +128,7 @@ NB 路径目前把 size factor 硬编码为约 520.04，并从负二项分布采
 
 ### 10. 论文—代码对应和边界
 
-当前源码是此工作区本地代码快照；它没有独立论文仓库 commit provenance，工作区所在父仓库当前提交为 `206cc19ca89d985245ca204fbc86772e5c2446d0`，仅作为快照定位。
+当前源码是此工作区本地代码快照；
 
 | 机制 | 状态 | 证据 |
 |---|---|---|

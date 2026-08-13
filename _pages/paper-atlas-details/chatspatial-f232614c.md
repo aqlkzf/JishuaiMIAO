@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ChatSpatial</h1>
     <p>ChatSpatial: Schema-Enforced Agentic Orchestration for Reproducible and Cross-Platform Spatial Transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.02.26.708361" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.02.26.708361" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ChatSpatial">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/cafferychen777/ChatSpatial" target="_blank" rel="noopener noreferrer" aria-label="Open code for ChatSpatial">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -120,7 +120,6 @@ OCR 目录还含 Table 1、Table 2 与补充表图像。补充方法和表格文
 - **Exact**：20 个 MCP tools、FastMCP server、Pydantic schema、三层 wrapper/dispatch 结构、内存 data manager、server instructions、rpy2/anndata2ri 路径和语义错误处理均可在本地源码定位。
 - **Partial**：60+ 方法及论文工具表总体有实现，但当前源码还包含论文表未突出的方法；85 个 test files 也不与论文 28 个对话场景一一对应。
 - **Paper-only experiment**：240 次跨模型实验、自由代码 baseline、OSCC/HGSOC 结果不是 package unit tests 的直接产物，本地源码存在不等于这些数值已重跑。
-- **Provenance**：`.repo_source` 记录上游 `https://github.com/cafferychen777/ChatSpatial` 和获取 commit `98101f93bc4a47195339b67605f52fa91a8a0e6e`。嵌套 `.git` 已移除，因此当前目录不能独立执行 `git rev-parse` 再确认；本次以 provenance 文件和直接源码读取为边界。
 
 ### 局限
 
@@ -130,16 +129,6 @@ OCR 目录还含 Table 1、Table 2 与补充表图像。补充方法和表格文
 - 方法集合由维护者策展，不能覆盖所有新工具。
 - 上游包 API 漂移要求持续维护 wrapper。
 - 科学有效性最终继承底层方法及输入数据质量；schema 只能减少接口错误，不能修复错误生物学假设。
-
-### 本地证据入口
-
-- 论文与合并补充内容：`paper source/paper/auto/paper.md`
-- 图像：`paper source/paper/auto/images/`
-- MCP tools：`ChatSpatial/chatspatial/server.py`
-- Schema：`ChatSpatial/chatspatial/models/data.py`
-- 状态与 context：`ChatSpatial/chatspatial/spatial_mcp_adapter.py`
-- 方法 dispatch：`ChatSpatial/chatspatial/tools/deconvolution/__init__.py`
-- R bridge：`ChatSpatial/chatspatial/tools/deconvolution/rctd.py`、`cell_communication.py`、`utils/dependency_manager.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

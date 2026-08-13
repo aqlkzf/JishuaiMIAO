@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpatialEx</h1>
     <p>High-parameter spatial multi-omics through histology-anchored integration</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02926-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02926-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpatialEx">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/KEAML-JLU/SpatialEx" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpatialEx">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -133,13 +133,11 @@ PCC 衡量每个分子的预测与实测细胞间变化是否线性一致；SSIM
 
 ### 版本与复现边界
 
-本地代码目录没有嵌套 `.git`，不能用 `git rev-parse` 对其自身验证提交；`.repo_source` 记录来源为 `https://github.com/KEAML-JLU/SpatialEx`、采集提交 `dbd232b6f4c0efbb43152bb412bc45cbd5a38bed`。旧合同写成 `6d760893...`，但本地没有支持该值的 provenance 文件，因此本次以 `.repo_source` 为准并明确这是采集清单记录，而非现场 Git 验证。
-
-核心模型、预处理、教程和五个 notebook 均在本地，但完整论文 benchmark、所有基线运行与绘图汇总并未形成一键流水线。UNI 权重路径硬编码，requirements 也不足以锁定完整 GPU/病理模型环境。论文实现细节报告 Python 3.8、PyTorch 2.3.1、RTX 3090（`paper.md:308-310`）；数据入口与处理后 source data 在 `paper.md:368-374`。因此当前工作区支持源码审计和按教程重建局部流程，不支持声称已端到端复现全部主图。
+核心模型、预处理、教程和五个 notebook 均在本地，但完整论文 benchmark、所有基线运行与绘图汇总并未形成一键流水线。UNI 权重路径硬编码，requirements 也不足以锁定完整 GPU/病理模型环境。论文实现细节报告 Python 3.8、PyTorch 2.3.1、RTX 3090（`paper.md:308-310`）；数据入口与处理后 source data 在 `paper.md:368-374`。
 
 ### 最终应怎样使用结果
 
-SpatialEx+ 最适合把相邻切片的互补测量扩展成“可检验的完整候选矩阵”。实测块应始终保留 provenance，预测块应标明模型、训练切片、面板和不确定性。对关键 marker、罕见细胞群、病灶边界或跨模态机制结论，应回到原始图像和实测数据，并尽可能用独立实验验证，不能把形态推断值当作真正共测值。
+SpatialEx+ 最适合把相邻切片的互补测量扩展成“可检验的完整候选矩阵”。对关键 marker、罕见细胞群、病灶边界或跨模态机制结论，应回到原始图像和实测数据，并尽可能用独立实验验证，不能把形态推断值当作真正共测值。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

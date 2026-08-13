@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Hotspot</h1>
     <p>Hotspot identifies informative gene modules across modalities of single-cell genomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cels.2021.04.005" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cels.2021.04.005" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Hotspot">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/yoseflab/hotspot" target="_blank" rel="noopener noreferrer" aria-label="Open code for Hotspot">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -166,7 +166,6 @@ Hotspot 选出的基因具有更高的 T 细胞相关基因集评分；用这些
 
 - 论文写高斯权重为默认，当前提交的公开 API 默认 `weighted_graph=False`；
 - 论文的方法图只画三步，代码还显式实现模块分数与 CPU/GPU 两条路径；
-- 论文另指向 `deto/hotspot_analysis` 作为作图分析脚本，但该仓库不在当前工作区，所以不能从本地证据声称所有论文图已端到端复现；
 - 本地没有独立 supplementary Markdown；补充图号和补充分析仅能从嵌入的正文引用中导航，不能假装已检查缺失的补充文件。
 
 ### 实际使用时最容易误解的三点

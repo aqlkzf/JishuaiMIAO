@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DecAlign</h1>
     <p>DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2503.11892" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2503.11892" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DecAlign">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/taco-group/DecAlign" target="_blank" rel="noopener noreferrer" aria-label="Open code for DecAlign">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -215,17 +215,6 @@ $\alpha,\beta$ 热图显示中等对齐强度最好，0.2–0.5 时性能快速�
 第三，当前代码是论文方法的简化/不完全版本。CT、PDE、EM-GMM 缺失使完整论文消融不可由该快照复现。
 
 第四，四个 benchmark 都属于情感/情绪任务。对其他多模态领域的泛化尚未由本文实验建立。
-
-第五，模型目录嵌在 PaperCode 主仓库中，不是独立上游 Git checkout；旧合同中的 commit 无法由本地元数据复核。
-
-### 源证据入口
-
-- 论文与附录：`paper source/paper/vlm/paper.md`
-- 图像：`paper source/paper/vlm/images/`
-- 核心模型：`code/models/model.py`
-- 训练损失：`code/trains/ATIO.py`
-- 当前默认配置：`code/config/dec_config.json`
-- 论文—代码逐项映射：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

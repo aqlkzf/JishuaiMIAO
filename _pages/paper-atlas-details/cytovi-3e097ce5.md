@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CytoVI</h1>
     <p>CytoVI: Deep generative modeling of antibody-based single cell technologies</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.09.07.674699" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.09.07.674699" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CytoVI">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/YosefLab/cytovi-reference-implementation" target="_blank" rel="noopener noreferrer" aria-label="Open code for CytoVI">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -82,9 +82,7 @@ $$
 
 ### 版本与复现边界
 
-- 参考实现 `.repo_source`：`https://github.com/YosefLab/cytovi-reference-implementation`，提交 `7b77adb0ec10962008bfe0bc0281311254e61d54`。
 - `pyproject.toml` 声明包版本 `0.0.1`、Python `>=3.10`、`scvi-tools>=1.3`；工作区还有测试与按 Figure 1–5 组织的独立 reproducibility repo。
-- 代码 URL 元数据与 pyproject 中历史主页 URL 不同，应以采集记录和当前工作区快照为复现来源。
 - 部分原始/临床数据受申请、伦理或作者提供限制；FlowJo 门控、补偿与 cofactor 也难由 Python 脚本完全重现。
 - 本轮重读论文 Markdown、56 页 PDF 图/图注、补充证据、CodeGraph 与直接源码；未重建环境、运行测试/训练或重画论文结果。
 

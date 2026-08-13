@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>HumanImmuneAging_Atlas</h1>
     <p>Multimodal profiling reveals tissue-directed signatures of human immune cells altered with age</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41590-025-02241-4" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41590-025-02241-4" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for HumanImmuneAging_Atlas">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/YosefLab/CZI-Immuneaging" target="_blank" rel="noopener noreferrer" aria-label="Open code for HumanImmuneAging_Atlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -72,7 +72,7 @@ $$
 
 MMoCHi 使用分层分类树。每个节点先依据 RNA 和经 landmark registration 处理的蛋白阈值挑选高置信训练细胞，再训练随机森林把标签扩展到其余细胞。层级结构从主要谱系逐步细分，最终得到 13 个 T 细胞、5 个 NK/ILC、6 个 B 细胞和 7 个髓系亚群。
 
-这种方法的优点是分类规则符合免疫学门控逻辑，同时允许模型综合多个标志物；风险是阈值和人工复核会影响标签。MMoCHi 的核心训练实现位于外部包，本地仓库没有完整复现该分类阶段，因此标签应视为论文提供的分析产物，而不是本工作区可从头独立重建的结果。
+这种方法的优点是分类规则符合免疫学门控逻辑，同时允许模型综合多个标志物；风险是阈值和人工复核会影响标签。
 
 ### 5. 先量化组织效应，再寻找年龄效应
 
@@ -167,15 +167,6 @@ $$
 3. MrVI 反事实是条件生成模型的预测，不等于真实干预因果效应。
 4. scHPF 因子是数据驱动的共表达结构，通路名称来自后续基因和富集解释。
 5. 外部队列验证支持方向的一致性，但平台、组织和细胞注释差异意味着效应量不可直接等同。
-
-### 证据入口
-
-- 论文正文：`paper source/PMC12396968/paper.md`
-- 图像：`paper source/PMC12396968/images/`
-- 主图逐图说明：`figure_analysis.md`
-- 方法细节：`doc_method.md`
-- 代码映射：`doc_code.md`
-- 本地代码：`CZI-Immuneaging/`，commit `9cd8b27939fc75db3dd59b170df0c9faa17c19a7`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

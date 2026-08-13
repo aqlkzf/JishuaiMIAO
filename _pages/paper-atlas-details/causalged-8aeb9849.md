@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CausalGeD</h1>
     <p>CausalGeD: Blending Causality and Diffusion for Spatial Gene Expression Generation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2502.07751" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2502.07751" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CausalGeD">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Rumi07/CausalGeD" target="_blank" rel="noopener noreferrer" aria-label="Open code for CausalGeD">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -200,18 +200,6 @@ ST 与 scRNA 经过两个输入头得到 S-latent/C-latent；S-latent 加噪，C
 
 所以最稳妥结论是：CausalGeD 是 causality-inspired/autoregressive diffusion imputer；若要提出生物因果关系，还需 perturbation、time-course或可信 GRN prior 验证。
 
-### 本地证据入口
-
-- 论文：`paper source/paper/auto/paper.md`, `paper.pdf`
-- 图：`paper source/paper/auto/images/`, `figure_analysis.md`
-- 方法：`doc_method.md`
-- 代码映射：`doc_code.md`
-- 官方代码：`CausalGeD/`
-- 主入口：`CausalGeD/main.py`
-- VAE/mask/train：`CausalGeD/model/diff_train.py`
-- CAT：`CausalGeD/causalfusion/models.py`
-- reverse sampling：`CausalGeD/model/sample.py`
-
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
@@ -344,12 +332,6 @@ CausalGeD wins on 9/10 datasets in PCC; SpaDiT wins on MH (MERFISH mouse hypotha
 ### Reproducibility
 
 **Rating: 3/5** — 官方训练与采样源码已公开，可审计核心路径；但缺少权重、处理后输入和一键复现实验资产。
-
-**What is available**:
-- Full paper with pseudocode for Algorithms 1 (AR steps) and 2 (causal mask) — these can be implemented
-- 10 dataset references are all publicly available datasets (published in Nature, Science, Nature Communications)
-- PyTorch framework confirmed; NVIDIA A100 GPU used
-- Official implementation: `https://github.com/Rumi07/CausalGeD`（本工作区固定提交 `8474310e4d6acacf01dd712766d7aa16e32d49a2`）
 
 **What is missing**:
 - Model weights and checkpoints

@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Dynamics, Fate &amp; Trajectory</span>
-      <span>arXiv preprint · 2026</span>
+      <span>arXiv · 2026</span>
     </div>
     <h1>CellFluxRL</h1>
     <p>CellFluxRL: Biologically-Constrained Virtual Cell Modeling via Reinforcement Learning</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.21743" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.21743" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellFluxRL">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/yuhui-zh15/CellFlux" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellFluxRL">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -70,17 +70,7 @@ Cellpose 分割误差会直接污染六个结构/形态奖励；MoA 分类器也
 
 ### 最关键的代码边界
 
-本地仓库是 `https://github.com/yuhui-zh15/CellFlux` 的基础模型快照，而非 CellFluxRL 实现。以下核心贡献均为 **Not found locally**：DiffusionNFT RL loop、七个 reward、Cellpose 评分封装、KL/正负速度损失、best-of-$N$、CellFluxRL checkpoint。因此当前工作区只能验证 base model，不能运行或独立复现论文主要结果。旧文档中任何把基础代码当成 RL 实现的表述都应撤回。
-
-### 证据入口
-
-- 论文：`paper source/paper/vlm/paper.md`
-- 图：`paper source/paper/vlm/images/`
-- 基础训练：`code/training/train_loop.py`
-- 基础推断：`code/training/eval_loop.py`
-- UNet：`code/models/unet.py`
-- 数据：`code/training/dataloader.py`
-- RL 贡献：`Not found locally`
+本地仓库是 `https://github.com/yuhui-zh15/CellFlux` 的基础模型快照，而非 CellFluxRL 实现。以下核心贡献均为 **Not found locally**：DiffusionNFT RL loop、七个 reward、Cellpose 评分封装、KL/正负速度损失、best-of-$N$、CellFluxRL checkpoint。旧文档中任何把基础代码当成 RL 实现的表述都应撤回。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
@@ -119,7 +109,7 @@ All prior methods optimize pixel-level objectives without biological constraints
    - Structural validity: nucleus-in-cytoplasm containment, nuclear roundness
    - Morphological correctness: nucleus/cytoplasm size and count statistics
 
-   These serve triple duty: evaluation metrics, RL training signals, and test-time selection criteria.
+These serve triple duty: evaluation metrics, RL training signals, and test-time selection criteria.
 
 3. **Test-time scaling for virtual cells**: Best-of-$N$ selection using the same reward functions, showing monotonic improvements complementary to RL training.
 

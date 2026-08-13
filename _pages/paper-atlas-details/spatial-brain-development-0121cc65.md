@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Spatial-brain-development</h1>
     <p>Spatial dynamics of brain development and neuroinflammation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09663-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09663-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Spatial-brain-development">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/di-0579/spatial_tri-omics" target="_blank" rel="noopener noreferrer" aria-label="Open code for Spatial-brain-development">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -268,17 +268,6 @@ CellChat 推断 MC1 更多与非小胶质 CNS 细胞通讯，MC3 更多与小胶
 4. 预设 $k$、adjusted-$R^2$ 阈值和空间整数编码会影响聚类结果。
 5. 远端炎症依赖论文图像与多模态证据，仓库无法完整复算。
 6. ligand–receptor 结果是候选通讯，需要扰动实验确认。
-
-### 18. 证据入口
-
-- 论文正文：`paper source/PMC12589135/paper.md`
-- 主图与扩展图：`paper source/PMC12589135/images/`
-- 本地代码：`spatial_tri-omics/`
-- 详细数学与流程：`doc_method.md`
-- 代码—论文对应：`doc_code.md`
-- 逐图解读：`figure_analysis.md`
-
-本文档中的实现细节来自本地代码 commit `e2d1eb8ff0e0ce675340a8521c0a728ac04b6d81`；生物学结论最终以论文、图和直接代码证据为准。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

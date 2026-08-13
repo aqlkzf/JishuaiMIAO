@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>STANCE</h1>
     <p>STANCE: A Unified Statistical Model to Detect Cell-Type-Specific Spatially Variable Genes in Spatial Transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-57117-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-57117-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for STANCE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Cui-STT-Lab/STANCE" target="_blank" rel="noopener noreferrer" aria-label="Open code for STANCE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -214,14 +214,6 @@ Figure 2–4 通过不同零假设、空间效应和细胞比例的模拟检验 
 2. 旋转不变来自点间距离核；若输入比例或表达预处理随旋转改变，整个外部流程仍可能改变。
 3. 比例矩阵的不确定性没有被 STANCE 核心检验显式传播，论文的稳健性实验不能替代每个数据集的反卷积质控。
 4. Stage 2 的逐项 p 值与 `CT_topGenes()`的展示排序都需要用户在报告前自行做多重检验和显著基因过滤。
-
-### 证据入口
-
-- 主论文：`paper source/paper/paper.md`
-- 补充推导与旋转模拟：`output_paper_supp_md/paper_supp/paper_supp.md`
-- 主图图片：`paper source/paper/_page_*_Figure_2.jpeg`
-- R/C++ 实现：`STANCE_code/R/`、`STANCE_code/src/`
-- 详细公式与逐图说明：`doc_method.md`、`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

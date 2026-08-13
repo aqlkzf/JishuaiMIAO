@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Integration &amp; Multi-modal</span>
-      <span>arXiv preprint · 2021</span>
+      <span>arXiv · 2021</span>
     </div>
     <h1>SlicedMMOT</h1>
     <p>Sliced Multi-Marginal Optimal Transport</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2102.07115" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2102.07115" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SlicedMMOT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -50,7 +50,7 @@ $$
 
 这个代价衡量每个样本相对联合加权中心的离散程度。标准离散 MMOT 的联合变量会随 $P$ 指数膨胀；SlicedMMOT 的策略是先在一维获得闭式最优耦合，再用随机投影把它提升到高维。
 
-本工作区没有作者代码，CodeGraph 也没有找到 SlicedMMOT 实现。论文仅说明强化学习实验基于外部 simple-pytorch-r1。因此下文是对 paper source/paper/vlm/paper.md、主图 1–5 和同一预印本内附录的源证据解释，不宣称任何本地数值复现。
+论文仅说明强化学习实验基于外部 simple-pytorch-r1。因此下文是对 paper source/paper/vlm/paper.md、主图 1–5 和同一预印本内附录的源证据解释，不宣称任何本地数值复现。
 
 ### 2. 一维核心：同一个分位数同时抽取所有分布
 
@@ -169,8 +169,6 @@ $$
 这个工作区是 **paper-only**。旧 CLAUDE.md 中约 20 行的 PyTorch 函数是分析者依据论文写的示意代码，不是作者发布、运行或测试过的实现。它还默认每个分布具有相同 $N$ 个等权样本，并省略投影复用、随机种子、设备/dtype、ties、非均匀样本权重和梯度验证。
 
 要做可信复现，至少需要：从论文 Algorithm/公式独立实现；用 $P=2$ 检查与常数缩放后的 SW 一致；用命题 3 的 pairwise 恒等式做数值交叉检查；测试置换不变性、所有分布相同时为零、重复点和不同权重；固定方向与 seed；对 $N/P/K/d$ 分别做计时和误差实验。强化学习还需重建论文未完全锁定的训练环境、Q-learning 网络、随机性和权重更新。
-
-因此本工作区可把数学机制和论文证据讲清楚，但不能把“易于实现”替换为“已复现”。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

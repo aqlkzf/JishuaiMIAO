@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>RT_T_AMP_MERFISH</h1>
     <p>Whole-transcriptome-scale isoform-resolved spatial imaging of single cells in tissues</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/ZhuangLab/MERlin" target="_blank" rel="noopener noreferrer" aria-label="Open code for RT_T_AMP_MERFISH">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -76,7 +77,7 @@ $H_{norm}=0$ 表示一个异构体几乎独占，$H_{norm}=1$ 表示使用均匀
 
 ### 证据边界与可复现性
 
-论文描述了 Dark Sectioning + Cellpose-SAM 3D 分割、SimpleElastix CCF 配准、Hotspot、Scanpy、ALLCools、LR 和异构体下游分析（`paper.md:249-309`）。本工作区提供的 MERlin 快照只验证了通用 codebook/像素解码路径；论文专用图像、codebook、参数 JSON、CCF/Cellpose-SAM 与下游脚本均为 **MISSING** 或 **Not found**。因此它适合学习通用 MERFISH 解码，而不能在此处端到端复现论文。
+论文描述了 Dark Sectioning + Cellpose-SAM 3D 分割、SimpleElastix CCF 配准、Hotspot、Scanpy、ALLCools、LR 和异构体下游分析（`paper.md:249-309`）。论文专用图像、codebook、参数 JSON、CCF/Cellpose-SAM 与下游脚本均为 **MISSING** 或 **Not found**。因此它适合学习通用 MERFISH 解码，而不能在此处端到端复现论文。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

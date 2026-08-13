@@ -81,11 +81,56 @@ FORBIDDEN_OUTPUT = (
     "method_explained_zh.md",
     "output_paper_md",
     "CODE_DIR",
+    "git rev-parse",
+    "PaperCode",
 )
 
-EXCLUDED_CATEGORY_PREFIXES = {
-    "foundationmodel",
-    "regulation_causal_networks",
+CODE_HOST_RE = re.compile(
+    r"https?://(?:www\.)?(github\.com|gitlab\.com)/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)",
+    flags=re.IGNORECASE,
+)
+CODE_HOST_SKIP = {"topics", "orgs", "features", "settings", "marketplace", "explore"}
+INTERNAL_HEADING_RE = re.compile(
+    r"provenance|来源合同|采集记录|工作区|local notes|证据入口|可复现性状态",
+    flags=re.IGNORECASE,
+)
+INTERNAL_TEXT_RE = re.compile(
+    r"工作区保存|工作区保留|工作区含|本工作区|当前工作区|"
+    r"PaperCode|"
+    r"git\s+rev-parse|"
+    r"acquisition\s+元数据|获取合同|旧合同|采集清单|采集提交|"
+    r"\.repo_source|\.repo_commit|"
+    r"Provenance|provenance 文件|"
+    r"外层\s*PaperCode|外层仓库|"
+    r"没有独立\s*`?\.git|嵌套\s*`?\.git|没有独立嵌套|"
+    r"源码目录没有|源码目录当前没有|代码目录没有独立|当前代码目录嵌在|模型目录嵌在|"
+    r"local metadata|local_dir|"
+    r"不能由当前目录|不能用外层|不能拿返回值当作|"
+    r"setup\.py 标记版本|"
+    r"因此该提交来自|外层 PaperCode 提交不是|"
+    r"本次将来源标记|本次以 provenance|本次以采集|"
+    r"精确代码 provenance|不能伪造",
+    flags=re.IGNORECASE,
+)
+SENTENCE_RE = re.compile(r".+?(?:[。！？；]|[.!?](?=\s|$)|$)", flags=re.DOTALL)
+JOURNAL_YEAR_RE = re.compile(r"\s*·\s*(?:19|20)\d{2}\s*$")
+
+# Topics currently shown on the public Paper Atlas. Other PaperCode trees
+# (foundation models, GRN / causal networks, LLM agents, za) stay local.
+ALLOWED_CATEGORY_PREFIXES = {
+    "communication_interaction",
+    "computational_tools",
+    "datasource",
+    "deconvolution_mapping",
+    "domain_clustering",
+    "dynamics_fate_trajectory",
+    "integration_multimodal",
+    "machine_learning_algorithm",
+    "protein_sequence_models",
+    "representation_models",
+    "scATAC",
+    "segmentation_annotation",
+    "svg_patterning",
 }
 
 
@@ -112,6 +157,7 @@ class Paper:
     journal: str
     doi: str
     has_code: bool
+    code_url: str = ""
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -129,6 +175,200 @@ def first_text(*values: Any) -> str:
             if text and text.casefold() not in {"missing", "not found", "none", "null", "n/a"}:
                 return text
     return ""
+
+
+def normalize_code_url(value: str) -> str:
+    match = CODE_HOST_RE.search(value or "")
+    if not match:
+        return ""
+    host, owner, repo = match.group(1).lower(), match.group(2), match.group(3)
+    if owner.casefold() in CODE_HOST_SKIP:
+        return ""
+    repo = re.sub(r"\.git$", "", repo, flags=re.IGNORECASE)
+    return f"https://{host}/{owner}/{repo}"
+
+
+def read_repo_source_url(workspace: Path) -> str:
+    """Read the first GitHub/GitLab URL from a workspace .repo_source file."""
+    for path in iter_repo_source_files(workspace):
+        try:
+            text = path.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        for line in text.splitlines():
+            stripped = line.strip()
+            if stripped.casefold().startswith("url:"):
+                url = normalize_code_url(stripped.split(":", 1)[1])
+                if url:
+                    return url
+        url = normalize_code_url(text)
+        if url:
+            return url
+    return ""
+
+
+def iter_repo_source_files(workspace: Path) -> Iterable[Path]:
+    for current, dirnames, filenames in os.walk(workspace):
+        dirnames[:] = sorted(
+            name for name in dirnames if name not in SKIP_DIRS and not name.startswith(".")
+        )
+        if ".repo_source" in filenames:
+            yield Path(current) / ".repo_source"
+        relative = Path(current).relative_to(workspace)
+        if len(relative.parts) >= 2:
+            dirnames[:] = []
+
+
+def resolve_code_url(meta: dict[str, Any], workspace: Path, method: str, *note_texts: str) -> str:
+    """Prefer analysis_meta.code_repo_url, then .repo_source, then note text."""
+    for key in ("code_repo_url", "code_url", "repo", "github", "code"):
+        url = normalize_code_url(first_text(meta.get(key)))
+        if url:
+            return url
+    url = read_repo_source_url(workspace)
+    if url:
+        return url
+    return extract_code_url(*note_texts, method=method)
+
+
+def extract_code_url(*texts: str, method: str = "") -> str:
+    """Prefer provenance mentions, then a repo whose name matches the method."""
+    method_key = re.sub(r"[^a-z0-9]+", "", (method or "").casefold())
+    internal_urls: list[str] = []
+    matching_urls: list[str] = []
+    for text in texts:
+        if not text:
+            continue
+        for match in CODE_HOST_RE.finditer(text):
+            url = normalize_code_url(match.group(0))
+            if not url:
+                continue
+            window = text[max(0, match.start() - 180) : min(len(text), match.end() + 80)]
+            if is_internal_text(window):
+                internal_urls.append(url)
+            repo = re.sub(r"[^a-z0-9]+", "", url.rstrip("/").split("/")[-1].casefold())
+            if method_key and len(method_key) >= 4 and (method_key[:4] in repo or repo[:4] in method_key):
+                matching_urls.append(url)
+    if internal_urls:
+        return internal_urls[0]
+    if matching_urls:
+        return matching_urls[0]
+    return ""
+
+
+def journal_key(value: str) -> str:
+    label = journal_label(value)
+    folded = label.casefold()
+    if "arxiv" in folded:
+        return "arxiv"
+    if "proceedings of machine learning research" in folded or folded.startswith("pmlr"):
+        return "pmlr"
+    return re.sub(r"[^a-z0-9]+", "-", folded).strip("-")
+
+
+def journal_label(value: str) -> str:
+    text = JOURNAL_YEAR_RE.sub("", html.unescape(value or "")).strip()
+    folded = text.casefold()
+    if not text or re.fullmatch(r"(?:19|20)\d{2}", text):
+        return ""
+    if "arxiv" in folded:
+        return "arXiv"
+    if "biorxiv" in folded:
+        return "bioRxiv"
+    if (
+        "proceedings of machine learning research" in folded
+        or "pmlr" in folded
+        or re.search(r"\bicml\b", folded)
+        or "international conference on machine learning" in folded
+    ):
+        return "PMLR"
+    if "neurips" in folded or "neural information processing" in folded:
+        return "NeurIPS"
+    if "iclr" in folded or "international conference on learning representations" in folded:
+        return "ICLR"
+    if "aistats" in folded:
+        return "AISTATS"
+    if "aaai" in folded:
+        return "AAAI"
+    if folded in {"pnas"} or "national academy of sciences" in folded:
+        return "PNAS"
+    return text
+
+
+def is_internal_text(value: str) -> bool:
+    return bool(INTERNAL_TEXT_RE.search(value or ""))
+
+
+def strip_internal_sentences(text: str) -> str:
+    stripped = text.strip()
+    if not stripped:
+        return ""
+    if re.match(r"^(?:[-*+]|\d+[.)])\s", stripped):
+        items = re.split(r"\n(?=(?:[-*+]|\d+[.)])\s)", stripped)
+        kept = [item for item in items if not is_internal_text(item)]
+        return "\n".join(kept).strip()
+    pieces = [match.group(0) for match in SENTENCE_RE.finditer(stripped)]
+    if not pieces:
+        return "" if is_internal_text(stripped) else stripped
+    return "".join(piece for piece in pieces if not is_internal_text(piece)).strip()
+
+
+def strip_internal_notes(markdown: str) -> str:
+    """Drop workspace / provenance sentences that should not ship publicly."""
+    lines = markdown.splitlines()
+    out: list[str] = []
+    paragraph: list[str] = []
+    in_fence = False
+    skipping_level: int | None = None
+
+    def flush() -> None:
+        if not paragraph:
+            return
+        cleaned = strip_internal_sentences("\n".join(paragraph))
+        if cleaned:
+            out.append(cleaned)
+        paragraph.clear()
+
+    for line in lines:
+        if FENCE_RE.match(line):
+            flush()
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if in_fence:
+            out.append(line)
+            continue
+        heading = HEADING_RE.match(line)
+        if heading:
+            flush()
+            level = len(heading.group(1))
+            if skipping_level is not None:
+                if level > skipping_level:
+                    continue
+                skipping_level = None
+            if INTERNAL_HEADING_RE.search(heading.group(2)):
+                skipping_level = level
+                continue
+            out.append(line)
+            continue
+        if skipping_level is not None:
+            continue
+        if not line.strip():
+            flush()
+            if out and out[-1] != "":
+                out.append("")
+            continue
+        paragraph.append(line)
+    flush()
+    text = "\n".join(out).strip()
+    return re.sub(r"\n{3,}", "\n\n", text)
+
+
+def category_allowed(category_id: str) -> bool:
+    return any(
+        category_id == prefix or category_id.startswith(f"{prefix}/")
+        for prefix in ALLOWED_CATEGORY_PREFIXES
+    )
 
 
 def load_categories(root: Path) -> list[Category]:
@@ -315,10 +555,7 @@ def collect_papers(root: Path, categories: list[Category]) -> tuple[list[Paper],
         if category is None:
             skipped["private_category"] += 1
             continue
-        if any(
-            category.id == prefix or category.id.startswith(f"{prefix}/")
-            for prefix in EXCLUDED_CATEGORY_PREFIXES
-        ):
+        if not category_allowed(category.id):
             skipped["excluded_category"] += 1
             continue
         readme = meta.get("readme") if isinstance(meta.get("readme"), dict) else {}
@@ -340,8 +577,9 @@ def collect_papers(root: Path, categories: list[Category]) -> tuple[list[Paper],
         doi = normalize_doi(meta.get("doi"))
         year_raw = first_text(meta.get("year"), readme.get("year"))
         year_match = re.search(r"(?:19|20)\d{2}", year_raw)
-        detail_zh = public_markdown(source_zh_text) or summary_zh or summary_en
-        detail_en = public_markdown(source_en_text) or summary_en or summary_zh
+        detail_zh = strip_internal_notes(public_markdown(source_zh_text)) or summary_zh or summary_en
+        detail_en = strip_internal_notes(public_markdown(source_en_text)) or summary_en or summary_zh
+        code_url = resolve_code_url(meta, workspace, method, source_zh_text, source_en_text)
         paper = Paper(
             method=method,
             title=title,
@@ -353,9 +591,10 @@ def collect_papers(root: Path, categories: list[Category]) -> tuple[list[Paper],
             category_id=category.id,
             category_title=category.title,
             year=year_match.group(0) if year_match else "",
-            journal=first_text(meta.get("journal"), readme.get("journal")),
+            journal=journal_label(first_text(meta.get("journal"), readme.get("journal"))),
             doi=doi,
-            has_code=meta.get("has_code") is True,
+            has_code=meta.get("has_code") is True or bool(code_url),
+            code_url=code_url,
         )
         key = "doi:" + doi.casefold() if doi else "title:" + normalize_title(title)
         if key in papers:
@@ -392,18 +631,30 @@ def validate_public_output(content: str) -> None:
             raise ValueError(f"refusing to publish forbidden source marker: {token}")
 
 
+def hero_links(paper: Paper, doi_class: str, code_class: str) -> str:
+    links: list[str] = []
+    if paper.doi:
+        doi_url = "https://doi.org/" + quote(paper.doi, safe="/():;._-")
+        links.append(
+            f'<a class="{doi_class}" href="{esc(doi_url)}" target="_blank" '
+            f'rel="noopener noreferrer" aria-label="Open DOI for {esc(paper.method)}">'
+            f'{"Open paper" if doi_class.startswith("paper-detail") else "DOI"} '
+            f'<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>'
+        )
+    if paper.code_url:
+        links.append(
+            f'<a class="{code_class}" href="{esc(paper.code_url)}" target="_blank" '
+            f'rel="noopener noreferrer" aria-label="Open code for {esc(paper.method)}">'
+            f'Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>'
+        )
+    return "".join(links)
+
+
 def render_detail_page(paper: Paper) -> str:
     metadata = " · ".join(part for part in (paper.journal, paper.year) if part)
     metadata_chip = f"\n      <span>{esc(metadata)}</span>" if metadata else ""
-    doi_link = ""
-    if paper.doi:
-        doi_url = "https://doi.org/" + quote(paper.doi, safe="/():;._-")
-        doi_link = (
-            f'<a class="paper-detail__doi" href="{esc(doi_url)}" target="_blank" '
-            'rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" '
-            'aria-hidden="true"></i></a>'
-        )
-    doi_line = f"    {doi_link}\n" if doi_link else ""
+    links = hero_links(paper, "paper-detail__doi", "paper-detail__code")
+    links_line = f'    <div class="paper-detail__links">{links}</div>\n' if links else ""
     page = f'''---
 layout: default
 permalink: /paper-atlas/{paper.detail_slug}/
@@ -416,7 +667,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{{{ '/paper-atlas/' | relative_url }}}}">
+  <a class="paper-detail__back" href="{{{{ '/paper-atlas/' | relative_url }}}}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -425,7 +676,7 @@ sitemap: false
     </div>
     <h1>{esc(paper.method)}</h1>
     <p>{esc(paper.title)}</p>
-{doi_line}  </header>
+{links_line}  </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
     <button class="is-active" type="button" role="tab" id="paper-detail-tab-zh" aria-selected="true" aria-controls="paper-detail-panel-zh" data-detail-tab="zh">中文方法解读</button>
@@ -473,8 +724,21 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
     used_ids = {paper.category_id for paper in papers}
     used_categories = [item for item in categories if item.id in used_ids]
     years = sorted({paper.year for paper in papers if paper.year}, reverse=True)
-    code_count = sum(paper.has_code for paper in papers)
+    code_count = sum(1 for paper in papers if paper.has_code or paper.code_url)
     year_options = "\n".join(f'          <option value="{year}">{year}</option>' for year in years)
+    journal_counts: dict[str, tuple[str, int]] = {}
+    for paper in papers:
+        key = journal_key(paper.journal)
+        if not key:
+            continue
+        label, count = journal_counts.get(key, (journal_label(paper.journal), 0))
+        journal_counts[key] = (label, count + 1)
+    journal_options = "\n".join(
+        f'          <option value="{esc(key)}">{esc(label)} ({count})</option>'
+        for key, (label, count) in sorted(
+            journal_counts.items(), key=lambda item: (-item[1][1], item[1][0].casefold())
+        )
+    )
     # The taxonomy is the navigation, so topics are toggles rather than a <select>
     # duplicating the same filter. Sub-topics stay hidden until their parent is
     # active, which keeps the default row scannable.
@@ -507,20 +771,9 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
     )
     cards: list[str] = []
     for paper in papers:
-        code_badge = (
-            '\n          <span class="atlas-chip atlas-chip--code">code available</span>'
-            if paper.has_code
-            else ""
-        )
         metadata = " · ".join(part for part in (paper.journal, paper.year) if part)
-        if paper.doi:
-            doi_url = "https://doi.org/" + quote(paper.doi, safe="/():;._-")
-            paper_link = (
-                f'<a class="atlas-doi" href="{esc(doi_url)}" target="_blank" rel="noopener noreferrer" '
-                f'aria-label="Open DOI for {esc(paper.method)}">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>'
-            )
-        else:
-            paper_link = '<span class="atlas-doi atlas-doi--muted">DOI unavailable</span>'
+        paper_links = hero_links(paper, "atlas-doi", "atlas-code-link")
+        has_code = paper.has_code or bool(paper.code_url)
         # Every card carries the same visible link text, so the accessible name
         # names the paper: a screen reader listing links would otherwise hear
         # "完整解读" once per paper with nothing to tell them apart.
@@ -529,24 +782,27 @@ def render_page(papers: list[Paper], categories: list[Category]) -> str:
             f' aria-label="完整解读：{esc(paper.method)}">'
             '完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>'
         )
+        code_mark = (
+            '<span class="atlas-code-mark">code</span>'
+            if has_code
+            else ""
+        )
         cards.append(
-            f'''      <article class="atlas-card" data-category="{esc(paper.category_id)}" data-year="{esc(paper.year)}" data-code="{"yes" if paper.has_code else "no"}">
+            f'''      <article class="atlas-card" data-category="{esc(paper.category_id)}" data-year="{esc(paper.year)}" data-code="{"yes" if has_code else "no"}" data-journal="{esc(journal_key(paper.journal))}" data-journal-label="{esc(journal_label(paper.journal))}" data-method="{esc(paper.method)}">
         <div class="atlas-card__chips">
-          <span class="atlas-chip">{esc(paper.category_title)}</span>{code_badge}
+          <span class="atlas-chip">{esc(paper.category_title)}</span>{code_mark}
         </div>
         <h2 aria-label="{esc(paper.method)}">{esc_method(paper.method)}</h2>
         <p class="atlas-card__title">{esc(paper.title)}</p>
         <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
-          <p class="atlas-card__summary-label">中文方法解读</p>
           <p class="atlas-card__summary">{esc(paper.summary_zh)}</p>
         </div>
         <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
-          <p class="atlas-card__summary-label">English Summary</p>
           <p class="atlas-card__summary">{esc(paper.summary_en)}</p>
         </div>
         <footer>
           <span>{esc(metadata)}</span>
-          <span class="atlas-card__links">{paper_link}{detail_link}</span>
+          <span class="atlas-card__links">{paper_links}{detail_link}</span>
         </footer>
       </article>'''
         )
@@ -573,7 +829,7 @@ sitemap: false
       <div class="atlas-stats">
         <span class="atlas-stat"><strong>{len(papers)}</strong><span>papers</span></span>
         <span class="atlas-stat"><strong>{len(used_categories)}</strong><span>topics</span></span>
-        <button class="atlas-stat" type="button" id="atlas-code-shortcut"><strong>{code_count}</strong><span>with code</span></button>
+        <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>{code_count}</strong><span>with code</span></button>
       </div>
     </div>
     <p class="atlas-lead">Every paper I have read closely, with a short note on what the method actually does. Search by method, title, journal or note text.</p>
@@ -588,19 +844,26 @@ sitemap: false
     <label class="atlas-search">
       <span class="sr-only">Search papers</span>
       <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-      <input id="atlas-query" type="search" placeholder="Search method, title, journal or note…" autocomplete="off">
+      <input id="atlas-query" name="q" type="search" placeholder="Search method, title, journal or note…" autocomplete="off">
       <kbd aria-hidden="true">/</kbd>
     </label>
     <label>
       <span class="sr-only">Filter by year</span>
-      <select id="atlas-year">
+      <select id="atlas-year" name="year">
         <option value="">All years</option>
 {year_options}
       </select>
     </label>
     <label>
+      <span class="sr-only">Filter by journal</span>
+      <select id="atlas-journal" name="journal">
+        <option value="">All journals</option>
+{journal_options}
+      </select>
+    </label>
+    <label>
       <span class="sr-only">Filter by code availability</span>
-      <select id="atlas-code">
+      <select id="atlas-code" name="code">
         <option value="">Any code status</option>
         <option value="yes">Code available</option>
         <option value="no">No public code found</option>
@@ -608,14 +871,14 @@ sitemap: false
     </label>
     <label>
       <span class="sr-only">Note language</span>
-      <select id="atlas-view">
+      <select id="atlas-view" name="lang">
         <option value="zh">中文解读</option>
         <option value="en">English summary</option>
       </select>
     </label>
     <label>
       <span class="sr-only">Sort order</span>
-      <select id="atlas-sort">
+      <select id="atlas-sort" name="sort">
         <option value="newest">Newest first</option>
         <option value="oldest">Oldest first</option>
         <option value="name">Method A–Z</option>
@@ -626,7 +889,13 @@ sitemap: false
 
   <div class="atlas-results-bar">
     <p id="atlas-count" aria-live="polite">Showing <strong>{min(36, len(papers))}</strong> of <strong>{len(papers)}</strong> paper{plural}</p>
-    <p id="atlas-active-filters"></p>
+    <div class="atlas-results-actions">
+      <p id="atlas-active-filters"></p>
+      <div class="atlas-layout" role="group" aria-label="Result layout">
+        <button type="button" data-atlas-layout="cards" class="is-active" aria-pressed="true">Cards</button>
+        <button type="button" data-atlas-layout="list" aria-pressed="false">List</button>
+      </div>
+    </div>
   </div>
 
   <div class="atlas-grid" id="atlas-grid">
@@ -645,13 +914,156 @@ sitemap: false
     return page
 
 
+def panel_markdown(page: str, lang: str) -> str:
+    marker = f'data-detail-panel="{lang}"'
+    start = page.find(marker)
+    if start < 0:
+        return ""
+    open_end = page.find(">", start)
+    close = page.find("</article>", open_end)
+    if open_end < 0 or close < 0:
+        return ""
+    return page[open_end + 1 : close].strip()
+
+
+def parse_published_paper(path: Path, index_meta: dict[str, dict[str, str]]) -> Paper | None:
+    page = path.read_text(encoding="utf-8", errors="replace")
+    if "Generated locally by bin/export_paper_atlas.py" not in page[:2000]:
+        return None
+    slug = path.stem
+    method = html.unescape(
+        re.search(r"<h1>(.*?)</h1>", page, flags=re.DOTALL).group(1)
+        if re.search(r"<h1>(.*?)</h1>", page, flags=re.DOTALL)
+        else slug
+    )
+    title_match = re.search(
+        r'<header class="paper-detail__hero">.*?<p>(.*?)</p>', page, flags=re.DOTALL
+    )
+    title = html.unescape(title_match.group(1)).strip() if title_match else method
+    chips = re.findall(
+        r'<div class="paper-detail__chips">\s*(.*?)\s*</div>', page, flags=re.DOTALL
+    )
+    spans = re.findall(r"<span>(.*?)</span>", chips[0]) if chips else []
+    category_title = html.unescape(spans[0]).strip() if spans else ""
+    journal, year = "", ""
+    if len(spans) > 1:
+        meta = html.unescape(spans[1])
+        year_match = re.search(r"(?:19|20)\d{2}", meta)
+        year = year_match.group(0) if year_match else ""
+        journal = journal_label(meta)
+    doi_match = re.search(r'https://doi\.org/([^"\s]+)', page)
+    doi = html.unescape(doi_match.group(1)) if doi_match else ""
+    detail_zh = strip_internal_notes(panel_markdown(page, "zh"))
+    detail_en = strip_internal_notes(panel_markdown(page, "en"))
+    code_url = extract_code_url(page, method=method)
+    card = index_meta.get(slug, {})
+    return Paper(
+        method=method,
+        title=title,
+        summary_zh=card.get("summary_zh") or clip(summary_section(detail_zh) or detail_zh, 220),
+        summary_en=card.get("summary_en") or clip(english_summary_section(detail_en) or detail_en, 240),
+        detail_zh=detail_zh or card.get("summary_zh") or title,
+        detail_en=detail_en or card.get("summary_en") or title,
+        detail_slug=slug,
+        category_id=card.get("category_id") or re.sub(r"[^a-z0-9_/]+", "", category_title.casefold()),
+        category_title=card.get("category_title") or category_title,
+        year=card.get("year") or year,
+        journal=card.get("journal") or journal,
+        doi=doi,
+        has_code=card.get("has_code") == "yes" or bool(code_url),
+        code_url=code_url,
+    )
+
+
+def parse_index_cards(index_path: Path) -> dict[str, dict[str, str]]:
+    text = index_path.read_text(encoding="utf-8", errors="replace")
+    cards: dict[str, dict[str, str]] = {}
+    for match in re.finditer(
+        r'<article class="atlas-card" data-category="([^"]*)" data-year="([^"]*)" data-code="([^"]*)"[^>]*>\s*'
+        r'<div class="atlas-card__chips">\s*<span class="atlas-chip">(.*?)</span>.*?</div>\s*'
+        r"<h2 aria-label=\"([^\"]*)\">.*?</h2>\s*"
+        r'<p class="atlas-card__title">(.*?)</p>\s*'
+        r'<div class="atlas-card__summary-panel" data-atlas-summary="zh"[^>]*>\s*'
+        r'(?:<p class="atlas-card__summary-label">.*?</p>\s*)?'
+        r'<p class="atlas-card__summary">(.*?)</p>.*?'
+        r'<div class="atlas-card__summary-panel" data-atlas-summary="en"[^>]*>\s*'
+        r'(?:<p class="atlas-card__summary-label">.*?</p>\s*)?'
+        r'<p class="atlas-card__summary">(.*?)</p>.*?'
+        r'<a class="atlas-details-link" href="\{\{ \'/paper-atlas/([^/]+)/\'',
+        text,
+        flags=re.DOTALL,
+    ):
+        slug = match.group(9)
+        cards[slug] = {
+            "category_id": html.unescape(match.group(1)),
+            "year": html.unescape(match.group(2)),
+            "has_code": html.unescape(match.group(3)),
+            "category_title": html.unescape(match.group(4)),
+            "method": html.unescape(match.group(5)),
+            "title": html.unescape(match.group(6)),
+            "summary_zh": html.unescape(match.group(7)),
+            "summary_en": html.unescape(match.group(8)),
+            "journal": "",
+        }
+    return cards
+
+
+def categories_from_papers(papers: list[Paper]) -> list[Category]:
+    seen: dict[str, Category] = {}
+    for paper in papers:
+        if paper.category_id in seen:
+            continue
+        seen[paper.category_id] = Category(
+            id=paper.category_id,
+            title=paper.category_title,
+            path=paper.category_id,
+            order=len(seen) + 1,
+        )
+    return list(seen.values())
+
+
+def rebuild_published(output: Path) -> tuple[list[Paper], int]:
+    details_dir = output.parent / "paper-atlas-details"
+    index_meta = parse_index_cards(output) if output.is_file() else {}
+    papers: list[Paper] = []
+    for path in sorted(details_dir.glob("*.md")):
+        paper = parse_published_paper(path, index_meta)
+        if paper:
+            papers.append(paper)
+    papers.sort(key=lambda item: (-(int(item.year) if item.year else 0), item.method.casefold()))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(render_page(papers, categories_from_papers(papers)), encoding="utf-8")
+    return papers, write_detail_pages(papers, details_dir)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source", required=True, type=Path, help="Local PaperCode repository root")
+    parser.add_argument("--source", type=Path, help="Local PaperCode repository root")
     parser.add_argument("--output", required=True, type=Path, help="Generated Jekyll page path")
+    parser.add_argument(
+        "--rebuild-published",
+        action="store_true",
+        help="Rebuild from already published index and detail pages",
+    )
     args = parser.parse_args()
-    source = args.source.resolve()
     output = args.output.resolve()
+    if args.rebuild_published:
+        papers, detail_count = rebuild_published(output)
+        print(
+            json.dumps(
+                {
+                    "published": len(papers),
+                    "details": detail_count,
+                    "output": str(output),
+                    "with_code_url": sum(bool(paper.code_url) for paper in papers),
+                },
+                ensure_ascii=False,
+            )
+        )
+        return 0
+    if not args.source:
+        parser.error("either --source or --rebuild-published is required")
+    source = args.source.resolve()
     if not (source / "taxonomy.yml").is_file():
         parser.error(f"not a PaperCode root: {source}")
     categories = load_categories(source)

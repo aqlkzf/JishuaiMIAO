@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MGW</h1>
     <p>Riemannian Metric Learning for Alignment of Spatial Multiomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.09.693237" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.09.693237" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MGW">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/raphael-group/MGW" target="_blank" rel="noopener noreferrer" aria-label="Open code for MGW">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -154,9 +154,9 @@ ccRCC 实验对齐 Visium 与 AFADESI-MSI，并把对齐结果送入与 SpatialM
 
 ### 复现与证据边界
 
-本地仓库没有 `.repo_source` 或嵌套 Git 元数据，因此无法从当前工作区可靠恢复具体 Git commit；代码版本只能记录为未固定的本地快照，不能编造提交号。仓库提供 Python 模块、实验脚本和大型 notebook，但没有统一锁定的环境文件或一键重现全部图表的入口。运行需要 PyTorch、JAX/OTT-JAX、SciPy、scikit-learn、Scanpy 等，并要自行取得 Stereo-seq、10x CRC、Mendeley 人脑和 Zenodo ccRCC 数据。
+代码版本只能记录为未固定的本地快照，不能编造提交号。仓库提供 Python 模块、实验脚本和大型 notebook，但没有统一锁定的环境文件或一键重现全部图表的入口。运行需要 PyTorch、JAX/OTT-JAX、SciPy、scikit-learn、Scanpy 等，并要自行取得 Stereo-seq、10x CRC、Mendeley 人脑和 Zenodo ccRCC 数据。
 
-论文是 2025 年 12 月发布的 bioRxiv 预印本，尚未经过期刊同行评审。结果数字来自作者基准实验；本工作区完成的是论文—图—代码一致性审查，没有重新下载全部数据或端到端复算。最稳妥的结论是：MGW 提供了一个有明确几何解释的跨模态空间对齐成本，并在四类公开任务上展示了空间真实性与特征一致性的平衡；其推广性、运行成本和对预处理/版本的敏感性仍需更多独立复现。
+论文是 2025 年 12 月发布的 bioRxiv 预印本，尚未经过期刊同行评审。结果数字来自作者基准实验；最稳妥的结论是：MGW 提供了一个有明确几何解释的跨模态空间对齐成本，并在四类公开任务上展示了空间真实性与特征一致性的平衡；其推广性、运行成本和对预处理/版本的敏感性仍需更多独立复现。
 
 ### 阅读顺序
 

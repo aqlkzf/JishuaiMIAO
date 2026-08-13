@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>TPHP_HumanProteomeAtlas</h1>
     <p>Spatial distribution of the proteome in the human body and in cancers</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/guomics-lab/TPHP" target="_blank" rel="noopener noreferrer" aria-label="Open code for TPHP_HumanProteomeAtlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -407,7 +408,7 @@ Important differences are documented rather than smoothed over:
 - **Partial:** hard errors are skipped and singularity recorded, but warnings are suppressed without an explicit convergence test (`:109-125`).
 - **Not found in the repository:** code for DIA processing, global preprocessing, trajectory/tissue analyses, clustering, external integration, PRM, and the website.
 
-**Reproducibility rating: 3/5 for the released tumour-analysis slice; 1/5 for whole-paper computational regeneration from this repository alone.** The bundled slice has input, output, direct script, and tested versions, so it is plausibly runnable from the repository root, but it was not executed here and its upstream Parquet provenance is unspecified. The overall atlas is data-rich and openly deposited, yet reproducing every published analysis requires code and supplementary detail not present in the snapshot. CodeGraph indexed zero files, so direct source reads—not graph output—support all implementation claims.
+The overall atlas is data-rich and openly deposited, yet reproducing every published analysis requires code and supplementary detail not present in the snapshot. CodeGraph indexed zero files, so direct source reads—not graph output—support all implementation claims.
 
 ### Bottom line
 

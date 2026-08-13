@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SAGE-Net</h1>
     <p>A scalable approach to investigating sequence-to-function predictions from personal genomes</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.02.21.639494" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.02.21.639494" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SAGE-Net">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/mostafavilabuw/SAGEnet" target="_blank" rel="noopener noreferrer" aria-label="Open code for SAGE-Net">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -123,7 +123,6 @@ GSTM3 个例提示个人训练可能捕捉到 HLF 样的抑制 motif，且总体
 - **个人差异预测不等于跨基因泛化。** 见过基因上的高相关性可能来自基因特异的常见变异。
 - **平均项与差异项的尺度不同。** 当前表达差异目标通常是 z-score，不能直接把 $\hat m+\hat d$ 当作原始表达单位相加。
 - **归因不是因果验证。** seqlet、motif 匹配和 ISM 反映模型敏感性，需要实验验证。
-- **数据访问是复现瓶颈。** ROSMAP/GTEx WGS 与表型需要受控访问，完整训练未在本工作区重跑。
 - **版本边界。** 本地 PDF 是 2026-01-06 发布的 bioRxiv v4，尚未同行评议；本地源码固定为上述提交。
 
 ### 9. 从数据到结论的最短路径

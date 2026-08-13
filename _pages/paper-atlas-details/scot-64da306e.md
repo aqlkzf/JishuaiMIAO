@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SCOT</h1>
     <p>SCOT: Single-Cell Multi-Omics Alignment with Optimal Transport</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1089/cmb.2021.0446" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1089/cmb.2021.0446" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SCOT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/rsinghlab/SCOT" target="_blank" rel="noopener noreferrer" aria-label="Open code for SCOT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -98,7 +98,7 @@ $k$ 决定图的局部尺度，$\varepsilon$ 决定耦合的熵平滑。论文�
 
 ### 7. 版本与代码证据边界
 
-本工作区代码 HEAD 为 `14649be6e14017dcfe7ba619091b33d1df55f6a9`。论文应对应 `code_repo/src/scotv1.py`，不是 2023 年更新的 `scotv2.py`。v2 接受至少两个模态、使用 PyTorch，并加入不平衡/多域设计；将 v2 行为写回 v1 论文会造成版本混淆。
+论文应对应 `code_repo/src/scotv1.py`，不是 2023 年更新的 `scotv2.py`。v2 接受至少两个模态、使用 PyTorch，并加入不平衡/多域设计；将 v2 行为写回 v1 论文会造成版本混淆。
 
 v1 的核心路径与论文一致：L2 归一化、correlation kNN connectivity 图、Dijkstra、距离归一化、均匀边缘、POT 熵正则 GW 和重心投影。需要保留的边界包括：
 
@@ -114,16 +114,6 @@ v1 的核心路径与论文一致：L2 归一化、correlation kNN connectivity 
 先确保每个模态内部预处理能够表达相同生物变化，再检查不同 $k$ 下图连通性；然后在一组 $\varepsilon$ 上检查收敛、耦合熵、已知细胞类型混合和 GW distance。若两边细胞比例明显不同，应避免把 v1 的均匀平衡耦合当作可信细胞对应，并考虑允许不平衡质量的后续方法。最终应把耦合作为概率对齐假设，而不是细胞身份真值。
 
 一句话概括：SCOT 把“跨模态特征不可比较”转换成“各模态内部的细胞几何可以比较”，以 GW 求概率耦合，再用重心投影得到共同特征空间；其优势是无需配对或共享特征，主要风险来自图构建、熵参数、平衡质量假设与当前 v1 自调参接口缺陷。
-
-### 证据入口
-
-- 主论文 HTML 转换：`paper_clean.md`
-- 论文图与图注：`images/`、`figure_analysis.md`
-- SCOT v1：`code_repo/src/scotv1.py`
-- 后续版本边界：`code_repo/src/scotv2.py`
-- 评估函数：`code_repo/src/evals.py`
-- 代码—论文逐项映射：`doc_code.md`
-- 官方补充条目：SAGE 论文页所列 `sj-doc-1-cpb-10.1089_cmb.2021.0446.doc`（当前工作区未保存）
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

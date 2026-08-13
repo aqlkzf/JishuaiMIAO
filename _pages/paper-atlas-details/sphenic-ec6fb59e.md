@@ -10,13 +10,13 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Domain Clustering</span>
-      <span>arXiv preprint · 2025</span>
+      <span>arXiv · 2025</span>
     </div>
     <h1>SPHENIC</h1>
     <p>SPHENIC: Topology-Aware Multi-View Clustering for Spatial Transcriptomics</p>
@@ -109,16 +109,9 @@ Figure 3 的 HBC 结果显示 SPHENIC 与标注有较高一致性，但“专家
 
 ### 9. 可复现性结论
 
-论文报告 PyTorch 2.1.0、CUDA 12.1、单张最多 48GB vGPU 和 100 epochs，但没有公开代码，且本工作区没有补充材料。缺失项包括预处理、图构造、EPH 参数、网络层数与维度、优化器、学习率、随机种子、运行次数、负样本策略及最终聚类。
+缺失项包括预处理、图构造、EPH 参数、网络层数与维度、优化器、学习率、随机种子、运行次数、负样本策略及最终聚类。
 
 因此可复现性为 **2/5**：数据集入口和整体数学框架可见，但完整重实现仍需要大量不可验证的选择。所有实现层面的结论都应标记 `Not found`，不能把合理猜测改写成作者代码行为。
-
-### 证据入口
-
-- 论文 Markdown：`paper source/paper/vlm/paper.md`
-- 原始 PDF：`paper.pdf`
-- 主图：`paper source/paper/vlm/images/`
-- 无代码边界：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

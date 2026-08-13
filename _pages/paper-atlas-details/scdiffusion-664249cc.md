@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>scDiffusion</h1>
     <p>scDiffusion: conditional generation of high-quality single-cell data using diffusion model</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/EperLuo/scDiffusion" target="_blank" rel="noopener noreferrer" aria-label="Open code for scDiffusion">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -47,9 +48,9 @@ scDiffusion 不是直接在高维基因表达向量上做扩散，而是先把�
 2. **潜在扩散模型（latent diffusion）**
    得到 $x_0$ 后，模型逐步加噪得到 $x_i$，训练 denoising network 从噪声潜在向量中预测噪声并反向去噪。论文给出前向扩散：
 
-   $$q\left(x_i\middle\|x_{i-1}\right)=\mathcal{N}\left(x_i\middle\|\sqrt{1-\beta_i}x_{i-1},\beta_i I\right)$$
+$$q\left(x_i\middle\|x_{i-1}\right)=\mathcal{N}\left(x_i\middle\|\sqrt{1-\beta_i}x_{i-1},\beta_i I\right)$$
 
-   以及线性 $\beta_i$ schedule（`paper.md:65-75`）。代码实现了线性 beta schedule 和从 $x_0$ 直接采样 $x_t$ 的闭式形式（`scDiffusion/guided_diffusion/gaussian_diffusion.py:18-35`, `scDiffusion/guided_diffusion/gaussian_diffusion.py:188-206`）。
+以及线性 $\beta_i$ schedule（`paper.md:65-75`）。代码实现了线性 beta schedule 和从 $x_0$ 直接采样 $x_t$ 的闭式形式（`scDiffusion/guided_diffusion/gaussian_diffusion.py:18-35`, `scDiffusion/guided_diffusion/gaussian_diffusion.py:188-206`）。
 
 3. **条件控制器（classifier guidance）**
    分类器单独训练，用带噪潜在向量和时间步预测细胞标签。采样时，分类器对目标标签的 log probability 求梯度，再把这个梯度加到扩散反向均值上，引导生成结果朝目标条件移动（`paper.md:102-112`）。代码里 `classifier_sample.py` 计算目标类别梯度，`gaussian_diffusion.py` 在 reverse step 中应用条件均值修正（`scDiffusion/classifier_sample.py:134-142`; `scDiffusion/guided_diffusion/gaussian_diffusion.py:397-442`）。

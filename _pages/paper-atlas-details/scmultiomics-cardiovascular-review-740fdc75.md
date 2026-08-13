@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scMultiomics_Cardiovascular_Review</h1>
     <p>Current and future perspectives of single-cell multi-omics technologies in cardiovascular research</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s44161-022-00205-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s44161-022-00205-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scMultiomics_Cardiovascular_Review">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -172,16 +172,6 @@ Perturb-seq/CROP-seq 把 sgRNA 与单细胞 RNA 输出关联，Spear-ATAC 则读
 ### 11. 这篇综述没有充分覆盖什么
 
 原文对 spatial deconvolution、single-cell methylome、3D genome、无偏质谱单细胞蛋白组和 CRISPRa/base-editing 等覆盖有限或未覆盖；对 multi-omics benchmark、批次校正过度整合和 donor-level validation 也缺少系统比较。因此它适合作为截至 2022 年的技术地图和心血管案例入口，不是当前方法性能排行榜。
-
-### 证据入口
-
-- 全文：`paper source/paper/vlm/paper.md`
-- 图 1、2、3、5：`paper source/paper/vlm/images/`
-- 图 4：本地 `paper.pdf` 第 8 页（OCR 未单独抽图，已直接目视核对）
-- 方法分类：`doc_method.md`
-- 综述综合：`summary.md`
-- 深读笔记：`reading_notes.md`
-- 图表核对：`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellLENS</h1>
     <p>CellLENS enables cross-domain information fusion for enhanced cell population delineation in single-cell spatial omics data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41590-025-02163-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41590-025-02163-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellLENS">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/sggao/celllens" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellLENS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 CellLENS 的核心不是直接把表达、坐标和像素拼接，而是先从表达建立粗粒度初始细胞群，再把每个细胞周围的群体组成当作自监督目标。LENS-CNN 学习“局部组织图像能否预测邻域组成”，LENS-GNN-duo 则让表达分支在表达相似图上传播、图像分支在空间近邻图上传播，两个分支合并后预测“初始身份 one-hot + 邻域组成”。训练多轮后拼接中间表示并做 SVD，得到用于无监督细胞群划分的稳定 embedding。
 
-论文为 Gao、Zhu 等发表于 *Nature Immunology*（2025）的 “CellLENS enables cross-domain information fusion for enhanced cell population delineation in single-cell spatial omics data”，DOI `10.1038/s41590-025-02163-1`。工作区含正文、补充、图像和代码；acquisition 元数据记录上游 `https://github.com/sggao/celllens` 提交 `4b33bb620c0be2423ea6a432e18c424167e7ee0e`，`setup.cfg` 标记版本 0.1.0。当前源码目录无独立 `.git`，外层 PaperCode commit 不能替代这个上游来源记录。
+论文为 Gao、Zhu 等发表于 *Nature Immunology*（2025）的 “CellLENS enables cross-domain information fusion for enhanced cell population delineation in single-cell spatial omics data”，DOI `10.1038/s41590-025-02163-1`。
 
 ### 1. CellLENS 所说的三个信息域
 
@@ -197,17 +197,6 @@ $$\bar U=L D V^\top,qquad E=L_{:,1:k}D_{1:k,1:k}.$$
 5. `fit_lens_cnn(n_epochs=400, learning_rate=1e-4)` 后 `get_cnn_embedding()`；
 6. `get_lens_embedding(round=5,k=32,learning_rate=1e-3,n_epochs=3000)`；
 7. 记录 Leiden/refinement 全参数并用 marker、组织位置和重复样本验证。
-
-### 证据入口
-
-- 正文：`paper source/paper/vlm/paper.md`
-- 补充：`output_paper_supp_md/paper_supp/vlm/paper_supp.md`
-- 图像：`paper source/paper/vlm/images/`
-- 编排/API：`celllens/src/celllens/celllens.py`
-- 模型：`celllens/src/celllens/models.py`
-- target/graph：`celllens/src/celllens/datasets.py`, `graph.py`, `utils.py`
-- 图像预处理：`celllens/src/celllens/preprocessing.py`
-- 包元数据：`celllens/setup.cfg`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

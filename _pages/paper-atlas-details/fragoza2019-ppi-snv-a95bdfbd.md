@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Fragoza2019_PPI_SNV</h1>
     <p>Extensive disruption of protein interactions by genetic variants across the allele frequency spectrum in human populations</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-019-11959-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-019-11959-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Fragoza2019_PPI_SNV">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -119,16 +119,9 @@ $$
 
 ### 9. 论文—代码与复现边界
 
-本工作区是 `paper-only`。论文没有 Code availability 段落或代码仓库链接，本地也没有分析代码，因此无法做源码级 paper-code 匹配。Methods 给出了 BWA、BLASTX、EMBOSS、PSI-BLAST、Clustal Omega 等工具和实验步骤，但未提供固定环境、完整命令流水线或版本锁定；Clone-seq 调用、SFS 加权、JSD/phyloP、Fay and Wu's $H$、LD 和统计图表都需自行重实现。
+论文没有 Code availability 段落或代码仓库链接，本地也没有分析代码，因此无法做源码级 paper-code 匹配。Methods 给出了 BWA、BLASTX、EMBOSS、PSI-BLAST、Clustal Omega 等工具和实验步骤，但未提供固定环境、完整命令流水线或版本锁定；Clone-seq 调用、SFS 加权、JSD/phyloP、Fay and Wu's $H$、LD 和统计图表都需自行重实现。
 
 可用材料包括主文、补充说明/表格/数据附件的 PDF，以及详细实验协议。突变克隆仅说明可向作者申请；原始 Clone-seq 读段和板级荧光数据没有公共 accession。因而可复核论文给出的汇总数据和方法逻辑，但不能仅靠此工作区从原始数据端到端重现 atlas。
-
-### 证据入口
-
-- 主文：`paper source/PMC6742646/paper.md`，重点为 Fig. 1–5、Methods 的 SNV selection、Clone-seq、Y2H、DUAL-FLUO、PCA 与 profile comparison。
-- 补充：`output_paper_supp_md/paper_supp/hybrid_auto/paper_supp.md`，重点为 site-frequency weighting、稳定性分数和 PCA 背景。
-- 图像：`paper source/PMC6742646/images/` 中 Fig1–Fig5；最终数值以正文、图注和补充表为准。
-- 代码：`Not found`；本工作区没有 `code source`、仓库 URL 或 commit。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

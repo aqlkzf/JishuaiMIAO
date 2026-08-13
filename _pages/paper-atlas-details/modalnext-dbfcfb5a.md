@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>modalnext</h1>
     <p>Modal-NexT: Towards unified heterogeneous cellular data integration</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.inffus.2025.103479" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.inffus.2025.103479" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for modalnext">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/shapsider/modalnext" target="_blank" rel="noopener noreferrer" aria-label="Open code for modalnext">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -120,11 +120,9 @@ Figure 6 展示 104 个癌症 scRNA 数据集的 multi-source integration：整�
 
 ### 8. 版本与复现边界
 
-1. 本地代码没有 `.repo_source`，但已将 `src/`、`tutorial/` 与官方仓库 HEAD `94940e26608ab374926f87303e06260ab63b729d` 做递归比较，除缓存目录外一致；合同固定这个提交。package version `Not found`。
 2. `src/graph_src/tools/_pbg.py` 带有作者机器的硬编码 `sys.path.append(...)`，部署前必须确认本地 import 实际解析到工作区代码。
 3. README 指定 Python 3.8、Torch 1.11/CUDA 11.3 时代依赖；未提供 lockfile，较新 PyTorch/Scanpy/MuData/PBG 组合可能不兼容。
 4. benchmark 数据需另行从 Google Drive 下载，工作区没有 `dataset_repo` 大数据与预计算 `.h5mu/.h5ad`；教程不是可在当前目录直接端到端执行的完整快照。
-5. 独立 supplementary 文件本地 `Not found`；因此 Supplementary Figures 1–15、Text 1 的细节没有被当前工作区直接核验。
 6. 本次完成正文、六张主结果/方法图和直接代码的静态映射，但没有重跑 OT-NMF、PBG、BBKNN、百万细胞整合或论文 benchmark。端到端数值复现为 `Not run`。
 
 一句话总结：Modal-NexT 真正统一的是“怎样把异质矩阵变成实体关系图”；OT-NMF 给节点一个结构化起点，PBG 用边重建更新 embedding，不同场景只改变 cell/feature 实体如何合并和增加哪些边。论文的 GAT 与 DEC 方程比当前公开快照更完整，理解方法时可以读，复现时必须以 PBG 和教程实际路径为准。

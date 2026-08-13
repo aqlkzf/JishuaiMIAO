@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>FlashDeconv</h1>
     <p>FlashDeconv enables atlas-scale, multi-resolution spatial deconvolution via structure-preserving sketching</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.22.696108" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.22.696108" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for FlashDeconv">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/cafferychen777/flashdeconv" target="_blank" rel="noopener noreferrer" aria-label="Open code for FlashDeconv">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -140,8 +140,6 @@ $$
 
 总体为 **Partial-to-High**：主链——Log-CPM、HVG+marker、加权 CountSketch、稀疏 kNN、图拉普拉斯目标、Numba/Jacobi 求解和行归一化——都存在。明确差异包括：leverage 的输入和加权公式、幅度截断与桶归一化、未在论文中说明的 Pearson `theta=100`，以及同步更新收敛保证的表述边界。
 
-本工作区代码目录没有嵌套 `.git`，也没有 `.repo_source`，因此无法从本地文件确认采集 commit。父 PaperCode 的 HEAD 不是 FlashDeconv 代码版本，不能填作上游提交号。
-
 ### 实际使用时应记录什么
 
 至少记录共同基因、参考类型及聚合方式、HVG/marker 数量、随机种子、sketch 维度、图构建方式、$k$、实际 `lambda_used_`、$\rho$、迭代次数和是否收敛。要判断结果是否被过度平滑，应与 `lambda_spatial=0`、多个 $k$ 和多个随机种子比较；对稀有类型发现，还要回看原始 marker 表达和独立成像/原位证据。
@@ -176,7 +174,7 @@ FlashDeconv 是面向超大空间转录组的参考型细胞组成解卷积：�
 
 ### 复现性
 
-本地包有单元/集成测试和清晰 API，但工作区未包含论文完整 reproducibility 仓库或全部数据，也没有执行论文七张图的端到端重算。代码目录缺少嵌套 `.git` 与 `.repo_source`，无法确认上游 commit；父仓库 HEAD 不可作为替代。
+本地包有单元/集成测试和清晰 API，但工作区未包含论文完整 reproducibility 仓库或全部数据，也没有执行论文七张图的端到端重算。父仓库 HEAD 不可作为替代。
 
 ### 来源
 

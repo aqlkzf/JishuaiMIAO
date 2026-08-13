@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -35,7 +35,7 @@ sitemap: false
 
 MCToGene 的输入是 H&E 全切片图像中每个空间转录组 spot 对应的图像 patch 和二维坐标，输出是每个 spot 的多基因表达。它不只看单个 patch，也不只计算中心 spot 与邻居的成对关系，而是先做 pairwise attention，再显式构造三元关系的 many-body attention，并把两条路径层级融合；最终用条件流匹配从稀疏噪声逐步生成表达。
 
-本工作区基于 CVPR 2026 正式论文及 66 个本地图像/页面资产。论文未提供 supplement 文件，当前也未找到官方代码仓库。因此以下机制可以由论文公式和图确认，但张量形状、邻居图构造、ZINB 参数、训练超参数和采样求解器不能由直接源码复核。
+论文未提供 supplement 文件，当前也未找到官方代码仓库。因此以下机制可以由论文公式和图确认，但张量形状、邻居图构造、ZINB 参数、训练超参数和采样求解器不能由直接源码复核。
 
 ### 1. 任务定义
 

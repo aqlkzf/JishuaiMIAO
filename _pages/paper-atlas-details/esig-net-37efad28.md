@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>eSIG-Net</h1>
     <p>eSIG-Net: an interaction language model that decodes the protein code of single mutations</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03086-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03086-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for eSIG-Net">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/aqlkzf/image_paperRead" target="_blank" rel="noopener noreferrer" aria-label="Open code for eSIG-Net">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -474,7 +474,6 @@ What is missing or partial:
 - Raw feature-construction scripts for AAC, conjoint triad, and auto covariance were not found.
 - Required large assets such as `datasets/embeddings/sdnn_corrected_ppi.h5`, `datasets/embeddings/650M_1`, and fold CSVs are not present in the local code snapshot.
 - ROC-AUC, structure-baseline, TCGA/MMRF, immunotherapy-response, and figure-generation pipelines were not found.
-- Code provenance is inconsistent: the paper and `.repo_source` point to `Stephen-Yi-Laboratory/eSIG-Net`, while the nested git checkout reports remote `aqlkzf/image_paperRead` and HEAD `a6746d9df2c4601690b563f45e8f99f9fe2fad85`.
 
 Overall, the repository supports understanding and partially rerunning the central eSIG-Net architecture, but it does not provide a complete reproduction package for all paper experiments.
 

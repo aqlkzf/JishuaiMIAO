@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>PeakVI</h1>
     <p>PeakVI: A deep generative model for single-cell chromatin accessibility analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.crmeth.2022.100182" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.crmeth.2022.100182" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PeakVI">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/scverse/scvi-tools" target="_blank" rel="noopener noreferrer" aria-label="Open code for PeakVI">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -148,15 +148,6 @@ $$
 2. 批次校正只针对提供并正确指定的协变量。若批次与生物学条件完全混杂，模型不能凭空识别二者。
 3. 输出是模型后验下的概率估计，不是实际测得的新片段；“去噪”不等于确认每个零值都是假阴性。
 4. $y$、$\ell$、$r$ 的乘积分解存在统计识别上的依赖，论文用因子与已知技术量的关系提供经验验证，但这不是逐样本的因果证明。
-5. 本工作区代码是后续 scvi-tools 快照。核心模型可直接核对，但精确复现实验还需要论文当时的数据、预处理、版本和分析脚本。
-
-### 证据入口
-
-- 论文正文与图注：`paper source/paper.md`
-- 论文图：`paper source/images/`
-- 模型接口：`scvi-tools/src/scvi/model/_peakvi.py`
-- 生成模块和损失：`scvi-tools/src/scvi/module/_peakvae.py`
-- 既有详细材料：`doc_method.md`、`doc_code.md`、`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

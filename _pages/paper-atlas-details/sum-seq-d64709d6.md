@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>SUM-seq</h1>
     <p>Single-cell ultra-high-throughput multiplexed chromatin and RNA profiling reveals gene regulatory dynamics</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/dbrg77/ISSAAC-seq" target="_blank" rel="noopener noreferrer" aria-label="Open code for SUM-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -238,8 +239,6 @@ CRISPRi/a 屏幕使用 PAGA、Leiden 和 diffusion pseudotime 描述分化轨迹
 - eGRN 与 GWAS peak–gene links 是统计推断，不代表每条边都已实验验证。
 
 ### 9. 固定代码快照到底覆盖了什么？
-
-本工作区的代码是 ISSAAC-seq commit `713eaa492baf11c6cbb8bc68768e59304c20e79f`，而不是论文在 `paper.md:333,474-477` 指向的 SUM-seq preprocessing/analysis repositories。
 
 可以直接验证的内容包括：
 

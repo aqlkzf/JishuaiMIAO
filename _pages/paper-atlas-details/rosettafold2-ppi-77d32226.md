@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>RoseTTAFold2-PPI</h1>
     <p>Predicting protein-protein interactions in the human proteome</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1126/science.adt1630" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1126/science.adt1630" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for RoseTTAFold2-PPI">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/CongLabCode/RoseTTAFold2-PPI" target="_blank" rel="noopener noreferrer" aria-label="Open code for RoseTTAFold2-PPI">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -104,16 +104,6 @@ $$
 本地仓库与论文中 RF2-PPI 的核心网络、训练入口、paired-MSA 整理和批量推断相符，模型权重与 omicMSA 需另外下载。公开代码可以从已构建的两条单蛋白 MSA 生成 pMSA，并计算蛋白对分数和残基接触矩阵。
 
 但仓库没有提供从 30 PB 原始数据重建 omicMSA 的完整流水线，也没有论文全筛选所需的 DCA 预过滤、AF2 级联、精度阈值校准、假阳性 hub 清理、最终网络分析和实验验证流程。因此“能运行 RF2-PPI”不等于“能从头复现 1.91 亿对的人类互作组”。此外，仓库固定在提交 `ffc86527838cc1b75b75002c0831941d58d8dfe5`；结论应以该快照和正式论文为边界。
-
-### 源证据入口
-
-- 正文：`paper source/paper/auto/paper.md`
-- 补充方法与结果：`output_paper_supp_md/paper_supp/auto/paper_supp.md`
-- 主图：`paper source/images/science.adt1630-f1.jpg` 至 `science.adt1630-f4.jpg`
-- 网络：`RoseTTAFold2-PPI/src/RoseTTAFoldModel.py`
-- 推断与分数聚合：`RoseTTAFold2-PPI/src/predict_list_PPI.py`
-- 训练：`RoseTTAFold2-PPI/src/train.py`
-- 使用和随机性说明：`RoseTTAFold2-PPI/README.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellRank</h1>
     <p>CellRank for directed single-cell fate mapping</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-021-01346-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-021-01346-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellRank">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/cellrank" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellRank">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -173,7 +173,7 @@ $$
 (I-Q)F=S.
 $$
 
-线性求解器支持 direct、GMRES、LGMRES、BiCGSTAB、GCROT(m,k)；PETSc 是大规模问题的推荐可选后端，但 v1.5.1 的 `use_petsc` 默认是 False，不能笼统写成“所有运行都用 PETSc GMRES”。稀疏矩阵每行约有 K 个邻居，使迭代法可扩展到大数据。论文在 100,000 个细胞上报告宏状态约 33 秒、命运概率约 2 分钟、峰值内存低于 15 GiB；这些是特定硬件/环境的基准，不是当前工作区的实测结果。
+线性求解器支持 direct、GMRES、LGMRES、BiCGSTAB、GCROT(m,k)；PETSc 是大规模问题的推荐可选后端，但 v1.5.1 的 `use_petsc` 默认是 False，不能笼统写成“所有运行都用 PETSc GMRES”。稀疏矩阵每行约有 K 个邻居，使迭代法可扩展到大数据。论文在 100,000 个细胞上报告宏状态约 33 秒、命运概率约 2 分钟、峰值内存低于 15 GiB；
 
 图 1d、图 2e 展示命运概率；扩展数据图 2f 给出玩具例；循环投影则把各终末状态放在单位圆上，用命运概率加权坐标，使多谱系潜能高的细胞靠近中部。
 
@@ -225,7 +225,6 @@ E15.5 子集有 2,531 个细胞。CellRank 恢复 Ngn3-low EP 初始状态和 al
 4. 马尔可夫无记忆假设忽略未被转录组充分表达的历史和表观遗传状态。
 5. 不确定性传播只近似局部速度的统计波动，不能校正整个速度场方向相反等模型偏差。
 6. 命运概率是给定 $P$ 和吸收集合下的模型概率，不是同一细胞可被重复观测得到的经验频率。
-7. 当前工作区含论文、图像和固定 CellRank 源码，但没有独立复现仓库、处理数据或锁定运行环境；本轮进行了证据审计，没有重跑图 1–6 或基准。
 
 ### 推荐阅读顺序
 

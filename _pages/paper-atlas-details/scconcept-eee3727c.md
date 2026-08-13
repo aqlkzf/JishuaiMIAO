@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scConcept</h1>
     <p>scConcept enables concept-level exploration of single-cell transcriptomic data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.21.719959" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.21.719959" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scConcept">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/li-lab-mcgill/scConcept" target="_blank" rel="noopener noreferrer" aria-label="Open code for scConcept">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -133,14 +133,6 @@ $$
 - 仓库实现了 ARI、NMI、TC 和 TD，但未找到 TC-LLM；也没有论文所有主图的一键复现入口。
 
 最准确的定位是：该代码快照较完整地实现了 scConcept 的“主题 → 概念 → 细胞分数”方法 API 和两个扩展，但只部分覆盖论文规模的基准、临床与药物分析。
-
-### 证据入口
-
-- 论文：`paper source/paper/pymupdf/paper.md`
-- 主图页：`paper source/paper/pymupdf/images/figure_page_3.png`, `figure_page_6.png`, `figure_page_9.png`, `figure_page_11.png`, `figure_page_12.png`, `figure_page_14.png`
-- 核心 API：`scConcept_code/scConcept.py`
-- 主题模型：`scConcept_code/ECRTM/models/ECRTM.py`
-- 训练器：`scConcept_code/ECRTM/Runner.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

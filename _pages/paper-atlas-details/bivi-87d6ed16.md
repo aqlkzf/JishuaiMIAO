@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>biVI</h1>
     <p>Biophysical modeling with variational autoencoders for bimodal, single-cell RNA sequencing data</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/pachterlab/CGCCP_2023" target="_blank" rel="noopener noreferrer" aria-label="Open code for biVI">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -285,8 +286,6 @@ biVI 的输出应当被理解为**给定模型假设下的机制参数**，而�
 - 论文写明基于 scVI 0.18.0，`setup.py` 却固定 scvi-tools 1.2.2；
 - 论文报告学习率 0.01，现有训练脚本设置为 `1e-5`；
 - 没有环境锁文件和自动测试来证明该快照就是产生论文结果的完整运行环境。
-
-本工作区只做了论文、补充材料、主图和源码的静态核验，没有重新安装、训练或复现数值。因此，论文中的性能结果属于作者报告结果，而不是本工作区重新计算的结果。
 
 ### 12. 一句话总结
 

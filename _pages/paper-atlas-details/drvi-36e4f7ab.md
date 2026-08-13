@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DRVI</h1>
     <p>Unsupervised Deep Disentangled Representation of Single-Cell Omics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2024.11.06.622266" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2024.11.06.622266" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DRVI">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/drvi" target="_blank" rel="noopener noreferrer" aria-label="Open code for DRVI">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -37,13 +37,6 @@ sitemap: false
 DRVI（Disentangled Representation Variational Inference）是一个无监督 conditional VAE。普通 VAE 的 latent dimensions 可以任意旋转、混合，同一个维度常同时编码 cell type、cell cycle、stress 和 batch。DRVI 的核心归纳偏置是：把 latent 拆成小 splits，每个 split 由独立 decoder subnetwork 解码，再用 log-sum-exp（LSE）在输出侧聚合。若独立生物过程在 count space 中近似相加，这种结构鼓励“一条 latent direction 对应一个过程”。
 
 它仍然是概率生成模型，而不是自动命名程序的系统。模型给出可独立遍历的 dimensions；“这条维度是 pDC、stress 或 hypoxia”需要 marker、annotation、GSEA、DE 或实验知识进行事后验证。
-
-### 证据入口和版本边界
-
-- 论文：`paper source/DRVI_paper/DRVI_paper.md`，bioRxiv DOI `10.1101/2024.11.06.622266`，当前本地版本标注 2025-08-19，**未经同行评审**。
-- 代码：workspace 根目录，核心在 `src/drvi/`；Git commit `206cc19ca89d985245ca204fbc86772e5c2446d0`，package version `0.1.9`。
-- 关键实现：`scvi_tools_based/module/_drvi.py`、`nn/_base_components.py`、`nn_modules/prior.py`、`nn_modules/noise_model.py`、latent traversal utilities。
-- 论文 Markdown 含主图和大量 supplementary figure captions；提取图像随 paper directory 保存。最终机制结论以论文文字与直接源码为准。
 
 ### 输入、输出与生成模型
 
@@ -335,7 +328,7 @@ mean_activation = "identity"
    ```python
    params[param_name] = torch.logsumexp(param_value, dim=-2) - math.log(self.n_split)
    ```
-   The `- math.log(self.n_split)` term normalizes to average rather than sum.
+The `- math.log(self.n_split)` term normalizes to average rather than sum.
 
 4. **Library Size**: Uses raw sum, not log-transformed (`_drvi.py:410`)
 

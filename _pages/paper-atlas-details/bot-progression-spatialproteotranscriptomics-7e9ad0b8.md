@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>BOT_Progression_SpatialProteoTranscriptomics</h1>
     <p>Spatial proteo-transcriptomic profiling reveals the molecular landscape of borderline ovarian tumors and their invasive progression</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.ccell.2025.06.004" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.ccell.2025.06.004" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for BOT_Progression_SpatialProteoTranscriptomics">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -76,7 +76,7 @@ LGSC 对传统 platinum/taxane 化疗反应差，但它的前体 SBT 通常预�
 
 ### 5. 复现与实现注意点
 
-本工作区是 paper-only：acquisition 没有发现 paper-specific code repository。论文提供了 PRIDE `PXD046354` 和 GEO `GSE289044`，但没有本研究的完整分析脚本。因此代码层面不能直接验证 limma、MOFA+、CIBERSORTx、绘图和统计检验的具体实现。
+论文提供了 PRIDE `PXD046354` 和 GEO `GSE289044`，但没有本研究的完整分析脚本。因此代码层面不能直接验证 limma、MOFA+、CIBERSORTx、绘图和统计检验的具体实现。
 
 复现时至少需要补齐：supplementary tables S1-S4、样本与 ROI 映射、DVP 和 GeoMX 原始/归一化矩阵、imputation 参数、DE feature 选择、MOFA+ 输入矩阵、CIBERSORTx reference 和各功能实验的完整统计设置。
 

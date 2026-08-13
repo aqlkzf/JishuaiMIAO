@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scVIVA</h1>
     <p>scVIVA: A Probabilistic Framework for Representation of Cells and Their Environments in Spatial Transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.06.01.657182" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.06.01.657182" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scVIVA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/LevyNat/scVIVA-reproducibility" target="_blank" rel="noopener noreferrer" aria-label="Open code for scVIVA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -140,15 +140,6 @@ $[LFC_{C1\,vs\,C2},LFC_{N1\,vs\,C2}]$ 为二维特征训练高斯过程分类器
 1. **$z$ 不是邻域本身的嵌入。** 编码器从目标细胞表达得到 $z$；邻域是训练时要求 $z$ 预测的辅助目标。
 2. **生态位组成与生态位表达不是一回事。** $\alpha$ 表示“有哪些类型”，$\eta$ 表示“这些类型处于什么状态”，二者缺一都会丢信息。
 3. **2-step DE 不是简单多做一次 DE。** 它显式构造异型邻居对照，并把两条 LFC 轴交给概率分类器，目标是识别信号究竟来自目标细胞还是其空间邻居。
-
-### 证据入口
-
-- 论文及内嵌补图：`paper source/paper/vlm/paper.md`
-- 图像目录：`paper source/paper/vlm/images/`
-- 复现代码：`code/`
-- 逐图分析：`figure_analysis.md`
-- 详细数学与流程：`doc_method.md`
-- 论文—代码证据表：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

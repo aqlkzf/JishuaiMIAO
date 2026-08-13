@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>FeatureMAP</h1>
     <p>Feature-preserving manifold approximation and projection to analyze single-cell data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s43588-026-00970-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s43588-026-00970-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for FeatureMAP">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/YYT1002/FeatureMAP" target="_blank" rel="noopener noreferrer" aria-label="Open code for FeatureMAP">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -164,18 +164,6 @@ DGE 在表达矩阵上比较簇间平均表达；DGV 在基因变化矩阵上比
 - 论文实践值为 `n_neighbors=15`、`min_dist=0.3`，当前类构造器默认值并不完全相同；复现实验时应显式设置参数。
 - 局部 PCA 假设邻域近似线性；稀疏采样、高曲率和区域内在维数变化会使载荷不稳定。
 - DGV 衡量变化强度而非变化正负方向，且不取代 DGE、扰动实验或时间序列验证。
-- 大规模基准、流式实验和论文统计结果没有在本工作区重跑；本次完成的是论文、补充材料、图和本地源码的静态证据核对。
-- 本地代码目录没有可核验的提交哈希；只能确认来源 URL 为 `https://github.com/YYT1002/FeatureMAP`，不能伪造 commit provenance。
-
-### 证据入口
-
-- 主论文：`paper source/paper/vlm/paper.md`
-- 补充材料 1：`paper source/supp1/vlm/supp1.md`
-- 主图与扩展图：`paper source/paper/vlm/images/`
-- 核心嵌入：`code/featuremap/featuremap_.py`
-- 基因变化与投影：`code/featuremap/features.py`
-- 核心/过渡态：`code/featuremap/core_transition_states.py`
-- 代码测试：`code/featuremap/tests/test_featuremap.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

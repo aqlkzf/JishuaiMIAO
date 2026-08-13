@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CLADES</h1>
     <p>CLADES: a hybrid NeuralODE-Gillespie approach for unveiling clonal cell fate and differentiation dynamics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-63150-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-63150-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CLADES">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/StatBiomed/clonaltrans" target="_blank" rel="noopener noreferrer" aria-label="Open code for CLADES">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -72,16 +72,6 @@ NeuralODE 给出群体级平均反应速率，Gillespie SSA 则把它转成离�
 ### 代码—论文边界
 
 本地 commit `f990efe061826cb705fdd1ae4f2950b7902fe0e0` 的活跃代码覆盖 ODE、损失、bootstrap、Gillespie 和绘图，核心对应度较高。复现仍为 Partial：配置含绝对路径/GPU 假设；meta-clone、PAGA 拓扑和缩放因子需预先生成；完整论文图依赖 notebooks 和外部数据；动态速率的解释受正则权重、时间采样与可辨识性限制。旧 `deprecated_version/` 不应作为当前入口。
-
-### 证据入口
-
-- 论文：`paper source/PMC12402506/paper.md`
-- 主图：`paper source/PMC12402506/images/`
-- ODE：`clonaltrans/clonaltrans/model/ode_block.py`
-- 活跃训练器：`clonaltrans/clonaltrans/trainer/clonaltrans.py`
-- bootstrap：`clonaltrans/clonaltrans/main_bootstrap.py`
-- Gillespie：`clonaltrans/clonaltrans/model/gillespie.py`、`main_gillespie.py`
-- 配置：`clonaltrans/clonaltrans/config/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

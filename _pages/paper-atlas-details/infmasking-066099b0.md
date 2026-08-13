@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>InfMasking</h1>
     <p>InfMasking: Unleashing Synergistic Information by Contrastive Multimodal Interactions</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2509.25270" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2509.25270" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for InfMasking">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/brightest66/InfMasking" target="_blank" rel="noopener noreferrer" aria-label="Open code for InfMasking">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -116,7 +116,6 @@ Fig. 1 给出单模态、完整融合和 masked 三类对比关系。Fig. 2 在�
 
 ### 版本与复现边界
 
-- `.repo_source` 记录克隆提交 `6773ed7e3deea81baae30b4779edca4f9569421f`，当前嵌套仓库 HEAD 为 `206cc19ca89d985245ca204fbc86772e5c2446d0`；本分析以当前可读源码为准并记录漂移。
 - 环境依赖 PyTorch、Lightning、Hydra、Transformers、timm 等；数据下载和预处理并非所有 benchmark 都是一键完成。
 - 没有预训练 checkpoint；完整重现需要数据、配置、随机种子、多次运行和相同硬件/分布式设置。
 - 有限 $K$ 带来额外 Transformer 前向，并且当前共享网络为每个单模态分支也生成最终未使用的 masked views，实际开销高于只计算全模态 mask loss 的最小实现。

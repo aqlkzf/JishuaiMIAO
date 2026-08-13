@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DriftingModels</h1>
     <p>Generative Modeling via Drifting</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2602.04770" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2602.04770" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DriftingModels">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/lambertae/drifting" target="_blank" rel="noopener noreferrer" aria-label="Open code for DriftingModels">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -136,7 +136,6 @@ uncond_w = (cfg - 1) * (gen_per_label - 1) / n_uncond
 - 图 5 展示 CFG 的典型质量—覆盖权衡：更强 guidance 提高 IS，但超过最佳点后 FID 变差。
 - 图 6 用 CLIP 最近邻检查生成样本与 ImageNet 训练图，支持“不是简单复制训练图”的经验结论，但不能证明不存在更隐蔽的记忆。
 - 图 7–15 给出无筛选样本和与 improved MeanFlow 的并列比较，支持一次前向也能得到有竞争力的视觉质量。
-- 论文报告 ImageNet $256\times256$、1-NFE 条件生成中，潜空间模型 FID 1.54、像素空间模型 FID 1.61。该数字来自论文表格，本工作区没有重新完成 TPU 规模训练与 50k 样本 FID 复现。
 
 ### 9. 适用范围与复现边界
 
@@ -145,16 +144,6 @@ uncond_w = (cfg - 1) * (gen_per_label - 1) / n_uncond
 - 上游训练面向 ImageNet 和 TPU 规模环境，还要求数据路径与 FID 参考统计；本次完成的是源码—论文核对，不是大规模数值复现。
 - 图像结果依赖预训练特征网络，潜空间配置还依赖预训练 VAE；“一次生成”不表示整个训练系统不借助外部表征。
 - 反对称场、队列采样和多温度归一化共同构成当前方法；只保留“真实吸引、生成排斥”的口号会遗漏实现中决定稳定性的部分。
-
-### 证据入口
-
-- 论文与附录：`paper source/paper/vlm/paper.md`
-- 图：`paper source/paper/vlm/images/Fig*.jpg`
-- 漂移损失：`drifting/drift_loss.py`
-- 训练路径：`drifting/train.py`
-- 队列：`drifting/memory_bank.py`
-- 一步推断：`drifting/inference.py`
-- 默认潜空间配置：`drifting/configs/gen/latent_sota_L.yaml`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
@@ -169,7 +158,6 @@ uncond_w = (cfg - 1) * (gen_per_label - 1) / n_uncond
 - **arXiv**: 2602.04770v2
 - **DOI**: 10.48550/arXiv.2602.04770
 - **Project**: https://lambertae.github.io/projects/drifting/
-- **Code**: https://github.com/lambertae/drifting (JAX release; commit recorded in `drifting/.repo_source`)
 
 ---
 

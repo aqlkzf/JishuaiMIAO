@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MouseBodyAtlas</h1>
     <p>Whole-body molecular and cellular mapping of the laboratory mouse</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.03.006" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.03.006" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MouseBodyAtlas">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/chevrierlab/WMST-paper" target="_blank" rel="noopener noreferrer" aria-label="Open code for MouseBodyAtlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -137,15 +137,6 @@ Irf1−/− 与 Stat1−/− 小鼠提供功能验证：两种 KO 均减弱 LPS 
 3. 只有两张主要对照、两张主要 LPS 空间切片，spot 数巨大但生物学重复数有限。
 4. DEG 与 regulon 活性是关联证据；KO 和 IHC 提供更强验证，但仍存在剂量、时间点和器官采样边界。
 5. 代码使用 UNI2-h/1536D，而论文对 UNI 的引用较宽泛；复现应以本地 checkpoint 与 notebook 为准。
-
-### 证据入口
-
-- 论文：`paper.md`
-- 图像：`images/`
-- 图解：`figure_analysis.md`
-- 方法：`doc_method.md`
-- 代码映射：`doc_code.md`
-- 本地代码：`code/`（GitHub `chevrierlab/WMST-paper`；本地合同未记录 commit）
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

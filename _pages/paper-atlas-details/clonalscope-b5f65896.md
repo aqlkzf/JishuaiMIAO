@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>Clonalscope</h1>
     <p>Cancer subclone detection based on DNA copy number in single-cell and spatial omic sequencing data</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/seasoncloud/Clonalscope" target="_blank" rel="noopener noreferrer" aria-label="Open code for Clonalscope">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -310,7 +311,7 @@ Important differences remain. The coverage sampler draws a new continuous region
 
 ### Reproducibility
 
-**Rating: 3.5/5.** The exact paper-linked GitHub repository, commit provenance, core R package, five named tutorial routes, genome annotation assets and substantial example matrices/intermediate outputs are available locally. The code snapshot is more complete than a minimal demonstration repository.
+The code snapshot is more complete than a minimal demonstration repository.
 
 Reproduction is still nontrivial:
 

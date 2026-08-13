@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -272,8 +272,6 @@ hi12 细胞在 LN-521 上培养，用 TrypLE Express 解离，在含 10 µM Y-27
 这些都适合后续验证，但不能仅凭当前单细胞相关性分析下因果结论。
 
 ### 10. 复现时缺少什么？
-
-在本地 494 行主文、全部 6 张主图和 7 张扩展数据图中均未找到（`Not found`），且本工作区没有 supplementary Markdown 或代码仓库：
 
 - proteoCHIP 的精确孔几何和制造参数；
 - 聚丙烯与 Teflon 材料的定量对比；

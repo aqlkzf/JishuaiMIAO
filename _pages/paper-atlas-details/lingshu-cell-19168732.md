@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Lingshu-Cell</h1>
     <p>Lingshu-Cell: A generative cellular world model for transcriptome modeling toward virtual cells</p>
-    <a class="paper-detail__doi" href="https://doi.org/arXiv:2603.25240" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/arXiv:2603.25240" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Lingshu-Cell">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -246,8 +246,6 @@ $$
 - reverse cosine schedule 的精确公式没有写清楚。
 - condition token 的具体编号、padding、batch 构造、EMA 同步细节需要实现者自己决定。
 - 训练需要 A800 多卡资源，论文按任务报告 8 到 24 张 GPU。
-
-因此，当前工作区适合做方法理解和重实现设计，不适合声称已有可运行复现代码。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>SpatialEcotypes</h1>
     <p>Non-invasive profiling of the tumour microenvironment with spatial ecotypes</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/digitalcytometry/spatialecotyper" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpatialEcotypes">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -224,7 +225,7 @@ Two reproducibility differences are material. First, the current `LoocvPredict` 
 
 ### Reproducibility assessment
 
-**Rating: 3/5 (partial reproduction support).** The public R package, direct source, vignettes, pretrained assets and repository provenance make the Spatial EcoTyper algorithm inspectable and reusable. However, no Liquid EcoTyper training or inference source was found locally, no complete manuscript workflow or figure-generation pipeline is present, no covering test suite was found, and no local supplementary Markdown was acquired. The code was inspected statically but not executed in this analysis. Therefore, the spatial/expression method is substantially auditable, while the liquid-biopsy results and exact end-to-end study remain paper-only evidence.
+However, no Liquid EcoTyper training or inference source was found locally, no complete manuscript workflow or figure-generation pipeline is present, no covering test suite was found, and no local supplementary Markdown was acquired. The code was inspected statically but not executed in this analysis. Therefore, the spatial/expression method is substantially auditable, while the liquid-biopsy results and exact end-to-end study remain paper-only evidence.
 
 ### Recommended reading order
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -345,7 +345,6 @@ $$
 - Cellular Potts 模拟代码未找到；
 - 平行切片的 Gaussian smoothing 和 local weighted Spearman/scHOT 实现未找到；
 - `reproduce_data/` 只有外部 Dropbox 链接和 LR 表，没有 notebook 所需的完整 CSV/TIF 输入；
-- 本工作区没有安装环境、运行 notebook 或复现数值结果。
 
 ### 15. 最合适的使用方式
 

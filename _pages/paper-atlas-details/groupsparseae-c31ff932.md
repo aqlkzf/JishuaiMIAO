@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Representation Models</span>
-      <span>ICLR 2026 · 2026</span>
+      <span>ICLR · 2026</span>
     </div>
     <h1>GroupSparseAE</h1>
     <p>Decomposing multimodal embedding spaces with group-sparse autoencoders</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2601.20028" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2601.20028" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GroupSparseAE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/saprmarks/dictionary_learning" target="_blank" rel="noopener noreferrer" aria-label="Open code for GroupSparseAE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -188,16 +188,6 @@ CHANGELOG 中出现的 “GSAE” 是库历史中的 gated SAE 命名语境，�
 - Theorem 1 是存在性/构造性结果，不保证 SGD 会找到好解，也不保证固定字典容量下无代价。
 - 论文实验使用 CLIP、CLAP、SigLIP2、AIMv2 等通用多模态模型，不是生物信息学研究。
 - 本次没有重新训练论文模型；因为核心代码和 checkpoint 未发布，论文数值仅作为论文报告保留。
-
-### 证据入口
-
-- 论文与附录：`paper source/paper/auto/paper.md`
-- 图：`paper source/paper/vlm/images/Fig*.jpg`
-- TopK 基座：`dictionary_learning/dictionary_learning/trainers/top_k.py`
-- 训练循环：`dictionary_learning/dictionary_learning/training.py`
-- 通用评估：`dictionary_learning/dictionary_learning/evaluation.py`
-- 基类与其他 SAE：`dictionary_learning/dictionary_learning/dictionary.py`
-- 基础测试：`dictionary_learning/tests/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

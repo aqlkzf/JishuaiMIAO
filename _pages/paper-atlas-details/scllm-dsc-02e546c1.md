@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scLLM-DSC</h1>
     <p>scLLM-DSC: LLM-Knowledge Enhanced Cross-Modal Deep Structural Clustering for Single-Cell RNA Sequencing</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2606.13007" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2606.13007" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scLLM-DSC">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/XPgogogo/scLLM-DSC" target="_blank" rel="noopener noreferrer" aria-label="Open code for scLLM-DSC">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -110,7 +110,7 @@ $$\mathbf{Z}^{\mathrm{feat}}=f_{\mathrm{struc}}(\mathbf{X})\in\mathbb{R}^{N\time
 - $\mathcal{L}_{MSE}$：自编码器重构损失，确保潜表示保留表达信息。
 - $\mathcal{L}_{KL}$：软聚类分配和目标分布之间的 KL 损失，目标分布通过最优传输机制优化，用于缓解聚类坍塌。
 
-需要注意：本文没有完整展开 $\mathcal{L}_{NCut}$、$\mathcal{L}_{MSE}$、$\mathcal{L}_{KL}$ 的公式，而是引用 scCDCG 作为结构骨干；本工作区也没有可用代码，因此这些实现细节属于 **Not found**。
+需要注意：本文没有完整展开 $\mathcal{L}_{NCut}$、$\mathcal{L}_{MSE}$、$\mathcal{L}_{KL}$ 的公式，而是引用 scCDCG 作为结构骨干；
 
 ### 6. 跨模态对齐和融合
 
@@ -157,7 +157,7 @@ $$\mathbf{Z}^{\mathrm{cluster}}=\frac{1}{2}\left(\mathbf{\hat{Z}}^{\mathrm{text}
 
 ### 9. 复现风险
 
-论文声称代码和数据位于 `https://github.com/XPgogogo/scLLM-DSC`，但本次获取时该 GitHub 仓库返回 `Repository not found`，无法克隆。因此，本工作区只能做 paper-only 分析，不能验证代码实现 (`paper source/arxiv_html/paper.md:285`, `logs/delegation_and_code_availability.md:1`)。
+论文声称代码和数据位于 `https://github.com/XPgogogo/scLLM-DSC`，但本次获取时该 GitHub 仓库返回 `Repository not found`，无法克隆。
 
 此外，论文没有在正文中给出完整的 scCDCG 损失实现、OT/Sinkhorn 细节、Optuna 搜索空间、数据下载版本或预处理脚本。这些不是结论错误，而是复现时需要补充的关键缺口。
 

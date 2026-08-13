@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>VeTra</h1>
     <p>VeTra: a tool for trajectory inference based on RNA velocity</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bioinformatics/btab364" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bioinformatics/btab364" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for VeTra">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/wgzgithub/VeTra" target="_blank" rel="noopener noreferrer" aria-label="Open code for VeTra">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -164,7 +164,7 @@ VeTra 不只输出轨迹，还把轨迹用于调控网络分析。论文说它�
 - 论文提到不同数据集可能选择 Velocyto 或 scVelo 产生的 RNA velocity (`paper.md:120-120`)；当前代码主要暴露下游的 `embedding.txt` 和 `delta_embedding.txt` 接口，没有完整的数据预处理/velocity 生成脚本。
 - TENET/TENET_TF 的 Python 调用和周边处理可见，但二进制内部不可审查。
 
-因此，可以把 VeTra 的公开代码理解为“核心方法和示例运行代码较完整，论文 benchmark 复现层不完整”。在本工作区的 `doc_code.md` 中，整体 paper-code fidelity 评为 medium。
+因此，可以把 VeTra 的公开代码理解为“核心方法和示例运行代码较完整，论文 benchmark 复现层不完整”。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

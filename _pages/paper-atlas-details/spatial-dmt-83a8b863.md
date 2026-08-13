@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>spatial-DMT</h1>
     <p>Spatial joint profiling of DNA methylome and transcriptome in tissues</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09478-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-025-09478-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for spatial-DMT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/zhou-lab/Spatial-DMT-2024" target="_blank" rel="noopener noreferrer" aria-label="Open code for spatial-DMT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -176,14 +176,6 @@ $$
 2. **相关不等于因果。** VMR—gene Pearson 相关和 motif 富集提出候选关系，不能单独证明调控方向。
 3. **填补不等于测量。** 迭代 PCA 恢复的是低秩估计，必须与实测覆盖区分。
 4. **EM-seq 不区分 5mC 与 5hmC。** 论文报告的“DNA methylation”在该化学读出中是两类修饰胞嘧啶的合并信号。
-
-### 证据入口
-
-- 主文：`paper source/paper/vlm/paper.md`
-- 补充材料：`output_paper_supp_md/paper_supp/vlm/paper_supp.md`
-- 主图解读：`figure_analysis.md`
-- 代码匹配：`doc_code.md`
-- 直接代码：`Data_preprocess/`、`Data_analysis/` 和 `Spatial-DMT-2024-code/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

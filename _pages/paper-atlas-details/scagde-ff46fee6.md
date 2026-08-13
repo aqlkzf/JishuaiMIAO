@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scAGDE</h1>
     <p>Topological identification and interpretation for single-cell epigenetic regulation elucidation in multi-tasks using scAGDE</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-57027-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-57027-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scAGDE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Hgy1014/scAGDE" target="_blank" rel="noopener noreferrer" aria-label="Open code for scAGDE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -176,18 +176,6 @@ $$
 4. DEC 目标和伪标签会使簇更紧，但也可能过早固化错误分群。阈值、簇数和随机种子需要敏感性检查。
 5. 图 8–9 的 CRE、motif、共可及性和表达一致性适合生成调控假设，不能替代扰动实验。
 6. 公开代码足以运行核心方法，却不是论文所有基准和生物图的冻结复现包；论文公式与当前代码之间的差异必须保留。
-
-### 证据入口
-
-- 论文：`paper source/PMC11830825/paper.md`
-- 主图：`paper source/PMC11830825/images/`
-- 补充实验：`supplementary/MOESM1_ESM.pdf`
-- Reporting summary：`supplementary/MOESM2_ESM.pdf`
-- 审稿记录：`supplementary/MOESM3_ESM.pdf`
-- 流程编排：`scAGDE/scAGDE/trainer.py`
-- 模型与联合损失：`scAGDE/scAGDE/model.py`
-- 图层与聚类层：`scAGDE/scAGDE/layer.py`
-- 辅助损失与预处理：`scAGDE/scAGDE/loss.py`、`scAGDE/scAGDE/utils.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

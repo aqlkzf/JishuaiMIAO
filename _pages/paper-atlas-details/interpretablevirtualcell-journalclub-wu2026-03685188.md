@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>InterpretableVirtualCell_JournalClub_Wu2026</h1>
     <p>Revisiting the blueprint for an interpretable virtual cell</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41576-026-00940-8" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41576-026-00940-8" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for InterpretableVirtualCell_JournalClub_Wu2026">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -138,7 +138,7 @@ $$
 
 源文件是一页、三栏 Journal Club，正文只讨论 Karr 2012 这一篇原始论文。PDF 没有嵌入主图，markdown也没有图像引用；没有补充材料或代码仓库。文章中的“modern AI virtual cells”是概括性对照，没有逐一枚举或比较具体 foundation models。
 
-所以本工作区采用 no-code journal-club 合同：不创建 `doc_code.md`，不宣称复现 Karr model，也不把本文扩写成完整 virtual-cell survey。中文解释中的工程延伸均明确标为设计推论。
+中文解释中的工程延伸均明确标为设计推论。
 
 ### 推荐阅读方式
 

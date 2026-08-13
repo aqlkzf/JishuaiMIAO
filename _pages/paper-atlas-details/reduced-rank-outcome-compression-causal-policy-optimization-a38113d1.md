@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -176,7 +176,6 @@ $$
 2. 低秩因素是统计压缩，不应被本质化解释为某个唯一的“贫困程度”。
 3. 方法需要可忽略性、重叠和有用的低秩结构；观察研究中的未观测混杂不会被结果压缩消除。
 4. 公平约束没有内置在优化器中，真实政策部署需要单独进行公平性、可解释性和制度审查。
-5. 当前可访问材料中没有找到官方公共代码。OpenReview 最终 PDF 和补充 ZIP 被验证挑战拦截，本工作区的详细证据来自同作者的 arXiv v1，最终版本差异只根据公开修订说明作边界标注。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

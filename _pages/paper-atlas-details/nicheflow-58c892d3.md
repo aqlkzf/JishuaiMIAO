@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -169,8 +169,6 @@ NicheFlow 对一个 source region 多次采样，形成“它在下一 slide 可
 
 ### 10. 论文与源码的对应和缺口
 
-本地源码与论文放在同一工作区，但 `nicheflow/` 不是独立 Git clone，没有 `.repo_commit` 或可验证的 upstream commit。PaperCode 根仓库 commit 不是 NicheFlow 版本号。因此这里的 provenance 是“local source snapshot, commit Not found”。
-
 可直接确认的实现主链包括：
 
 - `preprocessing/h5ad_preprocessor.py`：坐标/PCA 标准化、radius niches、评估中心网格；
@@ -212,14 +210,6 @@ $$
 可靠复现至少要固定：数据版本与 cell-type labels、PCA 和坐标标准化、radius/每 slide 点数、$K$ regions、采样数、OT method/$\lambda$/正则、point-cloud Transformer 尺寸、CFM/GVFM/GLVFM、feature/position loss weights、ODE solver/steps、seed、classifier checkpoint，以及 PSD/SPD 的平方与否。
 
 还应对不同 $r$、$K$、$\lambda$ 和随机 seeds 做敏感性分析；报告多步 rollout 误差；用独立 anatomical annotations 或 lineage data 验证 mapping。只看生成组织外形相似并不足以证明微环境命运正确。
-
-### 13. 本工作区证据范围
-
-- 论文：37 页 arXiv:2511.00977v2 / NeurIPS 2025 PDF。
-- Markdown：`paper source/.../Sakalyan et al. - 2025 - ... NicheFlow.md`，包含正文、理论、算法和附录。
-- 图像：主 overview 与 PDF 提取图像；已直接检查 overview、Fig. 2、Fig. 3。
-- 代码：工作区本地 Python snapshot；upstream repo URL/commit MISSING / Not found。
-- 未复现：训练、三个大数据集、checkpoints、全部 baselines 与所有论文表图。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

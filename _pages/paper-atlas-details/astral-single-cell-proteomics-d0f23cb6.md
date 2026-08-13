@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Astral_single_cell_proteomics</h1>
     <p>Challenging the Astral mass analyzer to quantify up to 5,300 proteins per single cell at unseen accuracy to uncover cellular heterogeneity</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02559-1" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02559-1" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Astral_single_cell_proteomics">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/SimpleNumber/SCP_on_AstralMS" target="_blank" rel="noopener noreferrer" aria-label="Open code for Astral_single_cell_proteomics">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -282,7 +282,6 @@ PG 数随直径增加，单细胞最大达到 5,300 个蛋白。PCA/UMAP 也随�
 - Spectronaut 搜索与 library 生成配置；
 - TE/hPS t-test、BH 校正和 STRING GO 脚本；
 - `requirements.txt`、环境锁文件或完整运行说明；
-- 补充材料 Markdown；本工作区只有补充 PDF 链接（`paper.md:495-503`）。
 
 notebook 中大量 `/groups/protechhub/...` 与 `/users/iuliia.bubis/...` 是作者/实验室绝对路径。它们表达静态数据依赖，不代表当前环境已经执行过这些单元，也不是 runtime trace。
 

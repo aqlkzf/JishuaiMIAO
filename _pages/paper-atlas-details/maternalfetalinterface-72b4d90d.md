@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MaternalFetalInterface</h1>
     <p>Single-cell spatiotemporal dissection of the human maternal-fetal interface</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10316-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10316-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MaternalFetalInterface">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/complexdisease/mf.interface" target="_blank" rel="noopener noreferrer" aria-label="Open code for MaternalFetalInterface">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -211,15 +211,6 @@ $$
 3. signed distance 依赖人工边界标注；切片方向和组织形变会影响绝对距离。
 4. DSC4 邻近与 EVT 低 iScore 的空间关联得到体外实验支持，但仍不能直接外推具体人群暴露风险。
 5. SCAVENGE 定位的是遗传调控作用最可能发生的细胞状态，不是临床诊断或个体风险预测器。
-
-### 证据入口
-
-- 论文：`paper source/paper/vlm/paper.md`
-- 图像：`paper source/paper/vlm/images/`
-- 图解：`figure_analysis.md`
-- 方法：`doc_method.md`
-- 代码映射：`doc_code.md`
-- 本地代码：`mf.interface/`，commit `f0c628e90e8babc641430b5c6d079ec715da6a96`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

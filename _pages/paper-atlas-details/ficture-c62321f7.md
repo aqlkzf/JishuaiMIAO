@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>FICTURE</h1>
     <p>FICTURE: scalable segmentation-free analysis of submicron-resolution spatial transcriptomics</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/seqscope/ficture" target="_blank" rel="noopener noreferrer" aria-label="Open code for FICTURE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -112,11 +113,11 @@ $$
 2. 根据因子兼容性、表达证据和距离先验更新 $\psi$；
 3. 用
 
-   $$
+$$
    \gamma\leftarrow\alpha+\psi^\top\phi
    $$
 
-   汇总邻域像素信息，更新锚点混合；
+汇总邻域像素信息，更新锚点混合；
 4. 直到 $\gamma$ 的变化小于阈值，或达到最大迭代次数。
 
 这对应代码 `online_slda.py` 中 `OnlineLDA.do_e_step` 的核心循环。`slda_minibatch.py` 明确保存稀疏计数、$\psi$、$\phi$ 和 $\gamma$。
@@ -162,8 +163,6 @@ $$
 - 在 1 mm²、每 µm² 四个转录本、500 个基因的示例中，论文报告 FICTURE 使用 1.2 GB、0.23 CPU 小时；Baysor 使用 37 GB、7.3 CPU 小时。
 - 图像中，FICTURE 比固定六边形更清楚地恢复结肠壁层次；在胚胎中发现分割遗漏的红细胞/血管结构；在乳腺癌中呈现不规则成纤维细胞和脂肪细胞形态；在肝脏中解析门管区、中央静脉和非实质细胞结构。
 
-这些数值是论文报告结果，本工作区没有重新运行完整 benchmark。
-
 ### 8. 如何正确解释 FICTURE 的输出？
 
 FICTURE 的“因子”不一定等于一个细胞类型，也不一定对应一个细胞实例。它可以表示：
@@ -188,7 +187,7 @@ FICTURE 的“因子”不一定等于一个细胞类型，也不一定对应一
 
 官方 GitHub 仓库的核心代码与论文高度一致：六边形 LDA、锚点投影、距离先验、$\psi/\phi/\gamma$ 更新、空间 minibatch 和像素输出都能在源码中直接对应。当前快照固定在提交 `cb7cb86da22f37adc7e576d41d66e5574c37fc2a`。
 
-复现限制包括：大型真实数据需要外部下载；没有识别出与论文发表版本严格对应的代码标签；论文链接的 Supplementary Text 未转换为本地 Markdown；本工作区没有执行完整 benchmark。综合而言，核心算法可检查、可运行，但精确重现论文全部数值仍需要恢复论文时期的配置和数据环境。
+复现限制包括：大型真实数据需要外部下载；没有识别出与论文发表版本严格对应的代码标签；论文链接的 Supplementary Text 未转换为本地 Markdown；综合而言，核心算法可检查、可运行，但精确重现论文全部数值仍需要恢复论文时期的配置和数据环境。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

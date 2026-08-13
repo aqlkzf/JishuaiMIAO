@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>LymphNodeSenescenceAtlas</h1>
     <p>Human Lymph Node Cellular Senescence Atlas Reveals Age-Dependent Alteration in Germinal Center B Cell Function and Niches</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.02.716161" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.04.02.716161" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for LymphNodeSenescenceAtlas">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/MingyuYang-Yale/DBiT-seq" target="_blank" rel="noopener noreferrer" aria-label="Open code for LymphNodeSenescenceAtlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -130,7 +130,7 @@ DBiT-seq 将两轮正交微流控 barcode 组合成 50×50 空间网格；表达
 
 ### 8. 公开代码能复现到什么程度
 
-本工作区有两个代码快照：`DBiT-seq/` 提供原始 DBiT 技术的 barcode、拆分、图像对齐和通用差异表达基础设施；`spatial_epigenome_FFPE/` 提供通用 ATAC/Signac/ArchR 处理和 iStar 脚本。它们能验证部分技术底层流程，但整体 paper-code fidelity 为 **low**：
+`spatial_epigenome_FFPE/` 提供通用 ATAC/Signac/ArchR 处理和 iStar 脚本。它们能验证部分技术底层流程，但整体 paper-code fidelity 为 **low**：
 
 - `Exact/Partial`：DBiT barcode 设计、部分预处理/图像对齐、通用 spatial ATAC 流程、iStar 准备—运行—可视化链条；
 - `Not found`：本图谱的 CODEX/MaxFuse 标注、SenMayo 评分、滤泡 Mahalanobis 分析、nanoPOTS/SRS 处理和完整年龄组统计脚本；

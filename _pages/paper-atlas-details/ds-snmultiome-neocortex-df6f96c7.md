@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DS-snMultiome-Neocortex</h1>
     <p>A single-cell multiomic analysis identifies molecular and gene-regulatory mechanisms dysregulated in developing Down syndrome neocortex</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1126/science.aea1259" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1126/science.aea1259" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DS-snMultiome-Neocortex">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -54,7 +54,7 @@ RNA 用 SCTransform 和 reciprocal PCA 做多供体整合；ATAC 以 MACS2 conse
 
 Monocle3 将 excitatory neuron lineage 划为 radial glia、IPC/newborn、immature、maturing 四个 pseudotime bins，并在 CT 与 IT 分支点比较命运比例。轨迹是转录状态排序而非真实谱系追踪；作者用 IHC、参考数据的年龄迁移和体外分化作正交支持。
 
-SCENIC+ 联合 TF motif、ATAC peak 与 RNA 共变构建 enhancer-driven regulons。它把“某 TF 在 Ts21 上调”推进到“其 motif 所在开放区可能连接哪些 target genes”，但仍是计算调控网络，不能替代 TF perturbation。项目未公开分析代码和自定义 cisTarget database，因此本工作区为 paper-only，所有实现对应均为 `Not found`。
+SCENIC+ 联合 TF motif、ATAC peak 与 RNA 共变构建 enhancer-driven regulons。它把“某 TF 在 Ts21 上调”推进到“其 motif 所在开放区可能连接哪些 target genes”，但仍是计算调控网络，不能替代 TF perturbation。
 
 ### 主要发现
 

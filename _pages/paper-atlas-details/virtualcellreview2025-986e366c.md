@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>VirtualCellReview2025</h1>
     <p>AI-driven virtual cell models in preclinical research: technical pathways, validation mechanisms, and clinical translation potential</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41746-025-02198-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41746-025-02198-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for VirtualCellReview2025">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -132,17 +132,6 @@ FDA Modernization Act 2.0 为非动物方法打开政策空间，但不等于 AI
 4. 计算指标必须连接到可证伪实验，且要记录失败预测。
 5. 从细胞到组织/患者需要新的状态变量和验证层，不能只靠迁移学习口号。
 6. SBML、CellML、开放 benchmark 和报告标准是可复用生态的基础。
-
-### 证据入口
-
-- 全文：`paper source/PMC12789685/paper.md`
-- 六幅主图：`paper source/PMC12789685/images/`
-- 领域分类与比较：`summary.md`、`doc_method.md`
-- 阅读判断与关键引用：`reading_notes.md`
-- 图像逐图核对：`figure_analysis.md`
-- DOI：`10.1038/s41746-025-02198-6`
-
-补充材料边界：当前 PMC 工作区没有独立补充文件，正文也未给出需要另行核验的补充数据分析；本次按全文、三张表和六幅主图完成综述阅读。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

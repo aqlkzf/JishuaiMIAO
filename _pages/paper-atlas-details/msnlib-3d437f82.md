@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MSnLib</h1>
     <p>MS^n^Lib: efficient generation of open multi-stage fragmentation mass spectral libraries</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02813-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02813-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MSnLib">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/corinnabrungs/msn_tree_library" target="_blank" rel="noopener noreferrer" aria-label="Open code for MSnLib">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -52,7 +52,7 @@ MSnLib 不是一个新的预测模型，而是一个面向 untargeted metabolomi
 | 单同位素质量 | `monoisotopic_mass` | mzmine 按 adduct/fragment 计算前体质量的基础 | `rdkit_mol_identifiers.py:84-89` |
 | 采集序列表 | Xcalibur sequence CSV | 正/负离子模式采集任务 | `sequence_creation.py:68-143` |
 | MS^n^ tree | MS1-MS5 fragmentation tree | 多级碎裂路径 | 论文 Fig. 1、Extended Data Fig. 2 |
-| 光谱库条目 | JSON/MGF/MSP | 最终开放参考光谱 | 论文 Methods；mzmine 源码未在本工作区验证 |
+| 光谱库条目 | JSON/MGF/MSP | 最终开放参考光谱 | 论文 Methods；
 
 ### 3. 方法主流程
 
@@ -76,7 +76,7 @@ $$
 
 这个量不是学习出来的参数，而是把化合物结构转成 mzmine 可检索的质量和标识符。库间覆盖比较使用 InChIKey 的第一段，故意忽略 stereochemistry；这有利于大规模比较，但不能回答立体异构体是否都被覆盖。
 
-光谱相似性使用 weighted cosine、m/z tolerance 和最少匹配 fragment 数；结构相似性使用 Tanimoto 和 MCES。代码中可验证的是 MCES helper（`my_mces.py:24-169`），weighted cosine 的主要实现属于 mzmine/GNPS 工作流，本工作区没有直接源码。
+光谱相似性使用 weighted cosine、m/z tolerance 和最少匹配 fragment 数；结构相似性使用 Tanimoto 和 MCES。
 
 ### 5. 代码实现对照
 
@@ -98,7 +98,6 @@ Fig. 1 证明流程结构清楚：元数据、采集、mzmine 处理三段互相
 
 ### 7. 局限性与未验证部分
 
-- 代码可验证的是 `msn_tree_library` 的 Python 元数据、采集序列和部分评估工具；mzmine Java 实现没有在本工作区验证。
 - 完整复现需要大规模原始数据、Zenodo/MassIVE 数据、mzmine batch/mzwizard 文件和很多 notebook，不是一个轻量级脚本可以重跑。
 - 一些数据库查询需要本地文件或访问权限，代码默认关闭部分资源。
 - `tmap_plotting.py` 等脚本含有 hardcoded Windows path，迁移运行需要改路径和准备数据。

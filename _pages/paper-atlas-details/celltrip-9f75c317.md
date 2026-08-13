@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>CellTRIP</h1>
     <p>Inferring virtual cell environments using multi-agent reinforcement learning</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/Oafish1/CellTRIP" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellTRIP">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -136,7 +137,7 @@ CellTRIP 用 PPO 更新 actor-critic，并以 GAE 计算优势。大规模环境
 4. `celltrip/memory.py::AdvancedMemoryBuffer.compute_advantages`：GAE 与截断自举；
 5. `celltrip/manager.py` 及 `utility/state_manager.py`：稳态、时间插补和扰动推理。
 
-论文提供的仓库地址是 `github.com/daifengwanglab/CellTRIP`，而本地 README 使用 `github.com/Oafish1/CellTRIP`。当前快照没有可核实的 commit 标识，因此本工作区能确认“本地实现与论文方法高度匹配”，但不能确认其对应论文发布时的精确代码提交。
+论文提供的仓库地址是 `github.com/daifengwanglab/CellTRIP`，而本地 README 使用 `github.com/Oafish1/CellTRIP`。
 
 ### 10. 最重要的结论
 

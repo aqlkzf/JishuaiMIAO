@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>MMFM</h1>
     <p>Modeling Complex System Dynamics with Flow Matching Across Time and Conditions</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/Genentech/MMFM" target="_blank" rel="noopener noreferrer" aria-label="Open code for MMFM">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -129,7 +130,7 @@ $$\tilde v_t=(1-w)v_t(x,\varnothing)+wv_t(x,c).$$
 
 数据含 T 细胞在 0/24/48/72 h 的 18,250 基因表达、93 个抑制剂和多个剂量。论文过滤出 123 个 treatment，再抽 60 个分析，以 scVI/常规处理后的前 25 PCs 建模；每个非零时间点随机留出十个处理。图 3 的 UMAP只展示时间与药物异质性，真正评估来自表 3 的 held-out MSE 与 $W_2$。
 
-MMFM 在三个时间的均值 MSE均最低，在 48/72 h 的 $W_2$ 最低；24 h 的 $W_2$ 是 L-MMFM略好。72 h 优势最大，符合长程曲率信息更重要的解释。但这些是五折论文结果，不是本工作区重跑。
+MMFM 在三个时间的均值 MSE均最低，在 48/72 h 的 $W_2$ 最低；24 h 的 $W_2$ 是 L-MMFM略好。72 h 优势最大，符合长程曲率信息更重要的解释。
 
 #### 北京 PM2.5
 
@@ -151,7 +152,6 @@ MMFM 在三个时间的均值 MSE均最低，在 48/72 h 的 $W_2$ 最低；24 h
 - 论文采样写 RK4，通用代码默认 `dopri5`；
 - 论文突出一个自适应 $\sigma_t$，代码有多个变体；
 - 最佳超参数/引导强度由 held-out 数据选择，不是单一固定模型；
-- 本地 `MMFM/` 保留嵌套 `.git`，这里只作证据快照，未做发布清理。
 
 #### 未复现
 

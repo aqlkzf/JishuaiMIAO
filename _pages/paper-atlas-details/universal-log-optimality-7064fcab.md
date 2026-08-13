@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Machine Learning Algorithm</span>
-      <span>arXiv preprint · 2025</span>
+      <span>arXiv · 2025</span>
     </div>
     <h1>Universal Log-Optimality</h1>
     <p>Universal Log-Optimality for General Classes of e-processes and Sequential Hypothesis Tests</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2504.02818" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2504.02818" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Universal Log-Optimality">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -113,21 +113,21 @@ $$
 
 1. **Universal Portfolio（UP）**
 
-   UP 直接给出每一步的可预测仓位：
+UP 直接给出每一步的可预测仓位：
 
-   $$
+$$
    \lambda_n^{\mathrm{UP}}
    =\frac{\int_0^1\lambda W_{n-1}(\lambda)\,dF(\lambda)}
           {\int_0^1 W_{n-1}(\lambda)\,dF(\lambda)},
    $$
 
-   其中 $F=\mathrm{Beta}(1/2,1/2)$。它是真正逐步下注的 self-financing 策略，并有 $O(\log n)$ 后悔界。
+其中 $F=\mathrm{Beta}(1/2,1/2)$。它是真正逐步下注的 self-financing 策略，并有 $O(\log n)$ 后悔界。
 
 2. **Regret-CO96**
 
-   它先计算当前序列上的最佳固定仓位财富，再从对数财富中减去 CO96 后悔上界：
+它先计算当前序列上的最佳固定仓位财富，再从对数财富中减去 CO96 后悔上界：
 
-   $$
+$$
    W_n^{\mathrm{CO96}}
    =\exp\left\{
    \log W_n(\lambda_n^{\max})-\frac12\log(n+1)-\log2
@@ -136,7 +136,7 @@ $$
 
 3. **Regret-OJ23**
 
-   它采用同样的“经验最大对数财富减罚项”思路，但使用 Orabona–Jun 2023 给出的更紧后悔罚项。
+它采用同样的“经验最大对数财富减罚项”思路，但使用 Orabona–Jun 2023 给出的更紧后悔罚项。
 
 因此，UP 是逐步投资规则；CO96/OJ23 是由经验最大财富和可证明罚项构造出来的保守 e-process。论文证明
 

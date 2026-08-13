@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scPROTEIN</h1>
     <p>scPROTEIN: a versatile deep graph contrastive learning framework for single-cell proteomics embedding</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02214-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02214-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scPROTEIN">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/TencentAILabHealthcare/scPROTEIN" target="_blank" rel="noopener noreferrer" aria-label="Open code for scPROTEIN">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -177,11 +177,7 @@ $$
 | uncertainty-weighted protein aggregation | Exact | `scPROTEIN/utils.py:36-43` |
 | PCC graph + threshold | Exact | `scPROTEIN/utils.py:56-72` |
 | GCN、两视图与 node contrastive loss | Exact | `scPROTEIN/model.py:27-122,147-160` |
-| feature mask 语义 | Partial | 代码按 feature 广播；论文按 cell 描述 |
-| prototype loss | Partial | 代码为无温度 cosine，且 `proto_norm` 未使用 |
-| topology denoising | Partial/optional | 代码用内积且默认关闭，`model.py:181-233` |
-| 下游临床与空间入口 | Partial notebook/script coverage | 当前仓库有相应 Notebook/工具，但不是统一 stage-3 CLI |
-| 固定源码版本 | Exact provenance | `.repo_source` 记录 commit `571cb88c2ee6e859f6df008ae24044010f7d34cd` |
+| feature mask 语义 | Partial | 代码按 feature 广播；
 
 ### 10. 最重要的限制
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DeLeakage</h1>
     <p>Correcting spatial transcriptomics data affected by a prevalent transcript leakage problem across platforms, species, and tissues</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.06.13.732076" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.06.13.732076" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DeLeakage">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Yip-Lab/DeLeakage" target="_blank" rel="noopener noreferrer" aria-label="Open code for DeLeakage">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -79,7 +79,6 @@ Fig. 3A/C 直观画出了这个分解（`paper.md:70-72`）。HTML 转 Markdown 
 
 - **模拟数据**：Fig. 4 对比真实表达、泄漏后表达和校正结果，并与 SPLIT、SpotClean 比较；图中还给出残差、细胞类型间余弦相似度及 FDR 表。
 - **真实空间数据**：Fig. 5 的小鼠脑 MERFISH 图显示，DeLeakage 后 `Slc17a7`、`Aqp4` 的非目标区域弥散信号下降；Fig. 6 展示四个数据集的 ARI 条形图，以及意外 marker 的 Moran's I 热图。
-- **规模**：补充 Fig. 10 报告 CPU/GPU 版本在不同细胞数/基因数下的时间和内存，以及与 SPLIT 的比较（`paper.md:476-482,533-535`）。这些是作者报告的结果，当前工作区未重跑。
 
 ### 应如何理解边界？
 

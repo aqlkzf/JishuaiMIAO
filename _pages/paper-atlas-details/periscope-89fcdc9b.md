@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>PERISCOPE</h1>
     <p>A genome-wide atlas of human cell morphology</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/broadinstitute/2022_PERISCOPE" target="_blank" rel="noopener noreferrer" aria-label="Open code for PERISCOPE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -246,7 +247,7 @@ These are paper results. They were not numerically rerun in this analysis.
 
 ### Code and reproducibility assessment
 
-The correct final-analysis repository is [`broadinstitute/2022_PERISCOPE`](https://github.com/broadinstitute/2022_PERISCOPE), inspected locally at commit `17d345046beee46c8fa8601f970b66651232e7ed`. The initially linked `cellpainting-gallery` repository is important for public data provenance but is not the primary implementation of the final analysis.
+The correct final-analysis repository is [`broadinstitute/2022_PERISCOPE`](https://github.com/broadinstitute/2022_PERISCOPE), inspected locally at commit `17d345046beee46c8fa8601f970b66651232e7ed`.
 
 Static inspection found direct notebook or Python support for:
 

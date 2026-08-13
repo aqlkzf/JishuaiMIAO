@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>HumanOrganoidsDrugDiscovery_Review</h1>
     <p>Human organoids as 3D in vitro platforms for drug discovery: opportunities and challenges</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41573-025-01317-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41573-025-01317-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for HumanOrganoidsDrugDiscovery_Review">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -213,7 +213,7 @@ $$
 
 ### 14. 证据与代码边界
 
-这是一篇综述，不是一篇发布新算法或软件的论文。作者没有为本文提供代码仓库，本工作区也不应生成 `doc_code.md` 或 CodeGraph 分析。文中的公式、流程和性能数字来自其汇总的代表性研究；要复现 CFTR 膨胀、PDTO 筛选或器官芯片实验，仍需回到相应原始论文和实验协议。
+这是一篇综述，不是一篇发布新算法或软件的论文。文中的公式、流程和性能数字来自其汇总的代表性研究；要复现 CFTR 膨胀、PDTO 筛选或器官芯片实验，仍需回到相应原始论文和实验协议。
 
 ### 15. 一句话总结
 

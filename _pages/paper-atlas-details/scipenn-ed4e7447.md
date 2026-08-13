@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>sciPENN</h1>
     <p>A multi-use deep learning method for CITE-seq and single-cell RNA-seq data integration with cell surface protein prediction and imputation</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s42256-022-00545-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s42256-022-00545-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for sciPENN">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/jlakkis/sciPENN" target="_blank" rel="noopener noreferrer" aria-label="Open code for sciPENN">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -300,7 +300,7 @@ Important gap: the paper states that all analyses can be reproduced using a sepa
 
 ### Reproducibility Rating
 
-**3/5 for this workspace.** The core package is available and strongly maps to the method, but exact paper-figure reproduction requires the separate analysis-code repository and MOESM1 Supplementary Note 1 was not available in readable markdown here. The documented gaps are publishable because they are provenance limitations, not unsupported upgraded claims.
+**3/5 for this workspace.** The core package is available and strongly maps to the method, but exact paper-figure reproduction requires the separate analysis-code repository and MOESM1 Supplementary Note 1 was not available in readable markdown here.
 
 </article>
 </section>

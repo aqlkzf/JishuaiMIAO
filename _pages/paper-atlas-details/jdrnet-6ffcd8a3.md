@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>JDRnet</h1>
     <p>Gene regulatory network integration with multi-omics data enhances survival predictions in cancer</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf315" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf315" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for JDRnet">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/kuijjerlab/JDRnet" target="_blank" rel="noopener noreferrer" aria-label="Open code for JDRnet">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -146,17 +146,10 @@ JUND 因而是值得后续验证的候选调控因子，而不是已经证实的
 | PANDA 聚合 GRN | `code/networks/lib/PANDA.m`, `panda_run.m` | Exact：核心 MATLAB 算法在本地 |
 | LIONESS 单样本公式 | `code/networks/lioness_run.m` | Exact：公式逐字实现 |
 | 入度/出度求和 | `code/networks/calculate_degree.R` | Exact |
-| PCA 85%、至少 20 PC | 论文方法；`process_data.ipynb` 调用 MARMOT | Partial：阈值逻辑在外部包中 |
-| 四个 MOFA+ 模型及参数 | `code/notebooks/JDR_net.ipynb` | Exact：调用和层选择可见 |
-| Cox、临床关联、权重回映射、GSEA | 同一 notebook 调用 MARMOT | Partial：调用可见，核心函数体不在工作区 |
-| 图 2–6 | `code/figures/Figure2.pdf` 至 `Figure6.pdf` | Artifact：有预生成图，未在本轮重算 |
-| 原始/中间数据与容器 | 论文指向 Zenodo 14525733 | Not local：当前工作区未包含完整数据包和容器 |
+| PCA 85%、至少 20 PC | 论文方法；
 
 ### 9. 复现与版本边界
 
-- 本地代码目录没有可归属到 JDRnet 上游仓库的独立 Git 提交元数据，因此 `code_repo_commit` 保持 `null`；不能把 PaperCode 父仓库提交当成论文代码版本。
-- notebook 注释建议从 `rtpop/MARMOT` 安装 `v0.0.1`，而论文和仓库 README 指向 `kuijjerlab/MARMOT`。这说明代码调用意图明确，但远端组织名存在历史迁移或别名差异，当前工作区没有 MARMOT 源码可核对。
-- `JDR_net.ipynb` 默认可以加载预计算结果；Zenodo 数据、因子分解和容器并未全部纳入本工作区。本轮只验证了论文、补充材料、脚本、notebook 调用链和预生成图，没有重跑耗时网络推断或 MOFA+。
 - 论文正式网络路径写为 MATLAB，仓库另有 netZooPy notebook。两条路径在公式层一致，但不能据此声称数值逐元素一致。
 - GEPliver 是独立队列验证，但它与 TCGA 在队列构成和可用组学层上不同；这增强了生物学复现性，却不是完全同分布的预测测试。
 

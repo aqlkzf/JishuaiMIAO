@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -35,7 +35,7 @@ sitemap: false
 
 SpotDiff 用条件扩散模型补全空间转录组（ST）表达。它先准备三类条件：被遮蔽的 ST 数值、由基因名和表达值构造的文本表示、同组织 scRNA-seq 经对齐与聚合后的表示；再让 DiT 风格网络预测扩散噪声并恢复表达矩阵。
 
-本工作区是 **paper-only**：有论文 PDF、OCR 和论文图，但没有作者代码快照，也没有独立补充材料。所以下文解释的是论文写出的计算合同，不能确认实际张量、网络层级与超参数。
+所以下文解释的是论文写出的计算合同，不能确认实际张量、网络层级与超参数。
 
 ### 1. 问题与评估边界
 
@@ -137,16 +137,6 @@ $$
 论文足以重建高层流程，但以下关键项 **Not found**：随机种子和拆分、$n_1/n_2/\mathcal N$、$\lambda_1/\lambda_2/\sigma$、近远邻采样规则、T5 版本与训练方式、U-Net/DiT 详细结构、优化器、学习率、batch、epoch、扩散日程、采样步数、硬件，以及配对 scRNA-seq 的泄漏控制。
 
 因此，新增代码只能称为“基于论文的再实现”，不能称为“代码验证后的作者实现”。
-
-### 证据入口
-
-- 论文 OCR：`paper source/SpotDiff_AAAI2025/auto/SpotDiff_AAAI2025.md`
-- 论文图：`paper source/SpotDiff_AAAI2025/auto/images/`
-- 原始 PDF：`SpotDiff_AAAI2025.pdf`
-- 公式与变量表：`doc_method.md`
-- 图证据：`figure_analysis.md`
-- 作者代码：Not found
-- 独立补充材料：Not found
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Human-liver-atlas</h1>
     <p>A spatial atlas of the healthy human liver from live donors</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10377-y" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41586-026-10377-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Human-liver-atlas">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/OranYak/Human-liver" target="_blank" rel="noopener noreferrer" aria-label="Open code for Human-liver-atlas">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -244,17 +244,6 @@ $$
 5. **脂肪“轨迹”是横截面排序。** 它不能替代真正的纵向或干预实验。
 
 在这些边界内，这项工作最可靠的产物是一套以活体健康供者为基准、由多种空间技术交叉验证的人肝小叶表达坐标系。人类特异代谢分区、NPC 信号轴和早期脂肪变性程序，是建立在该坐标系上的优先验证假说。
-
-### 源证据入口
-
-- 研究动机、样本与主要结果：`paper source/paper/auto/paper.md:17-149`
-- 实验与计算方法：`paper source/paper/auto/paper.md:286-374`
-- 核心 landmark 和 $\eta$：`Human-liver/Matlab_scripts/a3_visium_12_patients_zonation_reconstruction_for_github.m:49-90`
-- 8 区分箱、KW、BH 与质心：`Human-liver/Matlab_functions/extract_zonation_for_github.m:18-84`
-- 空间中值滤波：`Human-liver/Matlab_functions/median_zone_filter_for_github.m:7-28`
-- HD cell-to-bin 映射：`Human-liver/Mapping_spots_to_cells.groovy:27-178`
-- 图 1—5：`paper source/paper/auto/images/`
-- 代码—论文差异与复现边界：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

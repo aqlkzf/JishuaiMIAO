@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SLOPER</h1>
     <p>Mapping spatial gradients in spatial transcriptomics data with score matching</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.11.24.690257" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.11.24.690257" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SLOPER">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/chitra-lab/SLOPER" target="_blank" rel="noopener noreferrer" aria-label="Open code for SLOPER">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -34,7 +34,7 @@ sitemap: false
 
 SLOPER（Score-based Learning Of Poisson-modeled Expression Rates）处理的不是普通的空间聚类问题。它先为每个基因学习一个二维向量场：在组织内任一点，这个向量指出该基因的相对表达强度朝哪个方向上升、上升有多快。这个向量场随后既可作为空间模式本身，也可驱动 Langevin 采样，把稀疏、扩散的观测计数重排成空间上更集中的“增强表达”。
 
-本文还是 2025 年 bioRxiv 预印本；本工作区的论文 Markdown 来自 OCR，代码证据固定在官方仓库提交 `2443e71ddf42c75e734ad26db8bcf8ddbfb32abd`。因此下面把论文提出的完整分析框架与该代码快照实际提供的函数分开说明。
+本文还是 2025 年 bioRxiv 预印本；因此下面把论文提出的完整分析框架与该代码快照实际提供的函数分开说明。
 
 ### 1. 输入、输出与真正学习的对象
 

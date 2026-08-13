@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>ovrlpy</h1>
     <p>Identifying 3D signal overlaps in spatial transcriptomics data with ovrlpy</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/HiDiHlabs/ovrl.py" target="_blank" rel="noopener noreferrer" aria-label="Open code for ovrlpy">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -309,21 +310,19 @@ $$
 - Xenium 细胞核：36,831 / 162,018；
 - MERSCOPE 细胞核：15,780 / 83,505。
 
-去除这些区域后重新计算的 UMAP 中，许多细胞类型之间的桥接和混合区域减少（`paper.md:70,507-512`）。这是论文和图像证据，不是本工作区重新运行得到的结果。
+去除这些区域后重新计算的 UMAP 中，许多细胞类型之间的桥接和混合区域减少（`paper.md:70,507-512`）。
 
 ### 11. 代码可复现性与证据边界
 
 #### 已验证
 
-本工作区代码快照对应 commit `5e0ea7ffc6fd19e2d9d31f5b2b75a915130f1246`。核心算法——局部分层、KDE 伪细胞、PCA/UMAP、上下表达场、余弦 VSI、局部极小值检测、RGB 区域视图和分割像素 VSI 导出——都有直接源码证据。总体代码—论文一致性为 **high**。
+核心算法——局部分层、KDE 伪细胞、PCA/UMAP、上下表达场、余弦 VSI、局部极小值检测、RGB 区域视图和分割像素 VSI 导出——都有直接源码证据。总体代码—论文一致性为 **high**。
 
 #### MISSING / Not found
 
 - `SUPP_MD` **MISSING**：没有获取 Supplementary Methods、Results 和 Supplementary Figs. 1–15。
 - 论文另行提供的 `ovrlpy-publication` Jupyter notebooks 不在当前 `code source`，其内容和 commit 未验证。
 - 当前包快照中 **Not found**：测试、示例数据、环境锁文件、完整统计分析、benchmark 驱动、论文图生成脚本和按细胞平均 VSI 后重新跑 PCA/UMAP 的流程。
-
-因此，本工作区可以较强地解释和核对“方法如何实现”，但不能完成论文全部结果的端到端复现。
 
 ### 12. 给研究者的实践建议
 

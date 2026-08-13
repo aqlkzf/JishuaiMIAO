@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CSDE</h1>
     <p>Mitigating Bias in Spatial Transcriptomic Pipelines via Human Feedback</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.01.15.699786" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.01.15.699786" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CSDE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/YosefLab/CSDE" target="_blank" rel="noopener noreferrer" aria-label="Open code for CSDE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -105,7 +105,7 @@ $$
 
 重新加权人工校正项（论文 Eq. 7）。这一步是统计有效性的组成部分，不是可省略的采样技巧。
 
-重要实现边界：本地核心包没有接收 $w_i$ 或 $\eta_i$ 的 API，也没有 Eq. 7 的加权目标。论文级实验脚本位于另一个 `csde_reproducibility` 仓库；当前工作区只能验证未加权的 Eq. 5 实现。
+重要实现边界：本地核心包没有接收 $w_i$ 或 $\eta_i$ 的 API，也没有 Eq. 7 的加权目标。论文级实验脚本位于另一个 `csde_reproducibility` 仓库； 5 实现。
 
 ### 7. 从点估计到显著性
 

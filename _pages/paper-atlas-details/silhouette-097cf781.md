@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>Silhouette</h1>
     <p>Shortcomings of silhouette in single-cell integration benchmarking</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/yoseflab/scib-metrics" target="_blank" rel="noopener noreferrer" aria-label="Open code for Silhouette">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -298,7 +299,6 @@ liam 由 Rautenstrauch 和 Ohler发表于 *Nucleic Acids Research*（2024）。H
 
 ### 10. 复现状态与缺失证据
 
-- **MISSING — Zenodo 分析/Notebook 归档：**论文将数据预处理、模拟、整合分析和制图代码放在 DOI `10.5281/zenodo.15642298`，但本工作区没有获取该归档。
 - **Not found — 定制 CiLISI：**供应的 scib-metrics snapshot 只有通用 `lisi_knn`、`ilisi_knn` 和 `clisi_knn`；没有找到按 cell type 循环并按细胞数加权的定制 CiLISI。
 - **MISSING — 补充材料 Markdown：**Supplementary Notes 1–4 和 Supplementary Figs. 1–4 未被本地获取，因此无法核验 ARI/NMI resolution 敏感性、异质样本评测建议和 BRAS 的其他限制。
 - **Partial — 版本一致性：**当前代码是 0.5.10，不是论文指定的 0.5.5；它可以验证核心公式与当前行为，但不能替代论文的精确运行环境。

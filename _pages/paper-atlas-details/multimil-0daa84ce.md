@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>multimil</h1>
     <p>Multimodal weakly supervised learning to identify disease-specific changes in single-cell atlases</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2024.07.29.605625" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2024.07.29.605625" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for multimil">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/multimil" target="_blank" rel="noopener noreferrer" aria-label="Open code for multimil">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,14 +36,12 @@ sitemap: false
 
 论文中的 MultiMIL 是“多模态 cVAE + 多实例学习（MIL）”的组合：先用模态特异编码器和 Product-of-Experts（PoE）把每个细胞的 RNA/ADT/ATAC 整合为联合表示，再把同一患者的细胞当作一个 bag，用门控注意力加权成患者表示，最后预测疾病分类、连续表型或有序阶段。高注意力细胞被用作疾病相关细胞状态的候选。
 
-本工作区的代码版本是 `0.3.1`，但它只包含独立 MIL 预测模块：输入 `.X` 中已有的细胞嵌入，做注意力池化与表型预测；论文前半段的 PoE-VAE 整合代码不在当前 `src/multimil/`。因此 MIL 部分可以直接代码核验，端到端 cVAE+MIL 只能按论文解释，不能声称当前快照完整实现论文模型。
+论文前半段的 PoE-VAE 整合代码不在当前 `src/multimil/`。因此 MIL 部分可以直接代码核验，端到端 cVAE+MIL 只能按论文解释，不能声称当前快照完整实现论文模型。
 
 ### 证据与版本
 
 - 论文：bioRxiv DOI `10.1101/2024.07.29.605625`，本地取回的是 2024-07-29 v1，50 页 PDF，主文、Methods 和 Supplementary Figures 1–10 在同一文件。
 - 包源码：`pyproject.toml` 版本 `0.3.1`，来源声明为 `https://github.com/theislab/multimil`。
-- 上游 commit：Not found。该目录嵌在 PaperCode 大仓库中，不保留 multimil 自身 Git 历史。
-- 复现实验：论文指向 `theislab/multimil_reproducibility`，本工作区没有该仓库、数据、模型权重或图表脚本。
 
 ### 1. 论文中的第一阶段：每个细胞的多模态联合表示
 
@@ -61,7 +59,7 @@ $$
 
 训练整合模块使用各模态重建损失、联合后验 KL，以及可选 MMD：MMD 可以对齐技术批次的 joint latent，也可以对齐不同模态的 marginal latent，以支持单模态 query 映射。论文允许先训练整合模块再训练 MIL，也允许端到端同时优化。
 
-这一整合阶段与 multigrate 的 PoE-VAE 设计紧密相关，但当前 multimil `0.3.1` 源码目录没有编码器、解码器、PoE、重建或 MMD 模块。论文图 1/2 的整合实验因而不能由本地代码重跑。
+论文图 1/2 的整合实验因而不能由本地代码重跑。
 
 ### 2. MIL 的数据单位：患者是 bag，细胞是 instance
 
@@ -154,17 +152,6 @@ $$
 - 上游论文实验 commit；
 - `multimil_reproducibility` 数据、脚本、权重和环境锁；
 - 论文所有图表的本地可运行复现。
-
-### 证据入口
-
-- 论文及补充：`paper source/multimil/auto/paper.md`
-- 原始 PDF：`multimil_paper.pdf`
-- 页面图：`paper source/multimil/auto/images/`
-- MIL 高层 API：`src/multimil/model/_mil.py`
-- MIL 前向与损失：`src/multimil/module/_mil_torch.py`
-- 注意力实现：`src/multimil/nn/_base_components.py`
-- 数据加载：`src/multimil/dataloaders/`
-- 当前版本：`pyproject.toml`（0.3.1）
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

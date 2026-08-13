@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>totalVI</h1>
     <p>Joint probabilistic modeling of single-cell multi-omic data with totalVI</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/YosefLab/scvi-tools" target="_blank" rel="noopener noreferrer" aria-label="Open code for totalVI">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -200,9 +201,7 @@ protein_val = py_["rate_fore"] * (1 - protein_mixing)
 
 ### 代码复现边界
 
-本工作区克隆的是 `YosefLab/scvi-tools`，也就是论文提到的 totalVI 参考实现；论文同时说明完整结果复现代码在 `YosefLab/totalVI_reproducibility`（`paper.md:934-937`）。
-
-因此，本工作区能验证：
+论文同时说明完整结果复现代码在 `YosefLab/totalVI_reproducibility`（`paper.md:934-937`）。
 
 - totalVI 核心 VAE；
 - RNA NB 和蛋白 NB-mixture；
@@ -212,8 +211,6 @@ protein_val = py_["rate_fore"] * (1 - protein_mixing)
 - posterior predictive sample；
 - differential expression API；
 - feature correlation API。
-
-本工作区没有验证到：
 
 - SLN/PBMC/MALT 论文 benchmark 的完整脚本；
 - Fig. 2-5 和 extended figures 的绘图脚本；

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellRank Protocol</h1>
     <p>CellRank: consistent and data view agnostic fate mapping for single-cell genomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41596-025-01314-w" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41596-025-01314-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellRank Protocol">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/cellrank" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellRank Protocol">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -176,13 +176,11 @@ UMAP 上颜色连续不等于真实物理连续；macrostates 的轮廓和 fate 
 
 - 协议代码块与当前 API 大体一致，但本地源码是共享父目录中的当前快照，无协议发表时 commit/tag 元数据；API/default 可能已漂移。
 - Protocol 提到 CellRank 1/2 兼容性，但“其余 Python 包不变”是重要条件；不同 scvelo/pygpcca/scipy 会改变数值结果。
-- RealTime procedure 还依赖外部 moscot，当前工作区未保存锁定环境。
 
 #### Not found / MISSING
 
 - 论文所说 `theislab/cellrank_protocol` 分析仓库的本地快照；
 - 协议使用数据和每图输出的固定 commit、完整 lockfile、seed 和运行记录；
-- 当前父目录 CellRank 源码的独立上游 commit provenance。
 
 因此最诚实的模式仍是 `paper+code`，但 `code source` 是只读外部同仓源码，不是 protocol workspace 内的已获取快照。
 

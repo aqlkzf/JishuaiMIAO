@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ProtoCloud</h1>
     <p>ProtoCloud: A prototypical self-explaining model for single-cell analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.xgen.2026.101217" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.xgen.2026.101217" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ProtoCloud">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Ding-Group/ProtoCloud" target="_blank" rel="noopener noreferrer" aria-label="Open code for ProtoCloud">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -130,7 +130,7 @@ ProtoCloud 的 gene explanation 不是把 differential expression 直接贴到�
 
 ### 11. 代码与论文的可复现边界
 
-本地源码覆盖 preprocessing、rare-type augmentation、ProtoCloud architecture、全部核心 losses、two-stage training、prediction、calibration、PRP、plotting 和 API。代码目录没有独立 `.git`；从中运行 Git 会落到外层 PaperCode checkout，因此 metadata 中旧 commit `217094...` 无法由当前目录验证。本次将来源标记为 `local_dir`，不伪造 commit fidelity。
+本地源码覆盖 preprocessing、rare-type augmentation、ProtoCloud architecture、全部核心 losses、two-stage training、prediction、calibration、PRP、plotting 和 API。
 
 缺口包括：论文使用的全部原始/处理后 datasets、训练 checkpoints、主图结果 tables 和独立 supplement。代码存在不等于本地已重跑所有 benchmark；依赖和大数据运行也未在本次文档恢复中执行。
 

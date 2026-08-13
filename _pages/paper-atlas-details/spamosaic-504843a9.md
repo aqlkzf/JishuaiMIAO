@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpaMosaic</h1>
     <p>Mosaic integration of spatial multi-omics with SpaMosaic</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-026-02573-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41588-026-02573-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpaMosaic">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/JinmiaoChenLab/SpaMosaic" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpaMosaic">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -34,7 +34,7 @@ sitemap: false
 
 SpaMosaic 处理的不是每个切片都同时测到所有组学的理想数据，而是更常见的**马赛克式观测**：有的切片有 RNA+ATAC，有的只有 RNA，有的有 RNA+蛋白，另一些又来自不同发育阶段或实验技术。目标是把这些切片放进同一个低维空间，同时保留空间邻域、消除切片批次差异，并给缺失模态提供可解释的邻居插补。
 
-本文解读以发表版论文 OCR 文本、主图与扩展图，以及本地官方代码快照 `SpaMosaic/`（commit `cc1336755de8d1ddd1337b3cd67c9d41a61c2cb4`，包版本 1.0.3）为证据。代码目录 `code/` 和根目录 `spamosaic/` 的包内容与该快照相同，但只有 `SpaMosaic/.repo_source` 保存了仓库与提交 provenance，因此下文以它为规范实现。行号会随文件变化，定位时应优先使用函数名。
+本文解读以发表版论文 OCR 文本、主图与扩展图，以及本地官方代码快照 `SpaMosaic/`（commit `cc1336755de8d1ddd1337b3cd67c9d41a61c2cb4`，包版本 1.0.3）为证据。行号会随文件变化，定位时应优先使用函数名。
 
 ### 1. 先看清数据结构：真正的桥是“同一批 spot 的共测模态”
 
@@ -125,7 +125,6 @@ Figure 1 是整套方法的证据地图：左侧是模态覆盖不完整的多�
 3. 分开报告切片内空间边、切片间 MNN 边和可选异常边过滤，尤其不要把 $w_g=0.8$ 的作用对象写反。
 4. 同时评估生物结构保留与批次混合；仅凭 UMAP 混合良好不能证明正确整合。
 5. 插补验证应遮蔽真实已测模态，并与简单同模态邻居基线比较；不能把可视化平滑当成定量准确。
-6. 固定官方快照 commit `cc1336755de8d1ddd1337b3cd67c9d41a61c2cb4` 和包版本 1.0.3。本文确认了静态代码—论文机制映射，但没有在当前工作区重跑全部数据集、GPU 训练或论文数值，因此不声称逐图数值复现。
 
 SpaMosaic 最核心的思想可以压缩成一句话：用**同模态跨切片的图边**传递横向信息，用**桥接切片的同 spot 对比**确定纵向模态坐标，再用**单模态重建**保住没有配对的样本信息。它能处理“缺块”的马赛克，但证据链必须是连通的。
 

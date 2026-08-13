@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpaIM</h1>
     <p>SpaIM: single-cell spatial transcriptomics imputation via style transfer</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-63185-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-63185-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpaIM">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/QSong-github/SpaIM" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpaIM">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -154,7 +154,7 @@ $$
 
 ### 9. 复现边界与使用风险
 
-代码固定 CUDA 路径并默认使用特定 AnnData 字段 `merge_cell_type`；训练需要预先生成每折基因列表。仓库提供 environment、数据处理脚本、benchmark launcher 和 inference 脚本，但没有随本工作区保存 53 个完整数据集与所有训练 checkpoint，本次也未重跑 benchmark。
+代码固定 CUDA 路径并默认使用特定 AnnData 字段 `merge_cell_type`；训练需要预先生成每折基因列表。
 
 更重要的是，插补可能强化参考 scRNA-seq 的细胞组成或模型学到的共表达模式。对“未测基因”没有目标 ST 真值时，预测应视为模型估计；ligand–receptor、DEG、空间域和轨迹结论仍需用独立测量、原位验证或留出基因评估确认，不能因为空间图看起来平滑就视为真实表达。
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Instability_Computational_Efficiency_Statistical_Accuracy</h1>
     <p>Instability, Computational Efficiency and Statistical Accuracy</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2005.11411" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2005.11411" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Instability_Computational_Efficiency_Statistical_Accuracy">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -83,7 +83,7 @@ $$
 
 ### 实验与复现边界
 
-六幅图支持理论缩放：相同统计误差斜率下，Newton 的迭代数增长远慢于 GD/EM。未在 JMLR 页面、全文、arXiv、GitHub 精确检索或 Papers with Code 找到作者官方代码，因此当前工作区为 paper-only；精确实验脚本、随机种子和实现细节标记为 `Not found`。
+六幅图支持理论缩放：相同统计误差斜率下，Newton 的迭代数增长远慢于 GD/EM。精确实验脚本、随机种子和实现细节标记为 `Not found`。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

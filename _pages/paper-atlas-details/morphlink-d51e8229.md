@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MorphLink</h1>
     <p>Bridging cell morphological behaviors and molecular dynamics in multi-modal spatial omics with MorphLink</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-61142-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-025-61142-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MorphLink">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/jianhuupenn/MorphLink" target="_blank" rel="noopener noreferrer" aria-label="Open code for MorphLink">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -135,7 +135,7 @@ MorphLink 不停在 CPSI 排名。它选择目标形态特征的低、中、高�
 - 图 5：在小鼠脑中把 NRN1 等神经发育表达模式与核方向 IQR 联系起来，展示方法对发育空间梯度的应用。
 - 图 6：在带模糊伪影的斑马鱼黑色素瘤图像中比较深度特征和 MorphLink，后者用纤维束面积连接肿瘤/肌肉界面基因，支持其对局部染色伪影的一定稳健性。
 
-论文还报告乳腺癌、鼠胚、tonsil、空间 CITE-seq 等扩展分析，并将 CPSI 与相关、SSIM 和 RMSE 比较。本工作区没有收录在线补充材料，因此这些补充图表不能在本地逐页复核。
+论文还报告乳腺癌、鼠胚、tonsil、空间 CITE-seq 等扩展分析，并将 CPSI 与相关、SSIM 和 RMSE 比较。
 
 ### 10. 论文与本地代码对应
 
@@ -164,16 +164,6 @@ MorphLink 不停在 CPSI 排名。它选择目标形态特征的低、中、高�
 5. 高 CPSI 是空间共现，不控制所有组织组成、空间自相关和多重检验，也不是因果链接。
 6. MorphLink 偏重局部、可解释形态；论文也承认对需要全局组织结构的聚类任务，深度图像特征可能更合适。
 7. 本地源码存在重复函数定义且缺乏自动测试；发布包能运行不等于每条论文分析路径已冻结复现。
-
-### 证据入口
-
-- 论文与图注：`paper source/paper/paper.md`
-- 本地主图：`paper source/paper/_page_*_Figure_2.jpeg`
-- 核心编排：`MorphLink_package/MorphLink/main_functions.py`
-- 分割与 mask：`mask_util.py`、`refine_and_merge_util.py`
-- 特征：`extract_hancraft_features_util.py`、`cc_util.py`
-- CPSI：`pattern_similarity.py`
-- 教程：`tutorial/tutorial.md`、`tutorial/tutorial.ipynb`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>FlashSinkhorn</h1>
     <p>FlashSinkhorn: IO-Aware Entropic Optimal Transport on GPU</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2602.03067" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2602.03067" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for FlashSinkhorn">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ot-triton-lab/flash-sinkhorn" target="_blank" rel="noopener noreferrer" aria-label="Open code for FlashSinkhorn">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -36,7 +36,7 @@ sitemap: false
 
 给定带权点云 $X\in\mathbb{R}^{n\times d},a\in\Delta^n$ 与 $Y\in\mathbb{R}^{m\times d},b\in\Delta^m$，熵正则最优传输（EOT）寻找耦合 $P$，使运输代价和熵正则的 KL 项之和最小。平方欧氏代价为 $C_{ij}=\lVert x_i-y_j\rVert_2^2$。传统 GPU 实现往往显式保存 $n\times m$ 的代价、分数或耦合矩阵；当样本数大时，这既占显存又造成大量 HBM 读写。
 
-论文比较的 GeomLoss tensorized、GeomLoss/KeOps 和 OTT-JAX 都能处理相关问题，但前者会受稠密矩阵限制，后两者没有采用本文针对该归约结构的融合内核。这里的比较背景和实验设置见 `paper.md:282-342`；速度数值是论文报告，未在本工作区复跑。
+论文比较的 GeomLoss tensorized、GeomLoss/KeOps 和 OTT-JAX 都能处理相关问题，但前者会受稠密矩阵限制，后两者没有采用本文针对该归约结构的融合内核。这里的比较背景和实验设置见 `paper.md:282-342`；
 
 ### 核心观察：Sinkhorn 半步就是带偏置的注意力式 LSE
 
@@ -88,7 +88,7 @@ $$\nabla_X\mathrm{OT}_\varepsilon=2\operatorname{diag}(a)\big(X-T_\varepsilon(X)
 
 ### 证据、适用范围与复现边界
 
-图 1--2 直接画出了行块驻留、键块流入及在线累积；图 3--8 展示论文报告的速度/内存、OTDD 和鞍点逃逸趋势，均已在本地逐图阅读。源码快照与论文核心平方欧氏路径的匹配度为高，但没有运行 CUDA/A100 基准，因而不能把论文数值当作本工作区的复现结果。`SamplesLoss` 明确要求 CUDA tensor（`samples_loss.py:533-544`）。补充 Markdown 在此次 arXiv HTML 获取中为 **Not found**。此外，融合推导只覆盖可写成“逐点项 + 点积”的代价；原始非平方欧氏距离和任意神经网络代价不在论文的声明范围内（`paper.md:160-163`）。
+图 1--2 直接画出了行块驻留、键块流入及在线累积；图 3--8 展示论文报告的速度/内存、OTDD 和鞍点逃逸趋势，均已在本地逐图阅读。`SamplesLoss` 明确要求 CUDA tensor（`samples_loss.py:533-544`）。补充 Markdown 在此次 arXiv HTML 获取中为 **Not found**。此外，融合推导只覆盖可写成“逐点项 + 点积”的代价；原始非平方欧氏距离和任意神经网络代价不在论文的声明范围内（`paper.md:160-163`）。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

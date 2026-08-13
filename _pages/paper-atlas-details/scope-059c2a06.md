@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -92,7 +92,7 @@ HySIL 是一个光学设计框架：把一个固体透镜和与其折射率匹�
 
 设备实现使用 Edmund Optics 48-670 plano-convex 石英透镜，半径 27.5 mm、直径 25 mm；液体使用 Cargille RI-matching oil，`n ~= 1.46`。腔体为黑色树脂 3D 打印，并用光学环氧密封，透镜用 UV 胶固定（`paper.md:255-258`）。检测物镜为 Mitutoyo x10/0.28 NA 和 x5/0.14 NA 长工作距离空气物镜（`paper.md:258-260`）。
 
-**代码证据状态：Not found。** 本工作区的 Zenodo 代码包没有 Zemax 文件、CAD 文件、设备控制代码或 SCOPE 光学模拟脚本。
+**代码证据状态：Not found。
 
 ### PSF/FWHM 分析：论文与代码真正重合的部分
 

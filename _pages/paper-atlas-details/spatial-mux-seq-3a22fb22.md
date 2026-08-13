@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>spatial-Mux-seq</h1>
     <p>Multiplexed spatial mapping of chromatin features, transcriptome and proteins in tissues</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02576-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-024-02576-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for spatial-Mux-seq">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/liranmao/Spatial_multi_omics" target="_blank" rel="noopener noreferrer" aria-label="Open code for spatial-Mux-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -182,15 +182,6 @@ FigR 将 ATAC peak 与 RNA 做相关，至少有 5 个显著 peak linkage 的基
 2. **score 不是直接测量**：GAS、CSS、bivalency、DORC 都是从原始信号派生的摘要或推断。
 3. **相关和拟时序不是因果时间链**：它们用于生成机制假设，需要扰动或时间实验验证。
 4. **protein 是靶向面板**：ADT 只能测预先选择的抗体，不等于无偏全蛋白组。
-
-### 证据入口
-
-- 主文：`paper source/paper/paper.md`
-- 图证据：`figure_analysis.md` 与主文图像
-- 方法细节：`doc_method.md`
-- 代码匹配：`doc_code.md`
-- 官方代码快照：`Data_preprocessing/`、`Data_visualization/`
-- 本地后续探索：`analysis/`（仅辅助，不作为论文官方实现来源）
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

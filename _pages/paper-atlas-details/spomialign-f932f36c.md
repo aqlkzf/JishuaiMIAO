@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SPOmiAlign</h1>
     <p>SPOmiAlign: A modality-agnostic framework for robust and scalable spatial multimodal alignment via feature matching</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.19.695434" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2025.12.19.695434" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SPOmiAlign">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/wangyiyuyang/SPOmiAlign" target="_blank" rel="noopener noreferrer" aria-label="Open code for SPOmiAlign">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -42,7 +42,7 @@ sitemap: false
 4. 将源切片坐标变换到参考切片坐标系；
 5. 当 spot 密度不同，再用最近邻 reassignment 建立可供纵向整合使用的观测对应。
 
-本解读的论文证据来自 `paper source/paper/vlm/paper.md` 和其中主图 1–5/补充图文本；直接实现证据来自本地仓库快照 `SPOmiAlign/`，其 `.repo_source` 固定 commit 为 `3b2bae389c37ccc9cf7c8a5bb5b4ec71b14ec94c`。论文概念、当前代码和论文全部分析脚本并不完全等价，边界见末节。
+本解读的论文证据来自 `paper source/paper/vlm/paper.md` 和其中主图 1–5/补充图文本；论文概念、当前代码和论文全部分析脚本并不完全等价，边界见末节。
 
 ### 1. SSI：为什么跨模态还能匹配
 
@@ -116,7 +116,7 @@ SPOmiAlign 支持 affine、homography、非刚性和 `affine+bspline`。默认�
 
 #### 7.1 本地快照与论文/README 已发生漂移
 
-本地 provenance 固定仓库 commit `3b2bae...`，但 README 的当前 manuscript title 与工作区论文标题不同。README 主要推荐 `new/Code/*.py`，而本快照没有 `new/` 目录；旧工作区 quick usage 又指向不存在的 `SPOmiAlign.py`。实际可见核心 CLI 是 `SPOmiAlign/SPOmiAlign/align_h5ad_to_h5ad_square.py`，并且 README 给出的路径层级与本工作区嵌套结构不完全一致。因此文档命令不能未经核对直接复制运行。
+README 主要推荐 `new/Code/*.py`，而本快照没有 `new/` 目录；旧工作区 quick usage 又指向不存在的 `SPOmiAlign.py`。因此文档命令不能未经核对直接复制运行。
 
 #### 7.2 论文端到端分析未全部包含在核心包
 
@@ -130,7 +130,7 @@ RoMa 推理依赖 GPU/模型权重和较重环境；环境文件只能声明依�
 
 最低限度应先选一个论文 case：固定两张输入及参考/源方向；使用实际存在的 CLI；保存 SSI 与 render metadata；核对 top matches 和 overlay；禁用或隔离覆盖输入的行为；检查变换后的坐标是否仍处于目标范围；记录 reassignment 的丢弃率与 many-to-one 分布。随后再分别验证 Dice/PCC/Moran's $I$，不要把视觉 overlay 当作唯一证据。
 
-因此，本工作区可以确认 SPOmiAlign 的核心思想和主要实现路径，也能指出论文公式与代码的差异；但当前快照尚不能支持“论文所有数值已端到端复现”的声明。
+但当前快照尚不能支持“论文所有数值已端到端复现”的声明。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

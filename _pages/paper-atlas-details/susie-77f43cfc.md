@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SuSiE</h1>
     <p>A simple new approach to variable selection in regression, with application to genetic fine mapping</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1111/rssb.12388" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1111/rssb.12388" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SuSiE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/stephenslab/susieR" target="_blank" rel="noopener noreferrer" aria-label="Open code for SuSiE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -146,11 +146,8 @@ PIP 回答“这个变量是否参与至少一个效应”。可信集则针对�
 
 ### 9. 论文版本、当前代码与可复现边界
 
-本工作区必须区分三个版本事实：
-
 - 论文正文第 4.2 节明确报告比较实验使用 `susieR 0.4.29`；补充材料 D.2 报告 R 3.5.1 和 OpenBLAS 0.3.5 的计算环境。
 - 本地 `susieR/DESCRIPTION` 标记版本 `0.15.58`，实际检出的 Git HEAD 是 `206cc19ca89d985245ca204fbc86772e5c2446d0`。本解读的代码锚点针对这个当前快照。
-- 工作区 `.repo_source` 记录的是旧提交 `7c1e7aa8c950985b7a82232d2bd694a342208dd5`，与实际 HEAD 不一致；因此该清单只能说明历史获取记录，不能作为本次代码快照的提交证明。
 
 当前 0.15.58 仍保留“残差化 → SER → 更新拟合 → ELBO/收敛 → PIP/CS”的论文核心，但增加了 summary-statistics/RSS 路径、refinement、mixture 与 NIG 先验、slot prior、LD 扩展等功能。若目标是复现论文数值，应锁定论文版软件、数据、参数和计算环境，而不是直接用当前 HEAD 后期待逐点相同。
 

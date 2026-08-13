@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scTIE</h1>
     <p>Data integration and inference of gene regulation using single-cell temporal multimodal data with scTIE</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/gr.277960.123" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/gr.277960.123" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scTIE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/SydneyBioX/scTIE" target="_blank" rel="noopener noreferrer" aria-label="Open code for scTIE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -250,7 +250,7 @@ joint embedding 用于聚类 differentiating mouse embryonic stem cells，得到
 
 ### 9. 版本与复现边界
 
-本工作区包含从 GitHub 获取的源代码目录，但没有保留可验证的 `.git` commit 元数据，`local metadata` 因而不能声称一个精确 commit。README 说明代码在 PyTorch 1.9.1 开发测试；主路径硬编码 `.cuda()`，需要 CUDA 环境；OT 默认调用已编译的 `util/libot.so`，新环境可能要执行 `util/build.sh`。数据路径、growth estimate `.npy`、cluster index CSV 和 pretrained checkpoint 也不是仓库中完整自带的轻量输入。
+README 说明代码在 PyTorch 1.9.1 开发测试；主路径硬编码 `.cuda()`，需要 CUDA 环境；OT 默认调用已编译的 `util/libot.so`，新环境可能要执行 `util/build.sh`。数据路径、growth estimate `.npy`、cluster index CSV 和 pretrained checkpoint 也不是仓库中完整自带的轻量输入。
 
 因此可复现性应拆开评价：
 
@@ -277,19 +277,6 @@ joint embedding 用于聚类 differentiating mouse embryonic stem cells，得到
 - **时间混得更好不一定模型更好。** OT 权重过大可能牺牲模态配对或细胞类型结构。
 - **高梯度不等于高表达，也不等于因果调控。** 它表示模型输出对输入的局部敏感性。
 - **当前代码存在重要实现边界。** Stage-1 使用 SGD，residual 分支被置零，且无可验证 commit；复现必须以快照和实际配置为准。
-
-### 本地证据入口
-
-- 主文：`paper source/PMC10903952/paper.md`
-- 主文 PDF：`paper source/PMC10903952/119.pdf`
-- 补充 PDF：`paper source/PMC10903952/Supplemental_Materials.pdf`
-- 方法与公式：`doc_method.md`
-- 逐图分析：`figure_analysis.md`
-- 代码对应：`doc_code.md`
-- 训练主路径：`scTIE/util/trainingprocess_bnresidualpretrain.py`
-- 模型：`scTIE/util/model_residual.py`
-- OT：`scTIE/util/ot_solvers.py`
-- 命运与梯度：`scTIE/infer_deconv.py`, `scTIE/embedding_grad_all.py`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

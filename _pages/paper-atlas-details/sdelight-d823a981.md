@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -41,7 +41,7 @@ SDELight 面向多张空间转录组切片，串联三个阶段：
 
 因此它不是单纯“批次校正”或“图像配准”。前一阶段的输出是后一阶段的先验：细胞组成帮助空间域识别，空间域再限制哪些点应该参与最优传输。
 
-目录名和旧合同写作 `SEDLight`，论文标题及图中实际名称是 `SDELight`。下文采用论文拼写。
+下文采用论文拼写。
 
 ### 2. 阶段一：用图像和 scRNA-seq 补足 spot 的细胞组成
 
@@ -185,7 +185,7 @@ MHypo 包含五张 MERFISH 切片、每张约 5,500 cells 和 155 genes。Figure
 | fused GW alignment | 式 (15)–(17) | Not found |
 | DLPFC/HBCA1/MHypo 结果 | Figures 1–5 | 只有论文图，无结果矩阵/脚本 |
 
-工作区 CodeGraph 已存在，但查询没有找到任何实现；目录内也没有源码快照、`doc_code.md` 或代码仓库元数据。因此本工作区必须保持 `paper-only`，不能把 `doc_method.md` 中的伪代码当成作者实现。
+工作区 CodeGraph 已存在，但查询没有找到任何实现；目录内也没有源码快照、`doc_code.md` 或代码仓库元数据。
 
 ### 8. 复现与可信度边界
 
@@ -200,7 +200,7 @@ MHypo 包含五张 MERFISH 切片、每张约 5,500 cells 和 155 genes。Figure
 
 ### 9. 最稳妥的理解
 
-SDELight 的概念贡献是把三个成熟思路串成有生物先验的多切片流程：跨模态图注意力估计细胞组成，域对抗 GCN 学习批次不敏感的空间域，fused Gromov–Wasserstein 用生物与几何结构共同对齐切片。现有稿件和图支持其设计动机与若干 benchmark 表现，但由于源码和关键训练细节缺失，它仍是“论文描述的候选方法”，而不是当前工作区可复现验证的软件实现。
+SDELight 的概念贡献是把三个成熟思路串成有生物先验的多切片流程：跨模态图注意力估计细胞组成，域对抗 GCN 学习批次不敏感的空间域，fused Gromov–Wasserstein 用生物与几何结构共同对齐切片。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

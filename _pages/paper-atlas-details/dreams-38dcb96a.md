@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>DreaMS</h1>
     <p>Self-supervised learning of molecular representations from millions of tandem mass spectra using DreaMS</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02663-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-025-02663-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for DreaMS">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/pluskal-lab/DreaMS" target="_blank" rel="noopener noreferrer" aria-label="Open code for DreaMS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -37,13 +37,6 @@ sitemap: false
 LC–MS/MS 每分钟产生大量 tandem mass spectra，但通常不到 10% 能可靠匹配分子结构。传统学习方法主要依赖 MoNA、NIST20 等 annotated libraries，覆盖的分子空间远小于公共仓库中积累的 unannotated spectra。DreaMS 的策略是先在没有结构标签的高质量 spectra 上做 self-supervised pre-training，再用少量 annotated spectra fine-tune 到谱图相似性、fingerprint、分子性质和含氟检测。
 
 DreaMS 学到的是“一个谱图在训练分布中的 1,024-dimensional representation”，不是从谱图唯一反演分子结构。不同结构可能产生近似 spectra，同一分子也会随 collision energy、instrument、adduct 改变；embedding 主要用于相似性和下游预测，最终结构注释仍需数据库、formula/fragment evidence 或实验确认。
-
-### 证据入口与版本边界
-
-- 论文：`paper source/paper/vlm/paper.md`，Nature Biotechnology 2025，DOI `10.1038/s41587-025-02663-3`。
-- 图像：`paper source/paper/vlm/images/`；现有 `figure_analysis.md` 已逐图读取这些主图。
-- 代码：`code/`，上游 `https://github.com/pluskal-lab/DreaMS`。当前目录没有独立嵌套 Git 元数据，因此不能从 outer PaperCode commit 推断 DreaMS 上游 commit。
-- 权重：Zenodo 10997887；GeMS/DreaMS Atlas 数据在 Hugging Face。当前 workspace 含完整软件与训练入口，但不含 24M/201M spectra 数据或预训练权重本体。
 
 ### GeMS：为什么先解决数据质量与冗余
 

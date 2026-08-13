@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SEACells</h1>
     <p>SEACells infers transcriptional and epigenomic cellular states from single-cell genomics data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-023-01716-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-023-01716-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SEACells">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/dpeerlab/SEACells" target="_blank" rel="noopener noreferrer" aria-label="Open code for SEACells">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -75,7 +75,7 @@ $$
 
 并只保留图掩码允许的边。它没有论文公式的归一化前因子，分母是带宽乘积而不是和，也没有额外的 $1/2$。此外，论文文字称 $M_{ij}$ 在互为邻居时非零，而代码默认 `graph_construction="union"`，即只要任一方向把另一方列为邻居就保留边；只有显式选择 `intersection` 才要求双向邻接。
 
-因此，“自适应局部相似度”在概念上匹配，但数值核不是 Exact match。该差异会改变亲和矩阵的尺度与边集合，是本工作区最重要的代码—论文不一致。
+因此，“自适应局部相似度”在概念上匹配，但数值核不是 Exact match。
 
 ### 5. 第三步：核原型分析
 
@@ -126,14 +126,6 @@ maximum–minimum 初始化和自适应带宽有利于低密度区域。论文�
 
 结论：SEACells 的核心思想和 $M\approx MBA$ 优化在论文与代码间吻合，metacell 也确实为稀疏调控数据和大队列分析提供了有效中间尺度。但亲和核公式、邻居默认值和邻接规则存在实质差异，代码快照仅能追溯到 v0.3.3、不能追溯到具体上游 commit。因此代码—论文匹配应标为 **Partial/Medium**，而不是 Exact。
 
-### 源证据入口
-
-- 论文：`paper source/s41587-023-01716-9/s41587-023-01716-9.md`
-- PDF/主图：`s41587-023-01716-9.pdf`、`paper source/s41587-023-01716-9/`
-- API 与聚合：`SEACells/core.py`
-- 图和亲和核：`SEACells/build_graph.py`
-- CPU/GPU 优化：`SEACells/cpu.py`、`SEACells/cpu_dense.py`、`SEACells/gpu.py`
-
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
 
@@ -161,7 +153,7 @@ Rare-state support includes pDC and B-cell precursor recovery and a mouse-gastru
 
 Rating: **4/5 for rerunning the public package and tutorials; partial for an exact paper-method reproduction**.
 
-The local snapshot contains package v0.3.3, CPU sparse/dense and GPU implementations, tutorial notebooks and downstream ATAC utilities. Its upstream Git commit is not recorded, so provenance is version-level rather than commit-level. Exact reruns require a random seed because waypoint subsampling and initial A weights use NumPy randomness. They also require recording the embedding, `n_neighbors`, graph construction mode, metacell count, CPU/GPU/sparse backend and package/dependency versions.
+The local snapshot contains package v0.3.3, CPU sparse/dense and GPU implementations, tutorial notebooks and downstream ATAC utilities. Exact reruns require a random seed because waypoint subsampling and initial A weights use NumPy randomness. They also require recording the embedding, `n_neighbors`, graph construction mode, metacell count, CPU/GPU/sparse backend and package/dependency versions.
 
 No unsupported fixed claims such as “100× faster,” “10× less memory,” or universal 100% cell retention are made here. The paper states orders-of-magnitude downstream compute reduction in the large cohort and documents method-specific outlier behavior, but those statements are not interchangeable with a benchmark of core SEACells fitting time or a universal retention guarantee.
 

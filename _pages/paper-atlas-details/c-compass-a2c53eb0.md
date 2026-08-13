@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>C-COMPASS</h1>
     <p>C-COMPASS: a user-friendly neural network tool profiles cell compartments at protein and lipid levels</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/ICB-DCM/C-COMPASS" target="_blank" rel="noopener noreferrer" aria-label="Open code for C-COMPASS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -86,7 +87,6 @@ RLS 为 0 表示无变化，最大 2 表示两个分布完全转移。DS 则汇�
 - 实验分级必须真正分开目标细胞器；高度重叠的曲线无法靠神经网络凭空分辨。
 - 阈值依赖标记蛋白的纯度与覆盖范围。
 - 脂质定位借用了蛋白标记建立的空间坐标，因此是共同分级证据，不等同于成像定位。
-- 本地代码与核心算法高度一致，但论文补充示例会话、完整补充参数和 BANDLE 脚本在本工作区中为 **MISSING**。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

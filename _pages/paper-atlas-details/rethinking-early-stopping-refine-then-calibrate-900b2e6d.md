@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>Rethinking_Early_Stopping_Refine_Then_Calibrate</h1>
     <p>Rethinking Early Stopping: Refine, Then Calibrate</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/dholzmueller/probmetrics" target="_blank" rel="noopener noreferrer" aria-label="Open code for Rethinking_Early_Stopping_Refine_Then_Calibrate">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -221,7 +222,7 @@ $$
 
 论文比较 RealMLP、普通 MLP 和 XGBoost，在 65 个至少 10,000 样本的数据集上，TS-refinement 与五折版本整体呈现有利的 logloss 分布。小数据集噪声更大，甚至存在显著变差的离群点。这说明验证集容量是方法的重要条件。
 
-但当前工作区没有取得 `pytabkit` 表格实验驱动，生成结果 CSV 和 checkpoint 也 **Not found**；所以这部分只能由论文正文和图像支持，不能声称已由本地源码逐行复现。
+所以这部分只能由论文正文和图像支持，不能声称已由本地源码逐行复现。
 
 #### 理论图
 

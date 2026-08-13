@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TemporalVAE</h1>
     <p>TemporalVAE: atlas-assisted temporal mapping of time-series single-cell transcriptomes during embryogenesis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41556-025-01787-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41556-025-01787-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TemporalVAE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/StatBiomed/TemporalVAE" target="_blank" rel="noopener noreferrer" aria-label="Open code for TemporalVAE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -134,8 +134,6 @@ $$
 本地 supplement 目录有 `MOESM2.pdf` 与 `MOESM3.pdf`，主要承载补充表格/报告材料；主论文 OCR 已含 extended-data captions。完整原始数据和训练模型另依赖 Zenodo 与论文所述外部资源。
 
 ### 论文—源码对应与版本边界
-
-本地 `.repo_source/.repo_commit` 记录上游 `https://github.com/StatBiomed/TemporalVAE`、提交 `a670c4f8910bcd59e1aff43ce7ae897afce74fe0`。
 
 | 论文机制 | 直接源码 | 对应程度 |
 |---|---|---|

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SCMMI Benchmark</h1>
     <p>Benchmarking single-cell multi-modal data integrations</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02737-9" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02737-9" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SCMMI Benchmark">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/bm2-lab/SCMMI_Benchmark" target="_blank" rel="noopener noreferrer" aria-label="Open code for SCMMI Benchmark">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -106,13 +106,12 @@ $$
 
 图 1 说明 benchmark 的核心结构。图 2-6 分别展示 paired RNA+ATAC、paired/spatial RNA+ADT、diagonal RNA+ATAC、mosaic RNA+ATAC 和 mosaic RNA+ADT 的任务条件推荐。GLUE、MIDAS、totalVI、StabMap、Seurat v4/v5、SpatialGlue 等工具在不同任务和指标下各有优势。
 
-这些排名应理解为论文 benchmark claim，而不是本工作区重新运行所有方法得到的结果。代码可验证的是指标、pipeline 和代表性 wrapper；完整排名依赖预计算 stage2 结果表和 RMarkdown 汇总脚本。
+代码可验证的是指标、pipeline 和代表性 wrapper；完整排名依赖预计算 stage2 结果表和 RMarkdown 汇总脚本。
 
 ### 7. 局限性与未验证部分
 
 - 未找到单一 manifest 直接证明全部 65 个 task-method 应用。
 - 不是所有 wrapper 都逐行审计；已验证共享 WDL、metric package 和代表性 wrapper。
-- raw data 到每个 final ranking table 的完整 provenance 分散在 preprocessing、WDL、precomputed result tables、metric code 和 RMarkdown 脚本中。
 - pseudo-unpaired 任务依赖隐藏 true match，真实 unpaired cohort 可能更难。
 - runtime/GPU 结论依赖硬件、`nvitop` 采样和具体 wrapper 行为。
 
@@ -171,7 +170,7 @@ Main figure claims are task-specific. Seurat v4 WNN is strong in paired RNA+ATAC
 
 ### Reproducibility
 
-Reproducibility rating: **3.5/5**. The reusable framework components are moderately strong to strong, but full benchmark rerun provenance is only moderate because some raw-to-final ranking paths remain distributed across precomputed result tables and scripts.
+Reproducibility rating: **3.5/5**.
 
 Strong local support:
 
@@ -183,7 +182,6 @@ Strong local support:
 Remaining gaps:
 
 - No single verified manifest was found that proves every one of the 65 advertised task-method applications.
-- Full raw-to-final-table provenance is distributed across preprocessing scripts, WDL runs, precomputed result tables, metric code, and RMarkdown figure scripts.
 - Robustness downsampling generation was only partially traced across all datasets.
 - Some resource measurements depend on live hardware, `nvitop` polling, WDL runtime logs, and method-specific environments.
 

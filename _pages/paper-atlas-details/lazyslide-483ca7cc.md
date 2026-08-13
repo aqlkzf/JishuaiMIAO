@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>LazySlide</h1>
     <p>LazySlide: accessible and interoperable whole-slide image analysis</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03044-7" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-026-03044-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for LazySlide">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/RendeiroLab/LazySlide" target="_blank" rel="noopener noreferrer" aria-label="Open code for LazySlide">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -49,7 +49,7 @@ LazySlide 的核心贡献是一套全切片图像（whole-slide image, WSI）分
 3. 下游步骤按坐标按需读取局部像素；
 4. Scanpy、Squidpy 和 PyTorch 风格接口共享同一个样本身份与空间坐标系。
 
-这种设计减少原图复制，也让结果可组合。代价是 Zarr 的分布式文件结构可能产生大量小文件，在有文件数配额的系统上需要额外规划。`WSIData` 的继承关系和后端实现位于独立仓库，本工作区的 LazySlide 快照只能验证它的依赖和调用边界，不能把外部包的实现算作本仓库内的直接代码证据。
+这种设计减少原图复制，也让结果可组合。代价是 Zarr 的分布式文件结构可能产生大量小文件，在有文件数配额的系统上需要额外规划。
 
 ### 3. 从玻片到可分析瓦片
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -190,7 +190,7 @@ $$
 J(A,B)=\frac{|A\cap B|}{|A\cup B|}.
 $$
 
-  官方 notebook 搜索 $\Delta x,\Delta y=-40,-35,\ldots,20$ 像素以及 $-7^\circ$ 到 $6^\circ$ 的旋转，再把最优变换应用到空间坐标。
+官方 notebook 搜索 $\Delta x,\Delta y=-40,-35,\ldots,20$ 像素以及 $-7^\circ$ 到 $6^\circ$ 的旋转，再把最优变换应用到空间坐标。
 - **GO 空间富集**：用 `sc.tl.score_genes` 为每个 spot 计算基因集得分，仅可视化最大得分大于 1 的集合。
 - **人脾 COMMOT**：使用 CellChat 的趋化因子–受体对，距离阈值 150，方向性参数 $k=5$。箭头是基于表达与距离的计算推断，不是直接观测到的分子运动。
 
@@ -219,7 +219,7 @@ Visium 的单 spot UMI/基因更多，因为 spot 更大。按面积归一化后
 - 虽然制备成本约为 $0.75/mm²，但满载玻片需要约 50–100 亿 reads，测序仍然昂贵。
 - 官方 Zenodo 代码覆盖面很广，但包含绝对路径，没有环境锁定、总工作流、测试或一键运行入口。
 
-本工作区对代码–论文一致性的评价为 **medium**。推荐的复现方式是分阶段执行：先验证条形码 Rmd；再用对应 STARsolo shell 处理 FASTQ；修复路径并准备坐标/H&E 输入；最后运行与具体实验对应的 notebook，并逐级比较中间矩阵、spot 图、配准结果和生物学输出。不要把整个归档当成可直接执行的软件包。
+推荐的复现方式是分阶段执行：先验证条形码 Rmd；再用对应 STARsolo shell 处理 FASTQ；修复路径并准备坐标/H&E 输入；最后运行与具体实验对应的 notebook，并逐级比较中间矩阵、spot 图、配准结果和生物学输出。不要把整个归档当成可直接执行的软件包。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

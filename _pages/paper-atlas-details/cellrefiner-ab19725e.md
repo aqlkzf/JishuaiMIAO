@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellRefiner</h1>
     <p>Reconstructing single-cell resolution from spatial transcriptomics with CellRefiner</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-70090-2" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-70090-2" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellRefiner">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/XiangyuKuang/cellrefiner" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellRefiner">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -127,9 +127,7 @@ $$
 
 ### 当前代码快照的复现边界
 
-本工作区代码来源记录为 `https://github.com/XiangyuKuang/cellrefiner`，采集提交 `a1cf53065ed00eda151d6c2e9c5961a1c711b876`。快照没有保留嵌套 `.git`，因此提交号来自 `.repo_source`，不能用父仓库 HEAD 代替。
-
-GPU 精修路径完整迭代 10 轮；CPU 函数的 `return` 位于循环体内部，首轮后即返回，而且返回的最后一帧仍是预分配初值。这意味着无 CuPy 环境的默认降级路径不能被当作与 GPU 等价。FGW 的 `max_iter=1000000` 也不同于论文文字中的较小设置。由此，本工作区的结论是“论文方法与代码主体相符，但存在影响运行语义的部分匹配和明确缺陷”，不是“代码逐公式完整复现”。
+GPU 精修路径完整迭代 10 轮；CPU 函数的 `return` 位于循环体内部，首轮后即返回，而且返回的最后一帧仍是预分配初值。这意味着无 CuPy 环境的默认降级路径不能被当作与 GPU 等价。FGW 的 `max_iter=1000000` 也不同于论文文字中的较小设置。
 
 ### 实用阅读顺序
 
@@ -176,13 +174,12 @@ CellRefiner 将配对 scRNA-seq 和 spot 级空间转录组重建为虚拟单细
 
 ### 复现性
 
-代码包和主要模块可用，但本工作区没有执行完整数据下载与端到端数值复现。论文数据来自多个外部数据集，结果重建还依赖预处理、每 spot 细胞数、硬件/GPU 和随机初始化。当前评估是“可追踪实现，尚未本地端到端复现”。
+论文数据来自多个外部数据集，结果重建还依赖预处理、每 spot 细胞数、硬件/GPU 和随机初始化。当前评估是“可追踪实现，尚未本地端到端复现”。
 
 ### 来源
 
 - 论文：`paper source/paper/vlm/paper.md`
 - 补充材料：`output_paper_supp_md/paper_supp1/vlm/paper_supp1.md`
-- 代码：`cellrefiner/`，采集提交 `a1cf53065ed00eda151d6c2e9c5961a1c711b876`
 - DOI：`10.1038/s41467-026-70090-2`
 
 </article>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -180,7 +180,7 @@ LM1B 使用 8192 大小的 sentencepiece 词表和长度 128 的 packed sequence
 
 论文自己指出，D3PM 在文本上仍落后于强自回归模型（例如 Transformer XL），在图像质量指标上也仍落后于一些连续扩散模型。nearest-neighbor 文本扩散的结果并不稳定：text8 上只小幅改善，LM1B 上反而比 uniform 差，说明“embedding 近邻”不一定是好的扩散局部性。
 
-本 PaperCode 工作区是 **paper-only**：没有找到公开 D3PM 方法代码仓库，`code source=none`；`github_links.json` 中只有 JAX 和 Flax 的参考文献链接，不是论文实现仓库；也没有 supplementary markdown。因此，本文档只能基于论文和本地图片解释方法，不能验证代码实现与论文是否一致。
+`github_links.json` 中只有 JAX 和 Flax 的参考文献链接，不是论文实现仓库；也没有 supplementary markdown。因此，本文档只能基于论文和本地图片解释方法，不能验证代码实现与论文是否一致。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
@@ -239,7 +239,6 @@ The paper itself notes that D3PMs remain worse than strong autoregressive models
 - **Code:** Not found. The acquisition manifest reports no project repository URL, and `github_links.json` contains only JAX and Flax library URLs from the references, not a D3PM implementation repository.
 - **Supplement:** Not found; `SUPP_MD=none`.
 - **Implementation details in paper:** Appendix B gives architecture and training settings for image and text experiments, including JAX/Flax, transformer/U-Net configurations, optimizer settings, TPU training, and evaluation metrics (paper lines 774-810). However, no local scripts, configs, checkpoints, or direct source lines are available in this workspace.
-- **Overall reproducibility assessment:** The paper is technically detailed enough to understand and partially reimplement the method, but this PaperCode workspace cannot verify runnable implementation fidelity because no public method code was found.
 
 </article>
 </section>

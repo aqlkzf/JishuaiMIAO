@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>DAF-seq</h1>
     <p>Mapping single-cell diploid chromatin fiber architectures using DAF-seq</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/StergachisLab/DAF-seq-Manuscript" target="_blank" rel="noopener noreferrer" aria-label="Open code for DAF-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -280,7 +281,6 @@ R 脚本再按 $\lfloor\log_2(d)\rfloor$ 对距离分箱。same-fiber 信号主�
 3. **热力学解释依赖平衡假设。** 读段频率推导的 $\Delta G$ 是相对、无量纲的状态能量，不是直接测得的结合常数。
 4. **胞嘧啶密度和 5mC 会影响信号。** SsDddA 对 5mCpG 的活性降低；真正分辨率仍受可脱氨位置分布限制。
 5. **PTA 是关键但未公开实现。** 自定义商业协议对单细胞读段长度和偏好非常重要。
-6. **本地补充材料缺失。** `SUPP_MD=none`；Supplementary Figs. 1–16、Supplementary Note 和补充表在当前工作区中为 **MISSING**，不能把补充材料独有的细节补写成确定事实。
 
 ### 13. 最终心智模型
 

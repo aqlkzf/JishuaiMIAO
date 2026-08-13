@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>GeneTrajectory</h1>
     <p>Gene trajectory inference for single-cell data by optimal transport metrics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-024-02186-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41587-024-02186-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GeneTrajectory">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/KlugerLab/GeneTrajectory" target="_blank" rel="noopener noreferrer" aria-label="Open code for GeneTrajectory">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -68,7 +68,7 @@ $$
 
 $F_{uv}$ 表示把多少表达质量从细胞 $u$ 搬到细胞 $v$；它的行和、列和分别受两个基因分布约束。这个距离同时考虑“表达在哪里”和“沿真实细胞流形要搬多远”。两基因即使逐细胞相关性不高，只要其表达峰沿同一生物过程相邻，运输代价仍可能较小。
 
-这是论文最核心的计算，但也是当前工作区最重要的代码缺口：式 (1)、式 (2) 和基因图稀疏化位于独立的 `KlugerLab/GeneTrajectory-python` 仓库，本地仅克隆了 R 包。这里的 R 代码可以粗粒化输入或载入 Python 预计算的 `emd.csv`，却不能仅靠当前代码目录从表达矩阵生成完整 Wasserstein 距离矩阵（`coarse.grain.R:19-50`；`LoadGeneDistMat.R:16-22`）。
+这里的 R 代码可以粗粒化输入或载入 Python 预计算的 `emd.csv`，却不能仅靠当前代码目录从表达矩阵生成完整 Wasserstein 距离矩阵（`coarse.grain.R:19-50`；`LoadGeneDistMat.R:16-22`）。
 
 为降低最优传输成本，论文提供两种近似：
 
@@ -122,7 +122,6 @@ $$
 但完整复现仍有三个边界：
 
 - 最核心的基因概率归一化、Wasserstein 求解和基因稀疏化不在本地 R 仓库，而在外部 Python 项目。
-- 论文示例依赖 Figshare 上的预处理 Seurat 对象；当前工作区没有据此完成一次端到端重跑。
 - 本地仓库未见自动化测试套件。这里验证的是论文—代码映射与静态实现逻辑，不是数值结果复算。
 
 ### 使用时最值得检查的参数

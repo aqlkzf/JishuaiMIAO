@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>T2Pdecoder</h1>
     <p>T2Pdecoder enables protein-centric analyses from transcriptomic data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-74209-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-74209-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for T2Pdecoder">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Lucienxy/T2Pdecoder" target="_blank" rel="noopener noreferrer" aria-label="Open code for T2Pdecoder">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -87,7 +87,7 @@ $$L_{VAE}=L_{rec}+w_{KL}L_{KL}+w_{t2}\mathrm{MSE}(z_{mean},f_P(y)).$$
 
 ### 可复现性边界
 
-已检索仓库根目录及 `src/*.py`。**未找到** requirements 或环境文件、训练/评测数据、预训练 checkpoint、测试以及一个从原始 RNA 直达预测蛋白的统一命令。补充材料在本工作区只有 PDF，没有可核验的补充 Markdown。因此，这个快照足以核查关键实现路径，但不足以在不补齐外部资产的情况下独立复跑全文实验。
+已检索仓库根目录及 `src/*.py`。**未找到** requirements 或环境文件、训练/评测数据、预训练 checkpoint、测试以及一个从原始 RNA 直达预测蛋白的统一命令。因此，这个快照足以核查关键实现路径，但不足以在不补齐外部资产的情况下独立复跑全文实验。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

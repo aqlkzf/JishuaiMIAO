@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>scAtlasVAE</h1>
     <p>Integrative mapping of human CD8+ T cells in inflammation and cancer</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/WanluLiuLab/scAtlasVAE" target="_blank" rel="noopener noreferrer" aria-label="Open code for scAtlasVAE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -414,7 +415,6 @@ These findings are atlas-scale associations. UMAP proximity, Sankey ribbons, and
 
 #### Strengths
 
-- Open-source Python toolkit and acquisition-pinned repository provenance.
 - Core VAE, loss, checkpoint, prediction, and zero-shot transfer paths match the paper closely and are documented with runnable examples.
 - Paper data, reference atlas, latent coordinates, and supervised model checkpoints are linked through Zenodo/tutorial documentation.
 - Four built notebook sources for paper-related GEX/TCR analyses are present.

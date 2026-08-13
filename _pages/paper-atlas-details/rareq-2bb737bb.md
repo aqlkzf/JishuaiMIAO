@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>RareQ</h1>
     <p>Cell neighborhood topology directs rare cell population identification</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-71180-x" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-026-71180-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for RareQ">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/xiaolab-xjtu/RareQ" target="_blank" rel="noopener noreferrer" aria-label="Open code for RareQ">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -110,17 +110,6 @@ $$
 公开仓库覆盖核心 Q 计算、标签传播、合并、共识流程以及多种数据教程；主图和补充材料也提供了广泛评估。因此核心方法具备较好的可检查性。限制在于：最终结果依赖多条硬编码经验规则，公开仓库中未找到一套可一键重建所有论文基准图的完整脚本，而且主论文网页导出的 Markdown 正文不完整，很多方法和评估细节需要从补充材料核验。
 
 综合判断：**核心机制可复现，完整论文结果复现仍为 partial**。使用者应优先复现近邻图构建和关键数据集结果，并对 `k`、上游 embedding、邻居数、`Q_cut`、`ratio` 及合并阈值相关敏感性进行检查。
-
-### 10. 源证据入口
-
-- 论文：`paper.md`
-- 补充材料文本：`paper source/supp/MOESM1.txt`
-- 主图：`paper source/images/fig1.png` 至 `fig8.png`
-- 核心流程：`RareQ/R/FindRare.R`
-- Q 计算：`RareQ/R/utils.R`、`RareQ/R/functions.R`
-- 共识流程：`RareQ/R/ConsensusCluster.R`
-- 投票内核：`RareQ/src/knn_vote.cpp`
-- 模态与空间教程：`RareQ/Tutorials/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

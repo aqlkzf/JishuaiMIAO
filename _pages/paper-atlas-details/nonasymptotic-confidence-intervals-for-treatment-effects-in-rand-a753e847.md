@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Machine Learning Algorithm</span>
-      <span>arXiv preprint · 2026</span>
+      <span>arXiv · 2026</span>
     </div>
     <h1>Nonasymptotic Confidence Intervals for Treatment Effects in Randomized Experiments</h1>
     <p>On Nonasymptotic Confidence Intervals for Treatment Effects in Randomized Experiments</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2601.11744" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2601.11744" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Nonasymptotic Confidence Intervals for Treatment Effects in Randomized Experiments">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -215,7 +215,7 @@ $$
 
 Figure 1 的三个面板显示：当 $\pi$ 从 0.1 降到 0.001 时，旧 Hoeffding 区间迅速膨胀，而新区间保持显著更紧。Figure 2 显示 Studentized 方法在潜在结果靠近边界、经验方差低时可以明显收紧一侧，但在高方差情形并不保证优于 Hoeffding--MBCR。六个面板均已直接查看。
 
-需要保留的限制是：结果依赖有界结果、已知随机化机制、SUTVA 与 ignorability；它们不是对干扰、观察性混杂、可选停止或任意无界结果的通用保证。论文页面、v2 TeX 源和全文均未找到官方代码或补充材料，因此方法可以由公式复现，但本工作区没有代码级验证。
+需要保留的限制是：结果依赖有界结果、已知随机化机制、SUTVA 与 ignorability；它们不是对干扰、观察性混杂、可选停止或任意无界结果的通用保证。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

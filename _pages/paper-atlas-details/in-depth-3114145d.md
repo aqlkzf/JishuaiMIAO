@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>IN-DEPTH</h1>
     <p>Same-Slide Spatial Multi-Omics Integration with IN-DEPTH Reveals Tumor Virus-Linked Spatial Reorganization of the Tumor Microenvironment</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1158/2159-8290.CD-25-0775" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1158/2159-8290.CD-25-0775" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for IN-DEPTH">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/SizunJiangLab/IN-DEPTH" target="_blank" rel="noopener noreferrer" aria-label="Open code for IN-DEPTH">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -108,7 +108,7 @@ $$
 
 ### 复现边界
 
-本工作区固定代码提交为 `056fa7a59dc8eb7d200e34b3d313a1910e318dff`。仓库保留了大量逐图 R/Python 脚本和协议，但多个脚本含原作者服务器的绝对路径，环境和数据入口也未统一封装；它应视为公开分析源码快照，而不是开箱即用的流水线。论文数据由 Zenodo 记录提供，实验协议另见项目协议站点，SGCC 依赖 BioGSP。没有这些外部数据、包版本和路径改写，不能声称已端到端复现论文数值。
+仓库保留了大量逐图 R/Python 脚本和协议，但多个脚本含原作者服务器的绝对路径，环境和数据入口也未统一封装；它应视为公开分析源码快照，而不是开箱即用的流水线。论文数据由 Zenodo 记录提供，实验协议另见项目协议站点，SGCC 依赖 BioGSP。没有这些外部数据、包版本和路径改写，不能声称已端到端复现论文数值。
 
 因此，最稳妥的阅读结论是：IN-DEPTH 的直接证据支持蛋白优先的同片实验顺序在多种平台组合上保持 RNA 质量，并展示其对细胞身份引导和跨模态验证的价值；SGCC 提供了把空间图案与功能状态关联的尺度感知排序。EBV、LMP1、C1Q 巨噬细胞、CD4 T 细胞功能障碍和 IL-27–STAT3 之间的关系是有多队列、多模态支持的关联模型，但其中的方向性与因果性仍需功能扰动实验验证。
 

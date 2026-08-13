@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>mLLMCelltype</h1>
     <p>Large Language Model Consensus Substantially Improves the Cell Type Annotation Accuracy for scRNA-seq Data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2025.04.10.647852" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2025.04.10.647852" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for mLLMCelltype">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/cafferychen777/mLLMCelltype" target="_blank" rel="noopener noreferrer" aria-label="Open code for mLLMCelltype">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -119,7 +119,7 @@ $$\mathrm{Accuracy}=\frac{N_{full}+0.5N_{partial}}{N_{total}}.$$
 
 Exact 的核心包括：CP 和 Shannon entropy 的确定性实现；争议 cluster 筛选；最多三轮讨论和早停；Toulmin 六段提示；匿名化讨论、日志、重试与 fallback；多 provider 抽象。直接源码集中在 `python/mllmcelltype/consensus.py`、`prompts.py`、`annotate.py` 和 `providers/`。
 
-Partial 包括：论文阈值约 0.667，而当前主 API 默认 0.7；论文指定六个历史模型与 Claude 裁判，当前 v2.0.4 支持更多模型并允许/需要运行时选择 consensus model；论文 v1.0.0 与当前包版本存在演化。旧元数据记录代码 commit `5f283a6`，但当前目录没有独立 `.git` 或 `.repo_source` 可核对完整 SHA，因此精确代码 provenance 只能保留为“recorded short commit”，不能伪造完整哈希。
+Partial 包括：论文阈值约 0.667，而当前主 API 默认 0.7；论文指定六个历史模型与 Claude 裁判，当前 v2.0.4 支持更多模型并允许/需要运行时选择 consensus model；论文 v1.0.0 与当前包版本存在演化。
 
 Not found/External 包括：50 数据集统一 benchmark orchestration、Cell Ontology 评分、marker 扰动实验、全部论文作图脚本以及论文层次注释的完整自动调度。这些被论文指向单独 Reproducibility 资源，不能由核心包相似函数替代。
 
@@ -132,17 +132,6 @@ Not found/External 包括：50 数据集统一 benchmark orchestration、Cell On
 5. API 模型会更新，同一名称在不同时点可能改变；完整复现需锁定可访问版本与请求参数。
 6. 敏感或临床结论必须回到 marker 表达、原始 cluster 和专家审查，不能只引用讨论文本。
 7. 论文仍是 bioRxiv 预印本；基准设计和结论尚应按预印本证据强度解读。
-
-### 直接证据入口
-
-- OCR 论文：`paper source/paper/auto/paper.md`
-- 原始/布局 PDF：`paper.pdf` 与 `paper source/paper/auto/paper_origin.pdf`
-- 论文图：`paper source/paper/auto/images/`
-- 当前 Python 实现：`mLLMCelltype_repo/python/mllmcelltype/`
-- R 实现：`mLLMCelltype_repo/R/`
-- 细粒度映射：`doc_code.md`；图证据：`figure_analysis.md`
-
-本工作区没有独立 supplementary Markdown/PDF；OCR `paper.md` 已包含 Extended Data 和 Supplementary Information 清单。对于未进入本地的 Reproducibility 代码继续保留 External/Not found 标签。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>DEFND-seq</h1>
     <p>Scalable co-sequencing of RNA and DNA from individual nuclei</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/simslab/dna10x" target="_blank" rel="noopener noreferrer" aria-label="Open code for DEFND-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -190,7 +191,6 @@ SNV 分支对新鲜 GBM 使用匹配 PBMC germline：MarkDuplicates、BQSR、Mut
 - 实验协议较完整，且进入标准 10x Multiome 后的操作具有较强可移植性；
 - 论文提供 GEO、Zenodo、图像和大量 source data；
 - 三套源码确实覆盖若干关键模块；
-- 但整个计算分析是由多个外部软件、数据库和未保留的 study-specific glue code 组成，本工作区没有验证任何端到端运行。
 
 DEFND-seq 的价值主要在技术设计：用一个短而关键的核小体去除步骤，把广泛部署的 RNA/ATAC 商业平台转化为高通量 RNA/gDNA 联合测量平台。它对“同一肿瘤细胞的基因组亚克隆与转录状态如何对应”给出了有说服力的实验展示，但完整计算复现仍需要补齐外部流程和样本级配置。
 

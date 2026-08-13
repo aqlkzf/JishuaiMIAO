@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Multimodal bioinformatic analyses</h1>
     <p>Multimodal bioinformatic analyses of genome-scale expression beyond gene-centric differential expression</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbag152" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbag152" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Multimodal bioinformatic analyses">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -133,7 +133,7 @@ DREAM 等社区挑战显示不同算法的错误具有互补性，集成网络�
 
 ### 证据与范围边界
 
-本文是叙述性方法综述，不是系统综述、Meta 分析或统一 benchmark。作者未报告可复现的文献检索式、纳入排除流程或偏倚评估，也没有关联代码仓库或新算法实现。因此本工作区只做论文和图的深读，不应生成 `doc_code.md`、代码提交号或“论文代码完全匹配”等结论。
+本文是叙述性方法综述，不是系统综述、Meta 分析或统一 benchmark。作者未报告可复现的文献检索式、纳入排除流程或偏倚评估，也没有关联代码仓库或新算法实现。
 
 本地证据包括 PMC 全文和四张主图；文章没有独立补充材料。表 1和表 2以内嵌 HTML 表格存在于全文，而不是 Markdown 管道表，因此简单的 `grep '^|'` 为零不代表表格缺失。软件版本、维护状态和最新文档可能随时间变化，真正采用工具前应另行核对官方文档和当前仓库。
 

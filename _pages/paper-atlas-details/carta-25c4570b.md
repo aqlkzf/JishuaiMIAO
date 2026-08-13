@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CARTA</h1>
     <p>Inferring cell differentiation maps from lineage tracing data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02903-z" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-025-02903-z" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CARTA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/raphael-group/CARTA" target="_blank" rel="noopener noreferrer" aria-label="Open code for CARTA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -74,16 +74,6 @@ CARTA 的输入不是表达矩阵或 RNA velocity，而是一组末端细胞带�
 ### 代码—论文边界
 
 核心 MILP 与论文公式高度对应，但完整复现是 Partial：依赖商业 Gurobi；`pyproject.toml` 与环境文件的 gurobipy 版本不一致；edge selection、归一化和真实数据 elbow 选择散落在 notebooks；fastCARTA 有边界缺陷。论文所说固定 $k$ 的最优性是在给定候选空间、约束、求解完成和时间限制允许的条件下成立，不应扩展为对真实生物分化图的唯一正确性。
-
-### 证据入口
-
-- 论文：`paper source/paper/hybrid_auto/paper.md`
-- 主图：`paper source/paper/hybrid_auto/images/`
-- CLI：`code/carta/carta.py`
-- 完整 MILP：`code/carta/ilp.py`
-- 受限候选模式：`code/carta/fastCarta.py`
-- 评分和树工具：`code/carta/utils.py`
-- 真实数据最终化：`code/notebooks/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

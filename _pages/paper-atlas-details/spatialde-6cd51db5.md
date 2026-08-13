@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpatialDE</h1>
     <p>SpatialDE: identification of spatially variable genes</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/nmeth.4636" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/nmeth.4636" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpatialDE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Teichlab/SpatialDE" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpatialDE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -32,7 +32,7 @@ sitemap: false
 
 ## SpatialDE 方法解读：把表达变异拆成“随距离协同变化”和“彼此独立的噪声”
 
-SpatialDE 解决的是：给定每个 spot/细胞的空间坐标和每个基因的表达，哪些基因的表达相似性会随空间距离而变化？它不要求先把组织切成离散区域，也不只寻找总体方差大的基因，而是为每个基因比较“含空间协方差的高斯过程模型”和“只有独立噪声的常数模型”。论文发表于 2018 年 *Nature Methods*（DOI `10.1038/nmeth.4636`）。本工作区保留了论文 PDF 的本地 Markdown 转换、两张主图和官方 SpatialDE 仓库的本地代码快照；没有找到独立的 Supplementary Note/Table 文件。
+SpatialDE 解决的是：给定每个 spot/细胞的空间坐标和每个基因的表达，哪些基因的表达相似性会随空间距离而变化？它不要求先把组织切成离散区域，也不只寻找总体方差大的基因，而是为每个基因比较“含空间协方差的高斯过程模型”和“只有独立噪声的常数模型”。论文发表于 2018 年 *Nature Methods*（DOI `10.1038/nmeth.4636`）。没有找到独立的 Supplementary Note/Table 文件。
 
 ### 1. 输入和输出
 
@@ -181,7 +181,7 @@ $$
 
 这些结果说明同一框架可用于测序 spot 与成像细胞，并能发现连续、周期和局部模式。它们不是在完整转录组上统一比较所有技术：seqFISH 面板本来只有 249 个预选基因，不能把 32/249 当作全基因组发现率。
 
-正文还报告乳腺癌 115 个、MERFISH 140 probes 中 91 个 SV 基因；这些证据来自文字和补充图引用，本地未保留对应补充图，不能声称已在本工作区视觉核验。
+正文还报告乳腺癌 115 个、MERFISH 140 probes 中 91 个 SV 基因；
 
 ### 11. 论文—代码对应关系
 

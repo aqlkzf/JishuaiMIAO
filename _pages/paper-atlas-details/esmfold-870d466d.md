@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>ESMFold</h1>
     <p>Evolutionary-scale prediction of atomic-level protein structure with a language model</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1126/science.ade2574" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1126/science.ade2574" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ESMFold">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/facebookresearch/esm" target="_blank" rel="noopener noreferrer" aria-label="Open code for ESMFold">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -128,11 +128,8 @@ pLDDT 偏向局部结构可靠性，pTM 更关注整体域排列。高置信度�
 
 ### 10. 版本与复现边界
 
-本工作区当前代码实际状态为：
-
 - Git HEAD：`206cc19ca89d985245ca204fbc86772e5c2446d0`；
 - Python 包版本：`fair-esm 2.0.1`（`esm/version.py`）；
-- 旧合同记录提交：`2b369911bb5b4b0dda914521b9475cad1656b2ac`，与实际 checkout 不一致；
 - `esm/esmfold/v1/pretrained.py` 明确区分论文使用的 `esmfold_3B_v0` 与后续 `esmfold_3B_v1`。
 
 因此，本次代码锚点描述当前 2.0.1 快照，并用 `esmfold_v0()` 的注释确认论文模型入口；不能假设默认加载的 v1 权重与论文所有表格逐点相同。真正重现论文数值还需锁定 v0 权重、ESM-2 权重、OpenFold/DeepSpeed/PyTorch 依赖、数据时间切分、硬件、推理 recycle/chunk 参数和评估脚本。

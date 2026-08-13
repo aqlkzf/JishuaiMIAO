@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>TRACER</h1>
     <p>Reconstructing biologically coherent cellular profiles from imaging-based spatial transcriptomics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.03.08.710395" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.03.08.710395" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TRACER">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/imlong4real/TRACER" target="_blank" rel="noopener noreferrer" aria-label="Open code for TRACER">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -157,7 +157,7 @@ $$
 
 ### 9. 代码证据与复现边界
 
-本地 `tracer_code` 是无独立 Git 元数据的源码快照；项目元数据指向 `https://github.com/imlong4real/TRACER`，但无法从该目录确认精确提交。因此代码出处记为 `local_dir`，不能伪造 commit。
+本地 `tracer_code` 是无独立 Git 元数据的源码快照；项目元数据指向 `https://github.com/imlong4real/TRACER`，但无法从该目录确认精确提交。
 
 | 机制 | 本地证据 | 状态 |
 |---|---|---|

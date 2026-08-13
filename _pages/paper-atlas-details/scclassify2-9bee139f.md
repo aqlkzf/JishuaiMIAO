@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scClassify2</h1>
     <p>A message passing framework for precise cell state identification with scClassify2</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1186/s13059-025-03722-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1186/s13059-025-03722-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scClassify2">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/SydneyBioX/scClassify2" target="_blank" rel="noopener noreferrer" aria-label="Open code for scClassify2">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -208,7 +208,7 @@ $$
 - 图 4 在 Xenium breast cancer 两个 replicate 上展示注释与空间区域稳定性，论文称与 scClassify 比较 precision 约 0.92。这里的“真值”是方法间比较，不是独立实验 gold standard。
 - 图 5 是 scClassify-catalogue 网页资源与界面，不是本地训练代码的性能验证。
 
-工作区保存了五张主图和主论文 PDF。论文列出 Additional files 1–5（Fig. S1–S3、Table S1、Supplementary Methods），但这些独立文件未在本地找到，因此其 panel 与补充方法只能标记 `Not found locally`。
+论文列出 Additional files 1–5（Fig. S1–S3、Table S1、Supplementary Methods），但这些独立文件未在本地找到，因此其 panel 与补充方法只能标记 `Not found locally`。
 
 ### 12. 论文—代码匹配表
 

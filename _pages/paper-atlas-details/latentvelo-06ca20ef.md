@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>LatentVelo</h1>
     <p>Inferring single-cell transcriptomic dynamics with structured latent gene expression dynamics</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/Spencerfar/LatentVelo" target="_blank" rel="noopener noreferrer" aria-label="Open code for LatentVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -129,7 +130,7 @@ LatentVelo 的批次校正不是先校正基因矩阵再跑 velocity，而是在
 
 论文自己指出，LatentVelo 假设所有细胞轨迹从同一个潜在初始状态出发；如果数据中存在稀疏或断开的细胞簇，轨迹起点可能不符合生物预期（`paper.md:183-188`）。此外，不同数据集可能需要调整 latent 维度、使用 cell-type annotated model、限制 gene set 或使用实验时间/root cell 先验（`paper.md:167-188`）。
 
-本工作区没有 supplementary markdown；补充图表不可作为本次 primary evidence。Annotated VAE 内部和 ATAC 完整训练路径只做了部分代码验证，因此这些扩展的代码匹配应视为 Partial，而不是 Exact。
+补充图表不可作为本次 primary evidence。Annotated VAE 内部和 ATAC 完整训练路径只做了部分代码验证，因此这些扩展的代码匹配应视为 Partial，而不是 Exact。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

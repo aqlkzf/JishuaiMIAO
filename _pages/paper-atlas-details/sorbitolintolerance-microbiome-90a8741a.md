@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SorbitolIntolerance_Microbiome</h1>
     <p>High fat intake sustains sorbitol intolerance after antibiotic-mediated Clostridia depletion from the gut microbiota</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2024.01.029" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2024.01.029" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SorbitolIntolerance_Microbiome">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/connor-reid-tiffany/Metagenomics-of-Sorbitol-Intolerant-Mice" target="_blank" rel="noopener noreferrer" aria-label="Open code for SorbitolIntolerance_Microbiome">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -247,17 +247,6 @@ $$
 7. 图 7：5-ASA 的延迟治疗和预防效果验证宿主生态位可被干预。
 
 任何单张图都不足以独立证明完整链条；论文的力量来自代谢、菌群、组织环境、菌株遗传和宿主遗传证据相互闭合。
-
-### 14. 证据入口
-
-- 论文正文：`paper.md`
-- 主图与补充图：`images/`
-- 本地代码：`Metagenomics-of-Sorbitol-Intolerant-Mice/`
-- 计算流程详解：`doc_method.md`
-- 代码—论文对应：`doc_code.md`
-- 逐图证据：`figure_analysis.md`
-
-本文档的生物学结论以论文正文和图为最终依据；代码细节来自本地 GitHub 快照 commit `0edb08d5d23d318a3d3a19c4f1a923975a74740e`。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

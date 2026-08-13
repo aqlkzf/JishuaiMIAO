@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellPace</h1>
     <p>CellPace: A temporal diffusion-forcing framework for simulation, interpolation and forecasting of single-cell dynamics</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.02.25.707938" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.02.25.707938" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellPace">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/Emad-COMBINE-lab/CellPace-release" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellPace">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -75,17 +75,6 @@ $$H=T_{sample}+\lfloor(horizon-1)\,u\rfloor,$$
 论文在胚胎多个谱系和 mouse palate RNA+ATAC 上比较分布距离、miLISI、MMD、energy distance、pseudotime/marker、空间映射、GRN 与 PAGA。多指标一致增强可信度，但许多验证仍复用从同一表达数据计算的结构，并非独立 lineage tracing。
 
 本地代码对 VAE→DiF→generation 主链覆盖度高，但完整论文复现仍为 Partial：全量数据链接在论文快照中尚未落实；baseline 训练/统一评估脚本不完整；CLI 强制 GPU 与 fp16；配置/缓存哈希和 stage preprocessing 必须匹配。代码中的非默认 AdamW betas、gradient clipping 和多种调度属于实现细节，不应被误写为论文普遍结论。
-
-### 证据入口
-
-- 论文：`paper source/paper/vlm/paper.md`
-- 图：`paper source/paper/vlm/images/`
-- CLI：`code/cellpace/cli/commands.py`
-- TDiF：`code/cellpace/model/dif/core.py`
-- Transformer：`code/cellpace/model/dif/transformer.py`
-- 扩散损失：`code/cellpace/model/dif/diffusion.py`
-- Pyramid/滑窗：`code/cellpace/model/dif/inference.py`
-- VAE：`code/cellpace/model/vae/`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

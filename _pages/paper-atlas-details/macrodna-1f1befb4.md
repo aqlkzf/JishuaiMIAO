@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MaCroDNA</h1>
     <p>Accurate integration of single-cell DNA and RNA for analyzing intratumor heterogeneity using MaCroDNA</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-44014-3" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-023-44014-3" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MaCroDNA">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/NakhlehLab/MaCroDNA" target="_blank" rel="noopener noreferrer" aria-label="Open code for MaCroDNA">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -110,7 +110,6 @@ Barrett's esophagus 的 phylosignal、CNA 注释、过滤和聚合不是核心 `
 
 ### 版本与复现边界
 
-- 主文正式题目是 “Accurate integration of single-cell DNA and RNA for analyzing intratumor heterogeneity using MaCroDNA”，Nature Communications 2023，DOI `10.1038/s41467-023-44014-3`；旧合同使用了非正式副标题且缺失期刊信息。
 - 论文代码地址是 `NakhlehLab/MaCroDNA`，并有 Zenodo `10.5281/zenodo.10115041`。当前本地快照没有可核验的 Git commit metadata，不能绑定到特定上游修订。
 - 核心依赖商业 Gurobi；学术许可证虽可免费申请，但离线、容器或商业环境并非开箱即用。
 - 仓库没有锁定的现代环境；README 只给 Python ≥3.7 和少量包。NumPy/pandas/Gurobi 版本差异可能影响索引与求解行为。

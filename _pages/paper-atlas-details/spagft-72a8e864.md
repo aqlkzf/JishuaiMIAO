@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SpaGFT</h1>
     <p>Graph Fourier transform for spatial omics representation and analyses of complex organs</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-51590-5" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41467-024-51590-5" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpaGFT">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/jxLiu-bio/SpaGFT" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpaGFT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -179,14 +179,6 @@ Figure 2 比较 SVG 检出准确性与速度；Figure 3 评估低通增强对空
 2. GFTscore 偏好平滑大尺度模式；真实的中高频、稀有小结构可能被降权。
 3. 低通增强会把图拓扑假设写入表达，不能当成无偏恢复的原始观测。
 4. FTU 是共享频谱的基因模块及其高伪表达节点集合，不等同于已验证的解剖学功能单位。
-
-### 证据入口
-
-- 主论文与图注：`paper source/PMC11362340/paper.md`
-- 补充方法：`paper source/PMC11362340/41467_2024_51590_MOESM1_ESM.pdf`
-- 补充数据说明：`41467_2024_51590_MOESM3_ESM.pdf`
-- 核心代码：`SpaGFT/SpaGFT/gft.py`、`SpaGFT/SpaGFT/utils.py`
-- 更细公式与逐图解释：`doc_method.md`、`figure_analysis.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

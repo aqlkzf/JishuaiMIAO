@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SMIntegration</h1>
     <p>SMIntegration: A web tool for comprehensive spatial metabolomics and transcriptomics integrated analysis and visualization</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/gigascience/giag033" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/gigascience/giag033" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SMIntegration">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/mzlab-research/SMIntegration" target="_blank" rel="noopener noreferrer" aria-label="Open code for SMIntegration">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -105,17 +105,6 @@ SMIntegration 是面向空间转录组和空间代谢组/质谱成像的 R/Shiny
 ### 10. 一句话把握 SMIntegration
 
 SMIntegration 先让空间转录组和质谱成像在同一几何网格与预处理尺度上可比较，再以空间模式、拼接聚类、ROI 差异、相关网络和通路注释连接两种模态；它的价值在于可追踪的零代码分析链，主要风险则来自配准/插值、简单特征拼接、mass feature 身份不确定、空间伪重复以及隐藏的特征与像素抽样。
-
-### 证据入口
-
-- 最终论文与图注：`paper source/PMC13159472/paper.md`
-- 主图：`paper source/PMC13159472/images/`
-- 公开补充审稿材料：`paper source/PMC13159472/*reviewer*.pdf` 与作者回复 PDF
-- Shiny 模块：`SMIntegration/server/`
-- 核心分析函数：`SMIntegration/source/`
-- SpatialData 配准/插值：`SMIntegration/spatialdata/script/`
-- 验证脚本：`SMIntegration/validation_pipeline/`、`SMIntegration/validation_figure/`
-- 代码—论文逐项映射：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

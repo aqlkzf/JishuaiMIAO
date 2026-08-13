@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>hPOP</h1>
     <p>A comparison of deep multiomics profiles across ethnicity, geography, and age</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.04.032" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2026.04.032" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for hPOP">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/nbararpo/hPOP_Multiomics-Across-Ethnicity-Geography-and-Age" target="_blank" rel="noopener noreferrer" aria-label="Open code for hPOP">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -206,21 +206,6 @@ flowchart LR
 3. **样本不平衡影响可信度。** SA 样本明显少于 EuAn，会议场景招募也限制了对一般人群的外推。
 
 在这些边界内，hPOP 的主要价值非常清楚：它把广泛的人群多组学差异、同祖源跨地理变化和可检验的微生物—代谢—宿主假说放进同一张图谱，为更大样本、纵向随访和干预实验提供了优先验证的候选路径。
-
-### 源证据入口
-
-- 队列设计与多组学规模：`paper.md:41-55`
-- 族群差异与独立验证：`paper.md:57-119`
-- 中介分析结果：`paper.md:121-127`
-- 地理、饮食与微生物：`paper.md:129-147`
-- PhenoAge 与端粒相关结果：`paper.md:149-163`
-- 实验和统计方法：`paper.md:235-575`
-- 代谢组/脂质组混合模型：`code/LMM_univariate analysis of -omes/LMM_dream_MetabolomeLipidome.R`
-- 模式分析笔记本：`code/LMM_univariate analysis of -omes/hPOP_PatternPhenoAge.Rmd`
-- 中介分析：`code/MediationAnalysis/MediationAnalysis.R`
-- PhenoAge 与 `deltaAge`：`code/PhenoAge/PhenoAge.R:61`
-- TFBS 评分：`code/Variant_Analysis/motif_variants_analysis.py:20-45`
-- 主图：`images/gr1_lrg.jpg` 至 `images/gr6_lrg.jpg`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

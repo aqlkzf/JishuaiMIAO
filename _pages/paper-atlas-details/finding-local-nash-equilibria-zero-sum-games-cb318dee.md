@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>Finding_Local_Nash_Equilibria_Zero_Sum_Games</h1>
     <p>On Finding Local Nash Equilibria (and Only Local Nash Equilibria) in Zero-Sum Games</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1145/3728479" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1145/3728479" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Finding_Local_Nash_Equilibria_Zero_Sum_Games">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -162,7 +162,6 @@ LSS 刚开始时，快变量 $v$ 尚未收敛，轨迹可能很像普通梯度�
 - 随机逼近结论以迭代有界为条件。
 - 需要二阶 Jacobian-vector products；免去求逆并不意味着变成一阶方法。
 - GAN 实验使用恒定 RMSProp 学习率，论文明确说明它不满足理论中的递减两时间尺度步长条件。
-- 未找到官方代码或补充实现，因此当前工作区为 `paper-only`，不能把第三方实现当作论文代码。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

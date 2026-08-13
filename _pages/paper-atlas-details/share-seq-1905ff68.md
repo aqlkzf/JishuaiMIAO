@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>SHARE-seq</h1>
     <p>Chromatin Potential Identified by Shared Single-Cell Profiling of RNA and Chromatin</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2020.09.056" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.cell.2020.09.056" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SHARE-seq">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -74,7 +74,7 @@ $$
 
 ATAC reads 经自定义 trimming/demultiplexing 后用 Bowtie2 比对，过滤低 MAPQ、异常配对、chrY/线粒体等 reads，Picard 去重复，MACS2 call summits，并把 summit 向两侧各延伸 150 bp。RNA 用 STAR/featureCounts 等流程统计 exon 与 intron；SHARE-seq RNA 对 intronic reads 富集，因此既能看成熟 RNA，也能近似看 nascent RNA。
 
-论文明确说 raw reads 由 custom Python script trimming，但资源表只给 GEO GSE140203 和第三方软件，没有本地或公开的专用分析代码仓库。因而从 FASTQ 到作者矩阵的条形码纠错、trim 和部分定制分析不能仅靠本工作区逐行复核。
+论文明确说 raw reads 由 custom Python script trimming，但资源表只给 GEO GSE140203 和第三方软件，没有本地或公开的专用分析代码仓库。
 
 ### 4. peak–gene 关联如何建立
 
@@ -194,7 +194,7 @@ RNA velocity 利用同一细胞 unspliced/spliced imbalance，通常对应较短
 
 ### 证据范围
 
-本文基于本地主论文 PDF/OCR Markdown、提取的主图/补充图、伴随研究短评及现有分析文档整理。论文 DOI 为 `10.1016/j.cell.2020.09.056`，数据入口为 GEO `GSE140203`。本工作区没有 SHARE-seq 作者分析代码仓库；本次未下载原始数据、重跑 wet-lab demultiplexing 或复算 chromatin-potential arrows。
+本文基于本地主论文 PDF/OCR Markdown、提取的主图/补充图、伴随研究短评及现有分析文档整理。论文 DOI 为 `10.1016/j.cell.2020.09.056`，数据入口为 GEO `GSE140203`。本次未下载原始数据、重跑 wet-lab demultiplexing 或复算 chromatin-potential arrows。
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

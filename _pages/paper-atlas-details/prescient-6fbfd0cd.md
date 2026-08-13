@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>PRESCIENT</h1>
     <p>Generative modeling of single-cell time series with PRESCIENT enables prediction of cell trajectories with interventions</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/gifford-lab/prescient" target="_blank" rel="noopener noreferrer" aria-label="Open code for PRESCIENT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -181,7 +182,6 @@ ANN 终末类型分类、命运比例、Wasserstein 距离、
 
 ### 8. 必须保留的证据边界
 
-- **MISSING：** 本工作区没有补充材料 Markdown；论文若把超参数选择细节只放在 Supplementary Note 中，目前不能完整核查。
 - **Not found：势能符号。** 论文定义 \(\mu=-\nabla\Psi\)，但代码 `_drift` 返回 `_pot` 对输入的正梯度，并在 `_step` 中直接相加。没有找到证据证明 `_pot` 明确定义为 \(-\Psi\)。
 - **Not found：噪声参数映射。** 论文离散式含 \(\sqrt{2}\sigma\)，代码使用标准差为 `train_sd` 的随机数再乘 \(\sqrt{dt}\)，两者的对应关系未写明。
 - **论文设置不等于 CLI 默认值。** 论文为 2×400 网络、裁剪 0.1，并给出数据集特定学习率；当前 CLI 默认为 1×500、裁剪 0.25、学习率 0.01、`train_sd=0.5`。

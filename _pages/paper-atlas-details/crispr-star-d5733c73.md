@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,6 +20,7 @@ sitemap: false
     </div>
     <h1>CRISPR-StAR</h1>
     <p>CRISPR-StAR enables high-resolution genetic screening in complex in vivo models</p>
+    <div class="paper-detail__links"><a class="paper-detail__code" href="https://github.com/EstherU-gith/CRISPR-StAR" target="_blank" rel="noopener noreferrer" aria-label="Open code for CRISPR-StAR">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -394,8 +395,6 @@ Comparing in-vivo and in-vitro effects revealed an in-vivo-specific dependency o
 ### Code and Reproducibility
 
 **Code-paper fidelity: medium.** The two R scripts directly implement important downstream steps: active/inactive pooling, channel-specific batch normalization, 0.5 pseudocounts, active-versus-inactive MAGeCK inputs, three-UMI filtering, StAR LFC, dAUC, ROC/PR and conventional active-versus-library comparison.
-
-**Repository reproducibility rating: 2/5.** The snapshot is useful analysis provenance but is not runnable end to end:
 
 - inputs, control lists, normalized plasmid tables and MAGeCK outputs are loaded from unavailable absolute `/Volumes/...` paths;
 - MAGeCK commands are comments rather than an executable workflow;

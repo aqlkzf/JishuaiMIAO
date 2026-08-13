@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>multigrate</h1>
     <p>Integration and querying of multimodal single-cell data with PoE-VAE</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1101/2022.03.16.484643" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1101/2022.03.16.484643" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for multigrate">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/theislab/multigrate" target="_blank" rel="noopener noreferrer" aria-label="Open code for multigrate">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -38,7 +38,7 @@ Multigrate 是一个面向多模态单细胞数据的条件变分自编码器（
 
 ### 证据与版本边界
 
-本工作区包含 2025-02-15 版本的 bioRxiv 论文（DOI `10.1101/2022.03.16.484643`，正文和补充方法在同一 PDF）以及一个本地 multigrate 源码快照。`pyproject.toml` 标记包版本 `0.1.0`，源地址为 `https://github.com/theislab/multigrate`。但这个目录嵌在 PaperCode 的大仓库中，没有保存上游 multigrate 的独立 Git commit；因此代码行为可以直接核验，不能声称它恰好就是论文实验使用的提交。论文还另指向 `multigrate_reproducibility` 仓库，本工作区没有该实验仓库、数据和训练产物。
+`pyproject.toml` 标记包版本 `0.1.0`，源地址为 `https://github.com/theislab/multigrate`。因此代码行为可以直接核验，不能声称它恰好就是论文实验使用的提交。
 
 ### 1. 数据怎样进入模型
 
@@ -119,7 +119,7 @@ $$
 
 结果支持 Multigrate 能在这些数据上构造有竞争力的联合表示并进行 query/imputation，但不能概括为所有指标和数据集都第一。论文自己指出 PoE/MoE 差异依赖 query 场景；空间代谢应用只有配准后的特定切片与代谢特征，真实与预测空间图和相关性不等于跨组织泛化。
 
-补充材料在同一 PDF 中，包含超参数搜索、默认架构、稳健性实验和 Supplementary Figures 1–6。完整 benchmark 复现仍需要论文给出的 `multigrate_reproducibility` 仓库与原始数据，本工作区没有这些资产。
+补充材料在同一 PDF 中，包含超参数搜索、默认架构、稳健性实验和 Supplementary Figures 1–6。
 
 ### 8. Paper-code 对应与已知漂移
 
@@ -132,16 +132,6 @@ $$
 - 论文补充默认学习率 $10^{-3}$、KL $10^{-5}$ 等与当前 API 默认值不同；
 - 当前源码加入 Jeffreys、更多损失/初始化选项，不能倒推为论文全部实验使用；
 - 测试集 `tests/test_basic.py` 主要是基础 API smoke coverage，不能证明论文全部数值可复现。
-
-### 证据入口
-
-- 论文及补充 Markdown：`paper source/multigrate/auto/paper.md`
-- 原始 PDF：`multigrate_paper.pdf`
-- 页面图：`paper source/multigrate/auto/images/`
-- 核心源码：`src/multigrate/module/_multivae_torch.py`
-- 高层 API：`src/multigrate/model/_multivae.py`
-- 数据组织：`src/multigrate/data/_preprocessing.py`
-- 当前包元数据：`pyproject.toml`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CellWalker2</h1>
     <p>CellWalker2: Multi-omic discovery using hierarchical cell type relationships</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1016/j.xgen.2025.100886" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1016/j.xgen.2025.100886" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CellWalker2">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/PFPrzytycki/CellWalkR" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellWalker2">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -93,7 +93,6 @@ $$
 
 ### 论文–代码与复现边界
 
-- 主算法 R 包位于 `CellWalkR/`；论文图复现脚本在 `CellWalker2_supple_codes/`。两者 `.repo_source` 记录 URL `https://github.com/PFPrzytycki/CellWalkR/tree/cellwalker2` 和提交 `facd2059a9a6403ec58e3937ca05ff2f8d027c38`。
 - `CellWalkR/DESCRIPTION` 是本地包版本和依赖的权威来源；Seurat 版本兼容与外部数据仍会影响复现。
 - 论文说 KNN 默认 $K=200$，库函数默认 `knn=30`，部分补充脚本还使用 20；树权重默认也不同。结果必须记录实际参数。
 - 本地有 `paper.md`、7 张图、R 包、vignettes 和补充脚本，但大型原始数据需外部下载。本轮只做静态论文/图/源码核查，未安装 R 环境、运行脚本或重画结果。

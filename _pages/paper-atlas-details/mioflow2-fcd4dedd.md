@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>MIOFlow2</h1>
     <p>MIOFlow 2.0: A unified framework for inferring cellular stochastic dynamics from single cell and spatial transcriptomics data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.22564" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2603.22564" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for MIOFlow2">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/KrishnaswamyLab/MIOFlow" target="_blank" rel="noopener noreferrer" aria-label="Open code for MIOFlow2">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -153,7 +153,6 @@ $$
 - momentum 是单步 EMA 而非历史积分。
 - 空间功能只有部分特征抽取，缺少完整联合建模链。
 - axolotl 最终 notebook 的内容与文件名和论文案例不一致。
-- 外部数据、已训练模型和关键行为未在本工作区端到端复算，也未见覆盖这些差异的自动化测试。
 
 最可靠的定位是：当前仓库提供了可追踪的非空间 ODE/SDE 轨迹核心、生长率预训练和部分空间特征原型；论文提出的统一空间—随机—非守恒系统尚未在此 commit 中形成一条完整、一致、可复现的训练链。
 

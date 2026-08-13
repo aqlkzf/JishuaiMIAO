@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>stGP</h1>
     <p>Characterizing dynamic tissue architectures by identifying cell-type-specific spatiotemporal gene programs with stGP</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.64898/2026.07.03.736035" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.64898/2026.07.03.736035" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for stGP">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/YangLabHKUST/stGP" target="_blank" rel="noopener noreferrer" aria-label="Open code for stGP">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -112,7 +112,7 @@ $$
 
 ### 代码可复现性与边界
 
-论文的 Code availability 指向公开的 YangLabHKUST/stGP 仓库（`paper.md:270-273`）；当前工作区保存了 commit `120e5fec23c6d7651fcfff064d6b647cb9fb3194`。核心估计器和核函数与论文的主要算法对应关系为 **Exact**，但每个真实数据 notebook 的逐单元调用没有逐一核对或运行，因此预处理与图复现属于 **Partial**。在已检查的范围内，**Not found**：一个带齐所有输入数据、可一键重现全部六张主图的端到端命令。
+论文的 Code availability 指向公开的 YangLabHKUST/stGP 仓库（`paper.md:270-273`）；核心估计器和核函数与论文的主要算法对应关系为 **Exact**，但每个真实数据 notebook 的逐单元调用没有逐一核对或运行，因此预处理与图复现属于 **Partial**。在已检查的范围内，**Not found**：一个带齐所有输入数据、可一键重现全部六张主图的端到端命令。
 
 如果要继续学习：先看 `summary.md` 建立全局图景，再看 `doc_method.md` 的代码变量与公式说明，最后用 `doc_code.md` 区分已验证对应关系与尚未验证的 notebook/复现部分。
 

@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>CANDIES</h1>
     <p>Cross-Modal Denoising and Integration of Spatial Multi-Omics Data with CANDIES</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1002/advs.202523754" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1002/advs.202523754" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CANDIES">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -248,9 +248,7 @@ protein 指导低质量 RNA 后，CANDIES 揭示 pilosebaceous unit 内新的 im
 
 ### 11. 代码与复现边界
 
-截至本次核验，本工作区没有 CANDIES 源码、supplemental code archive 或可验证 Git commit；论文正文和当前 Wiley/bioRxiv 页面也没有提供官方 CANDIES GitHub。论文末尾只有 Data Availability 声明，且写“no new data were created or analyzed”，这与正文实际重分析多个公开数据集的叙述并不充分协调。
-
-因此本工作区必须保持 `paper-only`：
+论文正文和当前 Wiley/bioRxiv 页面也没有提供官方 CANDIES GitHub。论文末尾只有 Data Availability 声明，且写“no new data were created or analyzed”，这与正文实际重分析多个公开数据集的叙述并不充分协调。
 
 - **可验证**：模型两阶段结构、公式、默认训练参数、主图/补充结果与公开数据集引用；
 - **不可验证**：DiT layer/head/hidden dimension、具体 tensor shape/masking 代码、sampling variance、contrastive denominator、attention implementation、seed/device、package versions、data loaders 与完整 preprocessing scripts；
@@ -280,15 +278,6 @@ protein 指导低质量 RNA 后，CANDIES 揭示 pilosebaceous unit 内新的 im
 - **pSM 不是实验时间。** 它是 joint representation 上推断的 pseudo-order。
 - **GWAS trait-spot mapping 是下游统计关联。** 不能解释为某 spot 导致复杂性状。
 - **目前没有直接代码证据。** 所有实现细节必须标成 Not found，而不是从公式猜测 Exact。
-
-### 本地证据入口
-
-- 论文 Markdown：`paper source/paper/auto/paper.md`
-- 论文 PDF：`paper.pdf`
-- 方法与公式：`doc_method.md`
-- 逐图证据：`figure_analysis.md`
-- paper-only 实现规格：`doc_code.md`
-- 证据账本：`claude_notes.md`, `scratch/evidence_index.json`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>

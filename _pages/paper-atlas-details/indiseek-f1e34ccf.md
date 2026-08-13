@@ -10,17 +10,17 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
     <div class="paper-detail__chips">
       <span>Integration &amp; Multi-modal</span>
-      <span>arXiv preprint · 2025</span>
+      <span>arXiv · 2025</span>
     </div>
     <h1>IndiSeek</h1>
     <p>IndiSeek learns information-guided disentangled representations</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2509.21584" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.48550/arXiv.2509.21584" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for IndiSeek">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -168,7 +168,6 @@ IndiSeek 的创新不是单独使用 CLIP、CLUB 或 autoencoder，而是“跨�
 3. 文中给出 CITE-seq 的 5-layer MLP、MultiBench 的 2-head/2-layer Transformer、2000 epochs、batch 128、学习率 $10^{-4}$ 等设置，但没有实现就不能确认所有实验一致使用。
 4. Stage 1→Stage 2 的冻结边界、CLUB 每轮 5 个 inner epochs 的优化顺序，以及零邻居比例的 log-ratio 处理仍不可验证。
 5. 表示“shared/specific”是由目标函数定义的统计分解，不保证可识别唯一；不同随机种子、encoder 容量或 $\lambda$ 可产生等效但坐标不同的表示。
-6. `ready_to_publish=true` 表示 PaperCode 文档合同完成，不表示本地复现或理论结论被独立证明。
 
 ### 一句话记忆
 

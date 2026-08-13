@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>HESpotEx</h1>
     <p>HESpotEx: a dual-stream deep learning framework for spot-level gene expression prediction from histological images</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s43588-026-00992-0" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s43588-026-00992-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for HESpotEx">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/wwYinYin/HESpotEx" target="_blank" rel="noopener noreferrer" aria-label="Open code for HESpotEx">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -162,7 +162,6 @@ $$
 ### 版本与可复现性边界
 
 1. 论文是 *Nature Computational Science* 2026，DOI `10.1038/s43588-026-00992-0`。工作区主文来源仍是订阅 HTML preview；名为 `paper.pdf`、`paper.accept.pdf` 和 `try.pdf` 的文件实际是 HTML，不是有效 PDF。可验证的完整补充材料来自 `paper_supp1.pdf`/`supplementary_information.md`，另有 peer-review 文档。
-2. 本地代码来自 `https://github.com/wwYinYin/HESpotEx`，采集提交 `c3964aac60de9332c5cb2c7582829f2ba983fae5`。代码目录没有独立嵌套 `.git`，提交值来自工作区采集元数据。
 3. 代码硬编码 `cuda:1`，STAGATE 还有独立设备设置；QuiltNet 权重必须手动放在 `./model/QuiltNet-B-32/open_clip_pytorch_model.bin`。这些都会阻止开箱即跑。
 4. 核心模型与教程存在，但论文全 benchmark、TCGA 聚合/UMAP/生存、HoVer-Net 淋巴细胞验证和高分辨率拼接工作流未在所读代码中找到。
 5. 本轮验证的是源文档—代码对应，没有下载全部外部数据、运行约 15 小时 A100 教程或重做论文统计。因此 `ready_to_publish` 表示分析合同完整，不表示数值复现完成。

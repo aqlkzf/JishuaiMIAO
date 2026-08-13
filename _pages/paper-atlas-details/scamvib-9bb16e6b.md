@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>scAMVIB</h1>
     <p>Adaptive multi-view information bottleneck for multi-omics data clustering</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf717" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1093/bib/bbaf717" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scAMVIB">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/ZZUzy/scAMVIB" target="_blank" rel="noopener noreferrer" aria-label="Open code for scAMVIB">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -141,8 +141,6 @@ Python 脚本输出标准化矩阵、SNF similarity、可选 FS 矩阵和增强 
 当前脚本含大量硬编码 Windows 路径，例如 `D:/Dataset/...` 和 `D:/Experiment/...`；`main_IE-MOIF.py:34-37,61` 甚至固定 `Dataset='BMNC'` 与 label path，命令行参数不能完全控制路径。运行前必须重构路径和输出目录。环境跨 Python snfpy/scikit-learn 与 MATLAB，仓库没有容器或 lockfile。
 
 ### 版本与复现边界
-
-本地 `.repo_source` 记录 `https://github.com/ZZUzy/scAMVIB` 提交 `ed8ebab928786ee40ad11ffb802337c4bc08c3fd`。代码目录无嵌套 `.git`，该值来自采集 manifest。
 
 代码足以审计 SNF、IB assignment、softmax weight 和 ARI/NMI 主链，但数据未打包，路径需手工改，supervised FS 与已知 cluster 数依赖 ground truth，AMI/显著性和完整图表流程缺失。论文发表年份为 2026，但 DOI 后缀 `bbaf717` 和 PMC 页面应作为元数据来源；不能把仓库当前示例参数自动当作每个论文数据集最终设置。
 

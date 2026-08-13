@@ -10,7 +10,7 @@ sitemap: false
 
 <!-- Generated locally by bin/export_paper_atlas.py. -->
 <section class="paper-detail" id="paper-detail">
-  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}">
+  <a class="paper-detail__back" href="{{ '/paper-atlas/' | relative_url }}" data-atlas-back>
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Paper Atlas
   </a>
   <header class="paper-detail__hero">
@@ -20,7 +20,7 @@ sitemap: false
     </div>
     <h1>PASTE</h1>
     <p>Alignment and integration of spatial transcriptomics data</p>
-    <a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-022-01459-6" target="_blank" rel="noopener noreferrer">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <div class="paper-detail__links"><a class="paper-detail__doi" href="https://doi.org/10.1038/s41592-022-01459-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PASTE">Open paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="paper-detail__code" href="https://github.com/raphael-group/paste" target="_blank" rel="noopener noreferrer" aria-label="Open code for PASTE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
   </header>
 
   <div class="paper-detail__tabs" role="tablist" aria-label="Paper notes language">
@@ -108,7 +108,6 @@ $$
 - 中心迭代每轮用 `NMF.fit_transform(B)` 重新拟合，没有把上一轮 $W,H$ 作为 warm start；NMF 非凸，若不设置 `random_seed`，重复运行可能不同。
 - KL 辅助函数的参数方向与论文符号书写需要谨慎对照；代码行为应以实际 `kl_divergence_backend()` 为准，不能只凭符号名称断言方向完全相同。
 - 包中没有论文全部模拟、比较方法和空间一致性评分脚本；这些属于论文复现分析层，不是核心 Python API。
-- `build/lib` 是构建产物，真正应阅读和修改的是 `src/paste`。当前工作区还包含打包的 1.4.0 wheel/sdist，但嵌套 Git HEAD 是本次静态核对的版本标识。
 - GPU 只在选择 Torch backend 且 CUDA 可用时启用；默认是 NumPy CPU。高分辨率切片需要存储 $n\times n$、$n'\times n'$ 以及 $n\times n'$ 矩阵，内存随 spot 数快速增长。
 
 ### 7. 如何读论文的实验图
@@ -124,16 +123,6 @@ SCC 实验显示低测序深度会同时降低聚类空间一致性和标签一�
 输入 AnnData 至少要保证：不同切片基因名可正确求交集；`X` 是与所选表达距离相容的非负矩阵；二维坐标位于 `obsm['spatial']`；切片确实来自可比较的相邻组织。运行后应同时检查目标值、耦合稀疏性、已知解剖结构、不同 $\alpha$ 的稳定性和多随机种子结果，而不是只看叠图是否“看起来对齐”。
 
 PASTE 的关键思想可以概括为：不要求跨切片绝对坐标一致，而是用 FGW 同时寻找表达相似且能保存两张切片内部几何关系的概率映射；随后，这些映射既可以驱动刚体三维堆叠，也可以在 NMF 约束下汇聚成一张共识表达切片。
-
-### 证据入口
-
-- 主论文与图注：`paper source/paper/auto/paper.md`
-- 补充材料：`paper_supp1.pdf`、`paper_supp2.pdf`、`paper_supp3.pdf`
-- 图逐项解释：`figure_analysis.md`
-- 成对与中心算法：`paste/src/paste/PASTE.py`
-- KL 与数据辅助函数：`paste/src/paste/helper.py`
-- 刚体堆叠：`paste/src/paste/visualization.py`
-- 代码—论文映射：`doc_code.md`
 
 </article>
 <article class="paper-detail__panel" id="paper-detail-panel-en" role="tabpanel" aria-labelledby="paper-detail-tab-en" tabindex="0" data-detail-panel="en" lang="en" markdown="1" hidden>
