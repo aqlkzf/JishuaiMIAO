@@ -19,21 +19,21 @@ sitemap: false
         <h1>Paper Atlas</h1>
       </div>
       <div class="atlas-stats">
-        <span class="atlas-stat"><strong>726</strong><span>papers</span></span>
+        <span class="atlas-stat"><strong>728</strong><span>papers</span></span>
         <span class="atlas-stat"><strong>16</strong><span>topics</span></span>
-        <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>627</strong><span>with code</span></button>
+        <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>628</strong><span>with code</span></button>
       </div>
     </div>
-    <p class="atlas-lead">Every paper I have read, with a short note on what the method actually does. Search by method, title, journal or note text.</p>
+    <p class="atlas-lead">A personal collection of papers in computational biology, each with a short note on what the method actually does.</p>
   </header>
 
   <div class="atlas-topic-list" id="atlas-topics" role="group" aria-label="Filter by topic">
-    <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>726</strong></button>
+    <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>728</strong></button>
       <button type="button" data-atlas-topic="datasource" aria-pressed="false"><span>Data Sources &amp; Technologies</span><strong>175</strong></button>
       <button type="button" data-atlas-topic="dynamics_fate_trajectory" aria-pressed="false"><span>Dynamics, Fate &amp; Trajectory</span><strong>122</strong></button>
-      <button type="button" data-atlas-topic="integration_multimodal" aria-pressed="false"><span>Integration &amp; Multi-modal</span><strong>101</strong></button>
+      <button type="button" data-atlas-topic="integration_multimodal" aria-pressed="false"><span>Integration &amp; Multi-modal</span><strong>102</strong></button>
       <button type="button" data-atlas-topic="machine_learning_algorithm" aria-pressed="false"><span>Machine Learning Algorithm</span><strong>101</strong></button>
-      <button type="button" data-atlas-topic="representation_models" aria-pressed="false"><span>Representation Models</span><strong>92</strong></button>
+      <button type="button" data-atlas-topic="representation_models" aria-pressed="false"><span>Representation Models</span><strong>93</strong></button>
       <button type="button" data-atlas-topic="domain_clustering" aria-pressed="false"><span>Domain Clustering</span><strong>27</strong></button>
       <button type="button" data-atlas-topic="segmentation_annotation" aria-pressed="false"><span>Segmentation &amp; Annotation</span><strong>21</strong></button>
       <button type="button" data-atlas-topic="computational_tools" aria-pressed="false"><span>Computational Tools</span><strong>20</strong></button>
@@ -78,9 +78,9 @@ sitemap: false
       <select id="atlas-journal" name="journal">
         <option value="">All journals</option>
           <option value="nature-methods">Nature Methods (145)</option>
+          <option value="biorxiv">bioRxiv (67)</option>
           <option value="nature-communications">Nature Communications (67)</option>
           <option value="arxiv">arXiv (66)</option>
-          <option value="biorxiv">bioRxiv (65)</option>
           <option value="nature-biotechnology">Nature Biotechnology (65)</option>
           <option value="nature">Nature (36)</option>
           <option value="cell">Cell (31)</option>
@@ -192,7 +192,7 @@ sitemap: false
   </form>
 
   <div class="atlas-results-bar">
-    <p id="atlas-count" aria-live="polite">Showing <strong>36</strong> of <strong>726</strong> papers</p>
+    <p id="atlas-count" aria-live="polite">Showing <strong>36</strong> of <strong>728</strong> papers</p>
     <div class="atlas-results-actions">
       <p id="atlas-active-filters"></p>
       <div class="atlas-layout" role="group" aria-label="Result layout">
@@ -3261,6 +3261,23 @@ sitemap: false
         <footer>
           <span>arXiv · 2026</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.48550/arXiv.2604.25062" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PFM">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/vchz/pfi" target="_blank" rel="noopener noreferrer" aria-label="Open code for PFM">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/pfm-6a8a2bf9/' | relative_url }}" aria-label="完整解读：PFM">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2026" data-code="no" data-journal="biorxiv" data-journal-label="bioRxiv" data-method="PGL">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span>
+        </div>
+        <h2 aria-label="PGL">PGL</h2>
+        <p class="atlas-card__title">Generative single-cell transcriptomics via large language models</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">PGL（Portraying Gene Language）试图完成的不是“把一个细胞编码成向量”，而是根据组织、器官、疾病状态、扰动条件等元数据，直接生成一个新的单细胞 RNA 表达谱。它把每个细胞写成一串有顺序的“基因-表达等级”文本，让 decoder-only 大语言模型逐 token 生成，再把文本解析回基因表达矩阵。论文第 1-12 行；</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">PGL (Portraying Gene Language) is a bioRxiv 2026 framework for generating synthetic single-cell RNA-seq profiles from metadata alone. It converts a cell into an ordered text sequence of gene-expression pairs, adapts a decoder-only language…</p>
+        </div>
+        <footer>
+          <span>bioRxiv · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-details-link" href="{{ '/paper-atlas/pgl-173b6021/' | relative_url }}" aria-label="完整解读：PGL">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="datasource/technology_platforms" data-year="2026" data-code="no" data-journal="nature-biotechnology" data-journal-label="Nature Biotechnology" data-method="PIVOT">
@@ -9160,6 +9177,23 @@ sitemap: false
         <footer>
           <span>Nature Communications · 2025</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41467-025-61821-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SpaTopic">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/xiyupeng/SpaTopic" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpaTopic">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/spatopic-a950d2a3/' | relative_url }}" aria-label="完整解读：SpaTopic">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="integration_multimodal" data-year="2025" data-code="yes" data-journal="biorxiv" data-journal-label="bioRxiv" data-method="SpaTranslator">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Integration &amp; Multi-modal</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="SpaTranslator">SpaTranslator</h2>
+        <p class="atlas-card__title">SpaTranslator: A deep generative framework for universal spatial multi-omics cross-modality translation</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">SpaTranslator 先用空间图和 MNN 三元组把参考与目标切片的已观测模态放到同一个批次校正空间，再用参考切片的配对数据训练一个带自重建、交叉重建、KL 正则和对抗对齐的双向翻译器，最后把目标切片的对齐表示解码成缺失模态。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Paired spatial multi-omics assays are costly and sparse, while single-modality spatial datasets are increasingly abundant. SpaTranslator uses a paired reference slice to generate a missing modality for another slice, aiming to synthesize pa…</p>
+        </div>
+        <footer>
+          <span>bioRxiv · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/donghongyu2020/SpaTranslator" target="_blank" rel="noopener noreferrer" aria-label="Open code for SpaTranslator">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/spatranslator-9141fece/' | relative_url }}" aria-label="完整解读：SpaTranslator">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="domain_clustering" data-year="2025" data-code="yes" data-journal="genome-biology" data-journal-label="Genome Biology" data-method="spCLUE">
