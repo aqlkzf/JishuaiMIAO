@@ -19,21 +19,21 @@ sitemap: false
         <h1>Paper Atlas</h1>
       </div>
       <div class="atlas-stats">
-        <span class="atlas-stat"><strong>710</strong><span>papers</span></span>
+        <span class="atlas-stat"><strong>726</strong><span>papers</span></span>
         <span class="atlas-stat"><strong>16</strong><span>topics</span></span>
-        <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>612</strong><span>with code</span></button>
+        <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>627</strong><span>with code</span></button>
       </div>
     </div>
     <p class="atlas-lead">Every paper I have read, with a short note on what the method actually does. Search by method, title, journal or note text.</p>
   </header>
 
   <div class="atlas-topic-list" id="atlas-topics" role="group" aria-label="Filter by topic">
-    <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>710</strong></button>
-      <button type="button" data-atlas-topic="datasource" aria-pressed="false"><span>Data Sources &amp; Technologies</span><strong>173</strong></button>
+    <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>726</strong></button>
+      <button type="button" data-atlas-topic="datasource" aria-pressed="false"><span>Data Sources &amp; Technologies</span><strong>175</strong></button>
       <button type="button" data-atlas-topic="dynamics_fate_trajectory" aria-pressed="false"><span>Dynamics, Fate &amp; Trajectory</span><strong>122</strong></button>
-      <button type="button" data-atlas-topic="machine_learning_algorithm" aria-pressed="false"><span>Machine Learning Algorithm</span><strong>100</strong></button>
-      <button type="button" data-atlas-topic="integration_multimodal" aria-pressed="false"><span>Integration &amp; Multi-modal</span><strong>98</strong></button>
-      <button type="button" data-atlas-topic="representation_models" aria-pressed="false"><span>Representation Models</span><strong>82</strong></button>
+      <button type="button" data-atlas-topic="integration_multimodal" aria-pressed="false"><span>Integration &amp; Multi-modal</span><strong>101</strong></button>
+      <button type="button" data-atlas-topic="machine_learning_algorithm" aria-pressed="false"><span>Machine Learning Algorithm</span><strong>101</strong></button>
+      <button type="button" data-atlas-topic="representation_models" aria-pressed="false"><span>Representation Models</span><strong>92</strong></button>
       <button type="button" data-atlas-topic="domain_clustering" aria-pressed="false"><span>Domain Clustering</span><strong>27</strong></button>
       <button type="button" data-atlas-topic="segmentation_annotation" aria-pressed="false"><span>Segmentation &amp; Annotation</span><strong>21</strong></button>
       <button type="button" data-atlas-topic="computational_tools" aria-pressed="false"><span>Computational Tools</span><strong>20</strong></button>
@@ -43,8 +43,8 @@ sitemap: false
       <button type="button" data-atlas-topic="deconvolution_mapping" aria-pressed="false"><span>Deconvolution</span><strong>8</strong></button>
       <button type="button" data-atlas-topic="scATAC" aria-pressed="false"><span>scATAC - Single-Cell Chromatin &amp; DNA Methylation</span><strong>8</strong></button>
       <button type="button" data-atlas-topic="datasource/technology_platforms" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Technology Platforms</span><strong>93</strong></button>
-      <button type="button" data-atlas-topic="datasource/atlases_resources" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Atlases &amp; Resources</span><strong>61</strong></button>
-      <button type="button" data-atlas-topic="datasource/perturbation_resources" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Perturbation Resources</span><strong>10</strong></button>
+      <button type="button" data-atlas-topic="datasource/atlases_resources" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Atlases &amp; Resources</span><strong>62</strong></button>
+      <button type="button" data-atlas-topic="datasource/perturbation_resources" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Perturbation Resources</span><strong>11</strong></button>
   </div>
 
   <form class="atlas-controls" id="atlas-controls" role="search">
@@ -77,23 +77,23 @@ sitemap: false
       <span class="sr-only">Filter by journal</span>
       <select id="atlas-journal" name="journal">
         <option value="">All journals</option>
-          <option value="nature-methods">Nature Methods (144)</option>
+          <option value="nature-methods">Nature Methods (145)</option>
           <option value="nature-communications">Nature Communications (67)</option>
-          <option value="arxiv">arXiv (65)</option>
+          <option value="arxiv">arXiv (66)</option>
+          <option value="biorxiv">bioRxiv (65)</option>
           <option value="nature-biotechnology">Nature Biotechnology (65)</option>
-          <option value="biorxiv">bioRxiv (64)</option>
-          <option value="nature">Nature (34)</option>
+          <option value="nature">Nature (36)</option>
           <option value="cell">Cell (31)</option>
-          <option value="nature-machine-intelligence">Nature Machine Intelligence (24)</option>
+          <option value="nature-machine-intelligence">Nature Machine Intelligence (27)</option>
           <option value="genome-biology">Genome Biology (18)</option>
           <option value="science">Science (17)</option>
           <option value="pmlr">PMLR (15)</option>
+          <option value="bioinformatics">Bioinformatics (11)</option>
           <option value="iclr">ICLR (11)</option>
-          <option value="bioinformatics">Bioinformatics (10)</option>
           <option value="nature-genetics">Nature Genetics (10)</option>
           <option value="neurips">NeurIPS (10)</option>
           <option value="briefings-in-bioinformatics">Briefings in Bioinformatics (8)</option>
-          <option value="aaai">AAAI (5)</option>
+          <option value="aaai">AAAI (6)</option>
           <option value="advanced-science">Advanced Science (5)</option>
           <option value="cell-reports-methods">Cell Reports Methods (4)</option>
           <option value="cell-systems">Cell Systems (4)</option>
@@ -107,11 +107,13 @@ sitemap: false
           <option value="npj-systems-biology-and-applications">npj Systems Biology and Applications (3)</option>
           <option value="nucleic-acids-research">Nucleic Acids Research (3)</option>
           <option value="cancer-cell">Cancer Cell (2)</option>
+          <option value="cell-reports-medicine">Cell Reports Medicine (2)</option>
           <option value="cell-research">Cell Research (2)</option>
           <option value="genome-research">Genome Research (2)</option>
           <option value="journal-of-computational-biology">Journal of Computational Biology (2)</option>
           <option value="manuscript">Manuscript (2)</option>
           <option value="nature-immunology">Nature Immunology (2)</option>
+          <option value="nature-medicine">Nature Medicine (2)</option>
           <option value="nature-neuroscience">Nature Neuroscience (2)</option>
           <option value="science-advances">Science Advances (2)</option>
           <option value="scientific-reports">Scientific Reports (2)</option>
@@ -122,7 +124,6 @@ sitemap: false
           <option value="biometrics">Biometrics (1)</option>
           <option value="bmc-genomics">BMC Genomics (1)</option>
           <option value="cancer-discovery">Cancer Discovery (1)</option>
-          <option value="cell-reports-medicine">Cell Reports Medicine (1)</option>
           <option value="cell-stem-cell">Cell Stem Cell (1)</option>
           <option value="cvpr-2026">CVPR 2026 (1)</option>
           <option value="electronic-journal-of-statistics">Electronic Journal of Statistics (1)</option>
@@ -133,6 +134,7 @@ sitemap: false
           <option value="icassp">ICASSP (1)</option>
           <option value="ieee-transactions-on-pattern-analysis-and-machine-intelligence">IEEE Transactions on Pattern Analysis and Machine Intelligence (1)</option>
           <option value="information-fusion">Information Fusion (1)</option>
+          <option value="iscience">iScience (1)</option>
           <option value="journal-of-chemical-information-and-modeling">Journal of Chemical Information and Modeling (1)</option>
           <option value="journal-of-machine-learning-research-26-305-1-68">Journal of Machine Learning Research 26(305):1-68 (1)</option>
           <option value="journal-of-molecular-biology">Journal of Molecular Biology (1)</option>
@@ -146,11 +148,11 @@ sitemap: false
           <option value="nature-biomedical-engineering">Nature Biomedical Engineering (1)</option>
           <option value="nature-cardiovascular-research">Nature Cardiovascular Research (1)</option>
           <option value="nature-cell-biology">Nature Cell Biology (1)</option>
-          <option value="nature-medicine">Nature Medicine (1)</option>
           <option value="nature-protocols">Nature Protocols (1)</option>
           <option value="nature-reviews-cancer">Nature Reviews Cancer (1)</option>
           <option value="nature-reviews-drug-discovery">Nature Reviews Drug Discovery (1)</option>
           <option value="npj-digital-medicine">npj Digital Medicine (1)</option>
+          <option value="nxn-substack">nxn (Substack) (1)</option>
           <option value="plos-computational-biology">PLOS Computational Biology (1)</option>
           <option value="preprint">preprint (1)</option>
           <option value="proceedings-of-the-acm-on-web-conference-2025">Proceedings of the ACM on Web Conference 2025 (1)</option>
@@ -190,7 +192,7 @@ sitemap: false
   </form>
 
   <div class="atlas-results-bar">
-    <p id="atlas-count" aria-live="polite">Showing <strong>36</strong> of <strong>710</strong> papers</p>
+    <p id="atlas-count" aria-live="polite">Showing <strong>36</strong> of <strong>726</strong> papers</p>
     <div class="atlas-results-actions">
       <p id="atlas-active-filters"></p>
       <div class="atlas-layout" role="group" aria-label="Result layout">
@@ -760,6 +762,23 @@ sitemap: false
         <footer>
           <span>Cell · 2026</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1016/j.cell.2025.12.042" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CLIM_TIME">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/sherry1000001/CLIM-TIME" target="_blank" rel="noopener noreferrer" aria-label="Open code for CLIM_TIME">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/clim-time-2f07d30c/' | relative_url }}" aria-label="完整解读：CLIM_TIME">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2026" data-code="yes" data-journal="aaai" data-journal-label="AAAI" data-method="CLM-Access">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="CLM-Access">CLM-<wbr>Access</h2>
+        <p class="atlas-card__title">CLM-Access: A Specialized Foundation Model for High-Dimensional Single-Cell ATAC-Seq Analysis</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">scATAC-seq 每个细胞可对应约 115 万个统一 cCRE，数据极度稀疏、近似二值，而且不同实验的 peak 坐标缺少统一词表。传统方法常先筛掉大部分 peak，损失调控信息并限制规模。 CLM-Access 将按染色体位置排序后的 cCRE 划分为约 2,000 个固定 patch，每个 patch 约含 575 个 peak。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">CLM-Access is a BERT-inspired foundation model for high-dimensional single-cell ATAC-seq. It addresses the million-scale cCRE vocabulary, extreme sparsity, binary counts, and lack of a universal peak annotation by mapping 2.</p>
+        </div>
+        <footer>
+          <span>AAAI · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/HIM-AIM/CLM-Access" target="_blank" rel="noopener noreferrer" aria-label="Open code for CLM-Access">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/clm-access-63d7b1fc/' | relative_url }}" aria-label="完整解读：CLM-Access">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="representation_models" data-year="2026" data-code="yes" data-journal="biorxiv" data-journal-label="bioRxiv" data-method="clone2vec">
@@ -1850,6 +1869,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.48550/arXiv.2601.20028" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GroupSparseAE">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/saprmarks/dictionary_learning" target="_blank" rel="noopener noreferrer" aria-label="Open code for GroupSparseAE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/groupsparseae-c31ff932/' | relative_url }}" aria-label="完整解读：GroupSparseAE">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="datasource/atlases_resources" data-year="2026" data-code="yes" data-journal="nature" data-journal-label="Nature" data-method="HCMI_NextGen_Patient_Derived_Cancer_Models">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Atlases &amp; Resources</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="HCMI_NextGen_Patient_Derived_Cancer_Models">HCMI_<wbr>NextGen_<wbr>Patient_<wbr>Derived_<wbr>Cancer_<wbr>Models</h2>
+        <p class="atlas-card__title">A compendium of next-generation patient-derived models for diverse cancers</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">传统癌细胞系资源促进了基因依赖性研究，但常缺少与原始肿瘤的系统配对验证、罕见癌种覆盖和临床治疗背景。本文建立 Human Cancer Models Initiative (HCMI)：665 个患者来源模型，覆盖 25 类恶性肿瘤，并将模型、亲本肿瘤、部分正常样本、临床信息和多组学表征连接起来。 模型包括 3D 类器官、3D 球体及 2D 贴壁培养；论文也记录治疗史、随访和人群信息。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">This Nature 2026 paper presents the Human Cancer Models Initiative (HCMI), a patient-derived cancer-model atlas created to address the limited diversity, uncertain fidelity and sparse clinical annotation of conventional cell-line collection…</p>
+        </div>
+        <footer>
+          <span>Nature · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41586-026-10806-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for HCMI_NextGen_Patient_Derived_Cancer_Models">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/broadinstitute/DepMap-NextGen-Public" target="_blank" rel="noopener noreferrer" aria-label="Open code for HCMI_NextGen_Patient_Derived_Cancer_Models">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/hcmi-nextgen-patient-derived-cancer-models-7f3b7968/' | relative_url }}" aria-label="完整解读：HCMI_NextGen_Patient_Derived_Cancer_Models">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="datasource" data-year="2026" data-code="yes" data-journal="nature" data-journal-label="Nature" data-method="HDMA">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Data Sources &amp; Technologies</span><span class="atlas-code-mark">code</span>
@@ -1916,6 +1952,23 @@ sitemap: false
         <footer>
           <span>Nature Computational Science · 2026</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s43588-026-00992-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for HESpotEx">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/wwYinYin/HESpotEx" target="_blank" rel="noopener noreferrer" aria-label="Open code for HESpotEx">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/hespotex-5cdf48c8/' | relative_url }}" aria-label="完整解读：HESpotEx">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="integration_multimodal" data-year="2026" data-code="yes" data-journal="nature-medicine" data-journal-label="Nature Medicine" data-method="HEX">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Integration &amp; Multi-modal</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="HEX">HEX</h2>
+        <p class="atlas-card__title">AI-enabled virtual spatial proteomics from histopathology for interpretable biomarker discovery in lung cancer</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">CODEX 等空间蛋白组技术可以在组织中同时测量很多蛋白，但成本高、流程复杂、需要专用仪器，难以直接进入常规临床流程。HEX 的目标是只用临床常规 H&amp;E 切片，预测空间化的蛋白表达图，而不是只预测一个样本的平均分子值。 论文用同一组织切片的 H&amp;E 与 40 重 CODEX 图像配准，切成约 50 微米的 tile。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">CODEX-scale spatial proteomics is expensive, instrument-intensive and difficult to scale clinically. Earlier H&amp;E-to-molecular methods generally predicted bulk or a small number of markers, leaving intratumor spatial heterogeneity underused .</p>
+        </div>
+        <footer>
+          <span>Nature Medicine · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/lilab-stanford/HEX" target="_blank" rel="noopener noreferrer" aria-label="Open code for HEX">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/hex-ecf6f295/' | relative_url }}" aria-label="完整解读：HEX">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="integration_multimodal" data-year="2026" data-code="no" data-journal="arxiv" data-journal-label="arXiv" data-method="HFGPI">
@@ -3567,6 +3620,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/ZhuangLab/MERlin" target="_blank" rel="noopener noreferrer" aria-label="Open code for RT_T_AMP_MERFISH">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/rt-t-amp-merfish-256c6204/' | relative_url }}" aria-label="完整解读：RT_T_AMP_MERFISH">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="machine_learning_algorithm" data-year="2026" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="RXNGraphormer_Reusability_Report">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Machine Learning Algorithm</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="RXNGraphormer_Reusability_Report">RXNGraphormer_<wbr>Reusability_<wbr>Report</h2>
+        <p class="atlas-card__title">Reusability report: Assessment of reproducibility and applicability to external datasets for RXNGraphormer</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">这不是提出新模型的原始方法论文，而是对 RXNGraphormer 的复现与外部数据可迁移性评估。摘要称该框架把预训练图-Transformer 编码器与 delta-molecular reaction 表示结合，用于反应产率预测和合成规划两个任务；报告重新运行公开实现、检查点和基准数据，并测试高通量实验数据与非 USPTO 序列数据。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Reaction-yield prediction and synthesis planning often use different models and reaction representations. This reusability report asks whether RXNGraphormer, a pretrained graph-transformer framework described by Xu et al.</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/TheLiaoGroup/RXNGraphormer-Reproduction" target="_blank" rel="noopener noreferrer" aria-label="Open code for RXNGraphormer_Reusability_Report">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/rxngraphormer-reusability-report-42375f37/' | relative_url }}" aria-label="完整解读：RXNGraphormer_Reusability_Report">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="domain_clustering" data-year="2026" data-code="no" data-journal="advanced-science" data-journal-label="Advanced Science" data-method="SAGE">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Domain Clustering</span>
@@ -4876,6 +4946,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41568-026-00940-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Tumour3DMultiOmicsAtlases_Review">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/tumour3dmultiomicsatlases-review-d369c01a/' | relative_url }}" aria-label="完整解读：Tumour3DMultiOmicsAtlases_Review">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="datasource/perturbation_resources" data-year="2026" data-code="yes" data-journal="nature" data-journal-label="Nature" data-method="TumourDerivedOrganoidBiobank_2026">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Perturbation Resources</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="TumourDerivedOrganoidBiobank_2026">TumourDerivedOrganoidBiobank_<wbr>2026</h2>
+        <p class="atlas-card__title">A tumour-derived organoid biobank maps cancer gene dependencies</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">癌症依赖图谱通常依赖二维细胞系，但细胞系可能经过长期体外适应，罕有与患者的临床资料、配对正常样本和原发肿瘤。这样会限制“某个基因型为何对应某个脆弱性”的解释。本文建立的是一个带患者背景的三维肿瘤类器官资源，并在这些模型上做全基因组 CRISPR-Cas9 筛选，而不是提出一个全新的机器学习模型。 研究从五类癌症获得患者肿瘤、正常/血液样本和临床资料，建立 256 个可冻存复苏的类器官。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">This Nature 2026 study establishes a renewable, clinically linked tumour-organoid atlas and uses genome-wide CRISPR-Cas9 screens to make a patient-derived map of cancer dependencies.</p>
+        </div>
+        <footer>
+          <span>Nature · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41586-026-10830-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for TumourDerivedOrganoidBiobank_2026">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/broadinstitute/DepMap-NextGen-Public" target="_blank" rel="noopener noreferrer" aria-label="Open code for TumourDerivedOrganoidBiobank_2026">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/tumourderivedorganoidbiobank-2026-d38e84d5/' | relative_url }}" aria-label="完整解读：TumourDerivedOrganoidBiobank_2026">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="machine_learning_algorithm" data-year="2026" data-code="no" data-journal="arxiv" data-journal-label="arXiv" data-method="Understanding_ICL_Addition_Activation_Subspaces">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Machine Learning Algorithm</span>
@@ -4891,6 +4978,23 @@ sitemap: false
         <footer>
           <span>arXiv · 2026</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.48550/arXiv.2505.05145" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Understanding_ICL_Addition_Activation_Subspaces">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/understanding-icl-addition-activation-subspaces-527c2a55/' | relative_url }}" aria-label="完整解读：Understanding_ICL_Addition_Activation_Subspaces">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="integration_multimodal" data-year="2026" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="UniAIR">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Integration &amp; Multi-modal</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="UniAIR">UniAIR</h2>
+        <p class="atlas-card__title">Generalizable mutation-effect prediction across adaptive immune recognition via unified multimodal framework</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">UniAIR 预测突变如何改变适应性免疫识别中的结合或功能效应，例如抗体成熟、抗原逃逸和 TCR-pHLA 识别。论文摘要指出，许多已有方法只适用于单一任务或单一模态，难以在不同免疫复合物间泛化（PAPERMD:9-16）。 它不把所有任务交给一个单模型，而是将多个专家模型的预测与表示融合。仓库中的专家包括 Gearbind、RDE、PPIformer 和 ESSM。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">UniAIR is a modular multimodal framework for predicting how mutations change adaptive immune recognition. The abstract positions it across antibody maturation, antigen escape, TCR-pHLA optimization and settings with no experimental structur…</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s42256-026-01243-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for UniAIR">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/hanrthu/UniAIR" target="_blank" rel="noopener noreferrer" aria-label="Open code for UniAIR">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/uniair-1fff4940/' | relative_url }}" aria-label="完整解读：UniAIR">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="machine_learning_algorithm" data-year="2026" data-code="yes" data-journal="arxiv" data-journal-label="arXiv" data-method="Variational_Estimator_Lp_Calibration_Errors">
@@ -5641,6 +5745,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-details-link" href="{{ '/paper-atlas/chip-tip-0606b739/' | relative_url }}" aria-label="完整解读：Chip-Tip">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2025" data-code="yes" data-journal="" data-journal-label="" data-method="ChromFound">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="ChromFound">ChromFound</h2>
+        <p class="atlas-card__title">ChromFound: Towards A Universal Foundation Model for Single-Cell Chromatin Accessibility Data</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">ChromFound 是面向单细胞染色质可及性数据的基础模型。它不把固定的 peak 集合当作词表，而是把每个开放染色质区域（OCR）作为一个带有连续可及性数值、染色体编号、起点和终点坐标的 token。这使不同组织或新出现的 OCR 仍可被表示，避免固定 peak 词表造成的对齐缺失。 每个 OCR 的表示由四部分相加：染色体可学习 embedding、起点位置的正弦位置编码、终点位置的正弦位置编码，以及可及性数值的线性投影。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">ChromFound is a scATAC-seq foundation model that treats each open chromatin region as a continuous, genome-aware token rather than selecting a fixed peak vocabulary.</p>
+        </div>
+        <footer>
+          <span>2025</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/JohnsonKlose/ChromFound" target="_blank" rel="noopener noreferrer" aria-label="Open code for ChromFound">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/chromfound-4c221f2b/' | relative_url }}" aria-label="完整解读：ChromFound">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="dynamics_fate_trajectory" data-year="2025" data-code="yes" data-journal="nature-communications" data-journal-label="Nature Communications" data-method="chronODE">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Dynamics, Fate &amp; Trajectory</span><span class="atlas-code-mark">code</span>
@@ -6370,6 +6491,23 @@ sitemap: false
         <footer>
           <span>Nature Methods · 2025</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41592-025-02748-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GeneAgent">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/idekerlab/llm_evaluation_for_gene_set_interpretation" target="_blank" rel="noopener noreferrer" aria-label="Open code for GeneAgent">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/geneagent-8f530d74/' | relative_url }}" aria-label="完整解读：GeneAgent">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2025" data-code="yes" data-journal="biorxiv" data-journal-label="bioRxiv" data-method="GeneJepa">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="GeneJepa">GeneJepa</h2>
+        <p class="atlas-card__title">GeneJepa: A Predictive World Model of the Transcriptome</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">单细胞 RNA 测序把一个细胞表示成高维、稀疏、带有大量技术噪声的基因表达向量。许多单细胞基础模型沿用语言模型思路：把基因和离散化后的表达量变成 token，再通过掩码重建或生成目标学习表示。论文认为这种做法存在三个结构性问题： 精确重建 count 会让模型过度关注 dropout、测序深度和实验批次等低层统计； 一个细胞中表达的基因本质上是集合，不存在自然的单词顺序； 表达量分箱会损失连续定量信息。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">GeneJepa is a 2025 bioRxiv preprint proposing Joint-Embedding Predictive Architecture (JEPA) pretraining for single-cell RNA sequencing. Instead of reconstructing noisy counts or predicting masked gene tokens, it predicts the latent represe…</p>
+        </div>
+        <footer>
+          <span>bioRxiv · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/BiostateAI/GeneJEPA" target="_blank" rel="noopener noreferrer" aria-label="Open code for GeneJepa">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/genejepa-c6583913/' | relative_url }}" aria-label="完整解读：GeneJepa">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="representation_models" data-year="2025" data-code="yes" data-journal="arxiv" data-journal-label="arXiv" data-method="GeneMamba">
@@ -10571,6 +10709,40 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/kuleshov-group/mdlm" target="_blank" rel="noopener noreferrer" aria-label="Open code for SimpleMaskedDiffusionLanguageModels">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/simplemaskeddiffusionlanguagemodels-1f2f7727/' | relative_url }}" aria-label="完整解读：SimpleMaskedDiffusionLanguageModels">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2024" data-code="yes" data-journal="cell-reports-medicine" data-journal-label="Cell Reports Medicine" data-method="Single_cell_Masked_Autoencoder">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="Single_cell_Masked_Autoencoder">Single_<wbr>cell_<wbr>Masked_<wbr>Autoencoder</h2>
+        <p class="atlas-card__title">Cytometry masked autoencoder: An accurate and interpretable automated immunophenotyper</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">cyMAE（cytometry masked autoencoder）针对固定 30-marker panel 的 CyTOF 单细胞蛋白表达，解决人工 gating 慢、主观且难复现，以及聚类受批次效应影响的问题。它先用大量无标签细胞进行 masked cytometry modeling，再用少量标注数据微调。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">cyMAE is a masked-autoencoder transformer for automated immunophenotyping of fixed-panel single-cell CyTOF data. It learns marker co-occurrence from millions of unlabeled cells, then reuses the encoder for labeled cell annotation, marker im…</p>
+        </div>
+        <footer>
+          <span>Cell Reports Medicine · 2024</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/JaesikKim/cyMAE" target="_blank" rel="noopener noreferrer" aria-label="Open code for Single_cell_Masked_Autoencoder">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/single-cell-masked-autoencoder-a70fac5f/' | relative_url }}" aria-label="完整解读：Single_cell_Masked_Autoencoder">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2024" data-code="yes" data-journal="nxn-substack" data-journal-label="nxn (Substack)" data-method="Single_cell_metadata_as_language">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="Single_cell_metadata_as_language">Single_<wbr>cell_<wbr>metadata_<wbr>as_<wbr>language</h2>
+        <p class="atlas-card__title">Single-cell metadata as language</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">单细胞 RNA 测序数据给出每个细胞的基因转录本计数，而元数据记录组织、疾病状态、患者、批次、测量技术等外部信息。来自不同数据集的研究者往往使用不同的键和值，例如 Celltype 与 Cluster 可能表示相近概念，plasma 又可能是 B 细胞的子类。跨数据集整合前通常需要手工把这些字段映射到共同词汇表。 文章的核心观察是：虽然元数据没有统一格式，但它是人写来传递信息的、带有结构的语言。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Single-cell datasets often describe the same biological or technical concepts with incompatible metadata keys and values. The article argues that manual harmonization is required before integration, comparison, or modeling, even though meta…</p>
+        </div>
+        <footer>
+          <span>nxn (Substack) · 2024</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/vals/Blog" target="_blank" rel="noopener noreferrer" aria-label="Open code for Single_cell_metadata_as_language">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/single-cell-metadata-as-language-6d5c54df/' | relative_url }}" aria-label="完整解读：Single_cell_metadata_as_language">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="datasource/atlases_resources" data-year="2024" data-code="yes" data-journal="cell" data-journal-label="Cell" data-method="SorbitolIntolerance_Microbiome">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Atlases &amp; Resources</span><span class="atlas-code-mark">code</span>
@@ -11064,6 +11236,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1126/science.adi6000" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PredictionPoweredInference">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/aangelopoulos/ppi_py" target="_blank" rel="noopener noreferrer" aria-label="Open code for PredictionPoweredInference">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/predictionpoweredinference-0c847363/' | relative_url }}" aria-label="完整解读：PredictionPoweredInference">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2023" data-code="yes" data-journal="arxiv" data-journal-label="arXiv" data-method="scHyena">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="scHyena">scHyena</h2>
+        <p class="atlas-card__title">scHyena: Foundation Model for Full-Length Single-Cell RNA-Seq Analysis in Brain</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">单细胞 RNA 测序（scRNA-seq）同时存在两个困难：测序 dropout 产生大量零值，以及每个细胞包含约两万基因，直接使用全基因序列会带来很高的计算成本。常见流程会选取高度可变基因（HVG），但 HVG 对参数、批次和数据集敏感，可能丢失细胞信息。论文提出 scHyena，用 Hyena 的长卷积替代二次复杂度的 self-attention，以处理完整基因向量（论文第 1 节，行 20-40）。 连续表达值的线性适配器。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">scHyena is a 2023 arXiv method for learning representations from full-length brain scRNA-seq profiles. It targets two practical problems: dropout-related noise and the difficulty of processing tens of thousands of genes without selecting a…</p>
+        </div>
+        <footer>
+          <span>arXiv · 2023</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/scHyena2023/scHyena" target="_blank" rel="noopener noreferrer" aria-label="Open code for scHyena">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/schyena-477661d1/' | relative_url }}" aria-label="完整解读：scHyena">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="dynamics_fate_trajectory" data-year="2023" data-code="yes" data-journal="bioinformatics" data-journal-label="Bioinformatics" data-method="scKINETICS">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Dynamics, Fate &amp; Trajectory</span><span class="atlas-code-mark">code</span>
@@ -11096,6 +11285,23 @@ sitemap: false
         <footer>
           <span>Nature Cardiovascular Research · 2023</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s44161-022-00205-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for scMultiomics_Cardiovascular_Review">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/scmultiomics-cardiovascular-review-740fdc75/' | relative_url }}" aria-label="完整解读：scMultiomics_Cardiovascular_Review">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="integration_multimodal" data-year="2023" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="scPoli">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Integration &amp; Multi-modal</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="scPoli">scPoli</h2>
+        <p class="atlas-card__title">Population-level integration of single-cell datasets enables multi-scale analysis across samples</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">人口规模的单细胞图谱把多个研究、样本、个体和技术条件放在一起。数据整合既要去除批次差异，又要保留细胞类型和状态等生物信号；同时，建好的参考图谱还应能快速接收新查询数据。传统 CVAE 使用随条件数量增长的 one-hot 条件向量，难以解释每个样本的作用；一些参考映射方法在加入新数据时必须重新训练或共享参考细胞。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Population-scale single-cell atlases mix samples, studies and technical conditions. Standard conditional generative models use one-hot condition vectors that grow with the number of conditions and are difficult to interpret; reference metho…</p>
+        </div>
+        <footer>
+          <span>Nature Methods · 2023</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/theislab/scPoli_reproduce" target="_blank" rel="noopener noreferrer" aria-label="Open code for scPoli">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/scpoli-408807ed/' | relative_url }}" aria-label="完整解读：scPoli">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="segmentation_annotation" data-year="2023" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="SCS">
@@ -11198,6 +11404,23 @@ sitemap: false
         <footer>
           <span>Nature Communications · 2023</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41467-023-43915-7" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for STalign">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/JEFworks-Lab/STalign" target="_blank" rel="noopener noreferrer" aria-label="Open code for STalign">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/stalign-0090ee94/' | relative_url }}" aria-label="完整解读：STalign">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2023" data-code="yes" data-journal="iscience" data-journal-label="iScience" data-method="tGPT">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="tGPT">tGPT</h2>
+        <p class="atlas-card__title">Generative pretraining from large-scale transcriptomes for single-cell deciphering</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">单细胞转录组规模迅速扩大，数据稀疏、批次效应明显，传统方法难以直接整合数千万细胞。tGPT 把每个细胞的高表达基因按表达量降序排列，只保留基因排序而不使用表达数值。 对序列 G=(G1,\ldots,Gn)，模型最大化 L(G)=\sumi\log P(Gi\mid G{i-k},\ldots,G{i-1};\theta). 输入为 [ , G1, G2, ...</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">tGPT is a decoder-only transformer foundation model for single-cell transcriptomes. It converts each cell into a descending rank sequence of expressed protein-coding genes and autoregressively predicts the next gene, enabling pretraining ov…</p>
+        </div>
+        <footer>
+          <span>iScience · 2023</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/deeplearningplus/tGPT" target="_blank" rel="noopener noreferrer" aria-label="Open code for tGPT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/tgpt-d7f016c5/' | relative_url }}" aria-label="完整解读：tGPT">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="segmentation_annotation" data-year="2023" data-code="yes" data-journal="nature-communications" data-journal-label="Nature Communications" data-method="TOSICA">
@@ -11472,6 +11695,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/RuishanLiu/VelocytoAnalysis" target="_blank" rel="noopener noreferrer" aria-label="Open code for RNA_ODE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/rna-ode-a25c2156/' | relative_url }}" aria-label="完整解读：RNA_ODE">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2022" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="scBERT">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="scBERT">scBERT</h2>
+        <p class="atlas-card__title">scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">单细胞 RNA 测序的细胞类型注释容易受到 marker 基因列表不完整、批次效应以及忽略基因间相互作用的影响。scBERT 借鉴 BERT 的预训练-微调范式，在大量无标签细胞上学习表达模式，再把表示迁移到新的注释数据。 原始 AnnData -&gt; Panglao 基因空间对齐 -&gt; 过滤/归一化 -&gt; 离散表达 token -&gt; Performer 预训练 -&gt; 加载 checkpoint -&gt; 监督分类 -&gt; 细胞类型 代码把查询…</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">scBERT is a large-scale pretrained deep language model for annotating cell types in single-cell RNA-seq. It addresses curated-marker dependence, batch effects and missing gene-gene interaction information by pretraining a bidirectional Perf…</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2022</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/TencentAILabHealthcare/scBERT" target="_blank" rel="noopener noreferrer" aria-label="Open code for scBERT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/scbert-71766ff3/' | relative_url }}" aria-label="完整解读：scBERT">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="integration_multimodal" data-year="2022" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="sciPENN">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Integration &amp; Multi-modal</span><span class="atlas-code-mark">code</span>
@@ -11521,6 +11761,23 @@ sitemap: false
         <footer>
           <span>Journal of Computational Biology · 2022</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1089/cmb.2021.0446" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SCOT">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/rsinghlab/SCOT" target="_blank" rel="noopener noreferrer" aria-label="Open code for SCOT">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/scot-64da306e/' | relative_url }}" aria-label="完整解读：SCOT">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2022" data-code="yes" data-journal="bioinformatics" data-journal-label="Bioinformatics" data-method="scPretrain">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="scPretrain">scPretrain</h2>
+        <p class="atlas-card__title">scPretrain: Multi-task self-supervised learning for cell type classification</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">单细胞 RNA 测序的细胞类型标注通常依赖少量人工标注细胞，但未标注细胞更多，并且包含有用的基因表达模式。仅用标注数据训练容易过拟合，也容易把平台、器官、物种和批次效应当成细胞类型信号。scPretrain 的目标是先利用多个未标注数据集学习可迁移的细胞表示，再用少量新数据集标注进行微调。 把每个未标注数据集的 K-means 聚类结果当作“伪标签”。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Single-cell type annotation is commonly trained only on labelled cells, although unlabelled cells are more abundant and carry information about gene activity.</p>
+        </div>
+        <footer>
+          <span>Bioinformatics · 2022</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/ruiyi-zhang/scPretrain" target="_blank" rel="noopener noreferrer" aria-label="Open code for scPretrain">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/scpretrain-20b8118a/' | relative_url }}" aria-label="完整解读：scPretrain">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="representation_models" data-year="2022" data-code="yes" data-journal="iclr" data-journal-label="ICLR" data-method="TOGL">
@@ -12269,6 +12526,23 @@ sitemap: false
         <footer>
           <span></span>
           <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/Gaulton-Lab/nPOD" target="_blank" rel="noopener noreferrer" aria-label="Open code for nPOD">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/npod-fae1c7e3/' | relative_url }}" aria-label="完整解读：nPOD">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="" data-code="no" data-journal="" data-journal-label="—" data-method="STORM">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span>
+        </div>
+        <h2 aria-label="STORM">STORM</h2>
+        <p class="atlas-card__title">A Multimodal Foundation Model of Spatial Transcriptomics and Histology for Biological Discovery and Clinical Prediction</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">STORM 是一个把 H&amp;E 病理形态、空间转录组表达和组织空间邻域放进同一表示空间的多模态基础模型。它先在配对的 H&amp;E-ST 数据上做空间掩码预训练，再把学到的表示用于空间域发现、从 H&amp;E 预测虚拟 ST，以及患者预后和免疫治疗反应建模。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Spatial transcriptomics (ST) maps gene expression in tissue context but is costly and low-throughput; H&amp;E is routine and morphologically rich but lacks molecular resolution .</p>
+        </div>
+        <footer>
+          <span>—</span>
+          <span class="atlas-card__links"><a class="atlas-details-link" href="{{ '/paper-atlas/storm-fc052d03/' | relative_url }}" aria-label="完整解读：STORM">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
     <p class="atlas-empty" id="atlas-empty" hidden><strong>No papers match these filters.</strong>Clear the search box or reset the filters to see the full index.</p>
