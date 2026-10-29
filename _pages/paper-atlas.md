@@ -2,7 +2,7 @@
 layout: default
 permalink: /paper-atlas/
 title: paper atlas
-nav: true
+nav: false
 nav_order: 2
 wide: true
 description: A searchable public index of concise computational biology paper summaries.
@@ -19,30 +19,30 @@ sitemap: false
         <h1>Paper Atlas</h1>
       </div>
       <div class="atlas-stats">
-        <span class="atlas-stat"><strong>801</strong><span>papers</span></span>
+        <span class="atlas-stat"><strong>809</strong><span>papers</span></span>
         <span class="atlas-stat"><strong>16</strong><span>topics</span></span>
-        <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>682</strong><span>with code</span></button>
+        <button class="atlas-stat" type="button" id="atlas-code-shortcut" aria-pressed="false"><strong>690</strong><span>with code</span></button>
       </div>
     </div>
     <p class="atlas-lead">A personal collection of papers in computational biology, each with a short note on what the method actually does.</p>
   </header>
 
   <div class="atlas-topic-list" id="atlas-topics" role="group" aria-label="Filter by topic">
-    <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>801</strong></button>
-      <button type="button" data-atlas-topic="datasource" aria-pressed="false"><span>Data Sources &amp; Technologies</span><strong>184</strong></button>
+    <button class="is-active" type="button" data-atlas-topic="" aria-pressed="true"><span>All papers</span><strong>809</strong></button>
+      <button type="button" data-atlas-topic="datasource" aria-pressed="false"><span>Data Sources &amp; Technologies</span><strong>185</strong></button>
       <button type="button" data-atlas-topic="dynamics_fate_trajectory" aria-pressed="false"><span>Dynamics, Fate &amp; Trajectory</span><strong>124</strong></button>
-      <button type="button" data-atlas-topic="machine_learning_algorithm" aria-pressed="false"><span>Machine Learning Algorithm</span><strong>115</strong></button>
-      <button type="button" data-atlas-topic="representation_models" aria-pressed="false"><span>Representation Models</span><strong>114</strong></button>
+      <button type="button" data-atlas-topic="representation_models" aria-pressed="false"><span>Representation Models</span><strong>117</strong></button>
+      <button type="button" data-atlas-topic="machine_learning_algorithm" aria-pressed="false"><span>Machine Learning Algorithm</span><strong>116</strong></button>
       <button type="button" data-atlas-topic="integration_multimodal" aria-pressed="false"><span>Integration &amp; Multi-modal</span><strong>107</strong></button>
-      <button type="button" data-atlas-topic="computational_tools" aria-pressed="false"><span>Computational Tools</span><strong>31</strong></button>
+      <button type="button" data-atlas-topic="computational_tools" aria-pressed="false"><span>Computational Tools</span><strong>33</strong></button>
       <button type="button" data-atlas-topic="domain_clustering" aria-pressed="false"><span>Domain Clustering</span><strong>28</strong></button>
-      <button type="button" data-atlas-topic="protein_sequence_models" aria-pressed="false"><span>Protein &amp; Sequence Models</span><strong>27</strong></button>
+      <button type="button" data-atlas-topic="protein_sequence_models" aria-pressed="false"><span>Protein &amp; Sequence Models</span><strong>28</strong></button>
       <button type="button" data-atlas-topic="segmentation_annotation" aria-pressed="false"><span>Segmentation &amp; Annotation</span><strong>23</strong></button>
       <button type="button" data-atlas-topic="svg_patterning" aria-pressed="false"><span>Spatially Variable Genes</span><strong>19</strong></button>
       <button type="button" data-atlas-topic="communication_interaction" aria-pressed="false"><span>Cell-Cell Communication</span><strong>13</strong></button>
       <button type="button" data-atlas-topic="deconvolution_mapping" aria-pressed="false"><span>Deconvolution</span><strong>8</strong></button>
       <button type="button" data-atlas-topic="scATAC" aria-pressed="false"><span>scATAC - Single-Cell Chromatin &amp; DNA Methylation</span><strong>8</strong></button>
-      <button type="button" data-atlas-topic="datasource/technology_platforms" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Technology Platforms</span><strong>98</strong></button>
+      <button type="button" data-atlas-topic="datasource/technology_platforms" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Technology Platforms</span><strong>99</strong></button>
       <button type="button" data-atlas-topic="datasource/atlases_resources" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Atlases &amp; Resources</span><strong>65</strong></button>
       <button type="button" data-atlas-topic="datasource/perturbation_resources" data-atlas-parent="datasource" hidden aria-pressed="false"><span>↳ Perturbation Resources</span><strong>12</strong></button>
   </div>
@@ -79,10 +79,10 @@ sitemap: false
       <select id="atlas-journal" name="journal">
         <option value="">All journals</option>
           <option value="nature-methods">Nature Methods (147)</option>
+          <option value="nature-machine-intelligence">Nature Machine Intelligence (73)</option>
           <option value="biorxiv">bioRxiv (72)</option>
           <option value="arxiv">arXiv (71)</option>
           <option value="nature-communications">Nature Communications (69)</option>
-          <option value="nature-machine-intelligence">Nature Machine Intelligence (67)</option>
           <option value="nature-biotechnology">Nature Biotechnology (65)</option>
           <option value="nature">Nature (37)</option>
           <option value="cell">Cell (31)</option>
@@ -97,6 +97,7 @@ sitemap: false
           <option value="aaai">AAAI (7)</option>
           <option value="advanced-science">Advanced Science (5)</option>
           <option value="nature-computational-science">Nature Computational Science (5)</option>
+          <option value="nature-medicine">Nature Medicine (5)</option>
           <option value="nucleic-acids-research">Nucleic Acids Research (5)</option>
           <option value="cell-reports-methods">Cell Reports Methods (4)</option>
           <option value="cell-systems">Cell Systems (4)</option>
@@ -106,7 +107,6 @@ sitemap: false
           <option value="pnas">PNAS (4)</option>
           <option value="aistats">AISTATS (3)</option>
           <option value="cell-genomics">Cell Genomics (3)</option>
-          <option value="nature-medicine">Nature Medicine (3)</option>
           <option value="npj-systems-biology-and-applications">npj Systems Biology and Applications (3)</option>
           <option value="patterns">Patterns (3)</option>
           <option value="cancer-cell">Cancer Cell (2)</option>
@@ -198,7 +198,7 @@ sitemap: false
   </form>
 
   <div class="atlas-results-bar">
-    <p id="atlas-count" aria-live="polite">Showing <strong>36</strong> of <strong>801</strong> papers</p>
+    <p id="atlas-count" aria-live="polite">Showing <strong>36</strong> of <strong>809</strong> papers</p>
     <div class="atlas-results-actions">
       <p id="atlas-active-filters"></p>
       <div class="atlas-layout" role="group" aria-label="Result layout">
@@ -938,6 +938,23 @@ sitemap: false
         <footer>
           <span>Briefings in Bioinformatics · 2026</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1093/bib/bbag192" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for CoMo">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/Lab-Xu/CoMo" target="_blank" rel="noopener noreferrer" aria-label="Open code for CoMo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/como-a9e058d1/' | relative_url }}" aria-label="完整解读：CoMo">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="machine_learning_algorithm" data-year="2026" data-code="yes" data-journal="nature-medicine" data-journal-label="Nature Medicine" data-method="COMPASS">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Machine Learning Algorithm</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="COMPASS">COMPASS</h2>
+        <p class="atlas-card__title">Generalizable AI predicts immunotherapy outcomes across cancers and treatments</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">COMPASS 要解决的问题是：仅凭肿瘤突变负荷、PD-L1 或单一免疫基因签名，往往难以稳定预测不同癌种、队列和免疫检查点抑制剂中的疗效。论文把治疗前 bulk RNA-seq 转换为可解释的肿瘤免疫微环境（TIME）概念，再预测应答概率。 流程为： 作者以 33 个癌种的 10,184 个 TCGA 肿瘤进行对比学习预训练；同一肿瘤的扰动表达应在概念空间接近，不同肿瘤应分离。随后在临床队列上做监督微调。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">COMPASS is a concept-bottleneck transformer for predicting immune checkpoint inhibitor response from pretreatment bulk RNA-seq. It transfers 132 curated gene signatures into 43 high-level tumor-immune microenvironment concepts, pretrains on…</p>
+        </div>
+        <footer>
+          <span>Nature Medicine · 2026</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/mims-harvard/COMPASS" target="_blank" rel="noopener noreferrer" aria-label="Open code for COMPASS">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/compass-80430a6a/' | relative_url }}" aria-label="完整解读：COMPASS">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="protein_sequence_models" data-year="2026" data-code="yes" data-journal="nature-communications" data-journal-label="Nature Communications" data-method="COMPASS-PTM">
@@ -6023,6 +6040,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1016/j.ccell.2025.06.004" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for BOT_Progression_SpatialProteoTranscriptomics">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/bot-progression-spatialproteotranscriptomics-7e9ad0b8/' | relative_url }}" aria-label="完整解读：BOT_Progression_SpatialProteoTranscriptomics">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="datasource/technology_platforms" data-year="2025" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="BrainComputerInterfaceControlWithArtificialIntelligenceCopilots">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Technology Platforms</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="BrainComputerInterfaceControlWithArtificialIntelligenceCopilots">BrainComputerInterfaceControlWithArtificialIntelligenceCopilots</h2>
+        <p class="atlas-card__title">Brain-computer interface control with artificial intelligence copilots</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">运动脑机接口需要把 EEG 信号转换为光标或机械臂指令，但单独依赖神经信号会受噪声、解码错误和任务复杂度限制。本文把用户看作主控者，把 AI 看作能利用目标、场景和任务规则的副驾驶（copilot），以提高实际任务表现。 论文摘要明确提出 CNN 与 ReFIT-like Kalman filter 的组合，并将共享自主用于光标和机械臂任务。图 1-2 直接展示了这一数据流和 copilot 的任务信息输入。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">This technology paper asks whether shared autonomy can lift non-invasive BCI performance enough to matter clinically. It combines EEG decoding with a CNN and ReFIT-like adaptive Kalman filter, then adds AI copilots that use task information…</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s42256-025-01090-y" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for BrainComputerInterfaceControlWithArtificialIntelligenceCopilots">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/kaolab-research/bci_raspy" target="_blank" rel="noopener noreferrer" aria-label="Open code for BrainComputerInterfaceControlWithArtificialIntelligenceCopilots">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/braincomputerinterfacecontrolwithartificialintelligencecopilots-71f63013/' | relative_url }}" aria-label="完整解读：BrainComputerInterfaceControlWithArtificialIntelligenceCopilots">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="datasource/technology_platforms" data-year="2025" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="CAB-OLST">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Technology Platforms</span><span class="atlas-code-mark">code</span>
@@ -7349,6 +7383,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/Teichlab/Genes2Genes" target="_blank" rel="noopener noreferrer" aria-label="Open code for Genes2Genes">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/genes2genes-61a0514a/' | relative_url }}" aria-label="完整解读：Genes2Genes">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="computational_tools" data-year="2025" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="GeoDirDock">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Computational Tools</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="GeoDirDock">GeoDirDock</h2>
+        <p class="atlas-card__title">Informed protein-ligand docking via geodesic guidance in translational, rotational and torsional spaces</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">蛋白质-配体对接要同时决定配体放在哪里、朝向哪里，以及可旋转键取什么角度。DiffDock 一类盲扩散方法可以从噪声生成姿态，但在复杂体系中可能定位到错误的口袋，或得到化学上不合理的内部构象。GeoDirDock（GDD）把专家提供的口袋、方向和扭转角先验加入反向扩散过程，让每一步更新沿着目标区域的测地线前进。Nature 页面给出的摘要称，GDD 在 RMSD 和物理姿态合理性上优于盲对接；</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Blind diffusion docking can place a ligand in the wrong pocket or produce inaccurate internal orientations, especially for difficult protein-ligand systems.</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s42256-025-01091-x" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for GeoDirDock">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/NBDsoftware/GDD" target="_blank" rel="noopener noreferrer" aria-label="Open code for GeoDirDock">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/geodirdock-ea1fb9e0/' | relative_url }}" aria-label="完整解读：GeoDirDock">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="datasource/technology_platforms" data-year="2025" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="GETvNA">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Technology Platforms</span><span class="atlas-code-mark">code</span>
@@ -7857,6 +7908,23 @@ sitemap: false
         <footer>
           <span>Briefings in Bioinformatics · 2025</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1093/bib/bbaf315" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for JDRnet">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/kuijjerlab/JDRnet" target="_blank" rel="noopener noreferrer" aria-label="Open code for JDRnet">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/jdrnet-6ffcd8a3/' | relative_url }}" aria-label="完整解读：JDRnet">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2025" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="KA-GNN">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="KA-GNN">KA-<wbr>GNN</h2>
+        <p class="atlas-card__title">Kolmogorov-Arnold graph neural networks for molecular property prediction</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">任务是从分子结构预测毒性、活性、溶解度等图级性质。输入分子被表示为图 G=(V,E)：原子是节点，化学键或空间上接近的原子对是边；输出是一个或多个分子性质分数。 传统分子 GNN 通常有两个局限： 节点嵌入、消息传递和读出大多使用线性层或 MLP。MLP 在每条连接上学习固定权重，再在节点上使用固定激活函数，复杂非线性关系需要靠更宽或更深的网络表达。 只使用共价键的分子图会丢失空间上的非共价相互作用。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">KA-GNN replaces conventional transformations in molecular GCN/GAT pipelines with Fourier-series Kolmogorov-Arnold modules at embedding, message passing, and readout, producing strong reported benchmark results and lower runtime than B-splin…</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/LongLee220/KA-GNN" target="_blank" rel="noopener noreferrer" aria-label="Open code for KA-GNN">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/ka-gnn-37f82004/' | relative_url }}" aria-label="完整解读：KA-GNN">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="integration_multimodal" data-year="2025" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="Krakencoder">
@@ -8675,6 +8743,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1371/journal.pcbi.1012476" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for OTVelo">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/sandstede-lab/OT-Velocity" target="_blank" rel="noopener noreferrer" aria-label="Open code for OTVelo">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/otvelo-de7021f6/' | relative_url }}" aria-label="完整解读：OTVelo">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="protein_sequence_models" data-year="2025" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="PAIR">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Protein &amp; Sequence Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="PAIR">PAIR</h2>
+        <p class="atlas-card__title">Boosting the predictive power of protein representations with a corpus of text annotations</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">传统蛋白质语言模型（protein language model, PLM）主要从海量氨基酸序列中学习：遮住某些残基，再预测它们；或者根据上下文预测序列概率。这样得到的表征很有用，但它依赖一个间接假设：进化中保守的残基往往影响蛋白质适应度，因此学会序列规律就可能学到功能。 问题在于，序列保守性与功能之间会受到物种、环境和进化历史的影响。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Protein language models learn embeddings from amino-acid sequence objectives, but sequence conservation is only an indirect proxy for protein function and can be confounded by evolutionary or environmental context.</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s42256-025-01088-6" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for PAIR">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/h4duan/PAIR" target="_blank" rel="noopener noreferrer" aria-label="Open code for PAIR">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/pair-9975742d/' | relative_url }}" aria-label="完整解读：PAIR">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="datasource/technology_platforms" data-year="2025" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="Paired-Damage-seq">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Technology Platforms</span><span class="atlas-code-mark">code</span>
@@ -9304,6 +9389,23 @@ sitemap: false
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41467-025-62346-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for ROSIE">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://gitlab.com/enable-medicine-public/rosie" target="_blank" rel="noopener noreferrer" aria-label="Open code for ROSIE">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/rosie-9020922d/' | relative_url }}" aria-label="完整解读：ROSIE">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
+      <article class="atlas-card" data-category="computational_tools" data-year="2025" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="RXNGraphormer">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Computational Tools</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="RXNGraphormer">RXNGraphormer</h2>
+        <p class="atlas-card__title">A unified pre-trained deep learning framework for cross-task reaction performance prediction and synthesis planning</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">RXNGraphormer 先用图神经网络和 Transformer 把反应物、产物及其变化编码成可迁移表示，再分别接回归头或自回归序列解码器，从而把反应性能预测和合成规划连接到同一套预训练表示体系中。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Reaction-performance prediction and synthesis planning are commonly treated as different machine-learning problems. Performance prediction produces numerical values such as yield, reactivity, or selectivity, whereas forward synthesis and re…</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/licheng-xu-echo/RXNGraphormer" target="_blank" rel="noopener noreferrer" aria-label="Open code for RXNGraphormer">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/rxngraphormer-2b0b26ba/' | relative_url }}" aria-label="完整解读：RXNGraphormer">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
       <article class="atlas-card" data-category="machine_learning_algorithm" data-year="2025" data-code="no" data-journal="pnas" data-journal-label="PNAS" data-method="Safety_Performance_Multi_Objective_Learning_Market_Entry">
         <div class="atlas-card__chips">
           <span class="atlas-chip">Machine Learning Algorithm</span>
@@ -9863,6 +9965,23 @@ sitemap: false
         <footer>
           <span>Nature Methods · 2025</span>
           <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s41592-025-02805-0" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SDR-seq">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/hawkjo/SDRranger" target="_blank" rel="noopener noreferrer" aria-label="Open code for SDR-seq">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/sdr-seq-3762e9e8/' | relative_url }}" aria-label="完整解读：SDR-seq">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2025" data-code="yes" data-journal="nature-machine-intelligence" data-journal-label="Nature Machine Intelligence" data-method="SemanticLens">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="SemanticLens">SemanticLens</h2>
+        <p class="atlas-card__title">Mechanistic understanding and validation of large AI models with SemanticLens</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">SemanticLens 把一个神经网络内部的每个神经元或特征方向，翻译成基础模型语义空间中的向量：先找出最能激活该组件的样本，再用 CLIP 一类模型编码这些样本。这样，研究者便能像搜索向量数据库一样搜索、标注和比较网络内部知识，并结合归因分数判断这些知识是否真正参与了预测。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Large neural networks can predict accurately while relying on opaque, biased, or shortcut features. Input attribution, probing, and activation visualization each expose only part of the story and do not scale to a holistic connection among…</p>
+        </div>
+        <footer>
+          <span>Nature Machine Intelligence · 2025</span>
+          <span class="atlas-card__links"><a class="atlas-doi" href="https://doi.org/10.1038/s42256-025-01084-w" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for SemanticLens">DOI <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-code-link" href="https://github.com/jim-berend/semanticlens" target="_blank" rel="noopener noreferrer" aria-label="Open code for SemanticLens">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/semanticlens-d736fc4d/' | relative_url }}" aria-label="完整解读：SemanticLens">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="datasource/technology_platforms" data-year="2025" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="SG-NEx">
@@ -11257,6 +11376,23 @@ sitemap: false
         <footer>
           <span>bioRxiv · 2024</span>
           <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/epigen/cellwhisperer" target="_blank" rel="noopener noreferrer" aria-label="Open code for CellWhisperer_ICLR_2024">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/cellwhisperer-iclr-2024-61881414/' | relative_url }}" aria-label="完整解读：CellWhisperer_ICLR_2024">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
+        </footer>
+      </article>
+      <article class="atlas-card" data-category="representation_models" data-year="2024" data-code="yes" data-journal="nature-medicine" data-journal-label="Nature Medicine" data-method="CONCH_2024">
+        <div class="atlas-card__chips">
+          <span class="atlas-chip">Representation Models</span><span class="atlas-code-mark">code</span>
+        </div>
+        <h2 aria-label="CONCH_2024">CONCH_<wbr>2024</h2>
+        <p class="atlas-card__title">A visual-language foundation model for computational pathology</p>
+        <div class="atlas-card__summary-panel" data-atlas-summary="zh" lang="zh-CN">
+          <p class="atlas-card__summary">病理人工智能常受限于标签稀缺，并且许多模型只看图像、只能服务于训练时定义的疾病或任务。CONCH（CONtrastive learning from Captions for Histopathology）把病理图像与生物医学文本放进同一表示空间，目标是在没有或只有少量下游标签时完成分类、检索、分割和图像描述。 论文报告用超过 117 万个图像-说明文字对进行任务无关预训练。</p>
+        </div>
+        <div class="atlas-card__summary-panel" data-atlas-summary="en" lang="en" hidden>
+          <p class="atlas-card__summary">Pathology models are commonly trained for one disease and one label space, making them expensive to build and difficult to transfer when annotated medical data are scarce.</p>
+        </div>
+        <footer>
+          <span>Nature Medicine · 2024</span>
+          <span class="atlas-card__links"><a class="atlas-code-link" href="https://github.com/mahmoodlab/CONCH" target="_blank" rel="noopener noreferrer" aria-label="Open code for CONCH_2024">Code <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="atlas-details-link" href="{{ '/paper-atlas/conch-2024-e0114666/' | relative_url }}" aria-label="完整解读：CONCH_2024">完整解读 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></span>
         </footer>
       </article>
       <article class="atlas-card" data-category="computational_tools" data-year="2024" data-code="yes" data-journal="nature-methods" data-journal-label="Nature Methods" data-method="CyLinter">

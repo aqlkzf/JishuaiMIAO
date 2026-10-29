@@ -154,6 +154,9 @@ exclude:
   - readme_preview/
   - vendor
   - plans/
+  - _backup/
+  - _pages/paper-atlas.md
+  - _pages/paper-atlas-details
 keep_files:
   - CNAME
   - .nojekyll
