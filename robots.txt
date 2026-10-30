@@ -5,3 +5,9 @@ User-agent: *
 Disallow:
 
 Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
+
+# AI agents: start at {{ '/llms.txt' | absolute_url }} (Markdown map of the blog).
+# Every post has a Markdown copy at its URL + index.html.md
+# Full concatenated posts: {{ '/llms-full.txt' | absolute_url }}
+# Structured index: {{ '/blog.json' | absolute_url }}
+

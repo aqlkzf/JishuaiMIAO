@@ -18,6 +18,13 @@ layout: default
     <div class="post-header-top">
       <h1 class="post-title">{{ page.title }}</h1>
       <div class="copy-for-ai-wrap">
+        <a
+          class="ai-markdown-link"
+          href="{{ page.url | ai_markdown_path | absolute_url }}"
+          title="Plain Markdown version of this post, for AI agents"
+          rel="alternate"
+          type="text/markdown"
+        >Markdown</a>
         <button id="copy-for-ai" aria-label="Copy for AI">
           <i class="fa-solid fa-robot"></i>
         </button>
@@ -29,7 +36,10 @@ layout: default
       {% assign last_date = page.last_modified_at | default: page.last_updated %}
       {% if last_date %}, last updated on {{ last_date | date: '%B %d, %Y' }}{% endif %}
       {% if page.meta %}• {{ page.meta }}{% endif %}
-      &nbsp;•&nbsp; <i class="fa-solid fa-eye fa-sm" aria-hidden="true"></i> <span id="busuanzi_value_page_pv" style="font-variant-numeric: tabular-nums;">0</span> views
+      {% comment %}Injected by JS so readers without JS (AI agents, HTML-to-Markdown tools) don't see a stale "0 views".{% endcomment %}
+      <script>
+        document.currentScript.insertAdjacentHTML('beforebegin', '&nbsp;•&nbsp; <i class="fa-solid fa-eye fa-sm" aria-hidden="true"></i> <span id="busuanzi_value_page_pv" style="font-variant-numeric: tabular-nums;">0</span> views');
+      </script>
     </p>
     <p class="post-tags">
       {% if url_beginning == '/blog/' %}
@@ -117,7 +127,19 @@ layout: default
     flex-shrink: 0;
     margin-top: 0.4rem;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .ai-markdown-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    opacity: 0.55;
+    text-decoration: none;
+  }
+  .ai-markdown-link:hover {
+    opacity: 0.95;
+    text-decoration: underline;
   }
   .copy-for-ai-wrap::after {
     content: "Copy for AI";
@@ -157,9 +179,7 @@ layout: default
 <script>
   document.getElementById('copy-for-ai').addEventListener('click', function () {
     var btn = document.getElementById('copy-for-ai');
-    var title = {{ page.title | jsonify }};
-    var slug = {{ page.path | remove_first: '_posts/' | remove: '.md' | jsonify }};
-    fetch({{ '/assets/ai-posts/' | relative_url | jsonify }} + slug + '.md.txt')
+    fetch({{ page.url | ai_markdown_path | relative_url | jsonify }})
       .then(function (r) {
         if (!r.ok) {
           throw new Error('Unable to load AI copy source');
@@ -167,7 +187,7 @@ layout: default
         return r.text();
       })
       .then(function (md) {
-        return navigator.clipboard.writeText('# ' + title + '\n\n' + md.trim());
+        return navigator.clipboard.writeText(md.trim());
       })
       .then(function () {
         btn.innerHTML = '<i class="fa-solid fa-check"></i>';

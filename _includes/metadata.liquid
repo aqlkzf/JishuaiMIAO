@@ -48,10 +48,15 @@
 {% endif %}
 
 {% assign is_blog_post = false %}
-{% if page.url != '/blog/index.html' and page.url contains '/blog/' %}
-  {% unless page.url contains '/tag/' or page.url contains '/category/' %}
-    {% assign is_blog_post = true %}
-  {% endunless %}
+{% if page.collection == 'posts' %}
+  {% assign is_blog_post = true %}
+{% endif %}
+
+<link rel="alternate" type="text/plain" title="llms.txt" href="{{ '/llms.txt' | relative_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.blog_name | default: 'Blog' }}" href="{{ '/feed.xml' | relative_url }}">
+<link rel="alternate" type="application/json" title="Blog JSON" href="{{ '/blog.json' | relative_url }}">
+{% if is_blog_post or page.url == '/' %}
+  <link rel="alternate" type="text/markdown" title="Markdown" href="{{ page.url | ai_markdown_path | relative_url }}">
 {% endif %}
 
 {% if site.serve_og_meta %}
@@ -231,20 +236,25 @@
 
   <script type="application/ld+json">
     {
-        "author":
-        {
-            "@type": "Person",
-            "name": "{{ author_name }}"
-        },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+        "@context": "https://schema.org",
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
-        {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks | jsonify }},
-        {% endif %}
-        "name": "{{ author_name }}",
-        "@context": "https://schema.org"
+        "author": {
+            "@type": "Person",
+            "name": {{ author_name | strip | jsonify }}
+        },
+        "url": {{ page.url | absolute_url | jsonify }},
+        "description": {% if page.description %}{{ page.description | strip | jsonify }}{% else %}{{ site.description | strip | jsonify }}{% endif %},
+        "headline": {% if page.title %}{{ page.title | jsonify }}{% else %}{{ site.title | jsonify }}{% endif %},
+        "name": {{ author_name | strip | jsonify }}{% if sameaslinks != blank %},
+        "sameAs": {{ sameaslinks | jsonify }}{% endif %}{% if is_blog_post %},
+        "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+        "dateModified": "{{ page.last_modified_at | default: page.date | date: '%Y-%m-%d' }}",
+        "keywords": {{ page.tags | jsonify }},
+        "encoding": {
+            "@type": "MediaObject",
+            "encodingFormat": "text/markdown",
+            "contentUrl": {{ page.url | ai_markdown_path | absolute_url | jsonify }}
+        }{% endif %}
     }
   </script>
 {% endif %}

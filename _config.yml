@@ -9,6 +9,9 @@ last_name: MIAO
 contact_note:
 description: >
   A math student, a data novice.
+# one-line summary at the top of /llms.txt and /llms-full.txt (falls back to description)
+llms_summary: >
+  PhD student in Statistics and Data Science at CUHK. Blog notes on tools, HPC, and workflows for machine learning and bioinformatics.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -51,8 +54,8 @@ max_width: 930px
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
 
-serve_og_meta: false
-serve_schema_org: false
+serve_og_meta: true
+serve_schema_org: true
 og_image:
 
 # -----------------------------------------------------------------------------
@@ -197,7 +200,7 @@ sass:
 
 jekyll-minifier:
   compress_javascript: false
-  exclude: ["robots.txt", "assets/js/search/*.js"]
+  exclude: ["robots.txt", "llms.txt", "llms-full.txt", "blog.json", "assets/js/search/*.js"]
 
 # -----------------------------------------------------------------------------
 # Terser

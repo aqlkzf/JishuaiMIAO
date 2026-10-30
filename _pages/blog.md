@@ -26,6 +26,15 @@ pagination:
   <div class="header-bar">
     <h1>{{ site.blog_name }}</h1>
     <h2>{{ site.blog_description }}</h2>
+    <p class="blog-feeds">
+      <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a>
+      <span aria-hidden="true">·</span>
+      <a href="{{ '/llms-full.txt' | relative_url }}">full text</a>
+      <span aria-hidden="true">·</span>
+      <a href="{{ '/blog.json' | relative_url }}">JSON</a>
+      <span aria-hidden="true">·</span>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </p>
   </div>
   {% endif %}
 
